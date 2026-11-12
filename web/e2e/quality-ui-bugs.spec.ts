@@ -74,6 +74,10 @@ test('Q02-5 a finished ordinary battle identifies the three-second rounds rather
   await expect(summary).not.toContainText('每轮 30 秒');
   await expect(summary).toContainText('每招 3 秒');
   await expect(page.getByTestId('tab-1')).toHaveAttribute('aria-current', 'page');
+  const after = await database(page);
+  await page.getByTestId('tab-0').click();
+  await expect(page.getByTestId('tab-0')).toHaveAttribute('aria-current', 'page');
+  expect(await database(page)).toEqual(after);
 });
 
 test('Q02-6 people captions keep a solid readable base and clearance below the actual figure', async ({page}, info) => {
@@ -107,7 +111,6 @@ test('Q02-7 a receipt states elapsed months as a cost rather than positive inven
   await importRecoveryFixture(page, d.game);
   await begin(page, {kind: 'source', sourceId: 'herbs', maxCycles: 1, until: 'cycles', target: null, monthBudget: 1, remainingMonthsReserve: 1});
   await settleVisibleActivity(page); await page.getByTestId('hub-receipt').first().click();
-  const receipt = page.getByTestId('feature-title').locator('..');
   await expect(page.getByTestId('game-content').or(page.locator('.catalogue-view'))).not.toContainText('游戏月 +1');
   await expect(page.getByText('耗时 1 游戏月', {exact: false}).first()).toBeVisible();
 });

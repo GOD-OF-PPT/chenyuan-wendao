@@ -160,12 +160,15 @@ const catalogueView=computed(()=>storyView.value||singleScreen.value&&(['journey
 const hubTitle=computed(()=>['skills','relics'].includes(hubView.value)&&equipmentSection.value?({school:'修法 · 剑符择道',skills:'功法 · 研习与配装',relics:'法宝 · 炼制与装备',manual:'剑简 · 参悟与研习',summary:'配装 · 三法一器'} as Record<string,string>)[equipmentSection.value]:({tradeoffs:'行前取舍 · 当前一段',activity:'本段活动 · 成果与停止',market:'坊市 · 货架与取舍',recovery:'药匣 · 恢复与疗养',journey:'突破筹备 · 下一步',explore:'历练 · 云岚山海',inventory:'行囊 · 随身物资',forge:'丹炉 · 择方温炉',skills:'功法 · 研习与配装',relics:'法宝 · 炼制与装备',life:'修仙生平',goal:'目标与筹备',fate:'仙缘 · 人物与手记',cultivation:C.realms[game.value?.core.player.realm??'mortal'].name+'修行','trial-preparation':'登仙 · 行前核对',current:(game.value?narrativeFor(game.value)?.title:null)??(game.value?.battle?C.enemies[game.value.battle.enemy].name:trialView.value?.title??'仙缘 · 人物与手记'),trial:'渡劫行程与续行',battle:'术法说明与战报',receipt:'本次行动结算',character:'道者 · 寿元与配装'} as Record<string,string>)[hubView.value]??'行道详情');
 const equipmentReading=shallowRef({runId:'',section:''});
 const equipmentSection=computed(()=>equipmentReading.value.runId===game.value?.core.runId?equipmentReading.value.section:'');
+const preferHomeNavigation=ref(false);
+watch(()=>store.activity?.id,()=>preferHomeNavigation.value=false);
+function selectPrimaryTab(next:string){preferHomeNavigation.value=next==='修行';return selectTab(next);}
 const navigationView=computed(()=>{
  const view=detailViews.has(hubView.value)?detailParent.value?.view??hubView.value:hubView.value;
  if(view==='current')return game.value?.battle||game.value?.trial?'explore':'fate';
  if(view==='home'&&(game.value?.battle||game.value?.trial))return'explore';
  const activity=store.activity;
- if(view==='home'&&activity?.version===6&&activity.runId===game.value?.core.runId&&activity.gameRevision===game.value?.core.revision&&activity.plan.kind!=='travel')return'explore';
+ if(view==='home'&&!preferHomeNavigation.value&&activity?.version===6&&activity.runId===game.value?.core.runId&&activity.gameRevision===game.value?.core.revision&&activity.plan.kind!=='travel')return'explore';
  if(view==='home'&&phase.value==='event')return'fate';
  return ['skills','relics'].includes(view)?equipmentSection.value==='relics'?'relics':'skills':view;
 });
@@ -875,7 +878,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
       <CharacterPanel v-if="!singleScreen||hubView==='character'" :game="game" :details-only="immersive"/>
     </main>
     <SealedLifeNav v-if="store.ready&&immersive&&game&&game.status!=='active'" :view="hubView" :demo="!!demoNode" :normal-href="demoNode?normalLink():undefined" @open="openHub" @settings="showSettings" @height="navHeight=$event"/>
-    <PrimaryNav v-else-if="store.ready&&game&&(game.status==='active'||demoNode)" :demo="!!demoNode" :normal-href="demoNode?normalLink():undefined" :sealed="game.status!=='active'" :selected="tab" :expanded="immersive" :view="navigationView" @open="openHub" @select="selectTab" @height="navHeight=$event"/>
+    <PrimaryNav v-else-if="store.ready&&game&&(game.status==='active'||demoNode)" :demo="!!demoNode" :normal-href="demoNode?normalLink():undefined" :sealed="game.status!=='active'" :selected="tab" :expanded="immersive" :view="navigationView" @open="openHub" @select="selectPrimaryTab" @height="navHeight=$event"/>
     <button v-if="store.ready&&immersive" class="stage-journal" data-testid="stage-details" @click="store.lastResult||store.activity?.version===6||store.activity&&store.activity.version<=5&&store.activity.completedCycles>0?viewReceipt():openHub('life',$event)">行道手记 ›</button>
     <MilestoneReview v-if="milestoneReview" :key="milestoneReview.identity" :review="milestoneReview" :stale="milestoneStale" :retry="milestoneRetry" :busy="store.busy" :available="store.available" :error="store.error" :pending-error="pendingStoryError" @confirm="!pendingStoryError&&confirmMilestone()" @retry="confirmMilestone(true)" @close="closeMilestone"/>
     <ConfigurationDialog v-if="configurationIntent&&configurationSnapshot" :key="configurationIntent.command.commandId" :intent="configurationIntent" :snapshot="configurationSnapshot" :stale="configurationStale" :busy="store.busy" :available="store.available" :error="configurationError" :retry="configurationRetry" @confirm="confirmConfiguration()" @retry="confirmConfiguration(true)" @refresh="refreshConfiguration" @close="closeConfiguration"/>
