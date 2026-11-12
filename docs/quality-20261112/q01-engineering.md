@@ -36,3 +36,17 @@
 本项不改变Game/费用/时间/活动规则或UI；后续八个UI问题、文案、数值、离线等19项均未因此完成。
 
 最终修正：支持环境仍用原生文件symlink；受限环境仅为指定文件提供resolve/is_symlink文件系统替身，兄弟路径保持真实，验证器不改；目标未真正被检查即失败。取消junction命令壳和父目录移动，新helper另测含&/%路径、兄弟正常、错误先拒兄弟及越界根。最终完整定向16例＝旧13＋新增3通过（resource-targeted-single-file.log），根夹具并发/链接测试亦通过。Windows这11组文件链接不是原生OS链接实测，不能冒认证或跨平台矩阵；Linux/有权限环境保原生用例。最终827资源全套仍待实跑。
+
+## 最终结果与交付
+
+实现冻结 **691648a357e6ffb5cd431a029782cc366dd442b2**，树fe5ae8daa62def9e8a74e2b057a0d9348cc44369。以下均为该实现的干净独立检出，资料收尾提交不会改换生产身份：
+
+- `node scripts/validate-core.mjs artifacts/quality-20261112/core-691648a`：lock/install/typecheck/content/tests/m1/full/economy/documents/design-documents十项全部exit0；根1096/1096，0失败/中止/跳过/todo；资源827/827（1634.924秒），无skip，v0.4文档通过。source.dirty=false。
+- `node --experimental-strip-types scripts/build-web.mjs`：通过，112文件/11,273,473字节；完整build.json已另存唯一build-691648a目录。原1137296的默认build.json被新构建替换，其原stdout与UI报告仍在；不声称保有旧完整manifest。
+- 当前固定桌面UI声明完整收集1080项、0错误，source=691648a；收集不充实际执行。实际ART27 A1–A4、ART29 A1–A3及store-sync两例9/9，38.923339秒，0跳过/失败/重试。ART27 A5/ART29 A4混合减动效整例事前延期。
+- 当前40 PNG全部解码为1440×900，直接实看quota-keeps-cold-object-and-all-controls.png与stored-core.png两张，其余38本轮未逐张看。原图位于独立browser检出的artifacts/quality-20261112/ui-results-691648a，不冒整体艺术或真人评价。
+- 规范轴与需求轴最终均无未解决实质问题；原并发、链接分支、父别名先拒兄弟与shell路径问题均保审查链并修复。有限C端/代码/安全审查仅覆盖本项工具/输入与九例实际流程。
+
+核心与JSON/构建记录已汇入主工作区artifacts/quality-20261112；原失败、错误解释、16项定向记录均保留。bbf319f旧校验因其父别名方案已被判定不能满足逐文件义务，在核对原node命令/PID后终止（实际exit1），部分log保留为未完成，不计826通过、不冒纯自然失败。原5311试玩服务未停止。
+
+交付：[PR46](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/46)，基线codex/goal-4-online-recovery/97c10d1，独立分支codex/quality-review-q01；远端原16项矩阵未重跑，兼容/环境性能仍暂停。构建原有大chunk警告留Q12/Q13。全部20项仅Q01达到本地验证与PR递交，三任务计数1/3；后续19项与整体真人/长期/美术仍开放，原生goal继续active。
