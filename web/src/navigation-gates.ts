@@ -11,7 +11,8 @@ const thresholds:Record<string,C.RealmId>={
 };
 export function navigationGate(game:Game,feature:string){
   const min=feature==='relics'?requirementsForAction(game,{type:'FORGE',relic:Object.keys(C.relics)[0]}).minRealm:thresholds[feature];
-  const held=feature==='relics'&&(game.ownedRelics.length>0||!!game.loadout.relic)||feature==='skills'&&(!!game.school||game.learned.length>0);
+  const knownManual=game.core.learnedSkills.includes(C.swordManual.id);
+  const held=feature==='relics'&&(game.ownedRelics.length>0||!!game.loadout.relic)||feature==='skills'&&(!!game.school||game.learned.length>0||knownManual)||feature==='manual'&&knownManual;
   const locked=!!min&&!held&&C.rank(game.core.player.realm)<C.rank(min);
   return{locked,reason:locked?C.realms[min].name+'开放':''};
 }

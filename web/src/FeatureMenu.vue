@@ -2,11 +2,11 @@
 import {inject,nextTick,onActivated,onDeactivated,onScopeDispose,ref,useId,watch} from 'vue';
 import {gameFocusKey} from './focus';
 const props=defineProps<{identity:string;guide:boolean;preparation:boolean;goal:boolean;blueprints:boolean;sealed:boolean}>();
-const emit=defineEmits<{guide:[];preparation:[];goal:[];blueprints:[]}>();
+const emit=defineEmits<{guide:[];preparation:[];goal:[];blueprints:[];browse:[]}>();
 const focus=inject(gameFocusKey),opener=ref<HTMLButtonElement>(),dialog=ref<HTMLDialogElement>(),opened=ref(false),title=useId();
 let active=true,generation=0;
 function close(){opened.value=false;dialog.value?.close();}
-function open(){opened.value=true;if(focus)focus.open(dialog.value,opener.value??null);else dialog.value?.showModal();}
+function open(){emit('browse');opened.value=true;if(focus)focus.open(dialog.value,opener.value??null);else dialog.value?.showModal();}
 async function choose(kind:'guide'|'preparation'|'goal'|'blueprints'){
   const owner=++generation;close();await nextTick();
   if(!active||owner!==generation)return;
