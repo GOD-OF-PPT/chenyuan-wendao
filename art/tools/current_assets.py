@@ -177,8 +177,7 @@ def validate(root, expected_contract=None):
                     assert picture(name)['dimensions'][axis] <= integer(maximum), 'Runtime image dimension budget exceeded'
                 if exact is not None:
                     assert picture(name)['dimensions'][axis] == integer(exact), 'Runtime image dimension budget changed'
-            for role in ('cover', 'leaf'):
-                key = 'max' + role.title() + 'Bytes'
+            for role, key in [('cover', 'maxCoverBytes'), ('leaf', 'maxLeafBytes'), ('person', 'personRuntimeBytes'), ('case', 'caseRuntimeBytes')]:
                 if key in limits and role in (label + name).lower():
                     assert picture(name)['bytes'] <= integer(limits[key]), 'Runtime image role budget exceeded'
         for group, key in [('scenes', 'maxSceneBytes'), ('stageVariants', 'maxSceneBytes'), ('characters', 'maxCharacterBytes'), ('enemies', 'maxEnemyBytes'), ('presentationVariants', 'maxPresentationBytes')]:
@@ -205,6 +204,7 @@ def validate(root, expected_contract=None):
         if status in {'missing', 'planned'}:
             assert all(row.get(key) is None for key in ('exportedPath', 'dimensions', 'bytes', 'sha256', 'alpha', 'originalHash')), 'Missing art claims an existing artifact'
             continue
+        assert row.get('availability') in {'repo_file', 'code_native'} and isinstance(row.get('exportedPath'), str), 'Unverified asset availability'
         name = row.get('exportedPath')
         if isinstance(name, str) and Path(name).suffix.lower() in IMAGES:
             fact({**row, 'path': name})

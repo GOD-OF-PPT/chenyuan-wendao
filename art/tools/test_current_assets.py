@@ -28,7 +28,7 @@ class CurrentAssetTests(unittest.TestCase):
             data = (self.root / name).read_bytes()
             return {'path': name, 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()}
         runtime = {**row('web/public/art/object.png'), 'dimensions': {'width': 8, 'height': 8}, 'alpha': True}
-        self.manifest = {'format': 'chenyuan-art-inventory', 'version': 1, 'assets': [{**runtime, 'exportedPath': runtime['path'], 'id': 'object', 'category': 'item', 'status': 'production', 'sourceReference': ['art/prompt.txt'], 'rights': {'productionUseApproved': True, 'evidenceReferences': ['art/receipt.json']}}]}
+        self.manifest = {'format': 'chenyuan-art-inventory', 'version': 1, 'assets': [{**runtime, 'exportedPath': runtime['path'], 'id': 'object', 'category': 'item', 'status': 'production', 'availability': 'repo_file', 'targetSpec': {'candidateMaxBytes': 2000}, 'sourceReference': ['art/prompt.txt'], 'rights': {'productionUseApproved': True, 'evidenceReferences': ['art/receipt.json']}}]}
         self.export = {'assets': [{'source': {**row('art/original.png'), 'dimensions': {'width': 8, 'height': 8}}, 'runtime': runtime, 'receipt': row('art/receipt.json'), 'prompt': row('art/prompt.txt')}], 'budgets': {'maxRuntimeBytes': 2000}, 'files': [{'path': 'web/src/App.vue', 'sha256': 'f' * 64, 'bytes': 1}]}
         self.save()
         self.contract = self.current_contract()
@@ -157,7 +157,8 @@ class CurrentAssetTests(unittest.TestCase):
                    lambda: self.export['assets'][0].pop('prompt'), lambda: self.manifest['assets'][0].pop('sourceReference'),
                    lambda: self.manifest['assets'][0]['rights'].pop('evidenceReferences'),
                    lambda: self.export['budgets'].pop('maxRuntimeBytes'),
-                   lambda: self.export['budgets'].update(maxRuntimeBytes=999999)]
+                   lambda: self.export['budgets'].update(maxRuntimeBytes=999999),
+                   lambda: self.manifest['assets'][0]['targetSpec'].update(candidateMaxBytes=999999)]
         for change in changes:
             self.export, self.manifest = copy.deepcopy(original_export), copy.deepcopy(original_manifest)
             change()

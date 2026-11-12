@@ -9,11 +9,11 @@ BASELINE = '691648a357e6ffb5cd431a029782cc366dd442b2'
 ROOT = Path(__file__).resolve().parents[2]
 IMAGE_FIELDS = {'path', 'exportedPath', 'id', 'sha256', 'bytes', 'dimensions', 'alpha', 'format', 'mode',
                 'alphaProof', 'alphaBBox1', 'alphaBBox16', 'rgbaSHA256', 'originalHash', 'sourceType',
-                'status', 'availability', 'inputAssets', 'sourceReference', 'generationReceipt', 'rights', 'visualReview'}
+                'status', 'availability', 'inputAssets', 'sourceReference', 'generationReceipt', 'rights', 'visualReview', 'targetSpec'}
 BUDGETS = {'maxRuntimeBytes', 'maxRuntimeBytesEach', 'maxRuntimeBytesPerAsset', 'maxRuntimeBytesTotal',
            'maxTotalRuntimeBytes', 'maxItemBytes', 'maxTotalBytes', 'maxSceneBytes', 'maxCharacterBytes',
            'maxEnemyBytes', 'maxPresentationBytes', 'maxCoverBytes', 'maxLeafBytes', 'candidateMaxBytes',
-           'personRuntimeBytes', 'caseRuntimeBytes', 'maxRuntimeWidth', 'maxRuntimeHeight', 'runtimeWidth', 'runtimeHeight'}
+           'personRuntimeBytes', 'caseRuntimeBytes', 'maxRuntimeWidth', 'maxRuntimeHeight', 'runtimeWidth', 'runtimeHeight', 'maxSymbols'}
 COUNTS = {'assets', 'newAssets', 'newRasterAssets', 'maxNewRasterAssets', 'sceneMasters', 'stageVariants',
           'characters', 'enemies', 'presentationVariants', 'backgroundAssets'}
 IMAGES = {'.png', '.webp', '.jpg', '.jpeg', '.svg'}
@@ -40,7 +40,7 @@ def projection(value, budget=False):
         image = (isinstance(exported, str) and Path(exported).suffix in IMAGES) or (
             isinstance(value.get('path'), str) and Path(value['path']).suffix in IMAGES and 'sha256' in value)
         if image:
-            return {key: provenance(item) if key in {'sourceReference', 'rights', 'generationReceipt', 'visualReview'} else item
+            return {key: projection(item, True) if key == 'targetSpec' else provenance(item) if key in {'sourceReference', 'rights', 'generationReceipt', 'visualReview'} else item
                     for key, item in value.items() if key in IMAGE_FIELDS}
         result = {}
         for key, item in value.items():
