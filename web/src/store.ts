@@ -103,12 +103,13 @@ export const useGame = defineStore('game', () => {
     void(async()=>{
       try{
         if(activitySchedule.value){
+          const awayReturn=activitySchedule.value.window!==null;
           const due=await activityClock.waitUntil(current.dueAt!,remaining=>{if(owner===activityEpoch&&!disposed)activityRuntime.value={...base,remainingMs:remaining,phase:'running'};});
           if(!due||disposed||owner!==activityEpoch||activity.value?.revision!==current.revision)return;
           const intent:ActivityMutation={commandId:crypto.randomUUID(),runId:current.runId,expectedRevision:current.gameRevision,
             expectedActivityId:current.id,expectedActivityRevision:current.revision,ownerId:activityOwner};
           const source=repository!;activityRuntime.value={...base,remainingMs:0,phase:'saving'};
-          await write(async()=>({...await source.advanceScheduledActivity(intent),awayReturn:false}),intent.commandId,undefined,true);
+          await write(async()=>({...await source.advanceScheduledActivity(intent),awayReturn}),intent.commandId,undefined,true);
           if(!disposed&&!error.value&&!activityPausing.value)beginActivityRuntime();
           return;
         }
@@ -268,7 +269,8 @@ export const useGame = defineStore('game', () => {
         if(confirmedCommands.size>128)confirmedCommands.delete(confirmedCommands.keys().next().value!);
       }
       // A delayed reply can follow a newer read, including a new activity at the same Game revision.
-      const concurrentRead=operationRead!==readEpoch;
+      const replayNeedsSnapshot=outcome.replayed&&'activity'in outcome&&!('committed'in outcome);
+      const concurrentRead=operationRead!==readEpoch||replayNeedsSnapshot;
       let replyCurrent=!concurrentRead;
       if(concurrentRead){const applied=await refresh();if(!owns())return;if(!applied)refreshQueued=true;
         replyCurrent=applied&&canonicalFingerprint(game.value)===canonicalFingerprint(outcome.state)&&

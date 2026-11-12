@@ -32,6 +32,70 @@ test('the production Store defaults to an away schedule and reopening a closed p
  await other.evaluate(()=>(globalThis as any).h.scheduledStore.dispose());await other.close();
 });
 
+for(const kind of ['direct','configuration','online'])test(`an old ${kind} reply retry preserves the complete newer away schedule instead of turning it into an online arrangement`,async({page})=>{
+ await page.clock.install({time:new Date('2030-01-01T00:00:00Z')});await page.clock.pauseAt(new Date('2030-01-01T01:00:00Z'));await setupPersistence(page);
+ const r=await page.evaluate(async kind=>{
+  const h=(globalThis as any).h,d=h.routes.driver();
+  if(kind==='direct'){d.resource('herb',1);d.funds(200);d.go('market');}else d.go('cave');
+  const seed=await h.FullSaveRepository.open();try{await seed.importText(JSON.stringify(d.game),h.mutation());}finally{seed.close();}
+  const {createActivityStoreHarness}=await import('/persistence-tests/activity-store-harness.ts');h.scheduledStore=createActivityStoreHarness();const s=h.scheduledStore.store;await s.init();
+  const method=kind==='direct'?'executeDirect':kind==='configuration'?'configure':'startActivity',prototype=h.FullSaveRepository.prototype,original=prototype[method];
+  prototype[method]=async function(...args:any[]){prototype[method]=original;const result=await original.apply(this,args);const error:any=new Error('旧意图已提交但回复丢失');error.code='STORAGE_ABORTED';throw error;};
+  const plan=kind==='direct'?{kind:'buy',item:'healing_pill',maxCycles:2,until:'cycles',targetQuantity:null,stoneBudget:200,stoneReserve:0}:{kind:'cultivation',method:'natural',maxCycles:3,until:'cycles',stoneBudget:0,stoneReserve:0};
+  try{
+   if(kind==='direct')await s.executeDirect(s.prepareDirect({type:'SELL',item:'herb',quantity:1}));
+   else if(kind==='configuration')await s.applyConfiguration(s.prepareConfiguration({type:'SCHOOL',school:'talisman'}));
+   else await s.startOnlinePlannedActivity(plan);
+  }finally{prototype[method]=original;}
+  const failed=h.scheduledStore.state(),repo=await h.FullSaveRepository.open();let newer:any;
+  const m=(snap:any,id:string,owner='other')=>({commandId:id,runId:snap.state.core.runId,expectedRevision:snap.state.core.revision,expectedActivityId:snap.activity?.id??null,expectedActivityRevision:snap.activity?.revision??null,ownerId:owner});
+  try{
+   let snap=await repo.loadActivitySnapshot();if(snap.activity?.status==='running')snap=await repo.pauseActivity(m(snap,'pause-online',snap.activity.ownerId));
+   newer=await repo.startScheduledActivity(plan,m(snap,'new-away-after-'+kind));
+  }finally{repo.close();}
+  const before=await h.FullSaveRepository.exportRaw();await s.retry();
+  const retried={ui:h.scheduledStore.state(),schedule:s.activitySchedule,raw:await h.FullSaveRepository.exportRaw()};
+  await s.resumeCultivation();return{failed,newer,before,retried,continued:{ui:h.scheduledStore.state(),schedule:s.activitySchedule}};
+ },kind);
+ expect(r.failed.canRetry).toBe(true);expect(r.retried.ui.error).toBe('');expect(r.retried.ui.activity).toEqual(r.newer.activity);expect(r.retried.schedule).toEqual(r.newer.schedule);expect(r.retried.raw).toEqual(r.before);
+ expect(r.continued.ui.error).toBe('');expect(r.continued.schedule).not.toBeNull();expect(r.continued.ui.game).toEqual(r.newer.state);expect(r.continued.ui.activity.id).toBe(r.newer.activity.id);expect(r.continued.ui.activity.dueAt).toBe(r.newer.activity.dueAt);
+ await page.evaluate(()=>(globalThis as any).h.scheduledStore.dispose());
+});
+
+for(const lost of [false,true])test(`a sixty-five-cycle return keeps its final one-cycle chunk inside the same aggregate without a fresh reward${lost?' after a lost tail reply retry':''}`,async({page})=>{
+ await page.clock.install({time:new Date('2030-01-01T00:00:00Z')});await page.clock.pauseAt(new Date('2030-01-01T01:00:00Z'));await setupPersistence(page);
+ const original=await page.evaluate(async()=>{
+  const h=(globalThis as any).h,d=h.routes.driver();d.go('sect');const repo=await h.FullSaveRepository.open();
+  try{
+   await repo.importText(JSON.stringify(d.game),h.mutation());const s=await repo.loadActivitySnapshot();
+   return await repo.startScheduledActivity({kind:'source',sourceId:'work',repeat:true,maxCycles:1000000000,until:'cycles',target:null,monthBudget:840,remainingMonthsReserve:1},
+    {commandId:'sixty-five-start',runId:s.state.core.runId,expectedRevision:s.state.core.revision,expectedActivityId:null,expectedActivityRevision:null,ownerId:'closed-page'});
+  }finally{repo.close();}
+ });
+ await page.clock.setSystemTime(new Date('2030-01-01T01:32:45Z'));
+ await page.evaluate(async lost=>{
+  const h=(globalThis as any).h,{createActivityStoreHarness}=await import('/persistence-tests/activity-store-harness.ts');
+  if(lost){
+   const prototype=h.FullSaveRepository.prototype,original=prototype.advanceScheduledActivity;let calls=0;
+   prototype.advanceScheduledActivity=async function(...args:any[]){const result=await original.apply(this,args);if(++calls===2){prototype.advanceScheduledActivity=original;const error:any=new Error('尾批实际已保存但回复丢失');error.code='STORAGE_ABORTED';throw error;}return result;};
+  }
+  h.scheduledStore=createActivityStoreHarness();h.catchupTrace=h.scheduledStore.trace();await h.scheduledStore.store.init();
+ },lost);
+ await expect.poll(()=>page.evaluate(()=>(globalThis as any).h.scheduledStore.store.activity?.completedCycles)).toBe(65);
+ await expect.poll(()=>page.evaluate(()=>(globalThis as any).h.scheduledStore.store.busy)).toBe(false);
+ if(lost){
+  expect(await page.evaluate(()=>(globalThis as any).h.scheduledStore.store.canRetry)).toBe(true);
+  const pair=await page.evaluate(async()=>{const h=(globalThis as any).h,before=await h.FullSaveRepository.exportRaw();await h.scheduledStore.store.retry();return{before,after:await h.FullSaveRepository.exportRaw()};});
+  expect(pair.after).toEqual(pair.before);
+ }
+ const r=await page.evaluate(()=>{const h=(globalThis as any).h;return{ui:h.scheduledStore.state(),summary:h.scheduledStore.store.awaySummary,states:h.catchupTrace.states,observations:h.catchupTrace.observations,now:Date.now()};});
+ expect(r.ui.game.core.player.stones-original.state.core.player.stones).toBe(1300);expect(r.ui.activity.dueAt-r.now).toBe(15000);
+ expect(r.ui.lastResult).toBeNull();expect(r.ui.lastFromActivity).toBe(false);expect(r.states.every((s:any)=>s.result===null)).toBe(true);
+ expect(r.summary.cycles).toBe(65);expect(r.summary.delta.stones).toBe(1300);expect(r.summary.costs.months).toBe(780);
+ expect(r.observations.filter((o:any)=>o.kind==='action')).toHaveLength(lost?64:65);
+ await page.evaluate(()=>(globalThis as any).h.scheduledStore.dispose());
+});
+
 test('a lost Store catch-up reply exposes an original-intent retry and never replays the four committed cycles as fresh feedback',async({page})=>{
  await page.clock.install({time:new Date('2030-01-01T00:00:00Z')});await page.clock.pauseAt(new Date('2030-01-01T01:00:00Z'));await setupPersistence(page);
  const before=await page.evaluate(async()=>{
