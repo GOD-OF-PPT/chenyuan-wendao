@@ -14,10 +14,10 @@ onScopeDispose(()=>{if(focus)focus.release(dialog.value);else dialog.value?.clos
 <template>
  <Teleport to="body"><div class="art18-confirm-portal art-theme" :class="{'hub-reduced':appearance.reduceMotion}" :style="{'--font-scale':appearance.fontScale}">
   <dialog ref="dialog" class="game-confirmation" data-testid="game-confirmation" :data-kind="request.kind" :data-stale="stale" :aria-labelledby="id" @cancel.prevent="emit('answer',false)" @close="emit('answer',false)">
-   <header><div><span class="eyebrow">留卷抉择 · 确认后才执行</span><h2 :id="id" tabindex="-1" data-dialog-initial>{{request.title}}</h2></div><button type="button" data-testid="game-confirmation-close" aria-label="取消确认" @click="emit('answer',false)"><GameIcon kind="action" id="close"/></button></header>
+   <header><div><span class="eyebrow">{{request.kind==='light-action'?'此刻回应 · 确认后行动':'留卷抉择 · 确认后才执行'}}</span><h2 :id="id" tabindex="-1" data-dialog-initial>{{request.title}}</h2></div><button type="button" data-testid="game-confirmation-close" aria-label="取消确认" @click="emit('answer',false)"><GameIcon kind="action" id="close"/></button></header>
    <p class="game-confirmation-message" data-testid="game-confirmation-message">{{request.message}}</p>
    <p v-if="blocked" class="game-confirmation-block" role="status" data-testid="game-confirmation-blocked">{{blocked}}</p>
-   <footer><button type="button" data-testid="game-confirmation-cancel" @click="emit('answer',false)">{{request.cancel??'暂不更动'}}</button><button type="button" class="primary danger" data-testid="game-confirmation-confirm" :disabled="!!blocked" @click="confirm">{{request.action}}</button></footer>
+   <footer><button type="button" data-testid="game-confirmation-cancel" @click="emit('answer',false)">{{request.cancel??'暂不更动'}}</button><button type="button" class="primary" :class="{danger:request.kind!=='light-action'}" data-testid="game-confirmation-confirm" :disabled="!!blocked" @click="confirm">{{request.action}}</button></footer>
   </dialog>
  </div></Teleport>
 </template>
