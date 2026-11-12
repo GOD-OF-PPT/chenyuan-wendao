@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {useLocalActivityControls} from './activity-controls';
 import{computed}from 'vue';
 import type{Game}from '../../src/full/types.ts';
 import type{NavigationRequest}from './navigation';
@@ -11,6 +12,7 @@ const props=withDefaults(defineProps<{game:Game;enabled:boolean;phase?:string;en
 const emit=defineEmits<{inspect:[Event];navigate:[NavigationRequest]}>();
 const view=computed(()=>caveThresholdView(props.game));
 function funding(){const route=caveFundingView(props.game,view.value.fundingTarget);if(route)emit('navigate',route);}
+const localControls=useLocalActivityControls();
 </script>
 <template>
  <div class="art17-object" data-testid="cave-threshold-object" :data-item="view.itemId??'none'" :data-owned="!!view.have" :data-engaged="engaged" :data-phase="failed?'failed':phase">
@@ -22,7 +24,7 @@ function funding(){const route=caveFundingView(props.game,view.value.fundingTarg
    <span class="art17-inspect-label">翻阅完整筹备 ›</span>
   </button>
   <div class="art17-stock" role="status"><span v-if="view.itemId" data-testid="milestone-material">{{view.itemName}} · {{engaged||failed?'原准备':'实有'}} {{view.have}}</span><span v-else>本次引气不消耗突破丹</span><strong v-if="view.itemId" data-testid="cave-material-gap">{{view.missing?(view.have?'尚未备齐，尚缺 ':'图谱 · 未持有，尚缺 ')+view.missing:'已备齐 · 本次需 '+view.required}}</strong></div>
-  <div v-if="engaged||failed" class="art17-cycle" data-testid="cave-stage-clock" role="status"><strong>{{failed?'存档待核对，尚未确认新成果':phase==='saving'?'保存中 · 尚未落定':'凝神破境'}}</strong><span v-if="engaged&&phase==='running'" data-testid="milestone-cycle-clock">{{remaining}} / {{seconds}} 秒</span></div>
+  <div v-if="engaged||failed" class="art17-cycle" data-testid="cave-stage-clock" role="status"><strong>{{failed?'存档待核对，尚未确认新成果':phase==='saving'?'保存中 · 尚未落定':'凝神破境'}}</strong><span v-if="(engaged&&phase==='running')&&localControls" data-testid="milestone-cycle-clock">{{remaining}} / {{seconds}} 秒</span></div>
   <nav v-if="view.routes.length" class="art17-routes" aria-label="当前突破物的筹备路线">
    <button v-for="route in view.routes" :key="route.kind" type="button" :data-testid="'cave-route-'+route.kind" :disabled="!enabled" @click="emit('navigate',route.request)"><span class="art17-route-sign" aria-hidden="true">{{route.kind==='recipe'?'炉':'市'}}</span><strong>{{route.verb}} ›</strong><small>耗石 {{route.stones}} · {{route.kind==='recipe'?'本炉':'采购'}} {{route.seconds}} 秒</small><small v-if="route.travelSeconds">行旅另 {{route.travelSeconds}} 秒</small><small>{{route.condition}}</small></button>
   </nav>

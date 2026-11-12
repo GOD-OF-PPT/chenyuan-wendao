@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {useLocalActivityControls} from './activity-controls';
 import {computed} from 'vue';
 import type {Game} from '../../src/full/types';
 import * as C from '../../src/full/content';
@@ -19,6 +20,7 @@ const working=computed(()=>state.value==='running');
 const status=computed(()=>({failed:store?.syncIssue?'进度待核对':'查看上方提示',pausing:'正在停手，保存后暂停',saving:'调息已毕 · 保存后回元',running:props.kind==='rest'?'静坐养息':'服丹调息',paused:'此段已暂停 · 药匣保留',idle:activity.value?.status==='stopped'?'本段安排已停止':'先择恢复方式，再确认安排'})[state.value]);
 const saved=computed(()=>{const a=activity.value;return a?.version===5&&a.completedCycles?`本段已恢复：气血 +${a.restoredHp} · 灵力 +${a.restoredMp}`:'';});
 const stock=computed(()=>props.game.core.inventory[props.itemId]??0);
+const localControls=useLocalActivityControls();
 </script>
 <template>
  <div class="recovery-ritual art11-recovery" data-testid="recovery-ritual" data-copy30="recovery-object" :data-kind="kind" :data-state="phase" :data-status="state" :data-working="working" :data-engaged="engaged" :data-item="kind==='use'?itemId:'rest'">
@@ -31,7 +33,7 @@ const stock=computed(()=>props.game.core.inventory[props.itemId]??0);
    <div class="recovery-object-heading"><div class="recovery-vessel" :data-saved="!!effect" :style="{'--recovery-turn':(working?progress:0)*360+'deg'}" aria-hidden="true"><i class="recovery-breath"/><i class="recovery-platform"/><template v-if="kind==='use'"><div class="recovery-medicine"><ItemArtifact :item-id="itemId" :owned="stock>0"/></div><div class="recovery-jade-bowl"><i v-if="stock>0" class="recovery-pill"/></div></template><div v-else class="recovery-sitting"><AssetImage path="art/v2/characters/player-seated-cold.webp" asset-id="resting-self" fit="contain" eager><GameIcon kind="nav" id="cultivate"/></AssetImage></div></div><div><small>{{kind==='rest'?'听雨洞府 · 静坐一回':'随身药盏 · 实存 '+stock+' 丹'}}</small><h3>{{kind==='rest'?'洞府休养':item.name}}</h3></div></div>
    <details><summary style="min-height:44px">调息须知</summary><p class="recovery-description">{{kind==='rest'?'以一个游戏月换取气血灵力恢复圆满；不消耗丹药。':item.description}}</p></details>
    <strong v-if="one.allowed" class="recovery-unit" data-testid="recovery-per-cycle">{{one.allowed?'预计单次气血 +'+(one.delta?.hp??0)+' · 灵力 +'+(one.delta?.mp??0):one.failure?.message}}</strong>
-   <div v-if="state!=='idle'||activity" class="recovery-cycle" role="status"><strong data-testid="recovery-local-status">{{status}}</strong><span v-if="engaged&&runtime&&phase==='running'" data-testid="recovery-cycle-clock">{{Math.ceil(runtime.remainingMs/1000)}} / {{runtime.totalMs/1000}} 秒</span><small v-else-if="!engaged&&activity?.status==='running'&&!store?.error&&!store?.activityPausing">等待本页主动续接，不补离线</small></div>
+   <div v-if="state!=='idle'||activity" class="recovery-cycle" role="status"><strong data-testid="recovery-local-status">{{status}}</strong><span v-if="(engaged&&runtime&&phase==='running')&&localControls" data-testid="recovery-cycle-clock">{{Math.ceil(runtime.remainingMs/1000)}} / {{runtime.totalMs/1000}} 秒</span><small v-else-if="!engaged&&activity?.status==='running'&&!store?.error&&!store?.activityPausing">等待本页主动续接，不补离线</small></div>
    <p v-if="effect" class="recovery-arrival" data-testid="recovery-result" :data-sequence="effect.sequence" role="status">本次已保存 · {{effect.notice.delta}}</p><small v-else-if="saved" class="recovery-saved" data-testid="recovery-saved">{{saved}}</small>
    <button v-if="kind==='use'" class="recovery-source" @click="emit('source')">查看补给来源 ›</button>
   </section>

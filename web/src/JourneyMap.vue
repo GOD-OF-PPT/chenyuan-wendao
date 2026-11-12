@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {useLocalActivityControls} from './activity-controls';
 import {computed} from 'vue';
 import type {Game} from '../../src/full/types';
 import * as C from '../../src/full/content';
@@ -16,12 +17,13 @@ const state=computed(()=>store?.error?'failed':runtime.value?phase.value:activit
 const status=computed(()=>state.value==='failed'?'存档待核对 · 已停步':store?.activityPausing?'正在停手，保存后暂停':phase.value==='saving'?'抵达保存中 · 尚未确认':working.value?'行路中':activity.value?.status==='paused'?'行路已暂停':props.selected===props.game.core.world.location?'当前所在 · 已抵达':'目的地预览 · 尚未抵达');
 const marker=computed(()=>{const from=points[props.game.core.world.location],to=points[props.selected];return{left:(from[0]+(to[0]-from[0])*progress.value)+'%',top:(from[1]+(to[1]-from[1])*progress.value)+'%'};});
 const line=computed(()=>{const a=points[props.game.core.world.location],b=points[props.selected];return`M ${a[0]} ${a[1]} L ${b[0]} ${b[1]}`;});
+const localControls=useLocalActivityControls();
 </script>
 <template>
  <div class="journey-map" data-testid="journey-map" :data-state="state" :data-working="working">
   <div class="journey-landscape">
    <AssetImage class="journey-painting" :path="SCENE_ASSETS[selected]" :asset-id="'travel-destination-'+selected" eager/>
-   <div class="journey-caption"><strong>{{C.locations[selected].name}}</strong><span data-testid="journey-state" :data-phase="phase" :data-working="working">{{status}}</span><small v-if="runtime">{{Math.ceil(runtime.remainingMs/1000)}} / {{runtime.totalMs/1000}} 秒</small></div>
+   <div class="journey-caption"><strong>{{C.locations[selected].name}}</strong><span data-testid="journey-state" :data-phase="phase" :data-working="working">{{status}}</span><small v-if="runtime&&localControls">{{Math.ceil(runtime.remainingMs/1000)}} / {{runtime.totalMs/1000}} 秒</small></div>
    <svg class="journey-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path v-if="selected!==game.core.world.location" :d="line"/></svg>
    <nav class="journey-signposts" aria-label="目的地选择"><button v-for="id in locations" :key="id" :data-testid="'travel-'+id" :aria-pressed="selected===id" :data-current="game.core.world.location===id" :style="{left:points[id][0]+'%',top:points[id][1]+'%'}" @click="emit('select',id)"><GameIcon kind="nav" id="explore"/><strong>{{C.locations[id].name}}</strong><small v-if="game.core.world.location===id">当前所在</small><small v-else-if="C.rank(game.core.player.realm)<C.rank(C.locations[id].min)">需{{C.realms[C.locations[id].min].name}}</small><small v-else>查看此地</small></button></nav>
    <span v-if="working" class="journey-traveller" data-testid="journey-route-marker" :style="marker" aria-hidden="true">行</span>

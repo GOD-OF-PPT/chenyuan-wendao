@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {useLocalActivityControls} from './activity-controls';
 import {computed,inject,useId} from 'vue';
 import type {Game} from '../../src/full/types';
 import * as C from '../../src/full/content';
@@ -16,12 +17,13 @@ const progress=computed(()=>timing.value?Math.max(0,Math.min(.94,1-timing.value.
 const marker=computed(()=>{const p=progress.value,first=p<=.5,t=first?p*2:p*2-1,u=1-t,a=first?[120,116,320,168,500,112]:[500,112,680,56,880,116];return{left:(u*u*a[0]+2*u*t*a[2]+t*t*a[4])/10+'%',top:(u*u*a[1]+2*u*t*a[3]+t*t*a[5])/1.8+'%'};});
 const cost=computed(()=>{const q=selected.value?previewAction(props.game,{type:'TRAVEL',location:selected.value.destination}):null;return q?formatCosts(q.actualCosts??q.costs):'';});
 const label=computed(()=>({running:'行路中',saving:'正在落脚 · 尚未确认抵达',paused:'已停步 · 接续后重走本程',pausing:'正在停手',failed:'行程待核对 · 尚未确认抵达',ready:'等待接续行程',elsewhere:'此行已在另一处安排'}[state.value]));
+const localControls=useLocalActivityControls();
 </script>
 <template>
  <Teleport v-if="selected" defer to="[data-testid=hub-current]">
   <article class="travel-passage" data-testid="travel-passage" :data-state="state" :data-from="game.core.world.location" :data-to="selected.destination" :aria-labelledby="title" tabindex="-1" data-primary-region>
    <header><small>单程 · 抵达即停</small><h2 :id="title">前往{{C.locations[selected.destination].name}}</h2><p>出发地 · {{C.locations[game.core.world.location].name}}</p></header>
-   <div class="travel-passage-status"><strong>{{label}}</strong><span v-if="state==='running'" role="timer" data-testid="travel-passage-clock">{{(timing!.remainingMs/1000).toFixed(1)}} 秒</span></div>
+   <div class="travel-passage-status"><strong>{{label}}</strong><span v-if="(state==='running')&&localControls" role="timer" data-testid="travel-passage-clock">{{(timing!.remainingMs/1000).toFixed(1)}} 秒</span></div>
    <figure class="travel-passage-road" aria-label="本程路线示意">
     <svg class="travel-passage-line" viewBox="0 0 1000 180" preserveAspectRatio="none" aria-hidden="true"><path d="M120 116Q320 168 500 112T880 116"/><path class="travel-path-light" d="M120 116Q320 168 500 112T880 116"/></svg>
     <span class="travel-passage-place from"><i aria-hidden="true">◇</i><small>{{C.locations[game.core.world.location].name}}</small></span><span class="travel-passage-place to"><i aria-hidden="true">◇</i><small>{{C.locations[selected.destination].name}}</small></span>

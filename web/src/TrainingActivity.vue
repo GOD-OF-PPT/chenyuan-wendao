@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {playerCopy,playerMessage} from './player-copy';
 import {computed} from 'vue';
+import {useLocalActivityControls} from './activity-controls';
 import type {useGame} from './store';
 import {activityStop} from '../../src/full/activity.ts';
 import {activityView,stopMessage} from './activity-view';
@@ -8,8 +9,10 @@ import {ADVENTURE_CYCLE_MS} from '../../src/full/adventure';
 import {repeats} from '../../src/full/repetition';
 const props=defineProps<{store:ReturnType<typeof useGame>;compact?:boolean;summary?:boolean;rail?:boolean}>();
 const emit=defineEmits<{settings:[];details:[];inspect:[]}>();
+const localControls=useLocalActivityControls(),ownControls=computed(()=>!!props.rail||localControls.value);
 const a=computed(()=>props.store.activity),runtime=computed(()=>props.store.activityRuntime);
 const view=computed(()=>a.value?activityView(a.value,props.store.game):null);
+const summaryGain=computed(()=>view.value?.summary.slice(0,a.value?.version===2||a.value?.version===7?2:1).join(' · ')??'');
 const stopped=computed(()=>a.value?stopMessage(a.value.plan,a.value.stopReason):'');
 const lastCycle=computed(()=>a.value?.version===7&&a.value.completedCycles===1||props.store.lastResult?.type===view.value?.type&&props.store.lastResult?.runId===a.value?.runId&&props.store.lastResult?.revisionAfter===a.value?.gameRevision);
 const storedCycles=computed(()=>!!a.value&&a.value.version<=5&&a.value.completedCycles>0&&a.value.runId===props.store.game?.core.runId);
@@ -30,19 +33,29 @@ const blockMessage=computed(()=>blocked.value?.message===a.value?.stopReason?.me
 function compactV6(){return props.compact&&a.value?.version===6;}
 </script>
 <template>
- <section v-if="a&&view&&summary&&!rail" class="training-stop-summary" data-testid="training-summary" aria-label="上段活动成果">
+  <section v-if="a&&view&&rail&&a.status==='stopped'" class="activity-summary-badge" data-testid="training-summary" data-status="stopped" aria-label="上段活动成果">
+    <button data-testid="activity-summary-open" @click="emit('inspect')">上段收获 · {{view.name}}<small>{{summaryGain}}</small></button><small>{{stopped}}<br>{{period}}</small>
+  </section>
+  <section v-else-if="a&&view&&summary&&!rail" class="training-stop-summary" data-testid="training-summary" aria-label="上段活动成果">
   <strong>{{view.name}} · 已结束</strong><p data-testid="training-stop">{{a.version===7?(a.stopReason?.code==='WAITING_DECISION'?'已停 · 待决定':'已完成一次 · 即停'):stopped}}</p>
   <small data-testid="training-totals"><span v-for="(row,index) in view.summary" :key="index">{{row}}<br></span></small>
   <footer><button data-testid="training-review" @click="emit('settings')">{{a.version===7?'原安排':view.noun+'安排'}}</button><button v-if="storedCycles||lastCycle||a.version===6&&a.completedCycles>0" data-testid="hub-receipt" @click="emit('details')">{{a.version===7?'完整成果':a.version===6||storedCycles?playerCopy.receipt:'上轮收获'}}</button></footer>
  </section>
  <section v-else-if="a&&view" class="training-activity" :class="{'training-compact':compact,'activity-rail':rail}" :data-testid="rail&&a.status==='stopped'?'training-summary':'training-activity'" :data-version="a.version" :data-status="a.status" :data-running="!!runtime" :data-generation="a.generation" aria-label="当前活动">
   <header><span>{{rail&&a.status==='paused'&&store.available?'已暂停 · 续行重计本轮':status}}</span><strong>{{view.name}}</strong></header>
-  <div v-if="runtime&&!store.activityPausing" class="training-cycle" data-testid="training-cycle"><output data-testid="training-countdown" aria-live="off">{{runtime.phase==='saving'?'保存中':seconds.toFixed(1)+' 秒'}}</output><div class="training-cycle-track" role="progressbar" :aria-valuenow="runtime.totalMs-runtime.remainingMs" :aria-valuemin="0" :aria-valuemax="runtime.totalMs" aria-label="本轮活动进度"><span :style="{width:Math.max(0,Math.min(100,100*(1-runtime.remainingMs/runtime.totalMs)))+'%'}"/></div><small v-if="compact&&a.version===6">下一步：{{nextMove}}</small><small v-else>第 {{a.completedCycles+1}} {{view.unit}} · 保存后计入成果</small></div>
-  <p v-else-if="!rail&&a.status!=='stopped'&&(!compactV6()||!notice&&!a.stopReason)" class="training-resume-note">{{store.activityPausing?'核对本轮结算后停止，不再开始下一轮。':'沿用原额度，本轮重新计时；离线无收益，继续后其他页停手。'}}</p>
+  <div v-if="ownControls&&runtime&&!store.activityPausing" class="training-cycle" data-testid="training-cycle"><output data-testid="training-countdown" role="timer" aria-live="off">{{runtime.phase==='saving'?'保存中':seconds.toFixed(1)+' 秒'}}</output><div class="training-cycle-track" role="progressbar" :aria-valuenow="runtime.totalMs-runtime.remainingMs" :aria-valuemin="0" :aria-valuemax="runtime.totalMs" aria-label="本轮活动进度"><span :style="{width:Math.max(0,Math.min(100,100*(1-runtime.remainingMs/runtime.totalMs)))+'%'}"/></div><small v-if="compact&&a.version===6">下一步：{{nextMove}}</small><small v-else>第 {{a.completedCycles+1}} {{view.unit}} · 保存后计入成果</small></div>
+  <p v-else-if="!runtime&&!rail&&a.status!=='stopped'&&(!compactV6()||!notice&&!a.stopReason)" class="training-resume-note">{{store.activityPausing?'核对本轮结算后停止，不再开始下一轮。':'沿用原额度，本轮重新计时；离线无收益，继续后其他页停手。'}}</p>
   <p v-if="a.stopReason" data-testid="training-stop">{{stopped}}</p>
   <small v-if="rail" class="rail-count">已完成 {{a.completedCycles}} {{view.unit}} · <template v-if="repeats(a.plan)">持续 · 达标、触线或手动停下</template><template v-else>上限 {{a.plan.maxCycles}} {{view.unit}}</template> · {{period}}</small><div v-if="!rail" class="training-totals" data-testid="training-totals"><span>已完成 {{a.completedCycles}} {{view.unit}} · <template v-if="repeats(a.plan)">持续 · 达标、触线或手动停下</template><template v-else>上限 {{a.plan.maxCycles}} {{view.unit}}</template></span><span v-for="(row,index) in compact&&a.version===6?brief:view.rows.filter(row=>row!==stopped)" :key="index">{{row}}</span></div>
   <p v-if="!compact&&!rail" class="training-goal">{{view.goal}} · {{period}}</p>
   <p v-if="notice&&(!rail||a.status==='running'&&!runtime)" class="training-notice" role="status">{{notice}}</p><p v-if="!runtime&&a.status!=='stopped'&&blockMessage" class="training-notice">{{blockMessage}}</p>
-  <footer><button v-if="a.status!=='stopped'&&!runtime&&!store.activityPausing&&!store.canRetry" class="primary" style="min-width:max-content" data-testid="training-resume" @click="store.resumeCultivation" :disabled="store.busy||!store.available||!!blocked">{{'继续'+(a.version===7?view.name:view.noun)}}</button><button v-if="a.status==='running'&&store.activityOwned" :class="runtime||store.activityPausing?'primary':'text-button'" :aria-label="'暂停'+view.noun" data-testid="training-pause" @click="store.pauseCultivation" :disabled="store.activityPausing||!store.available">{{store.activityPausing?'正在暂停…':rail||compact&&a.version===6?'暂停':'暂停'+view.noun}}</button><button v-if="store.canRetry&&!rail" data-testid="training-retry" @click="store.retry" :disabled="store.busy">重试原操作</button><button v-if="rail||!compact||a.version===6||a.version===7" class="text-button" :aria-label="'查看'+view.noun+'安排'" :data-testid="rail&&a.status==='stopped'?'training-review':'training-settings'" @click="emit('settings')">{{rail||compact&&a.version===6?'原安排':'查看'+view.noun+'安排'}}</button><button v-if="a.version===6&&a.completedCycles>0" class="text-button" :data-testid="rail&&a.status==='stopped'?'hub-receipt':'adventure-receipts'" :aria-label="playerCopy.receipt" @click="emit('details')">{{playerCopy.receipt}}</button><button v-if="storedCycles||rail&&a.version!==6&&a.status==='stopped'&&lastCycle" data-testid="hub-receipt" @click="emit('details')">{{playerCopy.receipt}}</button><button v-if="rail" data-testid="activity-inspect" @click="emit('inspect')">本段详情</button></footer>
+  <footer><button v-if="ownControls&&a.status!=='stopped'&&!runtime&&!store.activityPausing&&!store.canRetry" class="primary" style="min-width:max-content" data-testid="training-resume" @click="store.resumeCultivation" :disabled="store.busy||!store.available||!!blocked">{{'继续'+(a.version===7?view.name:view.noun)}}</button><button v-if="ownControls&&a.status==='running'&&store.activityOwned" :class="runtime||store.activityPausing?'primary':'text-button'" :aria-label="'暂停'+view.noun" data-testid="training-pause" @click="store.pauseCultivation" :disabled="store.activityPausing||!store.available">{{store.activityPausing?'正在暂停…':rail||compact&&a.version===6?'暂停':'暂停'+view.noun}}</button><button v-if="store.canRetry&&!rail" data-testid="training-retry" @click="store.retry" :disabled="store.busy">重试原操作</button><button v-if="rail||!compact||a.version===6||a.version===7" class="text-button" :aria-label="'查看'+view.noun+'安排'" :data-testid="rail&&a.status==='stopped'?'training-review':'training-settings'" @click="emit('settings')">{{rail||compact&&a.version===6?'原安排':'查看'+view.noun+'安排'}}</button><button v-if="a.version===6&&a.completedCycles>0" class="text-button" :data-testid="rail&&a.status==='stopped'?'hub-receipt':'adventure-receipts'" :aria-label="playerCopy.receipt" @click="emit('details')">{{playerCopy.receipt}}</button><button v-if="storedCycles||rail&&a.version!==6&&a.status==='stopped'&&lastCycle" data-testid="hub-receipt" @click="emit('details')">{{playerCopy.receipt}}</button><button v-if="rail" data-testid="activity-inspect" @click="emit('inspect')">本段详情</button></footer>
  </section>
 </template>
+
+<style scoped>
+.activity-summary-badge{display:flex;align-items:center;gap:12px;padding:4px 0;text-align:left}
+.activity-summary-badge button{min-height:44px;font-size:18px;color:var(--game-jade)}
+.activity-summary-badge button small{display:block;text-align:left}
+.activity-summary-badge small{font-size:14px;line-height:1.5;color:var(--game-muted)}
+</style>

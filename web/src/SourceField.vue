@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {useLocalActivityControls} from './activity-controls';
 import {computed,ref,inject,watch,onDeactivated,onScopeDispose} from 'vue';
 import type {Game} from '../../src/full/types';
 import type {SourcePlan} from '../../src/full/activity';
@@ -29,6 +30,7 @@ function closeLibrary(){library.value?.close();}
 function inspectSource(id:string){closeLibrary();focus.target(libraryTrigger.value??null);emit('select',id);}
 watch(()=>props.game.core.runId+':'+props.game.core.world.location,closeLibrary);
 onDeactivated(closeLibrary);onScopeDispose(()=>focus.release(library.value));
+const localControls=useLocalActivityControls();
 </script>
 <template>
  <div class="source-field ta08-field art34-source-field" :class="{'source-working':working}" :data-location="game.core.world.location" :data-kind="commission?'commission':'natural'" :data-state="state" :data-source="plan.sourceId" data-testid="source-field">
@@ -48,7 +50,7 @@ onDeactivated(closeLibrary);onScopeDispose(()=>focus.release(library.value));
      <SourceObject v-else :source-id="plan.sourceId" :state="state" :progress="progress" :sequence="effect?.sequence??0" @arrange="emit('arrange')"/>
     </div>
     <aside class="source-focus">
-     <div class="source-cycle-state"><strong data-testid="source-work-state">{{status}}</strong><span v-if="runtime" data-testid="source-local-countdown">{{Math.ceil(runtime.remainingMs/1000)}} / {{runtime.totalMs/1000}} 秒</span></div>
+     <div class="source-cycle-state"><strong data-testid="source-work-state">{{status}}</strong><span v-if="(runtime)&&localControls" data-testid="source-local-countdown">{{Math.ceil(runtime.remainingMs/1000)}} / {{runtime.totalMs/1000}} 秒</span></div>
      <SourceSatchel :game="game" :source-id="plan.sourceId" :activity="activity" :result="effect?.result??null" :sequence="effect?.sequence??0"/>
     </aside>
    </template>

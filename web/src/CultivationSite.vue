@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {useLocalActivityControls} from './activity-controls';
 import {computed} from 'vue';
 import type {Game} from '../../src/full/types.ts';
 import * as C from '../../src/full/content.ts';
@@ -14,6 +15,7 @@ const actual=computed(()=>{const a=p.store?.activity;return a?.version===1&&a.ru
 const state=computed(()=>p.store?.error?'needs-attention':p.phase.value);
 const name=(m:string)=>m==='assisted'?'灵石辅助':'自然吐纳';
 const stageLabel=computed(()=>p.phase.value==='saving'?'凝神 · 保存中':p.working.value?'入定 · '+name(props.method):p.store?.error?p.store.unresolved?'停功 · 请先核对进度':'上次未完成 · 新安排需确认':actual.value?`当前${name(actual.value)}；此处预选${name(props.method)}`:'静息 · 选择潜修方式');
+const localControls=useLocalActivityControls();
 </script>
 <template>
  <section class="art06-site" :class="{'art06-site-compact':compact}" data-testid="cultivation-site" data-copy30="cultivation" :data-method="method" :data-state="state" :data-working="p.working.value" :data-engaged="p.engaged.value" :style="{'--cultivation-progress':p.progress.value}">
@@ -22,7 +24,7 @@ const stageLabel=computed(()=>p.phase.value==='saving'?'凝神 · 保存中':p.w
    <div class="art06-cushion" aria-hidden="true"/>
    <AssetImage class="art06-meditator" path="art/v2/characters/player-seated-cold.webp" asset-id="player-seated-cold" fit="contain" eager aria-hidden="true"><GameIcon kind="nav" id="cultivate"/></AssetImage>
    <div class="art06-breath" aria-hidden="true"/>
-   <div class="art06-status"><small v-if="!$slots.activity">{{p.phase.value==='idle'&&!actual&&!p.store?.error?'静候入定':stageLabel}}</small><output v-if="p.runtime.value" data-testid="cultivation-cycle-clock">{{p.phase.value==='saving'?'保存中':p.remaining.value+' 秒'}}<span> / 本轮 {{p.seconds.value}} 秒</span></output><small v-if="p.phase.value==='saving'">先核对本轮，保存后才计入修为。</small></div>
+   <div class="art06-status"><small v-if="!$slots.activity">{{p.phase.value==='idle'&&!actual&&!p.store?.error?'静候入定':stageLabel}}</small><output v-if="(p.runtime.value)&&localControls" data-testid="cultivation-cycle-clock">{{p.phase.value==='saving'?'保存中':p.remaining.value+' 秒'}}<span> / 本轮 {{p.seconds.value}} 秒</span></output><small v-if="p.phase.value==='saving'">先核对本轮，保存后才计入修为。</small></div>
    <div v-if="$slots.note" class="art06-note"><slot name="note"/></div>
 
   </div>
