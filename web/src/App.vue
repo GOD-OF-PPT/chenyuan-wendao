@@ -384,7 +384,7 @@ async function lightAction(action:DirectAction,confirm=true){
  if(action.type==='EVENT')directVisit={command:intent.command.commandId,run:intent.command.runId,event:action.event,view:directViewEpoch,sync:store.syncEpoch};
  await store.executeDirect(intent);
  await finishDirectVisit();
- if(!confirm&&owner===navigationRevision&&!store.error){await nextTick();if(anchor&&!anchor.isConnected&&document.activeElement===document.body)focus.target(['[data-testid=inventory-main-source]','[data-testid=inventory-main-uses]','[data-testid=inventory-library-open]'].map(selector=>document.querySelector<HTMLElement>(selector)).find(visibleFocusTarget)??null);}
+ if(!confirm&&owner===navigationRevision&&!store.error){await nextTick();if(anchor&&!anchor.isConnected&&(document.activeElement===document.body||document.activeElement?.matches('[data-testid=inventory-library-open]')))focus.target(['[data-testid=inventory-main-source]','[data-testid=inventory-main-uses]','[data-testid=inventory-library-open]'].map(selector=>document.querySelector<HTMLElement>(selector)).find(visibleFocusTarget)??null);}
 }
 function storyAct(action:Action){if(!pendingStoryError.value)return isDirectAction(action)&&['EVENT','DECIDE'].includes(action.type)?lightAction(action):act(action);}
 function quickInventory(action:Action){if(isDirectAction(action)&&['USE','SELL'].includes(action.type))return lightAction(action,false);}
