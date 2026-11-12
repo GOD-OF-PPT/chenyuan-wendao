@@ -25,7 +25,7 @@ const atCave=computed(()=>props.game.core.world.location==='cave');
 const restart=computed(()=>pausedPlanView(feedbackStore?.activity,props.game.core.runId,props.plan));
 const buttonLabel=computed(()=>!props.available||feedbackStore?.unresolved?'先在上方核对存档':!atCave.value?'前往洞府 · 不自动启炉':restart.value.same?'原段已暂停 · 在上方继续':props.running?current.value?'炼制中 · 可在活动条暂停':'已有活动 · 请先暂停':restart.value.label+'开炉 · '+item.value.name);
 const quote=computed(()=>previewActivity(props.game,props.plan));
-const finite=computed(()=>props.plan.repeat?'持续炼制 · 触线或手动停下':props.plan.until==='target'?'成品库存达到 '+props.plan.targetQuantity+' 即停 · 最多 '+props.plan.maxCycles+' 炉':props.plan.maxCycles+' 炉后停');
+const finite=computed(()=>props.plan.repeat?props.plan.until==='target'?'成品库存达到 '+props.plan.targetQuantity+' 即停':'持续炼制 · 触线或手动停下':props.plan.until==='target'?'成品库存达到 '+props.plan.targetQuantity+' 即停 · 最多 '+props.plan.maxCycles+' 炉':props.plan.maxCycles+' 炉后停');
 const total=computed(()=>current.value?.version===3?current.value.gainedItems[recipe.value.output]??0:0);
 const blocked=computed(()=>!props.available||props.busy||props.running||feedbackStore?.unresolved||restart.value.same&&atCave.value);
 const reason=computed(()=>!props.available?'存档未就绪':feedbackStore?.unresolved?feedbackStore.syncIssue?'请先重新读取当前进度':'请先处理上方存档提示':props.busy?'正在保存，请稍候':props.running?'已有活动进行中，请先暂停':quote.value.failure?.message??'');

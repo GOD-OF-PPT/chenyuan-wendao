@@ -105,7 +105,7 @@ export async function selectPlan(page: Page, plan: any): Promise<{ control: Loca
       await openProductionIntent(page);
       await page.getByLabel('炼丹炉次',{exact:true}).selectOption(plan.until==='target'?'target':String(plan.maxCycles));
       if(plan.until==='target'){
-        await field(page,'成品目标库存',plan.targetQuantity);await field(page,'目标最多炉次',plan.maxCycles);
+        await field(page,'成品目标库存',plan.targetQuantity);const cap=page.getByLabel('炼丹目标另设炉次上限',{exact:true});if(await cap.isVisible())await cap.check();await field(page,'目标最多炉次',plan.maxCycles);
       }
       await page.getByTestId('production-limits').click();
       await field(page,'累计生产灵石预算',plan.stoneBudget);await field(page,'生产灵石保留量',plan.stoneReserve);

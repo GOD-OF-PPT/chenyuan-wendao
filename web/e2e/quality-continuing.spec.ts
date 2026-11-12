@@ -4,6 +4,7 @@ import {resolve} from '../../src/full/engine';
 import {importRecoveryFixture,recoveryDatabase} from './idle-recovery-ui-support';
 import {activitySnapshot,snapshot} from './support';
 import {openSourceSettings,closeSourceSettings,openProductionIntent,selectAlchemyRecipe,closeProductionSettings} from './stage-support';
+import {selectPlan,settleVisibleActivity,home} from './idle-route-support';
 
 test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});
 test('new source defaults continue beyond five cycles and pause refresh retains the same finite resource budget',async({page},info)=>{
@@ -52,6 +53,30 @@ test('restoring continuing alchemy keeps the saved budget while a finite target 
   await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('paused');
   const raw=await recoveryDatabase(page),a=await activitySnapshot(page);expect(a.plan.repeat).toBe(true);
   await page.getByTestId('training-settings').click();await expect(page.getByTestId('alchemy-workshop')).not.toContainText('1000000000');
-  await openProductionIntent(page);await page.getByLabel('炼丹炉次',{exact:true}).selectOption('target');await expect(page.getByLabel('目标最多炉次',{exact:true})).toHaveValue('50');
+  await openProductionIntent(page);await page.getByLabel('炼丹炉次',{exact:true}).selectOption('target');await page.getByLabel('炼丹目标另设炉次上限',{exact:true}).check();await expect(page.getByLabel('目标最多炉次',{exact:true})).toHaveValue('50');
   expect(await recoveryDatabase(page)).toEqual(raw);expect(await activitySnapshot(page)).toEqual(a);await page.screenshot({path:info.outputPath('continuing-craft-finite-target-draft.png')});await closeProductionSettings(page);
+});
+
+test('a saved continuing breakthrough-pill target restores its entire plan and original budget',async({page})=>{
+  const d=driver();d.resource('herb',8);d.resource('dew',2);d.funds(50);d.go('cave');await importRecoveryFixture(page,d.game);
+  await page.getByTestId('hub-forge').click();await selectAlchemyRecipe(page,'foundation');
+  await page.getByTestId('production-start').click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');
+  await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('paused');
+  const raw=await recoveryDatabase(page),a=await activitySnapshot(page);expect(a.plan.repeat).toBe(true);expect(a.plan.until).toBe('target');expect(a.plan.targetQuantity).toBe(1);
+  await page.getByTestId('training-settings').click();await expect(page.getByTestId('production-start').first()).toBeDisabled();
+  await openProductionIntent(page);await expect(page.getByLabel('炼丹炉次',{exact:true})).toHaveValue('target');await expect(page.getByLabel('成品目标库存',{exact:true})).toHaveValue('1');await expect(page.getByLabel('炼丹目标另设炉次上限',{exact:true})).not.toBeChecked();
+  expect(await recoveryDatabase(page)).toEqual(raw);expect(await activitySnapshot(page)).toEqual(a);
+});
+
+test('supplies gathered after a zero-material furnace preview can be explicitly reestimated without starting work',async({page})=>{
+  const d=driver();d.go('cave');await importRecoveryFixture(page,d.game);
+  await page.getByTestId('hub-forge').click();await selectAlchemyRecipe(page,'healing');
+  await expect(page.getByTestId('production-start')).toBeDisabled();await closeProductionSettings(page);
+  for(const plan of [{kind:'travel',location:'wilderness',maxCycles:1},{kind:'source',sourceId:'herbs',maxCycles:1,until:'cycles',target:null,monthBudget:1,remainingMonthsReserve:1},{kind:'travel',location:'cave',maxCycles:1}]){
+    await home(page);const selected=await selectPlan(page,plan);await selected.control.click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');await settleVisibleActivity(page);
+  }
+  await home(page);await page.getByTestId('hub-forge').click();await selectAlchemyRecipe(page,'healing');await openProductionIntent(page);
+  const raw=await recoveryDatabase(page);await page.getByTestId('production-reestimate').click();
+  await expect(page.getByTestId('production-estimate')).toContainText('预计 1 炉');expect(await recoveryDatabase(page)).toEqual(raw);
+  await expect(page.getByTestId('production-start')).toBeEnabled();
 });

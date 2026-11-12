@@ -14,6 +14,7 @@ import { getTrackedGoal, planCollection, createConsumptionPreview, type Collecti
 import { useTracking } from './use-tracking';
 import { formatCosts, formatDelta } from './presentation';
 import type { NavigationRequest } from './navigation';
+import {repeats} from '../../src/full/repetition';
 import GoalPanel from './GoalPanel.vue';
 import CharacterPanel from './CharacterPanel.vue';
 import GameHud from './GameHud.vue';
@@ -124,9 +125,9 @@ const productionInspectionPlan=shallowRef<CraftPlan|ForgePlan|null>(null);
 const preparationInspectionPlan=shallowRef<PreparationPlan|null>(null),preparationInspectionSaved=ref(false),preparationInspectionExact=ref(true);
 const adventureInspectionPlan=shallowRef<AdventurePlan|null>(null),adventureInspectionSaved=ref(false),activityPlanVisible=ref(false);
 const originalAdventureReadings=computed<Reading[]>(()=>{const a=store.activity;if(a?.version!==6||a.plan.kind==='travel')return[];const p=a.plan,label=(move:string)=>({attack:'普通攻击',guard:'凝神护体',technique:'起手术法',release:'终结术法',heal:'服回春丹',restore:'服回灵丹',flee:'撤回洞府'} as Record<string,string>)[move];
- const rows:Reading[]=[{key:'identity',title:'查看本次打算',text:C.enemies[p.enemy].name+(p.kind==='battle'&&p.trialStage!==null?' · 天劫第'+p.trialStage+'关':'')+'；最多 '+p.maxCycles+' 次动作。只看本次打算，不改变战局。'}];
+ const rows:Reading[]=[{key:'identity',title:'查看本次打算',text:C.enemies[p.enemy].name+(p.kind==='battle'&&p.trialStage!==null?' · 天劫第'+p.trialStage+'关':'')+(repeats(p)?'；持续当前对手，达标、触线或手动停下。':'；最多 '+p.maxCycles+' 次动作。')+'只看本次打算，不改变战局。'}];
  if(p.kind==='battle'&&p.mode==='single'){rows.push({key:'single',title:'原手动单步',text:label(p.move)+'；仅1回合 / 3秒。'});return rows;}
- const strategy=p.strategy;rows.push({key:'scope',title:'本次限额',text:'累计灵力上限 '+p.mpBudget+'。'+(p.kind==='encounter'?'最多 '+p.maxEncounters+' 场；游戏月预算 '+p.monthBudget+'；余寿保留 '+p.remainingMonthsReserve+' 月；'+(p.target?C.items[p.target.item].name+'目标库存 '+p.target.quantity:'无掉落库存目标'):'本关自动战策，只限原敌人与关卡')},{key:'priority',title:'招式顺序与重击',text:strategy.priority.map(label).join(' → ')+'。应对重击：'+(strategy.respondHeavy?'是':'否')+'；释放层数门槛 '+strategy.releaseAt+' 层。'},{key:'medicine',title:'用药上限',text:'气血低于 '+strategy.healBelowPercent+'% 用回春，整段最多 '+strategy.healingBudget+' 丹，库存保留 '+strategy.healingReserve+'；灵力低于 '+strategy.restoreBelowPercent+'% 用回灵，整段最多 '+strategy.spiritBudget+' 丹，库存保留 '+strategy.spiritReserve+'。用药占正式回合，不自动补货。'},{key:'risk',title:'危险线与停止',text:'气血危险线 '+strategy.retreatBelowPercent+'%；'+(strategy.riskMode==='pause'?'触线暂停，不离场。':'触线撤回洞府，气血-8且最低1，'+(p.kind==='encounter'?'结束本段历练。':p.trialStage===null?'结束本次交锋。':'结束本轮天劫。'))+'此处不是当前战策的新确认。'});return rows;});
+ const strategy=p.strategy;rows.push({key:'scope',title:'本次限额',text:'累计灵力上限 '+p.mpBudget+'。'+(p.kind==='encounter'?(repeats(p)?'持续历练；游戏月预算 ':'最多 '+p.maxEncounters+' 场；游戏月预算 ')+p.monthBudget+'；余寿保留 '+p.remainingMonthsReserve+' 月；'+(p.target?C.items[p.target.item].name+'目标库存 '+p.target.quantity:'无掉落库存目标'):'本关自动战策，只限原敌人与关卡')},{key:'priority',title:'招式顺序与重击',text:strategy.priority.map(label).join(' → ')+'。应对重击：'+(strategy.respondHeavy?'是':'否')+'；释放层数门槛 '+strategy.releaseAt+' 层。'},{key:'medicine',title:'用药上限',text:'气血低于 '+strategy.healBelowPercent+'% 用回春，整段最多 '+strategy.healingBudget+' 丹，库存保留 '+strategy.healingReserve+'；灵力低于 '+strategy.restoreBelowPercent+'% 用回灵，整段最多 '+strategy.spiritBudget+' 丹，库存保留 '+strategy.spiritReserve+'。用药占正式回合，不自动补货。'},{key:'risk',title:'危险线与停止',text:'气血危险线 '+strategy.retreatBelowPercent+'%；'+(strategy.riskMode==='pause'?'触线暂停，不离场。':'触线撤回洞府，气血-8且最低1，'+(p.kind==='encounter'?'结束本段历练。':p.trialStage===null?'结束本次交锋。':'结束本轮天劫。'))+'此处不是当前战策的新确认。'});return rows;});
 watch(()=>store.activity?.id,()=>activityPlanVisible.value=false);
 const producing=computed(()=>!!store.activity&&store.activity.status!=='stopped'&&(store.activity.plan.kind==='craft'||store.activity.plan.kind==='forge'));
 const equipmentOpen=ref(false),resumeVisible=ref(false),hubView=ref('home');
