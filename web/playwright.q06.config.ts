@@ -1,2 +1,2 @@
-import base from './playwright.q05.config';
+import base from './playwright.quality-group.config';
 export default {...base,testMatch:[...base.testMatch,'quality-navigation.spec.ts']};
