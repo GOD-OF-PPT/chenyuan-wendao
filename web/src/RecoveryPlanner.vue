@@ -3,7 +3,7 @@ import{computed,inject,onDeactivated,onUnmounted,ref,useId,watch}from 'vue';
 import{gameFocusKey}from './focus';
 import type{Action,Game}from '../../src/full/types.ts';
 import{pausedPlanView}from './preparation-view.ts';
-import{stopMessage}from './activity-view';
+import{stopMessage,activityView}from './activity-view';
 import*as C from '../../src/full/content.ts';
 import{previewActivity,ADVENTURE_CYCLE_MS,type PreparationPlan,type UsePlan,type RestPlan}from '../../src/full/activity.ts';
 import{previewAction}from '../../src/full/queries.ts';
@@ -16,6 +16,7 @@ const emit=defineEmits<{start:[PreparationPlan];act:[Action];track:[TrackingTarg
 const focus=inject(gameFocusKey),settings=ref<HTMLDialogElement>(),options=ref<HTMLDialogElement>(),titleId=useId(),optionsTitle=useId();
 const scene=inject<ReturnType<typeof useGame>>('game-scene');
 const restart=computed(()=>pausedPlanView(scene?.activity,props.game.core.runId,plan.value));
+const replacedActivity=computed(()=>{const a=scene?.activity;return a?.status==='paused'&&a.runId===props.game.core.runId&&!restart.value.same?activityView(a,props.game).noun:null;});
 function openSettings(event:Event){options.value?.close();if(focus)focus.open(settings.value,event.currentTarget as HTMLElement);else settings.value?.showModal();}
 function openOptions(event:Event){settings.value?.close();if(focus)focus.open(options.value,event.currentTarget as HTMLElement);else options.value?.showModal();}
 function closeViews(){settings.value?.close();options.value?.close();}
@@ -39,7 +40,8 @@ watch(()=>props.game.core.runId,()=>lastReadIntent='');watch([()=>props.game.cor
   <button data-testid="recovery-options-open" @click="openOptions">选择恢复方式</button>
   </template><template #decision><small data-testid="preparation-plan-state">{{running&&!(sameSaved&&planSaved)?'下次草案 · 原活动不变':sameSaved&&planSaved?'原已保存安排':'确认后开始'}}</small><button class="supply-plan-open" data-testid="recovery-plan-open" @click="openSettings">{{mode==='rest'?'疗养一次 · 余寿保留 '+monthsReserve+' 月':'目标 '+target+'% · 最多 '+count+' 丹\n库存保留 '+reserve}}<small>单次{{quote.cycleMs/1000}}秒 · 调整 ›</small></button>
     <div class="preparation-estimate" data-testid="preparation-estimate"><template v-if="restart.same"><strong data-testid="paused-plan-progress">{{restart.summary}} {{mode==='rest'?'次':'丹'}}</strong><small>{{restart.note}}</small></template><template v-else><strong>{{(quote.failure?stopMessage(plan,quote.failure):null)??('预计'+(mode==='rest'?'疗养 '+quote.cycles+' 次':'使用 '+quote.cycles+' 丹')+' · '+quote.months+' 游戏月')}}</strong><p v-if="quote.allowed&&mode==='use'&&quote.cycles>1">预计合计气血 +{{quote.hp}} · 灵力 +{{quote.mp}}</p></template></div>
-    <button v-if="mode==='rest'&&game.core.world.location!=='cave'" class="primary" data-testid="preparation-travel" :disabled="!!conflict||!move.allowed" @click="emit('travel',plan)">前往听雨洞府 · {{ADVENTURE_CYCLE_MS.travel/1000}}秒 · 不自动疗养</button><button v-else class="primary" data-testid="preparation-start" :disabled="!!conflict||restart.same||!quote.allowed" @click="emit('start',plan)">{{conflict?'当前暂不可安排':restart.same?restart.label:restart.label+(mode==='rest'?'疗养一次':'服用'+item.name)}}</button><small v-if="conflict" class="preparation-reason">{{conflict}}</small>
+    <p v-if="replacedActivity" class="preparation-replacement" data-testid="recovery-replacement-note">开始{{mode==='rest'?'疗养':'服丹'}}将结束原{{replacedActivity}}；已完成成果保留，未完成部分不再续行。</p>
+    <button v-if="mode==='rest'&&game.core.world.location!=='cave'" class="primary" data-testid="preparation-travel" :disabled="!!conflict||!move.allowed" @click="emit('travel',plan)">前往听雨洞府 · {{ADVENTURE_CYCLE_MS.travel/1000}}秒 · 不自动疗养</button><button v-else class="primary" data-testid="preparation-start" :disabled="!!conflict||restart.same||!quote.allowed" @click="emit('start',plan)">{{conflict?'当前暂不可安排':restart.same?restart.label:(replacedActivity?'':restart.label)+(mode==='rest'?'疗养一次':'服用'+item.name)}}</button><small v-if="conflict" class="preparation-reason">{{conflict}}</small>
   </template></RecoveryRitual>
   <dialog ref="options" class="art11-object-dialog" data-testid="recovery-options-dialog" :aria-labelledby="optionsTitle"><h3 :id="optionsTitle">药匣与疗养方式</h3>  <div class="recovery-options" aria-label="恢复方式"><button v-for="id in ['healing_pill','spirit_pill']" :key="id" :aria-pressed="mode==='use'&&selected===id" :data-testid="'recovery-'+id" @click="choose(id);options?.close()"><GameIcon kind="item" :id="id"/><strong>{{C.items[id].name}}</strong><small>持有 {{game.core.inventory[id]}} 丹 · 6 秒 / 丹</small></button><button :aria-pressed="mode==='rest'" data-testid="recovery-rest" @click="choose('rest');options?.close()"><GameIcon kind="nav" id="cultivate"/><strong>洞府疗养</strong><small>1 游戏月 · 30 秒 · 恢复至满</small></button></div>
 <footer><button data-testid="recovery-options-close" @click="options?.close()">返回调息</button></footer></dialog>

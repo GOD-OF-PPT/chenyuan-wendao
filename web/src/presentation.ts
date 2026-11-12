@@ -16,7 +16,7 @@ export function formatDelta(delta: StateDelta) {
   return [delta.stones ? `灵石 ${sign(delta.stones)}` : '', delta.xp ? `修为 ${sign(delta.xp)}` : '',
     delta.hp ? `气血 ${sign(delta.hp)}` : '', delta.mp ? `灵力 ${sign(delta.mp)}` : '',
     ...Object.entries(delta.inventory).map(([id, n]) => `${items[id].name} ${sign(n)}`),
-    delta.months ? `游戏月 +${delta.months}` : '', delta.wins ? `胜场 +${delta.wins}` : '',
+    delta.months > 0 ? `耗时 ${delta.months} 游戏月` : delta.months < 0 ? `岁月回溯 ${-delta.months} 游戏月` : '', delta.wins ? `胜场 +${delta.wins}` : '',
     delta.realm.before !== delta.realm.after ? `${realms[delta.realm.before].name} → ${realms[delta.realm.after].name}` : ''].filter(Boolean).join(' · ') || '物资未变化';
 }
 

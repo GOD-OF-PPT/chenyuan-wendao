@@ -127,7 +127,7 @@ const boardReady=computed(()=>focus.value?.kind==='item'?!!itemView.value?.compl
 </template>
 <template v-if="focus||needs.length" #conditions>
 <div v-if="focus" class="source-details" data-testid="source-details">
-<div class="source-breadcrumb"><button data-testid="source-back" @click="stack=stack.slice(0,-1)"><GameIcon kind="action" id="back"/> 返回{{stack.length>1?'上一层':'目标'}}</button><button @click="stack=[]">回到目标</button></div>
+<div class="source-breadcrumb"><button data-testid="source-back" @click="stack=stack.slice(0,-1)"><GameIcon kind="action" id="back"/> 返回{{stack.length>1?'上一层':'目标'}}</button><button v-if="stack.length>1" @click="stack=[]">回到目标</button></div>
 <p v-if="focus.kind==='item'" class="small">当前 {{game.core.inventory[focus.id]}} / {{focus.quantity}} <span v-if="itemView?.completed">· 已备齐，无需重复收集</span></p>
 <p v-if="focus.kind==='currency'" class="small">当前灵石 {{game.core.player.stones}} / {{focus.quantity}}</p>
 <p v-if="actionView" class="small" data-testid="plan-cost">每次成本：{{formatCosts(actionView.preview.costs)}}</p>
