@@ -65,7 +65,7 @@ const localControls=useLocalActivityControls();
     <div v-if="arrival" class="alchemy-arrival" data-testid="alchemy-arrival" :data-sequence="arrival.sequence" aria-hidden="true"><GameIcon kind="item" :id="arrival.item"/><b>+{{arrival.quantity}}</b></div>
    </div>
 
-   <div class="alchemy-cycle"><strong data-testid="production-fire">{{status}}</strong><span v-if="runtime&&localControls">{{Math.ceil(runtime.remainingMs/1000)}} 秒 / {{runtime.totalMs/1000}} 秒</span><span v-else-if="!runtime&&current?.status==='running'&&!feedbackStore?.activityPausing&&!feedbackStore?.error">等待主动续接，不补离线</span><span v-else>每炉 {{recipePeriodMs(game,plan.recipeId)/1000}} 秒 · {{recipe.months}} 游戏月</span></div>
+   <div class="alchemy-cycle"><strong data-testid="production-fire">{{status}}</strong><span v-if="runtime&&localControls">{{Math.ceil(runtime.remainingMs/1000)}} 秒 / {{runtime.totalMs/1000}} 秒</span><span v-else-if="!runtime&&current?.status==='running'&&!feedbackStore?.activityPausing&&!feedbackStore?.error">已保存安排，接续范围见当前活动。</span><span v-else>每炉 {{recipePeriodMs(game,plan.recipeId)/1000}} 秒 · {{recipe.months}} 游戏月</span></div>
    <button class="primary production-start" :data-testid="settingsOpen?undefined:atCave?'production-start':'production-return-cave'" :disabled="blocked||atCave&&!quote.allowed" @click="start">{{buttonLabel}}</button>
 
   </div>

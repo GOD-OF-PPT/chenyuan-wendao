@@ -11,6 +11,7 @@ import { activityReceipt, scheduledActivityReceipt, validateActivityReceipt, typ
 import {validateScheduledActivity} from '../../src/full/scheduled-activity.ts';
 import type {AwaySchedule} from '../../src/full/scheduled-activity.ts';
 import {scheduledProgress,scheduledReceipt,validateScheduledReceipt,type ScheduledInput} from './scheduled-persistence.ts';
+import {summarizeAway,type AwaySummary} from './away-summary.ts';
 import { validateConfigurationIntent, type ConfigurationIntent } from '../../src/full/configuration.ts';
 import { configurationReceipt, validateConfigurationReceipt } from './configuration-persistence';
 import type {DirectIntent} from '../../src/full/direct-actions.ts';
@@ -26,7 +27,10 @@ export const FULL_BACKUP_STORE = 'full-backups';
 export const FULL_SCHEDULE_STORE = 'full-schedules';
 const legacyStores=[FULL_STATE_STORE,FULL_RECEIPT_STORE,FULL_BACKUP_STORE];
 const stores = [...legacyStores,FULL_SCHEDULE_STORE];
-export interface ScheduledOutcome extends ActivityOutcome{schedule?:AwaySchedule;cycles:number;more:boolean;}
+export interface ScheduledOutcome extends ActivityOutcome{
+  schedule?:AwaySchedule;cycles:number;more:boolean;
+  committed:Array<{before:Game;after:Game;command:Command;result:ActionResult}>;
+}
 function rejectScheduledReceipt(value:unknown,current:Game):void{
   if(value&&typeof value==='object'&&'format' in value&&value.format==='chenyuan-scheduled-receipt'){
     validateScheduledReceipt(value,current);throw new RuleError('COMMAND_ID_REUSED','同一编号已用于离开安排');
@@ -64,14 +68,29 @@ function readStoredActivity(tx: IDBTransaction, current: Game | undefined, use: 
     };
   };
 }
-function archiveSchedule(tx:IDBTransaction,prefix:string){
+function archiveSchedule(tx:IDBTransaction,prefix:string,current:Game|undefined,activity:Activity|null,abort:(error:unknown)=>void){
   const clocks=tx.objectStore(FULL_SCHEDULE_STORE),read=clocks.get('current');
   read.onsuccess=()=>{if(read.result!==undefined)tx.objectStore(FULL_BACKUP_STORE).put(read.result,prefix+'/schedule');};
+  // Queue the read before the caller can clear receipts. Its result belongs to
+  // this same transaction even when the archive callback runs after that clear.
+  if(current&&activity){
+    const runPrefix=current.core.runId+':',records=tx.objectStore(FULL_RECEIPT_STORE).getAll(IDBKeyRange.bound(runPrefix,runPrefix+'\uffff'));
+    records.onsuccess=()=>{try{
+      if(read.result===undefined)return;
+      const values=records.result.filter(value=>value?.format==='chenyuan-scheduled-receipt');
+      const summary=summarizeAway(current,activity,read.result,values);
+      if(summary){
+        const receipts=values.filter(value=>value.input.kind==='ADVANCE'&&value.proof.recordAfter.activity.id===activity.id&&
+          (value.proof.scheduleBefore?.window?.id??value.input.mutation.commandId)===summary.id&&value.proof.cycles>0);
+        tx.objectStore(FULL_BACKUP_STORE).put({format:'chenyuan-away-summary-archive',version:1,summary,receipts},prefix+'/away-summary');
+      }
+    }catch(error){abort(error);}};
+  }
   clocks.delete('current');
 }
-function archiveActivity(tx: IDBTransaction, activity: Activity | null, prefix: string): void {
+function archiveActivity(tx: IDBTransaction, activity: Activity | null, prefix: string,current:Game|undefined,abort:(error:unknown)=>void): void {
   if (activity) tx.objectStore(FULL_BACKUP_STORE).put(structuredClone(activity), prefix + '/activity');
-  archiveSchedule(tx,prefix);
+  archiveSchedule(tx,prefix,current,activity,abort);
   tx.objectStore(FULL_STATE_STORE).delete('activity');
 }
 function invalidateActivity(activity: Activity, state: Game): Activity {
@@ -529,6 +548,27 @@ export class FullSaveRepository {
       };
     });
   }
+  loadAwaySummary():Promise<AwaySummary|null>{
+    return this.transaction('readonly',(tx,complete,abort)=>{
+      const read=tx.objectStore(FULL_STATE_STORE).get('current');
+      read.onsuccess=()=>{try{
+        const current=read.result;if(current!==undefined)validateGame(current);
+        readStoredActivity(tx,current,(activity,schedule)=>{
+          if(!current||!activity||!schedule){complete(null);return;}
+          const values:unknown[]=[],cursor=tx.objectStore(FULL_RECEIPT_STORE).openCursor();
+          cursor.onsuccess=()=>{try{
+            if(!cursor.result){complete(summarizeAway(current,activity,schedule,values));return;}
+            const value=cursor.result.value;
+            if(value?.format==='chenyuan-scheduled-receipt'){
+              if(cursor.result.key!==value.input?.mutation?.runId+':'+value.input?.mutation?.commandId)throw new RuleError('RECEIPT_INVALID','累计回执键与原意图不符');
+              values.push(value);
+            }
+            cursor.result.continue();
+          }catch(error){abort(error);}};
+        },abort);
+      }catch(error){abort(error);}};
+    });
+  }
   /** Complete per-command history for this activity in the current run; battle.log is only a recent excerpt. */
   loadActivityHistory(activityId: string, page = 0, pageSize = 4): Promise<ActivityHistoryPage> {
     if (typeof activityId !== 'string' || !activityId.trim() || activityId.length > 64 ||
@@ -623,11 +663,11 @@ export class FullSaveRepository {
             if(!stored||typeof stored!=='object'||!('format' in stored)||stored.format!=='chenyuan-scheduled-receipt')throw new RuleError('COMMAND_ID_REUSED','同一编号已用于其他行动');
             validateScheduledReceipt(stored,current);
             if(stored.fingerprint!==print)throw new RuleError('COMMAND_ID_REUSED','同一离开安排编号对应不同意图');
-            complete({state:current,activity,...(schedule?{schedule}:{}),result:stored.proof.result,replayed:true,cycles:stored.proof.cycles,more:!!schedule?.window});return;
+            complete({state:current,activity,...(schedule?{schedule}:{}),result:stored.proof.result,replayed:true,cycles:stored.proof.cycles,more:!!schedule?.window,committed:[]});return;
           }
           const now=Date.now(),progress=scheduledProgress(current,activity,schedule,input,now,input.kind==='START'?crypto.randomUUID():undefined);
-          if(input.kind==='START')archiveActivity(tx,activity,'activity/'+mutation.runId+'/'+mutation.commandId+'/previous');
-          let previous=current;
+          if(input.kind==='START')archiveActivity(tx,activity,'activity/'+mutation.runId+'/'+mutation.commandId+'/previous',current,abort);
+          let previous=current;const committed:ScheduledOutcome['committed']=[];
           for(const cycle of progress.cycles){
             const before=cycle.activityBefore,command=cycle.command;
             const tick:ActivityTick={commandId:command.commandId,runId:command.runId,expectedRevision:command.expectedRevision,
@@ -641,12 +681,12 @@ export class FullSaveRepository {
             if(key===mutation.runId+':'+mutation.commandId)throw new RuleError('COMMAND_ID_REUSED','安排编号不能占用周期回执身份');
             const present=receipts.count(key);
             present.onsuccess=()=>{if(present.result)abort(new RuleError('COMMAND_ID_REUSED','该周期编号已有记录，未覆盖原回执'));};
-            receipts.put(receipt,key);previous=cycle.stateAfter;
+            receipts.put(receipt,key);committed.push({before:previous,after:cycle.stateAfter,command,result:cycle.result});previous=cycle.stateAfter;
           }
           const receipt=scheduledReceipt(input,current,activity,schedule,now,progress);validateScheduledReceipt(receipt,progress.state);
           receipts.put(receipt,mutation.runId+':'+mutation.commandId);
           state.put(progress.state,'current');state.put(progress.record.activity,'activity');tx.objectStore(FULL_SCHEDULE_STORE).put(progress.record.schedule,'current');
-          complete({state:progress.state,...progress.record,result:progress.cycles.at(-1)?.result??null,replayed:false,cycles:progress.cycles.length,more:progress.more});
+          complete({state:progress.state,...progress.record,result:progress.cycles.at(-1)?.result??null,replayed:false,cycles:progress.cycles.length,more:progress.more,committed});
           }catch(error){abort(error);}},abort);
         }catch(error){abort(error);}},abort);
       }catch(error){abort(error);}};
@@ -757,7 +797,7 @@ export class FullSaveRepository {
                   throw new RuleError('ACTIVITY_STALE', '活动安排已变化，旧配装确认未应用');
                 if (activity?.status === 'running') throw new RuleError('ACTIVITY_RUNNING', '请先明确暂停当前活动，再应用配装');
                 const outcome = resolve(current, command), nextActivity = activity ? invalidateActivity(activity, outcome.nextState) : null;
-                archiveSchedule(tx,'configuration/'+command.runId+'/'+command.commandId);
+                archiveSchedule(tx,'configuration/'+command.runId+'/'+command.commandId,current,activity,abort);
                 state.put(current, 'previous'); state.put(outcome.nextState, 'current');
                 if (nextActivity) state.put(nextActivity, 'activity');
                 receipts.put(configurationReceipt(intent, current, outcome.nextState, outcome.result), command.runId + ':' + command.commandId);
@@ -786,7 +826,7 @@ export class FullSaveRepository {
           if((activity?.id??null)!==intent.expectedActivityId||(activity?.revision??null)!==intent.expectedActivityRevision)throw new RuleError('ACTIVITY_STALE','活动已变化，本次行动未执行');
           if(activity?.status==='running')throw new RuleError('ACTIVITY_RUNNING','请先暂停当前活动，再确认本次行动');
           const outcome=resolve(current,command),nextActivity=activity?invalidateActivity(activity,outcome.nextState):null;
-          archiveSchedule(tx,'direct/'+command.runId+'/'+command.commandId);
+          archiveSchedule(tx,'direct/'+command.runId+'/'+command.commandId,current,activity,abort);
           state.put(current,'previous');state.put(outcome.nextState,'current');if(nextActivity)state.put(nextActivity,'activity');
           receipts.put(directReceipt(intent,current,outcome.nextState,outcome.result),command.runId+':'+command.commandId);
           complete({state:outcome.nextState,activity:nextActivity,result:outcome.result,replayed:false});
@@ -866,7 +906,7 @@ export class FullSaveRepository {
                 throw new RuleError('STALE_REVISION', '当前存档已变化，请重新读取并确认');
               }
               if (existing?.core.runId === mutation.runId) throw new RuleError('NEW_RUN_REQUIRED', '替换存档必须使用新的人生编号');
-              archiveActivity(tx, activity, 'replacement/' + mutation.commandId);
+              archiveActivity(tx, activity, 'replacement/' + mutation.commandId,existing,abort);
               if (existing) state.put(existing, 'previous');
               state.put(candidate, 'current'); state.delete('checkpoint'); state.delete('checkpoint-owner'); receipts.clear();
               const receipt: ControlReceipt = { format: 'chenyuan-control-receipt', version: 1, kind, mutation: structuredClone(mutation), fingerprint: print };
@@ -915,7 +955,7 @@ export class FullSaveRepository {
                     try {
                       validateScope(owner.result, cp, current);
                       const restored = reidentify(cp.snapshot, mutation.runId);
-                      archiveActivity(tx, activity, 'restoration/' + mutation.commandId);
+                      archiveActivity(tx, activity, 'restoration/' + mutation.commandId,current,abort);
                       state.put(current, 'previous'); state.put(restored, 'current');
                       state.put(checkpointScope(cp, restored.core.runId), 'checkpoint-owner');
                       // The complete original checkpoint remains reusable.
@@ -965,7 +1005,7 @@ export class FullSaveRepository {
               if (['SCHOOL', 'EQUIP', 'EQUIP_RELIC'].includes(command.type)) throw new RuleError('CONFIGURATION_REQUIRED', '请预选并确认本次修法或配装变化');
               if (activity?.status === 'running') throw new RuleError('ACTIVITY_RUNNING', '先暂停当前活动，再执行其他行动');
               const outcome = resolve(current, command);
-              archiveSchedule(tx,'command/'+command.runId+'/'+command.commandId);
+              archiveSchedule(tx,'command/'+command.runId+'/'+command.commandId,current,activity,abort);
               state.put(current, 'previous'); state.put(outcome.nextState, 'current');
               if (activity) {
                 state.put(invalidateActivity(activity, outcome.nextState), 'activity');

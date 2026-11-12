@@ -21,14 +21,14 @@ test.afterEach(async ({ page }) => { await page.evaluate(() => {
 
 test('Store travel and encounter change periods only after each real atomic arrival, spawn and battle turn', async ({ page }) => {
   const started = await page.evaluate(async () => {
-    const f = (globalThis as any).h.activityStore; await f.store.startPlannedActivity({ kind: 'travel', location: 'wilderness', maxCycles: 1 }); return f.state();
+    const f = (globalThis as any).h.activityStore; await f.store.startOnlinePlannedActivity({ kind: 'travel', location: 'wilderness', maxCycles: 1 }); return f.state();
   });
   expect(started.runtime.totalMs).toBe(6000); await page.clock.runFor(5999);
   expect(await page.evaluate(() => (globalThis as any).h.activityStore.store.game)).toEqual(started.game);
   await page.clock.runFor(1); await expect.poll(() => page.evaluate(() => (globalThis as any).h.activityStore.store.activity?.status)).toBe('stopped');
   const encounter = await page.evaluate(async () => {
     const h = (globalThis as any).h, f = h.activityStore, arrived = f.state();
-    await f.store.startPlannedActivity(h.adventure.defaultEncounterPlan(f.store.game, 'wolf')); return { arrived, ui: f.state() };
+    await f.store.startOnlinePlannedActivity(h.adventure.defaultEncounterPlan(f.store.game, 'wolf')); return { arrived, ui: f.state() };
   });
   expect(encounter.arrived.game.core.world.location).toBe('wilderness'); expect(encounter.ui.runtime.totalMs).toBe(30000);
   await page.clock.runFor(29999); expect(await page.evaluate(() => (globalThis as any).h.activityStore.store.game)).toEqual(encounter.ui.game);
@@ -51,7 +51,7 @@ test('Store lost battle-turn delivery replays the original result and begins a f
   });
   await page.clock.runFor(700); await page.evaluate(() => (globalThis as any).h.adventureBattleSeeding);
   const started = await page.evaluate(async () => {
-    const h = (globalThis as any).h, f = h.activityStore; await f.store.startPlannedActivity(h.adventure.defaultBattlePlan(f.store.game)); f.loseNextCycleDelivery(); return f.state();
+    const h = (globalThis as any).h, f = h.activityStore; await f.store.startOnlinePlannedActivity(h.adventure.defaultBattlePlan(f.store.game)); f.loseNextCycleDelivery(); return f.state();
   });
   await page.clock.runFor(3000); await expect.poll(() => page.evaluate(() => (globalThis as any).h.activityStore.store.canRetry)).toBe(true);
   const failed = await page.evaluate(async () => {
@@ -72,7 +72,7 @@ test('Store lost battle-turn delivery replays the original result and begins a f
 test('external progress invalidates viewing intent immediately while an arrived trip is still finishing its checkpoint read', async ({ page }) => {
   const started = await page.evaluate(async () => {
     const h = (globalThis as any).h, f = h.activityStore;
-    await f.store.startPlannedActivity({ kind: 'travel', location: 'wilderness', maxCycles: 1 });
+    await f.store.startOnlinePlannedActivity({ kind: 'travel', location: 'wilderness', maxCycles: 1 });
     const prototype = h.FullSaveRepository.prototype, original = prototype.loadCheckpoint;
     h.restoreAdventureCheckpoint = () => { prototype.loadCheckpoint = original; };
     prototype.loadCheckpoint = async function () {

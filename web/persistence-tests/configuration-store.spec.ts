@@ -95,9 +95,9 @@ test('Store configuration lost delivery stays retryable after refresh makes its 
 test('Store configuration rejects an old paused-activity confirmation after another arrangement replaces it at the same Game revision', async ({ page }) => {
   const r = await page.evaluate(async () => {
     const h = (globalThis as any).h, f = h.activityStore, plan = { kind: 'cultivation', method: 'natural', maxCycles: 3, until: 'cycles', stoneBudget: 0, stoneReserve: 0 };
-    await f.store.startCultivation(plan); await f.store.pauseCultivation();
+    await f.store.startOnlinePlannedActivity(plan); await f.store.pauseCultivation();
     const intent = f.store.prepareConfiguration({ type: 'EQUIP', skill: 'sword_still' }), oldActivity = structuredClone(f.store.activity), original = structuredClone(f.store.game);
-    await f.store.startCultivation({ ...plan, maxCycles: 2 }); await f.store.pauseCultivation();
+    await f.store.startOnlinePlannedActivity({ ...plan, maxCycles: 2 }); await f.store.pauseCultivation();
     const currentActivity = structuredClone(f.store.activity), before = await h.inspect(h.FULL_DB_NAME);
     await f.store.applyConfiguration(intent); await f.store.retryFor(intent.command.commandId);
     return { intent, oldActivity, currentActivity, original, before, afterRaw: await h.inspect(h.FULL_DB_NAME), after: f.state(), attempts: h.configurationAttempts };

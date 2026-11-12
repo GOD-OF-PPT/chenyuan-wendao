@@ -29,7 +29,7 @@ const localControls=useLocalActivityControls();
    <p v-if="store.activityPausing" role="status">核对本轮后停手，不再开始下一轮。</p>
    <button v-else-if="localControls&&a.status==='running'&&store.activityOwned" class="primary" data-testid="cultivation-active-pause" @click="store.pauseCultivation">暂停{{view.noun}}</button>
    <button v-else-if="localControls&&!store.activityRuntime" class="primary" data-testid="cultivation-active-resume" :disabled="store.busy||!!blocked" @click="store.resumeCultivation">{{'继续'+view.noun}}</button>
-   <small v-if="!store.activityRuntime&&!store.activityPausing">沿用原额度，本轮重新计时；离线无收益，继续后其他页停手。</small>
+   <small v-if="!store.activityRuntime&&!store.activityPausing">{{store.activitySchedule?'沿用已保存截止与原额度；返回核对最多8小时的完整周期。':'旧安排需明确继续；从本次继续起累计，过去的离开时段不补领。'}}</small>
    <p v-if="blocked&&!store.activityRuntime" role="status">{{stopMessage(a.plan,blocked)}}</p>
   </template>
   <button class="text-button" data-testid="cultivation-active-plan" @click="emit('inspect')">查看本段安排</button>

@@ -12,7 +12,7 @@ const emit=defineEmits<{restore:[];export:[];prepare:[]}>();
       <p data-testid="trial-stage-summary">{{journey.title}} · 已过 {{journey.completed}} / 3 关</p>
       <p v-if="journey.effect" data-testid="trial-selected-effect">{{journey.effect}} 这一选择贯穿本轮，不能在关间改选。</p>
       <p class="small">三关沿用当前配装，气血、灵力和已用丹药跨关保留；通关不会补满资源，也不领取普通战利品。</p>
-      <details><summary>暂离、导出与准备恢复</summary><p>离开前请确认顶部显示“已保存”。重开继续已保存的同一回合、敌方意图和剑意/符印，不重新抽取。阅读和暂离不推进游戏年月。</p><p>导出的当前进度可继续游玩，但不包含数据库独立保存的准备检查点；导入不会补造这个检查点。</p><button data-testid="trial-export-current" @click="emit('export')" :disabled="!enabled">导出当前进度</button></details>
+      <details><summary>暂离、导出与准备恢复</summary><p>离开前请确认顶部显示“已保存”。已安排的战策可离开累计；如需保留当前回合，请先暂停。返回核对真实成果，不重抽敌方意图，也不代选下一关。</p><p>导出的当前进度可继续游玩，但不包含数据库独立保存的准备检查点；导入不会补造这个检查点。</p><button data-testid="trial-export-current" @click="emit('export')" :disabled="!enabled">导出当前进度</button></details>
       <p v-if="checkpoint?.kind==='trial'" class="small" data-testid="trial-checkpoint-committed">已验证本局可用的渡劫前完整准备检查点；恢复会回退入场前的物品、配装、年月与人物记录。</p><p v-else class="small" data-testid="trial-checkpoint-unavailable">本局未找到可用的渡劫准备检查点；可先导出当前进度，不能从未记录的状态补造准备记录。</p>
     </template>
     <template v-else-if="recovery">

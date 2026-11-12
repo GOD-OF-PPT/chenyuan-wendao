@@ -50,7 +50,7 @@ function shape(value:unknown,fields:string[]):asserts value is Record<string,unk
   if (!value||typeof value!=='object'||Array.isArray(value)||Object.keys(value).sort().join(',')!==fields.sort().join(',')) invalid();
 }
 /** Replay proves the original batch; callers still return the latest committed snapshot. */
-export function validateScheduledReceipt(value:unknown,current:Game):asserts value is ScheduledReceipt {
+export function replayScheduledReceipt(value:unknown,current:Game):{receipt:ScheduledReceipt;progress:ScheduledProgress} {
   try {
     shape(value,['format','version','input','fingerprint','proof']);
     if (value.format!=='chenyuan-scheduled-receipt'||value.version!==1) invalid();
@@ -70,5 +70,7 @@ export function validateScheduledReceipt(value:unknown,current:Game):asserts val
       input,Number(p.observedAt),p.recordAfter.activity.id);
     if (fingerprint(expected.state)!==fingerprint(p.stateAfter)||fingerprint(expected.record)!==fingerprint(p.recordAfter)||
         expected.cycles.length!==p.cycles||expected.more!==p.more||fingerprint(expected.cycles.at(-1)?.result??null)!==fingerprint(p.result)) invalid();
+    return {receipt:value as unknown as ScheduledReceipt,progress:expected};
   } catch { invalid(); }
 }
+export function validateScheduledReceipt(value:unknown,current:Game):asserts value is ScheduledReceipt {replayScheduledReceipt(value,current);}

@@ -21,7 +21,7 @@ test('prepared selection captures stable Game and activity CAS, waits one full o
   const started = await page.evaluate(async () => {
     const h = (globalThis as any).h, f = h.milestoneStore;
     const intent = f.store.prepareMilestone({ type: 'CHOOSE', choice: 'help' }); h.finiteIntent = structuredClone(intent);
-    const before = f.state(); await f.store.startPreparedMilestone(intent); return { before, intent, ui: f.state(), raw: await h.inspect(h.FULL_DB_NAME) };
+    const before = f.state(); await f.store.startOnlinePreparedMilestone(intent); return { before, intent, ui: f.state(), raw: await h.inspect(h.FULL_DB_NAME) };
   });
   expect(started.intent.plan).toEqual({ kind: 'milestone', action: { type: 'CHOOSE', choice: 'help' }, maxCycles: 1 });
   expect(started.intent.mutation.expectedActivityId).toBeNull(); expect(started.ui.game).toEqual(started.before.game);
@@ -45,15 +45,15 @@ test('a stored arrangement cannot renew an old selection when activity CAS chang
     try {
       const snapshot = await other.loadActivitySnapshot(), arranged = await other.startActivity(h.milestonePlan({ type: 'CHOOSE', choice: 'leave' }), h.milestoneMutation(snapshot, 'another-page'));
       const paused = await other.pauseActivity(h.milestoneMutation(arranged, 'another-page')), before = await h.inspect(h.FULL_DB_NAME);
-      await f.store.startPreparedMilestone(intent);
+      await f.store.startOnlinePreparedMilestone(intent);
       const activityRace = { intent, paused, before, after: await h.inspect(h.FULL_DB_NAME), ui: f.state() };
       const resumed = await other.resumeActivity(h.milestoneMutation(await other.loadActivitySnapshot(), 'another-page')), realNow = Date.now;
       Date.now = () => resumed.activity.dueAt;
       try { await other.settleActivity(h.milestoneTick(resumed)); } finally { Date.now = realNow; }
-      const revisionBefore = await h.inspect(h.FULL_DB_NAME); await f.store.startPreparedMilestone(intent);
+      const revisionBefore = await h.inspect(h.FULL_DB_NAME); await f.store.startOnlinePreparedMilestone(intent);
       const revisionRace = { before: revisionBefore, after: await h.inspect(h.FULL_DB_NAME), ui: f.state() };
       await other.create('新人', h.mutation(await other.load()));
-      const runBefore = await h.inspect(h.FULL_DB_NAME); await f.store.startPreparedMilestone(intent);
+      const runBefore = await h.inspect(h.FULL_DB_NAME); await f.store.startOnlinePreparedMilestone(intent);
       return { ...activityRace, revisionRace, runRace: { before: runBefore, after: await h.inspect(h.FULL_DB_NAME), ui: f.state() } };
     } finally { other.close(); }
   });
@@ -69,7 +69,7 @@ test('failed arrangement retries its original frozen command and all nine ordina
     const h = (globalThis as any).h, f = h.milestoneStore, intent = f.store.prepareMilestone({ type: 'CHOOSE', choice: 'trade' }), before = await h.inspect(h.FULL_DB_NAME);
     const put = IDBObjectStore.prototype.put;
     IDBObjectStore.prototype.put = function(value: any, key?: IDBValidKey) { if (this.name === h.FULL_RECEIPT_STORE) throw new DOMException('arrangement quota', 'QuotaExceededError'); return put.call(this, value, key!); };
-    try { await f.store.startPreparedMilestone(intent); } finally { IDBObjectStore.prototype.put = put; }
+    try { await f.store.startOnlinePreparedMilestone(intent); } finally { IDBObjectStore.prototype.put = put; }
     h.failedFiniteIntent = structuredClone(intent); return { before, after: await h.inspect(h.FULL_DB_NAME), ui: f.state(), intent };
   });
   expect(failed.after).toEqual(failed.before); expect(failed.ui.canRetry).toBe(true); expect(failed.ui.saved).toBe(false); expect(failed.ui.activity).toBeNull();
@@ -99,7 +99,7 @@ test('lost ending delivery replays the exact committed life once, preserves read
   expect(imported.ui.game).toEqual({ ...imported.sample, core: { ...imported.sample.core,
     runId: imported.ui.game.core.runId, revision: 0 } });
   const started = await page.evaluate(async () => {
-    const h = (globalThis as any).h, f = h.milestoneStore; await f.store.startPreparedMilestone(f.store.prepareMilestone({ type: 'RETIRE' }));
+    const h = (globalThis as any).h, f = h.milestoneStore; await f.store.startOnlinePreparedMilestone(f.store.prepareMilestone({ type: 'RETIRE' }));
     f.loseNextCycleDelivery(); return f.state();
   });
   expect(started.game).toEqual(imported.ui.game); expect(started.busy).toBe(false);

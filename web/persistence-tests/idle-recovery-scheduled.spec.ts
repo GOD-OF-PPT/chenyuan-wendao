@@ -13,13 +13,14 @@ test('a real scheduled source persists four due periods together with its fiftee
    const started=await repo.startScheduledActivity({kind:'source',sourceId:'work',maxCycles:5,until:'cycles',target:null,monthBudget:60,remainingMonthsReserve:1},mutation(original,'scheduled-start'));
    now+=135000;const completed=await repo.advanceScheduledActivity(mutation(started,'scheduled-return'));
    let expected=started.state,a=started.activity;for(let n=0;n<4;n++){const result=h.engine.resolve(expected,a.nextCommand);expected=result.nextState;a=model.completeActivity(expected,a,result.result,{commandId:a.nextCommand.commandId,now:a.dueAt});}
-   reopened=await h.FullSaveRepository.open(name);const snapshot=await reopened.loadActivitySnapshot(),raw=await h.FullSaveRepository.exportRaw(name);
-   return{original,started,completed,expected,expectedActivity:a,snapshot,raw,now,scheduleStore:h.FULL_SCHEDULE_STORE};
+   reopened=await h.FullSaveRepository.open(name);const snapshot=await reopened.loadActivitySnapshot(),raw=await h.FullSaveRepository.exportRaw(name),summary=await reopened.loadAwaySummary();
+   return{original,started,completed,expected,expectedActivity:a,snapshot,raw,summary,afterSummary:await h.FullSaveRepository.exportRaw(name),now,scheduleStore:h.FULL_SCHEDULE_STORE};
   }finally{Date.now=realNow;reopened?.close();repo.close();}
  },repositoryFsRoot);
  expect(r.raw.database.version).toBe(10);expect(r.started.state).toEqual(r.original.state);expect(r.completed.state).toEqual(r.expected);expect(r.completed.activity).toEqual(r.expectedActivity);expect(r.completed.activity.completedCycles).toBe(4);
  expect(r.completed.state.core.player.stones-r.original.state.core.player.stones).toBe(80);expect(r.completed.activity.dueAt-r.now).toBe(15000);expect(r.snapshot.state).toEqual(r.completed.state);expect(r.snapshot.activity).toEqual(r.completed.activity);
  const clock=r.raw.stores.find((s:any)=>s.name===r.scheduleStore);expect(clock.entries).toHaveLength(1);expect(clock.entries[0].value.activityId).toBe(r.completed.activity.id);expect(clock.entries[0].value.activityRevision).toBe(r.completed.activity.revision);
+ expect(r.summary.cycles).toBe(4);expect(r.summary.costs.months).toBe(48);expect(r.summary.delta.stones).toBe(80);expect(r.summary.delta.months).toBe(48);expect(r.afterSummary).toEqual(r.raw);
 });
 
 for(const kind of ['restore','import','restart'])test(`a scheduled breakthrough checkpoint and ${kind} keep real ownership and archive the prior clock atomically`,async({page})=>{
@@ -44,6 +45,8 @@ for(const kind of ['restore','import','restart'])test(`a scheduled breakthrough 
  expect(r.cp.sourceRunId).toBe(r.done.state.core.runId);expect(r.done.activity.completedCycles).toBe(1);expect(r.done.state.core.player.realm).toBe('foundation');
  expect(r.snapshot.state).toEqual(r.out.state);expect(r.snapshot.activity).toBeNull();expect(r.snapshot.schedule).toBeUndefined();expect(r.out.state.core.runId).not.toBe(r.next.state.core.runId);
  expect(r.raw.stores.find((x:any)=>x.name==='full-schedules').entries).toEqual([]);expect(r.archives.some((x:any)=>JSON.stringify(x.value)===JSON.stringify(r.next.schedule))).toBe(true);
+ const archived=r.archives.find((x:any)=>x.value?.format==='chenyuan-away-summary-archive');expect(archived?.value.summary.cycles).toBe(1);
+ expect(archived.value.summary.id).toBe('cp-return');expect(archived.value.receipts).toHaveLength(1);expect(archived.value.receipts[0].proof.stateBefore).toEqual(r.original.state);
 });
 
 for(const broken of [false,true])test(`DB9 ${broken?'failed migration rolls back its version and new store':'upgrade preserves every old byte and safely rejects an old writer'}`,async({page})=>{
@@ -160,7 +163,7 @@ test('a fixed eight-hour window survives real page takeover and database reopen 
     repo.close();repo=await h.FullSaveRepository.open('scheduled-cap');current=await repo.loadActivitySnapshot();
    }
    const again=await repo.advanceScheduledActivity(mutation(current,'cap-refresh'));
-   return{current,chunks,windows,again,history:await repo.loadActivityHistory(current.activity.id,0,20)};
+   return{current,chunks,windows,again,history:await repo.loadActivityHistory(current.activity.id,0,20),summary:await repo.loadAwaySummary()};
   }finally{Date.now=realNow;repo.close();}
  },initial);
  const stale=await page.evaluate(async first=>{
@@ -173,6 +176,7 @@ test('a fixed eight-hour window survives real page takeover and database reopen 
  expect(rest.current.activity.spentMonths).toBe(960);expect(rest.current.state.core.player.stones-initial.started.state.core.player.stones).toBe(19200);
  expect(rest.windows.every((w:any)=>JSON.stringify(w)===JSON.stringify(initial.first.schedule.window))).toBe(true);
  expect(rest.current.activity.dueAt).toBe(initial.now+30000);expect(rest.again.cycles).toBe(0);expect(rest.again.state).toEqual(rest.current.state);expect(rest.history.total).toBe(960);expect(stale.code).toBe('STALE_REVISION');
+ expect(rest.summary.cycles).toBe(960);expect(rest.summary.delta.stones).toBe(19200);expect(rest.summary.costs.months).toBe(960);expect(rest.summary.discardedMs).toBe(16*60*60*1000);
 });
 
 test('scheduled pause cancels the unfinished period and old online callbacks cannot detach its saved clock',async({page})=>{
