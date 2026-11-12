@@ -1,6 +1,5 @@
 import type { Page } from '@playwright/test';
-import { fileURLToPath } from 'node:url';
-const root = fileURLToPath(new URL('../../', import.meta.url));
+import {repositoryFsRoot as root} from './fs-root';
 
 export async function setupPersistence(page: Page) {
   await page.goto('/persistence-tests/harness.html');

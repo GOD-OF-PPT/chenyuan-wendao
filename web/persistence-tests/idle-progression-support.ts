@@ -1,8 +1,7 @@
 import type { Page } from '@playwright/test';
-import { fileURLToPath } from 'node:url';
 import { setupPersistence } from './support';
 
-const root = fileURLToPath(new URL('../../', import.meta.url));
+import {repositoryFsRoot as root} from './fs-root';
 
 export interface IdleRouteOptions {
   choice: 'help' | 'trade' | 'leave';

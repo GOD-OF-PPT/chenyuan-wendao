@@ -1,10 +1,9 @@
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
-import {fileURLToPath} from 'node:url';
 import {setupPersistence} from './support';
 
 type ReadStage='open'|'snapshot'|'checkpoint'|'previous';
 type Delivery='success'|'failure';
-const root=fileURLToPath(new URL('../../',import.meta.url));
+import {repositoryFsRoot as root} from './fs-root';
 test.use({viewport:{width:1440,height:900}});
 
 // Real Store/native IndexedDB seam. Gates hold only delivery after the original

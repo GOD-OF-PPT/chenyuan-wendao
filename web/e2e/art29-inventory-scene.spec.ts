@@ -10,7 +10,7 @@ import {snapshot,activitySnapshot as activity,revealPaged} from './support';
 import {openInventoryLibrary,openInventoryUses,inspectInventorySupply} from './stage-support';
 test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});test.setTimeout(60000);
 const faults=new WeakMap<Page,string[]>();test.beforeEach(({page})=>{const a:string[]=[];faults.set(page,a);page.on('pageerror',e=>a.push(e.message));});test.afterEach(({page})=>expect(faults.get(page)).toEqual([]));
-const bounds=JSON.parse(readFileSync(new URL('../../goal-4/evidence/art29/legacy-item-bounds.json',import.meta.url),'utf8'));
+const bounds=JSON.parse(readFileSync(new URL('../../tests/fixtures/ui-bounds/art29-legacy-item-bounds.json',import.meta.url),'utf8'));
 function allItems(){const d=driver();for(let i=0;i<4;i++)d.realm();d.funds(3000);for(const[id,item]of Object.entries(C.items))if(item.kind==='material')d.resource(id,2);else d.buy(id,2);d.go('cave');validateGame(d.game);return d.game;}
 function medicine(){const d=driver();d.realm();d.funds(500);d.buy('healing_pill',6);d.buy('spirit_pill',6);d.go('wilderness');d.doAction({type:'ENCOUNTER',enemy:'wolf'});for(let i=0;i<9;i++)d.doAction({type:'BATTLE',move:i%3===2?'attack':'guard'});d.doAction({type:'BATTLE',move:'technique'});if(d.game.battle)d.doAction({type:'BATTLE',move:'flee'});d.go('market');validateGame(d.game);return d.game;}
 async function load(page:Page,g=allItems()){const before=await importRecoveryFixture(page,g);await page.getByTestId('tab-2').click();await expect(page.getByTestId('inventory-stage')).toBeVisible();return before;}

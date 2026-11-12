@@ -2,7 +2,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {sourceIdentity,root,sha} from './source-identity.mjs';
-import {prepareLegacyFixtures} from './prepare-legacy-fixtures.mjs';
 import {runCommand} from './process-command.mjs';
 export function parseTap(text){
  const value=key=>{const matches=[...text.matchAll(new RegExp('^# '+key+' (\\d+)\\s*$','gm'))];if(matches.length!==1)throw new Error('Missing or duplicate TAP '+key);return Number(matches[0][1]);};
@@ -21,7 +20,6 @@ export function installValidationDependencies(runner=runCommand){
 export const coreCommands=tests=>[['lock','node',['scripts/check_lock.mjs']],['install','node',['scripts/validate-core.mjs','--install-dependencies']],['typecheck','npm',['run','typecheck']],['content','npm',['run','check:content']],['tests','node',['--experimental-strip-types','--test','--test-reporter=tap',...tests]],['m1','npm',['run','replay']],['full','npm',['run','replay:full']],['economy','npm',['run','audit:economy']],['documents','python3',['scripts/check_docs.py']],['design-documents','python3',['docs/v0.4/tools/check_documents.py']]];
 export function coreLogName(id){if(!coreCommands([]).some(row=>row[0]===id))throw new Error('Unknown core command log');return id+(id==='tests'?'.tap':'.log');}
 export function validateCore(output=path.join(root,'web/core-report')){
- prepareLegacyFixtures();
  fs.mkdirSync(output,{recursive:true});const source=sourceIdentity(),tests=fs.readdirSync(path.join(root,'tests')).filter(n=>n.endsWith('.test.mjs')).sort().map(n=>'tests/'+n);
  const commands=coreCommands(tests);
  const results=[];let counts=null;

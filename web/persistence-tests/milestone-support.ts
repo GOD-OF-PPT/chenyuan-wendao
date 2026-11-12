@@ -1,7 +1,6 @@
 import type { Page } from '@playwright/test';
-import { fileURLToPath } from 'node:url';
 import { setupPersistence } from './support';
-const root = fileURLToPath(new URL('../../', import.meta.url));
+import {repositoryFsRoot as root} from './fs-root';
 
 /** Lawful rule routes for boundary persistence tests; elapsed wall time is tested separately in Store/UI. */
 export async function setupMilestones(page: Page) {

@@ -41,6 +41,8 @@ artifacts/
 /goal-3/
 /goal-4/
 web/idle-report/
+web/quality-report/
+web/quality-results/
 web/idle-results/
 web/idle-persistence-results/
 journey-evidence/

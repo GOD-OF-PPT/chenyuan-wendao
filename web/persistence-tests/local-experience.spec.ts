@@ -1,6 +1,5 @@
 import {test,expect} from '@playwright/test';
-import {fileURLToPath} from 'node:url';
-const root=fileURLToPath(new URL('../../',import.meta.url));
+import {repositoryFsRoot as root} from './fs-root';
 test.beforeEach(async({page})=>{
  await page.goto('/persistence-tests/harness.html');
  await page.evaluate(async root=>{
