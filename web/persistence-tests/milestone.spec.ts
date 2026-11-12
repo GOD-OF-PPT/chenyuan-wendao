@@ -44,7 +44,7 @@ test('all nine finite actions wait the complete deadline and save exactly their 
   }
   const end = rows.find(r => r.type === 'END')!; expect(end.done.state.core.player.realm).toBe('ascended'); expect(end.done.result.delta.xp).toBeLessThan(0);
   const retirement = rows.find(r => r.type === 'RETIRE')!; expect(retirement.done.result.costs.months).toBe(0); expect(retirement.done.state.core.player).toEqual(retirement.snapshot.state.core.player);
-  const lifespan = rows.find(r => r.type === 'END_LIFE')!; expect(lifespan.done.result.costs.months).toBe(1); expect(lifespan.life.overview.remainingMonths).toBe(0);
+  const lifespan = rows.find(r => r.type === 'END_LIFE')!; expect(lifespan.done.result.costs.months).toBe(12); expect(lifespan.life.overview.remainingMonths).toBe(0);
 });
 
 test('checkpoint, owner, activity and receipt faults including put-success abort roll every record back and retry one original command', async ({ page }) => {
@@ -116,8 +116,8 @@ test('corrupt finite proofs cannot change the chosen consequence, realm, ending,
 test('all old short-action receipts replay strictly before the new-write guard and preserve stored progress', async ({ page }) => {
   const rows = await page.evaluate(async () => {
     const h = (globalThis as any).h, rows = [];
-    for (const sample of h.milestoneSamples) {
-      const name = 'milestone-old-' + sample.action.type, { repo, snapshot, action } = await h.milestoneFixture(name, sample.action.type);
+    for (const sample of h.legacyMilestoneSamples) {
+      const name = 'milestone-old-' + sample.action.type, { repo, snapshot, action } = await h.milestoneFixture(name, sample.action.type, true);
       try {
         const command = h.command(snapshot.state, action), expected = h.engine.resolve(snapshot.state, command);
         await h.put(name, h.FULL_STATE_STORE, 'previous', snapshot.state); await h.put(name, h.FULL_STATE_STORE, 'current', expected.nextState);

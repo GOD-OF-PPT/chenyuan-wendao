@@ -7,7 +7,7 @@ test('exact pre-review v6 completion activities and proof receipts remain readab
   const rows = await page.evaluate(async () => {
     const h = (globalThis as any).h, rows = [];
     for (const kind of ['travel', 'encounter', 'battle']) {
-      const d = h.routes.driver('help');
+      const d = h.legacyRuleRoutes.driver('help');
       if (kind !== 'travel') d.go('wilderness');
       if (kind === 'battle') d.doAction({ type: 'ENCOUNTER', enemy: 'wolf' });
       const name = 'later-mixed-legacy-completion-' + kind, { repo } = await h.laterOpen(name, d.game);
@@ -32,7 +32,7 @@ test('exact pre-review v6 completion activities and proof receipts remain readab
     return rows;
   });
   for (const row of rows) {
-    expect(row.snapshot).toEqual({ state: row.done.state, activity: row.activity }); expect(row.replay.ok).toBe(true);
+    expect(row.snapshot.state.core.contentVersion).toBe('full-demo.3'); expect(row.activity).not.toHaveProperty('rulesVersion'); expect(row.snapshot).toEqual({ state: row.done.state, activity: row.activity }); expect(row.replay.ok).toBe(true);
     expect(row.replay.value.replayed).toBe(true); expect(row.replay.value.state).toEqual(row.done.state); expect(row.replay.value.activity).toEqual(row.activity);
     expect(row.replay.value.result).toEqual(row.done.result); expect(row.history.ok).toBe(true); expect(row.history.value.total).toBe(1);
     expect(row.history.value.rows[0].activity).toEqual(row.activity); expect(row.after).toEqual(row.before); expect(row.rejected.code).toBe('RECEIPT_INVALID');

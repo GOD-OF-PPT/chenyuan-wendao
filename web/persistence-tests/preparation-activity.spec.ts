@@ -23,9 +23,11 @@ test.beforeEach(async ({ page }) => {
       expectedRevision: s.state.core.revision, activityId: s.activity.id, expectedActivityRevision: s.activity.revision,
       generation: s.activity.generation, ownerId: s.activity.ownerId });
     h.preparationFixture = async (name: string, kind = 'learn', options: any = {}) => {
-      const d = h.routes.driver(), target = options.realm ?? 'golden';
+      const d = (options.legacyRules ? h.legacyRuleRoutes : h.routes).driver(), target = options.realm ?? 'golden';
       while (C.rank(d.game.core.player.realm) < C.rank(target)) d.realm();
-      d.funds(10000); d.buy('healing_pill', 10); d.buy('spirit_pill', 10);
+      // This covers the largest single quoted pill (2205) and the full 680-stone
+      // skill queue through actual work, without an unnecessary 10000-stone route.
+      d.buy('healing_pill', 10); d.buy('spirit_pill', 10); d.funds(2500);
       d.go(kind === 'buy' || kind === 'sell' ? 'market' : kind === 'learn' || kind === 'study' ? 'sect' : 'cave');
       const game = structuredClone(d.game);
       // Explicit valid boundary fixtures exercise recovery/capacity, not a claimed normal player route.
@@ -74,7 +76,7 @@ test('all six preparation kinds settle real one-command costs and outcomes, and 
     if (r.kind === 'learn') expect(r.completed.activity.learnedSkills).toEqual(['sword_still']);
     if (r.kind === 'study') expect(r.completed.activity.studiedManuals).toEqual(['jinghong']);
     if (r.kind === 'use') expect(r.completed.activity.restoredHp).toBe(r.completed.result.delta.hp);
-    if (r.kind === 'rest') { expect(r.completed.activity.status).toBe('stopped'); expect(r.completed.result.costs.months).toBe(1); }
+    if (r.kind === 'rest') { expect(r.completed.activity.status).toBe('stopped'); expect(r.completed.result.costs.months).toBe(12); }
   }
 });
 
@@ -233,7 +235,7 @@ test('six former short-action receipts replay strictly but fresh ordinary writes
   const rows = await page.evaluate(async () => {
     const h = (globalThis as any).h, rows = [];
     for (const kind of ['learn', 'study', 'buy', 'sell', 'use', 'rest']) {
-      const name = 'preparation-legacy-command-' + kind, { repo, snapshot } = await h.preparationFixture(name, kind);
+      const name = 'preparation-legacy-command-' + kind, { repo, snapshot } = await h.preparationFixture(name, kind, { legacyRules: true });
       try {
         const action = h.preparationAPI.preparationCycleAction(h.preparationPlan(kind), 0), command = h.command(snapshot.state, action), expected = h.engine.resolve(snapshot.state, command);
         // Exact legal v6 command/receipt records, produced by the unchanged deterministic engine.
@@ -254,7 +256,7 @@ test('DB7 preserves every v6 legacy activity, real checkpoint and receipt byte-f
     const h = (globalThis as any).h, rows = [], realNow = Date.now; let now = 1_700_000_000_000; Date.now = () => now;
     try {
       for (const kind of ['cultivation', 'source', 'craft', 'forge']) {
-        const name = 'preparation-upgrade-v6-' + kind, repo = await h.FullSaveRepository.open(name + '-source'), d = h.routes.driver();
+        const name = 'preparation-upgrade-v6-' + kind, repo = await h.FullSaveRepository.open(name + '-source'), d = h.legacyRuleRoutes.driver();
         try {
           d.realm(); d.resource('herb', 12); d.resource('jade', 7); d.resource('core', 4); d.funds(1000); d.buy('golden_pill', 1); d.meditate(); d.go('cave');
           const imported = await repo.importText(JSON.stringify(d.game), h.mutation());
@@ -281,7 +283,7 @@ test('DB7 preserves every v6 legacy activity, real checkpoint and receipt byte-f
     } finally { Date.now = realNow; }
   });
   for (const row of rows) {
-    expect(row.closed).toBe(true); expect(row.after.version).toBe(9); expect(row.checkpoint).not.toBeNull();
+    expect(row.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(row.loaded.activity).not.toHaveProperty('rulesVersion'); expect(row.closed).toBe(true); expect(row.after.version).toBe(9); expect(row.checkpoint).not.toBeNull();
     for (const store of row.original.stores) expect(row.after[store]).toEqual(row.original[store]);
     expect(row.loaded).toEqual({ state: row.completed.state, activity: row.completed.activity }); expect(row.checkpointAfter).toEqual(row.checkpoint);
     expect(row.replay.replayed).toBe(true); expect(row.replay.state).toEqual(row.completed.state); expect(row.replay.activity).toEqual(row.completed.activity);

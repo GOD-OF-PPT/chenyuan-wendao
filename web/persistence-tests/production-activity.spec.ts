@@ -11,7 +11,7 @@ test.beforeEach(async ({ page }) => {
       const C = h.productionContent, entry = kind === 'craft' ? C.recipes[id] : C.relics[id];
       return { kind, ...(kind === 'craft' ? { recipeId: id, maxCycles: 5, until: 'cycles', targetQuantity: null } : { relicId: id, maxCycles: 1 }),
         stoneBudget: entry.stones * (kind === 'craft' ? 5 : 1), stoneReserve: 0,
-        monthBudget: (kind === 'craft' ? entry.months * 5 : 2), remainingMonthsReserve: 1, itemReserves: {}, ...overrides };
+        monthBudget: (kind === 'craft' ? entry.months * 5 : C.actionDurations.forge), remainingMonthsReserve: 1, itemReserves: {}, ...overrides };
     };
     h.activityMutation = (snapshot: any, ownerId = 'production-page-a') => ({ commandId: crypto.randomUUID(),
       runId: snapshot.state.core.runId, expectedRevision: snapshot.state.core.revision,
@@ -58,13 +58,13 @@ test('two real-formula furnaces settle separately, retain gross products and con
   expect(r.early.code).toBe('ACTIVITY_NOT_DUE'); expect(r.before).toEqual({ state: r.started.state, activity: r.started.activity });
   for (const outcome of [r.first, r.second]) {
     expect(outcome.result.type).toBe('CRAFT'); expect(outcome.result.executedSteps).toBe(1); expect(outcome.result.requestedSteps).toBe(1);
-    expect(outcome.result.costs).toEqual({ stones: 2, mp: 0, months: 1, items: { herb: 2 } });
+    expect(outcome.result.costs).toEqual({ stones: 2, mp: 0, months: 12, items: { herb: 2 } });
     expect(outcome.result.delta.inventory).toEqual({ herb: -2, healing_pill: 1 }); expect(outcome.result.delta.xp).toBe(0);
   }
   expect(r.first.activity.status).toBe('running'); expect(r.second.activity.status).toBe('stopped');
   expect(r.second.activity.completedCycles).toBe(2); expect(r.second.activity.stopReason.code).toBe('CYCLES_COMPLETE');
   expect(r.second.activity.spentItems).toEqual({ herb: 4 }); expect(r.second.activity.gainedItems).toEqual({ healing_pill: 2 });
-  expect(r.second.activity.forgedRelics).toEqual([]); expect(r.second.activity.spentStones).toBe(4); expect(r.second.activity.spentMonths).toBe(2);
+  expect(r.second.activity.forgedRelics).toEqual([]); expect(r.second.activity.spentStones).toBe(4); expect(r.second.activity.spentMonths).toBe(24);
   expect(r.second.state.core.inventory.herb).toBe(r.snapshot.state.core.inventory.herb - 4);
   expect(r.second.state.core.inventory.healing_pill).toBe(r.snapshot.state.core.inventory.healing_pill + 2);
   expect(r.previous).toEqual(r.first.state); expect(r.persisted).toEqual({ state: r.second.state, activity: r.second.activity });
@@ -94,7 +94,7 @@ test('all seven recipes and four relics persist their exact formal one-command c
     expect(row.completed.state).toEqual(row.expected.nextState); expect(row.completed.result).toEqual(row.expected.result);
     expect(row.command.count).toBeUndefined(); expect(row.completed.activity.completedCycles).toBe(1);
     expect(row.completed.activity.spentItems).toEqual(row.entry.inputs); expect(row.completed.activity.spentStones).toBe(row.entry.stones);
-    expect(row.completed.activity.spentMonths).toBe(row.kind === 'craft' ? row.entry.months : 2);
+    expect(row.completed.activity.spentMonths).toBe(row.kind === 'craft' ? row.entry.months : 24);
     expect(row.completed.state.loadout).toEqual(row.snapshot.state.loadout); expect(row.completed.state.core.player.realm).toBe(row.snapshot.state.core.player.realm);
     expect(row.persisted).toEqual({ state: row.completed.state, activity: row.completed.activity });
     if (row.kind === 'craft') {
@@ -114,12 +114,12 @@ test('inventory target, cumulative budgets, material and resource reserves, shor
     let now = 1_700_000_000_000; Date.now = () => now;
     try {
       for (const mode of ['target', 'stoneBudget', 'monthBudget', 'itemReserve', 'stoneReserve', 'lifespan', 'shortage', 'capacity']) {
-        const options = mode === 'lifespan' ? { remainingMonths: 3 } : mode === 'shortage' ? { inventory: { herb: 2 } } :
+        const options = mode === 'lifespan' ? { remainingMonths: 14 } : mode === 'shortage' ? { inventory: { herb: 2 } } :
           mode === 'capacity' ? { inventory: { healing_pill: C.maxQuantity - 1 } } : {};
         const { repo, snapshot } = await h.productionFixture('production-stop-' + mode, 'craft', 'healing', options);
         try {
           const overrides = mode === 'target' ? { until: 'target', targetQuantity: snapshot.state.core.inventory.healing_pill + 1 } :
-            mode === 'stoneBudget' ? { stoneBudget: 2 } : mode === 'monthBudget' ? { monthBudget: 1 } :
+            mode === 'stoneBudget' ? { stoneBudget: 2 } : mode === 'monthBudget' ? { monthBudget: 12 } :
             mode === 'itemReserve' ? { itemReserves: { herb: snapshot.state.core.inventory.herb - 2 } } :
             mode === 'stoneReserve' ? { stoneReserve: snapshot.state.core.player.stones - 2 } :
             mode === 'lifespan' ? { remainingMonthsReserve: 2 } : {};
@@ -137,7 +137,7 @@ test('inventory target, cumulative budgets, material and resource reserves, shor
     expect(row.completed.activity.completedCycles).toBe(1); expect(row.completed.activity.status).toBe('stopped');
     expect(row.completed.activity.stopReason.code).toBe(codes[row.mode]); expect(row.resume.code).toBe('ACTIVITY_STOPPED');
     expect(row.completed.activity.spentItems).toEqual({ herb: 2 }); expect(row.completed.activity.gainedItems).toEqual({ healing_pill: 1 });
-    expect(row.completed.activity.spentStones).toBe(2); expect(row.completed.activity.spentMonths).toBe(1);
+    expect(row.completed.activity.spentStones).toBe(2); expect(row.completed.activity.spentMonths).toBe(12);
     expect(row.completed.state.core.player.stones).toBe(row.snapshot.state.core.player.stones - 2);
     expect(row.persisted).toEqual({ state: row.completed.state, activity: row.completed.activity });
   }
@@ -261,7 +261,7 @@ test('v5 cultivation and source activities, complete resources, real checkpoint 
     const h = (globalThis as any).h, rows = [], realNow = Date.now; let now = 1_700_000_000_000; Date.now = () => now;
     try {
       for (const kind of ['cultivation', 'source']) {
-        const name = 'production-v5-' + kind, fixture = await h.FullSaveRepository.open(name + '-original'), d = h.routes.driver();
+        const name = 'production-v5-' + kind, fixture = await h.FullSaveRepository.open(name + '-original'), d = h.legacyRuleRoutes.driver();
         try {
           let state = (await fixture.importText(JSON.stringify(d.checkpoints.mortal), h.mutation())).state;
           state = (await h.finishAction(fixture, { type: 'BREAKTHROUGH' })).state;
@@ -300,7 +300,7 @@ test('v5 cultivation and source activities, complete resources, real checkpoint 
   for (const row of rows) {
     expect(row.closed).toBe(true); expect(row.after.version).toBe(9); expect(row.checkpoint).not.toBeNull();
     for (const store of row.original.stores) expect(row.after[store]).toEqual(row.original[store]);
-    expect(row.loaded.activity.version).toBe(row.kind === 'cultivation' ? 1 : 2);
+    expect(row.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(row.loaded.activity).not.toHaveProperty('rulesVersion'); expect(row.loaded.activity.version).toBe(row.kind === 'cultivation' ? 1 : 2);
     expect(row.loaded).toEqual({ state: row.completed.state, activity: row.completed.activity }); expect(row.checkpointAfter).toEqual(row.checkpoint);
     expect(row.replay.replayed).toBe(true); expect(row.replay.state).toEqual(row.completed.state); expect(row.replay.activity).toEqual(row.completed.activity);
     expect(row.oldProgram.ok).toBe(false); expect(row.oldProgram.name).toBe('VersionError');

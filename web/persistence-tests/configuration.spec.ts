@@ -11,8 +11,8 @@ test.beforeEach(async ({ page }) => {
     h.configurationIntent = (s: any, action: any) => ({ command: h.command(s.state, action), expectedActivityId: s.activity?.id ?? null, expectedActivityRevision: s.activity?.revision ?? null });
     h.configurationMutation = (s: any) => ({ commandId: crypto.randomUUID(), runId: s.state.core.runId, expectedRevision: s.state.core.revision,
       expectedActivityId: s.activity?.id ?? null, expectedActivityRevision: s.activity?.revision ?? null, ownerId: 'configuration-page-a' });
-    h.configurationFixture = async (name: string, battle = false) => {
-      const d = h.routes.driver(); while (C.rank(d.game.core.player.realm) < C.rank('golden')) d.realm(); d.funds(5000); d.go('sect');
+    h.configurationFixture = async (name: string, battle = false, legacyRules = false) => {
+      const d = (legacyRules ? h.legacyRuleRoutes : h.routes).driver(); while (C.rank(d.game.core.player.realm) < C.rank('golden')) d.realm(); d.funds(5000); d.go('sect');
       for (const id of Object.keys(C.skills)) if (!d.game.learned.includes(id)) d.doAction({ type: 'LEARN', skill: id });
       for (const [id, relic] of Object.entries(C.relics) as [string, any][]) {
         for (const [item, amount] of Object.entries(relic.inputs)) d.resource(item, amount as number);
@@ -182,7 +182,7 @@ test('legal old configuration receipts still replay through ordinary execute whi
   const rows = await page.evaluate(async () => {
     const h = (globalThis as any).h, rows = [];
     for (const action of [{ type: 'SCHOOL', school: 'talisman' }, { type: 'EQUIP', skill: 'sword_still' }, { type: 'EQUIP_RELIC', relic: 'jade_seal' }]) {
-      const name = 'configuration-old-' + action.type, { repo, snapshot } = await h.configurationFixture(name);
+      const name = 'configuration-old-' + action.type, { repo, snapshot } = await h.configurationFixture(name, false, true);
       try {
         const command = h.command(snapshot.state, action), expected = h.engine.resolve(snapshot.state, command);
         await h.put(name, h.FULL_STATE_STORE, 'previous', snapshot.state); await h.put(name, h.FULL_STATE_STORE, 'current', expected.nextState);

@@ -168,7 +168,7 @@ test('Store retry replays a committed cycle and pause/resume preserve its replay
   expect(failed.ui.error).toContain('回复丢失'); expect(failed.ui.lastResult).toBeNull();
   expect(failed.persisted.state).toEqual(failed.delivery.outcome.state);
   expect(failed.persisted.state.core.player.stones).toBe(started.game.core.player.stones - 20);
-  expect(failed.persisted.state.core.world.elapsedMonths).toBe(started.game.core.world.elapsedMonths + 1);
+  expect(failed.persisted.state.core.world.elapsedMonths).toBe(started.game.core.world.elapsedMonths + 12);
   expect(failed.persisted.activity.completedCycles).toBe(1);
   await page.evaluate(() => (globalThis as any).h.activityStore.store.retry());
   const retried = await page.evaluate(async () => {
@@ -230,7 +230,7 @@ test('same Store reconnect preserves running arrangement without offline catch-u
     return { ui: f.state(), persisted: await f.persisted() };
   });
   expect(after.ui.game.core.player.stones).toBe(started.game.core.player.stones - 20);
-  expect(after.ui.game.core.world.elapsedMonths).toBe(started.game.core.world.elapsedMonths + 1);
+  expect(after.ui.game.core.world.elapsedMonths).toBe(started.game.core.world.elapsedMonths + 12);
   expect(after.persisted.state).toEqual(after.ui.game);
 });
 
@@ -284,7 +284,7 @@ test('source Store replays a lost material-cycle delivery and a pause during com
   const started = await page.evaluate(async () => {
     const f = (globalThis as any).h.activityStore;
     await f.store.startPlannedActivity({ kind: 'source', sourceId: 'herbs', maxCycles: 5, until: 'cycles', target: null,
-      monthBudget: 5, remainingMonthsReserve: 1 });
+      monthBudget: 60, remainingMonthsReserve: 1 });
     f.loseNextCycleDelivery(); return f.state();
   });
   expect(started.activity.version).toBe(2); expect(started.runtime.remainingMs).toBe(30_000);
@@ -298,7 +298,7 @@ test('source Store replays a lost material-cycle delivery and a pause during com
     return { ui: f.state(), persisted: await f.persisted(), raw: await h.inspect(h.FULL_DB_NAME), delivery: f.delivered };
   });
   expect(failed.ui.lastResult).toBeNull(); expect(failed.ui.error).toContain('回复丢失');
-  expect(failed.persisted.activity.gainedItems).toEqual({ herb: 2 }); expect(failed.persisted.activity.spentMonths).toBe(1);
+  expect(failed.persisted.activity.gainedItems).toEqual({ herb: 2 }); expect(failed.persisted.activity.spentMonths).toBe(12);
   expect(failed.persisted.state.core.inventory.herb).toBe(started.game.core.inventory.herb + 2);
   expect(failed.persisted.state).toEqual(failed.delivery.outcome.state);
   await page.evaluate(() => (globalThis as any).h.activityStore.store.retry());
@@ -321,7 +321,7 @@ test('source Store replays a lost material-cycle delivery and a pause during com
   });
   expect(waiting.ui.runtime).toBeNull(); expect(waiting.ui.pausing).toBe(true);
   expect(waiting.ui.activity.completedCycles).toBe(1); expect(waiting.persisted.activity.completedCycles).toBe(2);
-  expect(waiting.persisted.activity.gainedItems).toEqual({ herb: 4 }); expect(waiting.persisted.activity.spentMonths).toBe(2);
+  expect(waiting.persisted.activity.gainedItems).toEqual({ herb: 4 }); expect(waiting.persisted.activity.spentMonths).toBe(24);
   await page.evaluate(async () => {
     const h = (globalThis as any).h; h.activityStore.releaseHeldCycle(); await h.sourcePausing;
   });
@@ -347,7 +347,7 @@ test('production Store retries the saved furnace and a pause while the next comm
   const started = await page.evaluate(async () => {
     const f = (globalThis as any).h.activityStore;
     await f.store.startPlannedActivity({ kind: 'craft', recipeId: 'healing', maxCycles: 5, until: 'cycles', targetQuantity: null,
-      stoneBudget: 10, stoneReserve: 0, monthBudget: 5, remainingMonthsReserve: 1, itemReserves: {} });
+      stoneBudget: 10, stoneReserve: 0, monthBudget: 60, remainingMonthsReserve: 1, itemReserves: {} });
     f.loseNextCycleDelivery(); return f.state();
   });
   expect(started.activity.version).toBe(3); expect(started.runtime.remainingMs).toBe(30_000);

@@ -13,8 +13,8 @@ test.beforeEach(async ({ page }) => {
     h.activityTick = (snapshot: any) => ({ commandId: snapshot.activity.nextCommand.commandId,
       runId: snapshot.state.core.runId, expectedRevision: snapshot.state.core.revision, activityId: snapshot.activity.id,
       expectedActivityRevision: snapshot.activity.revision, ownerId: snapshot.activity.ownerId, generation: snapshot.activity.generation });
-    h.activityFixture = async (name: string) => {
-      const d = h.routes.driver(); d.go('cave');
+    h.activityFixture = async (name: string, legacyRules = false) => {
+      const d = (legacyRules ? h.legacyRuleRoutes : h.routes).driver(); d.go('cave');
       const repo = await h.FullSaveRepository.open(name);
       await repo.importText(JSON.stringify(d.game), h.mutation());
       return { repo, snapshot: await repo.loadActivitySnapshot() };
@@ -42,7 +42,7 @@ test('online cycles never reward early, a late callback settles one step, and re
   expect(r.early.code).toBe('ACTIVITY_NOT_DUE'); expect(r.unchanged.activity).toEqual(r.started.activity);
   expect(r.unchanged.state).toEqual(r.snapshot.state);
   expect(r.first.result.executedSteps).toBe(1); expect(r.first.result.requestedSteps).toBe(1);
-  expect(r.first.activity.completedCycles).toBe(1); expect(r.first.state.core.world.elapsedMonths).toBe(r.snapshot.state.core.world.elapsedMonths + 1);
+  expect(r.first.activity.completedCycles).toBe(1); expect(r.first.state.core.world.elapsedMonths).toBe(r.snapshot.state.core.world.elapsedMonths + 12);
   expect(r.first.activity.dueAt - r.first.activity.startedAt).toBe(r.first.activity.cycleMs);
   expect(r.secondEarly.code).toBe('ACTIVITY_NOT_DUE'); expect(r.firstReplay.replayed).toBe(true);
   expect(r.firstReplay.state).toEqual(r.first.state); expect(r.firstReplay.activity).toEqual(r.first.activity);
@@ -245,9 +245,9 @@ test('restoring a real breakthrough checkpoint archives the old activity with th
 
 test('v3 database upgrades retain real Game records and receipts while an old connection closes on version change', async ({ page }) => {
   const r = await page.evaluate(async () => {
-    const h = (globalThis as any).h, name = 'activity-v3', source = await h.activityFixture('activity-v3-source');
+    const h = (globalThis as any).h, name = 'activity-v3', source = await h.activityFixture('activity-v3-source', true);
     source.repo.close();
-    const original = source.snapshot.state, sourceRaw = await h.inspect('activity-v3-source'), prior = h.routes.driver().checkpoints.mortal;
+    const original = source.snapshot.state, sourceRaw = await h.inspect('activity-v3-source'), prior = h.legacyRuleRoutes.driver().checkpoints.mortal;
     let closed = false;
     const old = await new Promise<IDBDatabase>((resolve, reject) => {
       const request = indexedDB.open(name, 3);
@@ -267,7 +267,7 @@ test('v3 database upgrades retain real Game records and receipts while an old co
   });
   expect(r.closed).toBe(true); expect(r.after.version).toBe(r.targetVersion);
   expect(r.after['full-state']).toEqual(r.before['full-state']); expect(r.after['full-receipts']).toEqual(r.before['full-receipts']);
-  expect(r.loaded.state).toEqual(r.original); expect(r.loaded.activity).toBeNull();
+  expect(r.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(r.loaded.state).toEqual(r.original); expect(r.loaded.activity).toBeNull();
 });
 
 test('content migration archives and clears the old activity atomically without fabricating offline growth', async ({ page }) => {

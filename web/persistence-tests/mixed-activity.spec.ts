@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
     const h = (globalThis as any).h, C = await import(`/@fs${root}src/full/content.ts`);
     h.mixedPlan = (kind: string) => {
       if (kind === 'cultivation') return { kind, method: 'natural', maxCycles: 3, until: 'cycles', stoneBudget: 0, stoneReserve: 0 };
-      if (kind === 'source') return { kind, sourceId: 'herbs', maxCycles: 3, until: 'cycles', target: null, monthBudget: 3, remainingMonthsReserve: 1 };
+      if (kind === 'source') return { kind, sourceId: 'herbs', maxCycles: 3, until: 'cycles', target: null, monthBudget: 36, remainingMonthsReserve: 1 };
       const entry = kind === 'craft' ? C.recipes.healing : C.relics.frost_sword, count = kind === 'craft' ? 3 : 1;
       return { kind, ...(kind === 'craft' ? { recipeId: 'healing', maxCycles: count, until: 'cycles', targetQuantity: null } : { relicId: 'frost_sword', maxCycles: 1 }),
         stoneBudget: entry.stones * count, stoneReserve: 0, monthBudget: (kind === 'craft' ? C.recipes.healing.months : C.actionDurations.forge) * count,

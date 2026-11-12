@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => setupPersistence(page));
 test('DB8 preserves real DB7 preparation, configuration proofs, checkpoint and old travel receipt without replaying their effects', async ({ page }) => {
   const r = await page.evaluate(async root => {
     const h = (globalThis as any).h, { canonicalFingerprint } = await import(`/@fs${root}src/full/receipts.ts`), name = 'adventure-upgrade-v7';
-    const source = await h.FullSaveRepository.open(name + '-source'), d = h.routes.driver(), realNow = Date.now; let now = 1_700_000_000_000; Date.now = () => now;
+    const source = await h.FullSaveRepository.open(name + '-source'), d = h.legacyRuleRoutes.driver(), realNow = Date.now; let now = 1_700_000_000_000; Date.now = () => now;
     try {
       d.realm(); d.funds(400); d.buy('golden_pill', 1); d.funds(500); d.meditate(); d.go('cave');
       let game = (await source.importText(JSON.stringify(d.game), h.mutation())).state;
@@ -37,7 +37,7 @@ test('DB8 preserves real DB7 preparation, configuration proofs, checkpoint and o
       } finally { upgraded.close(); old.close(); }
     } finally { Date.now = realNow; source.close(); }
   }, root);
-  expect(r.closed).toBe(true); expect(r.after.version).toBe(9); expect(r.checkpoint).not.toBeNull(); expect(r.checkpointAfter).toEqual(r.checkpoint);
+  expect(r.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(r.loaded.activity).not.toHaveProperty('rulesVersion'); expect(r.closed).toBe(true); expect(r.after.version).toBe(9); expect(r.checkpoint).not.toBeNull(); expect(r.checkpointAfter).toEqual(r.checkpoint);
   for (const store of r.original.stores) expect(r.after[store]).toEqual(r.original[store]);
   expect(r.loaded).toEqual({ state: r.configured.state, activity: r.configured.activity });
   for (const replay of [r.learnReplay, r.configReplay, r.travelReplay]) { expect(replay.replayed).toBe(true); expect(replay.state).toEqual(r.configured.state); }
