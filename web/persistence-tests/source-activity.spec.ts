@@ -3,10 +3,11 @@ import { setupPersistence } from './support';
 
 test.beforeEach(async ({ page }) => {
   await setupPersistence(page);
-  await page.evaluate(() => {
+  await page.evaluate(async () => {
     const h = (globalThis as any).h;
+    const C = h.currentContent;
     h.sourcePlan = (sourceId = 'herbs', overrides: any = {}) => ({ kind: 'source', sourceId, maxCycles: 5,
-      until: 'cycles', target: null, monthBudget: 5, remainingMonthsReserve: 1, ...overrides });
+      until: 'cycles', target: null, monthBudget: C.sources[sourceId].months * 5, remainingMonthsReserve: 1, ...overrides });
     h.activityMutation = (snapshot: any, ownerId = 'source-page-a') => ({ commandId: crypto.randomUUID(),
       runId: snapshot.state.core.runId, expectedRevision: snapshot.state.core.revision,
       expectedActivityId: snapshot.activity?.id ?? null, expectedActivityRevision: snapshot.activity?.revision ?? null, ownerId });
@@ -20,7 +21,7 @@ test.beforeEach(async ({ page }) => {
       // Explicit validity-checked boundary fixtures; these are not player progression or balance evidence.
       const game = structuredClone(d.game);
       if (options.remainingMonths !== undefined) game.core.world.elapsedMonths =
-        1440 - game.core.player.startAgeMonths - options.remainingMonths;
+        C.realms[game.core.player.realm].lifespanMonths - game.core.player.startAgeMonths - options.remainingMonths;
       if (options.herbQuantity !== undefined) game.core.inventory.herb = options.herbQuantity;
       h.engine.validateGame(game);
       const repo = await h.FullSaveRepository.open(name);
@@ -54,7 +55,7 @@ test('two material cycles save separately at full cultivation, never reward earl
   expect(r.first.activity.status).toBe('running'); expect(r.first.activity.completedCycles).toBe(1);
   expect(r.second.activity.completedCycles).toBe(2); expect(r.second.activity.status).toBe('stopped');
   expect(r.second.activity.stopReason.code).toBe('CYCLES_COMPLETE'); expect(r.second.activity.gainedItems).toEqual({ herb: 4 });
-  expect(r.second.activity.gainedStones).toBe(0); expect(r.second.activity.spentStones).toBe(0); expect(r.second.activity.spentMonths).toBe(2);
+  expect(r.second.activity.gainedStones).toBe(0); expect(r.second.activity.spentStones).toBe(0); expect(r.second.activity.spentMonths).toBe(24);
   expect(r.second.state.core.inventory.herb).toBe(r.snapshot.state.core.inventory.herb + 4);
   expect(r.previous).toEqual(r.first.state); expect(r.persisted).toEqual({ state: r.second.state, activity: r.second.activity });
   expect(r.replay.replayed).toBe(true); expect(r.replay.state).toEqual(r.second.state);
@@ -85,7 +86,7 @@ test('item and currency targets stop after a real complete cycle and zero-XP wor
   });
   for (const row of r) {
     expect(row.outcome.activity.completedCycles).toBe(2); expect(row.outcome.activity.stopReason.code).toBe('TARGET_MET');
-    expect(row.outcome.activity.spentMonths).toBe(2); expect(row.outcome.activity.gainedXp).toBe(0);
+    expect(row.outcome.activity.spentMonths).toBe(24); expect(row.outcome.activity.gainedXp).toBe(0);
     expect(row.outcome.activity.nextCommand).toBeNull(); expect(row.stored).toEqual({ state: row.outcome.state, activity: row.outcome.activity });
     expect(row.invalidResume.code).toBe('ACTIVITY_STOPPED');
     for (const command of row.commands) {
@@ -105,10 +106,10 @@ test('month budget, remaining lifespan and capacity stop in the same transaction
     try {
       const cap = 1_000_000;
       for (const mode of ['budget', 'reserve', 'capacity']) {
-        const options = mode === 'reserve' ? { remainingMonths: 3 } : mode === 'capacity' ? { herbQuantity: cap - 2 } : {};
+        const options = mode === 'reserve' ? { remainingMonths: 14 } : mode === 'capacity' ? { herbQuantity: cap - 2 } : {};
         const { repo, snapshot } = await h.sourceFixture('source-stop-' + mode, 'herbs', options);
         try {
-          const plan = h.sourcePlan('herbs', mode === 'budget' ? { monthBudget: 1 } : mode === 'reserve' ? { remainingMonthsReserve: 2 } : {});
+          const plan = h.sourcePlan('herbs', mode === 'budget' ? { monthBudget: 12 } : mode === 'reserve' ? { remainingMonthsReserve: 2 } : {});
           const started = await repo.startActivity(plan, h.activityMutation(snapshot)); now = started.activity.dueAt;
           const completed = await repo.settleActivity(h.activityTick(started));
           const noTick = await h.attempt(() => repo.settleActivity(h.activityTick(started)));
@@ -121,8 +122,8 @@ test('month budget, remaining lifespan and capacity stop in the same transaction
   for (const row of r) {
     expect(row.completed.activity.completedCycles).toBe(1); expect(row.completed.activity.status).toBe('stopped');
     expect(row.completed.activity.stopReason.code).toBe(row.mode === 'budget' ? 'ACTIVITY_BUDGET' : row.mode === 'reserve' ? 'ACTIVITY_RESERVE' : 'CAPACITY');
-    expect(row.completed.activity.spentMonths).toBe(1); expect(row.completed.activity.gainedItems).toEqual({ herb: 2 });
-    expect(row.completed.state.core.world.elapsedMonths).toBe(row.snapshot.state.core.world.elapsedMonths + 1);
+    expect(row.completed.activity.spentMonths).toBe(12); expect(row.completed.activity.gainedItems).toEqual({ herb: 2 });
+    expect(row.completed.state.core.world.elapsedMonths).toBe(row.snapshot.state.core.world.elapsedMonths + 12);
     expect(row.noTick.ok).toBe(true); expect(row.noTick.value.replayed).toBe(true);
     expect(row.persisted).toEqual({ state: row.completed.state, activity: row.completed.activity });
   }
@@ -241,7 +242,7 @@ test('v4 cultivation activity, real breakthrough checkpoint and all receipts sur
     const fixture = await h.FullSaveRepository.open('source-v4-original');
     const plan = { kind: 'cultivation', method: 'natural', maxCycles: 3, until: 'xp-cap', stoneBudget: 0, stoneReserve: 0 };
     try {
-      let state = (await fixture.create('旧版真实修士', h.mutation())).state;
+      let state = (await fixture.importText(JSON.stringify(h.legacyRuleEngine.newGame('旧版真实修士', 'old-source-v4')), h.mutation())).state;
       state = (await h.finishAction(fixture, { type: 'CHOOSE', choice: 'leave' })).state;
       state = (await h.finishAction(fixture, { type: 'TRAVEL', location: 'cave' })).state;
       let activity = await fixture.startActivity(plan, h.activityMutation(await fixture.loadActivitySnapshot()));
@@ -278,7 +279,7 @@ test('v4 cultivation activity, real breakthrough checkpoint and all receipts sur
   expect(r.closed).toBe(true); expect(r.after.version).toBe(r.targetVersion); expect(r.loaded.activity.version).toBe(1);
   for (const name of r.original.stores) expect(r.after[name]).toEqual(r.original[name]);
   expect(r.loaded).toEqual({ state: r.completed.state, activity: r.completed.activity });
-  expect(r.checkpointAfter).toEqual(r.checkpoint); expect(r.replay.replayed).toBe(true);
+  expect(r.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(r.loaded.activity).not.toHaveProperty('rulesVersion'); expect(r.checkpointAfter).toEqual(r.checkpoint); expect(r.replay.replayed).toBe(true);
   expect(r.replay.state).toEqual(r.completed.state); expect(r.replay.activity).toEqual(r.completed.activity);
   expect(r.oldProgram.ok).toBe(false); expect(r.oldProgram.name).toBe('VersionError');
 });

@@ -10,8 +10,8 @@ test.beforeEach(async ({ page }) => {
       expectedRevision: s.state.core.revision, expectedActivityId: s.activity?.id ?? null, expectedActivityRevision: s.activity?.revision ?? null, ownerId });
     h.adventureTick = (s: any) => ({ commandId: s.activity.nextCommand.commandId, runId: s.state.core.runId, expectedRevision: s.state.core.revision,
       activityId: s.activity.id, expectedActivityRevision: s.activity.revision, ownerId: s.activity.ownerId, generation: s.activity.generation });
-    h.adventureFixture = async (name: string, kind = 'travel', move = 'attack') => {
-      const d = h.routes.driver(); d.realm(); d.realm(); d.funds(500); d.buy('healing_pill', 3); d.buy('spirit_pill', 3);
+    h.adventureFixture = async (name: string, kind = 'travel', move = 'attack', legacyRules = false) => {
+      const d = (legacyRules ? h.legacyRuleRoutes : h.routes).driver(); d.realm(); d.realm(); d.funds(500); d.buy('healing_pill', 3); d.buy('spirit_pill', 3);
       d.go(kind === 'travel' ? 'cave' : 'wilderness');
       if (kind === 'battle') { d.doAction({ type: 'ENCOUNTER', enemy: 'wolf' }); if (move === 'release') d.doAction({ type: 'BATTLE', move: 'technique' }); }
       const game = structuredClone(d.game);
@@ -59,7 +59,7 @@ test('an explicit encounter continues through real three-second turns and reward
     } finally { Date.now = realNow; repo.close(); }
   });
   expect(r.steps[0].command.type).toBe('ENCOUNTER'); expect(r.steps[0].before.activity.cycleMs).toBe(30000);
-  expect(r.steps[0].out.state.battle.enemy).toBe('wolf'); expect(r.steps[0].out.result.costs.months).toBe(1); expect(r.steps[0].out.result.delta.wins).toBe(0);
+  expect(r.steps[0].out.state.battle.enemy).toBe('wolf'); expect(r.steps[0].out.result.costs.months).toBe(12); expect(r.steps[0].out.result.delta.wins).toBe(0);
   for (const step of r.steps) { expect(step.out.state).toEqual(step.expected.nextState); expect(step.out.result).toEqual(step.expected.result); if (step.command.type === 'BATTLE') expect(step.before.activity.cycleMs).toBe(3000); }
   expect(r.out.activity.status).toBe('stopped'); expect(r.out.activity.encountersStarted).toBe(1); expect(r.out.activity.victories).toBe(1);
   expect(r.out.activity.gainedItems).toEqual({ core: 1 }); expect(r.out.activity.gainedStones).toBe(10); expect(r.out.state.battle).toBeNull();
@@ -149,7 +149,7 @@ test('complete activity history paginates beyond eight turns, stays ordered and 
     const h = (globalThis as any).h, name = 'adventure-history', { repo, snapshot } = await h.adventureFixture(name, 'encounter'), realNow = Date.now;
     let now = 1_700_000_000_000; Date.now = () => now;
     try {
-      const plan = { ...h.adventure.defaultEncounterPlan(snapshot.state, 'wolf'), maxEncounters: 3, maxCycles: 123, monthBudget: 3 };
+      const plan = { ...h.adventure.defaultEncounterPlan(snapshot.state, 'wolf'), maxEncounters: 3, maxCycles: 123, monthBudget: 36 };
       let out = await repo.startActivity(plan, h.adventureMutation(snapshot)); const commands = [], results = [];
       for (let i = 0; out.activity.status === 'running' && i < 123; i++) { commands.push(out.activity.nextCommand); now = out.activity.dueAt; out = await repo.settleActivity(h.adventureTick(out)); results.push(out.result); }
       const before = await h.inspect(name), pages = [], first = await repo.loadActivityHistory(out.activity.id, 0, 4); pages.push(first);
@@ -198,7 +198,7 @@ test('old legal short travel, encounter and battle receipts still replay before 
   const rows = await page.evaluate(async () => {
     const h = (globalThis as any).h, rows = [];
     for (const kind of ['travel', 'encounter', 'battle']) {
-      const name = 'adventure-old-receipt-' + kind, { repo, snapshot } = await h.adventureFixture(name, kind);
+      const name = 'adventure-old-receipt-' + kind, { repo, snapshot } = await h.adventureFixture(name, kind, 'attack', true);
       try {
         const action = kind === 'travel' ? { type: 'TRAVEL', location: 'sect' } : kind === 'encounter' ? { type: 'ENCOUNTER', enemy: 'wolf' } : { type: 'BATTLE', move: 'attack' };
         const command = h.command(snapshot.state, action), expected = h.engine.resolve(snapshot.state, command);

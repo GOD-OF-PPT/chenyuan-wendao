@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {useRuleContent} from './rule-content';
+
 import {useLocalActivityControls} from './activity-controls';
 import {computed} from 'vue';
 import type {Game} from '../../src/full/types.ts';
@@ -7,10 +9,11 @@ import AssetImage from './AssetImage.vue';
 import GameIcon from './GameIcon.vue';
 import {useCultivationObject} from './cultivation-effects';
 import './cultivation-objects.css';
+const ruleContent=useRuleContent(()=>props.game);
 const props=withDefaults(defineProps<{game:Game;method:'natural'|'assisted';active?:boolean;compact?:boolean}>(),{active:true,compact:false});
 const emit=defineEmits<{method:['natural'|'assisted'];settings:[]}>();
 const p=useCultivationObject(()=>props.method,()=>props.active);
-const realm=computed(()=>C.realms[props.game.core.player.realm]);
+const realm=computed(()=>ruleContent.value.realms[props.game.core.player.realm]);
 const actual=computed(()=>{const a=p.store?.activity;return a?.version===1&&a.runId===props.game.core.runId&&a.status!=='stopped'?a.plan.method:null;});
 const state=computed(()=>p.store?.error?'needs-attention':p.phase.value);
 const name=(m:string)=>m==='assisted'?'灵石辅助':'自然吐纳';

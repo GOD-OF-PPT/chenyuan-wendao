@@ -7,7 +7,7 @@ import {newValidationOutput} from './validation-output.mjs';
 import {assessCurrentBrowserRun} from './current-browser-report.mjs';
 
 export function checkCurrentBrowser(suite = 'ui', requested) {
-  const config = {ui: 'playwright.quality.config.ts', native: 'playwright.idle-recovery.config.ts', q02: 'playwright.q02.config.ts', q03:'playwright.q03.config.ts',q04:'playwright.q04.config.ts',q05:'playwright.q05.config.ts',q06:'playwright.q06.config.ts',group:'playwright.quality-group.config.ts'}[suite];
+  const config = {ui: 'playwright.quality.config.ts', native: 'playwright.idle-recovery.config.ts', q02: 'playwright.q02.config.ts', q03:'playwright.q03.config.ts',q04:'playwright.q04.config.ts',q05:'playwright.q05.config.ts',q06:'playwright.q06.config.ts',q07:'playwright.q07.config.ts',group:'playwright.quality-group.config.ts'}[suite];
   if (!config) throw new Error('Current browser suite must be ui, native, q02, q03, q04, q05, q06 or group');
   const snapshot = () => ({...sourceIdentity(), runtime: sha(JSON.stringify(runtimeSources()))});
   const before = snapshot();

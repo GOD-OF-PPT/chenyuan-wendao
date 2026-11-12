@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {useRuleContent} from './rule-content';
+
 import {useLocalActivityControls} from './activity-controls';
 import {computed} from 'vue';
 import type {Game} from '../../src/full/types';
@@ -10,10 +12,11 @@ import GameIcon from './GameIcon.vue';
 import AssetImage from './AssetImage.vue';
 import './art35-study-rest.css';
 import ItemArtifact from './ItemArtifact.vue';
+const ruleContent=useRuleContent(()=>props.game);
 const props=defineProps<{game:Game;kind:'use'|'rest';itemId:string}>();
 const emit=defineEmits<{source:[]}>();
 const {store,activity,runtime,phase,progress,engaged,effect}=useSupplyCycle(()=>props.kind,()=>props.itemId);
-const body=computed(()=>stats(props.game)),item=computed(()=>C.items[props.itemId]);
+const body=computed(()=>stats(props.game)),item=computed(()=>ruleContent.value.items[props.itemId]);
 const one=computed(()=>previewAction(props.game,props.kind==='rest'?{type:'REST'}:{type:'USE',item:props.itemId}));
 const state=computed(()=>store?.error||!store?.available?'failed':store.activityPausing&&activity.value?'pausing':engaged.value?phase.value==='saving'?'saving':phase.value==='running'?'running':'idle':activity.value?.status==='paused'?'paused':'idle');
 const working=computed(()=>state.value==='running');

@@ -1,3 +1,4 @@
+import {contentForGame} from '../../src/full/rule-content.ts';
 import * as C from '../../src/full/content.ts';
 import {stories} from '../../src/full/events.ts';
 import {currentVersions,type SaveVersions} from '../../src/full/versions.ts';
@@ -28,7 +29,9 @@ function keys(value:unknown,expected:string[]):asserts value is Record<string,an
 function integer(value:unknown,signed=false):asserts value is number{valid(Number.isSafeInteger(value)&&(signed||Number(value)>=0));}
 export function parsePreferences(value:unknown):Preferences{keys(value,['fontScale','reduceMotion','recording']);valid([1,1.5,2].includes(value.fontScale)&&typeof value.reduceMotion==='boolean'&&typeof value.recording==='boolean','显示偏好格式无效');return{fontScale:value.fontScale,reduceMotion:value.reduceMotion,recording:value.recording};}
 function versions(game?:Game|null):ObservationVersions{return game?{format:game.format,version:game.version,schemaVersion:game.core.schemaVersion,contentVersion:game.core.contentVersion,balanceVersion:game.core.balanceVersion}:{...currentVersions};}
-function state(game:Game|null):PublicState|null{return game?{realm:game.core.player.realm,location:game.core.world.location,months:game.core.world.elapsedMonths,xp:game.core.player.xp,hp:game.core.player.hp,mp:game.core.player.mp,stones:game.core.player.stones,wins:game.wins,inventory:Object.fromEntries(Object.keys(C.items).map(id=>[id,game.core.inventory[id]]))}:null;}
+function state(game:Game|null):PublicState|null{
+ const ruleContent=contentForGame(game);
+return game?{realm:game.core.player.realm,location:game.core.world.location,months:game.core.world.elapsedMonths,xp:game.core.player.xp,hp:game.core.player.hp,mp:game.core.player.mp,stones:game.core.player.stones,wins:game.wins,inventory:Object.fromEntries(Object.keys(ruleContent.items).map(id=>[id,game.core.inventory[id]]))}:null;}
 function publicAction(command:Command):PublicAction{
  const fields=actionFields[command.type];valid(fields,'未知行动');const result:PublicAction={};
  for(const field of fields){const value=(command as any)[field];if(value!==undefined)result[field]=field==='target'?{item:value.item,quantity:value.quantity}:value;}
@@ -38,6 +41,8 @@ function base(kind:ObservationKind,game:Game|null):Observation{return{kind,opera
 export function sessionObservation():Observation{return base('session',null);}
 export function loadedObservation(game:Game,kind:'resume'|'sync'):Observation{return base(kind,game);}
 export function writeObservation(before:Game|null,after:Game|null,source:WriteObservationSource,result:ActionResult|null,replayed:boolean,errorCode?:string):Observation{
+ const ruleContent=contentForGame(before);
+
  const kind:ObservationKind=errorCode?'save_error':replayed?'replay':source.kind==='action'?'action':source.kind;
  const value=base(kind,after??before);value.replayed=replayed;value.commandId=publicId(source.kind==='action'?source.command.commandId:source.commandId);value.sourceRunId=publicId(source.kind==='action'?source.command.runId:source.sourceRunId);value.runId=publicId(source.kind==='action'?source.command.runId:source.runId);value.identifiersRedacted ||= !value.commandId||!value.runId;
  value.revisionBefore=source.kind==='action'?source.command.expectedRevision:source.expectedRevision;
@@ -45,7 +50,7 @@ export function writeObservation(before:Game|null,after:Game|null,source:WriteOb
  value.errorCode=errorCode?publicError(errorCode):null;
  if(source.kind==='action'){
   value.action=publicAction(source.command);const ownsBefore=before?.core.runId===source.command.runId&&before?.core.revision===source.command.expectedRevision;
-  const story=ownsBefore?before?.core.activeEvent?.id:null;value.eventId=story&&(story==='temple'||Object.hasOwn(stories,story))?story:null;const enemy=ownsBefore?before?.battle?.enemy:null;value.enemyId=enemy&&Object.hasOwn(C.enemies,enemy)?enemy:null;
+  const story=ownsBefore?before?.core.activeEvent?.id:null;value.eventId=story&&(story==='temple'||Object.hasOwn(stories,story))?story:null;const enemy=ownsBefore?before?.battle?.enemy:null;value.enemyId=enemy&&Object.hasOwn(ruleContent.enemies,enemy)?enemy:null;
   if(before&&ownsBefore&&(source.command.type==='BREAKTHROUGH'||source.command.type==='START_TRIAL'))value.gaps=previewAction(before,source.command).deficits.map(gap=>({...gap}));
  }
  if(result){

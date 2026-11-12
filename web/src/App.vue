@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {useRuleContent} from './rule-content';
+
 import { computed, nextTick, onMounted, onScopeDispose, provide, ref, shallowRef, watch } from 'vue';
 import { useGame } from './store';
 import {useFocus,visibleFocusTarget,gameFocusKey} from './focus';
@@ -112,6 +114,7 @@ import {journalAnchors,type JournalLedger,type JournalWrite} from './journal-anc
 const session=useSession(),demoMenu=ref<HTMLDialogElement>();
 const demoNode=session.kind==='demo'?demoSpec(session.node!.nodeId):null;
 const demoMenuNodes=demoCatalog.map(node=>({...node,href:demoLink(node.id)}));
+const ruleContent=useRuleContent(()=>store.game);
 const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
 provide('game-scene',store);
 const {milestoneReview,milestoneStale,milestoneRetry,selectMilestone,inspectMilestone,closeMilestone,confirmMilestone:confirmMilestoneAction}=useMilestoneReview(store);
@@ -119,7 +122,7 @@ const uiLocked=computed(()=>store.busy||!store.available);
 const pendingStoryError=computed(()=>store.unresolved);
 const saveTone=computed(()=>!store.ready||store.busy?'pending':store.error||!store.available?'problem':store.game&&store.saved?'saved':'idle');
 const saveDisplayLabel=computed(()=>store.saveLabel==='本次未保存'?'保存待确认':store.saveLabel);
-const openingChoices=[{id:'help',name:'赠丹相助',detail:'结下赠药之缘'},{id:'trade',name:'以丹换简',detail:`获得剑简，剑修终结伤害 +${C.swordManual.damageBonus}`},{id:'leave',name:'保留丹药',detail:'保留回春丹，各自离开'}] as const;
+const openingChoices=[{id:'help',name:'赠丹相助',detail:'结下赠药之缘'},{id:'trade',name:'以丹换简',detail:`获得剑简，剑修终结伤害 +${ruleContent.value.swordManual.damageBonus}`},{id:'leave',name:'保留丹药',detail:'保留回春丹，各自离开'}] as const;
 const importNotice=ref(''),importReadRevision=ref(0);
 const experience=useLocalExperience();let appActive=true;const stopObserving=store.observe(value=>{const observedNavigation=navigationRevision;if(['import','restore','restart','new_game'].includes(value.kind)){readingGeneration.value++;narrativeContext.value++;readingReturn.value=null;detailParent.value=null;clearFlowReturns();journalWrites.value=[];}if(value.kind==='action'&&value.result&&value.operation&&store.game?.core.revision===value.result.revisionAfter){const run=store.game.core.runId,revision=value.result.revisionAfter,added=value.operation==='EVENT'?0:value.operation==='BATTLE'&&value.flags.includes('battle_won')?2:1;journalWrites.value=[...journalWrites.value.filter(w=>w.run!==run||w.revision!==revision),{run,revision,added}].slice(-100);}if(value.kind==='action'&&value.result&&store.game&&!value.replayed&&store.lastFromActivity&&store.activityOwned&&store.activity?.version===7&&store.activity.plan.action.type===value.operation&&store.activity.runId===store.game?.core.runId&&value.result.revisionAfter===store.game.core.revision&&((hubView.value==='current'&&value.operation==='CHOOSE'&&value.result.phaseBefore==='opening'&&value.result.phaseAfter==='idle')||(hubView.value==='cultivation'&&value.operation==='BREAKTHROUGH'&&value.result.delta.realm.before!==value.result.delta.realm.after)||(hubView.value==='trial-preparation'&&value.operation==='START_TRIAL'&&value.result.phaseBefore==='idle'&&value.result.phaseAfter==='trial-question')))selectTab('修行');focusObserved(value,observedNavigation);experience.record(value);},experience.fault);onScopeDispose(()=>{appActive=false;stopObserving();});
 const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('');
@@ -129,9 +132,9 @@ const productionInspectionPlan=shallowRef<CraftPlan|ForgePlan|null>(null);
 const preparationInspectionPlan=shallowRef<PreparationPlan|null>(null),preparationInspectionSaved=ref(false),preparationInspectionExact=ref(true);
 const adventureInspectionPlan=shallowRef<AdventurePlan|null>(null),adventureInspectionSaved=ref(false),activityPlanVisible=ref(false);
 const originalAdventureReadings=computed<Reading[]>(()=>{const a=store.activity;if(a?.version!==6||a.plan.kind==='travel')return[];const p=a.plan,label=(move:string)=>({attack:'普通攻击',guard:'凝神护体',technique:'起手术法',release:'终结术法',heal:'服回春丹',restore:'服回灵丹',flee:'撤回洞府'} as Record<string,string>)[move];
- const rows:Reading[]=[{key:'identity',title:'查看本次打算',text:C.enemies[p.enemy].name+(p.kind==='battle'&&p.trialStage!==null?' · 天劫第'+p.trialStage+'关':'')+(repeats(p)?'；持续当前对手，达标、触线或手动停下。':'；最多 '+p.maxCycles+' 次动作。')+'只看本次打算，不改变战局。'}];
+ const rows:Reading[]=[{key:'identity',title:'查看本次打算',text:ruleContent.value.enemies[p.enemy].name+(p.kind==='battle'&&p.trialStage!==null?' · 天劫第'+p.trialStage+'关':'')+(repeats(p)?'；持续当前对手，达标、触线或手动停下。':'；最多 '+p.maxCycles+' 次动作。')+'只看本次打算，不改变战局。'}];
  if(p.kind==='battle'&&p.mode==='single'){rows.push({key:'single',title:'原手动单步',text:label(p.move)+'；仅1回合 / 3秒。'});return rows;}
- const strategy=p.strategy;rows.push({key:'scope',title:'本次限额',text:'累计灵力上限 '+p.mpBudget+'。'+(p.kind==='encounter'?(repeats(p)?'持续历练；游戏月预算 ':'最多 '+p.maxEncounters+' 场；游戏月预算 ')+p.monthBudget+'；余寿保留 '+p.remainingMonthsReserve+' 月；'+(p.target?C.items[p.target.item].name+'目标库存 '+p.target.quantity:'无掉落库存目标'):'本关自动战策，只限原敌人与关卡')},{key:'priority',title:'招式顺序与重击',text:strategy.priority.map(label).join(' → ')+'。应对重击：'+(strategy.respondHeavy?'是':'否')+'；释放层数门槛 '+strategy.releaseAt+' 层。'},{key:'medicine',title:'用药上限',text:'气血低于 '+strategy.healBelowPercent+'% 用回春，整段最多 '+strategy.healingBudget+' 丹，库存保留 '+strategy.healingReserve+'；灵力低于 '+strategy.restoreBelowPercent+'% 用回灵，整段最多 '+strategy.spiritBudget+' 丹，库存保留 '+strategy.spiritReserve+'。用药占正式回合，不自动补货。'},{key:'risk',title:'危险线与停止',text:'气血危险线 '+strategy.retreatBelowPercent+'%；'+(strategy.riskMode==='pause'?'触线暂停，不离场。':'触线撤回洞府，气血-8且最低1，'+(p.kind==='encounter'?'结束本段历练。':p.trialStage===null?'结束本次交锋。':'结束本轮天劫。'))+'此处不是当前战策的新确认。'});return rows;});
+ const strategy=p.strategy;rows.push({key:'scope',title:'本次限额',text:'累计灵力上限 '+p.mpBudget+'。'+(p.kind==='encounter'?(repeats(p)?'持续历练；游戏月预算 ':'最多 '+p.maxEncounters+' 场；游戏月预算 ')+p.monthBudget+'；余寿保留 '+p.remainingMonthsReserve+' 月；'+(p.target?ruleContent.value.items[p.target.item].name+'目标库存 '+p.target.quantity:'无掉落库存目标'):'本关自动战策，只限原敌人与关卡')},{key:'priority',title:'招式顺序与重击',text:strategy.priority.map(label).join(' → ')+'。应对重击：'+(strategy.respondHeavy?'是':'否')+'；释放层数门槛 '+strategy.releaseAt+' 层。'},{key:'medicine',title:'用药上限',text:'气血低于 '+strategy.healBelowPercent+'% 用回春，整段最多 '+strategy.healingBudget+' 丹，库存保留 '+strategy.healingReserve+'；灵力低于 '+strategy.restoreBelowPercent+'% 用回灵，整段最多 '+strategy.spiritBudget+' 丹，库存保留 '+strategy.spiritReserve+'。用药占正式回合，不自动补货。'},{key:'risk',title:'危险线与停止',text:'气血危险线 '+strategy.retreatBelowPercent+'%；'+(strategy.riskMode==='pause'?'触线暂停，不离场。':'触线撤回洞府，气血-8且最低1，'+(p.kind==='encounter'?'结束本段历练。':p.trialStage===null?'结束本次交锋。':'结束本轮天劫。'))+'此处不是当前战策的新确认。'});return rows;});
 watch(()=>store.activity?.id,()=>activityPlanVisible.value=false);
 const producing=computed(()=>!!store.activity&&store.activity.status!=='stopped'&&(store.activity.plan.kind==='craft'||store.activity.plan.kind==='forge'));
 const equipmentOpen=ref(false),resumeVisible=ref(false),hubView=ref('home');
@@ -164,7 +167,7 @@ const activityRailVisible=computed(()=>store.ready&&immersive.value&&game.value?
 provide(primaryActivityControls,activityRailVisible);
 const storyView=computed(()=>singleScreen.value&&(['fate','life','trial','battle'].includes(hubView.value)||hubView.value==='current'&&phase.value!=='opening'||hubView.value==='trial-preparation'));
 const catalogueView=computed(()=>storyView.value||singleScreen.value&&(['journey','tradeoffs','explore','inventory','forge','skills','relics','goal','market','recovery','receipt','activity'].includes(hubView.value)||hubView.value==='cultivation'));
-const hubTitle=computed(()=>['skills','relics'].includes(hubView.value)&&equipmentSection.value?({school:'修法 · 剑符择道',skills:'功法 · 研习与配装',relics:'法宝 · 炼制与装备',manual:'剑简 · 参悟与研习',summary:'配装 · 三法一器'} as Record<string,string>)[equipmentSection.value]:({tradeoffs:'行前取舍 · 当前一段',activity:'本段活动 · 成果与停止',market:'坊市 · 货架与取舍',recovery:'药匣 · 恢复与疗养',journey:'突破筹备 · 下一步',explore:'历练 · 云岚山海',inventory:'行囊 · 随身物资',forge:'丹炉 · 择方温炉',skills:'功法 · 研习与配装',relics:'法宝 · 炼制与装备',life:'修仙生平',goal:'目标与筹备',fate:'仙缘 · 人物与手记',cultivation:C.realms[game.value?.core.player.realm??'mortal'].name+'修行','trial-preparation':'登仙 · 行前核对',current:(game.value?narrativeFor(game.value)?.title:null)??(game.value?.battle?C.enemies[game.value.battle.enemy].name:trialView.value?.title??'仙缘 · 人物与手记'),trial:'渡劫行程与续行',battle:'术法说明与战报',receipt:'本次行动结算',character:'道者 · 寿元与配装'} as Record<string,string>)[hubView.value]??'行道详情');
+const hubTitle=computed(()=>['skills','relics'].includes(hubView.value)&&equipmentSection.value?({school:'修法 · 剑符择道',skills:'功法 · 研习与配装',relics:'法宝 · 炼制与装备',manual:'剑简 · 参悟与研习',summary:'配装 · 三法一器'} as Record<string,string>)[equipmentSection.value]:({tradeoffs:'行前取舍 · 当前一段',activity:'本段活动 · 成果与停止',market:'坊市 · 货架与取舍',recovery:'药匣 · 恢复与疗养',journey:'突破筹备 · 下一步',explore:'历练 · 云岚山海',inventory:'行囊 · 随身物资',forge:'丹炉 · 择方温炉',skills:'功法 · 研习与配装',relics:'法宝 · 炼制与装备',life:'修仙生平',goal:'目标与筹备',fate:'仙缘 · 人物与手记',cultivation:ruleContent.value.realms[game.value?.core.player.realm??'mortal'].name+'修行','trial-preparation':'登仙 · 行前核对',current:(game.value?narrativeFor(game.value)?.title:null)??(game.value?.battle?ruleContent.value.enemies[game.value.battle.enemy].name:trialView.value?.title??'仙缘 · 人物与手记'),trial:'渡劫行程与续行',battle:'术法说明与战报',receipt:'本次行动结算',character:'道者 · 寿元与配装'} as Record<string,string>)[hubView.value]??'行道详情');
 const equipmentReading=shallowRef({runId:'',section:''});
 const equipmentEntry=ref(0);
 const equipmentSection=computed(()=>equipmentReading.value.runId===game.value?.core.runId?equipmentReading.value.section:'');
@@ -303,11 +306,11 @@ const lifeState=computed(()=>game.value?lifespanGuidance(game.value):null);
 async function inspectLifespan(event:Event){const owns=inspectionOwner();const owner=await showLife(event);if(owns(owner??null))lifeBook.value?.manage();}
 const hubGoal=computed(()=>game.value?getTrackedGoal(game.value,tracking.target.value):null);
 const hudGoalContext=computed(()=>{const g=game.value,o=hubGoal.value;return g&&o&&!lifeState.value?.hint?{runId:g.core.runId,revision:g.core.revision,goal:o}:null;});
-const hubGoalHint=computed(()=>{if(tracking.target.value.kind==='breakthrough'&&trialView.value)return trialView.value.state;const g=hubGoal.value;if(!g)return'';if(g.completed)return'目标已达成';const d=g.deficits.find(d=>d.kind==='xp')??g.deficits.find(d=>d.kind==='item')??g.deficits[0];if(!d)return g.preview?.failure?.message??'准备已齐，可核对行动。';const label=d.kind==='item'?C.items[d.id!].name:({stones:'灵石',mp:'灵力',months:'余寿游戏月',xp:'修为',hp:'气血'}as const)[d.kind];return`尚缺${label} ${d.missing}${g.deficits.length>1?'（另 '+(g.deficits.length-1)+' 项）':''}`;});
+const hubGoalHint=computed(()=>{if(tracking.target.value.kind==='breakthrough'&&trialView.value)return trialView.value.state;const g=hubGoal.value;if(!g)return'';if(g.completed)return'目标已达成';const d=g.deficits.find(d=>d.kind==='xp')??g.deficits.find(d=>d.kind==='item')??g.deficits[0];if(!d)return g.preview?.failure?.message??'准备已齐，可核对行动。';const label=d.kind==='item'?ruleContent.value.items[d.id!].name:({stones:'灵石',mp:'灵力',months:'余寿游戏月',xp:'修为',hp:'气血'}as const)[d.kind];return`尚缺${label} ${d.missing}${g.deficits.length>1?'（另 '+(g.deficits.length-1)+' 项）':''}`;});
 function selectTracking(target:Parameters<typeof tracking.select>[0]){navigationRevision++;tracking.select(target);}
 watch([() => tracking.target.value, () => game.value?.core.runId], () => { collectionTarget.value = null; highlight.value = ''; });
 watch(() => game.value?.core.player.realm, () => { if (tracking.target.value.kind === 'breakthrough') { collectionTarget.value = null; highlight.value = ''; } });
-const realm = computed(() => C.realms[core.value?.player.realm ?? 'mortal']);
+const realm = computed(() => ruleContent.value.realms[core.value?.player.realm ?? 'mortal']);
 const location = computed(() => C.locations[core.value?.world.location ?? 'wilderness']);
 const phase = computed(() => game.value ? gamePhase(game.value) : null);
 watch([()=>game.value?.core.runId,()=>phase.value,()=>game.value?.core.activeEvent?.instanceId,()=>store.syncEpoch],()=>{narrativeContext.value++;readingReturn.value=null;},{flush:'sync'});
@@ -366,7 +369,7 @@ function cost(action: Action) {
   const text = formatCosts(c);
   return preview && preview.requestedSteps > 1 ? '每次 ' + text : text;
 }
-function act(action: Action) { resumeVisible.value=false;if(action.type==='TRAVEL')return travel(action.location);if(action.type==='BATTLE')return battle(action.move);if(action.type==='ENCOUNTER')return inspectAdventure(action.enemy);if(action.type==='CULTIVATE'){const n=action.count??1;return startTraining({kind:'cultivation',method:action.method,maxCycles:n,until:'cycles',stoneBudget:action.method==='natural'?0:Math.min(core.value?.player.stones??0,(quote({...action,count:1})?.costs?.stones??0)*n),stoneReserve:0});}if(action.type==='SOURCE'){const n=action.count??1,source=C.sources[action.sourceId],target=action.target?{kind:'item' as const,id:action.target.item,quantity:action.target.quantity}:batch.value==='target'?collectionTarget.value:null;return startSource({kind:'source',sourceId:action.sourceId,maxCycles:n,until:target?'target':'cycles',target,monthBudget:n*source.months,remainingMonthsReserve:1});}if(action.type==='CRAFT'||action.type==='FORGE')return inspectProduction(action);if(['BUY','SELL','USE','REST','LEARN','STUDY'].includes(action.type))return inspectPreparation(action);if(action.type==='SCHOOL'||action.type==='EQUIP'||action.type==='EQUIP_RELIC')return inspectConfiguration(action);if(store.activityRunning){store.activityNotice='当前活动进行中，请先暂停再行动。';return;}if (action.type === 'START_TRIAL') return showTrialPreparation(); if (action.type === 'END') return reviewAscension(action.ending); if(isMilestoneAction(action))return selectMilestone(action); const owner=navigationRevision; return focus.afterAction(async()=>{await store.act(action);},()=>owner===navigationRevision); }
+function act(action: Action) { resumeVisible.value=false;if(action.type==='TRAVEL')return travel(action.location);if(action.type==='BATTLE')return battle(action.move);if(action.type==='ENCOUNTER')return inspectAdventure(action.enemy);if(action.type==='CULTIVATE'){const n=action.count??1;return startTraining({kind:'cultivation',method:action.method,maxCycles:n,until:'cycles',stoneBudget:action.method==='natural'?0:Math.min(core.value?.player.stones??0,(quote({...action,count:1})?.costs?.stones??0)*n),stoneReserve:0});}if(action.type==='SOURCE'){const n=action.count??1,source=ruleContent.value.sources[action.sourceId],target=action.target?{kind:'item' as const,id:action.target.item,quantity:action.target.quantity}:batch.value==='target'?collectionTarget.value:null;return startSource({kind:'source',sourceId:action.sourceId,maxCycles:n,until:target?'target':'cycles',target,monthBudget:n*source.months,remainingMonthsReserve:1});}if(action.type==='CRAFT'||action.type==='FORGE')return inspectProduction(action);if(['BUY','SELL','USE','REST','LEARN','STUDY'].includes(action.type))return inspectPreparation(action);if(action.type==='SCHOOL'||action.type==='EQUIP'||action.type==='EQUIP_RELIC')return inspectConfiguration(action);if(store.activityRunning){store.activityNotice='当前活动进行中，请先暂停再行动。';return;}if (action.type === 'START_TRIAL') return showTrialPreparation(); if (action.type === 'END') return reviewAscension(action.ending); if(isMilestoneAction(action))return selectMilestone(action); const owner=navigationRevision; return focus.afterAction(async()=>{await store.act(action);},()=>owner===navigationRevision); }
 let directViewEpoch=0;
 watch(()=>[hubView.value,tab.value,detailParent.value?.view,detailParent.value?.tab],()=>directViewEpoch++,{flush:'sync'});
 let directVisit:{command:string;run:string;event:string;view:number;sync:number}|null=null;
@@ -384,7 +387,7 @@ async function lightAction(action:DirectAction,confirm=true){
  const consequence=store.activity?.status==='paused'?'本次行动将结束已暂停的原活动，已完成成果保留，未完成部分不再续行。':'';
  const event=action.type==='EVENT'?getStoryContext(before,action.event):action.type==='DECIDE'&&before.core.activeEvent?getStoryContext(before,before.core.activeEvent.id):null;
  const detail=action.type==='DECIDE'?event?.options.find(o=>o.id===action.option)?.detail:action.type==='EVENT'?event?.body:'';
- const label=action.type==='EVENT'?'拜访 · '+event?.name:action.type==='DECIDE'?event?.options.find(o=>o.id===action.option)?.label:action.type==='USE'?'服用1枚'+C.items[action.item].name:'售出1件'+C.items[action.item].name;
+ const label=action.type==='EVENT'?'拜访 · '+event?.name:action.type==='DECIDE'?event?.options.find(o=>o.id===action.option)?.label:action.type==='USE'?'服用1枚'+ruleContent.value.items[action.item].name:'售出1件'+ruleContent.value.items[action.item].name;
  if(confirm&&!await confirmation.ask({kind:'light-action',title:label??'确认本次行动',message:[detail,'本次投入：'+formatCosts(quote.actualCosts??quote.costs),'预计变化：'+(quote.delta?formatDelta(quote.delta):'无'),consequence].filter(Boolean).join('\n'),action:label??'确认行动',cancel:'再想想',current:source.current,blocked:confirmationBlocked,mayReturn:source.mayReturn}))return;
  if(!source.current()||confirmationBlocked())return;
  const owner=navigationRevision,anchor=focus.capture();
@@ -451,7 +454,7 @@ async function viewActivityPlan(){
  const activity=store.activity;if(!activity)return;if(activity.version===7){inspectMilestone(activity);return;}
  const plan=structuredClone(activity.plan),owns=inspectionOwner(activity.id);
  if(isPreparationPlan(plan)){await inspectPreparationPlan(plan,true);return;}
- if(plan.kind==='battle'&&(!game.value?.battle||game.value.battle.enemy!==plan.enemy||(game.value.trial?.stage??null)!==plan.trialStage)||plan.kind==='encounter'&&C.enemies[plan.enemy].location!==game.value?.core.world.location){const owner=await openHub('activity');if(owns(owner))activityPlanVisible.value=true;return;}
+ if(plan.kind==='battle'&&(!game.value?.battle||game.value.battle.enemy!==plan.enemy||(game.value.trial?.stage??null)!==plan.trialStage)||plan.kind==='encounter'&&ruleContent.value.enemies[plan.enemy].location!==game.value?.core.world.location){const owner=await openHub('activity');if(owns(owner))activityPlanVisible.value=true;return;}
  const view=plan.kind==='cultivation'?'cultivation':plan.kind==='source'?'explore':plan.kind==='craft'?'forge':plan.kind==='forge'?'relics':isAdventurePlan(plan)?plan.kind==='battle'?'home':'explore':'cultivation';
  highlight.value='';const owner=await openHub(view);if(!owns(owner))return;
  if(plan.kind==='cultivation')trainingInspectionPlan.value=plan;
@@ -472,9 +475,9 @@ async function inspectPreparationPlan(plan:PreparationPlan,saved=false,exact=tru
 }
 function inspectPreparation(action:Action){
  let plan:PreparationPlan;
- if(action.type==='LEARN')plan={kind:'learn',skills:[action.skill],maxCycles:1,stoneBudget:C.skills[action.skill].price,stoneReserve:0};
- else if(action.type==='STUDY')plan={kind:'study',manual:'jinghong',maxCycles:1,stoneBudget:C.swordManual.price,stoneReserve:0};
- else if(action.type==='BUY')plan={kind:'buy',item:action.item,maxCycles:action.quantity,until:'cycles',targetQuantity:null,stoneBudget:C.items[action.item].buy!*action.quantity,stoneReserve:0};
+ if(action.type==='LEARN')plan={kind:'learn',skills:[action.skill],maxCycles:1,stoneBudget:ruleContent.value.skills[action.skill].price,stoneReserve:0};
+ else if(action.type==='STUDY')plan={kind:'study',manual:'jinghong',maxCycles:1,stoneBudget:ruleContent.value.swordManual.price,stoneReserve:0};
+ else if(action.type==='BUY')plan={kind:'buy',item:action.item,maxCycles:action.quantity,until:'cycles',targetQuantity:null,stoneBudget:ruleContent.value.items[action.item].buy!*action.quantity,stoneReserve:0};
  else if(action.type==='SELL')plan={kind:'sell',item:action.item,maxCycles:action.quantity,itemReserve:0};
  else if(action.type==='USE'&&(action.item==='healing_pill'||action.item==='spirit_pill'))plan={kind:'use',item:action.item,maxCycles:3,targetPercent:100,itemReserve:0};
  else if(action.type==='REST')plan={kind:'rest',maxCycles:1,remainingMonthsReserve:1};
@@ -508,15 +511,15 @@ const caveThreshold=computed(()=>immersive.value&&core.value?.world.location==='
 const activeStory = computed(() => game.value && core.value?.activeEvent && stories[core.value.activeEvent.id] ? getStoryContext(game.value, core.value.activeEvent.id) : null);
 const relationships = computed(() => game.value ? getRelationships(game.value) : []);
 const events = computed(() => game.value ? availableEvents(game.value) : []);
-const activeEnemies = computed(() => Object.entries(C.enemies).filter(([, e]) => !e.trial && e.location === core.value?.world.location));
-const localSources = computed(() => Object.entries(C.sources).filter(([, s]) => s.location === core.value?.world.location));
+const activeEnemies = computed(() => Object.entries(ruleContent.value.enemies).filter(([, e]) => !e.trial && e.location === core.value?.world.location));
+const localSources = computed(() => Object.entries(ruleContent.value.sources).filter(([, s]) => s.location === core.value?.world.location));
 const sourceActions = computed(() => Object.fromEntries(localSources.value.map(([id]) => [id, batch.value === 'target' ?
   (game.value && collectionTarget.value ? planCollection(game.value, id, collectionTarget.value) : null) : { type: 'SOURCE', sourceId: id, count: batch.value } as Action])));
 function sourceReason(id: string) {
   const action = sourceActions.value[id];
   if (action) return why(action);
   if (!collectionTarget.value) return '先从目标来源选取所需物资，或选择固定次数行动。';
-  return collectionTarget.value.kind === 'stones' && C.sources[id].stones > 0 ?
+  return collectionTarget.value.kind === 'stones' && ruleContent.value.sources[id].stones > 0 ?
     '灵石目标已经备齐，无需重复委托；可替换目标或选择固定次数。' :
     '此处不产当前目标物资，可切换来源或选择固定次数。';
 }
@@ -538,11 +541,11 @@ async function navigate(request:NavigationRequest,arrived?:()=>void):Promise<voi
 const consumptionPreview = computed(() => game.value ? createConsumptionPreview(game.value, tracking.target.value, preparation.value) : null);
 function consumption(action: Action) {
   const gaps = consumptionPreview.value?.(action) ?? [];
-  return gaps.length ? '会消耗追踪物资：' + gaps.map(gap => `${C.items[gap.id!].name}将缺${gap.missing}`).join('、') + '；材料未被预留。' : '';
+  return gaps.length ? '会消耗追踪物资：' + gaps.map(gap => `${ruleContent.value.items[gap.id!].name}将缺${gap.missing}`).join('、') + '；材料未被预留。' : '';
 }
-const collectionLabel = computed(() => collectionTarget.value ? `${collectionTarget.value.kind === 'item' ? C.items[collectionTarget.value.id].name : '灵石'}库存达到 ${collectionTarget.value.quantity}` : '从目标来源选取所需物资');
-const knownItems = computed(() => Object.entries(C.items).filter(([id, item]) => !core.value || C.rank(item.min) <= C.rank(core.value.player.realm) || core.value.inventory[id] > 0));
-const localRecipes = computed(() => Object.entries(C.recipes).filter(([, recipe]) => !core.value || C.rank(recipe.min) <= C.rank(core.value.player.realm)));
+const collectionLabel = computed(() => collectionTarget.value ? `${collectionTarget.value.kind === 'item' ? ruleContent.value.items[collectionTarget.value.id].name : '灵石'}库存达到 ${collectionTarget.value.quantity}` : '从目标来源选取所需物资');
+const knownItems = computed(() => Object.entries(ruleContent.value.items).filter(([id, item]) => !core.value || C.rank(item.min) <= C.rank(core.value.player.realm) || core.value.inventory[id] > 0));
+const localRecipes = computed(() => Object.entries(ruleContent.value.recipes).filter(([, recipe]) => !core.value || C.rank(recipe.min) <= C.rank(core.value.player.realm)));
 function battle(move:Move){if(!game.value?.battle||store.activityRunning)return;return startAdventure(singleBattlePlan(game.value,move));}
 function download(text: string, filename: string, mime = 'application/json') {
   const url = URL.createObjectURL(new Blob([text], { type: mime }));
@@ -685,7 +688,7 @@ function closeAscension() { if(ascensionDialog.value?.open)return; if (ascension
 function confirmationReadings(kind:string):Reading[]{
  if(kind==='life'&&lifeIntent.value){const r=lifeIntent.value.record;return[{key:'identity',title:'当前人生',testId:'life-review',text:r.overview.name+' · '+r.overview.ageLabel+' · '+r.overview.realmName+' · 行道'+r.overview.elapsedMonths+'游戏月'},{key:'scope',title:'保留与恢复',text:'当前存档与人物记录保留，可导出；恢复检查点会回退完整准备状态。此确认不会开启新的人生。'}];}
  if(kind==='ending'&&ascensionIntent.value){const r=ascensionIntent.value.view.record;return[{key:'identity',title:'当前人生',testId:'ascension-review-identity',text:r.overview.name+' · '+r.overview.ageLabel+' · 行道'+r.overview.elapsedMonths+'游戏月'},{key:'opening',title:'开卷',text:r.opening.text},{key:'training',title:'配装',text:r.training.school+' · '+r.training.loadout.map(s=>s.name).join(' / ')+' · '+r.training.equippedRelic},...r.decisions.map(d=>({key:d.id,title:d.npc,text:d.text})),{key:'pledges',title:'护阵',text:r.pledges.text}];}
- if(kind==='restore'&&trialRestoreIntent.value){const r=trialRestoreIntent.value.checkpoint.target;return[{key:'identity',title:'恢复目标',testId:'trial-restore-target',text:r.name+' · '+C.realms[r.realm].name+' · 行道'+r.months+'游戏月'},{key:'supplies',title:'准备状态',text:'气血 '+r.hp+' · 灵力 '+r.mp+' · 渡劫引 '+r.inventory.ascension_seal}];}
+ if(kind==='restore'&&trialRestoreIntent.value){const r=trialRestoreIntent.value.checkpoint.target;return[{key:'identity',title:'恢复目标',testId:'trial-restore-target',text:r.name+' · '+ruleContent.value.realms[r.realm].name+' · 行道'+r.months+'游戏月'},{key:'supplies',title:'准备状态',text:'气血 '+r.hp+' · 灵力 '+r.mp+' · 渡劫引 '+r.inventory.ascension_seal}];}
  if(kind==='entry'&&trialIntent.value){const r=trialIntent.value.view,p=r.preparation,m=r.snapshotSummary;return[{key:'identity',title:'正式入场',testId:'trial-review-identity',text:m.name+' · '+m.realm+' · '+formatAgeMonths(m.ageMonths)+' · 行道'+m.elapsedMonths+'游戏月'},{key:'stats',title:'气血灵力',text:'气血 '+p.hp+' / '+p.maxHp+' · 灵力 '+p.mp+' / '+p.maxMp+' · 灵石 '+m.stones},{key:'loadout',title:'配装',text:p.loadout.map(s=>s.name).join(' / ')+' · '+p.relic},{key:'scope',title:'完整准备范围',text:'包括全部已掌握与剑简资格、背包、装备/法宝、人物选择、里程碑与当前进度，不只保存境界。'},{key:'inventory',title:'准备物资',text:m.inventory.map(i=>i.name+' ×'+i.quantity).join(' · ')},{key:'records',title:'已掌握记录',text:'已掌握 '+m.learned.length+'项，已有法宝 '+m.relics.length+'件，已选事件 '+m.choiceCount+'项。'},{key:'journey',title:'入场之后',text:'开始后先回答问心，准备与消耗跨三关保留。此处只确认入场，不代表已经渡劫成功。'}];}
  return[];
 }
@@ -836,7 +839,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
 <strong>{{singleScreen?'核对 · ':''}}{{choice.name}}</strong><small>{{cost({type:'CHOOSE',choice:choice.id})}}</small><small>{{choice.detail}}</small><small v-if="why({type:'CHOOSE',choice:choice.id})">{{why({type:'CHOOSE',choice:choice.id})}}</small>
 </ChoiceCard>
 </div>
-<details class="opening-details"><summary>三种选择与剑简说明</summary><p class="small">三种选择均可入道，剧情不会直接赋予境界。惊鸿剑简用于剑修终结术法，伤害 +{{C.swordManual.damageBonus}}；三种开场均可在筑基后到青云宗付费研读同简。</p></details></MilestoneGate>
+<details class="opening-details"><summary>三种选择与剑简说明</summary><p class="small">三种选择均可入道，剧情不会直接赋予境界。惊鸿剑简用于剑修终结术法，伤害 +{{ruleContent.swordManual.damageBonus}}；三种开场均可在筑基后到青云宗付费研读同简。</p></details></MilestoneGate>
 </template>
 <template v-else-if="phase === 'trial-question' && journey && !inspectingInventory">
 <div class="section-label">渡劫 · 问心</div><h2>你愿如何面对来路？</h2><p class="story" data-testid="trial-question-memory">{{journey.openingMemory}}</p><p class="story">接纳旧我，稳住心神；或放下旧念，以进攻开路。两条道路皆可向前，不另判善恶成败。</p>
@@ -885,7 +888,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
             <div class="section-label">历练</div><p class="story">{{location.description}}</p>
             <div class="locations" tabindex="-1" data-primary-region><button v-for="(place,id) in C.locations" :key="id" :data-testid="`travel-${id}`" :class="{selected:core.world.location===id}" :aria-current="core.world.location===id?'location':undefined" @click="travel(id)" :disabled="!can({type:'TRAVEL',location:id})">{{place.name}}<small v-if="core.world.location!==id">{{cost({type:'TRAVEL',location:id})}}</small><small>{{why({type:'TRAVEL',location:id})}}</small></button></div>
             <div class="action-options"><label>连续采集/委托 <select v-model="batch" aria-label="取材次数"><option :value="1">1 次</option><option :value="5">5 次</option><option :value="20">20 次</option><option :value="50">50 次</option><option value="target">达到目标</option></select></label><small v-if="batch==='target'" data-testid="collection-target">{{collectionLabel}}</small></div>
-            <div class="source-grid"><div v-for="[id,source] in localSources" :key="id"><button :data-testid="`source-${id}`" :class="{highlight:highlight===`source-${id}`}" @click="sourceActions[id] && act(sourceActions[id]!)" :disabled="!sourceActions[id] || !can(sourceActions[id]!)"><strong>{{source.name}}</strong><small>{{sourceActions[id] ? cost(sourceActions[id]!) : '本批不会执行'}}</small><small v-if="source.stones">灵石 +{{source.stones}}</small><small v-for="(n,item) in source.items" :key="item">{{C.items[item].name}} +{{n}}</small><small>{{sourceReason(id)}}</small></button><BatchPreview :label="source.name" :preview="sourceActions[id] ? quote(sourceActions[id]!) : null" :reason="sourceReason(id)"/></div></div>
+            <div class="source-grid"><div v-for="[id,source] in localSources" :key="id"><button :data-testid="`source-${id}`" :class="{highlight:highlight===`source-${id}`}" @click="sourceActions[id] && act(sourceActions[id]!)" :disabled="!sourceActions[id] || !can(sourceActions[id]!)"><strong>{{source.name}}</strong><small>{{sourceActions[id] ? cost(sourceActions[id]!) : '本批不会执行'}}</small><small v-if="source.stones">灵石 +{{source.stones}}</small><small v-for="(n,item) in source.items" :key="item">{{ruleContent.items[item].name}} +{{n}}</small><small>{{sourceReason(id)}}</small></button><BatchPreview :label="source.name" :preview="sourceActions[id] ? quote(sourceActions[id]!) : null" :reason="sourceReason(id)"/></div></div>
             <div v-if="activeEnemies.length" class="encounters"><h3>此地挑战</h3><div class="choices two"><button v-for="[id,enemy] in activeEnemies" :key="id" :data-testid="`encounter-${id}`" :class="{highlight:highlight===`encounter-${id}`}" @click="act({type:'ENCOUNTER',enemy:id})" :disabled="!can({type:'ENCOUNTER',enemy:id})"><strong>{{enemy.name}}</strong><small>气血 {{enemy.hp}} · 胜利后取得奖励</small><small>{{why({type:'ENCOUNTER',enemy:id})}}</small></button></div></div>
             <div v-if="core.world.location==='market'" class="market"><label>每次采购数量 <input type="number" min="1" :max="C.maxQuantity" v-model.number="quantity" aria-label="采购数量"></label><div class="market-row" v-for="[id,item] in knownItems" :key="id"><div><strong>{{item.name}}</strong><small>{{item.description}}</small></div><button :data-testid="`buy-${id}`" :class="{highlight:highlight===`buy-${id}`}" @click="act({type:'BUY',item:id,quantity})" :disabled="!can({type:'BUY',item:id,quantity})">购入 · {{cost({type:'BUY',item:id,quantity})}}<small>{{why({type:'BUY',item:id,quantity})}}</small></button></div></div>
           </template>
@@ -941,10 +944,10 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
     <dialog ref="gameplayHelp" class="paper settings game-help" aria-labelledby="gameplay-help-title"><header><h2 id="gameplay-help-title" tabindex="-1" data-dialog-initial>玩法帮助</h2><button type="button" aria-label="关闭玩法帮助" @click="gameplayHelp?.close()">关闭</button></header><p>提示随当前行动与状态出现，也可逐项重看。约30分钟只用于理解玩法，不限定到达境界或通关时间。</p><p class="small">跳过或关闭引导仅影响本页显示，刷新后可再次出现；不会改变成长、物品、掉落或存档。设置与当前提示均可回到这里。</p><details class="help-storage-details"><summary>存档与行动记录</summary><p>行动完成并保存后，收获才会计入行囊。保存失败时请沿原操作重试；若已写入，只会重读结果，不会重复扣费或发奖。关闭或刷新后，本次打算和成果仍保留，主动接续后本轮重新计时；当前离线期间不结算。</p><p>技术说明：收获明细对应操作回执，本次限额对应授权，下次选择对应草案，准备记录对应完整快照。commandId、runId与revision用于防止重复或过期写入，不是玩家需要填写的参数。</p></details><button type="button" data-testid="guide-toggle" :aria-pressed="guidanceEnabled" @click="guidanceEnabled=!guidanceEnabled;skippedGuides=[]">本页引导：{{guidanceEnabled?'开启':'关闭'}}</button><section class="help-chapter" :key="guideCatalog[helpPage].id"><span class="help-folio" aria-hidden="true">行道录 · {{String(helpPage+1).padStart(2,'0')}}</span><h3>{{guideCatalog[helpPage].title}}</h3><p>{{guideCatalog[helpPage].body}}</p></section><CataloguePager :page="helpPage" :pages="guideCatalog.length" :total="guideCatalog.length" label="帮助主题" @change="helpPage=$event"/></dialog>
 <dialog ref="lifeDialog" class="paper life-confirm closure-focus" data-testid="life-confirmation" aria-labelledby="life-confirm-title" @cancel="cancelLife" @close="closeLifeReview">
 <template v-if="lifeIntent">
-<header><h2 id="life-confirm-title" tabindex="-1" data-dialog-initial>{{lifeIntent.command.type==='RETIRE'?'确认主动归隐':'确认度过最后一月'}}</h2></header>
-<template v-if="singleScreen"><p>{{lifeIntent.command.type==='RETIRE'?'本次完成并保存后主动归隐，不消耗剩余游戏月，不写作寿尽。':'本次完成并保存后消耗最后1游戏月，达到当前境界寿限，以寿尽收卷。'}}</p><details class="milestone-notes"><summary>此生记录与保存说明</summary><ReviewPages :rows="confirmationReadings('life')" :identity="lifeIntent.command.commandId"/></details></template><template v-else>
+<header><h2 id="life-confirm-title" tabindex="-1" data-dialog-initial>{{lifeIntent.command.type==='RETIRE'?'确认主动归隐':'确认度过最后余月'}}</h2></header>
+<template v-if="singleScreen"><p>{{lifeIntent.command.type==='RETIRE'?'本次完成并保存后主动归隐，不消耗剩余游戏月，不写作寿尽。':'本次完成并保存后消耗实际最后余月（不超过12月），达到当前境界寿限，以寿尽收卷。'}}</p><details class="milestone-notes"><summary>此生记录与保存说明</summary><ReviewPages :rows="confirmationReadings('life')" :identity="lifeIntent.command.commandId"/></details></template><template v-else>
 <p data-testid="life-review">{{lifeIntent.record.overview.name}} · {{lifeIntent.record.overview.ageLabel}} · {{lifeIntent.record.overview.realmName}} · 行道{{lifeIntent.record.overview.elapsedMonths}}游戏月</p>
-<p>{{lifeIntent.command.type==='RETIRE'?'本次完成并保存后以主动归隐收卷，不消耗剩余游戏月，不写作寿尽。':'本次完成并保存后将消耗最后1游戏月，达到当前境界寿限，以寿尽收卷。'}}</p>
+<p>{{lifeIntent.command.type==='RETIRE'?'本次完成并保存后以主动归隐收卷，不消耗剩余游戏月，不写作寿尽。':'本次完成并保存后将消耗实际最后余月（不超过12月），达到当前境界寿限，以寿尽收卷。'}}</p>
 <p>当前存档与人物记录保留，可导出；恢复检查点会回退完整准备状态。此确认不会开启新的人生。</p>
 </template>
 <p>收卷结束当前人生，不能撤销为继续此卷；不耗物，12秒在线完成后才保存结果。</p>
@@ -975,7 +978,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
       <template v-if="trialRestoreIntent">
         <h2 id="trial-restore-title" tabindex="-1" data-dialog-initial>恢复完整入场准备</h2>
         <template v-if="singleScreen"><p>将放弃本轮及入场后的进展，物品、气血灵力、配装、人物选择、里程碑和年月一同回到准备记录。不会单独补发渡劫引，成功后仍可再次使用此检查点。</p><ReviewPages :rows="confirmationReadings('restore')" :identity="trialRestoreIntent.command.commandId"/></template><template v-else>
-        <p data-testid="trial-restore-target">{{trialRestoreIntent.checkpoint.target.name}} · {{C.realms[trialRestoreIntent.checkpoint.target.realm].name}} · 行道{{trialRestoreIntent.checkpoint.target.months}}游戏月</p>
+        <p data-testid="trial-restore-target">{{trialRestoreIntent.checkpoint.target.name}} · {{ruleContent.realms[trialRestoreIntent.checkpoint.target.realm].name}} · 行道{{trialRestoreIntent.checkpoint.target.months}}游戏月</p>
         <p>将放弃本轮及入场后的进展，物品、气血灵力、配装、人物选择、里程碑和年月一同回到该准备记录。不会单独补发渡劫引；恢复成功后，仍可再次使用这个检查点。</p>
         <p>准备气血 {{trialRestoreIntent.checkpoint.target.hp}} · 灵力 {{trialRestoreIntent.checkpoint.target.mp}} · 渡劫引 {{trialRestoreIntent.checkpoint.target.inventory.ascension_seal}}</p>
         </template>

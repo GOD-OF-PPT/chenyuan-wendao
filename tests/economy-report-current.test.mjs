@@ -10,12 +10,14 @@ const root=fileURLToPath(new URL('../',import.meta.url));
 const digest=value=>createHash('sha256').update(value).digest('hex');
 const run=cwd=>spawnSync(process.execPath,['--experimental-strip-types','scripts/replay-economy.mjs','--check'],{cwd,encoding:'utf8',maxBuffer:4_000_000});
 
-test('current instant120 audit checks actual engine provenance while the entire historical numeric result remains exact',()=>{
+test('current instant120 audit binds v4 engine provenance while the historical v3 report remains immutable',()=>{
  const historical=fs.readFileSync(path.join(root,'docs/economy/current-report.json'));
  const current=JSON.parse(fs.readFileSync(path.join(root,'docs/economy/current-engine-report.json'),'utf8'));
  const old=JSON.parse(historical);const{sourceHashes:oldSources,...oldResults}=old;
  const{sourceHashes:currentSources,historicalReport,...currentResults}=current;
- assert.equal(digest(JSON.stringify(currentResults)),digest(JSON.stringify(oldResults)));
+ assert.equal(currentResults.contentVersion,'full-demo.4');assert.equal(currentResults.balanceVersion,'full-unbalanced.4');
+ assert.equal(oldResults.contentVersion,'full-demo.3');assert.equal(oldResults.balanceVersion,'full-unbalanced.3');
+ assert.notEqual(digest(JSON.stringify(currentResults)),digest(JSON.stringify(oldResults)));
  assert.equal(historicalReport.sha256,digest(historical));assert.equal(current.passed,120);
  assert.notEqual(digest(JSON.stringify(currentSources)),digest(JSON.stringify(oldSources)));
  const result=run(root);assert.equal(result.status,0,result.stderr);

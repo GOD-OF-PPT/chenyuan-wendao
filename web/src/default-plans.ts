@@ -1,3 +1,4 @@
+import {contentForGame} from '../../src/full/rule-content.ts';
 import * as C from '../../src/full/content';
 import type {Game} from '../../src/full/types';
 import type {SourcePlan,CraftPlan} from '../../src/full/activity';
@@ -13,7 +14,9 @@ export function continuingSource(game:Game,sourceId:string,target:CollectionTarg
 }
 
 export function continuingCraft(game:Game,recipeId:string):CraftPlan {
-  const recipe=C.recipes[recipeId],breakthrough=C.items[recipe.output].kind==='breakthrough';
+ const ruleContent=contentForGame(game);
+
+  const recipe=ruleContent.recipes[recipeId],breakthrough=ruleContent.items[recipe.output].kind==='breakthrough';
   const maximum=Math.max(0,Math.min(Math.floor(game.core.player.stones/Math.max(1,recipe.stones)),
     ...Object.entries(recipe.inputs).map(([id,n])=>Math.floor(game.core.inventory[id]/n))));
   const cycles=breakthrough?Math.min(1,maximum):maximum;

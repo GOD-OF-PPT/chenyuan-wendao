@@ -81,13 +81,13 @@ test('a real finite budget stops before the next income cycle and a new explicit
   const r = createIdleRoute(base); r.begin(); r.go('sect');
   const before = r.game;
   const plan = { kind: 'source', sourceId: 'work', maxCycles: 2, until: 'cycles', target: null,
-    monthBudget: 1, remainingMonthsReserve: 1 };
+    monthBudget: 12, remainingMonthsReserve: 1 };
   const first = r.run(plan, '首段有限杂务');
   assert.equal(first.completedCycles, 1); assert.equal(first.stopReason.code, 'ACTIVITY_BUDGET');
   assert.equal(r.game.core.player.stones, before.core.player.stones + C.sources.work.stones);
   const second = r.run(plan, '另行确认第二段杂务');
   assert.equal(second.completedCycles, 1); assert.equal(second.stopReason.code, 'ACTIVITY_BUDGET');
-  assert.equal(first.spentMonths, 1); assert.equal(second.spentMonths, 1);
+  assert.equal(first.spentMonths, 12); assert.equal(second.spentMonths, 12);
   assert.notEqual(first.id, second.id);
   assert.equal(r.game.core.player.stones, before.core.player.stones + 2 * C.sources.work.stones);
 });

@@ -14,7 +14,7 @@ const uuid=()=> '00000000-0000-4000-8000-'+(identity++).toString(16).padStart(12
 function lawful(actions){let g=newGame('经器反馈',uuid());for(const action of actions)g=resolve(g,{...action,commandId:uuid(),runId:g.core.runId,expectedRevision:g.core.revision}).nextState;return g;}
 const games=new Map();
 function prepared(kind,id){const key=kind+':'+id;if(!games.has(key)){const d=driver();if(kind==='forge'){while(C.rank(d.game.core.player.realm)<C.rank('golden'))d.realm();for(const[item,n]of Object.entries(C.relics[id].inputs))d.resource(item,n);d.funds(C.relics[id].stones);d.go('cave');}else{d.realm();d.funds(300);d.go('sect');}games.set(key,lawful(d.actions));}return structuredClone(games.get(key));}
-function plan(kind,id){return kind==='forge'?{kind,relicId:id,maxCycles:1,stoneBudget:C.relics[id].stones,stoneReserve:0,monthBudget:2,remainingMonthsReserve:1,itemReserves:{}}:kind==='study'?{kind,manual:'jinghong',maxCycles:1,stoneBudget:80,stoneReserve:0}:{kind,skills:[id],maxCycles:1,stoneBudget:C.skills[id].price,stoneReserve:0};}
+function plan(kind,id){return kind==='forge'?{kind,relicId:id,maxCycles:1,stoneBudget:C.relics[id].stones,stoneReserve:0,monthBudget:24,remainingMonthsReserve:1,itemReserves:{}}:kind==='study'?{kind,manual:'jinghong',maxCycles:1,stoneBudget:80,stoneReserve:0}:{kind,skills:[id],maxCycles:1,stoneBudget:C.skills[id].price,stoneReserve:0};}
 function settle(before,prior){const command=prior.nextCommand;assert.ok(command);const {nextState:game,result}=resolve(before,command),activity=completeActivity(game,prior,result,{commandId:command.commandId,now:prior.dueAt}),observation=writeObservation(before,game,{kind:'action',command},result,false);return{before,prior,game,result,activity,observation};}
 function frame(kind='learn',id='sword_still',p=plan(kind,id),before=prepared(kind,id)){return settle(before,createActivity(before,p,{id:uuid(),ownerId:'visible-equipment',commandId:uuid(),now:1000}));}
 const match=(kind,id)=>a=>kind==='forge'?a.version===4&&a.plan.relicId===id:a.version===5&&a.plan.kind===kind&&(kind==='learn'?a.plan.skills.includes(id):a.plan.manual===id);
@@ -35,7 +35,7 @@ test('default and explicit zero keep old admission closed to lawful forge and pr
 });
 
 test('a malformed zero-version arm cannot steal a legitimate default source cycle',()=>{
- const d=driver();d.go('wilderness');const before=lawful(d.actions),p={kind:'source',sourceId:'herbs',maxCycles:1,until:'cycles',target:null,monthBudget:1,remainingMonthsReserve:1},f=settle(before,createActivity(before,p,{id:uuid(),ownerId:'source',commandId:uuid(),now:1000})),t=createActivityEffectTracker(()=>true);
+ const d=driver();d.go('wilderness');const before=lawful(d.actions),p={kind:'source',sourceId:'herbs',maxCycles:1,until:'cycles',target:null,monthBudget:12,remainingMonthsReserve:1},f=settle(before,createActivity(before,p,{id:uuid(),ownerId:'source',commandId:uuid(),now:1000})),t=createActivityEffectTracker(()=>true);
  t.arm(f.prior,before,f.prior.id,f.prior.generation);const malformed=structuredClone(f.prior);malformed.version=0;malformed.nextCommand.commandId='malformed-other-cycle';t.arm(malformed,before,malformed.id,malformed.generation);assert.ok(consume(t,f));
 });
 

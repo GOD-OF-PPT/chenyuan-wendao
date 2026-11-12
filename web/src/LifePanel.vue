@@ -33,7 +33,7 @@ const lifespan = computed(() => previewAction(props.game, { type: 'END_LIFE' }))
       <button data-testid="export-life" @click="emit('export')">导出生平文本</button>
       <template v-if="game.status==='active'">
         <button data-testid="retire" @click="emit('end','RETIRE')" :disabled="!enabled || busy || !retirement.allowed">主动归隐</button>
-        <button v-if="record.overview.remainingMonths===1" data-testid="end-life" @click="emit('end','END_LIFE')" :disabled="!enabled || busy || !lifespan.allowed">度过最后1游戏月并收卷</button>
+        <button v-if="previewAction(game,{type:'END_LIFE'}).allowed" data-testid="end-life" @click="emit('end','END_LIFE')" :disabled="!enabled || busy || !lifespan.allowed">度过最后{{record.overview.remainingMonths}}游戏月并收卷</button>
         <small v-if="!retirement.allowed">{{retirement.failure?.message}}；查看生平不消耗时间。</small>
       </template>
       <template v-else><button data-testid="life-restore" @click="emit('restore')" :disabled="!enabled || busy || !hasCheckpoint">恢复完整准备检查点</button><button data-testid="life-restart" @click="emit('restart')" :disabled="!enabled || busy">新的人生</button></template>

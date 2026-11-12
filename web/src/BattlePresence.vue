@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {useRuleContent} from './rule-content';
+
 import {useLocalActivityControls} from './activity-controls';
 import {computed,onActivated,onDeactivated,onMounted,onScopeDispose,ref} from 'vue';
 import type {Game} from '../../src/full/types';
@@ -11,9 +13,10 @@ import AssetImage from './AssetImage.vue';
 import ProgressTrack from './ProgressTrack.vue';
 import './art02-battle.css';
 import './ta07-cast.css';
+const ruleContent=useRuleContent(()=>props.game);
 const props=withDefaults(defineProps<{game:Game;active?:boolean}>(),{active:true});
 const mounted=ref(true),hidden=ref(document.hidden);
-const battle=computed(()=>props.game.battle!),enemy=computed(()=>C.enemies[battle.value.enemy]),player=computed(()=>props.game.core.player),realm=computed(()=>C.realms[player.value.realm]);
+const battle=computed(()=>props.game.battle!),enemy=computed(()=>ruleContent.value.enemies[battle.value.enemy]),player=computed(()=>props.game.core.player),realm=computed(()=>ruleContent.value.realms[player.value.realm]);
 const forecast=computed(()=>intent(battle.value)),backdrop=computed(()=>sceneAssetPath(scenePresentation(props.game)));
 const identity=computed(()=>props.game.core.runId+':'+battle.value.enemy+':'+(props.game.trial?.stage??'ordinary')+':'+props.game.wins);
 const visible=computed(()=>props.active&&mounted.value&&!hidden.value);

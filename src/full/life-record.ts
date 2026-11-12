@@ -16,7 +16,7 @@ export function lifeOverview(game: Game) {
     reason === 'lifespan' ? '尘世留名 · 寿元已尽' : ASCENSION_ENDINGS[reason === 'transmit' ? 'transmit' : 'depart'].title;
   const conclusion = game.status === 'active' ? '以下是当前已保存的来路，尚未作出此生的结束选择。' :
     reason === 'retired' ? '你主动收起行囊，此生未飞升。余下的岁月仍未耗尽，这是一场由你决定的作别。' :
-    reason === 'lifespan' ? '你确认度过了最后一个游戏月，年龄达到当前境界的寿限，此生收卷。' :
+    reason === 'lifespan' ? '你确认度过了最后余月，年龄达到当前境界的寿限，此生收卷。' :
     ASCENSION_ENDINGS[reason === 'transmit' ? 'transmit' : 'depart'].conclusion;
   return { name: p.name, status: game.status, reason, title, conclusion,
     realm: p.realm, realmName: C.realms[p.realm].name, elapsedMonths: game.core.world.elapsedMonths,

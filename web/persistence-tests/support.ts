@@ -11,6 +11,10 @@ export async function setupPersistence(page: Page) {
     const legacy = await import(`/@fs${root}src/game/adventure.ts`);
     const routes = await import(`/@fs${root}tests/full-route.mjs`);
     const adventure = await import(`/@fs${root}src/full/adventure.ts`);
+    const currentContent = await import(`/@fs${root}src/full/content.ts`);
+    const legacyRuleRoutes = await import('/persistence-tests/legacy-rule-route.mjs');
+    const legacyRuleEngine = await import(`/@fs${root}src/legacy/rules-v3/src/full/engine.ts`);
+    const legacyRuleContent = await import(`/@fs${root}src/legacy/rules-v3/src/full/content.ts`);
     const seed = async (name: string, current: unknown, previous?: unknown, checkpoint?: unknown) => {
       await new Promise<void>((resolve, reject) => {
         const req = indexedDB.open(name, 1);
@@ -92,6 +96,6 @@ export async function setupPersistence(page: Page) {
         ownerId: a.ownerId, generation: a.generation }); }
       finally { Date.now = realNow; }
     };
-    (globalThis as any).h = { ...persistence, engine, queries, receipts, routes, adventure, legacy, seed, inspect, put, legacySamples, mutation, command, attempt, finishAction };
+    (globalThis as any).h = { ...persistence, engine, queries, receipts, routes, adventure, currentContent, legacyRuleRoutes, legacyRuleEngine, legacyRuleContent, legacy, seed, inspect, put, legacySamples, mutation, command, attempt, finishAction };
   }, root);
 }

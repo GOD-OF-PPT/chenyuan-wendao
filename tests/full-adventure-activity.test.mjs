@@ -94,12 +94,12 @@ test('all six normal enemies and both schools use a full encounter then separate
     const game = ready('spirit', school, e.location), before = structuredClone(game), a = createActivity(game, encounter(game, enemy), options());
     assert.equal(a.cycleMs, 30000); assert.equal(a.nextCommand.type, 'ENCOUNTER');
     const entry = complete(game, a); assert.equal(entry.activity.encountersStarted, 1); assert.equal(entry.activity.battleTurns, 0);
-    assert.equal(entry.activity.cycleMs, 3000); assert.equal(entry.game.core.world.elapsedMonths, before.core.world.elapsedMonths + 1);
+    assert.equal(entry.activity.cycleMs, 3000); assert.equal(entry.game.core.world.elapsedMonths, before.core.world.elapsedMonths + 12);
     assert.equal(entry.game.wins, before.wins); assert.deepEqual(entry.activity.gainedItems, {});
     const out = all(entry.game, entry.activity);
     assert.equal(out.activity.status, 'stopped'); assert.equal(out.activity.victories, 1, enemy + school);
     assert.equal(out.activity.stopReason.code, 'ENCOUNTERS_COMPLETE'); assert.equal(out.activity.defeats, 0);
-    assert.equal(out.activity.spentMonths, 1); assert.equal(out.activity.gainedStones, e.stones);
+    assert.equal(out.activity.spentMonths, 12); assert.equal(out.activity.gainedStones, e.stones);
     assert.equal(out.activity.gainedXp, e.xp); assert.deepEqual(out.activity.gainedItems, e.loot);
     assert.equal(out.game.wins, before.wins + 1); assert.equal(out.game.battle, null); assert.equal(out.game.core.player.realm, 'spirit');
     assert.equal(out.activity.completedCycles, 1 + out.activity.battleTurns); assert.deepEqual(game, before);
@@ -108,20 +108,20 @@ test('all six normal enemies and both schools use a full encounter then separate
 });
 
 test('multi-encounter plans can exceed fifty actual commands without changing old batch rules or charging one entry for all fights', () => {
-  const game = ready(), plan = encounter(game, 'wolf', { maxEncounters: 20, maxCycles: 820, monthBudget: 20 });
+  const game = ready(), plan = encounter(game, 'wolf', { maxEncounters: 20, maxCycles: 820, monthBudget: 240 });
   const out = all(game, createActivity(game, plan, options()));
   assert.equal(out.activity.victories, 20); assert.equal(out.activity.encountersStarted, 20); assert.ok(out.activity.completedCycles > 50);
-  assert.equal(out.activity.spentMonths, 20); assert.deepEqual(out.activity.gainedItems, { core: 20 });
+  assert.equal(out.activity.spentMonths, 240); assert.deepEqual(out.activity.gainedItems, { core: 20 });
   assert.equal(out.activity.gainedStones, 200); assert.equal(out.activity.stopReason.code, 'ENCOUNTERS_COMPLETE');
   const preview = previewActivity(game, plan); assert.equal(preview.allowed, true); assert.equal(preview.adventure.victories, 20);
-  assert.equal(preview.months, 20); assert.equal(preview.cycles, out.activity.completedCycles); assert.deepEqual(preview.items, { core: 20 });
+  assert.equal(preview.months, 240); assert.equal(preview.cycles, out.activity.completedCycles); assert.deepEqual(preview.items, { core: 20 });
 });
 
 test('actual loot inventory targets remain productive at capped XP and stop without another encounter', () => {
   const game = ready(); game.core.player.xp = C.realms.spirit.xpCap;
-  const out = all(game, createActivity(game, encounter(game, 'wolf', { maxEncounters: 10, maxCycles: 410, monthBudget: 10, target: { item: 'core', quantity: 2 } }), options()));
+  const out = all(game, createActivity(game, encounter(game, 'wolf', { maxEncounters: 10, maxCycles: 410, monthBudget: 120, target: { item: 'core', quantity: 2 } }), options()));
   assert.equal(out.activity.victories, 2); assert.equal(out.activity.gainedXp, 0); assert.deepEqual(out.activity.gainedItems, { core: 2 });
-  assert.equal(out.activity.stopReason.code, 'TARGET_MET'); assert.equal(out.activity.spentMonths, 2);
+  assert.equal(out.activity.stopReason.code, 'TARGET_MET'); assert.equal(out.activity.spentMonths, 24);
 });
 
 test('month, lifespan, encounter and total-action limits remain separate explicit boundaries', () => {
@@ -129,9 +129,9 @@ test('month, lifespan, encounter and total-action limits remain separate explici
   rejects(() => createActivity(game, encounter(game, 'wolf', { monthBudget: 0 }), options()), 'ACTIVITY_BUDGET');
   const one = complete(game, createActivity(game, encounter(game, 'wolf', { maxCycles: 1 }), options()));
   assert.equal(one.activity.completedCycles, 1); assert.equal(one.activity.stopReason.code, 'CYCLES_COMPLETE'); assert.ok(one.game.battle);
-  const limited = all(game, createActivity(game, encounter(game, 'wolf', { maxEncounters: 2, monthBudget: 1, maxCycles: 82 }), options()));
+  const limited = all(game, createActivity(game, encounter(game, 'wolf', { maxEncounters: 2, monthBudget: 12, maxCycles: 82 }), options()));
   assert.equal(limited.activity.victories, 1); assert.equal(limited.activity.stopReason.code, 'ACTIVITY_BUDGET');
-  const aging = ready(); aging.core.world.elapsedMonths += remainingMonths(aging) - 2;
+  const aging = ready(); aging.core.world.elapsedMonths += remainingMonths(aging) - 13;
   const safe = all(aging, createActivity(aging, encounter(aging), options())); assert.equal(remainingMonths(safe.game), 1);
   const old = ready(); old.core.world.elapsedMonths += remainingMonths(old) - 1;
   rejects(() => createActivity(old, encounter(old), options()), 'AGE_LIMIT');

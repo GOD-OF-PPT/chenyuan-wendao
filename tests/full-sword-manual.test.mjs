@@ -22,6 +22,7 @@ test('trade keeps its early benefit, while realm, place, balance and event locks
   assert.equal(stats(trade.game).manualDamageBonus, 4); assert.throws(() => trade.doAction({ type: 'STUDY', manual: 'jinghong' }), e => e.code === 'ALREADY_LEARNED');
   const d = driver(); d.go('sect'); assert.throws(() => d.doAction({ type: 'STUDY', manual: 'jinghong' }), e => e.code === 'REALM_REQUIRED');
   d.realm(); assert.throws(() => d.doAction({ type: 'STUDY', manual: 'jinghong' }), e => e.code === 'LOCATION_REQUIRED');
+  d.go('market');const spent=Math.floor(d.game.core.player.stones/C.items.herb.buy);if(spent)d.doAction({type:'BUY',item:'herb',quantity:spent});
   d.go('sect'); assert.throws(() => d.doAction({ type: 'STUDY', manual: 'jinghong' }), e => e.code === 'INSUFFICIENT_STONES');
   d.funds(80); d.doAction({ type: 'EVENT', event: 'shen_return' }); const before = structuredClone(d.game);
   assert.throws(() => d.doAction({ type: 'STUDY', manual: 'jinghong' }), e => e.code === 'PENDING_EVENT'); assert.deepEqual(d.game, before);

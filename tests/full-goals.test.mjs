@@ -1,3 +1,4 @@
+import * as C from '../src/full/content.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { getTrackedGoal, parseTrackingTarget, planCollection, preparationConsumption, trackingConsumption } from '../src/full/goals.ts';
@@ -43,7 +44,7 @@ test('target material batches stop at the requested inventory with the actual sh
   assert.equal(action.count, 50); assert.equal(JSON.stringify(d.game), before);
   const preview = previewAction(d.game, action), actual = execute(d.game, action);
   assert.equal(preview.executedSteps, 4); assert.equal(preview.stopReason.code, 'TARGET_MET');
-  assert.deepEqual(preview.actualCosts, actual.result.costs); assert.equal(actual.result.costs.months, 4);
+  assert.deepEqual(preview.actualCosts, actual.result.costs); assert.equal(actual.result.costs.months, 48);
   assert.equal(actual.nextState.core.inventory.herb, 8);
   assert.equal(previewAction(actual.nextState, action).failure.code, 'TARGET_MET');
   assert.equal(planCollection(d.game, 'dew', { kind: 'item', id: 'herb', quantity: 8 }), null);
@@ -53,7 +54,7 @@ test('currency target plans only missing income within the existing batch bound'
   const d = driver(); d.go('sect');
   const action = planCollection(d.game, 'work', { kind: 'stones', quantity: 160 });
   assert.equal(action.count, 6); const actual = execute(d.game, action);
-  assert.equal(actual.nextState.core.player.stones, 160); assert.equal(actual.result.costs.months, 6);
+  assert.equal(actual.nextState.core.player.stones, 160); assert.equal(actual.result.costs.months, 72);
   assert.equal(planCollection(actual.nextState, 'work', { kind: 'stones', quantity: 160 }), null);
   assert.equal(planCollection(d.game, 'work', { kind: 'stones', quantity: 1000000 }).count, 50);
   assert.equal(planCollection(d.game, 'herbs', { kind: 'stones', quantity: 160 }), null);
@@ -61,7 +62,7 @@ test('currency target plans only missing income within the existing batch bound'
 
 test('collection respects lifespan and pending event blockers instead of granting target resources', () => {
   const d = driver(); d.go('wilderness'); const boundary = structuredClone(d.game);
-  boundary.core.world.elapsedMonths = 1440 - boundary.core.player.startAgeMonths - 2;
+  boundary.core.world.elapsedMonths = C.realms.qi.lifespanMonths - boundary.core.player.startAgeMonths - 13;
   const action = planCollection(boundary, 'herbs', { kind: 'item', id: 'herb', quantity: 8 });
   const preview = previewAction(boundary, action);
   assert.equal(preview.executedSteps, 1); assert.equal(preview.stopReason.code, 'AGE_LIMIT');

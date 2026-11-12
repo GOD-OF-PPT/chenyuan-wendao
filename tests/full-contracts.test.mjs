@@ -32,7 +32,7 @@ test('partial batches report executed costs and the real stop code', () => {
   assert.equal(result.result.executedSteps, 2);
   assert.equal(result.result.stopReason.code, 'INSUFFICIENT_STONES');
   assert.equal(result.result.costs.stones, 40);
-  assert.equal(result.result.costs.months, 2);
+  assert.equal(result.result.costs.months, 24);
   assert.equal(result.result.delta.stones, -40);
   assert.equal(result.result.delta.xp, 200);
   assert.equal(result.result.revisionAfter - result.result.revisionBefore, 1);
@@ -43,7 +43,7 @@ test('target stopping reports only four source actions and never the requested f
   const out = resolve(d.game, command(d.game, { type: 'SOURCE', sourceId: 'herbs', count: 50, target: { item: 'herb', quantity: 8 } }));
   assert.equal(out.result.executedSteps, 4);
   assert.equal(out.result.stopReason.code, 'TARGET_MET');
-  assert.equal(out.result.costs.months, 4);
+  assert.equal(out.result.costs.months, 48);
   assert.equal(out.result.delta.inventory.herb, 8);
 });
 
@@ -110,7 +110,7 @@ test('explicit full v1 conversion corrects its known RETIRE label and preserves 
   const d = driver('trade'), old = advance(d.game, command(d.game, { type: 'RETIRE' }));
   old.core.contentVersion = 'full-demo.1'; old.core.balanceVersion = 'full-unbalanced.1'; old.ending = 'lifespan';
   const raw = JSON.stringify(old), converted = parseGame(raw);
-  assert.equal(converted.core.contentVersion, C.VERSION);
+  assert.equal(converted.core.contentVersion, 'full-demo.3');
   assert.equal(converted.ending, 'retired');
   assert.deepEqual(converted.core.player, old.core.player);
   assert.deepEqual(converted.core.inventory, old.core.inventory);

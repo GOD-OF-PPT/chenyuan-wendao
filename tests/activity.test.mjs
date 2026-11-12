@@ -45,13 +45,13 @@ test('two real cycles accumulate real rewards then stop at XP cap without a brea
   const original = structuredClone(activity);
   ({ game, activity } = complete(game, activity));
   assert.equal(activity.status, 'running'); assert.equal(activity.completedCycles, 1);
-  assert.equal(activity.gainedXp, 5); assert.equal(activity.spentMonths, 1);
+  assert.equal(activity.gainedXp, 5); assert.equal(activity.spentMonths, 12);
   assert.equal(activity.nextCommand.expectedRevision, game.core.revision);
   assert.equal(activity.nextCommand.commandId, 'cycle:activity-one:0:2');
   assert.equal(original.completedCycles, 0);
   ({ game, activity } = complete(game, activity));
   assert.equal(activity.status, 'stopped'); assert.equal(activity.stopReason.code, 'XP_CAP');
-  assert.equal(activity.gainedXp, 10); assert.equal(activity.spentMonths, 2);
+  assert.equal(activity.gainedXp, 10); assert.equal(activity.spentMonths, 24);
   assert.equal(activity.nextCommand, null); assert.equal(activity.startedAt, null); assert.equal(activity.dueAt, null);
   assert.equal(game.core.player.realm, 'mortal'); assert.equal(game.core.player.xp, 10);
   validateActivity(activity, game);
@@ -176,11 +176,11 @@ test('a cycle cannot settle before its deadline and old activity state cannot co
 });
 
 test('lifespan prevents an unsafe first cycle and stops immediately before a later unsafe cycle', () => {
-  const game = qi(); game.core.world.elapsedMonths = C.realms.qi.lifespanMonths - game.core.player.startAgeMonths - 2;
+  const game = qi(); game.core.world.elapsedMonths = C.realms.qi.lifespanMonths - game.core.player.startAgeMonths - 13;
   validateGame(game);
   const activity = createActivity(game, natural(), options()), out = complete(game, activity);
   assert.equal(out.activity.completedCycles, 1); assert.equal(out.activity.stopReason.code, 'AGE_LIMIT');
-  assert.equal(out.game.core.world.elapsedMonths, game.core.world.elapsedMonths + 1);
+  assert.equal(out.game.core.world.elapsedMonths, game.core.world.elapsedMonths + 12);
   rejects(() => createActivity(out.game, natural(), options({ id: 'after-age' })), 'AGE_LIMIT');
 });
 
@@ -275,7 +275,7 @@ test('clamped XP is the actual gain while each cycle retains the full formal tim
   const game = qi(); game.core.player.xp = C.realms.qi.xpCap - 1;
   const activity = createActivity(game, natural({ method: 'assisted', stoneBudget: 40 }), options());
   const out = complete(game, activity);
-  assert.equal(out.activity.gainedXp, 1); assert.equal(out.activity.spentStones, 20); assert.equal(out.activity.spentMonths, 1);
+  assert.equal(out.activity.gainedXp, 1); assert.equal(out.activity.spentStones, 20); assert.equal(out.activity.spentMonths, 12);
   assert.equal(out.activity.stopReason.code, 'XP_CAP');
 });
 
@@ -284,7 +284,7 @@ test('activity preview respects cumulative budget and reserve rather than projec
   const budget = previewActivity(game, natural({ method: 'assisted', stoneBudget: 40 }));
   assert.equal(budget.allowed, true); assert.equal(budget.failure, null);
   assert.equal(budget.cycles, 2); assert.equal(budget.xp, 200); assert.equal(budget.stones, 40);
-  assert.equal(budget.months, 2); assert.equal(budget.cycleMs, 60_000);
+  assert.equal(budget.months, 24); assert.equal(budget.cycleMs, 60_000);
   assert.equal(budget.stopReason.code, 'ACTIVITY_BUDGET');
   const reserve = previewActivity(game, natural({ method: 'assisted', stoneBudget: 500, stoneReserve: 480 }));
   assert.equal(reserve.allowed, true); assert.equal(reserve.cycles, 1); assert.equal(reserve.stones, 20);
@@ -305,7 +305,7 @@ test('activity preview is deterministic and read-only while keeping count, cap, 
   const cap = opening(), capped = previewActivity(cap, natural());
   assert.equal(capped.cycles, 2); assert.equal(capped.xp, 10); assert.equal(capped.stopReason.code, 'XP_CAP');
   const aged = structuredClone(game);
-  aged.core.world.elapsedMonths = C.realms.qi.lifespanMonths - aged.core.player.startAgeMonths - 2;
+  aged.core.world.elapsedMonths = C.realms.qi.lifespanMonths - aged.core.player.startAgeMonths - 13;
   const age = previewActivity(aged, natural());
   assert.equal(age.allowed, true); assert.equal(age.cycles, 1); assert.equal(age.stopReason.code, 'AGE_LIMIT');
   const invalid = previewActivity(game, natural({ maxCycles: Infinity }));

@@ -7,7 +7,7 @@ test('DB9 preserves DB8 Game, v6 activity, configuration and historical ordinary
     const h = (globalThis as any).h, name = 'milestone-upgrade-v8', source = await h.FullSaveRepository.open(name + '-source'), realNow = Date.now;
     let now = 1_700_000_000_000; Date.now = () => now;
     try {
-      const d = h.routes.driver(); let game = (await source.importText(JSON.stringify(d.checkpoints.mortal), h.mutation())).state;
+      const d = h.legacyRuleRoutes.driver(); let game = (await source.importText(JSON.stringify(d.checkpoints.mortal), h.mutation())).state;
       // Reproduce exact DB8 ordinary records with the unchanged formal resolver, not a new v7 activity in an old schema.
       const breakthrough = h.command(game, { type: 'BREAKTHROUGH' }), resolved = h.engine.resolve(game, breakthrough);
       const oldCheckpoint = { format: 'chenyuan-checkpoint', version: 1, kind: 'breakthrough', sourceRunId: game.core.runId,
@@ -41,7 +41,7 @@ test('DB9 preserves DB8 Game, v6 activity, configuration and historical ordinary
       } finally { upgraded.close(); oldDB.close(); }
     } finally { Date.now = realNow; source.close(); }
   });
-  expect(r.closed).toBe(true); expect(r.after.version).toBe(9); expect(r.oldClient.name).toBe('VersionError');
+  expect(r.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(r.loaded.activity).not.toHaveProperty('rulesVersion'); expect(r.closed).toBe(true); expect(r.after.version).toBe(9); expect(r.oldClient.name).toBe('VersionError');
   for (const store of r.original.stores) expect(r.after[store]).toEqual(r.original[store]);
   expect(r.loaded).toEqual({ state: r.old.nextState, activity: r.arrived.activity }); expect(r.checkpointAfter).toEqual(r.checkpoint);
   expect(r.travelReplay.replayed).toBe(true); expect(r.travelReplay.state).toEqual(r.old.nextState); expect(r.travelReplay.result).toEqual(r.arrived.result);

@@ -29,12 +29,12 @@ export async function registerPositivePreparation(page: Page) {
 
     const craft = route(); craft.resource('herb', 2); craft.funds(2); craft.go('cave');
     register('craft', craft.game, { kind: 'craft', recipeId: 'healing', maxCycles: 1, until: 'cycles',
-      targetQuantity: null, stoneBudget: 2, stoneReserve: 0, monthBudget: 1,
+      targetQuantity: null, stoneBudget: 2, stoneReserve: 0, monthBudget: C.recipes.healing.months,
       remainingMonthsReserve: 1, itemReserves: {} }, { stones: 2, items: { herb: 2 } });
 
     const forge = route('golden'); forge.resource('jade', 3); forge.resource('core', 1); forge.funds(140); forge.go('cave');
     register('forge', forge.game, { kind: 'forge', relicId: 'frost_sword', maxCycles: 1,
-      stoneBudget: 140, stoneReserve: 0, monthBudget: 2, remainingMonthsReserve: 1,
+      stoneBudget: 140, stoneReserve: 0, monthBudget: C.actionDurations.forge, remainingMonthsReserve: 1,
       itemReserves: {} }, { stones: 140, items: { jade: 3, core: 1 } });
 
     const learn = route('foundation'); learn.funds(100); learn.go('sect');

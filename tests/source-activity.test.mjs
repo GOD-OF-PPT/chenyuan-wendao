@@ -1,3 +1,4 @@
+import {sourcePeriodMs,recipePeriodMs} from '../src/full/online-periods.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as C from '../src/full/content.ts';
@@ -32,7 +33,7 @@ test('all sixteen real sources keep their formal per-cycle output and game-month
     const game = atSource(id), before = structuredClone(game);
     const activity = createActivity(game, plan(id, { maxCycles: 2 }), options());
     assert.equal(activity.version, 2);
-    assert.equal(activity.cycleMs, source.months * 30_000);
+    assert.equal(activity.cycleMs, sourcePeriodMs(game,id));
     assert.ok(activity.cycleMs >= 30_000 && activity.cycleMs <= 180_000);
     assert.deepEqual(activity.nextCommand, { type: 'SOURCE', sourceId: id, count: 1,
       commandId: 'cycle:source-activity:0:1', runId: game.core.runId, expectedRevision: game.core.revision });
@@ -92,28 +93,31 @@ test('stone targets use existing inventory and work remains productive despite z
 
 test('cumulative month budget charges actual full cycles and cannot be replenished by currency income or resume', () => {
   const game = atSource('jade_task');
-  let out = { game, activity: createActivity(game, plan('jade_task', { monthBudget: 7 }), options()) };
+  let out = { game, activity: createActivity(game, plan('jade_task', { monthBudget: 84 }), options()) };
   out = complete(out.game, out.activity);
   const paused = pauseActivity(out.activity);
-  assert.equal(paused.spentMonths, 3); assert.equal(paused.gainedStones, 12);
+  assert.equal(paused.spentMonths, 36); assert.equal(paused.gainedStones, 50);
   out.activity = resumeActivity(out.game, paused, { ownerId: 'page-two', commandId: 'resume', now: 1_000_000 });
   out = complete(out.game, out.activity);
   assert.equal(out.activity.stopReason.code, 'ACTIVITY_BUDGET'); assert.equal(out.activity.completedCycles, 2);
-  assert.equal(out.activity.spentMonths, 6); assert.equal(out.activity.gainedStones, 24);
+  assert.equal(out.activity.spentMonths, 72); assert.equal(out.activity.gainedStones, 100);
   rejects(() => createActivity(game, plan('jade_task', { monthBudget: 2 }), options()), 'ACTIVITY_BUDGET');
 });
 
 test('minimum remaining lifespan is respected exactly without bypassing the formal age limit at zero reserve', () => {
   const game = atSource();
-  game.core.world.elapsedMonths = C.realms.qi.lifespanMonths - game.core.player.startAgeMonths - 3;
+  game.core.world.elapsedMonths = C.realms.qi.lifespanMonths - game.core.player.startAgeMonths - 14;
   validateGame(game);
   const activity = createActivity(game, plan('herbs', { remainingMonthsReserve: 2 }), options());
   const out = complete(game, activity);
-  assert.equal(remainingMonths(out.game), 2); assert.equal(out.activity.stopReason.code, 'ACTIVITY_RESERVE');
+  assert.equal(remainingMonths(out.game), 2);assert.equal(out.activity.stopReason.code, 'ACTIVITY_RESERVE');
   rejects(() => createActivity(out.game, activity.plan, options()), 'ACTIVITY_RESERVE');
-  const last = createActivity(out.game, plan('herbs', { remainingMonthsReserve: 0 }), options());
-  const final = complete(out.game, last);
-  assert.equal(remainingMonths(final.game), 1); assert.equal(final.activity.stopReason.code, 'AGE_LIMIT');
+  const near=structuredClone(out.game);near.core.world.elapsedMonths-=11;
+  const last=createActivity(near,plan('herbs',{remainingMonthsReserve:0}),options());
+  const final=complete(near,last);assert.equal(remainingMonths(final.game),1);assert.equal(final.activity.stopReason.code,'ACTIVITY_RESERVE');
+  assert.equal(remainingMonths(out.game), 2);
+  const exhausted=structuredClone(near);exhausted.core.world.elapsedMonths++;
+  rejects(()=>createActivity(exhausted,plan('herbs',{remainingMonthsReserve:0}),options()),'AGE_LIMIT');
 });
 
 test('capacity halts before a partial reward or cost, for both inventory and stone bounds', () => {
@@ -199,7 +203,7 @@ test('source pause and explicit takeover preserve results but invalidate unfinis
   assert.equal(first.activity.startedAt, running.dueAt + 86_400_000);
   const paused = pauseActivity(first.activity), resumed = resumeActivity(first.game, paused,
     { ownerId: 'page-two', commandId: 'resume', now: 100_000_000 });
-  assert.equal(resumed.gainedStones, 20); assert.equal(resumed.spentMonths, 1);
+  assert.equal(resumed.gainedStones, 20); assert.equal(resumed.spentMonths, 12);
   assert.equal(resumed.dueAt, 100_030_000); assert.equal(resumed.ownerId, 'page-two');
   assert.equal(resumed.generation, first.activity.generation + 2);
   assert.notEqual(resumed.nextCommand.commandId, first.activity.nextCommand.commandId);
@@ -224,10 +228,10 @@ test('read-only source preview shares inventory-target, budget, lifespan and cap
   assert.deepEqual(previewActivity(game, arrangement), projected);
   assert.equal(projected.allowed, true); assert.equal(projected.cycles, 2);
   assert.deepEqual(projected.items, { herb: 4 }); assert.equal(projected.earnedStones, 0);
-  assert.equal(projected.stones, 0); assert.equal(projected.months, 2); assert.equal(projected.xp, 0);
+  assert.equal(projected.stones, 0); assert.equal(projected.months, 24); assert.equal(projected.xp, 0);
   assert.equal(projected.stopReason.code, 'TARGET_MET');
   assert.deepEqual(game, before); assert.deepEqual(arrangement, beforePlan);
-  const limited = previewActivity(game, plan('herbs', { monthBudget: 1 }));
+  const limited = previewActivity(game, plan('herbs', { monthBudget: 12 }));
   assert.equal(limited.cycles, 1); assert.equal(limited.stopReason.code, 'ACTIVITY_BUDGET');
   const blocked = previewActivity(game, plan('herbs', { monthBudget: 0 }));
   assert.equal(blocked.allowed, false); assert.equal(blocked.failure.code, 'ACTIVITY_BUDGET');

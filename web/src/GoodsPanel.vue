@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {useRuleContent} from './rule-content';
+
 import {computed,ref,watch} from 'vue';
 import type {Action,Game} from '../../src/full/types.ts';
 import * as C from '../../src/full/content.ts';
@@ -11,9 +13,10 @@ import InventoryStage from './InventoryStage.vue';
 import ProductionPlanner from './ProductionPlanner.vue';
 import type {Activity,CraftPlan,ForgePlan,PreparationPlan} from '../../src/full/activity.ts';
 import type {useGame} from './store';
+const ruleContent=useRuleContent(()=>props.game);
 const props=defineProps<{game:Game;mode:'inventory'|'forge';minimal?:boolean;busy:boolean;available:boolean;highlight:string;consumption:(action:Action)=>string;running:boolean;activity:Activity|null;runtime:ReturnType<typeof useGame>['activityRuntime'];savedProduction:CraftPlan|ForgePlan|null;savedPreparationPlan:PreparationPlan|null}>(),emit=defineEmits<{act:[Action];quick:[Action];track:[TrackingTarget];travel:[C.LocationId];start:[CraftPlan|ForgePlan|PreparationPlan];move:[CraftPlan|ForgePlan];travelPlan:[PreparationPlan]}>();
 const page=ref(0),filter=ref('all'),future=ref(false),pick=ref('');
-const rows=computed(()=>Object.entries(C.items).filter(([id,i])=>(future.value||C.rank(i.min)<=C.rank(props.game.core.player.realm)||props.game.core.inventory[id]>0)&&(filter.value==='all'||i.kind===filter.value)));
+const rows=computed(()=>Object.entries(ruleContent.value.items).filter(([id,i])=>(future.value||C.rank(i.min)<=C.rank(props.game.core.player.realm)||props.game.core.inventory[id]>0)&&(filter.value==='all'||i.kind===filter.value)));
 const paged=computed(()=>pageSlice(rows.value,page.value,4)),item=computed(()=>rows.value.find(([id])=>id===pick.value)?.[1]);
 const stock=(id:string)=>props.game.core.inventory[id];
 function why(action:Action){return props.busy?'保存中':!props.available?'存档未就绪':props.running?'活动中，请先暂停':previewAction(props.game,action).failure?.message??'';}

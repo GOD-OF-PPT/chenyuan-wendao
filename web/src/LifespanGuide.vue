@@ -11,8 +11,8 @@ const checkpoint=computed(()=>!!store?.hasCheckpoint&&!!store.checkpointSummary&
 </script>
 <template>
  <section v-if="view" :class="stage?'lifespan-stage':'paper lifespan-warning'" role="status" :data-testid="stage?'lifespan-guidance':'lifespan-warning'">
-  <template v-if="stage"><small>当前岁月 · 余寿 {{view.life.remainingMonths}} 游戏月</small><h2>寿元将尽，先看此生去向</h2><p>普通修炼须保留最后一月，当前不能再入定。</p><p>已保存的修为与物资仍在。查看去向不会收卷，也不会替你作出选择。</p></template>
-  <template v-else><strong>余寿 {{view.life.remainingMonths}} 游戏月 · {{view.life.ageLabel}}</strong><p>{{view.last?'普通修炼须保留最后1游戏月。若修为与突破物已齐，仍可核对突破条件；也可先查看此生去向，收卷须另行确认。':'游戏月在行动完成时消耗；在线修炼在切页后仍继续。暂停后阅读与离线不扣减余寿，请核对当前准备与检查点。'}}</p></template>
+  <template v-if="stage"><small>当前岁月 · 余寿 {{view.life.remainingMonths}} 游戏月</small><h2>寿元将尽，先看此生去向</h2><p>余寿不足下一轮修炼，当前不能再入定。</p><p>已保存的修为与物资仍在。查看去向不会收卷，也不会替你作出选择。</p></template>
+  <template v-else><strong>余寿 {{view.life.remainingMonths}} 游戏月 · {{view.life.ageLabel}}</strong><p>{{view.last?'请核对下一轮所需岁月。若修为与突破物已齐，仍可核对突破条件；也可先查看此生去向，收卷须另行确认。':'游戏月在行动完成时消耗；在线修炼在切页后仍继续。暂停后阅读与离线不扣减余寿，请核对当前准备与检查点。'}}</p></template>
   <button :class="stage?'primary cultivate-primary':undefined" :data-testid="stage?'lifespan-inspect-life':'lifespan-open-life'" @click="emit('life',$event)">{{stage?'查看寿元与收卷选择':'查看生平与收卷选择'}}</button>
   <button v-if="checkpoint" class="text-button" data-testid="lifespan-inspect-checkpoint" @click="emit('checkpoint',$event)">核对已保存的准备记录</button>
  </section>

@@ -38,7 +38,7 @@ for (const realm of ['qi', 'foundation', 'golden', 'nascent', 'spirit']) {
     assert.equal(game.core.player.stones, 0);
     assert.equal(game.core.player.hp, stats(game).maxHp);
     assert.equal(game.core.player.mp, stats(game).maxMp);
-    assert.equal(game.core.world.elapsedMonths, months + 1);
+    assert.equal(game.core.world.elapsedMonths, months + C.actionDurations.rest);
     game = advance(game, command(game, { type: 'CULTIVATE', method: 'natural' }));
     assert.ok(game.core.player.xp > 0);
     game = advance(game, command(game, { type: 'TRAVEL', location: 'sect' }));

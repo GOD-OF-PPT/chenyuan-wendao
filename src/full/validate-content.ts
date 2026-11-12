@@ -97,6 +97,8 @@ export function validateContent(c: ContentCatalog = fullCatalog) {
     const path = `sources.${id}`;
     realm(source.min, `${path}.min`); location(source.location, `${path}.location`);
     number(source.months, `${path}.months`, 1);
+    number(source.onlineMs, `${path}.onlineMs`, 1);
+    if(source.onlineMs<30000||source.onlineMs>180000)fail('CONTENT_PERIOD',path,'source online period must remain 30–180 seconds');
     number(source.stones, `${path}.stones`); number(source.xp, `${path}.xp`);
     materials(source.items, `${path}.items`);
     if (!locationOpen(source.location, source.min)) fail('SOURCE_LOCATION_GATE', path, 'location unlocks after source');
@@ -111,6 +113,8 @@ export function validateContent(c: ContentCatalog = fullCatalog) {
     materials(recipe.inputs, `${path}.inputs`);
     if (!Object.keys(recipe.inputs).length) fail('RECIPE_INPUT', path, 'recipe needs material inputs');
     number(recipe.stones, `${path}.stones`); number(recipe.months, `${path}.months`, 1);
+    number(recipe.onlineMs, `${path}.onlineMs`, 1);
+    if(recipe.onlineMs<30000||recipe.onlineMs>150000)fail('CONTENT_PERIOD',path,'furnace online period must remain 30–150 seconds');
   }
   for (const [id, skill] of Object.entries(c.skills)) {
     realm(skill.min, `skills.${id}.min`); number(skill.price, `skills.${id}.price`);

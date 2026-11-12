@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {useRuleContent} from './rule-content';
+
 import {playerCopy} from './player-copy';
 import{computed,inject,onDeactivated,onUnmounted,ref,useId,watch}from 'vue';
 import{gameFocusKey}from './focus';
@@ -14,6 +16,7 @@ import CataloguePager from './CataloguePager.vue';
 import MarketCounter from './MarketCounter.vue';
 import type{useGame}from './store';
 import GameIcon from './GameIcon.vue';
+const ruleContent=useRuleContent(()=>props.game);
 const props=withDefaults(defineProps<{game:Game;busy:boolean;available:boolean;running:boolean;highlight:string;savedPlan:BuyPlan|SellPlan|null;planSaved?:boolean;inspectionExact?:boolean;embedded?:boolean;consumption:(action:Action)=>string}>(),{planSaved:false,inspectionExact:true});
 const emit=defineEmits<{start:[PreparationPlan];act:[Action];track:[TrackingTarget];travel:[PreparationPlan]}>();
 const focus=inject(gameFocusKey),settings=ref<HTMLDialogElement>(),library=ref<HTMLDialogElement>(),titleId=useId(),libraryTitle=useId();
@@ -24,8 +27,8 @@ function openLibrary(event:Event){settings.value?.close();if(focus)focus.open(li
 function closeViews(){settings.value?.close();library.value?.close();}
 onDeactivated(closeViews);onUnmounted(()=>{focus?.release(settings.value);focus?.release(library.value);});watch(()=>props.game.core.runId,closeViews);
 const mode=ref<'buy'|'sell'>('buy'),future=ref(false),page=ref(0),selected=ref(''),count=ref(1),until=ref<'cycles'|'target'>('cycles'),target=ref(1),budget=ref(0),reserve=ref(0),itemReserve=ref(0),editedLimits=ref(false);
-const rows=computed(()=>Object.entries(C.items).filter(([id,i])=>future.value||C.rank(i.min)<=C.rank(props.game.core.player.realm)||props.game.core.inventory[id]>0));
-const paged=computed(()=>pageSlice(rows.value,page.value,4)),item=computed(()=>C.items[selected.value]);
+const rows=computed(()=>Object.entries(ruleContent.value.items).filter(([id,i])=>future.value||C.rank(i.min)<=C.rank(props.game.core.player.realm)||props.game.core.inventory[id]>0));
+const paged=computed(()=>pageSlice(rows.value,page.value,4)),item=computed(()=>ruleContent.value.items[selected.value]);
 const plan=computed<BuyPlan|SellPlan>(()=>mode.value==='buy'?{kind:'buy',item:selected.value,maxCycles:count.value,until:until.value,targetQuantity:until.value==='target'?target.value:null,stoneBudget:budget.value,stoneReserve:reserve.value}:{kind:'sell',item:selected.value,maxCycles:count.value,itemReserve:itemReserve.value});
 const quote=computed(()=>item.value?previewActivity(props.game,plan.value):null);
 const sameSaved=computed(()=>{const p=props.savedPlan,d=plan.value;return !!p&&p.kind===d.kind&&p.item===d.item&&p.maxCycles===d.maxCycles&&(p.kind==='buy'&&d.kind==='buy'?p.until===d.until&&p.targetQuantity===d.targetQuantity&&p.stoneBudget===d.stoneBudget&&p.stoneReserve===d.stoneReserve:p.kind==='sell'&&d.kind==='sell'&&p.itemReserve===d.itemReserve);});
@@ -39,9 +42,9 @@ function remember(){if(selected.value)drafts.set(mode.value+':'+selected.value,{
 function select(id:string){if(selected.value===id)return;remember();selected.value=id;const d=drafts.get(mode.value+':'+id);if(d){count.value=d.count;until.value=d.until;target.value=d.target;budget.value=d.budget;reserve.value=d.reserve;itemReserve.value=d.itemReserve;editedLimits.value=d.editedLimits;return;}count.value=1;until.value=mode.value==='buy'?'target':'cycles';target.value=props.game.core.inventory[id]+1;reserve.value=0;itemReserve.value=0;editedLimits.value=false;resetBudget();}
 function reconcile(){const index=rows.value.findIndex(([id])=>id===selected.value);if(index<0){page.value=0;if(rows.value.length)select(rows.value[0][0]);}else page.value=Math.floor(index/4);}
 function turn(next:number){const slice=pageSlice(rows.value,next,4);page.value=slice.page;if(slice.rows.length)select(slice.rows[0][0]);}
-function locate(){const match=/^(buy|sell)-(.+)$/.exec(props.highlight);if(match&&Object.hasOwn(C.items,match[2])){selectMode(match[1] as 'buy'|'sell');future.value=C.rank(C.items[match[2]].min)>C.rank(props.game.core.player.realm);select(match[2]);}reconcile();}
+function locate(){const match=/^(buy|sell)-(.+)$/.exec(props.highlight);if(match&&Object.hasOwn(ruleContent.value.items,match[2])){selectMode(match[1] as 'buy'|'sell');future.value=C.rank(ruleContent.value.items[match[2]].min)>C.rank(props.game.core.player.realm);select(match[2]);}reconcile();}
 const lastReadIntents=new Map<string,string>();
-function restore(){const p=props.savedPlan;if(!p)return;const sig=JSON.stringify(p),key=p.kind+':'+p.item;if(!props.inspectionExact&&!props.planSaved){if(lastReadIntents.get(key)===sig){selectMode(p.kind);if(C.rank(C.items[p.item].min)>C.rank(props.game.core.player.realm))future.value=true;select(p.item);reconcile();return;}lastReadIntents.set(key,sig);}remember();mode.value=p.kind;future.value=C.rank(C.items[p.item].min)>C.rank(props.game.core.player.realm);selected.value=p.item;page.value=Math.max(0,Math.floor(rows.value.findIndex(([id])=>id===p.item)/4));count.value=p.maxCycles;editedLimits.value=true;if(p.kind==='buy'){until.value=p.until;target.value=p.targetQuantity??props.game.core.inventory[p.item]+1;budget.value=p.stoneBudget;reserve.value=p.stoneReserve;}else itemReserve.value=p.itemReserve;}
+function restore(){const p=props.savedPlan;if(!p)return;const sig=JSON.stringify(p),key=p.kind+':'+p.item;if(!props.inspectionExact&&!props.planSaved){if(lastReadIntents.get(key)===sig){selectMode(p.kind);if(C.rank(ruleContent.value.items[p.item].min)>C.rank(props.game.core.player.realm))future.value=true;select(p.item);reconcile();return;}lastReadIntents.set(key,sig);}remember();mode.value=p.kind;future.value=C.rank(ruleContent.value.items[p.item].min)>C.rank(props.game.core.player.realm);selected.value=p.item;page.value=Math.max(0,Math.floor(rows.value.findIndex(([id])=>id===p.item)/4));count.value=p.maxCycles;editedLimits.value=true;if(p.kind==='buy'){until.value=p.until;target.value=p.targetQuantity??props.game.core.inventory[p.item]+1;budget.value=p.stoneBudget;reserve.value=p.stoneReserve;}else itemReserve.value=p.itemReserve;}
 function selectMode(next:'buy'|'sell'){if(mode.value===next)return;remember();const id=selected.value;mode.value=next;selected.value='';if(id)select(id);}
 watch(()=>props.game.core.runId,()=>{drafts.clear();lastReadIntents.clear();selected.value='';future.value=false;locate();});watch(()=>props.highlight,locate,{immediate:true});watch(rows,reconcile);watch([count,until,target],resetBudget,{flush:'sync'});watch(()=>props.savedPlan,restore,{immediate:true});
 </script>

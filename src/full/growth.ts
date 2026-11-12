@@ -1,10 +1,12 @@
-import * as C from './content.ts';
+import {contentForGame} from './rule-content.ts';
+import type * as C from './content.ts';
 import { remainingMonths } from './costs.ts';
 import { costDeficits, getBreakthroughGoal, getItemSources, previewAction } from './queries.ts';
 import type { Game } from './types.ts';
 
 /** Context for the current realm, separate from the player's pinned display goal. */
 export function getGrowthStage(game: Game) {
+  const C=contentForGame(game);
   const goal = getBreakthroughGoal(game), realm = game.core.player.realm;
   const pill = goal.action ? C.realms[realm].pill : null;
   const quantity = pill ? goal.preview?.costs?.items[pill] ?? 0 : 0;
