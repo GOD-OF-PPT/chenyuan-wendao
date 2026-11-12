@@ -25,3 +25,11 @@
 修正后从Git691648a批量只读提取纯图片、来源与图片预算投影，删除/调高原cap或删原稿/提示词/回执都会拒绝；Vue/TS/CSS字节、源预算与逆变换不进入该投影，图片资产生产回执仍绑定原数据。已补per-asset/item/total/尺寸预算、重签SVG style/file URL/错误根、目录父链、运行前后源码身份与runtime摘要。资源接口现13组，通过；报告/目录接口现5例通过，均为测试模块本身的证据。当前19UI/完整native将在最终冻结重新核对，不更换旧2e61产物身份。
 
 最终执行前核对发现：31文件playwright.idle-persistence实际声明355例；原415属于playwright.idle-recovery（39文件，增加原保留60迁移/恢复例、原22旧instant另有替代义务）。当前native命令已改用完整recovery配置，不能把355称415。已启动355作为原source2df子集保留，完整415另跑；数据偏好值不是字号布局验收，兼容专项不恢复。
+
+## 接续状态（2026-11-12）
+
+当前实现4e6da6b，分支codex/quality-q14-behavior-gates，尚未递交PR。最新核心生产者5719cf2实际十门禁通过：937根测试、13资源接口；当前19UI在2dfd9c3实际通过；历史691648a的166例与原正向实际通过，分别保留身份。后续仅native入口及测试前提调整，未改Game/UI生产源。
+
+原355例运行因Windows URL缺斜杠实际30过325错（2dfd9c3）；统一17处harness文件根到fs-root.ts后，完整415实际411过4红（5719cf2），四红均为online-recovery的旧“在线6秒”前提，未进入原六秒保存故障主体。现4e6da6b只把显示核对接到当前“6秒/仅本次”，保原全部计时/Game/事务/回执断言；完整415重新执行中，不能标通过或关闭本前置。
+
+在途handle44959，对应E:/githome/chenyuan-quality-q14-browser，命令check-current-browser.mjs native artifacts/q14-gates/native-4e6da6b，原始输出同目录native-4e6da6b.log与execution.json；先等此真实handle终态，不因观察超时重启。旧失败及2df/4ef/5719各输出全在该browser/core独立检出artifacts/q14-gates。主工作区原始工具记录在artifacts/quality-20261112，旧原始报告无重签。最终完成仍须核415、复核scope差异并递交独立PR；独立任务计数仍1/3，Q14前置未暂冒完成。
