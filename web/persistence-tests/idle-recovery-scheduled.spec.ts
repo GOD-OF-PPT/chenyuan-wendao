@@ -23,6 +23,57 @@ test('a real scheduled source persists four due periods together with its fiftee
  expect(r.summary.cycles).toBe(4);expect(r.summary.costs.months).toBe(48);expect(r.summary.delta.stones).toBe(80);expect(r.summary.delta.months).toBe(48);expect(r.afterSummary).toEqual(r.raw);
 });
 
+for(const damage of ['count','profile'])test(`a batch with damaged ${damage} proof cannot produce a summary or repeat gains and the whole raw database stays intact`,async({page})=>{
+ await setupPersistence(page);
+ const r=await page.evaluate(async damage=>{
+  const h=(globalThis as any).h,d=h.routes.driver();d.go('sect');const name='scheduled-proof-'+damage,repo=await h.FullSaveRepository.open(name),realNow=Date.now;
+  let now=1700000000000;Date.now=()=>now;
+  const m=(s:any,id:string)=>({commandId:id,runId:s.state.core.runId,expectedRevision:s.state.core.revision,expectedActivityId:s.activity?.id??null,expectedActivityRevision:s.activity?.revision??null,ownerId:'one'});
+  try{
+   await repo.importText(JSON.stringify(d.game),h.mutation());
+   const started=await repo.startScheduledActivity({kind:'source',sourceId:'work',maxCycles:5,until:'cycles',target:null,monthBudget:60,remainingMonthsReserve:1},m(await repo.loadActivitySnapshot(),'proof-start'));
+   now+=135000;const intent=m(started,'proof-return'),done=await repo.advanceScheduledActivity(intent),raw=await h.FullSaveRepository.exportRaw(name),key=intent.runId+':'+intent.commandId;
+   const receipt=raw.stores.find((x:any)=>x.name===h.FULL_RECEIPT_STORE).entries.find((x:any)=>x.key===key).value;
+   if(damage==='count')receipt.proof.cycles++;else receipt.proof.stateAfter.core.balanceVersion='full-unbalanced.3';
+   await h.put(name,h.FULL_RECEIPT_STORE,key,receipt);const before=await h.FullSaveRepository.exportRaw(name);
+   const summary=await h.attempt(()=>repo.loadAwaySummary()),replay=await h.attempt(()=>repo.advanceScheduledActivity(intent));
+   return{before,after:await h.FullSaveRepository.exportRaw(name),summary,replay,done,current:await repo.loadActivitySnapshot()};
+  }finally{Date.now=realNow;repo.close();}
+ },damage);
+ expect(r.summary.code).toBe('RECEIPT_INVALID');expect(r.replay.code).toBe('RECEIPT_INVALID');expect(r.after).toEqual(r.before);expect(r.current.state).toEqual(r.done.state);expect(r.current.activity).toEqual(r.done.activity);
+});
+
+for(const boundary of ['inventory','lifespan'])test(`an away batch stops at its saved ${boundary} boundary using actual current-profile resources`,async({page})=>{
+ await setupPersistence(page);
+ const r=await page.evaluate(async({boundary,root})=>{
+  const h=(globalThis as any).h,model=await import(`/@fs${root}src/full/activity.ts`),d=h.routes.driver(),C=h.currentContent;
+  if(boundary==='inventory')d.go('wilderness');
+  else{
+   d.go('sect');const cost=C.sources.work.months;
+   for(let n=0;h.queries.getLifeOverview(d.game).remainingMonths>36;n++){
+    if(n>20)throw new Error('lawful late-life preparation exceeded its finite bound');
+    const count=Math.min(50,Math.floor((h.queries.getLifeOverview(d.game).remainingMonths-36)/cost));
+    if(count<1)throw new Error('late-life preparation cannot reach its exact boundary');d.doAction({type:'SOURCE',sourceId:'work',count});
+   }
+  }
+  const name='scheduled-boundary-'+boundary,repo=await h.FullSaveRepository.open(name),realNow=Date.now;let now=1700000000000;Date.now=()=>now;
+  const m=(s:any,id:string)=>({commandId:id,runId:s.state.core.runId,expectedRevision:s.state.core.revision,expectedActivityId:s.activity?.id??null,expectedActivityRevision:s.activity?.revision??null,ownerId:'one'});
+  try{
+   await repo.importText(JSON.stringify(d.game),h.mutation());const snapshot=await repo.loadActivitySnapshot(),target=boundary==='inventory'?{kind:'item',id:'herb',quantity:snapshot.state.core.inventory.herb+2*C.sources.herbs.items.herb}:null;
+   const plan={kind:'source',sourceId:boundary==='inventory'?'herbs':'work',maxCycles:5,until:target?'target':'cycles',target,monthBudget:600,remainingMonthsReserve:boundary==='inventory'?1:24};
+   const started=await repo.startScheduledActivity(plan,m(snapshot,'boundary-start'));now+=8*60*60*1000;
+   const intent=m(started,'boundary-return'),out=await repo.advanceScheduledActivity(intent);let game=started.state,a=started.activity;
+   for(let n=0;n<(boundary==='inventory'?2:1);n++){const next=h.engine.resolve(game,a.nextCommand);game=next.nextState;a=model.completeActivity(game,a,next.result,{commandId:a.nextCommand.commandId,now:a.dueAt});}
+   const beforeReplay=await h.FullSaveRepository.exportRaw(name),replay=await repo.advanceScheduledActivity(intent);
+   return{snapshot,started,out,expected:game,expectedActivity:a,target,remaining:h.queries.getLifeOverview(out.state).remainingMonths,beforeReplay,afterReplay:await h.FullSaveRepository.exportRaw(name),replay,summary:await repo.loadAwaySummary()};
+  }finally{Date.now=realNow;repo.close();}
+ },{boundary,root:repositoryFsRoot});
+ expect(r.out.state).toEqual(r.expected);expect(r.out.activity).toEqual(r.expectedActivity);expect(r.out.activity.status).toBe('stopped');expect(r.out.more).toBe(false);
+ expect(r.out.activity.stopReason.code).toBe(boundary==='inventory'?'TARGET_MET':'ACTIVITY_RESERVE');expect(r.out.cycles).toBe(boundary==='inventory'?2:1);
+ if(boundary==='inventory')expect(r.out.state.core.inventory.herb).toBe(r.target.quantity);else expect(r.remaining).toBe(24);
+ expect(r.summary.cycles).toBe(r.out.cycles);expect(r.afterReplay).toEqual(r.beforeReplay);expect(r.replay.replayed).toBe(true);
+});
+
 for(const kind of ['restore','import','restart'])test(`a scheduled breakthrough checkpoint and ${kind} keep real ownership and archive the prior clock atomically`,async({page})=>{
  await setupPersistence(page);
  const r=await page.evaluate(async kind=>{
