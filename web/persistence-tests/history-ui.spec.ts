@@ -102,7 +102,7 @@ test('native history deliveries cannot restore stale rows or errors after unmoun
   else await page.evaluate(kind=>(globalThis as any).historyUI.replace(kind),kind);
   await readReady(page);
   if(kind==='unmount'||kind==='sync'){
-   const pager=page.getByRole('navigation',{name:'逐次回执翻页'});for(let i=0;i<4;i++){await pager.getByTestId('catalogue-next').click();await readReady(page);}
+   const pager=page.getByRole('navigation',{name:'逐次记录翻页'});for(let i=0;i<4;i++){await pager.getByTestId('catalogue-next').click();await readReady(page);}
    await expect(page.getByTestId('activity-history-row')).toHaveCount(1);
    await expect(page.getByTestId('activity-history-row')).toHaveAttribute('data-command-id',seeded.commands[4].commandId);
   }else{
@@ -135,7 +135,7 @@ test('a missing saved cycle is reported as incomplete and readonly recovery neve
  await readReady(page);
  await expect(page.getByTestId('activity-history-error')).toContainText('未能完整核对');
  await expect(page.getByTestId('activity-history-row')).toHaveCount(0);
- await expect(page.getByRole('navigation',{name:'逐次回执翻页'})).toHaveCount(0);
+ await expect(page.getByRole('navigation',{name:'逐次记录翻页'})).toHaveCount(0);
  await expect(page.getByTestId('activity-history-totals')).toContainText('已完成 5 / 5');
  const failed=await current(page);expect(failed.raw).toEqual(damaged.raw);expect(failed.ui).toEqual(damaged.ui);expect(failed.ui.game).toEqual(seeded.state);
  expect(failed.ui.saved).toBe(true);expect(failed.ui.error).toBe('');expect(failed.observations).toEqual([]);
@@ -145,7 +145,7 @@ test('a missing saved cycle is reported as incomplete and readonly recovery neve
  });
  await page.getByTestId('activity-history-reload').click();await readReady(page);
  await expect(page.getByTestId('activity-history-error')).toHaveCount(0);await expect(page.getByTestId('activity-history-row')).toHaveCount(1);
- for(let i=0;i<4;i++){await page.getByRole('navigation',{name:'逐次回执翻页'}).getByTestId('catalogue-next').click();await readReady(page);}
+ for(let i=0;i<4;i++){await page.getByRole('navigation',{name:'逐次记录翻页'}).getByTestId('catalogue-next').click();await readReady(page);}
  await expect(page.getByTestId('activity-history-row')).toHaveAttribute('data-command-id',seeded.commands[4].commandId);
  const after=await current(page),trace=await page.evaluate(()=>(globalThis as any).historyUI.readTrace);
  expect(after.raw).toEqual(repaired.raw);expect(after.raw).toEqual(seeded.raw);expect(after.ui).toEqual(repaired.ui);expect(after.observations).toEqual([]);
