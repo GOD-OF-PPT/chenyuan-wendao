@@ -81,3 +81,13 @@ test('supplies gathered after a zero-material furnace preview can be explicitly 
   await expect(page.getByTestId('production-estimate')).toContainText('预计 1 炉');expect(await recoveryDatabase(page)).toEqual(raw);
   await expect(page.getByTestId('production-start')).toBeEnabled();
 });
+
+test('the default ordinary opponent continues after its first real victory while its original plan remains readonly',async({page},info)=>{
+  const d=driver();d.go('wilderness');await importRecoveryFixture(page,d.game);
+  await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-battle').click();await page.getByTestId('encounter-wolf').click();await page.getByTestId('adventure-start').click();
+  await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');const initial=await activitySnapshot(page);expect(initial.plan.repeat).toBe(true);
+  for(let n=0;n<12&&(await activitySnapshot(page)).victories===0;n++){const a=await activitySnapshot(page),g=await snapshot(page);await expect(page.getByTestId('training-countdown')).toBeVisible();await page.clock.fastForward(a.cycleMs);await expect.poll(async()=>(await activitySnapshot(page))?.completedCycles).toBe(a.completedCycles+1);expect(await snapshot(page)).toEqual(resolve(g,a.nextCommand).nextState);}
+  const won=await activitySnapshot(page);expect(won.victories).toBe(1);expect(won.status).toBe('running');expect(won.nextCommand.type).toBe('ENCOUNTER');expect(won.plan).toEqual(initial.plan);
+  await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('paused');const raw=await recoveryDatabase(page);
+  await page.getByTestId('training-settings').click();await expect(page.locator('.catalogue-view')).not.toContainText('1000000000');expect(await recoveryDatabase(page)).toEqual(raw);await page.screenshot({path:info.outputPath('continuing-opponent-original-readonly.png')});
+});
