@@ -8,6 +8,9 @@
     "node": ">=22.16.0"
   },
   "scripts": {
+    "pretest": "node scripts/prepare-legacy-fixtures.mjs",
+    "prepare:fixtures": "node scripts/prepare-legacy-fixtures.mjs",
+    "test:setup": "node scripts/validate-core.mjs --install-dependencies",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "check:content": "node --experimental-strip-types scripts/check-full-content.mjs",
     "replay": "node --experimental-strip-types scripts/replay.mjs",

@@ -1,3 +1,4 @@
+from fixture_links import external_file_link
 import copy,hashlib,json,os,shutil,tempfile,unittest
 from pathlib import Path
 from check_inventory import validate,validate_alchemy_workshop,validate_adventure_objects,validate_equipment_objects,ART02_NATIVE,ART03_NATIVE,SCOPES
@@ -5,7 +6,8 @@ ROOT=Path(__file__).resolve().parents[2]
 
 class InventoryTests(unittest.TestCase):
  def setUp(self):
-  self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-art-negative-');self.root=Path(self.temp.name);self.manifest=json.loads((ROOT/'art/asset-manifest.json').read_text())
+  fixture_parent=ROOT/'artifacts/test-fixtures';fixture_parent.mkdir(parents=True,exist_ok=True)
+  self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-art-negative-',dir=fixture_parent);self.root=Path(self.temp.name);self.manifest=json.loads((ROOT/'art/asset-manifest.json').read_text())
   from cend13b_response_inventory import validate_response_context
   from cend13a_stage_inventory import MANIFEST as cultivation_handoff
   handoff_paths=[cultivation_handoff['parent']['before'],cultivation_handoff['renderProof']['path'],*cultivation_handoff['authority'],*cultivation_handoff['oldLedgers'],*cultivation_handoff['sourceReferences']]
@@ -296,7 +298,7 @@ class InventoryTests(unittest.TestCase):
   path='art/redesign/game-menu-matrix.json';data=json.loads((self.root/path).read_text());css=self.root/'web/src/game-menus.css';raw=css.read_bytes()+b'\n'*6001;css.unlink();css.write_bytes(raw)
   row=data['files'][1];row['bytes']=len(raw);row['sha256']=hashlib.sha256(raw).hexdigest();self.write(path,data);self.rejected()
  def test_game_menu_style_must_be_consumed(self):
-  path=self.root/'web/src/main.ts';text=path.read_text();path.unlink();path.write_text(text.replace("import './game-menus.css'",''));self.rejected()
+  path=self.root/'web/src/main.ts';text=path.read_text();path.unlink();path.write_text(text.replace("import './game-menus.css'",''), encoding='utf-8', newline='\n');self.rejected()
  def test_game_menu_machine_checks_do_not_claim_user_acceptance(self):
   path='art/redesign/game-menu-matrix.json';data=json.loads((self.root/path).read_text());data['userAcceptance']=True;self.write(path,data);self.rejected()
  def test_game_menu_contract_is_required(self):
@@ -352,7 +354,7 @@ class InventoryTests(unittest.TestCase):
  def write(self,path,value):
   p=self.root/path;p.parent.mkdir(parents=True,exist_ok=True)
   if p.exists():p.unlink()
-  p.write_text(json.dumps(value,ensure_ascii=False) if not isinstance(value,str) else value)
+  p.write_text(json.dumps(value,ensure_ascii=False) if not isinstance(value,str) else value, encoding='utf-8', newline='\n')
  def asset(self,id):return next(x for x in self.manifest['assets'] if x['id']==id)
  def rejected(self):
   self.write('art/asset-manifest.json',self.manifest)
@@ -818,7 +820,7 @@ class SupplyObjectTests(unittest.TestCase):
    out=self.root/p;out.parent.mkdir(parents=True,exist_ok=True);out.write_bytes((ROOT/p).read_bytes())
  def tearDown(self):self.temp.cleanup()
  def data(self):return json.loads((self.root/'art/redesign/art04.json').read_text())
- def write(self,m):(self.root/'art/redesign/art04.json').write_text(json.dumps(m))
+ def write(self,m):(self.root/'art/redesign/art04.json').write_text(json.dumps(m), encoding='utf-8', newline='\n')
  def check(self):
   from supply_object_inventory import validate_supply_objects
   return validate_supply_objects(self.root)
@@ -839,7 +841,7 @@ class SupplyObjectTests(unittest.TestCase):
  def test_supply_cannot_expand_code_even_with_updated_identity(self):
   m=self.data();row=m['files'][0];raw=('x'*40001).encode();(self.root/row['path']).write_bytes(raw);row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());self.reject(m)
  def test_supply_real_consumers_required(self):
-  p=self.root/'web/src/MarketPlanner.vue';p.write_text(p.read_text().replace('<MarketCounter','<DetachedCounter'))
+  p=self.root/'web/src/MarketPlanner.vue';p.write_text(p.read_text().replace('<MarketCounter','<DetachedCounter'), encoding='utf-8', newline='\n')
   with self.assertRaises(AssertionError):self.check()
  def test_supply_source_reference_and_binding_contract_required(self):
   m=self.data();m['sourceReferences']=[];self.reject(m)
@@ -853,7 +855,7 @@ class NarrativeObjectTests(unittest.TestCase):
    target=self.root/path;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((ROOT/path).read_bytes())
  def tearDown(self):self.temp.cleanup()
  def data(self):return json.loads((self.root/'art/redesign/narrative-objects.json').read_text())
- def write(self,m):(self.root/'art/redesign/narrative-objects.json').write_text(json.dumps(m))
+ def write(self,m):(self.root/'art/redesign/narrative-objects.json').write_text(json.dumps(m), encoding='utf-8', newline='\n')
  def check(self):
   from narrative_object_inventory import validate_narrative_objects
   return validate_narrative_objects(self.root)
@@ -905,8 +907,9 @@ class NarrativeObjectTests(unittest.TestCase):
   for path in [self.root/self.data()['files'][0]['path'],self.root/'art/redesign/narrative-objects.json']:
    original=path.read_bytes()
    with tempfile.TemporaryDirectory(prefix='chenyuan-narrative-outside-') as folder:
-    outside=Path(folder)/path.name;outside.write_bytes(original);path.unlink();path.symlink_to(outside)
-    with self.subTest(path=path.name),self.assertRaises(AssertionError):self.check()
+    outside=Path(folder)/path.name;outside.write_bytes(original);path.unlink()
+    with external_file_link(path,outside,self.root):
+     with self.subTest(path=path.name),self.assertRaises(AssertionError):self.check()
     path.unlink();path.write_bytes(original)
  def test_narrative_actual_budget_enforced_after_identity_update(self):
   m=self.data();self.changed_source(m['files'][0]['path'],'x'*45001,m)
@@ -920,11 +923,11 @@ class NarrativeObjectTests(unittest.TestCase):
   with self.assertRaises(AssertionError):self.check()
  def test_narrative_all_three_real_parent_consumers_required(self):
   for path,tag in [('web/src/FateCatalogue.vue','EncounterTable'),('web/src/NarrativePanel.vue','ResponseTable'),('web/src/LifeCatalogue.vue','LifeScroll')]:
-   file=self.root/path;before=file.read_text();file.write_text(before.replace('<'+tag,'<DetachedObject'))
+   file=self.root/path;before=file.read_text();file.write_text(before.replace('<'+tag,'<DetachedObject'), encoding='utf-8', newline='\n')
    with self.subTest(parent=path),self.assertRaises(AssertionError):self.check()
-   file.write_text(before)
+   file.write_text(before, encoding='utf-8', newline='\n')
  def test_narrative_app_host_must_wrap_original_keepalive_children(self):
-  path=self.root/'web/src/App.vue';text=path.read_text().replace('<NarrativeStageHost','<DetachedStageHost').replace('</NarrativeStageHost>','</DetachedStageHost>');path.write_text(text+'\n<NarrativeStageHost></NarrativeStageHost>\n')
+  path=self.root/'web/src/App.vue';text=path.read_text().replace('<NarrativeStageHost','<DetachedStageHost').replace('</NarrativeStageHost>','</DetachedStageHost>');path.write_text(text+'\n<NarrativeStageHost></NarrativeStageHost>\n', encoding='utf-8', newline='\n')
   with self.assertRaises(AssertionError):self.check()
  def test_narrative_objects_require_hook_even_after_rehash(self):
   path='web/src/EncounterTable.vue';m=self.data();self.changed_source(path,(self.root/path).read_text().replace('useNarrativeObject','useUnprovenObject'),m)
@@ -950,7 +953,7 @@ class CultivationObjectTests(unittest.TestCase):
    target=self.root/path;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((ROOT/path).read_bytes())
  def tearDown(self):self.temp.cleanup()
  def data(self):return json.loads((self.root/'art/redesign/cultivation-objects.json').read_text())
- def write(self,m):(self.root/'art/redesign/cultivation-objects.json').write_text(json.dumps(m))
+ def write(self,m):(self.root/'art/redesign/cultivation-objects.json').write_text(json.dumps(m), encoding='utf-8', newline='\n')
  def check(self):
   from cultivation_object_inventory import validate_cultivation_objects
   from check_inventory import image_info
@@ -964,7 +967,7 @@ class CultivationObjectTests(unittest.TestCase):
   if row is not None:row.update(bytes=len(data),sha256=hashlib.sha256(data).hexdigest())
   self.write(m)
  def changed_receipt(self,change):
-  m=self.data();ref=m['assets'][0]['receipt'];p=self.root/ref['path'];r=json.loads(p.read_text());change(r);p.write_text(json.dumps(r));ref['sha256']=hashlib.sha256(p.read_bytes()).hexdigest();self.write(m)
+  m=self.data();ref=m['assets'][0]['receipt'];p=self.root/ref['path'];r=json.loads(p.read_text());change(r);p.write_text(json.dumps(r), encoding='utf-8', newline='\n');ref['sha256']=hashlib.sha256(p.read_bytes()).hexdigest();self.write(m)
  def test_cultivation_actual_seven_sources_one_painting_and_fixed_budgets(self):
   files,production,total=self.check();self.assertEqual(len(files),2);self.assertEqual(production,1);self.assertGreater(total,0);self.assertLessEqual(total,45000)
  def test_cultivation_missing_ledger_cannot_hide_present_sources(self):
@@ -999,8 +1002,9 @@ class CultivationObjectTests(unittest.TestCase):
   for path in [self.root/original['files'][0]['path'],self.root/'art/redesign/cultivation-objects.json']:
    raw=path.read_bytes()
    with tempfile.TemporaryDirectory(prefix='chenyuan-cultivation-external-')as folder:
-    other=Path(folder)/path.name;other.write_bytes(raw);path.unlink();path.symlink_to(other)
-    with self.assertRaises(AssertionError):self.check()
+    other=Path(folder)/path.name;other.write_bytes(raw);path.unlink()
+    with external_file_link(path,other,self.root):
+     with self.assertRaises(AssertionError):self.check()
     path.unlink();path.write_bytes(raw)
  def test_cultivation_actual_native_budget_checked_after_rehash(self):
   m=self.data();self.changed_source(m['files'][0]['path'],'x'*45001,m)
@@ -1021,7 +1025,7 @@ class CultivationObjectTests(unittest.TestCase):
    with self.subTest(parent=path),self.assertRaisesRegex(AssertionError,'Missing cultivation consumer'):self.check()
    self.changed_source(path,before,copy.deepcopy(original))
  def test_cultivation_empty_app_host_token_cannot_fake_stable_ownership(self):
-  p=self.root/'web/src/App.vue';s=p.read_text().replace('<CultivationStageHost','<DetachedHost').replace('</CultivationStageHost>','</DetachedHost>');p.write_text(s+'<CultivationStageHost></CultivationStageHost>')
+  p=self.root/'web/src/App.vue';s=p.read_text().replace('<CultivationStageHost','<DetachedHost').replace('</CultivationStageHost>','</DetachedHost>');p.write_text(s+'<CultivationStageHost></CultivationStageHost>', encoding='utf-8', newline='\n')
   with self.assertRaisesRegex(AssertionError,'host is not stable'):self.check()
  def test_cultivation_v1_single_cycle_method_realm_and_three_v7_domains_stay_narrow(self):
   p='web/src/cultivation-effects.ts';text=(self.root/p).read_text();original=self.data()
@@ -1031,9 +1035,9 @@ class CultivationObjectTests(unittest.TestCase):
    self.changed_source(p,text,copy.deepcopy(original))
  def test_cultivation_default_domain_zero_guard_and_full_proof_not_optional(self):
   for path,before,after in [('web/src/activity-effects.ts','extra:0|1|4|5|7=0','extra:0|1|4|5|7=1'),('web/src/activity-effects.ts','a.version&&[2,3,6,extra]','[2,3,6,extra]'),('web/src/activity-effects.ts','proof(resolved.nextState)!==proof(g)','false'),('web/src/activity-effects.ts','proof(expected)!==proof(a)','false')]:
-   p=self.root/path;s=p.read_text();self.assertIn(before,s);p.write_text(s.replace(before,after))
+   p=self.root/path;s=p.read_text();self.assertIn(before,s);p.write_text(s.replace(before,after), encoding='utf-8', newline='\n')
    with self.subTest(fragment=before),self.assertRaises(AssertionError):self.check()
-   p.write_text(s)
+   p.write_text(s, encoding='utf-8', newline='\n')
  def test_cultivation_runtime_objects_require_real_hooks_styles_and_asset_after_rehash(self):
   original=self.data()
   for path,token in [('web/src/CultivationSite.vue','useCultivationObject'),('web/src/MilestoneGate.vue',"import './milestone-objects.css'"),('web/src/CultivationSite.vue','art/v2/characters/player-seated-cold.webp')]:
@@ -1063,7 +1067,7 @@ class CultivationObjectTests(unittest.TestCase):
   self.changed_receipt(lambda r:r['exportProof'].update(reencodedSHA256='0'*64))
   with self.assertRaisesRegex(AssertionError,'export proof'):self.check()
  def test_cultivation_old_painting_binding_cannot_hide_a_fake_default_consumer(self):
-  p=self.root/'art/redesign/catalogue-art/manifest.json';m=json.loads(p.read_text());m['bindings'].pop('web/src/ProgressionChoices.vue');m['bindings']['web/src/PreparationPanel.vue']=['<GoalBoard '];p.write_text(json.dumps(m))
+  p=self.root/'art/redesign/catalogue-art/manifest.json';m=json.loads(p.read_text());m['bindings'].pop('web/src/ProgressionChoices.vue');m['bindings']['web/src/PreparationPanel.vue']=['<GoalBoard '];p.write_text(json.dumps(m), encoding='utf-8', newline='\n')
   with self.assertRaisesRegex(AssertionError,'Old painting consumer'):self.check()
 
 class FeedbackSkipTests(unittest.TestCase):
@@ -1074,7 +1078,7 @@ class FeedbackSkipTests(unittest.TestCase):
    target=self.root/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((ROOT/name).read_bytes())
  def tearDown(self):self.temp.cleanup()
  def data(self):return json.loads((self.root/'art/redesign/feedback-skip.json').read_text())
- def write(self,m):(self.root/'art/redesign/feedback-skip.json').write_text(json.dumps(m))
+ def write(self,m):(self.root/'art/redesign/feedback-skip.json').write_text(json.dumps(m), encoding='utf-8', newline='\n')
  def check(self):
   from check_inventory import validate_feedback_skip
   return validate_feedback_skip(self.root)
@@ -1127,8 +1131,9 @@ class FeedbackSkipTests(unittest.TestCase):
   for name in ['art/redesign/feedback-skip.json','web/src/FeedbackSkip.vue']:
    path=self.root/name;raw=path.read_bytes()
    with tempfile.TemporaryDirectory(prefix='chenyuan-feedback-skip-outside-') as folder:
-    external=Path(folder)/path.name;external.write_bytes(raw);path.unlink();path.symlink_to(external)
-    with self.subTest(path=name),self.assertRaises(AssertionError):self.check()
+    external=Path(folder)/path.name;external.write_bytes(raw);path.unlink()
+    with external_file_link(path,external,self.root):
+     with self.subTest(path=name),self.assertRaises(AssertionError):self.check()
     path.unlink();path.write_bytes(raw)
  def test_feedback_skip_actual_budget_enforced_after_identity_update(self):
   m=self.data();path='web/src/FeedbackSkip.vue';text=(self.root/path).read_text()+'\n'*4001;self.changed_source(path,text,m)
@@ -1145,20 +1150,20 @@ class FeedbackSkipTests(unittest.TestCase):
   for key,value in [('path','../outside.vue'),('bytes',True),('sha256','0'*64),('scope','User accepted'),('kind','approved-runtime')]:
    with self.subTest(key=key):m=copy.deepcopy(original);m['provenance'][key]=value;self.reject(m)
  def test_feedback_skip_app_must_import_the_actual_control(self):
-  path=self.root/'web/src/App.vue';path.write_text(path.read_text().replace("import FeedbackSkip from './FeedbackSkip.vue'",''))
+  path=self.root/'web/src/App.vue';path.write_text(path.read_text().replace("import FeedbackSkip from './FeedbackSkip.vue'",''), encoding='utf-8', newline='\n')
   with self.assertRaises(AssertionError):self.check()
  def test_feedback_skip_fake_external_consumer_cannot_replace_scoped_slot(self):
   path=self.root/'web/src/App.vue';text=path.read_text();outside='<FeedbackSkip v-if="[\'BATTLE\',\'BREAKTHROUGH\',\'START_TRIAL\'].includes(operation)" @hold="hold" @dismiss="dismiss"/>'
-  path.write_text(text.replace('<FeedbackSkip ','<DetachedSkip ',1)+'\n'+outside)
+  path.write_text(text.replace('<FeedbackSkip ','<DetachedSkip ',1)+'\n'+outside, encoding='utf-8', newline='\n')
   with self.assertRaisesRegex(AssertionError,'real stage scoped slot'):self.check()
  def test_feedback_skip_stage_requires_current_notice_gate_key_and_callbacks(self):
   path=self.root/'web/src/ActionFeedbackStage.vue';original=path.read_text()
   for token in ['notice&&showMotion',':key="notice.key"',':dismiss="clear"',':hold="holdMotion"',':operation="notice.operation"']:
-   path.write_text(original.replace(token,'detached',1))
+   path.write_text(original.replace(token,'detached',1), encoding='utf-8', newline='\n')
    with self.subTest(token=token),self.assertRaises(AssertionError):self.check()
-  path.write_text(original)
+  path.write_text(original, encoding='utf-8', newline='\n')
  def test_feedback_skip_operation_domain_cannot_expand(self):
-  path=self.root/'web/src/App.vue';path.write_text(path.read_text().replace("['BATTLE','BREAKTHROUGH','START_TRIAL'].includes(operation)","['BATTLE','BREAKTHROUGH','START_TRIAL','END'].includes(operation)",1))
+  path=self.root/'web/src/App.vue';path.write_text(path.read_text().replace("['BATTLE','BREAKTHROUGH','START_TRIAL'].includes(operation)","['BATTLE','BREAKTHROUGH','START_TRIAL','END'].includes(operation)",1), encoding='utf-8', newline='\n')
   with self.assertRaisesRegex(AssertionError,'operation domain'):self.check()
  def test_feedback_skip_focus_and_hud_teleport_cannot_detach_after_rehash(self):
   path='web/src/FeedbackSkip.vue';original=(self.root/path).read_text();manifest=self.data()
@@ -1185,7 +1190,7 @@ class TA07InventoryTests(unittest.TestCase):
    if path.is_symlink():path.unlink()
    path.write_bytes(raw)
  def data(self):return json.loads((self.root/'art/redesign/ta07.json').read_text())
- def write(self,data):(self.root/'art/redesign/ta07.json').write_text(json.dumps(data))
+ def write(self,data):(self.root/'art/redesign/ta07.json').write_text(json.dumps(data), encoding='utf-8', newline='\n')
  def check(self):
   from ta07_inventory import validate_ta07
   from check_inventory import image_info
@@ -1199,7 +1204,7 @@ class TA07InventoryTests(unittest.TestCase):
    if row['path']==path:row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest())
   self.write(manifest)
  def changed_receipt(self,change):
-  manifest=self.data();ref=manifest['assets'][0]['receipt'];path=self.root/ref['path'];receipt=json.loads(path.read_text());change(receipt);path.write_text(json.dumps(receipt));ref['sha256']=hashlib.sha256(path.read_bytes()).hexdigest();self.write(manifest)
+  manifest=self.data();ref=manifest['assets'][0]['receipt'];path=self.root/ref['path'];receipt=json.loads(path.read_text());change(receipt);path.write_text(json.dumps(receipt), encoding='utf-8', newline='\n');ref['sha256']=hashlib.sha256(path.read_bytes()).hexdigest();self.write(manifest)
  def test_ta07_actual_five_sources_three_fixed_budgets_and_one_raster(self):
   from ta07_inventory import NATIVE,COMMAND_FILES,CAST_FILES
   files,production,total=self.check();self.assertEqual(len(files),2);self.assertEqual(production,1)
@@ -1246,8 +1251,9 @@ class TA07InventoryTests(unittest.TestCase):
   for name in ['art/redesign/ta07.json','web/src/BattleCast.vue','web/public/art/v2/actors/player-standing-cold-v1.webp']:
    self.restore();path=self.root/name;raw=path.read_bytes()
    with tempfile.TemporaryDirectory(prefix='chenyuan-ta07-external-')as folder:
-    outside=Path(folder)/path.name;outside.write_bytes(raw);path.unlink();path.symlink_to(outside)
-    with self.subTest(name=name),self.assertRaises(AssertionError):self.check()
+    outside=Path(folder)/path.name;outside.write_bytes(raw);path.unlink()
+    with external_file_link(path,outside,self.root):
+     with self.subTest(name=name),self.assertRaises(AssertionError):self.check()
  def test_ta07_missing_actual_source_is_not_satisfied_by_its_identity_row(self):
   (self.root/'web/src/BattleCast.vue').unlink()
   with self.assertRaisesRegex(AssertionError,'Missing or external'):self.check()
@@ -1318,7 +1324,7 @@ class TA07InventoryTests(unittest.TestCase):
  def test_ta07_exact_tool_prompt_transparency_and_identity_reference_are_required(self):
   from ta07_inventory import PROMPT
   for change in [lambda p:p.update(prompt=''),lambda p:p.update(transparent_background=False),lambda p:p.update(referenceImage='../other.png'),lambda p:p.update(userAcceptance=True),lambda p:p.update(prompt=p['prompt']+' changed')]:
-   self.restore();path=self.root/PROMPT;prompt=json.loads(path.read_text());change(prompt);path.write_text(json.dumps(prompt))
+   self.restore();path=self.root/PROMPT;prompt=json.loads(path.read_text());change(prompt);path.write_text(json.dumps(prompt), encoding='utf-8', newline='\n')
    with self.assertRaises(AssertionError):self.check()
  def test_ta07_receipt_identity_reference_decode_and_reexport_facts_cannot_be_forged(self):
   for change in [lambda r:r.update(copiedUnchanged=False),lambda r:r.update(userAcceptance=True),lambda r:r.update(promptSHA256='0'*64),lambda r:r['referenceImages'][0].update(sha256='0'*64),lambda r:r['encoding'].__setitem__(2,'70'),lambda r:r['exportProof'].update(reencodedSHA256='0'*64),lambda r:r['review'].update(actuallyViewed=False)]:
@@ -1348,7 +1354,7 @@ class TA08InventoryTests(unittest.TestCase):
    if p.is_symlink():p.unlink()
    p.write_bytes(raw)
  def data(self):return json.loads((self.root/'art/redesign/ta08.json').read_text())
- def write(self,m):(self.root/'art/redesign/ta08.json').write_text(json.dumps(m))
+ def write(self,m):(self.root/'art/redesign/ta08.json').write_text(json.dumps(m), encoding='utf-8', newline='\n')
  def check(self):
   from ta08_inventory import validate_ta08
   from check_inventory import image_info
@@ -1362,7 +1368,7 @@ class TA08InventoryTests(unittest.TestCase):
    if row['path']==path:row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest())
   self.write(m)
  def changed_receipt(self,change,index=0):
-  m=self.data();ref=m['assets'][index]['receipt'];p=self.root/ref['path'];r=json.loads(p.read_text());change(r);p.write_text(json.dumps(r));ref['sha256']=hashlib.sha256(p.read_bytes()).hexdigest();self.write(m)
+  m=self.data();ref=m['assets'][index]['receipt'];p=self.root/ref['path'];r=json.loads(p.read_text());change(r);p.write_text(json.dumps(r), encoding='utf-8', newline='\n');ref['sha256']=hashlib.sha256(p.read_bytes()).hexdigest();self.write(m)
  def test_ta08_actual_five_sources_six_independent_paintings_and_fixed_total(self):
   from ta08_inventory import NATIVE,SOURCE_IDS
   files,production,total=self.check();m=self.data();self.assertEqual(len(files),12);self.assertEqual(production,6);self.assertEqual(total,sum((self.root/p).stat().st_size for p in NATIVE));self.assertLessEqual(total,42000);self.assertEqual([a['sourceId']for a in m['assets']],SOURCE_IDS);self.assertLessEqual(sum(a['runtime']['bytes']for a in m['assets']),960000)
@@ -1402,8 +1408,9 @@ class TA08InventoryTests(unittest.TestCase):
   for name in ['art/redesign/ta08.json','web/src/SourceObject.vue','art/redesign/receipts/ta08-resource-prompts.json','web/public/art/v2/sources/herbs-cold-v1.webp']:
    self.restore();p=self.root/name;raw=p.read_bytes()
    with tempfile.TemporaryDirectory(prefix='chenyuan-ta08-outside-')as folder:
-    outside=Path(folder)/p.name;outside.write_bytes(raw);p.unlink();p.symlink_to(outside)
-    with self.subTest(name=name),self.assertRaises(AssertionError):self.check()
+    outside=Path(folder)/p.name;outside.write_bytes(raw);p.unlink()
+    with external_file_link(p,outside,self.root):
+     with self.subTest(name=name),self.assertRaises(AssertionError):self.check()
  def test_ta08_required_actual_files_and_contract_cannot_be_missing(self):
   from ta08_inventory import NATIVE,REFS,PROMPTS
   for name in [NATIVE[0],REFS[0],PROMPTS]:
@@ -1492,7 +1499,7 @@ class TA08InventoryTests(unittest.TestCase):
  def test_ta08_prompt_collection_requires_six_exact_real_tool_inputs(self):
   from ta08_inventory import PROMPTS
   for change in [lambda m:m['prompts'].pop('dao'),lambda m:m.update(version=True),lambda m:m.update(userAcceptance=True),lambda m:m['prompts']['herbs'].update(prompt=''),lambda m:m['prompts']['herbs'].update(transparent_background=False)]:
-   self.restore();p=self.root/PROMPTS;m=json.loads(p.read_text());change(m);p.write_text(json.dumps(m))
+   self.restore();p=self.root/PROMPTS;m=json.loads(p.read_text());change(m);p.write_text(json.dumps(m), encoding='utf-8', newline='\n')
    with self.assertRaises(AssertionError):self.check()
  def test_ta08_literal_and_document_hashes_and_prompt_key_cannot_be_conflated(self):
   from ta08_inventory import PROMPTS
@@ -1525,7 +1532,7 @@ class TA09InventoryTests(unittest.TestCase):
    if p.is_symlink():p.unlink()
    p.write_bytes(raw)
  def data(self):return json.loads((self.root/'art/redesign/ta09.json').read_text())
- def write(self,m):(self.root/'art/redesign/ta09.json').write_text(json.dumps(m))
+ def write(self,m):(self.root/'art/redesign/ta09.json').write_text(json.dumps(m), encoding='utf-8', newline='\n')
  def check(self):
   from ta09_inventory import validate_ta09
   from check_inventory import image_info
@@ -1540,7 +1547,7 @@ class TA09InventoryTests(unittest.TestCase):
    m=json.loads((self.root/name).read_text());changed=False
    for row in m['files']:
     if row['path']==path:row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());changed=True
-   if changed:(self.root/name).write_text(json.dumps(m))
+   if changed:(self.root/name).write_text(json.dumps(m), encoding='utf-8', newline='\n')
  def opening(self,path,component):
   import re
   text=(self.root/path).read_text();tags=re.findall(r'<'+component+r'(?=[\s/>])(?:[^>"\']|"[^"]*"|\'[^\']*\')*>',text)
@@ -1580,8 +1587,9 @@ class TA09InventoryTests(unittest.TestCase):
  def test_ta09_external_path_and_symlink_cannot_escape(self):
   m=self.data();m['files'][0]['path']='../escape.vue';self.reject(m);self.restore();name=m['files'][0]['path']='web/src/JadeEngraving.vue'
   with tempfile.TemporaryDirectory(prefix='ta09-outside-')as outer:
-   target=Path(outer)/'actor.vue';target.write_bytes(self.original[name]);(self.root/name).unlink();(self.root/name).symlink_to(target)
-   with self.assertRaisesRegex(AssertionError,'Missing or external'):self.check()
+   target=Path(outer)/'actor.vue';target.write_bytes(self.original[name]);(self.root/name).unlink()
+   with external_file_link(self.root/name,target,self.root):
+    with self.assertRaisesRegex(AssertionError,'Missing or external'):self.check()
  def test_ta09_aggregate_native_cap_survives_rehash(self):
   m=self.data();path=m['files'][-1]['path'];total=sum(x['bytes']for x in m['files']);self.changed_source(path,(self.root/path).read_text()+'\n'*(30001-total))
   with self.assertRaisesRegex(AssertionError,'native code exceeds fixed budget'):self.check()
@@ -1604,7 +1612,7 @@ class TA09InventoryTests(unittest.TestCase):
     self.restore();p=self.root/old['ledger'];m=json.loads(p.read_text())
     if mode=='cap':m[old['key']]+=1
     else:m['files'].pop()
-    p.write_text(json.dumps(m))
+    p.write_text(json.dumps(m), encoding='utf-8', newline='\n')
     with self.subTest(ledger=old['ledger'],mode=mode),self.assertRaisesRegex(AssertionError,'old cap|moved old implementation'):self.check()
  def test_ta09_commented_import_or_opening_tag_is_not_a_live_child(self):
   from ta09_inventory import CONSUMERS
@@ -1727,7 +1735,7 @@ class ART10InventoryTests(unittest.TestCase):
   from art10_inventory import validate_art10
   from check_inventory import image_info
   return validate_art10(self.root,image_info)
- def write(self,path,data):(self.root/path).write_text(json.dumps(data))
+ def write(self,path,data):(self.root/path).write_text(json.dumps(data), encoding='utf-8', newline='\n')
  def sync(self,f):
   from art10_inventory import FACTS
   self.write(FACTS,f);m=self.data();m['assets']=copy.deepcopy(f['assets']);raw=(self.root/FACTS).read_bytes();m['provenance']['facts'].update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());self.write('art/redesign/art10.json',m)
@@ -1777,8 +1785,9 @@ class ART10InventoryTests(unittest.TestCase):
  def test_art10_relative_paths_and_symlinks_cannot_escape(self):
   m=self.data();m['provenance']['facts']['path']='../outside.json';self.reject(m);self.restore()
   with tempfile.TemporaryDirectory(prefix='art10-outside-') as folder:
-   p=self.root/self.data()['assets'][0]['source']['path'];external=Path(folder)/'source.png';external.write_bytes(p.read_bytes());p.unlink();p.symlink_to(external)
-   with self.assertRaises(AssertionError):self.check()
+   p=self.root/self.data()['assets'][0]['source']['path'];external=Path(folder)/'source.png';external.write_bytes(p.read_bytes());p.unlink()
+   with external_file_link(p,external,self.root):
+    with self.assertRaises(AssertionError):self.check()
  def test_art10_original_and_runtime_hashes_are_actual(self):
   for field in ['source','runtime']:
    self.restore();p=self.root/self.data()['assets'][0][field]['path'];p.write_bytes(p.read_bytes()+b'changed')
@@ -1828,13 +1837,13 @@ class ART10InventoryTests(unittest.TestCase):
   for change in ['blank','fallback','finished']:
    self.restore()
    if change=='blank':
-    path,text,tag=self.opening('AssetImage','relic-cold-blank');self.assertEqual(tag.count(':path='),1);changed=tag.replace("'art/v2/equipment/'+id+'-blank-v1.webp'","'art/v2/equipment/frost_sword-v1.webp'",1);self.assertNotEqual(tag,changed);(self.root/path).write_text(text.replace(tag,changed,1))
+    path,text,tag=self.opening('AssetImage','relic-cold-blank');self.assertEqual(tag.count(':path='),1);changed=tag.replace("'art/v2/equipment/'+id+'-blank-v1.webp'","'art/v2/equipment/frost_sword-v1.webp'",1);self.assertNotEqual(tag,changed);(self.root/path).write_text(text.replace(tag,changed,1), encoding='utf-8', newline='\n')
    else:
-    path='web/src/RelicInscription.vue';text=(self.root/path).read_text();token='<GameIcon kind="relic" :id="id"/>'if change=='fallback'else'<slot name="artifact"/>';self.assertEqual(text.count(token),1);(self.root/path).write_text(text.replace(token,'<!--'+token+'-->',1))
+    path='web/src/RelicInscription.vue';text=(self.root/path).read_text();token='<GameIcon kind="relic" :id="id"/>'if change=='fallback'else'<slot name="artifact"/>';self.assertEqual(text.count(token),1);(self.root/path).write_text(text.replace(token,'<!--'+token+'-->',1), encoding='utf-8', newline='\n')
    with self.assertRaises(AssertionError):self.check()
  def test_art10_real_proof_and_unique_css_consumers_remain(self):
   for path,token in [('web/src/equipment-effects.ts','cycleCommand.value=p.activity.value?.nextCommand??null;'),('web/src/main.ts',"import './art10-equipment.css'")]:
-   self.restore();text=(self.root/path).read_text();self.assertEqual(text.count(token),1);changed=text.replace(token,' '*len(token),1);self.assertEqual(len(changed.encode()),len(text.encode()));(self.root/path).write_text(changed)
+   self.restore();text=(self.root/path).read_text();self.assertEqual(text.count(token),1);changed=text.replace(token,' '*len(token),1);self.assertEqual(len(changed.encode()),len(text.encode()));(self.root/path).write_text(changed, encoding='utf-8', newline='\n')
    with self.assertRaisesRegex(AssertionError,'consumer/proof'):self.check()
  def test_art10_old_caps_and_external_styles_cannot_expand_scope(self):
   from art10_inventory import OLD_CAPS
@@ -1862,7 +1871,7 @@ class ART11InventoryTests(unittest.TestCase):
   from art11_inventory import validate_art11
   from check_inventory import image_info
   return validate_art11(self.root,image_info)
- def write(self,name,data):(self.root/name).write_text(json.dumps(data))
+ def write(self,name,data):(self.root/name).write_text(json.dumps(data), encoding='utf-8', newline='\n')
  def sync(self,f):
   from art11_inventory import FACTS
   self.write(FACTS,f);m=self.data();m['assets']=copy.deepcopy(f['assets']);raw=(self.root/FACTS).read_bytes();m['provenance']['facts'].update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());self.write('art/redesign/art11.json',m)
@@ -1923,8 +1932,9 @@ class ART11InventoryTests(unittest.TestCase):
    self.restore();m=self.data();m['sourceReferences'][0]=name;self.reject(m)
   self.restore()
   with tempfile.TemporaryDirectory(prefix='art11-outside-') as folder:
-   target=self.root/self.data()['assets'][0]['source']['path'];external=Path(folder)/'raw.png';external.write_bytes(target.read_bytes());target.unlink();target.symlink_to(external)
-   with self.assertRaisesRegex(AssertionError,'external'):self.check()
+   target=self.root/self.data()['assets'][0]['source']['path'];external=Path(folder)/'raw.png';external.write_bytes(target.read_bytes());target.unlink()
+   with external_file_link(target,external,self.root):
+    with self.assertRaisesRegex(AssertionError,'external'):self.check()
  def test_art11_transparency_requires_real_webp_header_not_fact_alias(self):
   f=self.facts();raw=bytearray((self.root/f['assets'][0]['runtime']['path']).read_bytes());self.assertEqual(raw[12:16],b'VP8X');raw[20]&=~16;self.change_runtime(f,bytes(raw))
   with self.assertRaisesRegex(AssertionError,'not transparent'):self.check()
@@ -1985,7 +1995,7 @@ class ART11InventoryTests(unittest.TestCase):
   for consumer in CONSUMERS:
    self.restore();path=consumer['host'];text=(self.root/path).read_text();openings=__import__('re').findall(r'<ItemArtifact(?=[\s/>])(?:[^>"\']|"[^"]*"|\'[^\']*\')*>',text)
    matches=[tag for tag in openings if any(name=='itemartifact' and all(attrs.get(k)==v for k,v in consumer['attrs'].items()) for name,attrs in Tags('<template>'+tag+'</template>').nodes)]
-   self.assertEqual(len(matches),1);tag=matches[0];self.assertEqual(text.count(tag),1);self.assertEqual(tag.count(':owned='),1);changed=tag.replace(':owned=',':untrusted-owned=',1);self.assertNotEqual(tag,changed);(self.root/path).write_text(text.replace(tag,changed,1))
+   self.assertEqual(len(matches),1);tag=matches[0];self.assertEqual(text.count(tag),1);self.assertEqual(tag.count(':owned='),1);changed=tag.replace(':owned=',':untrusted-owned=',1);self.assertNotEqual(tag,changed);(self.root/path).write_text(text.replace(tag,changed,1), encoding='utf-8', newline='\n')
    with self.assertRaisesRegex(AssertionError,'consumer props'):self.check()
  def test_art11_native_object_has_no_io_timer_write_or_external_css(self):
   for suffix in ["\n<script>setTimeout(()=>{},1)</script>","\n<script>fetch('https://example.invalid')</script>"]:
@@ -1995,16 +2005,16 @@ class ART11InventoryTests(unittest.TestCase):
   with self.assertRaisesRegex(AssertionError,'external IO'):self.check()
  def test_art11_supply_full_proof_and_unique_style_consumer_stay_strict(self):
   for path,token in [('web/src/supply-effects.ts','undefined,5'),('web/src/activity-effects.ts','resolve(before,command)'),('web/src/main.ts',"import './art11-inventory.css'")]:
-   self.restore();text=(self.root/path).read_text();self.assertEqual(text.count(token),1);(self.root/path).write_text(text.replace(token,'/*'+token+'*/',1))
+   self.restore();text=(self.root/path).read_text();self.assertEqual(text.count(token),1);(self.root/path).write_text(text.replace(token,'/*'+token+'*/',1), encoding='utf-8', newline='\n')
    with self.assertRaisesRegex(AssertionError,'consumer/proof'):self.check()
-  self.restore();path=self.root/'web/src/main.ts';path.write_text(path.read_text()+"\nimport './art11-inventory.css';")
+  self.restore();path=self.root/'web/src/main.ts';path.write_text(path.read_text()+"\nimport './art11-inventory.css';", encoding='utf-8', newline='\n')
   with self.assertRaisesRegex(AssertionError,'uniquely'):self.check()
  def test_art11_all_old_caps_and_membership_remain_unchanged(self):
   from art11_inventory import CAPS
   for prior in CAPS:
    self.restore();data=json.loads((self.root/prior['ledger']).read_text());data[prior['key']]+=1;self.write(prior['ledger'],data)
    with self.assertRaisesRegex(AssertionError,'old budget'):self.check()
-  self.restore();prior=CAPS[-1];path=self.root/prior['files'][0];path.write_text(path.read_text()+'\n'*(prior['limit']+1))
+  self.restore();prior=CAPS[-1];path=self.root/prior['files'][0];path.write_text(path.read_text()+'\n'*(prior['limit']+1), encoding='utf-8', newline='\n')
   with self.assertRaisesRegex(AssertionError,'old group'):self.check()
 
 class ART12InventoryTests(unittest.TestCase):
@@ -2019,7 +2029,7 @@ class ART12InventoryTests(unittest.TestCase):
    if p.is_symlink():p.unlink()
    p.write_bytes(raw)
  def data(self):return json.loads((self.root/'art/redesign/art12.json').read_text())
- def write(self,path,value):(self.root/path).write_text(json.dumps(value))
+ def write(self,path,value):(self.root/path).write_text(json.dumps(value), encoding='utf-8', newline='\n')
  def check(self):
   from art12_inventory import validate_art12
   return validate_art12(self.root)
@@ -2029,7 +2039,7 @@ class ART12InventoryTests(unittest.TestCase):
  def change_css(self,text):
   m=self.data();row=m['files'][0];raw=text.encode();(self.root/row['path']).write_bytes(raw);row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());self.write('art/redesign/art12.json',m)
  def replace(self,path,old,new):
-  p=self.root/path;text=p.read_text();self.assertEqual(text.count(old),1);changed=text.replace(old,new,1);self.assertNotEqual(text,changed);p.write_text(changed)
+  p=self.root/path;text=p.read_text();self.assertEqual(text.count(old),1);changed=text.replace(old,new,1);self.assertNotEqual(text,changed);p.write_text(changed, encoding='utf-8', newline='\n')
  def opening(self,path,id):
   text=(self.root/path).read_text();tags=__import__('re').findall(r'<button(?=[\s/>])(?:[^>"\']|"[^"]*"|\'[^\']*\')*>',text);matched=[tag for tag in tags if 'data-testid="'+id+'"' in tag];self.assertEqual(len(matched),1);self.assertEqual(text.count(matched[0]),1);return text,matched[0]
  def test_art12_real_single_bounded_css_and_no_new_bitmaps(self):
@@ -2054,15 +2064,16 @@ class ART12InventoryTests(unittest.TestCase):
   with self.assertRaisesRegex(AssertionError,'missing or external'):self.check()
   self.restore()
   with tempfile.TemporaryDirectory(prefix='art12-outside-') as folder:
-   target=self.root/self.data()['files'][0]['path'];external=Path(folder)/'style.css';external.write_bytes(target.read_bytes());target.unlink();target.symlink_to(external)
-   with self.assertRaisesRegex(AssertionError,'external'):self.check()
+   target=self.root/self.data()['files'][0]['path'];external=Path(folder)/'style.css';external.write_bytes(target.read_bytes());target.unlink()
+   with external_file_link(target,external,self.root):
+    with self.assertRaisesRegex(AssertionError,'external'):self.check()
  def test_art12_zero_bitmap_boundary_cannot_alias_or_add_asset(self):
   for key,value in [('newBitmapAssets',True),('newBitmapAssets',1),('assets',[{'path':'new.png'}])]:
    self.restore();m=self.data();m[key]=value;self.reject(m)
  def test_art12_actual_unique_stylesheet_consumer_and_no_external_io(self):
   path='web/src/main.ts';self.replace(path,"import './art12-narrative.css'","/*import './art12-narrative.css'*/")
   with self.assertRaisesRegex(AssertionError,'consumer/reading/proof'):self.check()
-  self.restore();p=self.root/path;p.write_text(p.read_text()+"\nimport './art12-narrative.css';")
+  self.restore();p=self.root/path;p.write_text(p.read_text()+"\nimport './art12-narrative.css';", encoding='utf-8', newline='\n')
   with self.assertRaisesRegex(AssertionError,'uniquely'):self.check()
   self.restore();name=self.data()['files'][0]['path'];self.change_css((self.root/name).read_text()+'\n@import "https://example.invalid/extra.css";')
   with self.assertRaisesRegex(AssertionError,'external IO'):self.check()
@@ -2077,9 +2088,9 @@ class ART12InventoryTests(unittest.TestCase):
  def test_art12_complete_management_gates_close_before_confirm_and_readonly_export(self):
   path='web/src/LifeCatalogue.vue'
   for id,old,new in [('retire',"close();emit('end','RETIRE')","emit('end','RETIRE')"),('end-life','record.overview.remainingMonths===1','true'),('life-restore','||!hasCheckpoint',''),('life-restart','||!!pendingError','')]:
-   self.restore();text,tag=self.opening(path,id);self.assertIn(old,tag);changed=tag.replace(old,new,1);self.assertNotEqual(tag,changed);(self.root/path).write_text(text.replace(tag,changed,1))
+   self.restore();text,tag=self.opening(path,id);self.assertIn(old,tag);changed=tag.replace(old,new,1);self.assertNotEqual(tag,changed);(self.root/path).write_text(text.replace(tag,changed,1), encoding='utf-8', newline='\n')
    with self.assertRaises(AssertionError):self.check()
-  self.restore();text,tag=self.opening(path,'export-life');(self.root/path).write_text(text.replace(tag,tag[:-1]+' disabled>',1))
+  self.restore();text,tag=self.opening(path,'export-life');(self.root/path).write_text(text.replace(tag,tag[:-1]+' disabled>',1), encoding='utf-8', newline='\n')
   with self.assertRaisesRegex(AssertionError,'readonly export'):self.check()
  def test_art12_full_140_codepoints_four_chapters_and_anchor_fields_preserved(self):
   for path,old,new in [('web/src/story-pages.ts','size=140','size=139'),('web/src/story-pages.ts',"group:'seal',key:'scope'","group:'seal',key:'retired-scope'"),('web/src/LifeCatalogue.vue',"['seal','收卷']","['missing','收卷']"),('web/src/reading-memory.ts','list.indexOf(old.anchor)','-1')]:
@@ -2112,7 +2123,7 @@ class CultivationNotesTests(unittest.TestCase):
   from art15_inventory import validate_art15
   return validate_art15(self.root)
  def write(self,name,text):
-  p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text)
+  p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text, encoding='utf-8', newline='\n')
  def changed(self,text):
   m=copy.deepcopy(self.ledger);raw=text.encode();m['files'][0].update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());self.write('web/src/CultivationNotes.vue',text);self.write('art/redesign/art15.json',json.dumps(m))
  def test_art15_bounded_native_and_identity(self):
@@ -2179,7 +2190,7 @@ class ART16SchoolInventoryTests(unittest.TestCase):
   self.ledger=json.loads((self.root/LEDGER).read_text());self.facts=json.loads((self.root/FACTS).read_text());self.actor=(self.root/'web/src/LoadoutConstellation.vue').read_text();self.css=(self.root/NATIVE[0]).read_text()
  def tearDown(self):self.temp.cleanup()
  def write(self,name,text):
-  p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text if isinstance(text,str)else json.dumps(text))
+  p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text if isinstance(text,str)else json.dumps(text), encoding='utf-8', newline='\n')
  def restore(self):
   self.write('art/redesign/art16.json',self.ledger);self.write('art/redesign/art16-schools/export-facts.json',self.facts);self.write('web/src/LoadoutConstellation.vue',self.actor);self.write('web/src/art16-schools.css',self.css)
  def check(self):
@@ -2517,7 +2528,7 @@ class Uir3406Tests(unittest.TestCase):
    for name in {LEDGER,MANIFEST['path'],MANIFEST['before'],*MANIFEST['sourceReferences'],*MANIFEST['unchanged']}:
     p=root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes((ROOT/name).read_bytes())
    for key,value in [('version',True),('maxAddedNativeBytes',7000),('userAcceptance',True),('beforeSHA256','0'*64)]:
-    changed=copy.deepcopy(MANIFEST);changed[key]=value;(root/LEDGER).write_text(json.dumps(changed))
+    changed=copy.deepcopy(MANIFEST);changed[key]=value;(root/LEDGER).write_text(json.dumps(changed), encoding='utf-8', newline='\n')
     with self.subTest(key=key),self.assertRaisesRegex(AssertionError,'UIR34-06'):validate_uir3406(root)
 
  def test_compiled_style_cannot_hide_the_single_screen_root(self):
@@ -2546,7 +2557,7 @@ class Uir3407Tests(unittest.TestCase):
    names={LEDGER,*[r[k]for r in MANIFEST['files'].values()for k in ['path','before']],*MANIFEST['unchanged'],*MANIFEST['sourceReferences']}
    for n in names:p=root/n;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes((ROOT/n).read_bytes())
    for key,value in [('version',True),('userAcceptance',True),('caps',{'story-journey':49000,'narrative-objects':45000})]:
-    m=copy.deepcopy(MANIFEST);m[key]=value;(root/LEDGER).write_text(json.dumps(m))
+    m=copy.deepcopy(MANIFEST);m[key]=value;(root/LEDGER).write_text(json.dumps(m), encoding='utf-8', newline='\n')
     with self.subTest(key=key),self.assertRaisesRegex(AssertionError,'UIR34-07'):validate_uir3407(root)
 
 class Uir3501Tests(unittest.TestCase):

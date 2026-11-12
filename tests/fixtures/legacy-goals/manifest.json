@@ -1,0 +1,2096 @@
+{
+  "format": "chenyuan-legacy-test-inputs",
+  "version": 1,
+  "sourceCommit": "c7190e67a265fe7c8bff63a1db222a434d7dcffd",
+  "archiveSHA256": "6908ebd2a511c6738aae26a8090584259f8f6827b7106f397a249c53a44dc168",
+  "files": [
+    {
+      "path": "goal-1/input.md",
+      "gitBlob": "78155837b013022ead9b00d2c66dc09918c12fe1",
+      "bytes": 60,
+      "sha256": "308e9096b63d308754f92ee8a32f83ef8df1cd7e40351ed8a53df267b78d86d7"
+    },
+    {
+      "path": "goal-1/plan.md",
+      "gitBlob": "6cd9fd24fc8cc2f432962d3551d72930a99bc3f0",
+      "bytes": 11812,
+      "sha256": "b11d8559ceca0d866c2a51df3c165001e52c42b84425f8f313bc8cd4322da32b"
+    },
+    {
+      "path": "goal-2/amendments/2026-10-18-art-first-mobile-last.md",
+      "gitBlob": "524c15de9e3f5fe5e96773aa49ce98e0aff2cf24",
+      "bytes": 63,
+      "sha256": "b4010110373524690b01cdbe0a27b6f27c5c3f6e2df17f4ee3cfef17aadc24d0"
+    },
+    {
+      "path": "goal-2/amendments/2026-10-18-desktop-design-application.md",
+      "gitBlob": "09a698a317a2e77c92c3edc4fd749069998bbf21",
+      "bytes": 76,
+      "sha256": "42cfbbdc40e0e5c9ecaa2db58843f6a51670437a2a60b3e4ef5b170030c0f072"
+    },
+    {
+      "path": "goal-2/amendments/2026-10-19-action-feedback.md",
+      "gitBlob": "32fb08c63bd2e00a167c7b60d0acb75054a940c2",
+      "bytes": 65,
+      "sha256": "f6181eefe1a86331ad33ab5d5b9187844db2c87869c3610cbec453e19099db53"
+    },
+    {
+      "path": "goal-2/amendments/2026-10-19-global-theme-feedback.md",
+      "gitBlob": "f6b47584215f193a008ea5cd64f31742fdd4c681",
+      "bytes": 404,
+      "sha256": "05a7e37903f7951c06fab294dcb819b8743b923f6b0503e54d56da74adf80242"
+    },
+    {
+      "path": "goal-2/amendments/2026-10-19-panel-materials.md",
+      "gitBlob": "13165a45dcdb1a1c1555a913a797e78982df3cc1",
+      "bytes": 231,
+      "sha256": "31087b4a0c745e0ff8a1e9fbba376e42ebdf29413ba274d5d518c3756a05ff0e"
+    },
+    {
+      "path": "goal-2/amendments/2026-10-19-playable-flow-countdown.md",
+      "gitBlob": "ca709e6718338daa67a3900a35f793dbe1a8b3af",
+      "bytes": 434,
+      "sha256": "e81272bdddb1cd4da8887a7391fda60cbc880abc8c5ab4192070b975500dd762"
+    },
+    {
+      "path": "goal-2/amendments/2026-10-19-single-screen-game.md",
+      "gitBlob": "49f96b1fe079318352f4a4574b67fba727a7fdaa",
+      "bytes": 171,
+      "sha256": "27093c1a93c372f6a14e01f8c834681db0811141578920402274d6cf6c371001"
+    },
+    {
+      "path": "goal-2/amendments/2026-10-20-art-and-game-matrix-incomplete.md",
+      "gitBlob": "ffe52ca7613021e3dacd5cbcbdba01dff62974c9",
+      "bytes": 73,
+      "sha256": "20df2f23fec564e4a4e62f5d4e558575d440ba5cd85c88280f58aac1b75b58f4"
+    },
+    {
+      "path": "goal-2/amendments/2026-10-20-continue-art-polish.md",
+      "gitBlob": "d4844463c7be870b21295f2e7284274e78ac0764",
+      "bytes": 7,
+      "sha256": "790ce365c093c6985803e513abf11eb5c5a24ed1164a5eab7e78c80f94642969"
+    },
+    {
+      "path": "goal-2/amendments/2026-10-20-continue-story-journey.md",
+      "gitBlob": "bf4aaeee9fde066dc4a8130fcc554fc6f404803e",
+      "bytes": 19,
+      "sha256": "2f920d7c9a91f03845c26e388b6c802de2eeae40d6751fa5b8b5abf3d65a08e3"
+    },
+    {
+      "path": "goal-2/amendments/2026-10-20-gamefeel-feedback-flow.md",
+      "gitBlob": "4b831d9ccdb4ae517f74d5caa03e0cd98e968974",
+      "bytes": 82,
+      "sha256": "bb4669e26c38af456e9ab34406d86525710f6f2679a2a783f3e7dad8ca915d49"
+    },
+    {
+      "path": "goal-2/design/desktop-direction-v1.png",
+      "gitBlob": "78dc8b723a40ea5b93da120399d1effc4c489a14",
+      "bytes": 3050410,
+      "sha256": "ab34c2faff1a786c210e96310cf2cfc52cae71aa4880f37e37aa7821f4040b12"
+    },
+    {
+      "path": "goal-2/design/single-screen-game.md",
+      "gitBlob": "038191c08150dab7c579dc81cf86c48d9ff312e5",
+      "bytes": 5562,
+      "sha256": "4bfae3a8a036cffbe6361256ab02867dacaae12faf05171edbe8a9e47b03b17a"
+    },
+    {
+      "path": "goal-2/input.md",
+      "gitBlob": "37ef93fedd93f3959e0c24a851d20952788affb5",
+      "bytes": 285,
+      "sha256": "5337440199f2029a750646d2cd5a5846f87fc216e76958424d363bb7d0efcf5f"
+    },
+    {
+      "path": "goal-2/plan.md",
+      "gitBlob": "e36f2939a9d802f74b09699aa48882b61ea19871",
+      "bytes": 35174,
+      "sha256": "3fc62336209533da2d7fec5994d13274256c0c9e3c494d52296b2e8f62b7d4d9"
+    },
+    {
+      "path": "goal-3/amendments/2026-10-20-autonomous-u2-i.md",
+      "gitBlob": "f6f5df9e337e832f43dce9a956ce6e15ea5c7ef5",
+      "bytes": 19,
+      "sha256": "b43172292c067c2e2ecb561056b1366c273ce772e4392f2de91223cff486f109"
+    },
+    {
+      "path": "goal-3/amendments/2026-10-20-heartbeat-u4.md",
+      "gitBlob": "e2dbffc8433ebc4352487965837bb1c2580f39c9",
+      "bytes": 3128,
+      "sha256": "6f8d79b64fa6b315391d4495c01de3d677340ae760324058549b52dead82d0ec"
+    },
+    {
+      "path": "goal-3/amendments/2026-10-20-next-and-continuous.md",
+      "gitBlob": "34e4955ba348eaba9cdf2e824af4785f0787811e",
+      "bytes": 58,
+      "sha256": "800ecf61fcd36da1dffbf6815dc6b9063ee8df2185a8066849ada4e9a0c5baab"
+    },
+    {
+      "path": "goal-3/amendments/2026-10-21-heartbeat-u5.md",
+      "gitBlob": "1524b9fc47cf4ad2b81750bf5c7a166e60228d01",
+      "bytes": 3128,
+      "sha256": "4f1b6086eacc9d1a34b158b08982fc6f38d37eba30019cf51ef269ce628fe32e"
+    },
+    {
+      "path": "goal-3/amendments/2026-10-21-heartbeat-u6.md",
+      "gitBlob": "0bf5cd65b0a30de6df575bd414e62693fd4be446",
+      "bytes": 3128,
+      "sha256": "6fba2573cf3ce1a951cdcf87f51cdf4cb2014e276db5bf86b4a979a31554f7e7"
+    },
+    {
+      "path": "goal-3/amendments/2026-10-21-heartbeat-u7.md",
+      "gitBlob": "9ae750f0eae5d6a5032efb069a16be92f1e0903f",
+      "bytes": 3128,
+      "sha256": "8142bd948bf372febfde4f0762e4a326c661a50e306d894c74a220bad287516e"
+    },
+    {
+      "path": "goal-3/research/idle-interaction-sources.json",
+      "gitBlob": "28a05d002d26a0c7061921f867777f4c1c16cff8",
+      "bytes": 4902,
+      "sha256": "d6554da863394111614617b3b53d1f66913f2546b427af91c05d985addb74aa3"
+    },
+    {
+      "path": "goal-3/research/milestone-interaction-sources.json",
+      "gitBlob": "3bb2714865ecd56dd1bad410bdf58ab07bd0626f",
+      "bytes": 1896,
+      "sha256": "f2613221200b07b4102c0a40893ff7865d52fd016a4f26c415ae250ddab35f92"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-21-goal-continue-r2.md",
+      "gitBlob": "7c7c7cd7d45b687ed3ae152e9bc8fdf4a16f8267",
+      "bytes": 7010,
+      "sha256": "5317ab655fa876cd3d5d864b35c099617ab8a402f957e5b3f214c61d18b44abe"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-21-goal-continue-r3.md",
+      "gitBlob": "6a4a114699d8c1ac2ccfb1348a6e6d48ea3bf40b",
+      "bytes": 7011,
+      "sha256": "747fc4a7fb5b53bc9ad60101fd686af0b39c1e722bd63a2f460e9ee833c757a9"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-21-goal-continue-r4.md",
+      "gitBlob": "b8faa8c6900b239e623b1f920981afdb10ef43fa",
+      "bytes": 7007,
+      "sha256": "752b22c291aae12e9c03b61cff05356ef12007dd371e44b346d135f15e9f4086"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-22-goal-check-u8.md",
+      "gitBlob": "bc21e5826b26a51c7be8bfe5c47a212ebd6d0c74",
+      "bytes": 1138,
+      "sha256": "37b3022974b309c3c6c7eac1d309530d794d9ef1d30e7a0f862845eb3633937a"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-23-art01.md",
+      "gitBlob": "03ff9ed58543b4ad832b12930504f705900d2944",
+      "bytes": 245,
+      "sha256": "c9d4458fc305e7bb6fe07786f3dd0e398afe6783b239d1f6788b18dc6829d35f"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-23-art02.md",
+      "gitBlob": "f2d29560a0943e7fc713a0b99c854a927bcea776",
+      "bytes": 405,
+      "sha256": "40189884ec4d5b5cd061ec4bd693c91d7748b8ea0734f90316985fac1f647028"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-23-art03.md",
+      "gitBlob": "d21331cabf4ba3e9e2f220c4b31662f5e28f10ff",
+      "bytes": 7019,
+      "sha256": "25fc9cff1840f706413498de42a3db2b8e730180ce3db7fec6958813ef16efee"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-23-art04.md",
+      "gitBlob": "6b92f5e82e37d6135dfbdf6f7db939d307679366",
+      "bytes": 536,
+      "sha256": "f78e27b7afc568395f2221d2c37cf7fe8ebf4b52523262c88d64a77d465680d1"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-23-game-studio-feedback.md",
+      "gitBlob": "bb449e19e6a48a5f48307a03b204cd12c4c7df66",
+      "bytes": 244,
+      "sha256": "77f95421d2f37a5603f6664035443f98ebbae9b1d8bfe5c5b60fce58f67dd18f"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-24-art05.md",
+      "gitBlob": "03ff9ed58543b4ad832b12930504f705900d2944",
+      "bytes": 245,
+      "sha256": "c9d4458fc305e7bb6fe07786f3dd0e398afe6783b239d1f6788b18dc6829d35f"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-24-art06.md",
+      "gitBlob": "699bdb582198c33f549d31c0ab75f057c33d04d9",
+      "bytes": 902,
+      "sha256": "885de15d11ffffa90ee2e36d5129c7d1894eef55ec9b53c5edbb79301615a909"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-24-check-matrix-01.md",
+      "gitBlob": "358cccb6a1080713713035f1a824c95383560c24",
+      "bytes": 7012,
+      "sha256": "45b4a2fb2155c61cdc9429dc269b65a3aa09da135b45df33ae32d98c873d1c2d"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-24-game-studio-recheck.md",
+      "gitBlob": "03ff9ed58543b4ad832b12930504f705900d2944",
+      "bytes": 245,
+      "sha256": "c9d4458fc305e7bb6fe07786f3dd0e398afe6783b239d1f6788b18dc6829d35f"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-24-ta07.md",
+      "gitBlob": "e427f948b8a76b3259ff4b09294cefc211375a4b",
+      "bytes": 7012,
+      "sha256": "5bf25ba41e15a2a4069ac45efccf94788f7636d57c778f9c56010c3f0a6e1106"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-24-ta08.md",
+      "gitBlob": "47512d2aa38658d7f7ed6795017ea6e9905e8cf6",
+      "bytes": 7012,
+      "sha256": "c0f83e8b1c9943728dfc4095087dd9acefcb3ad4b7b902bf4a5373cabdea4382"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-25-goal-continue-art10.md",
+      "gitBlob": "699bdb582198c33f549d31c0ab75f057c33d04d9",
+      "bytes": 902,
+      "sha256": "885de15d11ffffa90ee2e36d5129c7d1894eef55ec9b53c5edbb79301615a909"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-25-ta09.md",
+      "gitBlob": "14156b7183b03783c0cb473cfccb95d961a9340b",
+      "bytes": 7012,
+      "sha256": "4ea545b8db2ac6d30c2329220948096d75a9d94d601547af146113879948ca24"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-26-goal-continue-art11.md",
+      "gitBlob": "699bdb582198c33f549d31c0ab75f057c33d04d9",
+      "bytes": 902,
+      "sha256": "885de15d11ffffa90ee2e36d5129c7d1894eef55ec9b53c5edbb79301615a909"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-26-goal-continue-art12.md",
+      "gitBlob": "699bdb582198c33f549d31c0ab75f057c33d04d9",
+      "bytes": 902,
+      "sha256": "885de15d11ffffa90ee2e36d5129c7d1894eef55ec9b53c5edbb79301615a909"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-27-goal-continue-art15.md",
+      "gitBlob": "eacf312162a909b93435df80408bef8d31224e1a",
+      "bytes": 951,
+      "sha256": "4c053e8fbdf9e0575098bea53f4a5588376a4c9c639d4fa8464475d5a5f26ea0"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-27-goal-continue-art16.md",
+      "gitBlob": "dee67c601448cfd09650bd154decca08dfebb487",
+      "bytes": 708,
+      "sha256": "8efb51bb6afcb4bca1a19d42353decfaab532f4bf49a4f161af248deb6c09647"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-28-art17.md",
+      "gitBlob": "0e27f91dcccb70c8374ebbca1cdcca41e6dd6ebc",
+      "bytes": 1148,
+      "sha256": "330491eb045e0bc057898bc4447e25dee210ab9b82d4a612acb0eb9a77adc86e"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-28-art18-dialog-buttons.md",
+      "gitBlob": "60d11575558833e941c40a90382d14c529652c77",
+      "bytes": 266,
+      "sha256": "0ff883b911fa3f050f332558ed7112d138ceaa02072e2fca9798cf13e238375c"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-28-goal-continue-ux20.md",
+      "gitBlob": "699bdb582198c33f549d31c0ab75f057c33d04d9",
+      "bytes": 902,
+      "sha256": "885de15d11ffffa90ee2e36d5129c7d1894eef55ec9b53c5edbb79301615a909"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-28-goal-continue-ux21.md",
+      "gitBlob": "699bdb582198c33f549d31c0ab75f057c33d04d9",
+      "bytes": 902,
+      "sha256": "885de15d11ffffa90ee2e36d5129c7d1894eef55ec9b53c5edbb79301615a909"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-28-goal-continue-ux23.md",
+      "gitBlob": "25a977ec1d669e0e4e6d0ed9d1bf1de0a419d33a",
+      "bytes": 7019,
+      "sha256": "8e786b33f0b137b6b1f5d5ac4ca976dab1b5f9f6fefe286a5015adb691b396e9"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-29-goal-continue-art24.md",
+      "gitBlob": "45975a359f7ac75698ac948b9f2ff31fe70d9e9b",
+      "bytes": 7019,
+      "sha256": "a57c71003b468babd123615d746f7d95353c7c07cb8b5dd5ca7885deef9e74e4"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-29-goal-continue-art25.md",
+      "gitBlob": "3ab836492a7505dd5410a814b653b9dbcc48e0c2",
+      "bytes": 7019,
+      "sha256": "a130b34be84505d7dfef5ac9d319463a83d2e6a3101d7b4f2f8667890dc6d111"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-29-goal-continue-art26.md",
+      "gitBlob": "bba5516fe1ee1962d520866fa848013f3ff09a3b",
+      "bytes": 7019,
+      "sha256": "70546c9858c5dcf622e475d4f0f671bb580f4403654c1cfd15e77d8beda2a8ea"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-29-goal-continue-art27.md",
+      "gitBlob": "9bda40191edb5c44e9a9f18a88cca60dfb733a56",
+      "bytes": 7019,
+      "sha256": "2d16fec1ef6f1d1d2ba745366e49013d95d12bbc189b306d01ac98084d9983a8"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-29-goal-continue-art28.md",
+      "gitBlob": "b9b3740a9f1e2d4c5af13e858c4205a472de0ebc",
+      "bytes": 7019,
+      "sha256": "28eccf1aea1be98a33d6c59d5f8aa6b6d89a0d0f2308e325b27a62e613e2c76b"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-29-goal-continue-art29.md",
+      "gitBlob": "07c211d60f604279fe938db456c68c5dafd8424a",
+      "bytes": 7019,
+      "sha256": "dac959ffb5de63122250f5f97daedc2b0b5665df0d4205fdc90f7e97a563e2bd"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-29-goal-continue-art30.md",
+      "gitBlob": "bbda2a3f06b047c4c6fa27f2dce59e4afa7b64e0",
+      "bytes": 7019,
+      "sha256": "19679534c77965868c3532d99ed613bdca7f0f18900d8dbd2bda397a09748f38"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-29-goal-continue-art31.md",
+      "gitBlob": "79672034a8a69ea74a75714b2ab5b26a93d4dc1a",
+      "bytes": 7019,
+      "sha256": "5e02d72350ea107b423dbd3edf62af9e51955c4dd33e5de9398d903fefc0959b"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-29-goal-continue-art32.md",
+      "gitBlob": "1ef00cb090e4c6a60fb88be1d4f747f7fc5fd26f",
+      "bytes": 7012,
+      "sha256": "69822fa753dc2313fd7765ca66366c24174f75daeb28c69a1e776bd04526007f"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-30-goal-continue-art33.md",
+      "gitBlob": "7cfd8a3be29e01c356ecc006f714353eeb23ba12",
+      "bytes": 7012,
+      "sha256": "f247946aac742183df742ca5be20829be46739cfd9d5f555dd6c9a84dc69f805"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-30-goal-continue-art34.md",
+      "gitBlob": "c565220dd8c585e005f7ff58fe479aba392032ea",
+      "bytes": 7012,
+      "sha256": "d5b88c772424ac8a0e573d8e64cb4cd0aba86ac9ea5f4fc46e2bce626da6bcde"
+    },
+    {
+      "path": "goal-4/amendments/2026-10-31-goal-art35.md",
+      "gitBlob": "115ee9dd55b15c9c72676b4c93766ac9736c043a",
+      "bytes": 7019,
+      "sha256": "6f120ac21715d79e102f883a786cdf3fc4c459acaa3ab80dcf8f97f70a18a275"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-02-art36-input.txt",
+      "gitBlob": "02a0fac6466bbad9e4a582e74255fa926958035c",
+      "bytes": 7013,
+      "sha256": "d689a3ca6527384659678dee8baae0d7c6326f4cf381ea525c691998e528bad6"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-02-art37-artwork-input.txt",
+      "gitBlob": "631a88ee7b93d83d533cc530967b52c0c3631585",
+      "bytes": 91,
+      "sha256": "e015bb96ff6237f73181ccca647d7c36517fa6696270aabeb6fee9b7b8a4c391"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-02-art37-input.txt",
+      "gitBlob": "3661e1e1ba3a21348a33025dccf03a964dd7577a",
+      "bytes": 67,
+      "sha256": "27a04c47c01ed4019f2efb7094f85479cf8d452ff9d626682af176d17e47dce3"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-03-ux30-input.md",
+      "gitBlob": "9c70b78a98e561172e5c4a732aa25aa730afc446",
+      "bytes": 58,
+      "sha256": "36167583c7e9014ec3fef4838c245204b8c92988482404752ec5eba23daf8c31"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-03-ux31-input.md",
+      "gitBlob": "9bce22b8dd0752c3162e62746d84338708ae559b",
+      "bytes": 7015,
+      "sha256": "e993f9a3cb5705a41f4d0bdcfd6788df03cf587b5d4cecfab33b7a6147979ed4"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-04-check-uir33-01-input.md",
+      "gitBlob": "1b91c1fe1f1e5d18c18240600db9c78906a16f94",
+      "bytes": 1884,
+      "sha256": "e6260302250c368c87273d9786c556ff95a8f5935853bec51df53c7ec38a4cf6"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-04-check-ux31-33-input.md",
+      "gitBlob": "699bdb582198c33f549d31c0ab75f057c33d04d9",
+      "bytes": 902,
+      "sha256": "885de15d11ffffa90ee2e36d5129c7d1894eef55ec9b53c5edbb79301615a909"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-04-uir33-01-input.md",
+      "gitBlob": "5f772830b155f3c15222611ae588e2e4fc7b61bb",
+      "bytes": 156,
+      "sha256": "2d9888093aa7697dedb9fb13e6705b6083d15611248462915c048976b2bcde1c"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-04-uir33-02-input.md",
+      "gitBlob": "132f2726aad675afac6d2030e6c4ba310100338e",
+      "bytes": 955,
+      "sha256": "8b8dc0e96b1548ae66e2ef682f64fc580ceb8d782fb504d9301bb4b03eb79537"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-04-uir33-04-input.md",
+      "gitBlob": "1310c8e18575f81d19b0bdac1c093a913b06e4c6",
+      "bytes": 882,
+      "sha256": "09ad62ab01867c8c8ad0112af10327235bfa0b81eda00cc1839eb5fcb2280367"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-04-uir33-05-input.md",
+      "gitBlob": "e4e1555d23a2336626462eed31ce6ba3b1460944",
+      "bytes": 1795,
+      "sha256": "63e976e5f657c1177b9b8504cbed9d9cbf32257b7507e396e4d82dac566f9fb6"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-04-uir33-06-input.md",
+      "gitBlob": "1bc0a8acfc2e8067b80f8d2c031703b20a6693a4",
+      "bytes": 1796,
+      "sha256": "4bff1133b81e65b1466a5c97adae167af6f749de7f44c30c37a3079c309fb063"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-04-ux32-input.md",
+      "gitBlob": "9c70b78a98e561172e5c4a732aa25aa730afc446",
+      "bytes": 58,
+      "sha256": "36167583c7e9014ec3fef4838c245204b8c92988482404752ec5eba23daf8c31"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-04-ux33-input.md",
+      "gitBlob": "9c70b78a98e561172e5c4a732aa25aa730afc446",
+      "bytes": 58,
+      "sha256": "36167583c7e9014ec3fef4838c245204b8c92988482404752ec5eba23daf8c31"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-05-check-uir33-02-input.md",
+      "gitBlob": "75e4089db5ef48eb7b386c5772045689063c3831",
+      "bytes": 1828,
+      "sha256": "942e4cfc3c12eaa9c7191566a4eb94606520d73ffc2d5aa38dde9ce07ce240f4"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-05-uir33-07-input.md",
+      "gitBlob": "6e6127ae06aa9611c05820363e164b1856ad48c4",
+      "bytes": 1788,
+      "sha256": "fb3eadc25107e5e1d3a07253e1a99511e881fd0afbc615a806f7cdfc48ee6e86"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-05-uir33-08-input.md",
+      "gitBlob": "4e6e5eb7ed9a6dc1afb9fce85d2acb632a450f64",
+      "bytes": 24,
+      "sha256": "1c9376dd1766f6d5455bb44592e4a9e3caa8ca73b1e2b9a2e928fe1ca959acf1"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-05-uir34-01-input.md",
+      "gitBlob": "bfa8072e6b67ab943a1cc0b8277f98f2c231a10f",
+      "bytes": 1035,
+      "sha256": "ba0fe3046e60e90efe217bdad2cb71118d24fcf5b92f639d9bcdc87cc48c5dcb"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-05-uir34-02-input.md",
+      "gitBlob": "089f4e018a8197c5dace0b127fedd7659ed0db87",
+      "bytes": 976,
+      "sha256": "f12cd78933e397e5420e19d94e968889f5929d10d664025dae24c10596b41e46"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-05-uir34-03-input.md",
+      "gitBlob": "089f4e018a8197c5dace0b127fedd7659ed0db87",
+      "bytes": 976,
+      "sha256": "f12cd78933e397e5420e19d94e968889f5929d10d664025dae24c10596b41e46"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-05-uir34-04-input.md",
+      "gitBlob": "089f4e018a8197c5dace0b127fedd7659ed0db87",
+      "bytes": 976,
+      "sha256": "f12cd78933e397e5420e19d94e968889f5929d10d664025dae24c10596b41e46"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-06-cend06-f02a-input.md",
+      "gitBlob": "df6a4faccd546a3e02d56a55f92b02ea2af2d855",
+      "bytes": 955,
+      "sha256": "ff5b86a1f3905118bec1724235d7e03ad5fdc541e33d2a729bd44f9f53ca42ce"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-06-cend06-f02b-input.md",
+      "gitBlob": "df6a4faccd546a3e02d56a55f92b02ea2af2d855",
+      "bytes": 955,
+      "sha256": "ff5b86a1f3905118bec1724235d7e03ad5fdc541e33d2a729bd44f9f53ca42ce"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-06-check-ui35-input.md",
+      "gitBlob": "9ee503403ad33b86e802f77b1008496bb1c51824",
+      "bytes": 1364,
+      "sha256": "0b1f4404fdf9b388028ef63aeba5ab709cf11162e0bd2bd2849a7ccdaceb4a5a"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-06-check-uir34-02-04-input.md",
+      "gitBlob": "089f4e018a8197c5dace0b127fedd7659ed0db87",
+      "bytes": 976,
+      "sha256": "f12cd78933e397e5420e19d94e968889f5929d10d664025dae24c10596b41e46"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-06-check-uir35-03-04-cend06-input.md",
+      "gitBlob": "df6a4faccd546a3e02d56a55f92b02ea2af2d855",
+      "bytes": 955,
+      "sha256": "ff5b86a1f3905118bec1724235d7e03ad5fdc541e33d2a729bd44f9f53ca42ce"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-06-uir34-05-input.md",
+      "gitBlob": "8a62283a5f10b7a3d7ef6cec01072522adc8d2b4",
+      "bytes": 445,
+      "sha256": "81218c2dc635b7fecb8806a6edaa0e8627a910d1548d19d850b21ebc44fd64de"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-06-uir34-06-input.md",
+      "gitBlob": "bca84637b55fa7ed7e30fc7d1696d7b3a50635ee",
+      "bytes": 2023,
+      "sha256": "12b0a03b2f82375a0150b26096699faea7a061313b659719b5728123949a8026"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-06-uir34-07-input.md",
+      "gitBlob": "0a2f35c176124f66b66142be56753dcac406e69a",
+      "bytes": 1591,
+      "sha256": "9b763d94b564de8589d32ee195fe9cc1cbea679c3655640aea9a7ae01a8d0220"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-06-uir35-01-input.md",
+      "gitBlob": "4e6e5eb7ed9a6dc1afb9fce85d2acb632a450f64",
+      "bytes": 24,
+      "sha256": "1c9376dd1766f6d5455bb44592e4a9e3caa8ca73b1e2b9a2e928fe1ca959acf1"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-06-uir35-02-input.md",
+      "gitBlob": "14063723301b956d2d66aafcff79fefbb4217357",
+      "bytes": 1233,
+      "sha256": "2a309e0b21ef9199dc92c5d03766a76def828edb3148a1f51d6074d5b37013d6"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-06-uir35-03-input.md",
+      "gitBlob": "df6a4faccd546a3e02d56a55f92b02ea2af2d855",
+      "bytes": 955,
+      "sha256": "ff5b86a1f3905118bec1724235d7e03ad5fdc541e33d2a729bd44f9f53ca42ce"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-06-uir35-04-input.md",
+      "gitBlob": "df6a4faccd546a3e02d56a55f92b02ea2af2d855",
+      "bytes": 955,
+      "sha256": "ff5b86a1f3905118bec1724235d7e03ad5fdc541e33d2a729bd44f9f53ca42ce"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-07-cend07-f02a-input.md",
+      "gitBlob": "6f6588fd14c6fe70fbf30f2cedb557590b73b8ea",
+      "bytes": 976,
+      "sha256": "b395f7aea5630e7d2dce822ea90bb2d34199a56d3c261c17f7191b1951ff5579"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-07-cend07-f03-input.md",
+      "gitBlob": "6f6588fd14c6fe70fbf30f2cedb557590b73b8ea",
+      "bytes": 976,
+      "sha256": "b395f7aea5630e7d2dce822ea90bb2d34199a56d3c261c17f7191b1951ff5579"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-07-cend07-f04-input.md",
+      "gitBlob": "587d9ce58961f2917514c627446588d5108259b5",
+      "bytes": 782,
+      "sha256": "9e68cc3258c19b4861db2afffdb61cc0d5f110cb22d5da2e3d8e92dd0d922632"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-07-check-cend07-input.md",
+      "gitBlob": "6f6588fd14c6fe70fbf30f2cedb557590b73b8ea",
+      "bytes": 976,
+      "sha256": "b395f7aea5630e7d2dce822ea90bb2d34199a56d3c261c17f7191b1951ff5579"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-08-cend07-f02b-input.md",
+      "gitBlob": "0dc7e3f4ce5292d92262720f64dcb78aa43d9001",
+      "bytes": 927,
+      "sha256": "2e989ec15c9419737cfed32fde444554ae46dff1e02dfddaf6aee38a73e7058f"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-08-cend07-f02c-input.md",
+      "gitBlob": "0dc7e3f4ce5292d92262720f64dcb78aa43d9001",
+      "bytes": 927,
+      "sha256": "2e989ec15c9419737cfed32fde444554ae46dff1e02dfddaf6aee38a73e7058f"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-08-check-cend07-three-input.md",
+      "gitBlob": "6f6588fd14c6fe70fbf30f2cedb557590b73b8ea",
+      "bytes": 976,
+      "sha256": "b395f7aea5630e7d2dce822ea90bb2d34199a56d3c261c17f7191b1951ff5579"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-09-cend08-f01-optimization.md",
+      "gitBlob": "4e6e5eb7ed9a6dc1afb9fce85d2acb632a450f64",
+      "bytes": 24,
+      "sha256": "1c9376dd1766f6d5455bb44592e4a9e3caa8ca73b1e2b9a2e928fe1ca959acf1"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-09-cend08-f02-input.md",
+      "gitBlob": "eacf312162a909b93435df80408bef8d31224e1a",
+      "bytes": 951,
+      "sha256": "4c053e8fbdf9e0575098bea53f4a5588376a4c9c639d4fa8464475d5a5f26ea0"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-09-cend08-f03-input.md",
+      "gitBlob": "699bdb582198c33f549d31c0ab75f057c33d04d9",
+      "bytes": 902,
+      "sha256": "885de15d11ffffa90ee2e36d5129c7d1894eef55ec9b53c5edbb79301615a909"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-09-cend09-source-input.md",
+      "gitBlob": "699bdb582198c33f549d31c0ab75f057c33d04d9",
+      "bytes": 902,
+      "sha256": "885de15d11ffffa90ee2e36d5129c7d1894eef55ec9b53c5edbb79301615a909"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-09-cend10-source-goal-input.md",
+      "gitBlob": "4e6e5eb7ed9a6dc1afb9fce85d2acb632a450f64",
+      "bytes": 24,
+      "sha256": "1c9376dd1766f6d5455bb44592e4a9e3caa8ca73b1e2b9a2e928fe1ca959acf1"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-10-cend11-mainline-input.md",
+      "gitBlob": "4e6e5eb7ed9a6dc1afb9fce85d2acb632a450f64",
+      "bytes": 24,
+      "sha256": "1c9376dd1766f6d5455bb44592e4a9e3caa8ca73b1e2b9a2e928fe1ca959acf1"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-10-cend13a-input.md",
+      "gitBlob": "0fccd0e98a998424723170a6bb087b2bf5944fed",
+      "bytes": 7019,
+      "sha256": "eda5bda325094daf5fdcadbfc1006793306f133e07beed99bda08f88ddc44ac8"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-10-cend13b-input.md",
+      "gitBlob": "77899c72b4b4d50149ddd9b5c7993fb03456abdf",
+      "bytes": 7019,
+      "sha256": "eecebf6a535f841f19a047e22ad6d4e9a7a78bc3de1b0e951b65b3fe218649eb"
+    },
+    {
+      "path": "goal-4/amendments/2026-11-10-cend13c-input.md",
+      "gitBlob": "e5524c4f8ba3baed9578dc6f42342c52672fc4bb",
+      "bytes": 7019,
+      "sha256": "476afaf4935777db8ab87ce33e2b4aadd36de78e8f4ae5f65897e3ac4a2b8921"
+    },
+    {
+      "path": "goal-4/evidence/art26/equipment-panel-before.vue.txt",
+      "gitBlob": "daf393684a821cf36ac59a4ef7d82b900ab7ac1f",
+      "bytes": 4125,
+      "sha256": "b5c8e4011f112ff37f21db4e0088e3304a67dda7f1872ca347d1be12559bc56c"
+    },
+    {
+      "path": "goal-4/evidence/art26/production-planner-before.vue.txt",
+      "gitBlob": "38894956b2a0b0d2c6dc0d41dd2d2cc6b7f1e0a3",
+      "bytes": 14125,
+      "sha256": "f67a0abafb51ad5d9e64c8b8f3938d95f82d3d7204fc0038d388a5cc0997e4bd"
+    },
+    {
+      "path": "goal-4/evidence/art27/art03-before.css.txt",
+      "gitBlob": "50d6af75c7dbf7b7b6ade4516ce8b45a57ba8563",
+      "bytes": 12672,
+      "sha256": "48024f8b89c4a3a95c892ccec3b6dc66478eaee65b3876e598d22bdb0a05b334"
+    },
+    {
+      "path": "goal-4/evidence/art27/art10-before.css.txt",
+      "gitBlob": "e8849408d30219dde0b011d8f389dc41f1faa9e4",
+      "bytes": 11992,
+      "sha256": "eef8cc1311779a60a78a38614d7c09c9628d1e93dab594031fe10e22152f4b3a"
+    },
+    {
+      "path": "goal-4/evidence/art27/legacy-painted-bounds.json",
+      "gitBlob": "0076691dea23d76a6277f56cf720384870745b6e",
+      "bytes": 2522,
+      "sha256": "676131d109d9c5c9c8dd7b72912bed243672e34128ae90fe086b9263133cfc01"
+    },
+    {
+      "path": "goal-4/evidence/art27/relic-atelier-before.vue.txt",
+      "gitBlob": "9dd29685f20b8338574ac9146b78cc424af8d6cf",
+      "bytes": 15892,
+      "sha256": "b8778d1bfc24accf379accdb858aef58070525d03cc688cfcbbbece8775921b3"
+    },
+    {
+      "path": "goal-4/evidence/art27/relic-inscription-before.vue.txt",
+      "gitBlob": "8dfe6fc8186e7ba8b73700acb4955077cc6d18a2",
+      "bytes": 6366,
+      "sha256": "5d5b01878021f13621cf33ea1ba9aa5337c38ff695c031bb2db28d79a6f769a2"
+    },
+    {
+      "path": "goal-4/evidence/art28/alchemy-before.css.txt",
+      "gitBlob": "12e3e06efc04ae8022909856fd79b488a04d9f1a",
+      "bytes": 9220,
+      "sha256": "88bc1e45ec5f633336fce70cf717fb0612299f22db7f467e24f344bfdeb3a554"
+    },
+    {
+      "path": "goal-4/evidence/art28/alchemy-before.vue.txt",
+      "gitBlob": "e4a308ef68eb21aa4f618c8c2b9cb793a66dec77",
+      "bytes": 11835,
+      "sha256": "654a6ceb823dbd6eaa8cbaeb143ca16b766398c7fdf28ddb31ca90870e21501e"
+    },
+    {
+      "path": "goal-4/evidence/art29/art11-before.css.txt",
+      "gitBlob": "dcfd9bd8636198d4687bd89b14988041aac79be2",
+      "bytes": 11555,
+      "sha256": "99eb164046e986a6f23978ebaa33593d4e1d1b13111bf4c023591ee970136a44"
+    },
+    {
+      "path": "goal-4/evidence/art29/inventory-before.vue.txt",
+      "gitBlob": "d5d36a835381d631ee390a11a92bcd6b9124b8d5",
+      "bytes": 6718,
+      "sha256": "b567cb81c66c77a7171ff1883fcfc9c290b006a5be3a2dc32721fa5eeb8cad88"
+    },
+    {
+      "path": "goal-4/evidence/art29/legacy-item-bounds.json",
+      "gitBlob": "76b5ddee2f9eb2762682f2df1a58285a2d6cc7b0",
+      "bytes": 4412,
+      "sha256": "25212c4ec065a2813f11fbdf2278e163a20fc7cb312e286d3e6b13c1af2802d3"
+    },
+    {
+      "path": "goal-4/evidence/art30/ActionFeedbackStage.vue.before.txt",
+      "gitBlob": "8139817adf64f36af7f7227abed4e23469d796aa",
+      "bytes": 10882,
+      "sha256": "f5d17de52070256328b2312087cbe6634edaa1c96420a7088fd62bcf25138c93"
+    },
+    {
+      "path": "goal-4/evidence/art30/EncounterTable.vue.before.txt",
+      "gitBlob": "2e4f5a58ef5902c08aa93f0ef3e722d81f5c2f7f",
+      "bytes": 5048,
+      "sha256": "1a06400cfaabd46b4fad0a2d4e025502e8c50ce78da03f4bfd6b4e48f7941cb7"
+    },
+    {
+      "path": "goal-4/evidence/art30/FateCatalogue.vue.before.txt",
+      "gitBlob": "33850ab1ee84c533c2cc61bd1b28bc2e06927c3d",
+      "bytes": 9739,
+      "sha256": "f00a42f829354632d6f05ce46a76275767cf2fd38d9c8f7f72396524018b4bdc"
+    },
+    {
+      "path": "goal-4/evidence/art30/ResponseTable.vue.before.txt",
+      "gitBlob": "9a899275acb3164b07a8f68f7fd996b4788d757a",
+      "bytes": 4156,
+      "sha256": "7bdef986b3605e155aa083bf9bfc9243b8241003bcef0d576808d2b898692751"
+    },
+    {
+      "path": "goal-4/evidence/art30/art12-narrative.css.before.txt",
+      "gitBlob": "30946fa68666d72812e636fb74a93d847d2e77af",
+      "bytes": 6320,
+      "sha256": "c10587eb2190cbcccd5fd1af1e4f199eec53749fff87e7a5e1fb38da1d90ad85"
+    },
+    {
+      "path": "goal-4/evidence/art30/next-life-art-debt.jpg",
+      "gitBlob": "d36f5e2e139b864fa524aee6590df4b0c322f74d",
+      "bytes": 114197,
+      "sha256": "9ac5718d14efcb1a0c46d093d8df47499d7deb2e2eb5a398240747c3e25d601f"
+    },
+    {
+      "path": "goal-4/evidence/art31/LifeCatalogue.vue.before.txt",
+      "gitBlob": "9bc11dbff28d609bb5f9103c990867da081dddc5",
+      "bytes": 3955,
+      "sha256": "09270a81c17dffaacd89255e465abec304c4156dc00dcae6b7978332a3ebbc20"
+    },
+    {
+      "path": "goal-4/evidence/art31/LifeScroll.vue.before.txt",
+      "gitBlob": "5e6a7d49e61a4f99d6e4e84d5ac6349fa804fe85",
+      "bytes": 3863,
+      "sha256": "e761a9134477ed98057e1886ad8723cc1e5da7543539cfe4c7001e98a4e796c1"
+    },
+    {
+      "path": "goal-4/evidence/art31/art12-narrative.css.before.txt",
+      "gitBlob": "8ea5479f5eba0cc4ee338399dc343f24c8f6d53b",
+      "bytes": 9721,
+      "sha256": "59c84073a8c5f9d95e34b3247a67f0da3f40b47005d3e8a19fe81b588f0e5835"
+    },
+    {
+      "path": "goal-4/evidence/art32/ANSWER_TRIAL-before.jpg",
+      "gitBlob": "6aff6347ac7284429d8fb32820dee8b57d8bdb4f",
+      "bytes": 116950,
+      "sha256": "3f1d8c92d7c2bab98394b906e926716a0dca223285fdab33c10be072a969dbfd"
+    },
+    {
+      "path": "goal-4/evidence/art32/END-before.jpg",
+      "gitBlob": "9f47061440a1458e8193851e91ae6826a7609c25",
+      "bytes": 121434,
+      "sha256": "e81abeeb1e342fbf73eb857eceea8bc29f5ca7813053141a7bd9de5a0b2b306e"
+    },
+    {
+      "path": "goal-4/evidence/art32/NarrativePanel.vue.before.txt",
+      "gitBlob": "8f91497b79abc1160aa9e0d8b5d979efbdf356ac",
+      "bytes": 6195,
+      "sha256": "8bb4f2e0c06f623e322b2b13dabe6569982c24bbaa56d68c4c6391be756a17dc"
+    },
+    {
+      "path": "goal-4/evidence/art32/ResponseTable.vue.before.txt",
+      "gitBlob": "ab1a743335835793c32f09628c7a65a0c355a575",
+      "bytes": 4522,
+      "sha256": "b9ff7f201a14b826085e0e2dbff7c0eba42633684ab20a34a2f058e368e7974e"
+    },
+    {
+      "path": "goal-4/evidence/art32/narrative-objects.css.before.txt",
+      "gitBlob": "4a2a98a7f24aede84b14e9f9dc188493cc0bc732",
+      "bytes": 12978,
+      "sha256": "a271e6c977955e252a18ed34051758989dde3b6b4445ce7401efcb879e6328e9"
+    },
+    {
+      "path": "goal-4/evidence/art33/App.vue.before.txt",
+      "gitBlob": "038fdc85d3c17fedf3588887cc7b5f1a44306150",
+      "bytes": 157235,
+      "sha256": "01431c4688c118bb98856a3f2eacbfb1042b9db14a721cb0fcc834d457601d30"
+    },
+    {
+      "path": "goal-4/evidence/art33/GuidancePanel.vue.before.txt",
+      "gitBlob": "0838cfa7a5c678d8b9a2a7978225544c2622e14e",
+      "bytes": 1376,
+      "sha256": "9e2a96b8dadd7b25fef68e885e34bb8a338a9bb1f580c14f9b864ab0f14c78cd"
+    },
+    {
+      "path": "goal-4/evidence/art33/MilestoneGate.vue.before.txt",
+      "gitBlob": "ed12649619088157dcadbd365bf9a13b7797224d",
+      "bytes": 4301,
+      "sha256": "872aaa2b56331f9de29982ad0142b8f8c56c0feab0214133dc80fd66ca275e03"
+    },
+    {
+      "path": "goal-4/evidence/art34/SourceField.vue.before.txt",
+      "gitBlob": "47fb09fce40e2524e8f7b78c58f1c0fce308d522",
+      "bytes": 5147,
+      "sha256": "90a35092618c16ce845b5e84f22b8ad39131e25ffb151d8d78b24e13af5dbe29"
+    },
+    {
+      "path": "goal-4/evidence/art34/SourcePlanner.vue.before.txt",
+      "gitBlob": "e7ab949076ab5ff5e3f1d1249c935b5922e5c735",
+      "bytes": 8338,
+      "sha256": "c4286f9bbfeac6a1a757ad2aafc0a8e41ee14da14b7212cf23b3a6fb9b34fa49"
+    },
+    {
+      "path": "goal-4/evidence/art34/art02-source.css.before.txt",
+      "gitBlob": "4bae30da19c76a9eceb3c255fa76bc4db4fb66f6",
+      "bytes": 3060,
+      "sha256": "2bd4bc28ca07595b36764b245ef186a445f478ad53fa3585d7a5dea190e66466"
+    },
+    {
+      "path": "goal-4/evidence/art35/JadeEngraving.vue.before.txt",
+      "gitBlob": "bda7619873fec0ff1dc0b87a1106873ed31be451",
+      "bytes": 6403,
+      "sha256": "1c1b94c82d145c504fda7c8de43dffacedcdf1db87c9f9579fcefac3bec15c1a"
+    },
+    {
+      "path": "goal-4/evidence/art35/RecoveryRitual.vue.before.txt",
+      "gitBlob": "e22971ee87b13e65f9239c1b9a79d1c132b05b98",
+      "bytes": 9258,
+      "sha256": "9764760b03850ce35a4bab251228ea29983b1dba3615fa31bc4d0ad8e3ef0c88"
+    },
+    {
+      "path": "goal-4/evidence/art36/baseline-measurements.json",
+      "gitBlob": "a91661e32ab82293bdbbcb06d45db79f2e8bc7b1",
+      "bytes": 71848,
+      "sha256": "d94647560ef954d418554edd66bcdd040d41d577de13ea5e89d49fb184fbb578"
+    },
+    {
+      "path": "goal-4/evidence/art36/main.ts.before.txt",
+      "gitBlob": "18056ab4f3d7db30cf6b19c59d6bc27de6e227d6",
+      "bytes": 1495,
+      "sha256": "3f0595b97ee03b6854e99df0183fdae476ec6d77fa69aa55183dc2aa48c32a59"
+    },
+    {
+      "path": "goal-4/evidence/art37/art18-dialog-controls.spec.ts.before.txt",
+      "gitBlob": "81716f49f24736ab549168b900e17237389891e2",
+      "bytes": 15950,
+      "sha256": "ca5f099acec50a8342457a52dd1de02c4780c364b7a8694efc5495a485b05004"
+    },
+    {
+      "path": "goal-4/evidence/art37/art18-dialog-gallery.spec.ts.before.txt",
+      "gitBlob": "c500006b86688354a2fad4662fdc170d156ebae9",
+      "bytes": 9912,
+      "sha256": "054437d1001eb3e8118a8eefac56eb95d16690433612f7082a54682d44d1267b"
+    },
+    {
+      "path": "goal-4/evidence/art37/main.ts.before.txt",
+      "gitBlob": "55b8008a8c3d88b66914d1a5c0c3d4ecee96678a",
+      "bytes": 1529,
+      "sha256": "d9ce62905a960f11fb8aecdf5c0fbe9b5e65c850ffb76e1fd3ee2ec83feb0c0e"
+    },
+    {
+      "path": "goal-4/evidence/candidate-base-01/current-inventory.json",
+      "gitBlob": "a4e4a8f7c3c4257162f1b2180444a8ac4a7c2dda",
+      "bytes": 502540,
+      "sha256": "029002a3a03575bdf41128838a3825480d9bde3cc1348cdf37b458ef99f1b094"
+    },
+    {
+      "path": "goal-4/evidence/cend06-f02a/before/web/src/App.vue",
+      "gitBlob": "0059863d01fa9b20ea6bd3b2274930d7dd2364e5",
+      "bytes": 159410,
+      "sha256": "9f3f6c4596d9c8d4801e5ff0fecd1f9cda7a0842a13f3083ae4613d58e14e78f"
+    },
+    {
+      "path": "goal-4/evidence/cend06-f02a/before/web/src/OpeningOffering.vue",
+      "gitBlob": "f3e89ef9c7d7be9e4ae7ba813fea14bddd3794c4",
+      "bytes": 2902,
+      "sha256": "67663a49903252fdfb91751422a72a577b072cb9e7c84e357e06a1e8b2a96d47"
+    },
+    {
+      "path": "goal-4/evidence/cend06-f02b/before/web/src/App.vue",
+      "gitBlob": "f3fe00cfd3fd2e234fcb9f689df21ce32bba9a17",
+      "bytes": 159627,
+      "sha256": "ccc2a0ffe54211fbeff8ef0b5f4937ebc84e55a1910ad292109bb59a71b0b8d8"
+    },
+    {
+      "path": "goal-4/evidence/cend06-f02b/before/web/src/ScenePanel.vue",
+      "gitBlob": "bf8e472bd6c5542c5373aed9a8306e656a7bacfa",
+      "bytes": 9410,
+      "sha256": "3bbb2c3e8777d0d7a5713a3125a0fbbb78542c33f4a9faeaea103f781db34ea1"
+    },
+    {
+      "path": "goal-4/evidence/cend07-f02a/before/web/src/JadeEngraving.vue",
+      "gitBlob": "b189f92c81ccdeb85747b9acfb29eadfb812aabf",
+      "bytes": 6933,
+      "sha256": "f08b03fa397ec566a6ff51ebeb181c7a93e8e6e7974f0c7c6397bd36e7d6814b"
+    },
+    {
+      "path": "goal-4/evidence/cend07-f02a/before/web/src/JadeStudyScene.vue",
+      "gitBlob": "6c0af1da34de6f45e375bf7c699c571a4e57eca9",
+      "bytes": 5284,
+      "sha256": "750a2ced6b1f307e42b44417b430a0069af792c286e324474c412b5f731453d0"
+    },
+    {
+      "path": "goal-4/evidence/cend07-f02a/before/web/src/LearningPlanner.vue",
+      "gitBlob": "14d91cd79d5b0e8e3d73ac640d8dca74dcf9b54a",
+      "bytes": 18522,
+      "sha256": "ce4e014d1b0d692558541791da82a48f33208f5623103482e0ad1fb12395d58b"
+    },
+    {
+      "path": "goal-4/evidence/cend07-f02b/before/web/src/RelicAtelier.vue",
+      "gitBlob": "49265862ec5f8bb19198aa6b52558b03d7d4579e",
+      "bytes": 16052,
+      "sha256": "3e9260aed7c6050d220faf3ba8256d0b5f595f2a5418f732e4014d9cff64e5f2"
+    },
+    {
+      "path": "goal-4/evidence/cend07-f02c/before/web/src/SourcePlanner.vue",
+      "gitBlob": "1710d25ec3f0222731dd1e549a2460d3e280f1a3",
+      "bytes": 8460,
+      "sha256": "8dafd06a0827172d18518ef41d68de7293d0e381205d51d8533819cd51ca60ac"
+    },
+    {
+      "path": "goal-4/evidence/cend07-f02c/scoped-selector-diagnostic.json",
+      "gitBlob": "1228a491a1399c7423a21bb7e8cc1b95341b4e24",
+      "bytes": 684,
+      "sha256": "90d9c2f8782a4a7449a5a4ade7cc9dd983f600b38f3ef5e9d16b594947004775"
+    },
+    {
+      "path": "goal-4/evidence/cend07-f03/before/web/src/TravelPassage.vue",
+      "gitBlob": "9761c25a76a95324c1ef448f5d0be6c8af8076ee",
+      "bytes": 4209,
+      "sha256": "3a9c8b2e671e82e58d60135fa253fd1bb7174a39f9ac629d2957ff2873e53f71"
+    },
+    {
+      "path": "goal-4/evidence/cend07-f03/before/web/src/travel-passage.css",
+      "gitBlob": "2155fb67638510a074019c652782da08c261665f",
+      "bytes": 3714,
+      "sha256": "3d8e598154392104a1f2e197a675f03f1e50564decaa28abeed4ee721d506b46"
+    },
+    {
+      "path": "goal-4/evidence/cend07-f04/before/web/src/GoalBoard.vue",
+      "gitBlob": "c46e8313bbaa58a475392677d1e459f5d068a380",
+      "bytes": 8480,
+      "sha256": "f9c6164d41fca71125a3ae63b592a8cc3e1c036c6c0e8e47fc2547a1b721d70e"
+    },
+    {
+      "path": "goal-4/evidence/cend07-f04/before/web/src/PreparationPanel.vue",
+      "gitBlob": "92e3d9d6f29bab1d36b20b0c7848afbdd3547170",
+      "bytes": 8416,
+      "sha256": "cc8e14c4d44401a5c1173273b1d287511866a3ff5595c6c76bc118f866689d5c"
+    },
+    {
+      "path": "goal-4/evidence/cend08-f02/before/web/src/ConfigurationDialog.vue",
+      "gitBlob": "68c40f236c7e0f931b091434b13a1911fd0b0545",
+      "bytes": 5642,
+      "sha256": "74067880f132af079130acea336dfd559901cc088d09124f4a26b97d2504ee86"
+    },
+    {
+      "path": "goal-4/evidence/cend08-f03/before/web/src/SourceCommission.vue",
+      "gitBlob": "ff9f857c1d9a99aff8cd6527c44a1685a3104592",
+      "bytes": 10276,
+      "sha256": "9d385a237a24f51277fa8dae9dd4c7cb7e81c563923370066c89efeea0702314"
+    },
+    {
+      "path": "goal-4/evidence/cend08-f03/before/web/src/SourceObject.vue",
+      "gitBlob": "de85ca9335503314dc8108902bfcb48ca63aff29",
+      "bytes": 5404,
+      "sha256": "fd8b7bc3062c935e7fce82214ceb0aa09b5cc6df49e5bd38a3f710bc3e450752"
+    },
+    {
+      "path": "goal-4/evidence/cend08/before/web/src/JadeStudyScene.vue",
+      "gitBlob": "e76de76f4fbbf3ba12406a07684ce6374ab91ae8",
+      "bytes": 5241,
+      "sha256": "01f2ee3390241cd4edd6769fdc1a563a185c2b1f938e2290d7d4de7b50aee52f"
+    },
+    {
+      "path": "goal-4/evidence/cend08/before/web/src/LearningPlanner.vue",
+      "gitBlob": "cc1a9f5fb9adea8c60058640b3787160f95a62ca",
+      "bytes": 18498,
+      "sha256": "8ab818e7af414ad482854c504d9438db11e9bde66b11252a5ed8f163238fdcf3"
+    },
+    {
+      "path": "goal-4/evidence/cend08/review.md",
+      "gitBlob": "325d0f3033c6acdeb1916869f04f758454490f92",
+      "bytes": 7103,
+      "sha256": "54bde17e1060d9f58b198857e121ea30d49a2c6dfecc86ecac82f74919559fa3"
+    },
+    {
+      "path": "goal-4/evidence/cend09-source/before/web/src/SourceField.vue",
+      "gitBlob": "5cf4035f5e59aa6c868916cf9bd6bf94e10b3b01",
+      "bytes": 6683,
+      "sha256": "0f3a665944b28a27d52843c6bbe6e05925b3e9a5aaad8e859459fa69091c36be"
+    },
+    {
+      "path": "goal-4/evidence/cend10-source-goal/before/web/src/SourceSatchel.vue",
+      "gitBlob": "9f3abe242e20eae52d2c9e791556737191c9b8ba",
+      "bytes": 5930,
+      "sha256": "f28a144f928cd9358df91e600118fcb19aaef2667f9eb3cb198ccb15cc8521fd"
+    },
+    {
+      "path": "goal-4/evidence/cend11-mainline/before/web/src/App.vue",
+      "gitBlob": "91a9220e4ab5311fc4e5c8e83a5dc925aff7c8ae",
+      "bytes": 159629,
+      "sha256": "daeff1fbef8791ec6558150c189e41324c6f3db2ec1d3518b74899c605d8ff47"
+    },
+    {
+      "path": "goal-4/evidence/cend11-mainline/before/web/src/GameHud.vue",
+      "gitBlob": "7cc18d4ca170ca44f96cfc6625305b3ab8ca964d",
+      "bytes": 2332,
+      "sha256": "43cde88a2e545bce6d475735783bc6d66f487a7ffb8643220ac8297b63a529c5"
+    },
+    {
+      "path": "goal-4/evidence/cend13a/before/web/src/App.vue",
+      "gitBlob": "09b8760b6a22c8bd59f5025dd0f9758e1d112a8c",
+      "bytes": 159623,
+      "sha256": "e48a2a03faad3bb9e4061b4e7c088c122c8a29d12edfe007ebe3e5cb39f9730d"
+    },
+    {
+      "path": "goal-4/evidence/cend13a/render-equivalence.json",
+      "gitBlob": "c58dcc2c7fa088b9cf82427d79b97b192b74ac78",
+      "bytes": 790,
+      "sha256": "89666ed6be0df03c4e15aeb64b402cfd56e297b50a6c36aee5094a8aaa2b0296"
+    },
+    {
+      "path": "goal-4/evidence/cend13b/before/art/tools/art32_inventory.py",
+      "gitBlob": "f6b544e57ad4342a1cd4e1ca270676b69012dac5",
+      "bytes": 14154,
+      "sha256": "6d5867135bcc61d67ab77f43e5482352177a0531ee4632851e43d1ad4098c417"
+    },
+    {
+      "path": "goal-4/evidence/cend13b/before/art/tools/cend13a_stage_inventory.py",
+      "gitBlob": "01438de3e16f49fd63dc2c23f45c4195a9190d49",
+      "bytes": 13269,
+      "sha256": "07be55443ff79f83e840afd6d3824e34a11d9a32398c5cee140801dec505288d"
+    },
+    {
+      "path": "goal-4/evidence/cend13b/before/web/src/NarrativePanel.vue",
+      "gitBlob": "8464e71cea878c32c152759400e271229687c017",
+      "bytes": 6603,
+      "sha256": "e4166552f75d46d58cb6dd8f3968a030f0b0be80882390bf19b6b7e5001314a5"
+    },
+    {
+      "path": "goal-4/evidence/cend13b/before/web/src/ResponseTable.vue",
+      "gitBlob": "ccced459b76cd2fb072dd27ad3e8eaf5c1000a03",
+      "bytes": 5253,
+      "sha256": "8ef738214baf612dd4841080cd138aaf9043893f7679a1cf0f90dddddfacaa2a"
+    },
+    {
+      "path": "goal-4/evidence/cend13c/before/art/tools/cend13b_response_inventory.py",
+      "gitBlob": "559bbae13da2033a7a2a560c38696921c65dd743",
+      "bytes": 11966,
+      "sha256": "f81990b1d5e394fc3c4fcc723080764cadab4f415861ef9f7e940f395109d346"
+    },
+    {
+      "path": "goal-4/evidence/cend13c/before/art/tools/check_cend07_three_inventory.py",
+      "gitBlob": "f9c446a34c49a13e9e67272e5098798ee118a81b",
+      "bytes": 32611,
+      "sha256": "cbd349ada4c3f1c74e8a5e6bdbb70c4936281fc277c8d3781d49ccb0d2133e6d"
+    },
+    {
+      "path": "goal-4/evidence/cend13c/before/web/src/PreparationPanel.vue",
+      "gitBlob": "fdff3a7b066afa84eff20fab1924b08e152301e5",
+      "bytes": 8431,
+      "sha256": "76945687903fd9c01a510f76c9e7d65b7cb9ef60bb4949bad0035103dda78d95"
+    },
+    {
+      "path": "goal-4/evidence/cend13c/before/web/src/preparation-bench.css",
+      "gitBlob": "b0df65849842ecf76d28f10bdab36338e564832c",
+      "bytes": 4829,
+      "sha256": "a23ce1429d3ebde40d6bb78c7e57192e7ca1623cb4e45fa8d50605280c77fd22"
+    },
+    {
+      "path": "goal-4/evidence/cend13c/compression/functional.vue",
+      "gitBlob": "b2c1c7f85a50ef6838366964a0b770a5674a5aa9",
+      "bytes": 8480,
+      "sha256": "3c8f414822585d4027f46313fa755ebce1d2b0256daf606c0fe2cf1b126d17c7"
+    },
+    {
+      "path": "goal-4/evidence/cend13c/compression/proof.json",
+      "gitBlob": "8095e10c68c34e717a83e67c867b51cbdc2ac633",
+      "bytes": 1191,
+      "sha256": "89109fc85f839270c12226b0f2930f7bc571148af26e0aa833ed0442b624818a"
+    },
+    {
+      "path": "goal-4/evidence/cend13c/second-scope-review.json",
+      "gitBlob": "2b2e0284b2b4c5dd798d395a44867e34d05fc438",
+      "bytes": 26894,
+      "sha256": "3f3d702ab265edb43a1cb37e917d69da779b6edbb3205e51dafdc2c7dc18b650"
+    },
+    {
+      "path": "goal-4/evidence/check-art27-29/relationship-art-debt.jpg",
+      "gitBlob": "07bd9dde79a2de4b40bb24a8a0d5c7126cfafc58",
+      "bytes": 106986,
+      "sha256": "755e31a2d22ba4d78683519712385be4ac6b4a83be101fcb5ef884d5527be085"
+    },
+    {
+      "path": "goal-4/evidence/check-cend07-three/before/web/src/GoalPanel.vue",
+      "gitBlob": "4a93cdd7b495b5b6202ca435d1f6677a8f6bbed9",
+      "bytes": 18961,
+      "sha256": "417e46b09e64471b3bbc72d2ab6514b13af253b47409fb1af529a8077c63e0cd"
+    },
+    {
+      "path": "goal-4/evidence/check-cend07-three/before/web/src/PreparationMaterials.vue",
+      "gitBlob": "1c870d92c237b4d25680def13ec93a70d00b6c8b",
+      "bytes": 1582,
+      "sha256": "90d11d536fa62d004d51af35dd68a41bca6dbf56acaef53556de87d922326e62"
+    },
+    {
+      "path": "goal-4/evidence/check-cend07-three/before/web/src/PreparationPanel.vue",
+      "gitBlob": "c4f5d67d16ad60d0c25f12e5198e76d45edbe6f2",
+      "bytes": 8384,
+      "sha256": "9b7c90c115e661d14d5bf9a30f188ded9616b55afb548270ad4a39aa1c60520a"
+    },
+    {
+      "path": "goal-4/evidence/check-cend07-three/before/web/src/preparation-bench.css",
+      "gitBlob": "3c01e39b22f7359e96d0ba1f6fb43c20d1735fb6",
+      "bytes": 4732,
+      "sha256": "389800e4cc9b56d9e6519e23567b67641122177c7820a8af4173a6d2db294455"
+    },
+    {
+      "path": "goal-4/evidence/check-cend07/before/web/src/AdventurePlanner.vue",
+      "gitBlob": "7f42a7f174e895efb59257704d5e90b4e4a5fe7e",
+      "bytes": 12023,
+      "sha256": "19f1eacdc32f2bf7e03d76de4b344a26c5758f5435e62844fdc22d77edb5ac9f"
+    },
+    {
+      "path": "goal-4/evidence/check-cend07/before/web/src/AlchemyWorkshop.vue",
+      "gitBlob": "23cfa29c47c56142966088f4877bf22b1ab88eb3",
+      "bytes": 12158,
+      "sha256": "92c9475de4eef1d693fe78d5890e652d181056de7938bcbe8ce2f7c34f0dbf84"
+    },
+    {
+      "path": "goal-4/evidence/check-cend07/before/web/src/LearningPlanner.vue",
+      "gitBlob": "6e76d4d57cfcd9d289e6eb497b97dfd6dd49c63a",
+      "bytes": 18541,
+      "sha256": "e7667d343e251cccb822ccaf742a61ff605ffa7efdb841b4c518f65984424bd4"
+    },
+    {
+      "path": "goal-4/evidence/check-cend07/before/web/src/MarketPlanner.vue",
+      "gitBlob": "744becfe024d94433cd302149f7314bb76a323bd",
+      "bytes": 12494,
+      "sha256": "dd07092b9c8d858181eb5c7b65976532adc6e8efdbc8c3b3c8e5b66acfee4d72"
+    },
+    {
+      "path": "goal-4/evidence/check-cend07/before/web/src/RecoveryPlanner.vue",
+      "gitBlob": "8bb283678412e41c7196183589e11decfc9e7fe7",
+      "bytes": 8586,
+      "sha256": "91acc6f6ef5921ae04749c53d34a6870e840b2664d1a5bc1b48477d4bf7d37cc"
+    },
+    {
+      "path": "goal-4/evidence/check-cend07/before/web/src/SourcePlanner.vue",
+      "gitBlob": "58950734ad8c5e91c86c6744d25ea14b015243bc",
+      "bytes": 8403,
+      "sha256": "7b433cef8f834a2ae98ff63dbca9339c9d5012385b6cb69ca7ed21199255fac5"
+    },
+    {
+      "path": "goal-4/evidence/check-cend07/before/web/src/TrainingPlanner.vue",
+      "gitBlob": "69023cf4defebf2781940d212015ea4cc0a44e70",
+      "bytes": 7517,
+      "sha256": "aee9eeb8b91bea2a748bb84b5257a0dd601a134a24598d827fef548da5ce669f"
+    },
+    {
+      "path": "goal-4/evidence/check-cend07/before/web/src/activity-view.ts",
+      "gitBlob": "2c302aef95c2bb1b76f0236f5e9c0124e28dd27c",
+      "bytes": 4747,
+      "sha256": "020a7580936a2019a78e766cb3c1c3863666c48fe4e3707a6b60b8abd74cd5a3"
+    },
+    {
+      "path": "goal-4/evidence/check-cend13-abc/before/web/e2e/idle-route-support.ts",
+      "gitBlob": "4edf206d92a5f1a720c4f92279714c1579ef0300",
+      "bytes": 28058,
+      "sha256": "5113456696aac00759ec7d007a52e0493e8545a39f2d6a14f0de2ce79106615d"
+    },
+    {
+      "path": "goal-4/evidence/check-cend13-abc/before/web/e2e/trial-preparation.spec.ts",
+      "gitBlob": "96a7f5de74dfd7b6abe79303f1b679a175cba5ce",
+      "bytes": 11831,
+      "sha256": "37c7e49ff6d3508fc3be0f018df51196c4e8180accd5730e97ca64ec30fcf503"
+    },
+    {
+      "path": "goal-4/evidence/check-cend13-abc/before/web/journey-tests/idle-trial-reopen.spec.ts",
+      "gitBlob": "58e83e6ab0e6c6bd16c1486a5d0006de5d19b32b",
+      "bytes": 4946,
+      "sha256": "bd64aa32344754a45867dbbcf222af342cf3fadf1f4719830a854d9efb07ab8b"
+    },
+    {
+      "path": "goal-4/evidence/check-cend13-abc/normal-helper-insertion.json",
+      "gitBlob": "ab33ef3cfccf636b07ee5b6be3ff44bcd9fa6c04",
+      "bytes": 4897,
+      "sha256": "408f33cbd6b3df7d393253c4e3d43e31ab41466012d115785dec3426985d6e78"
+    },
+    {
+      "path": "goal-4/evidence/check-cend13-abc/normal-trial-insertion.json",
+      "gitBlob": "daf2655c2a59fcfabd70695637bf5eb2979a8893",
+      "bytes": 767,
+      "sha256": "61e76bf8c88109ec26fb4e7bcbaf70036db0a923da09703458ebdd4a08ef7398"
+    },
+    {
+      "path": "goal-4/evidence/check-uir33-01/LearningPlanner.before.vue",
+      "gitBlob": "6f139e3e81f0fe3220dda325ed75b6bfd5a68b25",
+      "bytes": 18541,
+      "sha256": "428d260152e9c292a55775ba8cbdbd49a2c290c9310ef1ed3ec8edb58ee0cad9"
+    },
+    {
+      "path": "goal-4/evidence/check-uir33-02/before/web/src/ActionFeedbackStage.vue",
+      "gitBlob": "27df03f8e61bc8d7a4dd0e32c72949b59faf32cf",
+      "bytes": 10909,
+      "sha256": "c0430cb6202624a1f4135556cfadfb17541fa38ca7d8bf29c8079080bc8ffcdb"
+    },
+    {
+      "path": "goal-4/evidence/check-uir33-02/before/web/src/TrainingActivity.vue",
+      "gitBlob": "3d6478d15d7b0fea69cece4b8cb6100bc7c50dc7",
+      "bytes": 7716,
+      "sha256": "cf52d3aa3d5063585ac52dd4b0eb1ff8afc46d088c911ed6b5939ce6601e544c"
+    },
+    {
+      "path": "goal-4/evidence/check-uir33-02/before/web/src/action-motion.css",
+      "gitBlob": "f3d4fd1414e04404b1d36f2f5f5b1ad4f4a85f0c",
+      "bytes": 11896,
+      "sha256": "b14bcc27fa59527b32e817a164ca7f546337f4520aa02f4cb7001895460bd495"
+    },
+    {
+      "path": "goal-4/evidence/check-uir34-02-04/before/MilestoneReview.vue",
+      "gitBlob": "1dc71978497b0b42fa75c31521ff477041a1b755",
+      "bytes": 5014,
+      "sha256": "20de4cb9497fab63f9a4b9e4265e116d5fd05c6f7fc22c7e114e3fca2d634354"
+    },
+    {
+      "path": "goal-4/evidence/check-uir35-01-02-cend05/before/web/src/ActionFeedbackStage.vue",
+      "gitBlob": "a506e937f4ad4973d97c7f7dfeba82cdfd274617",
+      "bytes": 11070,
+      "sha256": "627baf033129c973a3eec1f9902914b436f2ca37ae4b45f239ef02037f8dcad2"
+    },
+    {
+      "path": "goal-4/evidence/check-uir35-01-02-cend05/before/web/src/action-motion.css",
+      "gitBlob": "901dd405fc7d99dea9e2efc59bf07891cb77aaaf",
+      "bytes": 11588,
+      "sha256": "fa4dbd48ff59877a2de4ab60ff348aba77659c520f900f2ba2f0ca119096664a"
+    },
+    {
+      "path": "goal-4/evidence/check-uir35-01-02-cend05/dead-style-removal.json",
+      "gitBlob": "12b0a9f62b3986a65c682cf3efd7116d51851182",
+      "bytes": 934,
+      "sha256": "a7e0409fd9e8dc4a7109197c10283bf05eedbbc7ca192df967f52210b631c4f3"
+    },
+    {
+      "path": "goal-4/evidence/check-uir35-03-04-cend06/before/web/src/SourceSatchel.vue",
+      "gitBlob": "714b47ec7754d4ee6b3798c3fcb49a7e564e8d2b",
+      "bytes": 5817,
+      "sha256": "cd93826c381eb6877e073b9eba885b5505fe1e9745de451511ce8ceac65010c4"
+    },
+    {
+      "path": "goal-4/evidence/check-ux31-33/before/web/src/AlchemyWorkshop.vue",
+      "gitBlob": "0fe5cf4390fb10183b9801dd309a918fc77e39bd",
+      "bytes": 11982,
+      "sha256": "cff2e34bbfa34726fab08e763180e90b9401559dcf06f05142a50b8d5d36d803"
+    },
+    {
+      "path": "goal-4/evidence/uir33-01/before/web/src/App.vue",
+      "gitBlob": "5a7313f802f15cd7859e280b2ded3b93a2900f51",
+      "bytes": 159582,
+      "sha256": "8d1b128ef7e927f2df9c869d827030908fbef620962333a06a2969f2b39978fc"
+    },
+    {
+      "path": "goal-4/evidence/uir33-01/before/web/src/CultivationSite.vue",
+      "gitBlob": "1ff9110248540e77e5b342d0dc6fa66f9b9872df",
+      "bytes": 4224,
+      "sha256": "e142a23b35f435c73ca10a99332d41fdbb0baf5bfae4fbd46b2775841a2ac851"
+    },
+    {
+      "path": "goal-4/evidence/uir33-02/before/web/src/AdventurePlanner.vue",
+      "gitBlob": "38bc406abaa724f79f63c7a40abe17a87b830c58",
+      "bytes": 11742,
+      "sha256": "e4e8f93d86fd923464a62d3a21e851de88f6f96934d65c886e5190aaa3948a17"
+    },
+    {
+      "path": "goal-4/evidence/uir33-02/before/web/src/ExplorePanel.vue",
+      "gitBlob": "e6523f59c1afeece861925f2aa3ac0c527011b69",
+      "bytes": 11676,
+      "sha256": "1c2be3163e7238ba0376dc9b91415c4f911e0a3d3508061d97ed7255ded1a871"
+    },
+    {
+      "path": "goal-4/evidence/uir33-02/before/web/src/JourneyMap.vue",
+      "gitBlob": "291522327c57282686f3141510d07774e56b5efe",
+      "bytes": 3748,
+      "sha256": "aef00e927bf9c49430b3b89b5e5d9012431fad43adc9cd348845cc06203e5277"
+    },
+    {
+      "path": "goal-4/evidence/uir33-04/before/web/src/CultivationNotes.vue",
+      "gitBlob": "6349b07d8891f67e346827516363eb8d04a77665",
+      "bytes": 4508,
+      "sha256": "c064e668917663c1c353862402db79098ff68900e36e3b87eaf1f8431eaa4349"
+    },
+    {
+      "path": "goal-4/evidence/uir33-04/before/web/src/JadeStudyScene.vue",
+      "gitBlob": "e152dce49f128724143745f9eb50d90709090e47",
+      "bytes": 5181,
+      "sha256": "dda0b1d8b6dd0e87af53e6cd2a8992bae1486003e6608f8d116f51382df27e7d"
+    },
+    {
+      "path": "goal-4/evidence/uir33-04/before/web/src/LearningPlanner.vue",
+      "gitBlob": "d057106493f3e99cabb9adc69b6d5b297c304d8d",
+      "bytes": 18547,
+      "sha256": "53d96fb4089c2e4f6adb38e2521f25a50ca8b560229e3d6a654cf0dfcd05bb4c"
+    },
+    {
+      "path": "goal-4/evidence/uir33-05/before/web/src/main.ts",
+      "gitBlob": "176dcd167a0651785ed5e3299791657f972165da",
+      "bytes": 1566,
+      "sha256": "e985976803f0ff98cff52445b1300df7bf7471f34e4594fffc8d34ea327a81b6"
+    },
+    {
+      "path": "goal-4/evidence/uir33-06/before/web/e2e/art31-life-scroll.spec.ts",
+      "gitBlob": "e5ec7a4b9c41507556a26a5b7ce0fe9029792f11",
+      "bytes": 19274,
+      "sha256": "03b9949a5570859bc4ae6f6fa4c9c6e8eb7fad5ec2235333934dc754e44d542e"
+    },
+    {
+      "path": "goal-4/evidence/uir33-06/before/web/src/LifeCatalogue.vue",
+      "gitBlob": "e365ad009e0be641cbe502e769add375b5b52bad",
+      "bytes": 3988,
+      "sha256": "3e0577cf7e071e2aa5282371f30dca2a1d414c80b36b9e84fa3f5167d4398cec"
+    },
+    {
+      "path": "goal-4/evidence/uir33-06/before/web/src/story-pages.ts",
+      "gitBlob": "38b8272003746349c8c3a035ddb5b5fe3ace52c0",
+      "bytes": 5939,
+      "sha256": "f75cc6730dc6b949ce7344aa79e54e6b84ac6f31d30661659e6d300be4df0fb7"
+    },
+    {
+      "path": "goal-4/evidence/uir33-07/before/web/src/StageOutcome.vue",
+      "gitBlob": "8b069430f3d63f9be80aa9effb709441d78c3e78",
+      "bytes": 4221,
+      "sha256": "deb66c8e9e2e58ded008dd10cd26dfcbe51b9204c4fb65a57b1f4cc4a2fdeeaf"
+    },
+    {
+      "path": "goal-4/evidence/uir33-07/before/web/src/action-feedback.ts",
+      "gitBlob": "441397889a778823a392720e25d18b0871348e97",
+      "bytes": 11195,
+      "sha256": "e947bb62b1de54e51f172a2d412110ea662a01b599f0b97061e8c238f31a3606"
+    },
+    {
+      "path": "goal-4/evidence/uir33-07/before/web/src/presentation.ts",
+      "gitBlob": "665fdcacc0cd2f0fd8a96c8cf9dddd0239f0f316",
+      "bytes": 1486,
+      "sha256": "bca83aeae9d595d7b23882de8d54feb7f4912b31c19d7581adcc0d64da6b4649"
+    },
+    {
+      "path": "goal-4/evidence/uir33-08/before/web/src/AlchemyWorkshop.vue",
+      "gitBlob": "5e5d32150d4c7c90429272168a3c91244b1bddcb",
+      "bytes": 12054,
+      "sha256": "f81b5f9ada539eb9abd229875bd4e5987d6597bf29c713134de8a1ebb209e6f8"
+    },
+    {
+      "path": "goal-4/evidence/uir34-01/before/web/src/App.vue",
+      "gitBlob": "7e022e3c33bfbf617468018ce4a50a99294a6c59",
+      "bytes": 159464,
+      "sha256": "2549b27003e11cf12f44e2ba41a1053b2de996c3636110f277ac84babd1dd4fd"
+    },
+    {
+      "path": "goal-4/evidence/uir34-01/before/web/src/LifeCatalogue.vue",
+      "gitBlob": "68d99d2c59a2582b2fef7aec92a81ed58338c149",
+      "bytes": 4051,
+      "sha256": "a6f96b99c510280e78a261c9d16c728dc715fb74f6f06e2f9b3dd6330037a403"
+    },
+    {
+      "path": "goal-4/evidence/uir34-01/before/web/src/LifeScroll.vue",
+      "gitBlob": "5b32e94324e0644a15d986422adc41b6961cc235",
+      "bytes": 4215,
+      "sha256": "1130d9cadbe7d57c4afea5ba3a18bbe84db7a519f6ed0540000a71b3e6890788"
+    },
+    {
+      "path": "goal-4/evidence/uir34-02/before/web/src/MilestoneReview.vue",
+      "gitBlob": "8fdbcbbf0e91deeb53d20da314d4279f59c30692",
+      "bytes": 3724,
+      "sha256": "8c3dd9bb9d382f102f3204195ced86b19321399b427440533e01ab6a575e3698"
+    },
+    {
+      "path": "goal-4/evidence/uir34-02/before/web/src/idle-milestones.css",
+      "gitBlob": "15f12d89ae78a23959dacc83c03759853347766a",
+      "bytes": 2505,
+      "sha256": "4c902f46f3d7889f52409e22a9b3c22929a377b2e04e23d34521a6ba7e1db686"
+    },
+    {
+      "path": "goal-4/evidence/uir34-03/before/ConfigurationDialog.vue",
+      "gitBlob": "cfc9c63e52931a4edf776fa7b98a3a34ed93f81e",
+      "bytes": 5614,
+      "sha256": "cc50327d03b19836dc9e41df9ff0e36185e2f64b846d510b795b6aad671f8b52"
+    },
+    {
+      "path": "goal-4/evidence/uir34-04/before/CultivationOngoing.vue",
+      "gitBlob": "01d569c351cb4daf30e2e83b94a977608e13e758",
+      "bytes": 3275,
+      "sha256": "16a814b95344928cdf3b8eef6ab6ab0aca757bc86cd335c2446b869ca2cfcf85"
+    },
+    {
+      "path": "goal-4/evidence/uir34-04/before/OpeningOffering.vue",
+      "gitBlob": "baf052b9ab507f53335d551db03930f2cdd94aa8",
+      "bytes": 2911,
+      "sha256": "c523497e96fc105e69f77d2b41c28da79f399aa19f091ad6e02e9e016313f897"
+    },
+    {
+      "path": "goal-4/evidence/uir34-04/before/TrainingActivity.vue",
+      "gitBlob": "fb50a5799fec38fc48752862cdca18d9adfa5e01",
+      "bytes": 7743,
+      "sha256": "153c7621131e635df954f2467776c060ad90daf73d9c91ba82b0e2ed3e5e843a"
+    },
+    {
+      "path": "goal-4/evidence/uir34-05/before/web/src/App.vue",
+      "gitBlob": "32b64382be17b40dc71281fb94adeb5b8617d67f",
+      "bytes": 159427,
+      "sha256": "ecffa3d113dd0980f272b56e809c379d8fe87842f80aef7298db234dd3e97ec0"
+    },
+    {
+      "path": "goal-4/evidence/uir34-06/before/web/src/CharacterPanel.vue",
+      "gitBlob": "df8c113cbaea6df3ef522df71eb9f75e03461920",
+      "bytes": 6603,
+      "sha256": "f92981c82db646aee274be8113e395540708a7a8a8b08d6190effa151c0f586c"
+    },
+    {
+      "path": "goal-4/evidence/uir34-07/before/web/src/EncounterTable.vue",
+      "gitBlob": "990e936a4671c6637dcaefeb3decdb300fb5cfb6",
+      "bytes": 5468,
+      "sha256": "0c73263444112e4d6bc010201750dd836aaef36d03ee612868124afe8033ccf7"
+    },
+    {
+      "path": "goal-4/evidence/uir34-07/before/web/src/FateCatalogue.vue",
+      "gitBlob": "ebfadb4f3de838bc7cb2b1c1a5b2ed4531af4b98",
+      "bytes": 9627,
+      "sha256": "da3efbc6ebfd68d042a07ce3e89343299b94094ad3d2590f77005e61780763a2"
+    },
+    {
+      "path": "goal-4/evidence/uir35-01/before/web/e2e/battle-actors.spec.ts",
+      "gitBlob": "b90a4414ef06ee6e61db55648ef5837821d01d81",
+      "bytes": 64715,
+      "sha256": "b989f4ac9f7ab5310dbd007816927a03f49c7298f0d8a081d9165840a5ece416"
+    },
+    {
+      "path": "goal-4/evidence/uir35-01/before/web/e2e/check-matrix-keyboard.spec.ts",
+      "gitBlob": "4e67744084df39b83cd306333a1f9466fc1eaecf",
+      "bytes": 59537,
+      "sha256": "13361b1ccf13faf6efec339f82dd0ecabb4ec37c0ca15788578767b76b9fe4f2"
+    },
+    {
+      "path": "goal-4/evidence/uir35-01/before/web/e2e/matrix-ui-cancel.spec.ts",
+      "gitBlob": "da08046f0324d9cb36836e3865df234ac8c2d210",
+      "bytes": 28453,
+      "sha256": "1e9c6713b915f8699578fba1b8e2eea33b38e975bd090a7e3aa822e5b189feef"
+    },
+    {
+      "path": "goal-4/evidence/uir35-01/before/web/e2e/uir33-05-activity-detail.spec.ts",
+      "gitBlob": "cef49445db4fd0177abfb1ee12a5ba85ae4b0a98",
+      "bytes": 17598,
+      "sha256": "67be5f7817c0aa63160b99b68fc21cd9ebdbf44f604630b2eb8c5709b061acda"
+    },
+    {
+      "path": "goal-4/evidence/uir35-01/before/web/src/CultivationOngoing.vue",
+      "gitBlob": "c0a5c25b50da3d711b8ee0aa92a9144785229241",
+      "bytes": 3279,
+      "sha256": "f58baa4c24d8ed9908bc31cfad9f61a436813e0382bc68cbf40c7025c4f684b1"
+    },
+    {
+      "path": "goal-4/evidence/uir35-01/before/web/src/TrainingActivity.vue",
+      "gitBlob": "b4db951bc78b84722395aca61bc998e010943684",
+      "bytes": 7690,
+      "sha256": "4c753b882ce0d1fde7457c61453c64b00df90b8941356dc8a72abbbc06e32e70"
+    },
+    {
+      "path": "goal-4/evidence/uir35-02/before/web/src/App.vue",
+      "gitBlob": "698b27b4b3cfa953841ef44bb725ae1bdbd99acb",
+      "bytes": 159630,
+      "sha256": "5e6a59b75b7021914ab4bdd356ef6608ec3f391d3522c9ac6eb8272698e7146a"
+    },
+    {
+      "path": "goal-4/evidence/uir35-03/before/web/src/style.css",
+      "gitBlob": "ce3701036d49bef85599622584116fcfe84c5305",
+      "bytes": 16526,
+      "sha256": "5f1c1bdd58ff91debf24606c039780af729957b013a320332f2dc02c73d932a9"
+    },
+    {
+      "path": "goal-4/evidence/uir35-04/before/web/src/AdventurePlanner.vue",
+      "gitBlob": "2522e63d81e70ccdfc26990a179859fcc8e38a62",
+      "bytes": 12166,
+      "sha256": "aba45902b0f308011603edad8c839f25741ab875b17ac10cb481f01c5966dde7"
+    },
+    {
+      "path": "goal-4/evidence/uir35-04/before/web/src/BattleStrategy.vue",
+      "gitBlob": "a0d7aa662eb08cf2c649a33e3a97c08877eda8f5",
+      "bytes": 16586,
+      "sha256": "82ea2a3699c26c6e95b76540eeba0f0f30103de1d9e0822b516f864f11c7eda3"
+    },
+    {
+      "path": "goal-4/evidence/uir35-04/before/web/src/art02-journey.css",
+      "gitBlob": "a282360a2da24561b1e0db3ff85caa8d0e211a8b",
+      "bytes": 4541,
+      "sha256": "5dca76ca35a7516bd1b596722b3d5a0f572d81214d844636106bcbea1bf1ee87"
+    },
+    {
+      "path": "goal-4/evidence/ux27/App.vue.before.txt",
+      "gitBlob": "92f9ea8ee998013eed954eab5f2bb74dee03852d",
+      "bytes": 158735,
+      "sha256": "a0fe13157651faee105643b121108a102566a6b5aad50b4c37789e1ecc360fb6"
+    },
+    {
+      "path": "goal-4/evidence/ux27/EquipmentPanel.vue.before.txt",
+      "gitBlob": "b80f9937c5731badc2bb29d6ea542c8c3c3460ca",
+      "bytes": 4464,
+      "sha256": "31e8c9c3562fd53c1669601d6be90ab6fc3ace637513233fa75b5a92be06fc91"
+    },
+    {
+      "path": "goal-4/evidence/ux28/RecoveryPlanner.vue.before.txt",
+      "gitBlob": "b877354d7625d6a4b4932a437cfc751e8547a308",
+      "bytes": 8573,
+      "sha256": "478733b74bf51b209901a7e7328ea92269a77a30ab41c56c400ddd8b40ef78a9"
+    },
+    {
+      "path": "goal-4/evidence/ux29/RecoveryPlanner.vue.before.txt",
+      "gitBlob": "3bbd275920dd97ed87a6e46656cb9fbe57a91a10",
+      "bytes": 8567,
+      "sha256": "5de293edd038887f4f3fd5b8b0f88b71b9bf77af06c744d0731e61f9591183f2"
+    },
+    {
+      "path": "goal-4/evidence/ux29/RecoveryRitual.vue.before.txt",
+      "gitBlob": "0af5d1dffe7661db0f317a4baac46ec32fd91b20",
+      "bytes": 9452,
+      "sha256": "59f0187aa56a6ef240bc231df72a8851482c9f05c9c9d823618cbd34b1e96020"
+    },
+    {
+      "path": "goal-4/evidence/ux30/AlchemyWorkshop.vue.before.txt",
+      "gitBlob": "9c2cce9be5d00e48aa1f629cc4530a66e864f90b",
+      "bytes": 12200,
+      "sha256": "16875308ab453d462307500412532a3da500f54760cc87159ef96c1d63b9eaf1"
+    },
+    {
+      "path": "goal-4/evidence/ux30/App.vue.before.txt",
+      "gitBlob": "ef17f28f23008e0f5d3734468de65ee4dc083cc3",
+      "bytes": 159429,
+      "sha256": "ace7316243691e708ee80dac26aca866a9c28b7dbd8633cde11bf584a83ece71"
+    },
+    {
+      "path": "goal-4/evidence/ux30/CultivationSite.vue.before.txt",
+      "gitBlob": "90624f7f3e12fb4e94273de923a1c72a8289db93",
+      "bytes": 4259,
+      "sha256": "01d7e4e927694032e2639273e33729cf4914f924773941e10c6dbadc85aef173"
+    },
+    {
+      "path": "goal-4/evidence/ux30/RecoveryPlanner.vue.before.txt",
+      "gitBlob": "c1132af0349070e04ba9ce576879ad792a654e66",
+      "bytes": 8572,
+      "sha256": "13a08bcb6fc24f98a1ff07dad3ad1a803dbbd21ab2d2689611d87f4994f266ab"
+    },
+    {
+      "path": "goal-4/evidence/ux30/RecoveryRitual.vue.before.txt",
+      "gitBlob": "3dc64c96bd7adba63cb6d7418fbbafbc3362936b",
+      "bytes": 9486,
+      "sha256": "97fe60181eb14dc42a39f4001753744af3cab69a9082c2ef86d2048116a9a068"
+    },
+    {
+      "path": "goal-4/evidence/ux30/TrainingPlanner.vue.before.txt",
+      "gitBlob": "49aff583c924712b5767e6412cc821e690320d60",
+      "bytes": 7494,
+      "sha256": "9aace9a3ca49d1397f40e980e71c37da69606ecf971bae062a56f85c7bd14594"
+    },
+    {
+      "path": "goal-4/evidence/ux31/JadeStudyScene.vue.before.txt",
+      "gitBlob": "9a6f48798e8416795cd207fe61c68d90449deb43",
+      "bytes": 5253,
+      "sha256": "434b16c05e5e6870cb67dc1f6611a81637864b0e20463c8bfd93e4c395d675ed"
+    },
+    {
+      "path": "goal-4/evidence/ux31/LearningPlanner.vue.before.txt",
+      "gitBlob": "683bd171f48c65e385b4c7ac7e2a68a30a876195",
+      "bytes": 18613,
+      "sha256": "916581594274b568bf22fea242edacf375c7cf53a96ec4ca3766adad58db3d1b"
+    },
+    {
+      "path": "goal-4/evidence/ux31/MarketCounter.vue.before.txt",
+      "gitBlob": "a5f57969e629ba7a0ccc36d4f617cd8650efb8e9",
+      "bytes": 10044,
+      "sha256": "c8849c784dd1d864a5787658e941b6fbe10305ee476e5ad8ffc2daa687478b3e"
+    },
+    {
+      "path": "goal-4/evidence/ux31/RecoveryPlanner.vue.before.txt",
+      "gitBlob": "a49db71fca855c7f12f8c11f6d1828cfc6c405eb",
+      "bytes": 8554,
+      "sha256": "cfebbad097fcd2d1913fc510fae511e665aa0403c6e3fd0acbbeed2ac0d4ab67"
+    },
+    {
+      "path": "goal-4/evidence/ux31/RelicAtelier.vue.before.txt",
+      "gitBlob": "480473385b776d3a2267eb8ad54554bef3a502e1",
+      "bytes": 16083,
+      "sha256": "9b2b585fc38b989cce519cd91c67e3108ead867a92aa502182af80b9fa5eab67"
+    },
+    {
+      "path": "goal-4/evidence/ux31/art11-inventory.css.before.txt",
+      "gitBlob": "26da09127c9766d921a23c2e9439ce3ab583dc1d",
+      "bytes": 12073,
+      "sha256": "62b4382c926596b800f24e7483931367aa28aa0d1a235d78280269862c061461"
+    },
+    {
+      "path": "goal-4/evidence/ux32/MarketCounter.vue.before.txt",
+      "gitBlob": "eab000a5f14c20cfc4c8800d2988016286457457",
+      "bytes": 10084,
+      "sha256": "366fec4997cf9406d40ae43dcd21fdc0e66740370fc29a570d7422aaabbc432e"
+    },
+    {
+      "path": "goal-4/evidence/ux32/MarketPlanner.vue.before.txt",
+      "gitBlob": "a80f74a70beef4dc2b59e823bbc71389dbf6226e",
+      "bytes": 12464,
+      "sha256": "133ca11bcb8b8c283b3138cc88add796fdc22f507781869e27fb2025b379c760"
+    },
+    {
+      "path": "goal-4/evidence/ux33/AlchemyWorkshop.vue.before.txt",
+      "gitBlob": "f5b37e3cfd7a4c75da0e8d132d3e304ebaa23228",
+      "bytes": 12065,
+      "sha256": "151e4af4a995fd21c175adda186755ee35fce811913b994a3d5f57e9e3d1f95a"
+    },
+    {
+      "path": "goal-4/evidence/ux33/App.vue.before.txt",
+      "gitBlob": "a94f2800cda1ef7cf0c335f54466a00764aff2ea",
+      "bytes": 159508,
+      "sha256": "8487968f775888aed0529e5db8a4a64bb679ff42c93d5e600137b206e6d2ba5e"
+    },
+    {
+      "path": "goal-4/evidence/ux33/JadeStudyScene.vue.before.txt",
+      "gitBlob": "e3ab4dc60d2aba6589de56c621635bddd3ea64d4",
+      "bytes": 5225,
+      "sha256": "10856e9645c1e7944da5ef0d98951a6a3d4a282dedd979863f6e9b2985fb29b9"
+    },
+    {
+      "path": "goal-4/evidence/ux33/LearningPlanner.vue.before.txt",
+      "gitBlob": "9f5518b033856a897372f832f321b7f207c3b8bc",
+      "bytes": 18625,
+      "sha256": "a9202d043c1ba1875a9c7706b7c80bf071667afd966081e7ac203b57c5763a78"
+    },
+    {
+      "path": "goal-4/evidence/ux33/MarketCounter.vue.before.txt",
+      "gitBlob": "569c1ea81b2e1b7a1a80baa125c19858ab54fa21",
+      "bytes": 10062,
+      "sha256": "bcde3e3c643a29868995d52a197e6e1553b37745771866bd9e3a69b04f0d780e"
+    },
+    {
+      "path": "goal-4/evidence/ux33/MarketPlanner.vue.before.txt",
+      "gitBlob": "6e15e81d85a26dff381f1d450e3fd0552db2a328",
+      "bytes": 12469,
+      "sha256": "e015c642208184c806464b976f450b3dcca74c6d78c17db42312d7ba7a26b588"
+    },
+    {
+      "path": "goal-4/evidence/ux33/RecoveryPlanner.vue.before.txt",
+      "gitBlob": "cfb44727dabc5840b1a0587ae448cd64f5ebfe27",
+      "bytes": 8552,
+      "sha256": "3bce24833d9cbf3ecc3d0733520ff4d9e6fafc869ec24d6d526ba33aaa61cb1b"
+    },
+    {
+      "path": "goal-4/evidence/ux33/RecoveryRitual.vue.before.txt",
+      "gitBlob": "bbbe9c8dab5cc4dca08d66b021c0b6445da65ff0",
+      "bytes": 9542,
+      "sha256": "275effb2cf2c9069c4f0ac87bde0cd367ea5b161b28b346b6113265a42f2b760"
+    },
+    {
+      "path": "goal-4/evidence/ux33/RelicAtelier.vue.before.txt",
+      "gitBlob": "391c6a47e8614dc2d435dfe8d49c47ee71002ac6",
+      "bytes": 16108,
+      "sha256": "10f5c8a995fd12da9cc92d0cecbd19281ec44319c6c8ca17c498f6dde629f96e"
+    },
+    {
+      "path": "goal-4/evidence/ux33/SourceObject.vue.before.txt",
+      "gitBlob": "c1cd7c4361b01af5f1c6a4fef9b5879e49947d62",
+      "bytes": 5413,
+      "sha256": "31adfb2ba5ff140f0b4f438a7b050f3842ba76c0730f9e2dc4df9fec228fa413"
+    },
+    {
+      "path": "goal-4/evidence/ux33/SourcePlanner.vue.before.txt",
+      "gitBlob": "e7ab949076ab5ff5e3f1d1249c935b5922e5c735",
+      "bytes": 8338,
+      "sha256": "c4286f9bbfeac6a1a757ad2aafc0a8e41ee14da14b7212cf23b3a6fb9b34fa49"
+    },
+    {
+      "path": "goal-4/evidence/ux33/StageOutcome.vue.before.txt",
+      "gitBlob": "3638ae976614e73d0c2eb31986e77f5f74518164",
+      "bytes": 4260,
+      "sha256": "e93379b43cd3c66bd6bbd3bcc34dc198d97dd023367fd1c6073a92a3eaa6133d"
+    },
+    {
+      "path": "goal-4/evidence/ux33/TrainingActivity.vue.before.txt",
+      "gitBlob": "a8c2c16220094d463a4be8c67735aed87f02c560",
+      "bytes": 7573,
+      "sha256": "5d9d38b60aed8e2cbcb151dd99046dcdc420caff6f844ae679cd3888896e5565"
+    },
+    {
+      "path": "goal-4/evidence/ux33/activity-view.ts.before.txt",
+      "gitBlob": "160e269032040a7c83c16e2730c762b1bb07b893",
+      "bytes": 3891,
+      "sha256": "8d08ccebf604e2e1d0285045a30bce54b86eaf71e80d1a31529fa8a46e52ace9"
+    },
+    {
+      "path": "goal-4/input.md",
+      "gitBlob": "dee67c601448cfd09650bd154decca08dfebb487",
+      "bytes": 708,
+      "sha256": "8efb51bb6afcb4bca1a19d42353decfaab532f4bf49a4f161af248deb6c09647"
+    },
+    {
+      "path": "goal-4/research/art04-sources.json",
+      "gitBlob": "52f3627d3a844377ea11d0992cf9d71cb14f7b57",
+      "bytes": 2842,
+      "sha256": "720dab53c996cd3d49d276c2e8bfe4767cbbe757e574404b120da38f9df976e1"
+    },
+    {
+      "path": "goal-4/research/art05-sources.json",
+      "gitBlob": "ce388a496881ca075a5f5927a7e02ab8cef90985",
+      "bytes": 4248,
+      "sha256": "c9e93dafac5ddc252e4504e690dd1381980e2e0ff52c72e2f3fa6e6c5ef8f1a6"
+    },
+    {
+      "path": "goal-4/research/art06-sources.json",
+      "gitBlob": "33c21ad3e54716383eb96ba8529b98dc08c0e6b0",
+      "bytes": 826,
+      "sha256": "1cd92c6c00c1dbbf497e4036cf7f6666bbe390d3eddc38742d454e23ff07db46"
+    },
+    {
+      "path": "goal-4/research/art10-object-sources.json",
+      "gitBlob": "34eb1c83b59f4701cda2f1be14d0fd7f7b5acb5a",
+      "bytes": 2282,
+      "sha256": "badbeecf575ab423637ba3fc7a846674edaf300647825b700ce31b70339d6b4c"
+    },
+    {
+      "path": "goal-4/research/art11-object-sources.json",
+      "gitBlob": "1b8338be3bd4465f8f62d7bbccd0148a53b5eb7f",
+      "bytes": 1247,
+      "sha256": "84d084156f20f1eee8d4c32f4e3ef2e873827127f0bec7fac6f4309f806b1f23"
+    },
+    {
+      "path": "goal-4/research/art12-narrative-sources.json",
+      "gitBlob": "77bc3c78c21111b3a9794f9075820d2aaa7ca94c",
+      "bytes": 999,
+      "sha256": "a30ddeddfe457de0be58a95d60fc1a810d7c7534feb32859e618bbe8992cb916"
+    },
+    {
+      "path": "goal-4/research/art15-design-sources.json",
+      "gitBlob": "a534eac1dbf6857fd2d24900ad31941d2f17668a",
+      "bytes": 718,
+      "sha256": "302986e93c31b0009cd2f5cae7ea1bdd0b4e626b2688d6db401c36cb4313cb5b"
+    },
+    {
+      "path": "goal-4/research/art16-design-sources.json",
+      "gitBlob": "4bbd8665a65ee91fd46bccb36c3bfb42d2185f38",
+      "bytes": 808,
+      "sha256": "5d69f9c1fc035792cb5436c36fcdebdb9edf5448841a3670a414ee158de385c7"
+    },
+    {
+      "path": "goal-4/research/art17-design-sources.json",
+      "gitBlob": "89efb65b2c167eaff7ba6b3ecbe772acbb6120dd",
+      "bytes": 1139,
+      "sha256": "c69c6d8874e99b8e3d650f99045718389408cac8e4c7a8d44b08296e4390fe10"
+    },
+    {
+      "path": "goal-4/research/art18-dialog-sources.json",
+      "gitBlob": "c59ab4ced42e8aa6ed282e2b38c02243e6d280a1",
+      "bytes": 831,
+      "sha256": "7dddd8dbae2f7d417e33ec3ba233c35dfe5eba968767fd61932f0ca8479fc251"
+    },
+    {
+      "path": "goal-4/research/art24-design-sources.json",
+      "gitBlob": "a5bc2ce356cec21703a173c990a3214dd277a6bf",
+      "bytes": 1047,
+      "sha256": "444e2a84f481d5214b11433f88d8b078a2d48fc368afc331dc2831d5b9cb29bd"
+    },
+    {
+      "path": "goal-4/research/art25-design-sources.json",
+      "gitBlob": "ad4e394260e4b675a08574bf3e4b66b2c3e38015",
+      "bytes": 736,
+      "sha256": "86abb281082da036c4e167fba0b91019e939c27f9250ad0769238d85f91910af"
+    },
+    {
+      "path": "goal-4/research/art26-design-sources.json",
+      "gitBlob": "4dfb202611921cbbaacd6fb7119cd6226b0e070f",
+      "bytes": 770,
+      "sha256": "41a17c0589c751c5af62169077e96edb571a40937f6dd20cf092c8002c58bf33"
+    },
+    {
+      "path": "goal-4/research/art27-design-sources.json",
+      "gitBlob": "eb5d652dd021bbf49ccc45e358b1308db659344e",
+      "bytes": 1227,
+      "sha256": "d2ec21de5139742929952400b17687fab4e563c114d145e8a1ab9c468cb581b1"
+    },
+    {
+      "path": "goal-4/research/art28-design-sources.json",
+      "gitBlob": "7b718ee789e54f8ad8309f8c961d1082fdd17466",
+      "bytes": 925,
+      "sha256": "4afd614185e85efa6fb6704ce698e127574ac3a3dd7f29f704df9acfc3637c4b"
+    },
+    {
+      "path": "goal-4/research/art29-design-sources.json",
+      "gitBlob": "6249aa31b45c75fe52e3dc114c79dc914556b41b",
+      "bytes": 923,
+      "sha256": "b2c44b8e9df775c1f770f4ba31f147050340fbbc248951bdee26d50be070022c"
+    },
+    {
+      "path": "goal-4/research/art30-design-sources.json",
+      "gitBlob": "8451a4d2b8386dcab2934a2857c14344bb6bbc88",
+      "bytes": 1333,
+      "sha256": "568f13a804994fafa5963f08ddd8a32f1736ccc0cbd01b7c099819809b6c391d"
+    },
+    {
+      "path": "goal-4/research/art31-design-sources.json",
+      "gitBlob": "1e99c9840c5abba1ada6c7a5dfe076c0a1369c94",
+      "bytes": 1702,
+      "sha256": "119feced8882842026d15e394ca2871149cd63f36d055cbc0874aa8ebf1b09a3"
+    },
+    {
+      "path": "goal-4/research/art32-design-sources.json",
+      "gitBlob": "11e158f41203662c6e5265505511f4192632f358",
+      "bytes": 1304,
+      "sha256": "8d73309ccd14160fcb0343a922dd595aab3a0d833081e04d5c4366812b713996"
+    },
+    {
+      "path": "goal-4/research/art33-sources.json",
+      "gitBlob": "5c18273fa8376698a43285daf280d8a6454ebcdf",
+      "bytes": 793,
+      "sha256": "46dd34631fc803d8bd3f898f85e566473831623424aee1afd59751071a5ec182"
+    },
+    {
+      "path": "goal-4/research/art34-design-sources.json",
+      "gitBlob": "3a6228f57da7adae5c323e9f3509cf86aaadb0fc",
+      "bytes": 1882,
+      "sha256": "b5ed6eca54fbf0af90429b7c822d98a4b5bdf354031bbde08e82bd9b6874e9b9"
+    },
+    {
+      "path": "goal-4/research/art35-sources.json",
+      "gitBlob": "9f272708ab6ba528e4d0a789cad0cf3e6cc49a37",
+      "bytes": 747,
+      "sha256": "96d2654e71abf97063d2d8d0523b192a31e57a3f9c9bf354d99438d8259a06de"
+    },
+    {
+      "path": "goal-4/research/cend06-f02a-sources.json",
+      "gitBlob": "0a81f0db3d116e582372a9b39676c4637feddbec",
+      "bytes": 719,
+      "sha256": "c7a3fab1cf2c989643808883c04b85b114cab8d7f62cdfb0c2eceac0b5224d7b"
+    },
+    {
+      "path": "goal-4/research/cend06-f02b-sources.json",
+      "gitBlob": "0fec9f3768c47b9822245116a878c367601a29da",
+      "bytes": 821,
+      "sha256": "29cb1070066a279d0ceb524da27b29376e59c47127194a4dfa4b8e94af120cc0"
+    },
+    {
+      "path": "goal-4/research/cend07-f02a-sources.json",
+      "gitBlob": "17d5dc1c756c0b7c09aabc2f84cba54cf6f8a638",
+      "bytes": 815,
+      "sha256": "7c8c62b8afc5f937ffd350fe2c3d859f46efeed381854768d603760e724587e3"
+    },
+    {
+      "path": "goal-4/research/cend07-f02b-sources.json",
+      "gitBlob": "aedec5aefaf817b4e5d6e5eee04fa4a95d4829b1",
+      "bytes": 890,
+      "sha256": "b4de024d296cba0d17540d8ea6e13a6656e193ce93c6384351ebe814e744469a"
+    },
+    {
+      "path": "goal-4/research/cend07-f02c-sources.json",
+      "gitBlob": "ee524b08cdabc7334d86ce52c45074c76958bbd3",
+      "bytes": 816,
+      "sha256": "275ee4d5bd43474677e4b1a6d0afc697527deef65f33d54cd03d3c605a826d5d"
+    },
+    {
+      "path": "goal-4/research/cend07-f03-sources.json",
+      "gitBlob": "6702fcef5cb5249ae10e24cb7bea7f2c90ffc140",
+      "bytes": 1330,
+      "sha256": "89084926986788217a381b592d2ad7503d0e3f2359e273a106b3298fc9194d92"
+    },
+    {
+      "path": "goal-4/research/cend07-f04-sources.json",
+      "gitBlob": "ca0cc64a7ac801e0a5153094ededaa7da1d51368",
+      "bytes": 1105,
+      "sha256": "8bb7d4325e7633f40129ba85f1233cde3a2aabce9c07a1e39d85d2f45c2da812"
+    },
+    {
+      "path": "goal-4/research/cend08-f02-sources.json",
+      "gitBlob": "6935266f20ebe0e76eeb1d636d0a852d269a4504",
+      "bytes": 596,
+      "sha256": "a02adda97071a71ecba7f79a9bf1eddee352b7268c6473068cfe00fa1781cc18"
+    },
+    {
+      "path": "goal-4/research/cend08-f03-sources.json",
+      "gitBlob": "0c3b7959a460bb1ef3170396d8e8c48390d43d9f",
+      "bytes": 829,
+      "sha256": "b37e8b85c751ac84701b303b4156a0b7465d7eb8c481854323e82a2ac3bc4158"
+    },
+    {
+      "path": "goal-4/research/cend09-source-sources.json",
+      "gitBlob": "d33e5bf6330a0652e18b0018df97083dcb628c8c",
+      "bytes": 664,
+      "sha256": "466ac020e0336f7cda7648c0e8d4cf133828fcc3330997359301a92537cf2205"
+    },
+    {
+      "path": "goal-4/research/cend10-source-goal-sources.json",
+      "gitBlob": "f2584f1d3d91826f1739900b0d2149e6ff4c0f62",
+      "bytes": 640,
+      "sha256": "d4f769903a660f890be67563c3767ee8168b023d7803cd1454704e171aebb6f3"
+    },
+    {
+      "path": "goal-4/research/cend11-mainline-sources.json",
+      "gitBlob": "5927464aa4309648220c6fc496b8a01c31c37da5",
+      "bytes": 638,
+      "sha256": "0ae0a43ba1d08886eb6e81c117323b04484fa2038e8193cd4685ea27449b05e8"
+    },
+    {
+      "path": "goal-4/research/cend13a-sources.json",
+      "gitBlob": "525c746afab700d1468617dadb87d06b36d2b925",
+      "bytes": 694,
+      "sha256": "402dedfa6b5679ee246300cf7b3631e6d8d1319527c448072510b5e15f027592"
+    },
+    {
+      "path": "goal-4/research/cend13b-sources.json",
+      "gitBlob": "43029eb3ea33df2598c8ef2b5fe0503ad4dc4b8f",
+      "bytes": 1466,
+      "sha256": "139b0901c1543e3853d63e1dd3755cf4832d35a0f5737ad8a326af2b4cd4c517"
+    },
+    {
+      "path": "goal-4/research/cend13c-sources.json",
+      "gitBlob": "89bc8136cd460afd5e3fa2fed545f3a09f50101b",
+      "bytes": 1042,
+      "sha256": "506290051dcea65e9393f7d05a2d252f6ea73aa381f06820527285d0f2887fb8"
+    },
+    {
+      "path": "goal-4/research/check-cend07-sources.json",
+      "gitBlob": "2d192b8fe17e641e7656975f714e09db362f0f82",
+      "bytes": 686,
+      "sha256": "b635e355cb3750df6932459d4da4a6ccc6e628a855e869f9da1e4deb94332057"
+    },
+    {
+      "path": "goal-4/research/check-cend07-three-sources.json",
+      "gitBlob": "80baf58c07f346887bcc451a4f95f53ec3fe045d",
+      "bytes": 1012,
+      "sha256": "594d75e83b53a26b4a1e975082ae20b98195a47f5a6ff8f53450933b5e3c0443"
+    },
+    {
+      "path": "goal-4/research/check-matrix-01-sources.json",
+      "gitBlob": "9347e0b0da809c3a1b003d98f49ca03abf55bd20",
+      "bytes": 3068,
+      "sha256": "565a91947fb53c3c0e0adefe7b1878ee4b1bf7b08576ba72dcf4c17201926117"
+    },
+    {
+      "path": "goal-4/research/check-ux31-33-sources.json",
+      "gitBlob": "29367f64f3d3dda0fabe820af5bca17bbaf08a42",
+      "bytes": 892,
+      "sha256": "95ecd80680c116df1fff4a08afcc513f729212c62c1b2ab9cb48fdb6e8607d90"
+    },
+    {
+      "path": "goal-4/research/m03-design-sources.json",
+      "gitBlob": "02bf8cb001961dadb32eb7ef030d48787ddde274",
+      "bytes": 1234,
+      "sha256": "1d701640d02631761c70efc905f02666db99b679b1b4c46c77f4b0caf5f32a92"
+    },
+    {
+      "path": "goal-4/research/ta07-design-sources.json",
+      "gitBlob": "84069d00da8bea4f2aa76855800d57e130782148",
+      "bytes": 1833,
+      "sha256": "2074ce3c19a376ef93808e929ff355969523e7d5aead60bbe15eb134828b7755"
+    },
+    {
+      "path": "goal-4/research/ta08-design-sources.json",
+      "gitBlob": "a43b80f650e4b6910078e0667c6f8f44a8e7e83f",
+      "bytes": 2275,
+      "sha256": "fb47b4e20a8a9e972d016c3cd0e7310b5f4e95121eb539b9f315652a1345713a"
+    },
+    {
+      "path": "goal-4/research/ta09-design-sources.json",
+      "gitBlob": "2e4a2ee3ace36655621825432fb50b04c7cd63dd",
+      "bytes": 1460,
+      "sha256": "8fda4e712ec53141a59fec2294812e637dc30b5a6593bc83b61f341814d6a138"
+    },
+    {
+      "path": "goal-4/research/u8-b-economy-sources.json",
+      "gitBlob": "c0a60c08545636b6780869c4f9664b1ebb1b5723",
+      "bytes": 1657,
+      "sha256": "515f2a57923326f79d65cec33b4e85fd537e5fe35196a38138a461807359c690"
+    },
+    {
+      "path": "goal-4/research/u8-c-loading-sources.json",
+      "gitBlob": "e31a3750b8f7f6b4bec071ac2283a9ef2a2b6ed3",
+      "bytes": 982,
+      "sha256": "4679d0b8f4627045dce2986abb044a98fc46f653436adec3d3f8092e9e83e2e7"
+    },
+    {
+      "path": "goal-4/research/uir33-02-sources.json",
+      "gitBlob": "50bcc743c2cd1a6b907303abe75e1aac100f0e4e",
+      "bytes": 295,
+      "sha256": "2299a5441a46e7ac150d87afdbfe73af36e714e152540dcc194e850e5a90925a"
+    },
+    {
+      "path": "goal-4/research/uir33-04-sources.json",
+      "gitBlob": "183f710f4041b2f33d71b98fc7248e2c3752612a",
+      "bytes": 260,
+      "sha256": "fa5977aa3a5f8b115ff5640dc7fbb1873e8e4a5508b6d98471d0dddc844fbb9c"
+    },
+    {
+      "path": "goal-4/research/uir33-05-sources.json",
+      "gitBlob": "53d7380ae5fb1750c584f5a7c8d6979bca8df9f3",
+      "bytes": 683,
+      "sha256": "2bdb468d841fbb6c14c123fe2149fbbc137b76fe2873166e1b78055495f73504"
+    },
+    {
+      "path": "goal-4/research/uir33-06-sources.json",
+      "gitBlob": "dae721d98d90863dba572a48601b41f6ec8ea5fd",
+      "bytes": 768,
+      "sha256": "cde704ea833be55129e06d19b33c2183c93a99b8f995331e31fcfe39a1c3dfc3"
+    },
+    {
+      "path": "goal-4/research/uir33-08-sources.json",
+      "gitBlob": "ea502eeae1042bd62eb41a6892caa924a9a780c0",
+      "bytes": 530,
+      "sha256": "21ab3f55084a407dbfd252839980c0221fd1de5a13b45b75212663664a1ce66a"
+    },
+    {
+      "path": "goal-4/research/uir35-03-sources.json",
+      "gitBlob": "5639b13c12d073e6664aed89c353e52fb0564fc1",
+      "bytes": 651,
+      "sha256": "a89ef7ea26c1a1ad57d6b9e9904d3a9d2e6276574546c3ba4169e306e7ae9ae3"
+    },
+    {
+      "path": "goal-4/research/uir35-04-sources.json",
+      "gitBlob": "b8f6873fe31e574503f43f8f466f17821e1b37f7",
+      "bytes": 665,
+      "sha256": "0a29766d6d618ab2c681e850d89025f1683a3e110b0ac3b4a6d067daa268bf59"
+    },
+    {
+      "path": "goal-4/research/ux31-readability-sources.json",
+      "gitBlob": "5ee8de7da8398461a19ca42adee23d2d577dc281",
+      "bytes": 615,
+      "sha256": "29ee7dbd85bf7c3dfb6de76e92b80fad2d26998c6085798d9a5ab3ab7d6b77b6"
+    },
+    {
+      "path": "goal-4/research/ux32-market-clarity-sources.json",
+      "gitBlob": "7ead1494cc95fc4a340eaf7ee3d23acf37d5a41e",
+      "bytes": 849,
+      "sha256": "7cae31dcad16d9da076c8dc0dbc8e73d4f4d05eb43a402f2e8ee3d860ca289b2"
+    },
+    {
+      "path": "goal-4/research/ux33-status-clarity-sources.json",
+      "gitBlob": "06cc9c36b09bcffc179025356c3d1905105b8bf8",
+      "bytes": 822,
+      "sha256": "c16081c45b40f64239f7498c08085a382e4df570c03e2b6474d1b5d0be830af2"
+    }
+  ]
+}

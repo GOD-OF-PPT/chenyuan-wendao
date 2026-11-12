@@ -1,3 +1,4 @@
+from fixture_links import external_file_link
 from ux31_inventory import prior_ux31_bytes
 import hashlib, json, shutil, tempfile, unittest
 from pathlib import Path
@@ -123,5 +124,5 @@ class PrimaryCopyTests(unittest.TestCase):
     def test_symlink_cannot_substitute_original(self):
         p = self.root / FACTS['App.vue']['baseline']
         p.unlink()
-        p.symlink_to(ROOT / FACTS['App.vue']['baseline'])
-        self.reject()
+        with external_file_link(p,ROOT / FACTS['App.vue']['baseline'],self.root):
+            self.reject()

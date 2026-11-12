@@ -5,8 +5,10 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+from legacy_fixtures import prepare
 
 root = Path(__file__).resolve().parents[1]
+prepare(root)
 required = ["01_设计规格.md", "02_实施计划.md", "03_数据与状态契约.md", "04_验收清单.md", "05_成长与数值系统修订.md"]
 for name in required:
     p = root / 'docs/v0.3' / name

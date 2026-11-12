@@ -2,10 +2,35 @@ import test,{before,after} from 'node:test';
 import assert from 'node:assert/strict';import fs from 'node:fs';import os from 'node:os';import path from 'node:path';import http from 'node:http';import {spawn} from 'node:child_process';import {fileURLToPath} from 'node:url';import {gunzipSync} from 'node:zlib';
 const root=fileURLToPath(new URL('../',import.meta.url)),temporary=fs.mkdtempSync(path.join(os.tmpdir(),'chenyuan-http-')),web=path.join(temporary,'web');fs.mkdirSync(web);fs.mkdirSync(path.join(web,'assets'));fs.mkdirSync(path.join(web,'empty'));
 const script=Buffer.from('export const clarity = "真实周期与保存";\n'.repeat(4096)),html=Buffer.from('<html><body>'+('问道 '.repeat(1024))+'</body></html>'),picture=Buffer.from([82,73,70,70,0,0,0,0,87,69,66,80,0,255,128,64]);
-fs.writeFileSync(path.join(web,'index.html'),html);fs.writeFileSync(path.join(web,'assets/app.js'),script);fs.writeFileSync(path.join(web,'assets/mutable.css'),'p{color:#abc}\n'.repeat(512));fs.writeFileSync(path.join(web,'assets/scene.webp'),picture);fs.writeFileSync(path.join(temporary,'outside.txt'),'test-only outside root');fs.symlinkSync(path.join(temporary,'outside.txt'),path.join(web,'outside-link.txt'));fs.mkdirSync(path.join(web,'nested'));fs.symlinkSync(path.join(temporary,'outside.txt'),path.join(web,'nested/index.html'));fs.mkdirSync(path.join(web,'legacy'));fs.writeFileSync(path.join(web,'legacy/index.htm'),html);
+fs.writeFileSync(path.join(web,'index.html'),html);fs.writeFileSync(path.join(web,'assets/app.js'),script);fs.writeFileSync(path.join(web,'assets/mutable.css'),'p{color:#abc}\n'.repeat(512));fs.writeFileSync(path.join(web,'assets/scene.webp'),picture);fs.mkdirSync(path.join(temporary,'outside'));fs.writeFileSync(path.join(temporary,'outside/index.html'),'test-only outside root');fs.mkdirSync(path.join(web,'nested'));
+let fileLinksAvailable=true;
+try{
+ fs.symlinkSync(path.join(temporary,'outside/index.html'),path.join(web,'outside-link.txt'));
+ fs.symlinkSync(path.join(temporary,'outside/index.html'),path.join(web,'nested/index.html'));
+}catch(error){
+ if(process.platform!=='win32'||!['EPERM','EACCES','ENOSYS'].includes(error.code))throw error;
+ fileLinksAvailable=false;
+ for(const name of ['outside-link.txt','nested/index.html']){const file=path.join(web,name);if(fs.existsSync(file)||fs.lstatSync(path.dirname(file)).isSymbolicLink()){if(fs.lstatSync(file).isSymbolicLink())fs.unlinkSync(file);}}
+ fs.symlinkSync(path.join(temporary,'outside'),path.join(web,'outside-link.txt'),'junction');
+ fs.writeFileSync(path.join(web,'nested/index.html'),'local index fixture');
+}
+fs.mkdirSync(path.join(web,'legacy'));fs.writeFileSync(path.join(web,'legacy/index.htm'),html);
+// Keep real file symlinks wherever permitted. On an unprivileged Windows host,
+// simulate only the nested index alias's resolve() result in the owned server;
+// the actual handler and its second boundary check must still return HTTP 404.
+const indexAliasShim=`import pathlib,runpy,sys
+index=pathlib.Path(sys.argv[1])/'nested/index.html'
+outside=pathlib.Path(sys.argv[1]).parent/'outside/index.html'
+original=pathlib.Path.resolve
+def resolve(self,*args,**kwargs):
+    return original(outside) if self==index else original(self,*args,**kwargs)
+pathlib.Path.resolve=resolve
+sys.argv=sys.argv[2:]
+runpy.run_path(sys.argv[0],run_name='__main__')`;
 const children=[];let origin,prefixed;
 async function start(base='/'){
- const child=spawn('python3',[path.join(root,'scripts/candidate/serve.py'),'--directory',web,'--port','0','--base',base],{stdio:['ignore','pipe','pipe']});children.push(child);
+ const args=[path.join(root,'scripts/candidate/serve.py'),'--directory',web,'--port','0','--base',base];
+ const child=spawn('python3',fileLinksAvailable?args:['-c',indexAliasShim,web,...args],{stdio:['ignore','pipe','pipe']});children.push(child);
  return new Promise((ok,no)=>{let output='',errors='';child.stdout.on('data',b=>{output+=b;const url=output.match(/http:\/\/127\.0\.0\.1:\d+\/[^\s]*/)?.[0];if(url)ok(url);});child.stderr.on('data',b=>errors+=b);child.once('error',no);child.once('exit',code=>no(Error('Owned candidate server exited '+code+': '+errors)));});
 }
 function request(url,headers={},method='GET'){return new Promise((ok,no)=>{const q=http.request(url,{headers,method},r=>{const chunks=[];r.on('data',b=>chunks.push(b));r.on('end',()=>ok({status:r.statusCode,headers:r.headers,body:Buffer.concat(chunks)}));r.on('error',no);});q.on('error',no);q.end();});}
