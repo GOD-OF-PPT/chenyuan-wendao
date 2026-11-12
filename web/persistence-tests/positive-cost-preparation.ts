@@ -1,10 +1,9 @@
 import type { Page } from '@playwright/test';
-import { fileURLToPath } from 'node:url';
 import type { ActivityPlan } from '../../src/full/activity.ts';
 import type { RealmId } from '../../src/full/content.ts';
 import type { Game } from '../../src/full/types.ts';
 
-const root = fileURLToPath(new URL('../../', import.meta.url));
+import {repositoryFsRoot as root} from './fs-root';
 type PositiveCost = { stones?: number; items?: Record<string, number>; mp?: number };
 type PreparationId = 'assisted' | 'craft' | 'forge' | 'learn' | 'study' | 'buy' | 'sell' | 'use-healing' | 'use-spirit';
 

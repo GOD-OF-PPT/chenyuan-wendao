@@ -1,7 +1,6 @@
 import {test,expect} from '@playwright/test';
 import {setupMilestones} from './milestone-support';
-import {fileURLToPath} from 'node:url';
-const root=fileURLToPath(new URL('../../',import.meta.url));
+import {repositoryFsRoot as root} from './fs-root';
 test.beforeEach(async({page})=>{
  await page.clock.install({time:new Date('2030-01-01T00:00:00Z')});await page.clock.pauseAt(new Date('2030-01-01T01:00:00Z'));await setupMilestones(page);
  await page.evaluate(async root=>{

@@ -1,7 +1,6 @@
 import type { Page } from '@playwright/test';
-import { fileURLToPath } from 'node:url';
 import { setupMilestones } from './milestone-support';
-const root = fileURLToPath(new URL('../../', import.meta.url));
+import {repositoryFsRoot as root} from './fs-root';
 
 export async function setupLaterMixed(page: Page) {
   await setupMilestones(page);

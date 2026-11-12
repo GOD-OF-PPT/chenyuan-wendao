@@ -1,8 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { fileURLToPath } from 'node:url';
 import { setupPersistence } from './support';
 
-const root = fileURLToPath(new URL('../../', import.meta.url));
+import {repositoryFsRoot as root} from './fs-root';
 test.beforeEach(async ({ page }) => {
   await setupPersistence(page);
   await page.evaluate(async root => {

@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { fileURLToPath } from 'node:url';
 import { setupPersistence } from './support';
-const root = fileURLToPath(new URL('../../', import.meta.url));
+import {repositoryFsRoot as root} from './fs-root';
 test.beforeEach(async ({ page }) => setupPersistence(page));
 
 test('DB8 preserves real DB7 preparation, configuration proofs, checkpoint and old travel receipt without replaying their effects', async ({ page }) => {

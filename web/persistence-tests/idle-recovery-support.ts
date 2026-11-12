@@ -1,8 +1,7 @@
 import type {Page} from '@playwright/test';
 import {setupMilestones} from './milestone-support';
 import {trialJourneyScenario} from '../../tests/trial-journey-route.mjs';
-import {fileURLToPath} from 'node:url';
-const root=fileURLToPath(new URL('../../',import.meta.url));
+import {repositoryFsRoot as root} from './fs-root';
 
 /** Explicit rule-time fixture composition; it never substitutes for a GUI or wall-clock route. */
 export async function setupCurrentRecovery(page:Page){
