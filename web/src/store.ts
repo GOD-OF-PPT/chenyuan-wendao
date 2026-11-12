@@ -283,12 +283,12 @@ export const useGame = defineStore('game', () => {
       if('committed'in outcome){
         const fresh=replyCurrent&&!outcome.replayed&&!outcome.awayReturn&&outcome.cycles===1;
         lastResult.value=fresh?outcome.result:null;lastFromActivity.value=fresh;lastReplayed.value=!fresh;
-        for(const row of outcome.committed)emit(()=>writeObservation(row.before,row.after,{kind:'action',command:row.command},row.result,false));
       }
       else if(!replyCurrent){lastResult.value=null;lastFromActivity.value=false;lastReplayed.value=true;}
       else if('result'in outcome&&outcome.result){lastResult.value=outcome.result;lastFromActivity.value=cycle!==null;lastReplayed.value=outcome.replayed;}
       else if(!instant){lastResult.value=null;lastFromActivity.value=false;lastReplayed.value=outcome.replayed;}
       failedIntent = false; pending = null; pendingCommandId = undefined; pendingObservation=undefined; pendingCycle=null;saved.value = available.value&&!refreshQueued&&!!game.value;
+      if('committed'in outcome)for(const row of outcome.committed)emit(()=>writeObservation(row.before,row.after,{kind:'action',command:row.command},row.result,false));
       if(observation&&(!concurrentRead||game.value?.core.runId===outcome.state.core.runId))emit(()=>writeObservation(before,game.value,observation,'result'in outcome?outcome.result:null,!replyCurrent||outcome.replayed));
       if(!owns())return;
       if(!concurrentRead&&!('activity'in outcome)){

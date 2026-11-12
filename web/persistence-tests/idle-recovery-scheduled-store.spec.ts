@@ -32,6 +32,21 @@ test('the production Store defaults to an away schedule and reopening a closed p
  await other.evaluate(()=>(globalThis as any).h.scheduledStore.dispose());await other.close();
 });
 
+test('a scheduled single-cycle completion observer sees the confirmed saved state before presenting its real result',async({page})=>{
+ await page.clock.install({time:new Date('2030-01-01T00:00:00Z')});await page.clock.pauseAt(new Date('2030-01-01T01:00:00Z'));await setupPersistence(page);
+ await page.evaluate(async()=>{
+  const h=(globalThis as any).h,d=h.routes.driver();d.go('sect');const repo=await h.FullSaveRepository.open();try{await repo.importText(JSON.stringify(d.game),h.mutation());}finally{repo.close();}
+  const {createActivityStoreHarness}=await import('/persistence-tests/activity-store-harness.ts');h.scheduledStore=createActivityStoreHarness();const s=h.scheduledStore.store;await s.init();h.completionStates=[];
+  s.observe((o:any)=>{if(o.kind==='action')h.completionStates.push(structuredClone({saved:s.saved,available:s.available,error:s.error,result:s.lastResult,fromActivity:s.lastFromActivity,replayed:s.lastReplayed,game:s.game,observation:o}));});
+  await s.startPlannedActivity({kind:'source',sourceId:'work',maxCycles:1,until:'cycles',target:null,monthBudget:12,remainingMonthsReserve:1});
+ });
+ await page.clock.runFor(29999);expect(await page.evaluate(()=>(globalThis as any).h.completionStates)).toEqual([]);await page.clock.runFor(1);
+ await expect.poll(()=>page.evaluate(()=>(globalThis as any).h.scheduledStore.store.activity?.completedCycles)).toBe(1);
+ const r=await page.evaluate(()=>{const h=(globalThis as any).h;return{states:h.completionStates,final:h.scheduledStore.store.game};});
+ expect(r.states).toHaveLength(1);const state=r.states[0];expect(state.saved).toBe(true);expect(state.available).toBe(true);expect(state.error).toBe('');expect(state.fromActivity).toBe(true);expect(state.replayed).toBe(false);expect(state.game).toEqual(r.final);expect(state.result.revisionAfter).toBe(state.game.core.revision);expect(state.observation.result.delta).toEqual(state.result.delta);
+ await page.evaluate(()=>(globalThis as any).h.scheduledStore.dispose());
+});
+
 for(const kind of ['direct','configuration','online'])test(`an old ${kind} reply retry preserves the complete newer away schedule instead of turning it into an online arrangement`,async({page})=>{
  await page.clock.install({time:new Date('2030-01-01T00:00:00Z')});await page.clock.pauseAt(new Date('2030-01-01T01:00:00Z'));await setupPersistence(page);
  const r=await page.evaluate(async kind=>{
