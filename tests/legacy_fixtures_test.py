@@ -75,7 +75,9 @@ class LegacyFixtures(unittest.TestCase):
         outside.mkdir()
         link = self.root / 'goal-4'
         if os.name == 'nt':
-            subprocess.run(['cmd', '/c', 'mklink', '/J', str(link), str(outside)],
+            subprocess.run(['node', '--input-type=module', '-e',
+                            "import fs from 'node:fs'; fs.symlinkSync(process.argv[1], process.argv[2], 'junction');",
+                            str(outside), str(link)],
                            check=True, capture_output=True)
         else:
             link.symlink_to(outside, target_is_directory=True)

@@ -1,17 +1,13 @@
-"""Real filesystem aliases for confinement tests, including unprivileged Windows.
+"""File-alias inputs for confinement tests on hosts without symlink privileges.
 
-Keep file symlinks on capable hosts. Otherwise mirror the owned fixture parent
-outside its root and alias that parent, so the tested file still exists, retains
-its bytes, and resolves outside the fixture. No validator is mocked or skipped.
+Capable hosts use native file symlinks. Else only the selected file's filesystem
+resolution/is-link result is substituted; sibling paths and the real validator
+remain unchanged. This is a unit filesystem seam, not native symlink evidence.
 """
 from contextlib import contextmanager
 import errno
-import os
 from pathlib import Path
-import shutil
-import subprocess
-import tempfile
-import uuid
+from unittest.mock import patch
 
 
 @contextmanager
@@ -22,41 +18,35 @@ def external_file_link(link, target, fixture_root):
         raise ValueError('Alias parent must be inside the owned fixture')
     if link.exists() or link.is_symlink():
         raise ValueError('Alias destination must be absent')
+    native = True
     try:
         link.symlink_to(target)
     except OSError as error:
         if error.errno not in {errno.EPERM, errno.EACCES} and getattr(error, 'winerror', None) != 1314:
             raise
-    else:
-        yield 'file-symlink'
-        return
+        native = False
+        with link.open('xb') as output:
+            output.write(target.read_bytes())
 
-    payload = target.read_bytes()
-    with tempfile.TemporaryDirectory(prefix='chenyuan-external-parent-') as folder:
-        shadow = Path(folder) / 'parent'
-        shutil.copytree(parent, shadow, symlinks=True)
-        (shadow / link.name).write_bytes(payload)
-        backup = parent.with_name('.' + parent.name + '.before-link-' + uuid.uuid4().hex)
-        if not backup.is_relative_to(fixture_root) or backup.exists():
-            raise ValueError('Invalid owned fixture backup')
-        parent.rename(backup)
-        try:
-            if os.name == 'nt':
-                subprocess.run(['cmd', '/c', 'mklink', '/J', str(parent), str(shadow)],
-                               check=True, capture_output=True)
-            else:
-                os.symlink(shadow, parent, target_is_directory=True)
-            yield 'parent-alias'
-        finally:
-            if parent.is_symlink() or (hasattr(parent, 'is_junction') and parent.is_junction()):
-                if parent.resolve() != shadow.resolve():
-                    raise ValueError('Owned fixture alias was replaced')
-                if os.name == 'nt':
-                    os.rmdir(parent)  # Remove the junction entry, never its target.
-                else:
-                    parent.unlink()
-            backup.rename(parent)
-            # Old callers explicitly unlink the alias and restore their original
-            # bytes after checking rejection. Keep that cleanup shape portable.
-            if not link.exists():
-                link.write_bytes(payload)
+    original_resolve, original_is_link = Path.resolve, Path.is_symlink
+    selected = link.absolute()
+    seen = False
+
+    def resolve(path, *args, **kwargs):
+        nonlocal seen
+        if path.absolute() == selected:
+            seen = True
+            return original_resolve(path if native else target, *args, **kwargs)
+        return original_resolve(path, *args, **kwargs)
+
+    def is_link(path):
+        nonlocal seen
+        if path.absolute() == selected:
+            seen = True
+            return original_is_link(path) if native else True
+        return original_is_link(path)
+
+    with patch.object(Path, 'resolve', resolve), patch.object(Path, 'is_symlink', is_link):
+        yield 'file-symlink' if native else 'single-file-resolution-seam'
+    if not seen:
+        raise AssertionError('The intended aliased file was never inspected')
