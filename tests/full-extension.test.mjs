@@ -14,7 +14,7 @@ test('data-only event, recipe, skill and existing-effect relic additions work th
   try {
     mkdirSync(join(temp, 'src'), { recursive: true });
     mkdirSync(join(temp, 'tests'));
-    cpSync(join(root, 'src/full'), join(temp, 'src/full'), { recursive: true });
+    cpSync(join(root, 'src'), join(temp, 'src'), { recursive: true });
     copyFileSync(join(root, 'tests/full-route.mjs'), join(temp, 'tests/full-route.mjs'));
     writeFileSync(join(temp, 'package.json'), JSON.stringify({ type: 'module' }));
     let content = readFileSync(join(temp, 'src/full/content.ts'), 'utf8');
@@ -22,11 +22,11 @@ test('data-only event, recipe, skill and existing-effect relic additions work th
       assert.ok(content.includes(anchor), anchor);
       content = content.replace(anchor, anchor + '\n' + value);
     };
-    content = content.replace("'full-demo.3'", "'full-demo.extension-test'");
+    content = content.replace("'full-demo.4'", "'full-demo.extension-test'");
     insert('export const items:Record<string,Item>={',
       " spare_heal:{name:'试验回春丸',min:'qi',buy:18,sell:5,kind:'medicine',description:'复用恢复效果',hp:35},");
     insert('export const recipes:Record<string,Recipe>={',
-      " spare_recipe:{name:'试验配方',min:'qi',inputs:{herb:2},stones:2,months:1,output:'spare_heal'},");
+      " spare_recipe:{name:'试验配方',min:'qi',inputs:{herb:2},stones:2,months:12,onlineMs:30000,output:'spare_heal'},");
     insert('export const skills:Record<string,Skill>={',
       " river_mind:{name:'试验剑心',school:'sword',slot:'mind',min:'foundation',price:100,description:'复用止水效果',effect:'still'},");
     insert('export const relics:Record<string,Relic>={',
@@ -43,11 +43,16 @@ import {driver} from './tests/full-route.mjs';
 import {newGame,parseGame,stats} from './src/full/engine.ts';
 import {validateContent} from './src/full/validate-content.ts';
 import {getItemSources} from './src/full/queries.ts';
+import {createActivity,completeActivity} from './src/full/activity.ts';
 const audit=validateContent();
 const d=driver('leave','sword');d.go('sect');
 d.doAction({type:'EVENT',event:'extension_meet'});d.doAction({type:'DECIDE',option:'ask'});
 assert.equal(d.game.core.inventory.spare_heal,1);
-d.resource('herb',2);d.go('cave');d.doAction({type:'CRAFT',recipeId:'spare_recipe'});
+d.resource('herb',2);d.go('cave');
+const a=createActivity(d.game,{kind:'craft',recipeId:'spare_recipe',maxCycles:1,until:'cycles',targetQuantity:null,stoneBudget:2,stoneReserve:0,monthBudget:12,remainingMonthsReserve:1,itemReserves:{}},{id:'extension-furnace',ownerId:'extension-page',commandId:'extension-start',now:1000});
+assert.equal(a.cycleMs,30000);
+const before=d.game;d.doAction({type:'CRAFT',recipeId:'spare_recipe'});
+assert.equal(before.core.inventory.herb-d.game.core.inventory.herb,2);
 assert.equal(d.game.core.inventory.spare_heal,2);
 assert.ok(getItemSources(d.game,'spare_heal').some(s=>s.id==='spare_recipe'));
 assert.ok(getItemSources(d.game,'spare_heal').some(s=>s.id==='extension_meet:ask'&&!s.repeatable&&!s.available));

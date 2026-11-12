@@ -36,7 +36,7 @@ test('material counts reflect current inventory without reserving or awarding go
   const stage = getGrowthStage(d.game), material = stage.recipes[0].materials[0];
   assert.equal(material.have, 2); assert.equal(material.missing, 3);
   assert.equal(material.sources.find(source => source.kind === 'purchase').rewardCount, 3);
-  material.sources[0].costs.months = 999; assert.equal(getGrowthStage(d.game).recipes[0].materials[0].sources[0].costs.months, 3);
+  material.sources[0].costs.months = 999; assert.equal(getGrowthStage(d.game).recipes[0].materials[0].sources[0].costs.months, 36);
   assert.equal(JSON.stringify(d.game), before);
 });
 test('active trials and endings do not manufacture a replacement seal requirement', () => {

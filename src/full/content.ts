@@ -42,34 +42,34 @@ export const items:Record<string,Item>={
  spirit_seed:{name:'化神丹',min:'nascent',buy:1465,sell:null,kind:'breakthrough',description:'元婴圆满后化神的消耗物。'},
  ascension_seal:{name:'渡劫引',min:'spirit',buy:2205,sell:null,kind:'breakthrough',description:'化神圆满时引来天劫。启动前自动建立可恢复检查点。'}
 };
-export interface Source {name:string;location:LocationId;min:RealmId;months:number;stones:number;xp:number;items:Record<string,number>;}
+export interface Source {name:string;location:LocationId;min:RealmId;months:number;onlineMs:number;stones:number;xp:number;items:Record<string,number>;}
 export const sources:Record<string,Source>={
- herbs:{name:'山野采药',location:'wilderness',min:'qi',months:12,stones:0,xp:5,items:{herb:2}},
- dew:{name:'晨间凝露',location:'wilderness',min:'qi',months:12,stones:0,xp:5,items:{dew:1}},
- work:{name:'宗门杂务',location:'sect',min:'qi',months:12,stones:20,xp:0,items:{}},
- core:{name:'护送委托',location:'sect',min:'qi',months:48,stones:40,xp:20,items:{core:1}},
- jade:{name:'古境采玉',location:'secret',min:'foundation',months:24,stones:0,xp:30,items:{jade:2}},
- jade_task:{name:'勘脉委托',location:'sect',min:'foundation',months:36,stones:50,xp:20,items:{jade:2}},
- work_foundation:{name:'护持法阵',location:'sect',min:'foundation',months:24,stones:60,xp:20,items:{}},
- lotus:{name:'寒池采莲',location:'secret',min:'golden',months:36,stones:0,xp:60,items:{lotus:2}},
- lotus_task:{name:'药圃看护',location:'sect',min:'golden',months:48,stones:60,xp:40,items:{lotus:2}},
- work_golden:{name:'传法授业',location:'sect',min:'golden',months:36,stones:130,xp:40,items:{}},
- soul:{name:'静潭凝魂',location:'secret',min:'nascent',months:48,stones:0,xp:100,items:{soul:2}},
- soul_task:{name:'山村安魂',location:'sect',min:'nascent',months:60,stones:65,xp:60,items:{soul:2}},
- work_nascent:{name:'镇守灵脉',location:'sect',min:'nascent',months:48,stones:230,xp:70,items:{}},
- dao:{name:'云台参道',location:'terrace',min:'spirit',months:60,stones:0,xp:180,items:{dao:2}},
- dao_task:{name:'修补道碑',location:'sect',min:'spirit',months:72,stones:80,xp:100,items:{dao:2}},
- work_spirit:{name:'护佑一州',location:'sect',min:'spirit',months:60,stones:360,xp:100,items:{}}
+ herbs:{name:'山野采药',location:'wilderness',min:'qi',months:12,onlineMs:30000,stones:0,xp:5,items:{herb:2}},
+ dew:{name:'晨间凝露',location:'wilderness',min:'qi',months:12,onlineMs:30000,stones:0,xp:5,items:{dew:1}},
+ work:{name:'宗门杂务',location:'sect',min:'qi',months:12,onlineMs:30000,stones:20,xp:0,items:{}},
+ core:{name:'护送委托',location:'sect',min:'qi',months:48,onlineMs:120000,stones:40,xp:20,items:{core:1}},
+ jade:{name:'古境采玉',location:'secret',min:'foundation',months:24,onlineMs:60000,stones:0,xp:30,items:{jade:2}},
+ jade_task:{name:'勘脉委托',location:'sect',min:'foundation',months:36,onlineMs:90000,stones:50,xp:20,items:{jade:2}},
+ work_foundation:{name:'护持法阵',location:'sect',min:'foundation',months:24,onlineMs:60000,stones:60,xp:20,items:{}},
+ lotus:{name:'寒池采莲',location:'secret',min:'golden',months:36,onlineMs:90000,stones:0,xp:60,items:{lotus:2}},
+ lotus_task:{name:'药圃看护',location:'sect',min:'golden',months:48,onlineMs:120000,stones:60,xp:40,items:{lotus:2}},
+ work_golden:{name:'传法授业',location:'sect',min:'golden',months:36,onlineMs:90000,stones:130,xp:40,items:{}},
+ soul:{name:'静潭凝魂',location:'secret',min:'nascent',months:48,onlineMs:120000,stones:0,xp:100,items:{soul:2}},
+ soul_task:{name:'山村安魂',location:'sect',min:'nascent',months:60,onlineMs:150000,stones:65,xp:60,items:{soul:2}},
+ work_nascent:{name:'镇守灵脉',location:'sect',min:'nascent',months:48,onlineMs:120000,stones:230,xp:70,items:{}},
+ dao:{name:'云台参道',location:'terrace',min:'spirit',months:60,onlineMs:150000,stones:0,xp:180,items:{dao:2}},
+ dao_task:{name:'修补道碑',location:'sect',min:'spirit',months:72,onlineMs:180000,stones:80,xp:100,items:{dao:2}},
+ work_spirit:{name:'护佑一州',location:'sect',min:'spirit',months:60,onlineMs:150000,stones:360,xp:100,items:{}}
 };
-export interface Recipe {name:string;min:RealmId;inputs:Record<string,number>;stones:number;months:number;output:string;}
+export interface Recipe {name:string;min:RealmId;inputs:Record<string,number>;stones:number;months:number;onlineMs:number;output:string;}
 export const recipes:Record<string,Recipe>={
- healing:{name:'炼制回春丹',min:'qi',inputs:{herb:2},stones:2,months:12,output:'healing_pill'},
- spirit:{name:'炼制回灵丹',min:'qi',inputs:{herb:1,dew:1},stones:3,months:12,output:'spirit_pill'},
- foundation:{name:'炼制筑基丹',min:'qi',inputs:{herb:8,dew:2,core:1},stones:20,months:12,output:'foundation_pill'},
- golden:{name:'炼制凝金丹',min:'foundation',inputs:{herb:6,dew:3,core:2,jade:4},stones:60,months:24,output:'golden_pill'},
- nascent:{name:'炼制结婴丹',min:'golden',inputs:{herb:8,dew:4,jade:2,lotus:5},stones:110,months:36,output:'nascent_pill'},
- spirit_seed:{name:'炼制化神丹',min:'nascent',inputs:{dew:6,lotus:3,soul:6},stones:180,months:48,output:'spirit_seed'},
- ascension:{name:'炼制渡劫引',min:'spirit',inputs:{core:3,soul:4,dao:6},stones:240,months:60,output:'ascension_seal'}
+ healing:{name:'炼制回春丹',min:'qi',inputs:{herb:2},stones:2,months:12,onlineMs:30000,output:'healing_pill'},
+ spirit:{name:'炼制回灵丹',min:'qi',inputs:{herb:1,dew:1},stones:3,months:12,onlineMs:30000,output:'spirit_pill'},
+ foundation:{name:'炼制筑基丹',min:'qi',inputs:{herb:8,dew:2,core:1},stones:20,months:12,onlineMs:30000,output:'foundation_pill'},
+ golden:{name:'炼制凝金丹',min:'foundation',inputs:{herb:6,dew:3,core:2,jade:4},stones:60,months:24,onlineMs:60000,output:'golden_pill'},
+ nascent:{name:'炼制结婴丹',min:'golden',inputs:{herb:8,dew:4,jade:2,lotus:5},stones:110,months:36,onlineMs:90000,output:'nascent_pill'},
+ spirit_seed:{name:'炼制化神丹',min:'nascent',inputs:{dew:6,lotus:3,soul:6},stones:180,months:48,onlineMs:120000,output:'spirit_seed'},
+ ascension:{name:'炼制渡劫引',min:'spirit',inputs:{core:3,soul:4,dao:6},stones:240,months:60,onlineMs:150000,output:'ascension_seal'}
 };
 export interface Skill {name:string;school:School;slot:SkillSlot;min:RealmId;price:number;description:string;effect:SkillEffect;}
 export const skills:Record<string,Skill>={

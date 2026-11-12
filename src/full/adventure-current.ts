@@ -109,7 +109,7 @@ export function defaultBattleStrategy(game: Game): BattleStrategy {
 }
 export function defaultEncounterPlan(game: Game, enemy: string): EncounterPlan {
   const plan: EncounterPlan = { kind: 'encounter', enemy, maxEncounters: 1, maxCycles: 41, target: null,
-    monthBudget: 1, remainingMonthsReserve: 1, mpBudget: 480, strategy: defaultBattleStrategy(game) };
+    monthBudget: C.actionDurations.encounter, remainingMonthsReserve: 1, mpBudget: 480, strategy: defaultBattleStrategy(game) };
   validateAdventurePlan(plan); return plan;
 }
 function battleIdentity(game: Game): BattleIdentity {

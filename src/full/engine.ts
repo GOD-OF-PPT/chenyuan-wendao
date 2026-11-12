@@ -1,4 +1,5 @@
 import * as current from './engine-current.ts';
+import {VERSION} from './content.ts';
 import * as old from '../legacy/rules-v3/src/full/engine.ts';
 import {isLegacyRules,legacyCall} from './rule-profile.ts';
 export * from './engine-current.ts';
@@ -9,7 +10,7 @@ export const parseGame:typeof current.parseGame=raw=>{
  if(typeof raw!=='string'||raw.length>1000000||new TextEncoder().encode(raw).byteLength>1000000)throw new RuleError('SAVE_SIZE','存档过大');
  let value:unknown;try{value=JSON.parse(raw);}catch{throw new RuleError('SAVE_JSON','文件不是有效 JSON');}
  const c=value&&typeof value==='object'&&'core'in value?(value as {core?:{contentVersion?:unknown}}).core:null;
- return c?.contentVersion==='full-demo.4'?current.parseGame(raw):legacyCall(()=>old.parseGame(raw));
+ return c?.contentVersion===VERSION?current.parseGame(raw):legacyCall(()=>old.parseGame(raw));
 };
 export const previewResolution:typeof current.previewResolution=(game,action)=>{
  if(!isLegacyRules(game))return current.previewResolution(game,action);

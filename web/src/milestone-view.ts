@@ -49,7 +49,7 @@ export function milestonePresentation(game:Game,action:MilestoneAction){
   case'ANSWER_TRIAL':{const j=getTrialJourney(game)!;title=TRIAL_ANSWERS[action.answer].label;speaker='问心';body=j.openingMemory+'接纳旧我，稳住心神；或放下旧念，以进攻开路。两条道路皆可向前，不另判善恶成败。';effect=TRIAL_ANSWERS[action.answer].record;next='答案保存后进入第一关；当前天劫战策须另行安排，不自动出招。';break;}
   case'END':{const c=ASCENSION_ENDINGS[action.ending];title=c.label;speaker='天门已开';body=c.description;effect='以所选结尾飞升封卷；当前物品、配装与人物记录保留，不新增道具或上界玩法。';next='此卷结束，保留完整生平；不自动开始新人生。';break;}
   case'RETIRE':title='主动归隐';speaker='此生收卷';body=getLifeRecord(game).overview.conclusion;effect='明确结束此生，不消耗剩余游戏月，不写作寿尽；确认收卷不能撤销为继续此卷。';next='保留生平与存档，不自动开始新人生。';break;
-  case'END_LIFE':title='度过最后一月';speaker='寿尽收卷';body=getLifeRecord(game).overview.conclusion;effect='消耗最后1游戏月，达到当前境界寿限并结束此生；现实等待不会自行触发寿尽。';next='保留生平与存档，不自动开始新人生。';break;
+  case'END_LIFE':{const left=getLifeRecord(game).overview.remainingMonths;title='度过最后'+left+'月';speaker='寿尽收卷';body=getLifeRecord(game).overview.conclusion;effect='消耗实际最后'+left+'游戏月，达到当前境界寿限并结束此生；现实等待不会自行触发寿尽。';}next='保留生平与存档，不自动开始新人生。';break;
  }
  const quote=previewAction(game,action),seconds=MILESTONE_CYCLE_MS[action.type]/1000;
  const readings:Reading[]=[{key:'cause',title:'来由',text:body},{key:'effect',title:'所选作用',text:effect},{key:'boundary',title:'完成之后',text:next}];

@@ -31,15 +31,15 @@ for (const choice of ['help','trade','leave']) test(`${choice}: a normal eightee
 });
 
 for (const realm of ['qi','foundation','golden','nascent','spirit']) test(`${realm}: legally reached final months stop a batch, then end exactly at the real lifespan once`, () => {
-  const r = legalLifeBoundary(realm, 2), before = r.ledger.game;
-  assert.equal(getLifeOverview(before).remainingMonths, 2);
+  const r = legalLifeBoundary(realm, 24), before = r.ledger.game;
+  assert.equal(getLifeOverview(before).remainingMonths, 24);
   assert.throws(() => r.act({ type: 'END_LIFE' }), e => e.code === 'LIFESPAN_REMAINING'); assert.deepEqual(r.ledger.game, before);
-  const partial = r.act({ type: 'SOURCE', sourceId: 'work', count: 50 }); assert.equal(partial.executedSteps, 1); assert.equal(partial.costs.months, 1); assert.equal(partial.stopReason.code, 'AGE_LIMIT');
-  const last = r.ledger.game, quote = previewAction(last, { type: 'END_LIFE' }); assert.equal(quote.allowed, true); assert.equal(quote.costs.months, 1);
+  const partial = r.act({ type: 'SOURCE', sourceId: 'work', count: 50 }); assert.equal(partial.executedSteps, 1); assert.equal(partial.costs.months, 12); assert.equal(partial.stopReason.code, 'AGE_LIMIT');
+  const last = r.ledger.game, quote = previewAction(last, { type: 'END_LIFE' }); assert.equal(quote.allowed, true); assert.equal(quote.costs.months, 12);
   const ended = r.act({ type: 'END_LIFE' }), after = r.ledger.game, record = getLifeRecord(after);
-  assert.equal(ended.costs.months, 1); assert.equal(ended.delta.months, 1); assert.equal(ended.delta.stones, 0); assert.deepEqual(ended.delta.inventory, {});
+  assert.equal(ended.costs.months, 12); assert.equal(ended.delta.months, 12); assert.equal(ended.delta.stones, 0); assert.deepEqual(ended.delta.inventory, {});
   assert.equal(after.core.player.startAgeMonths + after.core.world.elapsedMonths, C.realms[realm].lifespanMonths);
-  assert.equal(record.overview.remainingMonths, 0); assert.equal(record.overview.reason, 'lifespan'); assert.ok(record.overview.conclusion.includes('最后一个游戏月'));
+  assert.equal(record.overview.remainingMonths, 0); assert.equal(record.overview.reason, 'lifespan'); assert.ok(record.overview.conclusion.includes('最后余月'));
   assert.equal(record.overview.ageLabel, formatAgeMonths(C.realms[realm].lifespanMonths)); assert.equal(record.overview.title, '尘世留名 · 寿元已尽');
   assert.throws(() => r.act({ type: 'END_LIFE' }), e => e.code === 'ENDED'); r.ledger.report();
 });

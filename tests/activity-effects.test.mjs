@@ -1,3 +1,4 @@
+import {sourcePeriodMs,recipePeriodMs} from '../src/full/online-periods.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as C from '../src/full/content.ts';
@@ -27,7 +28,7 @@ test('all sixteen legal resource and commission periods report their actual yiel
  for(const [id,s] of Object.entries(C.sources)){
   const f=frame(sourcePlan(id)),raw=JSON.stringify(f),notice=consume(armed(f),f);
   assert.ok(notice,id);assert.equal(notice.operation,'SOURCE',id);assert.equal(notice.family,'harvest',id);
-  assert.equal(f.prior.cycleMs,s.months*30000,id);assert.equal(f.result.executedSteps,1,id);assert.deepEqual(f.result.delta.inventory,s.items,id);
+  assert.equal(f.prior.cycleMs,sourcePeriodMs(f.before,id),id);assert.equal(f.result.executedSteps,1,id);assert.deepEqual(f.result.delta.inventory,s.items,id);
   assert.equal(f.result.delta.stones,s.stones,id);assert.equal(f.result.costs.months,s.months,id);assert.equal(f.game.core.world.location,s.location,id);
   assert.equal(f.activity.completedCycles,1,id);assert.equal(f.activity.status,'stopped',id);assert.equal(f.activity.nextCommand,null,id);
   for(const [item,n] of Object.entries(s.items))assert.equal(f.game.core.inventory[item],f.before.core.inventory[item]+n,id);
@@ -56,7 +57,7 @@ test('each automatic source cycle needs its own runtime arm and the preceding re
  const first=frame(sourcePlan('herbs',2)),second=settle(first.game,first.activity),t=armed(first);
  assert.equal(first.activity.status,'running');assert.ok(consume(t,first));assert.equal(consume(t,second),null);
  t.arm(second.prior,second.before,second.prior.id,second.prior.generation);assert.equal(consume(t,first),null);assert.ok(consume(t,second));assert.equal(consume(t,second),null);
- assert.deepEqual(second.activity.gainedItems,{herb:4});assert.equal(second.activity.spentMonths,2);assert.equal(second.game.core.inventory.herb,first.before.core.inventory.herb+4);
+ assert.deepEqual(second.activity.gainedItems,{herb:4});assert.equal(second.activity.spentMonths,24);assert.equal(second.game.core.inventory.herb,first.before.core.inventory.herb+4);
 });
 
 test('a valid source target boundary keeps the actual integer yield without turning its stopping receipt into another reward',()=>{

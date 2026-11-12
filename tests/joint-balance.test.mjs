@@ -44,3 +44,16 @@ test('a normally aged new life safely stops near the last year then explicitly c
  }
  const before=d.game,months=remainingMonths(before);assert.ok(months>=1&&months<=12);assert.equal(before.status,'active');const ended=d.act({type:'END_LIFE'});assert.equal(ended.result.costs.months,months);assert.equal(ended.result.delta.months,months);assert.equal(d.game.ending,'lifespan');assert.equal(remainingMonths(d.game),0);engine.validateGame(d.game);
 });
+
+
+test('every source and furnace retains the entire published online schedule independently of its new calendar price',()=>{
+ const g=driver().game;
+ for(const [id,s]of Object.entries(old.content.sources)){
+  assert.equal(C.sources[id].months,s.months*12,id);
+  assert.equal(sourcePeriodMs(g,id),s.months*30000,id);
+ }
+ for(const [id,r]of Object.entries(old.content.recipes)){
+  assert.equal(C.recipes[id].months,r.months*12,id);
+  assert.equal(recipePeriodMs(g,id),r.months*30000,id);
+ }
+});

@@ -1,4 +1,5 @@
 import * as C from './content.ts';
+import {contentForGame} from './rule-content.ts';
 import { stories } from './events.ts';
 import { resolve, validateGame, validateCommand } from './engine.ts';
 import {costsForAction} from './costs.ts';
@@ -12,6 +13,7 @@ export type CollectionTarget = { kind: 'item'; id: string; quantity: number } | 
 
 export function planCollection(game: Game, sourceId: string, target: CollectionTarget): Action | null {
   validateGame(game);
+  const C=contentForGame(game);
   if (!target || typeof target !== 'object' || Array.isArray(target) || !Object.hasOwn(C.sources, sourceId) || !Number.isSafeInteger(target.quantity) || target.quantity < 1 || target.quantity > C.maxQuantity) fail('INVALID_GOAL', '取材目标无效');
   const source = C.sources[sourceId];
   if (target.kind === 'item') {

@@ -15,7 +15,7 @@ test('real normal routes and supplemental lawful actions exercise every action f
  const collect=actions=>{for(const f of replay(actions)){covered.add(f.action.type);families.add(f.notice.family);if(f.action.type==='BATTLE')moves.add(f.action.move);count++;}};
  for(const school of ['sword','talisman'])for(const strategy of ['craft','purchase'])collect(fullRoute('help',school,strategy,true,'transmit').actions);
  const d=driver();d.buy('healing_pill',3);d.buy('spirit_pill',3);d.go('wilderness');d.doAction({type:'ENCOUNTER',enemy:'wolf'});d.doAction({type:'BATTLE',move:'attack'});d.doAction({type:'BATTLE',move:'technique'});d.doAction({type:'BATTLE',move:'heal'});d.doAction({type:'BATTLE',move:'restore'});d.doAction({type:'BATTLE',move:'flee'});d.doAction({type:'USE',item:'healing_pill'});d.rest();d.resource('herb',2);d.go('market');d.doAction({type:'SELL',item:'herb',quantity:1});d.realm();d.funds(600);d.go('sect');d.doAction({type:'STUDY',manual:'jinghong'});d.doAction({type:'LEARN',skill:'sword_still'});d.doAction({type:'EQUIP',skill:'sword_still'});collect(d.actions);collect([...d.actions,{type:'RETIRE'}]);
- const life=driver();life.go('sect');while(getLifeOverview(life.game).remainingMonths>1)life.doAction({type:'SOURCE',sourceId:'work',count:Math.min(50,getLifeOverview(life.game).remainingMonths-1)});life.doAction({type:'END_LIFE'});collect(life.actions);
+ const life=driver();life.go('sect');while(getLifeOverview(life.game).remainingMonths>12)life.doAction({type:'SOURCE',sourceId:'work',count:Math.min(50,(getLifeOverview(life.game).remainingMonths-12)/12)});life.doAction({type:'END_LIFE'});collect(life.actions);
  assert.deepEqual([...covered].sort(),Object.keys(ACTION_MOTIONS).sort());assert.equal(families.size,14);assert.deepEqual([...moves].sort(),Object.keys(MOVE_MOTIONS).sort());assert.ok(count>500);
 });
 test('foreign, stale, unsaved, failed, replayed and mismatched observations cannot produce a success',()=>{
@@ -55,7 +55,7 @@ test('finite milestone feedback binds the selected current cycle and preserves p
   if(['CHOOSE','EVENT','DECIDE','BREAKTHROUGH','START_TRIAL','ANSWER_TRIAL','END'].includes(action.type)&&!samples.has(action.type))samples.set(action.type,{game,action});
   game=resolve(game,{...action,commandId:uuid(6100+n),runId:game.core.runId,expectedRevision:game.core.revision}).nextState;
  }
- const life=driver();samples.set('RETIRE',{game:replay(life.actions,6001).at(-1).game,action:{type:'RETIRE'}});life.go('sect');while(getLifeOverview(life.game).remainingMonths>1)life.doAction({type:'SOURCE',sourceId:'work',count:Math.min(50,getLifeOverview(life.game).remainingMonths-1)});samples.set('END_LIFE',{game:replay(life.actions,6002).at(-1).game,action:{type:'END_LIFE'}});
+ const life=driver();samples.set('RETIRE',{game:replay(life.actions,6001).at(-1).game,action:{type:'RETIRE'}});life.go('sect');while(getLifeOverview(life.game).remainingMonths>12)life.doAction({type:'SOURCE',sourceId:'work',count:Math.min(50,(getLifeOverview(life.game).remainingMonths-12)/12)});samples.set('END_LIFE',{game:replay(life.actions,6002).at(-1).game,action:{type:'END_LIFE'}});
  assert.equal(samples.size,9);
  for(const [type,{game:before,action}]of samples){
   const a=createActivity(before,{kind:'milestone',action,maxCycles:1},{id:uuid(7000),ownerId:'milestone-fx',commandId:uuid(7001),now:0}),resolved=resolve(before,a.nextCommand),after=resolved.nextState,result=resolved.result;

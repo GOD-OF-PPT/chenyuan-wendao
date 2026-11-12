@@ -1,3 +1,4 @@
+import {sourcePeriodMs,recipePeriodMs} from '../src/full/online-periods.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as C from '../src/full/content.ts';
@@ -46,7 +47,7 @@ test('a visible formal furnace binds its full Game, result and Activity once wit
 test('every legal recipe emits only its actual positive item after its own complete formal period',()=>{
  for(const id of Object.keys(C.recipes)){
   const f=frame(stockedLawfully(id),id),raw=JSON.stringify(f),t=armed(f),notice=consume(t,f);
-  assert.equal(f.prior.cycleMs,C.recipes[id].months*30000,id);assert.equal(notice.item,C.recipes[id].output,id);assert.equal(notice.quantity,1,id);
+  assert.equal(f.prior.cycleMs,recipePeriodMs(f.before,id),id);assert.equal(notice.item,C.recipes[id].output,id);assert.equal(notice.quantity,1,id);
   assert.deepEqual(f.result.costs.items,C.recipes[id].inputs,id);assert.equal(f.result.costs.stones,C.recipes[id].stones,id);assert.equal(JSON.stringify(f),raw,id);
  }
 });

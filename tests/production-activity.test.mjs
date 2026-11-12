@@ -1,3 +1,4 @@
+import {sourcePeriodMs,recipePeriodMs} from '../src/full/online-periods.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as C from '../src/full/content.ts';
@@ -36,7 +37,7 @@ test('all seven recipes execute two full formal furnaces with exact gross materi
   for (const [id, recipe] of Object.entries(C.recipes)) {
     const game = stocked(recipe.min), before = structuredClone(game), plan = craftPlan(id, { maxCycles: 2 });
     const activity = createActivity(game, plan, options());
-    assert.equal(activity.version, 3); assert.equal(activity.cycleMs, recipe.months * 30_000);
+    assert.equal(activity.version, 3); assert.equal(activity.cycleMs, recipePeriodMs(game,id));
     assert.ok(activity.cycleMs >= 30_000 && activity.cycleMs <= 150_000);
     assert.deepEqual(activity.nextCommand, { type: 'CRAFT', recipeId: id,
       commandId: 'cycle:production:0:1', runId: game.core.runId, expectedRevision: game.core.revision });
@@ -74,7 +75,7 @@ test('all four relics use one sixty-second FORGE, add ownership once and preserv
     assert.deepEqual(out.activity.spentItems, relic.inputs); assert.deepEqual(out.activity.gainedItems, {});
     assert.deepEqual(out.game.ownedRelics, [other, id]); assert.equal(out.game.loadout.relic, other);
     assert.equal(out.game.core.player.stones, before.core.player.stones - relic.stones);
-    assert.equal(out.game.core.world.elapsedMonths, before.core.world.elapsedMonths + 2);
+    assert.equal(out.game.core.world.elapsedMonths, before.core.world.elapsedMonths + 24);
     rejects(() => createActivity(out.game, forgePlan(id), options({ id: 'again' })), 'ALREADY_OWNED');
     const equipped = structuredClone(out.game); equipped.loadout.relic = id;
     rejects(() => createActivity(equipped, forgePlan(id), options({ id: 'again-equipped' })), 'ALREADY_OWNED');
@@ -86,11 +87,11 @@ test('production previews return gross input, actual output and relic ownership 
   const game = stocked('golden'), plan = craftPlan('healing', { maxCycles: 2 }), before = structuredClone({ game, plan });
   const preview = previewActivity(game, plan);
   assert.equal(preview.allowed, true); assert.equal(preview.cycles, 2); assert.equal(preview.xp, 0);
-  assert.equal(preview.stones, 4); assert.equal(preview.months, 2); assert.equal(preview.earnedStones, 0);
+  assert.equal(preview.stones, 4); assert.equal(preview.months, 24); assert.equal(preview.earnedStones, 0);
   assert.deepEqual(preview.items, { healing_pill: 2 }); assert.deepEqual(preview.spentItems, { herb: 4 });
   assert.deepEqual(preview.relics, []); assert.deepEqual(previewActivity(game, plan), preview);
   const forge = previewActivity(game, forgePlan());
-  assert.equal(forge.cycles, 1); assert.equal(forge.stones, 140); assert.equal(forge.months, 2);
+  assert.equal(forge.cycles, 1); assert.equal(forge.stones, 140); assert.equal(forge.months, 24);
   assert.deepEqual(forge.items, {}); assert.deepEqual(forge.spentItems, { jade: 3, core: 1 });
   assert.deepEqual(forge.relics, ['frost_sword']); assert.deepEqual({ game, plan }, before);
 });
@@ -108,14 +109,14 @@ test('inventory target counts existing finished pills and stops exactly without 
 });
 
 test('cumulative stone and month budgets remain consumed across pause, new income and explicit takeover', () => {
-  for (const [change, expected] of [[{ stoneBudget: 4 }, 4], [{ monthBudget: 2 }, 4]]) {
+  for (const [change, expected] of [[{ stoneBudget: 4 }, 4], [{ monthBudget: 24 }, 4]]) {
     const game = stocked(), first = complete(game, createActivity(game, craftPlan('healing', change), options()));
     const paused = pauseActivity(first.activity), earned = structuredClone(first.game);
     earned.core.player.stones += 100; // Income does not renew an arrangement's already consumed budget.
     const resumed = resumeActivity(earned, paused, { ownerId: 'two', commandId: 'resume', now: 1_000_000 });
     const second = complete(earned, resumed);
     assert.equal(second.activity.stopReason.code, 'ACTIVITY_BUDGET'); assert.equal(second.activity.spentStones, expected);
-    assert.equal(second.activity.completedCycles, 2); assert.equal(second.activity.spentMonths, 2);
+    assert.equal(second.activity.completedCycles, 2); assert.equal(second.activity.spentMonths, 24);
     assert.equal(resumed.startedAt, 1_000_000); assert.equal(resumed.dueAt, 1_030_000);
   }
   rejects(() => createActivity(stocked(), craftPlan('healing', { stoneBudget: 1 }), options()), 'ACTIVITY_BUDGET');
@@ -145,7 +146,7 @@ test('actual material, currency and remaining-life shortages never start or part
     const game = structuredClone(base); mutate(game); const before = structuredClone(game);
     rejects(() => createActivity(game, plan, options()), code); assert.deepEqual(game, before);
   }
-  const aging = stocked(); aging.core.world.elapsedMonths += remainingMonths(aging) - 3;
+  const aging = stocked(); aging.core.world.elapsedMonths += remainingMonths(aging) - 14;
   const one = complete(aging, createActivity(aging, craftPlan('healing', { remainingMonthsReserve: 2 }), options()));
   assert.equal(remainingMonths(one.game), 2); assert.equal(one.activity.stopReason.code, 'ACTIVITY_RESERVE');
   const unsafe = structuredClone(aging); unsafe.core.world.elapsedMonths += 2;
@@ -288,7 +289,7 @@ test('legacy cultivation and source records retain exact schema while previews a
   assert.equal(old.version, 1); assert.equal(Object.hasOwn(old, 'spentItems'), false); assert.equal(Object.hasOwn(old, 'forgedRelics'), false);
   const preview = previewActivity(game, natural); assert.deepEqual(preview.spentItems, {}); assert.deepEqual(preview.relics, []);
   game.core.world.location = 'wilderness';
-  const source = { kind: 'source', sourceId: 'herbs', maxCycles: 1, until: 'cycles', target: null, monthBudget: 1, remainingMonthsReserve: 1 };
+  const source = { kind: 'source', sourceId: 'herbs', maxCycles: 1, until: 'cycles', target: null, monthBudget: 12, remainingMonthsReserve: 1 };
   const oldSource = createActivity(game, source, options()); validateActivity(oldSource, game);
   assert.equal(oldSource.version, 2); assert.equal(Object.hasOwn(oldSource, 'spentItems'), false);
   const sourcePreview = previewActivity(game, source); assert.deepEqual(sourcePreview.spentItems, {}); assert.deepEqual(sourcePreview.relics, []);

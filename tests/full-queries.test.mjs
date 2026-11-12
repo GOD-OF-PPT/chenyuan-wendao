@@ -10,7 +10,7 @@ test('blocked crafting exposes the exact shared cost and independent material de
   const preview = previewAction(d.game, { type: 'CRAFT', recipeId: 'foundation' });
   assert.equal(preview.allowed, false);
   assert.equal(preview.failure.code, 'INSUFFICIENT_ITEM');
-  assert.deepEqual(preview.costs, { stones: 20, mp: 0, months: 1, items: { herb: 8, dew: 2, core: 1 } });
+  assert.deepEqual(preview.costs, { stones: 20, mp: 0, months: 12, items: { herb: 8, dew: 2, core: 1 } });
   const missing = costDeficits(d.game, preview.costs);
   assert.deepEqual(missing.filter(x => x.kind === 'item').map(x => [x.id, x.missing]), [['herb', 8], ['dew', 2], ['core', 1]]);
   assert.equal(JSON.stringify(d.game), before);
@@ -43,12 +43,12 @@ test('source planning simulates legal travel and reports destination costs witho
   const herbs = getItemSources(d.game, 'herb').find(x => x.kind === 'source');
   assert.equal(herbs.available, true);
   assert.deepEqual(herbs.navigation, { type: 'TRAVEL', location: 'wilderness' });
-  assert.equal(herbs.costs.months, 1);
+  assert.equal(herbs.costs.months, 12);
   const purchase = getItemSources(d.game, 'foundation_pill')[1];
   assert.equal(purchase.available, false);
   assert.equal(purchase.failure.code, 'INSUFFICIENT_STONES');
-  assert.equal(purchase.costs.stones, 160);
-  assert.equal(purchase.deficits.find(x => x.kind === 'stones').missing, 120);
+  assert.equal(purchase.costs.stones, 195);
+  assert.equal(purchase.deficits.find(x => x.kind === 'stones').missing, 155);
   assert.equal(JSON.stringify(d.game), before);
 });
 

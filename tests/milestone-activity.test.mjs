@@ -171,7 +171,7 @@ test('both explicit ascension endings, retirement and last-month lifespan ending
   const game = checkpoint('qi'), retired = checkOnce(game, { type: 'RETIRE' }, 'ended');
   assert.equal(retired.game.ending, 'retired'); assert.equal(retired.game.core.world.elapsedMonths, game.core.world.elapsedMonths);
   rejects(() => createActivity(game, plan({ type: 'END_LIFE' }), options()), 'LIFESPAN_REMAINING');
-  const twoMonths = checkpoint('qi'); twoMonths.core.world.elapsedMonths += remainingMonths(twoMonths) - 2;
+  const twoMonths = checkpoint('qi'); twoMonths.core.world.elapsedMonths += remainingMonths(twoMonths) - 13;
   rejects(() => createActivity(twoMonths, plan({ type: 'END_LIFE' }), options()), 'LIFESPAN_REMAINING');
   const aged = checkpoint('qi'); aged.core.world.elapsedMonths += remainingMonths(aged) - 1; validateGame(aged);
   const life = checkOnce(aged, { type: 'END_LIFE' }, 'ended');

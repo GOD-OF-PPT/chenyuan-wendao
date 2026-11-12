@@ -188,14 +188,14 @@ test('medicine plans do not wait for future injury and obey quantity, actual inv
   rejects(() => createActivity(threshold, use('healing_pill', { targetPercent: 60 }), options()), 'TARGET_MET');
 });
 
-test('rest is one formal game month with both real restorations and an exact remaining-life reserve', () => {
+test('rest pays the current formal calendar cost with both real restorations and an exact remaining-life reserve', () => {
   for (const realm of ['mortal', 'qi', 'foundation', 'golden', 'nascent', 'spirit']) {
     const game = injured(realm), before = structuredClone(game), out = complete(game, createActivity(game, rest(), options()));
-    assert.equal(out.activity.completedCycles, 1); assert.equal(out.activity.spentMonths, 1); assert.equal(out.activity.stopReason.code, 'CYCLES_COMPLETE');
+    assert.equal(out.activity.completedCycles, 1); assert.equal(out.activity.spentMonths, 12); assert.equal(out.activity.stopReason.code, 'CYCLES_COMPLETE');
     assert.equal(out.activity.restoredHp, C.realms[realm].maxHp - 1); assert.equal(out.activity.restoredMp, C.realms[realm].maxMp);
-    assert.equal(out.game.core.world.elapsedMonths, before.core.world.elapsedMonths + 1); assert.deepEqual(out.activity.spentItems, {});
+    assert.equal(out.game.core.world.elapsedMonths, before.core.world.elapsedMonths + 12); assert.deepEqual(out.activity.spentItems, {});
   }
-  const aging = injured(); aging.core.world.elapsedMonths += remainingMonths(aging) - 2;
+  const aging = injured(); aging.core.world.elapsedMonths += remainingMonths(aging) - 13;
   const safe = complete(aging, createActivity(aging, rest(), options())); assert.equal(remainingMonths(safe.game), 1);
   rejects(() => createActivity(aging, rest({ remainingMonthsReserve: 2 }), options()), 'ACTIVITY_RESERVE');
   rejects(() => createActivity(ready(), rest(), options()), 'NO_CHANGE');

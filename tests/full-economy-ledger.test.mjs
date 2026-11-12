@@ -8,7 +8,7 @@ const options = { choice: 'leave', school: 'sword', preparation: 'gather', culti
 test('ledger records real source income once and closes every resource account', () => {
   const r = runner(options); r.go('wilderness'); r.act({ type: 'SOURCE', sourceId: 'herbs', count: 4 });
   const report = r.ledger.report(true), last = report.entries.at(-1);
-  assert.equal(last.received.items.herb, 8); assert.equal(last.result.costs.months, 4);
+  assert.equal(last.received.items.herb, 8); assert.equal(last.result.costs.months, 48);
   assert.equal(report.closing.inventory.herb, 8); assert.equal(report.totals.received.items.herb, 8);
   assert.equal(report.closing.stones, 40); assert.deepEqual(reconcileLedger(report.initial, report.entries, report.closing), report.totals);
 });

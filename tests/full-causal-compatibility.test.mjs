@@ -5,7 +5,7 @@ import { newGame, parseGame, validateGame } from '../src/full/engine.ts';
 import { getRelationships, getCausalAid, getStoryContext } from '../src/full/queries.ts';
 import { HISTORICAL_FULL_OPTIONS } from '../src/full/versions.ts';
 import * as C from '../src/full/content.ts';
-const upgraded = g => ({ ...g, core: { ...g.core, contentVersion: C.VERSION, balanceVersion: C.BALANCE } });
+const upgraded = g => ({ ...g, core: { ...g.core, contentVersion: 'full-demo.3', balanceVersion: 'full-unbalanced.3' } });
 
 test('exact T10 source preserves six completed and six pending reunion states without rewriting resources or choices', async () => {
   const fixtures = await historicalCausalFixtures(); assert.equal(fixtures.length, 6);

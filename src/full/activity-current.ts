@@ -620,9 +620,9 @@ function activityStopAfterCompletion(game: Game, activity: Activity): RuleFailur
 export function previewActivity(game: Game, plan: ActivityPlan): ActivityPreview {
   validateGame(game);
   const cycleMs = plan?.kind === 'source' && Object.hasOwn(C.sources, plan.sourceId)
-    ? C.sources[plan.sourceId].months * 30_000 : plan?.kind === 'craft' && Object.hasOwn(C.recipes, plan.recipeId)
-      ? C.recipes[plan.recipeId].months * 30_000 : plan?.kind === 'forge' && Object.hasOwn(C.relics, plan.relicId)
-        ? C.actionDurations.forge * 30_000 : isMilestonePlan(plan) && plan.action && Object.hasOwn(MILESTONE_CYCLE_MS, plan.action.type) ? MILESTONE_CYCLE_MS[plan.action.type] : isAdventurePlan(plan) ? adventureCycleMs(plan, game) : isPreparationPlan(plan) ? PREPARATION_CYCLE_MS[plan.kind] : Object.hasOwn(CULTIVATION_CYCLE_MS, game.core.player.realm)
+    ? currentSourcePeriodMs(plan.sourceId) : plan?.kind === 'craft' && Object.hasOwn(C.recipes, plan.recipeId)
+      ? currentRecipePeriodMs(plan.recipeId) : plan?.kind === 'forge' && Object.hasOwn(C.relics, plan.relicId)
+        ? ONLINE_FORGE_MS : isMilestonePlan(plan) && plan.action && Object.hasOwn(MILESTONE_CYCLE_MS, plan.action.type) ? MILESTONE_CYCLE_MS[plan.action.type] : isAdventurePlan(plan) ? adventureCycleMs(plan, game) : isPreparationPlan(plan) ? PREPARATION_CYCLE_MS[plan.kind] : Object.hasOwn(CULTIVATION_CYCLE_MS, game.core.player.realm)
       ? CULTIVATION_CYCLE_MS[game.core.player.realm as Activity['realm']] : 0;
   try {
     let activity = createActivity(game, plan, { id: 'preview-activity', ownerId: 'preview-owner', commandId: 'preview-start', now: 0 });

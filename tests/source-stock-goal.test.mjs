@@ -19,7 +19,7 @@ test('all sixteen source goals use the persisted target for each actual material
   assert.deepEqual(sourceStockGoal(f.game,id,f.activity),{id:targetId,target:f.plan.target.quantity,met:false});
   assert.deepEqual(sourceStockGoal(f.game,id,pauseActivity(f.activity)),{id:targetId,target:f.plan.target.quantity,met:false});assert.deepEqual(f,before);count++;
  }
- assert.equal(count,20);
+ assert.equal(count,21);
 });
 test('a real saved complete period marks only a formal met target and preserves overshoot stock',()=>{
  const f=fixture('herbs'),command=f.activity.nextCommand,r=resolve(f.game,command),done=completeActivity(r.nextState,f.activity,r.result,{commandId:command.commandId,now:f.activity.dueAt});

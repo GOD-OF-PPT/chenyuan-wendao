@@ -5,6 +5,9 @@ import * as activities from '../src/full/activity.ts';
 import {validateCommandReceipt,canonicalFingerprint} from '../src/full/receipts.ts';
 import {validateActivityReceipt} from '../web/src/activity-persistence.ts';
 import * as legacy from '../src/legacy/rules-v3/index.ts';
+import {contentForGame} from '../src/full/rule-content.ts';
+import {getItemSources,previewAction,getLifeOverview} from '../src/full/queries.ts';
+import {planCollection} from '../src/full/goals.ts';
 
 function prepared(engine,runId='profile-shared'){
  let g=engine.newGame('版本修士',runId);
@@ -40,4 +43,20 @@ test('mixed content pairs and same-run old activities or receipts cannot masquer
  const command={type:'SOURCE',sourceId:'work',count:1,commandId:'shared-receipt',runId:old.core.runId,expectedRevision:old.core.revision};
  const older=legacy.engine.resolve(old,command),newer=current.resolve(g,command),receipt={format:'chenyuan-receipt',version:1,command,fingerprint:canonicalFingerprint(command),result:older.result};
  assert.throws(()=>validateCommandReceipt(receipt,newer.nextState));
+});
+
+test('interleaved old and new lives keep their own prices yields lifespan and source quotes without a global profile',()=>{
+ const beforeOld=prepared(legacy.engine),beforeNew=prepared(current),snapshots=structuredClone([beforeOld,beforeNew]);
+ for(const game of [beforeNew,beforeOld,beforeNew,beforeOld]){
+  const old=game===beforeOld,C=contentForGame(game);
+  assert.equal(C.items.foundation_pill.buy,old?160:195);
+  assert.equal(C.sources.core.stones,old?0:40);
+  assert.equal(C.sources.jade_task.items.jade,old?1:2);
+  assert.equal(previewAction(game,{type:'SOURCE',sourceId:'work'}).costs.months,old?1:12);
+  assert.equal(getLifeOverview(game).limitMonths,old?1440:1200);
+  const purchase=getItemSources(game,'foundation_pill').find(s=>s.kind==='purchase');
+  assert.equal(purchase.costs.stones,old?160:195);
+  assert.equal(planCollection(game,'core',{kind:'stones',quantity:game.core.player.stones+40})?.count,old?undefined:1);
+ }
+ assert.deepEqual([beforeOld,beforeNew],snapshots);
 });

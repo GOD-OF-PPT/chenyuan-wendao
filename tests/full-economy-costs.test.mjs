@@ -31,7 +31,7 @@ test('known previous balance migrates all real resources and context without ret
     const old = structuredClone(game); old.core.contentVersion = 'full-demo.2'; old.core.balanceVersion = 'full-unbalanced.1';
     const raw = JSON.stringify(old), current = parseGame(raw);
     assert.throws(() => validateGame(old), error => error.code === 'SAVE_VERSION');
-    assert.deepEqual(current, { ...old, core: { ...old.core, contentVersion: C.VERSION, balanceVersion: C.BALANCE } });
+    assert.deepEqual(current, { ...old, core: { ...old.core, contentVersion: 'full-demo.3', balanceVersion: 'full-unbalanced.3' } });
     assert.equal(JSON.stringify(old), raw); assert.deepEqual(parseGame(JSON.stringify(current)), current);
     old.core.balanceVersion = 'full-unbalanced.999'; assert.throws(() => parseGame(JSON.stringify(old)), error => error.code === 'SAVE_VERSION');
   }
@@ -40,7 +40,7 @@ test('known full content v1 only accepts its actual historical balance combinati
   const r = runner(options), old = r.ledger.game;
   old.core.contentVersion = 'full-demo.1';
   assert.throws(() => parseGame(JSON.stringify(old)), error => error.code === 'SAVE_VERSION');
-  old.core.balanceVersion = 'full-unbalanced.1'; assert.equal(parseGame(JSON.stringify(old)).core.balanceVersion, C.BALANCE);
+  old.core.balanceVersion = 'full-unbalanced.1'; assert.equal(parseGame(JSON.stringify(old)).core.balanceVersion, 'full-unbalanced.3');
 });
 test('same-checkpoint cultivation exposes a real time versus capital tradeoff', () => {
   const probes = cultivationProbes(); assert.equal(probes.length, 72);
@@ -61,6 +61,6 @@ test('all finite buy/sell and sellable recipe conversion cycles fail to create f
 });
 test('a real trial defeat can restore health and repurchase entry without counting rollback as income', () => {
   const probe = failureRecoveryProbe(); assert.equal(probe.failure.hp, 1); assert.equal(probe.failure.inventory.ascension_seal, 0);
-  assert.equal(probe.restoredReadiness.inventory.ascension_seal, 1); assert.equal(probe.recoveryGrossStones, 1500);
-  assert.equal(probe.recoveryMonths, 21); assert.equal(probe.checkpointRollbackCountedAsIncome, false);
+  assert.equal(probe.restoredReadiness.inventory.ascension_seal, 1); assert.equal(probe.recoveryGrossStones, C.items.ascension_seal.buy);
+  assert.equal(probe.recoveryMonths, 7 * C.sources.work_spirit.months + C.actionDurations.rest); assert.equal(probe.checkpointRollbackCountedAsIncome, false);
 });

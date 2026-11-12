@@ -34,3 +34,30 @@ test('rule profiles let the actual old repository reject a new v4 database witho
  },repositoryFsRoot);
  expect(r.created.state.core.contentVersion).toBe('full-demo.4');expect(r.error.code).toBe('SAVE_VERSION');expect(r.after).toEqual(r.before);expect(r.current.state).toEqual(r.created.state);
 });
+
+test('genuine old configuration and direct replies replay after later progress without repricing or rewriting the database',async({page})=>{
+ await setupPersistence(page);
+ const r=await page.evaluate(async root=>{
+  const h=(globalThis as any).h,old=await import(`/@fs${root}src/legacy/rules-v3/web/src/full-persistence.ts`),name='old-direct-config',repo=await old.FullSaveRepository.open(name);
+  const mutation=(s:any)=>({commandId:crypto.randomUUID(),runId:s.state.core.runId,expectedRevision:s.state.core.revision,expectedActivityId:s.activity?.id??null,expectedActivityRevision:s.activity?.revision??null,ownerId:'old-owner'});
+  const intent=(s:any,action:any)=>({command:h.command(s.state,action),expectedActivityId:s.activity?.id??null,expectedActivityRevision:s.activity?.revision??null});
+  const tick=async(a:any)=>{const now=Date.now;Date.now=()=>a.dueAt;try{return await repo.settleActivity({commandId:a.nextCommand.commandId,runId:a.runId,expectedRevision:a.gameRevision,activityId:a.id,expectedActivityRevision:a.revision,ownerId:a.ownerId,generation:a.generation});}finally{Date.now=now;}};
+  let reader:any;
+  try{
+   await repo.create('旧约回音',h.mutation());await h.finishAction(repo,{type:'CHOOSE',choice:'leave'});await h.finishAction(repo,{type:'TRAVEL',location:'cave'});
+   const s=await repo.loadActivitySnapshot(),started=await repo.startActivity({kind:'cultivation',method:'natural',maxCycles:2,until:'xp-cap',stoneBudget:0,stoneReserve:0},mutation(s));
+   await tick(started.activity);await tick((await repo.loadActivitySnapshot()).activity);await h.finishAction(repo,{type:'BREAKTHROUGH'});
+   const config=intent(await repo.loadActivitySnapshot(),{type:'SCHOOL',school:'sword'}),configured=await repo.configure(config);
+   await h.finishAction(repo,{type:'TRAVEL',location:'sect'});
+   const visit=intent(await repo.loadActivitySnapshot(),{type:'EVENT',event:'lu_intro'});await repo.executeDirect(visit);
+   const answer=intent(await repo.loadActivitySnapshot(),{type:'DECIDE',option:'listen'}),answered=await repo.executeDirect(answer);
+   await h.finishAction(repo,{type:'TRAVEL',location:'cave'});const before=await h.inspect(name);
+   reader=await h.FullSaveRepository.open(name);const snapshot=await reader.loadActivitySnapshot(),a=await reader.configure(config),b=await reader.executeDirect(answer),after=await h.inspect(name);
+   return{before,after,snapshot,configured,answered,a,b};
+  }finally{repo.close();reader?.close();}
+ },repositoryFsRoot);
+ expect(r.after).toEqual(r.before);expect(r.snapshot.state.core.contentVersion).toBe('full-demo.3');
+ for(const [replay,saved]of [[r.a,r.configured],[r.b,r.answered]]){
+  expect(replay.replayed).toBe(true);expect(replay.result).toEqual(saved.result);expect(replay.state).toEqual(r.snapshot.state);expect(replay.activity).toEqual(r.snapshot.activity);
+ }
+});

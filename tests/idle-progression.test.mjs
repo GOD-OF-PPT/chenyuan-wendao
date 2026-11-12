@@ -97,7 +97,7 @@ test('configuration combat outlook uses actual current resources and remains rea
   const d = driver(); d.realm(); d.funds(100); d.go('sect'); d.doAction({ type: 'LEARN', skill: 'sword_still' }); d.go('cave');
   const before = structuredClone(d.game), p = projectConfigurationCombat(d.game, { type: 'EQUIP', skill: 'sword_still' });
   assert.equal(p.enemy, 'serpent'); assert.equal(p.configurationAllowed, true); assert.ok(p.after);
-  assert.ok(p.before.onlineMs >= 36000); assert.ok(p.after.onlineMs >= 36000);
+  assert.ok(p.before.onlineMs >= 30000); assert.ok(p.after.onlineMs >= 36000);
   assert.ok(p.before.spentItems.healing_pill === undefined); assert.deepEqual(d.game, before);
   const invalid = projectConfigurationCombat(d.game, { type: 'EQUIP_RELIC', relic: 'soul_lamp' });
   assert.equal(invalid.configurationAllowed, false); assert.equal(invalid.after, null);

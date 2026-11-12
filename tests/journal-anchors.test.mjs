@@ -33,7 +33,7 @@ test('reconciliation preserves readonly source arrays and returns independent bo
  const next=journalAnchors(old,texts,'life',4,writes(4));assert.deepEqual(old.texts,['work','attack']);assert.deepEqual(texts,['work','attack','victory']);assert.equal(next.keys[1],old.keys[1]);assert.notEqual(next.texts,texts);assert.equal(next.keys.length,texts.length);
 });
 test('a formal EVENT increments Game revision while adding zero logs and preserves all reading tokens',()=>{
- const d=driver();d.go('sect');for(let n=0;n<100;n++)d.doAction({type:'SOURCE',sourceId:'work',count:1});const before=d.game,old=journalAnchors(undefined,before.journal,before.core.runId,before.core.revision);d.doAction({type:'EVENT',event:availableEvents(before)[0].id});const after=d.game;
+ const d=driver();for(let n=0;n<102;n++)d.go(n%2?'cave':'sect');d.go('sect');const before=d.game,old=journalAnchors(undefined,before.journal,before.core.runId,before.core.revision);d.doAction({type:'EVENT',event:availableEvents(before)[0].id});const after=d.game;
  assert.equal(after.core.revision,before.core.revision+1);assert.deepEqual(after.journal,before.journal);const next=journalAnchors(old,after.journal,after.core.runId,after.core.revision,writes(after.core.revision,0,after.core.runId));assert.deepEqual(next.keys,old.keys);assert.equal(next.next,old.next);
 });
 test('unknown external progress does not invent an exact chronological identity for identical capped logs',()=>{
