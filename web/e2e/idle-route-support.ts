@@ -69,7 +69,7 @@ export async function selectPlan(page: Page, plan: any): Promise<{ control: Loca
       await page.getByLabel('取材次数', { exact: true }).selectOption(plan.until === 'target' ? 'target' : String(plan.maxCycles));
       if (plan.until === 'target') {
         await page.getByLabel('目标资源', { exact: true }).selectOption(plan.target.kind === 'stones' ? 'stones' : plan.target.id);
-        await field(page, '目标库存', plan.target.quantity); await field(page, '目标最多轮数', plan.maxCycles);
+        await field(page, '目标库存', plan.target.quantity);const limit=page.getByLabel('取材目标另设轮数上限',{exact:true});if(await limit.isVisible())await limit.check();await field(page, '目标最多轮数', plan.maxCycles);
       }
       await field(page, '累计游戏月预算', plan.monthBudget); await field(page, '余寿保留量', plan.remainingMonthsReserve);
       await closeSourceSettings(page);
