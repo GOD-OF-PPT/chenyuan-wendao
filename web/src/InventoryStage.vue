@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import {computed,inject,onDeactivated,onScopeDispose,ref,useId,watch} from 'vue';
+import type {useGame} from './store';
+import {formatDelta} from './presentation';
 import type {Action,Game} from '../../src/full/types.ts';
 import * as C from '../../src/full/content.ts';
 import {previewAction} from '../../src/full/queries.ts';
@@ -10,7 +12,12 @@ import CataloguePager from './CataloguePager.vue';
 import ItemArtifact from './ItemArtifact.vue';
 import AssetImage from './AssetImage.vue';
 const props=defineProps<{game:Game;itemId:string;available:boolean;reason:string;consumption:(a:Action)=>string}>();
-const emit=defineEmits<{act:[Action];track:[TrackingTarget]}>();
+const emit=defineEmits<{act:[Action];quick:[Action];track:[TrackingTarget]}>();
+const scene=inject<ReturnType<typeof useGame>>('game-scene');
+const quickBlock=computed(()=>!props.available?'存档未就绪':scene?.busy?'保存中，请稍候':scene?.unresolved?'请先核对上次行动':scene?.activityRunning?'先暂停当前活动':'');
+const useQuote=computed(()=>item.value&&(item.value.hp||item.value.mp)?previewAction(props.game,{type:'USE',item:props.itemId}):null);
+const replacement=computed(()=>scene?.activity?.status==='paused'?'本次行动将结束已暂停活动；已完成成果保留，未完成部分不再续行。':'');
+function quick(kind:'use'|'sell'){if(quickBlock.value)return;emit('quick',kind==='use'?{type:'USE',item:props.itemId}:{type:'SELL',item:props.itemId,quantity:1});}
 const focus=inject(gameFocusKey),library=ref<HTMLDialogElement>(),purposes=ref<HTMLDialogElement>(),instance=useId(),page=ref(0);
 const item=computed(()=>C.items[props.itemId]),stock=computed(()=>props.game.core.inventory[props.itemId]??0);
 const uses=computed(()=>[...Object.entries(C.recipes).filter(([,r])=>r.inputs[props.itemId]>0).map(([id,r])=>({key:'recipe-'+id,name:r.name,kind:'丹方',amount:r.inputs[props.itemId]})),...Object.entries(C.relics).filter(([,r])=>r.inputs[props.itemId]>0).map(([id,r])=>({key:'relic-'+id,name:r.name,kind:'器物',amount:r.inputs[props.itemId]}))]);
@@ -35,7 +42,7 @@ onDeactivated(close);onScopeDispose(()=>{focus?.release(library.value);focus?.re
    <div class="inventory-selected">
     <button v-if="stock>0" class="inventory-held" data-testid="inventory-uses-open" :aria-label="'查看'+item.name+'用途与价格，不消耗'" @click="open(purposes,$event)"><ItemArtifact :item-id="itemId" :owned="true"/><span>查用途 · 不消耗</span></button>
     <div v-else class="inventory-blueprint"><ItemArtifact :item-id="itemId" :owned="false"/><small>图谱 · 尚未持有</small></div>
-    <article class="inventory-object" data-testid="inventory-object"><small>{{item.kind==='medicine'?'随身丹药':item.kind==='breakthrough'?'破境之物':'修行灵材'}}</small><h3>{{item.name}}</h3><strong data-testid="inventory-selected-stock">实存 {{stock}} 件</strong><p>{{item.description}}</p><small>{{stock?(item.hp||item.mp?'可查看服丹调息或出售换石安排。':item.sell===null?'此物不可出售；可查看用途与来源。':'可查看材料用途或出售安排。'):'查来源只查看获得方式；不自动取材、采购或旅行。'}}</small><footer class="inventory-main-decision"><button v-if="!stock" class="primary" data-testid="inventory-main-source" @click="view('source')">查找{{item.name}}来源</button><button v-else class="primary" data-testid="inventory-main-uses" @click="open(purposes,$event)">查看用途与价格</button><button v-if="!stock" class="text-button" data-testid="inventory-uses-open" @click="open(purposes,$event)">用途与价格</button></footer></article>
+    <article class="inventory-object" data-testid="inventory-object"><small>{{item.kind==='medicine'?'随身丹药':item.kind==='breakthrough'?'破境之物':'修行灵材'}}</small><h3>{{item.name}}</h3><strong data-testid="inventory-selected-stock">实存 {{stock}} 件</strong><p>{{item.description}}</p><small>{{stock?(item.hp||item.mp?'可查看服丹调息或出售换石安排。':item.sell===null?'此物不可出售；可查看用途与来源。':'可查看材料用途或出售安排。'):'查来源只查看获得方式；不自动取材、采购或旅行。'}}</small><footer class="inventory-main-decision"><button v-if="!stock" class="primary" data-testid="inventory-main-source" @click="view('source')">查找{{item.name}}来源</button><button v-else class="text-button" data-testid="inventory-main-uses" @click="open(purposes,$event)">查看用途与价格</button><template v-if="stock>0"><div v-if="item.hp||item.mp" class="inventory-quick-use"><p>{{useQuote?.delta?formatDelta(useQuote.delta):useQuote?.failure?.message}}</p><button class="primary" :data-testid="'quick-use-'+itemId" :disabled="!!quickBlock||!useQuote?.allowed" @click="quick('use')">服用1枚{{item.name}}</button></div><div v-if="item.sell!==null" class="inventory-quick-sell"><small>售出1件得 {{item.sell}} 灵石{{sellReason?' · '+sellReason:''}}</small><button :data-testid="'quick-sell-'+itemId" :disabled="!!quickBlock||!!sellReason" @click="quick('sell')">售出1件</button></div><small v-if="replacement">{{replacement}}</small><small v-if="quickBlock">{{quickBlock}}</small><small v-if="item.hp||item.mp">{{consumption({type:'USE',item:itemId})}}</small><small v-if="item.sell!==null">{{consumption({type:'SELL',item:itemId,quantity:1})}}</small></template><button v-if="!stock" class="text-button" data-testid="inventory-uses-open" @click="open(purposes,$event)">用途与价格</button></footer></article>
    </div>
   </template>
   <p v-else class="catalogue-empty" data-testid="inventory-current-empty">当前分类没有条目；翻找行囊可切换分类或查看后续物资图谱。</p>
