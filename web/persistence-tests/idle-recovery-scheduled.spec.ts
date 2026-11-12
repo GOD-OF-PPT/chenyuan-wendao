@@ -23,6 +23,19 @@ test('a real scheduled source persists four due periods together with its fiftee
  expect(r.summary.cycles).toBe(4);expect(r.summary.costs.months).toBe(48);expect(r.summary.delta.stones).toBe(80);expect(r.summary.delta.months).toBe(48);expect(r.afterSummary).toEqual(r.raw);
 });
 
+test('a claimed pre10 database with a conflicting clock store is refused without dropping even its empty original',async({page})=>{
+ await setupPersistence(page);
+ const r=await page.evaluate(async()=>{
+  const h=(globalThis as any).h,name='pre10-clock-collision',game=h.legacyRuleRoutes.driver().game;
+  await new Promise<void>((resolve,reject)=>{
+   const q=indexedDB.open(name,9);q.onupgradeneeded=()=>{for(const n of [h.FULL_STATE_STORE,h.FULL_RECEIPT_STORE,h.FULL_BACKUP_STORE,h.FULL_SCHEDULE_STORE])q.result.createObjectStore(n);q.transaction!.objectStore(h.FULL_STATE_STORE).put(game,'current');};
+   q.onerror=()=>reject(q.error);q.onsuccess=()=>{q.result.close();resolve();};
+  });
+  const before=await h.FullSaveRepository.exportRaw(name),failed=await h.attempt(()=>h.FullSaveRepository.open(name));return{before,failed,after:await h.FullSaveRepository.exportRaw(name)};
+ });
+ expect(r.before.database.version).toBe(9);expect(r.before.stores.find((x:any)=>x.name==='full-schedules').entries).toEqual([]);expect(r.failed.code).toBe('DB_SCHEMA');expect(r.after).toEqual(r.before);
+});
+
 for(const damage of ['count','profile'])test(`a batch with damaged ${damage} proof cannot produce a summary or repeat gains and the whole raw database stays intact`,async({page})=>{
  await setupPersistence(page);
  const r=await page.evaluate(async damage=>{

@@ -75,5 +75,5 @@ test('unknown balance cannot migrate, mutate or discard the original', async ({ 
     const before = await h.inspect('economy-future'), failed = await h.attempt(() => h.FullSaveRepository.open('economy-future'));
     return { failed, before, after: await h.inspect('economy-future') };
   });
-  expect(seeded.before.version).toBe(9); expect(result.failed.code).toBe('SAVE_VERSION'); expect(result.after).toEqual(result.before);
+  expect(seeded.before.version).toBe(10); expect(result.failed.code).toBe('SAVE_VERSION'); expect(result.after).toEqual(result.before);
 });

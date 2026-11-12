@@ -250,7 +250,7 @@ test('v4 cultivation activity, real breakthrough checkpoint and all receipts sur
       state = (await h.finishAction(fixture, { type: 'BREAKTHROUGH' })).state;
       activity = await fixture.startActivity(plan, h.activityMutation(await fixture.loadActivitySnapshot()));
       const tick = h.activityTick(activity); now = activity.activity.dueAt;
-      const completed = await fixture.settleActivity(tick), checkpoint = await fixture.loadCheckpoint(), original = await h.inspect('source-v4-original');
+      const completed = await fixture.settleActivity(tick), checkpoint = await fixture.loadCheckpoint(), original = h.legacyDatabaseFixture(await h.inspect('source-v4-original'),4);
       fixture.close();
       const old = await new Promise<IDBDatabase>((resolve, reject) => {
         const request = indexedDB.open('source-v4', 4);

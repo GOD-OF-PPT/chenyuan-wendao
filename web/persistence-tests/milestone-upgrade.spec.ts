@@ -29,7 +29,7 @@ test('DB9 preserves DB8 Game, v6 activity, configuration and historical ordinary
         { format: 'chenyuan-receipt', version: 1, command: oldCommand, fingerprint: h.milestoneReceipts.canonicalFingerprint(oldCommand), result: old.result });
       // The historical receipt is older than a later lawful snapshot; replay must return that snapshot.
       await h.put(name + '-source', h.FULL_STATE_STORE, 'current', old.nextState);
-      const original = await h.inspect(name + '-source'); source.close();
+      const original = h.legacyDatabaseFixture(await h.inspect(name + '-source'),8); source.close();
       const oldDB = await new Promise<IDBDatabase>((resolve, reject) => { const request = indexedDB.open(name, 8); request.onupgradeneeded = () => { for (const store of original.stores) request.result.createObjectStore(store); }; request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error); });
       await new Promise<void>((resolve, reject) => { const tx = oldDB.transaction(original.stores, 'readwrite'); for (const store of original.stores) for (const row of original[store]) tx.objectStore(store).put(row.value, row.key); tx.oncomplete = () => resolve(); tx.onabort = () => reject(tx.error); });
       let closed = false; oldDB.onversionchange = () => { closed = true; oldDB.close(); }; now += 86_400_000;
@@ -41,7 +41,7 @@ test('DB9 preserves DB8 Game, v6 activity, configuration and historical ordinary
       } finally { upgraded.close(); oldDB.close(); }
     } finally { Date.now = realNow; source.close(); }
   });
-  expect(r.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(r.loaded.activity).not.toHaveProperty('rulesVersion'); expect(r.closed).toBe(true); expect(r.after.version).toBe(9); expect(r.oldClient.name).toBe('VersionError');
+  expect(r.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(r.loaded.activity).not.toHaveProperty('rulesVersion'); expect(r.closed).toBe(true); expect(r.after.version).toBe(10); expect(r.oldClient.name).toBe('VersionError');
   for (const store of r.original.stores) expect(r.after[store]).toEqual(r.original[store]);
   expect(r.loaded).toEqual({ state: r.old.nextState, activity: r.arrived.activity }); expect(r.checkpointAfter).toEqual(r.checkpoint);
   expect(r.travelReplay.replayed).toBe(true); expect(r.travelReplay.state).toEqual(r.old.nextState); expect(r.travelReplay.result).toEqual(r.arrived.result);

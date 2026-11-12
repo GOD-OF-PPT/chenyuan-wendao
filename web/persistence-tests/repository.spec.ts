@@ -20,7 +20,7 @@ test('fresh storage waits for explicit creation and survives close/reopen', asyn
   expect(result.created.replayed).toBe(false);
   expect(result.created.state).toEqual(result.stored);
   expect(result.loaded).toEqual(result.stored);
-  expect(result.raw.version).toBe(9);
+  expect(result.raw.version).toBe(10);
   expect(result.raw['full-state'].find((x: any) => x.key === 'current').value).toEqual(result.loaded);
 });
 
@@ -309,7 +309,7 @@ test('newer database versions close stale repositories and remain intact when ol
     const h = (globalThis as any).h, repo = await h.FullSaveRepository.open('future-db');
     const original = (await repo.create('版本', h.mutation())).state;
     await new Promise<void>((resolve, reject) => {
-      const req = indexedDB.open('future-db', 10); req.onupgradeneeded = () => req.result.createObjectStore('future-data').put({ version: 999, data: 'preserved' }, 'future'); req.onsuccess = () => { req.result.close(); resolve(); }; req.onerror = () => reject(req.error);
+      const req = indexedDB.open('future-db', 11); req.onupgradeneeded = () => req.result.createObjectStore('future-data').put({ version: 999, data: 'preserved' }, 'future'); req.onsuccess = () => { req.result.close(); resolve(); }; req.onerror = () => reject(req.error);
     });
     const closed = await h.attempt(() => repo.load()), older = await h.attempt(() => h.FullSaveRepository.open('future-db'));
     const backup = await h.FullSaveRepository.exportRaw('future-db');
@@ -317,9 +317,9 @@ test('newer database versions close stale repositories and remain intact when ol
   });
   expect(result.closed.code).toBe('STORAGE_CLOSED');
   expect(result.older.code).toBe('DB_VERSION');
-  expect(result.backup.database.version).toBe(10);
+  expect(result.backup.database.version).toBe(11);
   expect(result.backup.stores.find((s: any) => s.name === 'future-data').entries[0].value).toEqual({ version: 999, data: 'preserved' });
-  expect(result.raw.version).toBe(10);
+  expect(result.raw.version).toBe(11);
   expect(result.raw['full-state'].find((x: any) => x.key === 'current').value).toEqual(result.original);
 });
 

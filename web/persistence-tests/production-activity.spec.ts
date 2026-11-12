@@ -270,7 +270,7 @@ test('v5 cultivation and source activities, complete resources, real checkpoint 
           const plan = kind === 'cultivation' ? { kind, method: 'natural', maxCycles: 3, until: 'cycles', stoneBudget: 0, stoneReserve: 0 } :
             { kind, sourceId: 'herbs', maxCycles: 3, until: 'cycles', target: null, monthBudget: 3, remainingMonthsReserve: 1 };
           const started = await fixture.startActivity(plan, h.activityMutation(await fixture.loadActivitySnapshot())), tick = h.activityTick(started);
-          now = started.activity.dueAt; const completed = await fixture.settleActivity(tick), checkpoint = await fixture.loadCheckpoint(), original = await h.inspect(name + '-original');
+          now = started.activity.dueAt; const completed = await fixture.settleActivity(tick), checkpoint = await fixture.loadCheckpoint(), original = h.legacyDatabaseFixture(await h.inspect(name + '-original'),5);
           fixture.close();
           const old = await new Promise<IDBDatabase>((resolve, reject) => {
             const request = indexedDB.open(name, 5);
@@ -298,7 +298,7 @@ test('v5 cultivation and source activities, complete resources, real checkpoint 
     } finally { Date.now = realNow; }
   });
   for (const row of rows) {
-    expect(row.closed).toBe(true); expect(row.after.version).toBe(9); expect(row.checkpoint).not.toBeNull();
+    expect(row.closed).toBe(true); expect(row.after.version).toBe(10); expect(row.checkpoint).not.toBeNull();
     for (const store of row.original.stores) expect(row.after[store]).toEqual(row.original[store]);
     expect(row.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(row.loaded.activity).not.toHaveProperty('rulesVersion'); expect(row.loaded.activity.version).toBe(row.kind === 'cultivation' ? 1 : 2);
     expect(row.loaded).toEqual({ state: row.completed.state, activity: row.completed.activity }); expect(row.checkpointAfter).toEqual(row.checkpoint);
