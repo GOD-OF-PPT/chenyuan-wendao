@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {inject,nextTick,onActivated,onDeactivated,onScopeDispose,ref,useId,watch} from 'vue';
 import {gameFocusKey} from './focus';
-const props=defineProps<{choiceId:string;label:string;disabled:boolean;identity:string;details:{label:string;value:string}[]}>();
+const props=defineProps<{choiceId:string;label:string;disabled:boolean;identity:string;details:{label:string;value:string}[];compact?:boolean}>();
 const emit=defineEmits<{choose:[]}>(),focus=inject(gameFocusKey)!,dialog=ref<HTMLDialogElement>(),peek=ref<HTMLButtonElement>(),opened=ref(false),id=useId();
 let active=true,epoch=0;
 onActivated(()=>active=true);onDeactivated(()=>{active=false;epoch++;opened.value=false;dialog.value?.close();});
@@ -11,7 +11,7 @@ onScopeDispose(()=>{active=false;epoch++;focus.release(dialog.value);});
 </script>
 <template>
  <article class="choice-card">
-  <button class="choice-act" :data-testid="choiceId" :disabled="disabled" @click="emit('choose')"><slot/></button>
+  <button class="choice-act" :style="compact?{minHeight:'44px'}:undefined" :data-testid="choiceId" :disabled="disabled" @click="emit('choose')"><slot/></button>
   <button ref="peek" class="choice-peek" type="button" :aria-label="'查看'+label+'的代价与结果'" aria-haspopup="dialog" @click="inspect"><span aria-hidden="true">◇</span>详情</button>
   <dialog ref="dialog" class="paper choice-inspection" :aria-labelledby="id" @close="opened=false">
    <template v-if="opened"><header><div><span class="section-label">抉择之前</span><h2 :id="id" tabindex="-1" data-dialog-initial>{{label}}</h2></div><button type="button" @click="dialog?.close()" aria-label="关闭选择详情">关闭</button></header>
