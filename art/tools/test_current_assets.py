@@ -177,14 +177,18 @@ class CurrentAssetTests(unittest.TestCase):
 
     def test_svg_requires_an_actual_root_and_finite_positive_viewbox(self):
         (self.root / 'web/public/art/object.png').unlink()
-        for raw in [b'<g viewBox="0 0 8 8"/>', b'<svg viewBox="0 0 0 8"/>', b'<svg viewBox="0 0 NaN 8"/>',
-                    b'<?xml-stylesheet href="https://example.test/style.css"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"/>']:
+        namespace = b' xmlns="http://www.w3.org/2000/svg"'
+        for raw, reason in [(b'<g' + namespace + b' viewBox="0 0 8 8"/>', 'Invalid SVG root'),
+                            (b'<svg' + namespace + b' viewBox="0 0 0 8"/>', 'Invalid SVG dimensions'),
+                            (b'<svg' + namespace + b' viewBox="0 0 NaN 8"/>', 'Invalid SVG viewBox'),
+                            (b'<svg' + namespace + b' viewBox="NaN 0 8 8"/>', 'Invalid SVG viewBox'),
+                            (b'<?xml-stylesheet href="https://example.test/style.css"?><svg' + namespace + b' viewBox="0 0 8 8"/>', 'processing instructions')]:
             (self.root / 'web/public/art/object.svg').write_bytes(raw)
             values = {'path': 'web/public/art/object.svg', 'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest(), 'dimensions': {'width': 8, 'height': 8}, 'alpha': True}
             self.manifest['assets'][0].update(values, exportedPath=values['path'])
             self.export['assets'][0]['runtime'] = values
             self.save()
-            with self.assertRaisesRegex(AssertionError, 'Invalid SVG|processing instructions'):
+            with self.assertRaisesRegex(AssertionError, reason):
                 self.check(updated_contract=True)
 
 
