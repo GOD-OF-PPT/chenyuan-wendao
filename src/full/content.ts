@@ -1,8 +1,8 @@
 /** Full-demo content. All numbers are initial tuning values, not a retention promise. */
 import type { School, SkillSlot, SkillEffect, RelicEffect } from './mechanisms.ts';
 export type { School, SkillSlot } from './mechanisms.ts';
-export const VERSION = 'full-demo.3';
-export const BALANCE = 'full-unbalanced.3';
+export const VERSION:string = 'full-demo.4';
+export const BALANCE:string = 'full-unbalanced.4';
 export const realmIds = ['mortal','qi','foundation','golden','nascent','spirit','ascended'] as const;
 export type RealmId = typeof realmIds[number];
 export type LocationId = 'wilderness'|'cave'|'sect'|'market'|'secret'|'terrace';

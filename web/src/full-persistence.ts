@@ -1,7 +1,7 @@
+import {versionsForGame} from '../../src/full/rule-profile.ts';
 import { newGame, parseGame, resolve, validateCommand, validateGame } from '../../src/full/engine.ts';
 import { RuleError } from '../../src/full/errors.ts';
 import { canonicalFingerprint as fingerprint, validateCommandReceipt } from '../../src/full/receipts.ts';
-import { currentVersions } from '../../src/full/versions.ts';
 import type { Command, Game } from '../../src/full/types.ts';
 import type { ActionResult, CommandReceipt, CommitOutcome, SaveCheckpoint } from '../../src/full/contracts.ts';
 import { createActivity, pauseActivity as pauseModelActivity, resumeActivity as resumeModelActivity, completeActivity,
@@ -203,7 +203,7 @@ function reidentify(game: Game, runId: string): Game {
 function checkpoint(snapshot: Game, kind: SaveCheckpoint['kind']): SaveCheckpoint {
   return { format: 'chenyuan-checkpoint', version: 1, kind,
     sourceRunId: snapshot.core.runId, sourceRevision: snapshot.core.revision,
-    versions: { ...currentVersions }, snapshot: structuredClone(snapshot) };
+    versions: versionsForGame(snapshot), snapshot: structuredClone(snapshot) };
 }
 function validateCheckpoint(value: unknown): asserts value is SaveCheckpoint {
   if (!value || typeof value !== 'object') throw new RuleError('CHECKPOINT_INVALID', '检查点格式无效');
@@ -213,7 +213,7 @@ function validateCheckpoint(value: unknown): asserts value is SaveCheckpoint {
   }
   validateGame(c.snapshot);
   if (c.sourceRunId !== c.snapshot.core.runId || c.sourceRevision !== c.snapshot.core.revision ||
-      fingerprint(c.versions) !== fingerprint(currentVersions)) {
+      fingerprint(c.versions) !== fingerprint(versionsForGame(c.snapshot))) {
     throw new RuleError('CHECKPOINT_INVALID', '检查点身份或内容版本不一致');
   }
   try {
