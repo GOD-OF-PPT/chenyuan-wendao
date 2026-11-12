@@ -23,6 +23,25 @@ test('a real scheduled source persists four due periods together with its fiftee
  expect(r.summary.cycles).toBe(4);expect(r.summary.costs.months).toBe(48);expect(r.summary.delta.stones).toBe(80);expect(r.summary.delta.months).toBe(48);expect(r.afterSummary).toEqual(r.raw);
 });
 
+test('an existing v1 START with aliased but equal snapshots replays without rewriting its stored encoding',async({page})=>{
+ await setupPersistence(page);
+ const r=await page.evaluate(async()=>{
+  const h=(globalThis as any).h,d=h.routes.driver();d.go('sect');const name='scheduled-existing-v1',repo=await h.FullSaveRepository.open(name);
+  try{
+   await repo.importText(JSON.stringify(d.game),h.mutation());const s=await repo.loadActivitySnapshot();
+   const plan={kind:'source',sourceId:'work',maxCycles:5,until:'cycles',target:null,monthBudget:60,remainingMonthsReserve:1},intent={commandId:'existing-v1-start',runId:s.state.core.runId,expectedRevision:s.state.core.revision,expectedActivityId:null,expectedActivityRevision:null,ownerId:'one'};
+   const started=await repo.startScheduledActivity(plan,intent),raw=await h.FullSaveRepository.exportRaw(name),key=intent.runId+':'+intent.commandId;
+   const receipt=raw.stores.find((x:any)=>x.name===h.FULL_RECEIPT_STORE).entries.find((x:any)=>x.key===key).value;
+   // Original v1 no-Game-change controls used one clone and retained this alias.
+   receipt.proof.stateAfter=receipt.proof.stateBefore;await h.put(name,h.FULL_RECEIPT_STORE,key,receipt);
+   const before=await h.FullSaveRepository.exportRaw(name),replay=await repo.startScheduledActivity(plan,intent),after=await h.FullSaveRepository.exportRaw(name);
+   const stored=(x:any)=>x.stores.find((s:any)=>s.name===h.FULL_RECEIPT_STORE).entries.find((s:any)=>s.key===key).value;
+   return{started,replay,before,after,oldAlias:stored(before).proof.stateBefore===stored(before).proof.stateAfter,preservedAlias:stored(after).proof.stateBefore===stored(after).proof.stateAfter};
+  }finally{repo.close();}
+ });
+ expect(r.oldAlias).toBe(true);expect(r.preservedAlias).toBe(true);expect(r.after).toEqual(r.before);expect(r.replay.replayed).toBe(true);expect(r.replay.state).toEqual(r.started.state);expect(r.replay.activity).toEqual(r.started.activity);expect(r.replay.schedule).toEqual(r.started.schedule);
+});
+
 test('a claimed pre10 database with a conflicting clock store is refused without dropping even its empty original',async({page})=>{
  await setupPersistence(page);
  const r=await page.evaluate(async()=>{

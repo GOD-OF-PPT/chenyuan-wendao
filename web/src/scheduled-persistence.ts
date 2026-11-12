@@ -41,9 +41,12 @@ export function scheduledProgress(state:Game,activity:Activity|null,schedule:Awa
   return advanceScheduledActivity(state,{activity,schedule},m,now);
 }
 export function scheduledReceipt(input:ScheduledInput,state:Game,activity:Activity|null,schedule:AwaySchedule|undefined,now:number,progress:ScheduledProgress):ScheduledReceipt {
-  return structuredClone({format:'chenyuan-scheduled-receipt',version:1,input,fingerprint:fingerprint(input),
-    proof:{stateBefore:state,activityBefore:activity,scheduleBefore:schedule??null,observedAt:now,stateAfter:progress.state,
-      recordAfter:progress.record,cycles:progress.cycles.length,more:progress.more,result:progress.cycles.at(-1)?.result??null}});
+  // Each proof field is an independent snapshot. A no-Game-change control must
+  // not persist stateBefore/stateAfter as aliases and force every whole-database
+  // observer onto the structured transport instead of its lossless JSON path.
+  return {format:'chenyuan-scheduled-receipt',version:1,input:structuredClone(input),fingerprint:fingerprint(input),
+    proof:{stateBefore:structuredClone(state),activityBefore:structuredClone(activity),scheduleBefore:structuredClone(schedule??null),observedAt:now,stateAfter:structuredClone(progress.state),
+      recordAfter:structuredClone(progress.record),cycles:progress.cycles.length,more:progress.more,result:structuredClone(progress.cycles.at(-1)?.result??null)}};
 }
 function invalid():never { throw new RuleError('RECEIPT_INVALID','离开安排回执损坏，未重复执行或覆盖原记录'); }
 function shape(value:unknown,fields:string[]):asserts value is Record<string,unknown> {

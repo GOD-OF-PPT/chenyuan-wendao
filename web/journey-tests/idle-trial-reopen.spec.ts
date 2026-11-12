@@ -1,4 +1,4 @@
-import {assertSavedTrialEntry} from '../e2e/idle-route-support';
+import {assertSavedTrialEntry,reloadScheduledJourney} from '../e2e/idle-route-support';
 import {test,expect} from '@playwright/test';
 import * as C from '../../src/full/content.ts';
 import {createIdleRoute} from '../../scripts/economy/idle-scenarios.mjs';
@@ -24,11 +24,11 @@ for(const school of ['sword','talisman']as const)test(`current normal ${school} 
    while(a.status==='running'){
     const g=await snapshot(page);await expect(page.locator('[data-testid="training-activity"][data-generation="'+a.generation+'"][data-running="true"]')).toBeVisible();await expect(page.getByTestId('training-countdown')).toHaveText((a.cycleMs/1000).toFixed(1)+' 秒');
     await page.clock.runFor(a.cycleMs-1);expect(await snapshot(page)).toEqual(g);await page.clock.runFor(1);await expect.poll(async()=>(await activitySnapshot(page))?.completedCycles).toBe(a.completedCycles+1);await expect(page.getByTestId('save-status')).toHaveText('已保存');const done=await activitySnapshot(page);expect(await snapshot(page)).toEqual(resolve(g,a.nextCommand).nextState);rounds++;stages.add((await snapshot(page)).trial.stage);
-    const raw=await recoveryDatabase(page);await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');expect(await recoveryDatabase(page)).toEqual(raw);expect(await activitySnapshot(page)).toEqual(done);reopens++;
+    const reloaded=await reloadScheduledJourney(page);reopens++;
     if(done.status==='running'){
-     // Reload itself grants nothing. The player explicitly resumes this same finite authorization.
-     await page.getByTestId('training-resume').click();await expect.poll(async()=>(await activitySnapshot(page))?.generation).toBe(done.generation+1);a=await activitySnapshot(page);expect(a.id).toBe(done.id);expect(a.plan).toEqual(plan);expect(a.completedCycles).toBe(done.completedCycles);
-    }else{a=done;}
+     // Reload claims only the original authorized clock, with no new cycle or budget.
+     a=reloaded.activity;expect(a.generation).toBe(done.generation+1);expect(a.id).toBe(done.id);expect(a.plan).toEqual(plan);expect(a.completedCycles).toBe(done.completedCycles);
+    }else{expect(reloaded.activity).toEqual(done);a=done;}
    }
    if((await snapshot(page)).trial.stage===gate)expect(a.stopReason.code).toBe('ACTIVITY_BUDGET');
   }
