@@ -1,9 +1,11 @@
 import {test,expect,type Page} from '@playwright/test';
 import {newGame,resolve} from '../../src/full/engine';
 import {driver} from '../../tests/full-route.mjs';
+import * as C from '../../src/full/content';
 import {importRecoveryFixture,recoveryDatabase} from './idle-recovery-ui-support';
 import {snapshot,activitySnapshot} from './support';
 import {selectPlan,home} from './idle-route-support';
+import {openInventoryLibrary} from './stage-support';
 
 test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});
 
@@ -28,7 +30,7 @@ test('Q06-2 the page tools menu keeps one return and restores its stable keyboar
 });
 
 test('Q06-3 one live clock and pause survive details reading pause refresh resume and the original full due command',async({page},info)=>{
- const d=driver();d.go('cave');const g=await importRecoveryFixture(page,d.game),plan={kind:'cultivation',method:'natural',maxCycles:2,until:'cycles',stoneBudget:0,stoneReserve:0}as const;
+ const d=driver();d.go('cave');const g=await importRecoveryFixture(page,d.game),plan={kind:'cultivation',method:'natural',maxCycles:2,until:'xp-cap',stoneBudget:0,stoneReserve:0}as const;
  const selected=await selectPlan(page,plan);await selected.control.click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');
  const accepted=await activitySnapshot(page),raw=await recoveryDatabase(page);expect(await clocks(page)).toHaveLength(1);await expect(page.locator('[data-testid=training-pause]:visible,[data-testid=cultivation-active-pause]:visible')).toHaveCount(1);
  await page.getByTestId('activity-inspect').click();await expect(page.getByTestId('activity-details')).toBeVisible();expect(await clocks(page)).toHaveLength(1);expect(await recoveryDatabase(page)).toEqual(raw);await page.getByTestId('hub-close').click();
@@ -40,7 +42,11 @@ test('Q06-3 one live clock and pause survive details reading pause refresh resum
 
 test('Q06-4 a single-page life has no disabled paging while its full original facts remain readable',async({page})=>{
  const g=await importRecoveryFixture(page,newGame('行道初记','one-folio')),raw=await recoveryDatabase(page);await page.getByTestId('hub-life').click();await expect(page.getByTestId('life-panel')).toBeVisible();
- const singles=await page.locator('.catalogue-pager:visible').evaluateAll(nodes=>nodes.filter(n=>/1\s*\/\s*1\s*页/.test(n.textContent??'')).map(n=>n.textContent));expect(singles).toEqual([]);expect(await snapshot(page)).toEqual(g);expect(await recoveryDatabase(page)).toEqual(raw);
+ await page.getByTestId('tab-2').click();await openInventoryLibrary(page);const library=page.getByTestId('inventory-library-dialog');await library.getByRole('button',{name:'丹药',exact:true}).click();
+ const singles=await page.locator('.catalogue-pager:visible').evaluateAll(nodes=>nodes.filter(n=>/1\s*\/\s*1\s*页/.test(n.textContent??'')).map(n=>n.textContent));expect(singles).toEqual([]);
+ await library.getByLabel('显示后续物资配方',{exact:true}).check();await library.getByRole('button',{name:'全部',exact:true}).click();const found=new Set<string>();
+ for(let i=0;i<20;i++){for(const id of await library.locator('[data-testid^=inventory-select-]').evaluateAll(nodes=>nodes.map(n=>(n as HTMLElement).dataset.testid!.replace('inventory-select-',''))))found.add(id);const next=library.getByTestId('catalogue-next');if(await next.isDisabled())break;await next.click();}
+ expect([...found].sort()).toEqual(Object.keys(C.items).sort());expect(await snapshot(page)).toEqual(g);expect(await recoveryDatabase(page)).toEqual(raw);
 });
 
 test('Q06-5 current skills and later sword manuals use their actual realm conditions without a duplicate relic category',async({page})=>{
