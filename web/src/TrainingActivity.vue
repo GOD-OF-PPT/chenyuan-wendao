@@ -34,7 +34,7 @@ function compactV6(){return props.compact&&a.value?.version===6;}
 </script>
 <template>
   <section v-if="a&&view&&rail&&a.status==='stopped'" class="activity-summary-badge" data-testid="training-summary" data-status="stopped" aria-label="上段活动成果">
-    <button data-testid="activity-summary-open" @click="emit('inspect')">上段收获 · {{view.name}}<small>{{summaryGain}}</small></button><small>{{stopped}}<br>{{period}}</small>
+    <button data-testid="activity-inspect" @click="emit('inspect')">上段收获 · {{view.name}}<small>{{summaryGain}}</small></button><small><span data-testid="training-stop">{{stopped}}</span><br>{{period}}</small>
   </section>
   <section v-else-if="a&&view&&summary&&!rail" class="training-stop-summary" data-testid="training-summary" aria-label="上段活动成果">
   <strong>{{view.name}} · 已结束</strong><p data-testid="training-stop">{{a.version===7?(a.stopReason?.code==='WAITING_DECISION'?'已停 · 待决定':'已完成一次 · 即停'):stopped}}</p>

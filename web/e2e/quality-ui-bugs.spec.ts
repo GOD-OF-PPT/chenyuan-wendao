@@ -1,3 +1,4 @@
+import {currentReceiptControl} from './readonly-navigation-support';
 import {test, expect, type Page} from '@playwright/test';
 import {driver} from '../../tests/full-route.mjs';
 import {newGame} from '../../src/full/engine';
@@ -134,7 +135,7 @@ test('Q02-7 a receipt states elapsed months as a cost rather than positive inven
   const d = driver(); d.go('wilderness');
   await importRecoveryFixture(page, d.game);
   await begin(page, {kind: 'source', sourceId: 'herbs', maxCycles: 1, until: 'cycles', target: null, monthBudget: 1, remainingMonthsReserve: 1});
-  await settleVisibleActivity(page); await page.getByTestId('hub-receipt').first().click();
+  await settleVisibleActivity(page); await (await currentReceiptControl(page)).click();
   await expect(page.getByTestId('game-content').or(page.locator('.catalogue-view'))).not.toContainText('游戏月 +1');
   await expect(page.getByText('耗时 1 游戏月', {exact: false}).first()).toBeVisible();
 });

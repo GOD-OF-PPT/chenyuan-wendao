@@ -47,7 +47,7 @@ const faults=new WeakMap<Page,string[]>();
 test.beforeEach(async({page})=>{const a:string[]=[];faults.set(page,a);page.on('pageerror',e=>a.push(e.message));});
 test.afterEach(async({page},info)=>{await attach(info,'uncaught-page-errors',faults.get(page));expect(faults.get(page)).toEqual([]);});
 function lawful(owned:string[]=[],bound?:string,ready?:string){const d=driver('leave','sword');d.realm();d.realm();for(const id of [...new Set([...owned,...ready?[ready]:[]])]){for(const[item,n]of Object.entries(C.relics[id].inputs))d.resource(item,n);d.funds(C.relics[id].stones);d.go('cave');if(owned.includes(id))d.doAction({type:'FORGE',relic:id});}if(bound)d.doAction({type:'EQUIP_RELIC',relic:bound});d.funds(1000);d.go('cave');validateGame(d.game);return d;}
-async function openRelic(page:Page,id:string){await openHubFeature(page,'relics');await page.getByTestId('equipment-mode-relics').click();await selectRelic(page,id);}
+async function openRelic(page:Page,id:string){await openHubFeature(page,'relics');await selectRelic(page,id);}
 const stage=(page:Page)=>page.getByTestId('relic-atelier');
 const origin=(page:Page)=>stage(page).locator('.relic-description details');
 async function readonly(page:Page,g:Game,raw:any,a:any=null){expect(await snapshot(page)).toEqual(g);expect(await database(page)).toEqual(raw);expect(await activity(page)).toEqual(a);}

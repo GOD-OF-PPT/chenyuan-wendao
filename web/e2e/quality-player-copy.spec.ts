@@ -1,3 +1,4 @@
+import {currentReceiptControl,openCurrentSavedPlan} from './readonly-navigation-support';
 import {test,expect} from '@playwright/test';
 import {newGame} from '../../src/full/engine';
 import {driver} from '../../tests/full-route.mjs';
@@ -25,7 +26,7 @@ test('player choice and real result use game language while keeping the formal c
   await expect(page.getByTestId('training-summary')).toContainText('此行已成');
   await expect(page.getByTestId('training-summary')).not.toContainText('明确安排');
   await page.screenshot({path:info.outputPath('copy-opening-result.png')});
-  await page.getByTestId('training-review').click();
+  await openCurrentSavedPlan(page);
   await expect(page.getByTestId('milestone-review')).toContainText('查看本次打算');
   expect(await recoveryDatabase(page)).toEqual(raw);
 });
@@ -35,8 +36,8 @@ test('source harvest and complete history use readable names without advancing t
   const selected=await selectPlan(page,{kind:'source',sourceId:'herbs',maxCycles:1,until:'cycles',target:null,monthBudget:1,remainingMonthsReserve:1});
   await selected.control.click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');
   await settleVisibleActivity(page);const raw=await recoveryDatabase(page);
-  await expect(page.getByTestId('hub-receipt').first()).toHaveText('收获明细');
-  await page.getByTestId('hub-receipt').first().click();
+  await expect((await currentReceiptControl(page))).toHaveText('收获明细');
+  await (await currentReceiptControl(page)).click();
   await page.getByTestId('activity-history-open').click();
   await expect(page.getByTestId('activity-history')).toContainText('收获记录');
   await expect(page.getByTestId('activity-history-costs')).toContainText('1 游戏月');
