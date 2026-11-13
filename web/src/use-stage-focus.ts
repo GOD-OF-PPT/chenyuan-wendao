@@ -257,6 +257,7 @@ export function useStageFocus(
     { flush: 'post' },
   );
   async function startJourney(name: string) {
+    if (!alive) return;
     const request = {
       owner: navigation.advance(),
       run: '',
@@ -275,6 +276,7 @@ export function useStageFocus(
       return;
     await nextTick();
     if (
+      alive &&
       request.owner === navigation.owner() &&
       !document.querySelector('dialog[open]') &&
       focusStillOwned(request.anchor)

@@ -60,6 +60,8 @@ const emit = defineEmits<{
   prepare: [event?: Event];
   destination: [request: NavigationRequest];
   act: [action: Action];
+  battle: [move: Move];
+  travel: [location: C.LocationId];
   start: [plan: CultivationPlan | AdventurePlan];
   school: [event?: Event];
   life: [event?: Event];
@@ -182,8 +184,8 @@ const openHub = (view: string, event?: Event) => emit('open', view, event),
   inspectCaveDestination = (request: NavigationRequest) =>
     emit('destination', request),
   act = (action: Action) => emit('act', action);
-const battle = (move: Move) => act({ type: 'BATTLE', move }),
-  travel = (location: C.LocationId) => act({ type: 'TRAVEL', location }),
+const battle = (move: Move) => emit('battle', move),
+  travel = (location: C.LocationId) => emit('travel', location),
   startAdventure = (plan: AdventurePlan) => emit('start', plan),
   startTraining = (plan?: CultivationPlan) => {
     if (plan) emit('start', plan);

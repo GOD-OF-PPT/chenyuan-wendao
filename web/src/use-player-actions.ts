@@ -103,5 +103,5 @@ export function usePlayerActions(
     return plans.startAdventure(singleBattlePlan(store.game, move));
   }
 
-  return { act };
+  return { act, battle };
 }

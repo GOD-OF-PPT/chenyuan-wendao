@@ -47,6 +47,8 @@ const batch = defineModel<number | 'target'>('batch', { required: true }),
   quantity = defineModel<number>('quantity', { required: true });
 const emit = defineEmits<{
   act: [action: Action];
+  battle: [move: Move];
+  travel: [location: C.LocationId];
   navigate: [request: NavigationRequest];
   track: [target: TrackingTarget];
   home: [];
@@ -118,8 +120,8 @@ function choiceDetails(action: Action, detail: string) {
   ];
 }
 const act = (action: Action) => emit('act', action),
-  battle = (move: Move) => act({ type: 'BATTLE', move }),
-  travel = (location: C.LocationId) => act({ type: 'TRAVEL', location }),
+  battle = (move: Move) => emit('battle', move),
+  travel = (location: C.LocationId) => emit('travel', location),
   navigate = (request: NavigationRequest) => emit('navigate', request),
   selectTracking = (target: TrackingTarget) => emit('track', target),
   closeHub = () => emit('home'),

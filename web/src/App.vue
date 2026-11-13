@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {useRuleContent} from './rule-content';
+import {useGoalStatus} from './use-goal-status';
 import ClosureDecisions from './ClosureDecisions.vue';
 import MainStage from './MainStage.vue';
 import type {ClosureNavigation} from './closure-navigation';
@@ -40,7 +41,7 @@ import type { NavigationRequest } from './navigation';
 import GoalPanel from './GoalPanel.vue';
 import CharacterPanel from './CharacterPanel.vue';
 import GameHud from './GameHud.vue';
-import SealedLifeHud from './SealedLifeHud.vue';
+import StatusSurfaces from './StatusSurfaces.vue';
 
 import SealedLifeNav from './SealedLifeNav.vue';
 import ScenePanel from './ScenePanel.vue';
@@ -89,7 +90,7 @@ import ConfigurationDialog from './ConfigurationDialog.vue';
 import LifespanGuide from './LifespanGuide.vue';
 
 import {lifespanGuidance} from './lifespan-guidance';
-import TrialCatalogue from './TrialCatalogue.vue';
+import TrialSurfaces from './TrialSurfaces.vue';
 import {narrativeFor} from './story-pages';
 
 import {nextStep} from './play-flow';
@@ -141,12 +142,12 @@ const journalWrites=shallowRef<JournalWrite[]>([]);
 const preparation = shallowRef<Action | null>(null);
 const fontScale = computed({get:()=>experience.preferences.value.fontScale,set:(value:1|1.5|2)=>{void experience.setPreferences({fontScale:value});}}), reduceMotion = computed({get:()=>experience.preferences.value.reduceMotion,set:(value:boolean)=>{void experience.setPreferences({reduceMotion:value});}}), settingsView = ref<InstanceType<typeof GameSettings>>();
 const settings=computed(()=>settingsView.value?.element);
-const settingsButton=ref<HTMLButtonElement>(),legacyContent=ref<InstanceType<typeof LegacyContent>>(),navHeight=ref(0);
-const mainStage=ref<InstanceType<typeof MainStage>>();
+const legacyContent=ref<InstanceType<typeof LegacyContent>>(),navHeight=ref(0);
+const mainStage=ref<InstanceType<typeof MainStage>>(),statusView=ref<InstanceType<typeof StatusSurfaces>>();
+const settingsButton=computed(()=>statusView.value?.settingsButton);
 const contentPanel=computed(()=>mainStage.value?.element??legacyContent.value?.element);
 const importButton=computed(()=>settingsView.value?.importButton);
-const noticeRegion=ref<HTMLElement>(),noticeHeight=ref(0);
-watch(noticeRegion,(node,_,cleanup)=>{if(!node)return;const observer=new ResizeObserver(()=>{const height=node.getBoundingClientRect().height;noticeHeight.value=height?height+8:0;});observer.observe(node);cleanup(()=>observer.disconnect());},{flush:'post'});
+const noticeHeight=ref(0);
 const desktopMedia=window.matchMedia('(min-width:480px)'),wideScreen=ref(desktopMedia.matches);
 function desktopChanged(){wideScreen.value=desktopMedia.matches;}
 onMounted(()=>desktopMedia.addEventListener('change',desktopChanged));onScopeDispose(()=>desktopMedia.removeEventListener('change',desktopChanged));
@@ -205,17 +206,14 @@ async function inspectNext(event?:Event){
  if(kind==='school')return showEquipment(event);
  if(kind==='record')return showLife();
  if(kind==='encounter'&&!game.value?.battle&&phase.value!=='opening')return openHub('current',event);
- const owner=navigationOwner.value;await closeHub();await nextTick();if(navigationOwner.value!==owner+1)return;
+ const owner=navigationOwner.value;await closeHub();await nextTick();if(!appActive||navigationOwner.value!==owner+1)return;
  const stage=document.querySelector<HTMLElement>('[data-testid=hub-current]');
  focus.target(stage?.querySelector<HTMLElement>('button.primary:not(:disabled),button.cultivate-primary:not(:disabled)')??stage);
 }
 
 const lifeBook=ref<{manage():void}>();
-const lifeState=computed(()=>game.value?lifespanGuidance(game.value):null);
 async function inspectLifespan(event:Event){const owns=inspectionOwner();const owner=await showLife(event);if(owns(owner??null))lifeBook.value?.manage();}
-const hubGoal=computed(()=>game.value?getTrackedGoal(game.value,tracking.target.value):null);
-const hudGoalContext=computed(()=>{const g=game.value,o=hubGoal.value;return g&&o&&!lifeState.value?.hint?{runId:g.core.runId,revision:g.core.revision,goal:o}:null;});
-const hubGoalHint=computed(()=>{if(tracking.target.value.kind==='breakthrough'&&trialView.value)return trialView.value.state;const g=hubGoal.value;if(!g)return'';if(g.completed)return'目标已达成';const d=g.deficits.find(d=>d.kind==='xp')??g.deficits.find(d=>d.kind==='item')??g.deficits[0];if(!d)return g.preview?.failure?.message??'准备已齐，可核对行动。';const label=d.kind==='item'?ruleContent.value.items[d.id!].name:({stones:'灵石',mp:'灵力',months:'余寿游戏月',xp:'修为',hp:'气血'}as const)[d.kind];return`尚缺${label} ${d.missing}${g.deficits.length>1?'（另 '+(g.deficits.length-1)+' 项）':''}`;});
+const {lifeState,hubGoal,hudGoalContext,hubGoalHint}=useGoalStatus(store,()=>tracking.target.value);
 function selectTracking(target:Parameters<typeof tracking.select>[0]){stageNavigation.advance();tracking.select(target);}
 watch([() => tracking.target.value, () => game.value?.core.runId], () => { collectionTarget.value = null; highlight.value = ''; });
 watch(() => game.value?.core.player.realm, () => { if (tracking.target.value.kind === 'breakthrough') { collectionTarget.value = null; highlight.value = ''; } });
@@ -232,8 +230,8 @@ watch(()=>store.syncEpoch,clearFlowReturns,{flush:'sync'});
 
 watch(needsSchool,value=>{if(value)equipmentOpen.value=true;},{immediate:true});
 const startJourney=()=>stageFocus.startJourney(name.value);
-async function showEquipment(event?:Event){rememberHubOrigin(event);const opener=stageReturns.opener,owner=selectTab('修行');if(singleScreen.value)hubView.value='skills';equipmentOpen.value=true;await nextTick();if(owner===navigationOwner.value&&!document.querySelector('dialog[open]')&&(document.activeElement===opener||document.activeElement===document.body))focus.target(document.querySelector<HTMLElement>('[data-testid="equipment-panel"]'));}
-async function showBreakthroughGoal(){captureStageReturn('goal');const opener=focus.capture();selectTracking({kind:'breakthrough'});if(singleScreen.value)hubView.value='goal';const owner=navigationOwner.value;await nextTick();if(owner===navigationOwner.value&&!document.querySelector('dialog[open]')&&(document.activeElement===opener||document.activeElement===document.body))focusRegion('goal-panel');}
+async function showEquipment(event?:Event){rememberHubOrigin(event);const opener=stageReturns.opener,owner=selectTab('修行');if(singleScreen.value)hubView.value='skills';equipmentOpen.value=true;await nextTick();if(appActive&&owner===navigationOwner.value&&!document.querySelector('dialog[open]')&&(document.activeElement===opener||document.activeElement===document.body))focus.target(document.querySelector<HTMLElement>('[data-testid="equipment-panel"]'));}
+async function showBreakthroughGoal(){captureStageReturn('goal');const opener=focus.capture();selectTracking({kind:'breakthrough'});if(singleScreen.value)hubView.value='goal';const owner=navigationOwner.value;await nextTick();if(appActive&&owner===navigationOwner.value&&!document.querySelector('dialog[open]')&&(document.activeElement===opener||document.activeElement===document.body))focusRegion('goal-panel');}
 const inspectingInventory=computed(()=>game.value?.status==='active'&&phase.value!=='idle'&&tab.value==='行囊');
 async function resumeEncounter(){if(game.value&&narrativeFor(game.value)){await openHub('current');return;}selectTab('修行');await nextTick();focusContent();}
 const catalogueGuide=ref<HTMLDialogElement>();
@@ -251,7 +249,7 @@ const lifeSection = ref<HTMLDetailsElement>();
 const {quote,can,why,cost}=useActionView(store);
 function viewReceipt(){if(store.activity?.version===7&&store.activity.stopReason?.code!=='STATE_CHANGED')return inspectMilestone(store.activity);return openHub('receipt');}
 const stoppedTraining = computed(()=>store.activity?.status==='stopped'&&store.activity.stopReason?.code!=='STATE_CHANGED');
-const {act}=usePlayerActions(store,focus,activityPlans,{owner:()=>navigationOwner.value,dismissResume:()=>resumeVisible.value=false,trial:showTrialPreparation,ending:ending=>reviewAscension(ending),configuration:action=>inspectConfiguration(action),milestone:selectMilestone},{batch});
+const {act,battle}=usePlayerActions(store,focus,activityPlans,{owner:()=>navigationOwner.value,dismissResume:()=>resumeVisible.value=false,trial:showTrialPreparation,ending:ending=>reviewAscension(ending),configuration:action=>inspectConfiguration(action),milestone:selectMilestone},{batch});
 const {storyAct,quickInventory,browse:browseDirect}=useDirectActions(store,focus,confirmation,{
  owner:()=>navigationOwner.value,viewIdentity:()=>[hubView.value,tab.value,detailParent.value?.view,detailParent.value?.tab],
  source:confirmationSource,blocked:confirmationBlocked,openCurrent:()=>openHub('current'),regular:act,
@@ -289,32 +287,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
 <CultivationStageHost :active="!!game&&['home','cultivation','current','trial-preparation'].includes(hubView)" :handoff="hubMain&&store.activity?.version===7&&store.activity.status==='stopped'" v-slot="{milestoneResult,milestoneText,milestoneDetail}">
 <AssetImage v-if="store.ready&&game" class="world-ambience" :path="worldArt" asset-id="world-ambience" eager aria-hidden="true"/>
 <nav class="skip-links" aria-label="快捷定位"><a :href="game?'#game-content':'#welcome-content'" @click.prevent="focusContent">跳到当前内容</a><a v-if="game" href="#primary-navigation" @click.prevent="focusRegion('primary-navigation')">{{game.status==='active'?'跳到主导航':'跳到封卷导航'}}</a><a v-if="game" href="#goal-panel" @click.prevent="focusRegion('goal-panel')">{{game.status==='active'?'跳到当前目标':'跳到此卷历程'}}</a></nav>
-<SealedLifeHud v-if="store.ready&&immersive&&game&&game.status!=='active'" :game="game" :save-label="saveDisplayLabel" :save-tone="saveTone" :demo="!!demoNode" @inspect="openHub('character',$event)" @life="showLife" @help="showGameplayHelp" @settings="showSettings"/>
-<GameHud v-else-if="store.ready&&immersive&&game" :game="game" :goal="hubGoal?.title??'当前目标'" :context="hudGoalContext" :gap="lifeState?.hint??hubGoalHint" :save-label="saveDisplayLabel" :save-tone="saveTone" :demo="!!demoNode" @inspect="openHub('character',$event)" @goal="openHub('goal',$event)" @help="showGameplayHelp" @settings="showSettings"><TrainingActivity v-if="activityRailVisible" :store="store" rail compact @settings="viewActivityPlan" @details="viewReceipt" @inspect="openHub('activity')"/><StageOutcome v-else-if="store.lastResult&&hubView!=='activity'" :game="game" :result="store.lastResult" :busy="store.busy" :saved="store.saved" :available="store.available" :error="store.error" :sync-issue="store.syncIssue" :replayed="store.lastReplayed" :execution="store.execution" :followup="false" compact next="" @details="viewReceipt"/></GameHud>
-<header v-else class="topbar">
-<div class="brand"><strong v-if="demoNode" class="demo-badge" data-testid="demo-badge">演示存档</strong><span class="seal">尘<br>缘</span><div><h1>尘缘问道</h1><p>一念尘缘起 · 千山共问道</p></div></div>
-<div v-if="core" class="where"><span class="diamond">◇</span> 云岚州 · {{location.name}} <small>修行第 {{core.world.elapsedMonths}} 月</small></div>
-<div class="top-actions"><div class="save-summary" :data-save-state="saveTone" data-testid="save-summary"><span class="save-state" role="status" data-testid="save-status"><GameIcon kind="action" id="save"/>{{saveDisplayLabel}}</span><small>本机存档</small></div><button v-if="game" class="top-export" @click="exportSave" :disabled="store.busy"><GameIcon kind="action" id="export"/> 导出存档</button><button ref="settingsButton" @click="showSettings">设置</button></div>
-</header>
-<section v-if="demoNode&&!hubMain" class="paper demo-banner" aria-label="演示存档说明"><strong>演示存档 · {{demoNode.label}}</strong><div class="demo-actions"><a :href="normalLink()" data-testid="demo-return">返回正常游戏</a><button @click="showDemoMenu" :disabled="store.busy">切换演示节点</button><button data-testid="demo-reset" @click="reset" :disabled="uiLocked">重新载入本节点</button></div><details class="demo-explanation"><summary>演示说明</summary><p>本版本每个节点的进度独立保存，使用相同修行规则；正常进度与显示设置不受影响。</p></details></section>
-<section v-if="!immersive&&resumeVisible&&game&&store.ready&&!hubMain" class="resume-strip" data-testid="resume-strip"><span>已续上本机进度 · {{realm.name}} · {{location.name}}</span><button type="button" class="text-button" @click="resumeVisible=false;focusPrimary()">继续当前内容 ↓</button></section>
-<section v-if="!store.ready" class="loading loading-stage" aria-labelledby="loading-title"><AssetImage class="loading-landscape" :path="PANEL_MATERIAL_ASSETS.mountains" asset-id="loading-mountains" eager aria-hidden="true"/><div class="loading-copy"><span class="eyebrow">尘缘将启</span><h2 id="loading-title">静候山门</h2><p role="status" data-testid="game-loading">{{experience.ready.value?'正在核对本机进度，尚未确认存档……':'正在读取本机显示设置，不会改变游戏进度……'}}</p></div></section>
-<div ref="noticeRegion" class="stage-alerts">
-<section v-if="immersive&&resumeVisible&&game&&store.ready&&!hubMain" class="resume-strip" data-testid="resume-strip"><span>已续上本机进度 · {{realm.name}} · {{location.name}}</span><button type="button" class="text-button" @click="resumeVisible=false;focusPrimary()">继续当前内容 ↓</button></section>
-<div v-if="store.error" class="error-banner" role="alert" data-testid="error">
-<p class="error-title"><strong>{{store.canRetry?'保存待核对':store.available?'操作受阻':'存档不可用'}}</strong><span v-if="store.canRetry" class="small" data-testid="retry-policy"> · 重试核对原操作，不重复结算。</span></p><p>{{recoveryMessage(store.error,store.canRetry)}}</p><button v-if="store.canRetry" class="primary" data-testid="retry" @click="retryOperation" :disabled="store.busy">重试原操作</button>
-<button v-if="!store.available" data-testid="reload-storage" @click="initialiseGame()" :disabled="store.busy">重新读取</button>
-<button @click="exportRaw" :disabled="store.busy">导出原件备份</button>
-</div>
-<div v-if="store.warning" class="error-banner" role="status">{{store.warning}}</div>
-<div v-if="exportError" class="error-banner" role="alert">{{exportError}}</div>
-<div v-if="importNotice" class="error-banner" role="alert" data-testid="import-notice">{{importNotice}}</div>
-<LifespanGuide v-if="!hubMain&&game" :game="game" @life="showLife" @checkpoint="showSettings"/>
-<ResultMoments :store="store" :reduce-motion="reduceMotion" :active="!['activity','receipt','goal','character','help'].includes(hubView)" @dismiss="focusContent"/>
-<ActionFeedbackStage :store="store" :reduce-motion="reduceMotion" :view-key="hubView+':'+tab" :playfield-active="hubMain||hubView==='current'&&storyView">
-<template #default="{operation,dismiss,hold}"><FeedbackSkip v-if="['BATTLE','BREAKTHROUGH','START_TRIAL'].includes(operation)" @hold="hold" @dismiss="dismiss"/></template>
-</ActionFeedbackStage>
-</div>
+<StatusSurfaces ref="statusView" :immersive="immersive" :hub-main="hubMain" :view="hubView" :tab="tab" :story-view="storyView" :activity-rail-visible="activityRailVisible" :local-ready="experience.ready.value" :reduce-motion="reduceMotion" :target="tracking.target.value" :export-error="exportError" :import-notice="importNotice" v-model:resume-visible="resumeVisible" @open="openHub" @life="showLife" @help="showGameplayHelp" @settings="showSettings" @plan="viewActivityPlan" @receipt="viewReceipt" @export="exportSave" @demos="showDemoMenu" @reset="reset" @primary="focusPrimary" @retry="retryOperation" @reload="initialiseGame" @raw="exportRaw" @focus="focusContent" @height="noticeHeight=$event"/>
 <main v-if="store.ready && !game && !demoNode" id="welcome-content" tabindex="-1" class="welcome">
 <div class="welcome-art"><AssetImage class="welcome-backdrop" :path="SCENE_ASSETS.wilderness" asset-id="welcome-wilderness" eager/><div class="welcome-copy"><span class="eyebrow">尘缘问道 · 试玩版</span><h2>凡心未改，<br>仙途已在眼前。</h2><p>不计片刻，不赶境界。<br>采一味灵草，结一段因果，修属于自己的长生路。</p></div></div>
 <form class="paper welcome-form" @submit.prevent="startJourney">
@@ -330,7 +303,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
 <main v-if="store.ready&&!game&&demoNode" class="paper demo-banner"><h2>演示进度尚未就绪</h2><p>请核对上方错误后重试同次操作或重新读取；不会改动正常进度。</p><button @click="initialiseGame" :disabled="store.busy">重新读取演示进度</button></main>
 <div v-if="game&&core" class="effects-stage"><ActionEffects :result="store.lastResult" :replayed="store.lastReplayed" :run-id="core.runId" :revision="core.revision" :school="game.school" :reduce-motion="reduceMotion" @focus-fallback="focusContent" :busy="store.busy" :eligible="store.saved && store.available && !store.error && hubMain && !store.lastFromActivity"/></div>
 <ActionExecution :execution="store.execution"/>
-<MainStage v-if="store.ready&&game&&core&&(hubMain||immersive&&game.battle)" ref="mainStage" :hub-main="hubMain" :immersive="immersive" :cultivation-home="cultivationHome" :resume-visible="resumeVisible" :demo-node="!!demoNode" :target="tracking.target.value" :goal-hint="hubGoalHint" v-model:method="hubTrainingMethod" :adventure-inspection-plan="adventureInspectionPlan" :adventure-inspection-saved="adventureInspectionSaved" :milestone-sequence="milestoneResult?.sequence??null" :milestone-text="milestoneText" :milestone-detail="milestoneDetail" @open="openHub" @prepare="openPreparation" @destination="inspectCaveDestination" @act="act" @start="plan=>plan.kind==='cultivation'?startTraining(plan):startAdventure(plan)" @school="showEquipment" @life="showLife" @manage-life="inspectLifespan" @settings="showSettings" @plan="viewActivityPlan" @receipt="viewReceipt" @compare="openTradeoffs('cultivation',$event)" @trial="showTrialPreparation" @tab="selectTab" @next="inspectNext" @export="exportSave" @demos="showDemoMenu"/>
+<MainStage v-if="store.ready&&game&&core&&(hubMain||immersive&&game.battle)" ref="mainStage" :hub-main="hubMain" :immersive="immersive" :cultivation-home="cultivationHome" :resume-visible="resumeVisible" :demo-node="!!demoNode" :target="tracking.target.value" :goal-hint="hubGoalHint" v-model:method="hubTrainingMethod" :adventure-inspection-plan="adventureInspectionPlan" :adventure-inspection-saved="adventureInspectionSaved" :milestone-sequence="milestoneResult?.sequence??null" :milestone-text="milestoneText" :milestone-detail="milestoneDetail" @open="openHub" @prepare="openPreparation" @destination="inspectCaveDestination" @act="act" @battle="battle" @travel="travel" @start="plan=>plan.kind==='cultivation'?startTraining(plan):startAdventure(plan)" @school="showEquipment" @life="showLife" @manage-life="inspectLifespan" @settings="showSettings" @plan="viewActivityPlan" @receipt="viewReceipt" @compare="openTradeoffs('cultivation',$event)" @trial="showTrialPreparation" @tab="selectTab" @next="inspectNext" @export="exportSave" @demos="showDemoMenu"/>
 <aside v-if="!immersive&&game&&game.status==='active'&&singleScreen&&!hubMain&&catalogueView" class="feature-state" data-testid="feature-state"><CharacterPanel :game="game" compact @inspect="openHub('character',$event)"/><TrainingActivity v-if="store.activity&&store.activity.status!=='stopped'" :store="store" compact @settings="viewActivityPlan" @details="viewReceipt"/><TrainingActivity v-else-if="stoppedTraining" :store="store" summary @settings="viewActivityPlan" @details="viewReceipt"/><StageOutcome v-else :game="game" :result="store.lastResult" :busy="store.busy" :saved="store.saved" :available="store.available" :error="store.error" :sync-issue="store.syncIssue" :replayed="store.lastReplayed" :execution="store.execution" :next="step?.title??'查看当前目标'" @next="inspectNext()" @details="viewReceipt"/></aside>
 <main v-if="store.ready&&game && core" v-show="!hubMain" class="game-grid" :class="{'hub-feature':singleScreen}" :aria-busy="store.busy">
 <header v-if="singleScreen" class="feature-header"><div><h2 id="feature-title" tabindex="-1">{{game.status==='active'?hubTitle:hubView==='goal'?'此卷历程':['current','fate'].includes(hubView)?'修仙生平':hubTitle}}</h2></div><div class="feature-actions"><FeatureMenu :identity="game.core.runId+':'+hubView" :guide="catalogueView&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" :preparation="hubView!=='journey'&&phase==='idle'&&!!realm.pill" :goal="hubView!=='goal'" :blueprints="navigationGate(game,'relics').locked" :sealed="game.status!=='active'" @browse="browseDirect()" @guide="showCatalogueGuide()" @preparation="openPreparation()" @goal="openHub('goal')" @blueprints="openPrimaryFeature('relics')"/><button data-testid="hub-close" :aria-label="detailParent||hubView==='life'&&readingReturn?'返回原玩法':'返回主舞台'" @click="closeHub">{{detailParent||hubView==='life'&&readingReturn?'返回原处':'返回舞台'}} <GameIcon kind="action" id="close"/></button></div></header>
@@ -339,10 +312,8 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
 
 <ActivityCatalogues :view="hubView" :single-screen="singleScreen" :immersive="immersive" :reading-generation="readingGeneration" :tradeoff-kind="tradeoffKind" :tradeoff-seed="tradeoffSeed" :tradeoff-entry="tradeoffEntry" :quantity="quantity" :consumption="consumption" v-model:all-receipts="receiptAll" @act="act" @navigate="navigate" @destination="inspectTradeoffDestination" @track="trackProduction" @home="closeHub" @prepare="openPreparation" @compare="openTradeoffs" @open="openHub" @school="showEquipment" @trial="showTrialPreparation" @quick="quickInventory" @receipt="viewReceipt"/>
 <StoryCatalogues ref="lifeBook" :active="storyView" :view="hubView" :reading-generation="readingGeneration" :narrative-context="narrativeContext" :journal-key="journalKey" :consumption="consumption" @browse="browseDirect" @act="storyAct" @navigate="navigate" @life="showLife" @resume="resumeEncounter" @dialogue="openHub('current')" @end="requestEnd" @export="exportLife" @restore="restore" @restart="reset" @receipt="viewReceipt" @progress="openHub('trial')"/>
-<MilestoneGate v-if="storyView&&hubView==='trial-preparation'" :game="game" kind="trial"><TrialCatalogue :block="pendingStoryError?(store.syncIssue?'请先重新读取当前进度':'请先重试或取消原安排'):null"  :game="game" kind="preparation" :enabled="store.available" :running="store.activityRunning" :busy="store.busy" :checkpoint="store.checkpointSummary" :recovery="store.trialRecovery" @review="reviewTrial" @restore="hubView==='trial-preparation'?restore():requestTrialRestore()" @export="exportSave" @prepare="showTrialPreparation" @resume="closeHub" @navigate="navigate" @track="trackTrialMaterial" @inspect-equipment="openHub('skills')"/></MilestoneGate>
-<TrialCatalogue :block="pendingStoryError?(store.syncIssue?'请先重新读取当前进度':'请先重试或取消原安排'):null" v-if="storyView&&(['trial','battle'].includes(hubView)||hubView==='current'&&game.status==='active'&&!narrativeFor(game)&&phase!=='idle')" :game="game" kind="progress" :initial-mode="trialReadMode" :enabled="store.available" :running="store.activityRunning" :busy="store.busy" :checkpoint="store.checkpointSummary" :recovery="store.trialRecovery" @review="reviewTrial" @restore="hubView==='trial-preparation'?restore():requestTrialRestore()" @export="exportSave" @prepare="showTrialPreparation" @resume="closeHub" @navigate="navigate" @track="trackTrialMaterial" @inspect-equipment="openHub('skills')"/>
-<TrialProgressPanel v-if="!catalogueView&&(journey || store.trialRecovery)" :journey="journey" :recovery="store.trialRecovery" :checkpoint="store.checkpointSummary" :enabled="store.available && !store.busy" @restore="requestTrialRestore" @export="exportSave" @prepare="showTrialPreparation"/>
-<LegacyContent ref="legacyContent" :hub-main="hubMain" :story-view="storyView" :single-screen="singleScreen" :immersive="immersive" :view="hubView" :tab="tab" :cultivation-home="cultivationHome" :guide="guidance" :guidance-enabled="guidanceEnabled" :skipped-guides="skippedGuides" :consumption="consumption" v-model:batch="batch" v-model:quantity="quantity" @act="act" @navigate="navigate" @track="selectTracking" @home="closeHub" @resume="resumeEncounter" @life="showLife" @school="showEquipment" @focus-cultivation="focusCultivation" @breakthrough-goal="showBreakthroughGoal" @help="topic=>{if(topic)helpBook?.selectTopic(topic);showGameplayHelp();}" @skip="skipGuidance" @export="exportLife" @restore="restore" @restart="reset" @receipt="viewReceipt"/>
+<TrialSurfaces :view="hubView" :story-view="storyView" :catalogue-view="catalogueView" :read-mode="trialReadMode" @review="reviewTrial" @restore="restore" @restore-trial="requestTrialRestore" @export="exportSave" @prepare="showTrialPreparation" @resume="closeHub" @navigate="navigate" @track="trackTrialMaterial" @equipment="openHub('skills')"/>
+<LegacyContent ref="legacyContent" :hub-main="hubMain" :story-view="storyView" :single-screen="singleScreen" :immersive="immersive" :view="hubView" :tab="tab" :cultivation-home="cultivationHome" :guide="guidance" :guidance-enabled="guidanceEnabled" :skipped-guides="skippedGuides" :consumption="consumption" v-model:batch="batch" v-model:quantity="quantity" @act="act" @battle="battle" @travel="travel" @navigate="navigate" @track="selectTracking" @home="closeHub" @resume="resumeEncounter" @life="showLife" @school="showEquipment" @focus-cultivation="focusCultivation" @breakthrough-goal="showBreakthroughGoal" @help="topic=>{if(topic)helpBook?.selectTopic(topic);showGameplayHelp();}" @skip="skipGuidance" @export="exportLife" @restore="restore" @restart="reset" @receipt="viewReceipt"/>
         <div v-if="!storyView&&tab==='仙缘'&&phase!=='idle'&&game.status==='active'" class="paper inline-actions"><button type="button" class="text-button" data-testid="show-life" @click="showLife">查看修仙生平 →</button><button type="button" data-testid="resume-encounter" @click="resumeEncounter">返回当前遭遇</button></div>
         <RelationshipPanel v-if="!storyView&&tab==='仙缘' && phase!=='idle'" :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
         <details v-if="!storyView&&tab==='仙缘' && game.status==='active'&&(!singleScreen||hubView==='life')" ref="lifeSection" class="paper life-section" :open="lifeOpen" @toggle="lifeOpen=($event.target as HTMLDetailsElement).open" data-testid="life-section"><summary>修仙生平 · 查看、导出与收卷</summary><LifePanel v-if="lifeOpen" :game="game" :enabled="store.available" :busy="store.busy" :has-checkpoint="store.hasCheckpoint" @end="requestEnd" @export="exportLife" @restore="restore" @restart="reset"/></details>
