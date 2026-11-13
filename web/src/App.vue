@@ -5,6 +5,9 @@ import CultivationHome from './CultivationHome.vue';
 import type {ClosureNavigation} from './closure-navigation';
 import {useSaveControls} from './use-save-controls';
 import {useActionView} from './use-action-view';
+import GameSettings from './GameSettings.vue';
+import DemoMenu from './DemoMenu.vue';
+import GameplayHelp from './GameplayHelp.vue';
 import CultivationTab from './CultivationTab.vue';
 import ExplorationTab from './ExplorationTab.vue';
 import InventoryTab from './InventoryTab.vue';
@@ -103,9 +106,9 @@ import {useSession} from './session';
 import MilestoneReview from './MilestoneReview.vue';
 import {useMilestoneReview,type PreparedMilestone} from './milestone-view';
 import {isMilestoneAction} from '../../src/full/milestones.ts';
-import {demoCatalog,demoSpec} from '../../src/demo.ts';
-import {demoLink,normalLink} from './demo-loader';
-import {guidanceFor,guideCatalog} from './guidance';
+import {demoSpec} from '../../src/demo.ts';
+import {normalLink} from './demo-loader';
+import {guidanceFor} from './guidance';
 import GuidancePanel from './GuidancePanel.vue';
 import CataloguePager from './CataloguePager.vue';
 import GameConfirmDialog from './GameConfirmDialog.vue';
@@ -113,9 +116,9 @@ import {useGameConfirmation} from './use-game-confirmation';
 const helpPage=ref(0);
 import {journalAnchors,type JournalLedger,type JournalWrite} from './journal-anchors';
 
-const session=useSession(),demoMenu=ref<HTMLDialogElement>();
+const session=useSession(),demoMenuView=ref<InstanceType<typeof DemoMenu>>();
+const demoMenu=computed(()=>demoMenuView.value?.element);
 const demoNode=session.kind==='demo'?demoSpec(session.node!.nodeId):null;
-const demoMenuNodes=demoCatalog.map(node=>({...node,href:demoLink(node.id)}));
 const ruleContent=useRuleContent(()=>store.game);
 const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
 provide('game-scene',store);
@@ -154,9 +157,10 @@ const journalWrites=shallowRef<JournalWrite[]>([]);
 function clearInspections(){trainingInspectionPlan.value=null;sourceInspectionPlan.value=null;productionInspectionPlan.value=null;preparationInspectionPlan.value=null;preparationInspectionSaved.value=false;preparationInspectionExact.value=true;adventureInspectionPlan.value=null;adventureInspectionSaved.value=false;}
 function selectTab(next: string) { clearFlowReturns();readingReturn.value=null;detailParent.value=null;clearInspections();navigationRevision++; resumeVisible.value=false; tab.value = next;hubView.value=({'修行':'home','历练':'explore','行囊':'inventory','仙缘':'fate'} as Record<string,string>)[next]??'home'; return navigationRevision; }
 const preparation = shallowRef<Action | null>(null);
-const fontScale = computed({get:()=>experience.preferences.value.fontScale,set:(value:1|1.5|2)=>{void experience.setPreferences({fontScale:value});}}), reduceMotion = computed({get:()=>experience.preferences.value.reduceMotion,set:(value:boolean)=>{void experience.setPreferences({reduceMotion:value});}}), settings = ref<HTMLDialogElement>();
+const fontScale = computed({get:()=>experience.preferences.value.fontScale,set:(value:1|1.5|2)=>{void experience.setPreferences({fontScale:value});}}), reduceMotion = computed({get:()=>experience.preferences.value.reduceMotion,set:(value:boolean)=>{void experience.setPreferences({reduceMotion:value});}}), settingsView = ref<InstanceType<typeof GameSettings>>();
+const settings=computed(()=>settingsView.value?.element);
 const settingsButton=ref<HTMLButtonElement>(),contentPanel=ref<HTMLElement>(),navHeight=ref(0);
-const importButton=ref<HTMLButtonElement>(),importInput=ref<HTMLInputElement>();
+const importButton=computed(()=>settingsView.value?.importButton);
 const noticeRegion=ref<HTMLElement>(),noticeHeight=ref(0);
 watch(noticeRegion,(node,_,cleanup)=>{if(!node)return;const observer=new ResizeObserver(()=>{const height=node.getBoundingClientRect().height;noticeHeight.value=height?height+8:0;});observer.observe(node);cleanup(()=>observer.disconnect());},{flush:'post'});
 const desktopMedia=window.matchMedia('(min-width:480px)'),wideScreen=ref(desktopMedia.matches);
@@ -342,7 +346,8 @@ async function resumeEncounter(){if(game.value&&narrativeFor(game.value)){await 
 const catalogueGuide=ref<HTMLDialogElement>();
 function showCatalogueGuide(event?:Event){focus.open(catalogueGuide.value,event?.currentTarget instanceof HTMLElement?event.currentTarget:focus.capture());}
 async function skipCatalogueGuide(){catalogueGuide.value?.close();await skipGuidance();}
-const gameplayHelp=ref<HTMLDialogElement>(),guidanceEnabled=ref(true),skippedGuides=ref<string[]>([]);
+const helpBook=ref<InstanceType<typeof GameplayHelp>>(),guidanceEnabled=ref(true),skippedGuides=ref<string[]>([]);
+const gameplayHelp=computed(()=>helpBook.value?.element);
 const guidance=computed(()=>guidanceFor(game.value,store.lastReplayed?null:store.lastResult));
 watch(()=>game.value?.core.runId,()=>skippedGuides.value=[]);
 async function skipGuidance(){skippedGuides.value=[...skippedGuides.value,guidance.value.id];await nextTick();focusContent();}
@@ -663,7 +668,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
           <ExplorationTab v-else-if="tab === '历练'" v-model:batch="batch" v-model:quantity="quantity" :collection="collectionTarget" :highlight="highlight" @act="act" @travel="travel"/>
           <InventoryTab v-else-if="tab === '行囊'" :single-screen="singleScreen" :view="hubView" :highlight="highlight" :consumption="consumption" @act="act" @travel="travel" @track="selectTracking"/>
           <FateTab v-else :highlight="highlight" @act="act" @life="showLife" @navigate="navigate"/>
-          <GuidancePanel v-if="(cultivationHome||phase==='opening')&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" :guide="guidance" @skip="skipGuidance" @help="showGameplayHelp" :modal="singleScreen&&phase==='opening'" @expand="helpPage=guideCatalog.findIndex(g=>g.id===guidance.id);showGameplayHelp()"/>
+          <GuidancePanel v-if="(cultivationHome||phase==='opening')&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" :guide="guidance" @skip="skipGuidance" @help="showGameplayHelp" :modal="singleScreen&&phase==='opening'" @expand="helpBook?.selectTopic(guidance.id);showGameplayHelp()"/>
         </section>
         <div v-if="!storyView&&tab==='仙缘'&&phase!=='idle'&&game.status==='active'" class="paper inline-actions"><button type="button" class="text-button" data-testid="show-life" @click="showLife">查看修仙生平 →</button><button type="button" data-testid="resume-encounter" @click="resumeEncounter">返回当前遭遇</button></div>
         <RelationshipPanel v-if="!storyView&&tab==='仙缘' && phase!=='idle'" :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
@@ -683,26 +688,9 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
     <MilestoneReview v-if="milestoneReview" :key="milestoneReview.identity" :review="milestoneReview" :stale="milestoneStale" :retry="milestoneRetry" :busy="store.busy" :available="store.available" :error="store.error" :pending-error="pendingStoryError" @confirm="!pendingStoryError&&confirmMilestone()" @retry="confirmMilestone(true)" @close="closeMilestone"/>
     <ConfigurationDialog v-if="configurationIntent&&configurationSnapshot" :key="configurationIntent.command.commandId" :intent="configurationIntent" :snapshot="configurationSnapshot" :stale="configurationStale" :busy="store.busy" :available="store.available" :error="configurationError" :retry="configurationRetry" @confirm="confirmConfiguration()" @retry="confirmConfiguration(true)" @refresh="refreshConfiguration" @close="closeConfiguration"/>
   <dialog ref="catalogueGuide" class="paper catalogue-guide" data-testid="catalogue-guide" aria-labelledby="catalogue-guide-title"><header><h2 id="catalogue-guide-title" tabindex="-1" data-dialog-initial>行道指引</h2><button aria-label="关闭行道指引" @click="catalogueGuide?.close()">关闭</button></header><GuidancePanel v-if="catalogueView&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" :guide="guidance" @skip="skipCatalogueGuide" @help="showGameplayHelp"/></dialog>
-    <dialog ref="settings" class="paper settings game-settings" aria-labelledby="settings-title"><header><h2 id="settings-title" tabindex="-1" data-dialog-initial>行旅设置</h2><button @click="settings?.close()" aria-label="关闭设置"><GameIcon kind="action" id="close"/><span>关闭</span></button></header>
-      <div class="settings-grid">
-        <section class="settings-display" aria-labelledby="settings-display-title"><h3 id="settings-display-title">观照 · 行道</h3>
-          <p>进度仅保存在当前浏览器。导出备份可用于迁移；清理浏览器数据可能丢失进度。</p>
-          <label class="setting-row"><span>文字大小</span><select name="text-size" v-model.number="fontScale" :disabled="experience.busy.value||!experience.ready.value"><option :value="1">100%</option><option :value="1.5">150%</option><option :value="2">200%</option></select></label>
-          <label class="setting-row"><span>减少演出动效</span><input type="checkbox" v-model="reduceMotion" data-testid="reduce-effects" :disabled="experience.busy.value||!experience.ready.value"></label>
-          <div class="settings-actions"><button type="button" data-testid="gameplay-help-entry" @click="showGameplayHelp">玩法帮助与重看</button><button data-testid="demo-menu-open" @click="showDemoMenu" :disabled="store.busy">演示节点</button><button v-if="game" data-testid="settings-life" @click="showLife">查看修仙生平</button><button v-if="game?.status==='active'" data-testid="settings-retire" @click="requestEnd('RETIRE')" :disabled="store.busy || !can({type:'RETIRE'})">主动归隐</button></div>
-        </section>
-        <section class="settings-saves" aria-labelledby="settings-saves-title"><h3 id="settings-saves-title">留卷 · 续缘</h3>
-          <p class="small" role="status" data-testid="settings-save-status">{{saveDisplayLabel}}</p><p v-if="store.error||exportError||importNotice" class="settings-error" role="alert" data-testid="settings-error">{{store.error||exportError||importNotice}}</p>
-          <div class="settings-actions"><button ref="importButton" type="button" class="file-button" data-testid="import-open" @click="importInput?.click()" :disabled="uiLocked">导入存档</button><input ref="importInput" hidden aria-label="导入存档" data-testid="import" name="save-import" type="file" accept=".json,application/json" @change="importFile" :disabled="uiLocked">
-          <button v-if="game" @click="exportSave">导出当前进度</button><button data-testid="raw-backup" @click="exportRaw" :disabled="store.busy">导出原件备份</button><button v-if="game" class="danger" data-testid="restart" @click="reset" :disabled="uiLocked">重新开始</button></div>
-          <button v-if="game" class="settings-checkpoint" data-testid="restore-checkpoint" :aria-describedby="!store.hasCheckpoint?'checkpoint-unavailable':undefined" @click="restore" :disabled="uiLocked || !store.hasCheckpoint"><GameIcon kind="action" id="restore"/> 恢复完整准备检查点</button>
-          <p v-if="game&&!store.hasCheckpoint" id="checkpoint-unavailable" class="small">当前没有已验证的完整准备检查点。</p>
-        </section>
-      </div>
-      <LocalExperiencePanel :experience="experience" :run-id="core?.runId??null" :target="tracking.target.value"/>
-    </dialog>
-    <dialog ref="demoMenu" class="paper demo-menu" aria-labelledby="demo-menu-title"><header><h2 id="demo-menu-title" tabindex="-1" data-dialog-initial>演示节点</h2><button @click="demoMenu?.close()" aria-label="关闭演示节点">关闭</button></header><p>以下是由正式指令回放生成的演示存档。进入不会替换正常进度，演示不计入正常新档通关验证。</p><nav v-once class="demo-list" aria-label="演示节点选择"><a v-for="node in demoMenuNodes" :key="node.id" :href="node.href" :data-testid="'demo-node-'+node.id"><strong>{{node.label}}</strong><span>{{node.description}}</span></a></nav></dialog>
-    <dialog ref="gameplayHelp" class="paper settings game-help" aria-labelledby="gameplay-help-title"><header><h2 id="gameplay-help-title" tabindex="-1" data-dialog-initial>玩法帮助</h2><button type="button" aria-label="关闭玩法帮助" @click="gameplayHelp?.close()">关闭</button></header><p>提示随当前行动与状态出现，也可逐项重看。约30分钟只用于理解玩法，不限定到达境界或通关时间。</p><p class="small">跳过或关闭引导仅影响本页显示，刷新后可再次出现；不会改变成长、物品、掉落或存档。设置与当前提示均可回到这里。</p><details class="help-storage-details"><summary>存档与行动记录</summary><p>行动完成并保存后，收获才会计入行囊。保存失败时请沿原操作重试；若已写入，只会重读结果，不会重复扣费或发奖。新安排允许离开累计最多8小时；返回时核对完整周期，保留未满一轮的余量。预算、保留线、寿元、危险或下一次选择先到先停，暂停后不再积累。旧在线安排须明确继续后才从当下起累计，不补领过去时段。</p><p>技术说明：收获明细对应操作回执，本次限额对应授权，下次选择对应草案，准备记录对应完整快照。commandId、runId与revision用于防止重复或过期写入，不是玩家需要填写的参数。</p></details><button type="button" data-testid="guide-toggle" :aria-pressed="guidanceEnabled" @click="guidanceEnabled=!guidanceEnabled;skippedGuides=[]">本页引导：{{guidanceEnabled?'开启':'关闭'}}</button><section class="help-chapter" :key="guideCatalog[helpPage].id"><span class="help-folio" aria-hidden="true">行道录 · {{String(helpPage+1).padStart(2,'0')}}</span><h3>{{guideCatalog[helpPage].title}}</h3><p>{{guideCatalog[helpPage].body}}</p></section><CataloguePager :page="helpPage" :pages="guideCatalog.length" :total="guideCatalog.length" label="帮助主题" @change="helpPage=$event"/></dialog>
+    <GameSettings ref="settingsView" :experience="experience" :target="tracking.target.value" :save-label="saveDisplayLabel" :export-error="exportError" :import-notice="importNotice" @help="showGameplayHelp" @demos="showDemoMenu" @life="showLife" @retire="requestEnd('RETIRE')" @import="importFile" @export="exportSave" @raw="exportRaw" @restart="reset" @restore="restore"/>
+    <DemoMenu ref="demoMenuView"/>
+    <GameplayHelp ref="helpBook" v-model:enabled="guidanceEnabled" @reset="skippedGuides=[]"/>
 <ClosureDecisions ref="closureDecisions" :single-screen="singleScreen" :can="can" :navigation="closureNavigation"/>
     </CultivationStageHost>
     <GameConfirmDialog v-if="confirmation.request.value" :key="confirmation.request.value.id" :request="confirmation.request.value" @answer="confirmation.answer($event)"/>
