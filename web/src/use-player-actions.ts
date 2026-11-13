@@ -6,12 +6,10 @@ import type { MilestoneAction } from '../../src/full/milestones.ts';
 import { isMilestoneAction } from '../../src/full/milestones.ts';
 import { singleBattlePlan } from '../../src/full/adventure.ts';
 import type { useGame } from './store';
-import type { useFocus } from './focus';
 import type { useActivityPlans } from './use-activity-plans';
 import { useRuleContent } from './rule-content';
 import { useActionView } from './use-action-view';
 export interface ActionNavigation {
-  owner(): number;
   dismissResume(): void;
   trial(): unknown;
   ending(ending: AscensionEnding): unknown;
@@ -21,7 +19,6 @@ export interface ActionNavigation {
 /** Dispatch the existing action to its explicit plan or confirmation owner. */
 export function usePlayerActions(
   store: ReturnType<typeof useGame>,
-  focus: ReturnType<typeof useFocus>,
   plans: ReturnType<typeof useActivityPlans>,
   navigation: ActionNavigation,
   selection: { batch: Ref<number | 'target'> },
@@ -75,28 +72,40 @@ export function usePlayerActions(
     }
     if (action.type === 'CRAFT' || action.type === 'FORGE')
       return plans.inspectProduction(action);
-    if (['BUY', 'SELL', 'USE', 'REST', 'LEARN', 'STUDY'].includes(action.type))
-      return plans.inspectPreparation(action);
-    if (
-      action.type === 'SCHOOL' ||
-      action.type === 'EQUIP' ||
-      action.type === 'EQUIP_RELIC'
-    )
-      return navigation.configuration(action);
-    if (store.activityRunning) {
-      store.activityNotice = '当前活动进行中，请先暂停再行动。';
-      return;
+    switch (action.type) {
+      case 'BUY':
+      case 'SELL':
+      case 'USE':
+      case 'REST':
+      case 'LEARN':
+      case 'STUDY':
+        return plans.inspectPreparation(action);
+      case 'SCHOOL':
+      case 'EQUIP':
+      case 'EQUIP_RELIC':
+        return navigation.configuration(action);
+      case 'START_TRIAL':
+      case 'END':
+      case 'CHOOSE':
+      case 'EVENT':
+      case 'DECIDE':
+      case 'BREAKTHROUGH':
+      case 'ANSWER_TRIAL':
+      case 'RETIRE':
+      case 'END_LIFE':
+        if (store.activityRunning) {
+          store.activityNotice = '当前活动进行中，请先暂停再行动。';
+          return;
+        }
+        if (action.type === 'START_TRIAL') return navigation.trial();
+        if (action.type === 'END') return navigation.ending(action.ending);
+        if (isMilestoneAction(action)) return navigation.milestone(action);
+        return store.validationError('本次选择内容无效，请重新查看。');
+      default: {
+        const unreachable: never = action;
+        throw new Error('无法识别的行动：' + JSON.stringify(unreachable));
+      }
     }
-    if (action.type === 'START_TRIAL') return navigation.trial();
-    if (action.type === 'END') return navigation.ending(action.ending);
-    if (isMilestoneAction(action)) return navigation.milestone(action);
-    const owner = navigation.owner();
-    return focus.afterAction(
-      async () => {
-        await store.act(action);
-      },
-      () => owner === navigation.owner(),
-    );
   }
   function battle(move: Move) {
     if (!store.game?.battle || store.activityRunning) return;

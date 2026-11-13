@@ -63,7 +63,7 @@ for (const choice of ['help', 'trade', 'leave']) for (const school of ['sword', 
 
 test('actual legacy repository releases its connection on version change and cannot overwrite the migrated run', async ({ page }) => {
   const result = await page.evaluate(async () => {
-    const h = (globalThis as any).h, oldModule = await import('/src/persistence.ts');
+    const h = (globalThis as any).h, oldModule = await import('/persistence-tests/fixtures/m1-repository.ts');
     const old = await oldModule.SaveRepository.open(), original = await old.initialize('原网页');
     const repo = await h.FullSaveRepository.open(), current = await repo.load();
     const stale = await h.attempt(() => old.execute(h.command(original, { type: 'CHOOSE', choice: 'help' })));

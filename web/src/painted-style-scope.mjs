@@ -26,6 +26,7 @@ export const paintedStyleScope = {
  },
 };
 
-export function isPaintedStyle(file,selector,property){
- return !!paintedStyleScope[file]?.[selector]?.includes(property);
+export function isPaintedStyle(file,selector,property,normalize=value=>value){
+ const key=normalize(selector);
+ return Object.entries(paintedStyleScope[file]??{}).some(([candidate,properties])=>normalize(candidate)===key&&properties.includes(property));
 }

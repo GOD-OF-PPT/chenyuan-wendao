@@ -6,6 +6,25 @@ import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { newGame } from '../src/full/engine.ts';
+import ts from 'typescript';
+
+function insertTable(source, name, value) {
+  const tree = ts.createSourceFile('content.ts', source, ts.ScriptTarget.Latest, true);
+  assert.deepEqual(tree.parseDiagnostics, []);
+  const declarations = [];
+  function visit(node) {
+    if (ts.isVariableDeclaration(node) && ts.isIdentifier(node.name) && node.name.text === name)
+      declarations.push(node);
+    ts.forEachChild(node, visit);
+  }
+  visit(tree);
+  assert.equal(declarations.length, 1, 'One actual table declaration: ' + name);
+  const initializer = declarations[0].initializer;
+  assert.ok(initializer && ts.isObjectLiteralExpression(initializer), name);
+  const offset = initializer.getStart(tree) + 1;
+  assert.equal(source[offset - 1], '{');
+  return source.slice(0, offset) + '\n' + value + source.slice(offset);
+}
 
 test('data-only event, recipe, skill and existing-effect relic additions work through the same engine and queries', () => {
   const root = fileURLToPath(new URL('../', import.meta.url));
@@ -18,24 +37,19 @@ test('data-only event, recipe, skill and existing-effect relic additions work th
     copyFileSync(join(root, 'tests/full-route.mjs'), join(temp, 'tests/full-route.mjs'));
     writeFileSync(join(temp, 'package.json'), JSON.stringify({ type: 'module' }));
     let content = readFileSync(join(temp, 'src/full/content.ts'), 'utf8');
-    const insert = (anchor, value) => {
-      assert.ok(content.includes(anchor), anchor);
-      content = content.replace(anchor, anchor + '\n' + value);
-    };
+    const insert = (name, value) => { content = insertTable(content, name, value); };
     content = content.replace("'full-demo.4'", "'full-demo.extension-test'");
-    insert('export const items:Record<string,Item>={',
+    insert('items',
       " spare_heal:{name:'试验回春丸',min:'qi',buy:18,sell:5,kind:'medicine',description:'复用恢复效果',hp:35},");
-    insert('export const recipes:Record<string,Recipe>={',
+    insert('recipes',
       " spare_recipe:{name:'试验配方',min:'qi',inputs:{herb:2},stones:2,months:12,onlineMs:30000,output:'spare_heal'},");
-    insert('export const skills:Record<string,Skill>={',
+    insert('skills',
       " river_mind:{name:'试验剑心',school:'sword',slot:'mind',min:'foundation',price:100,description:'复用止水效果',effect:'still'},");
-    insert('export const relics:Record<string,Relic>={',
+    insert('relics',
       " resonant_seal:{name:'试验护印',description:'复用减伤',stones:140,inputs:{jade:4},effect:'jade_seal'},");
     writeFileSync(join(temp, 'src/full/content.ts'), content);
     let events = readFileSync(join(temp, 'src/full/events.ts'), 'utf8');
-    const anchor = 'export const stories:Record<string,Story>={';
-    assert.ok(events.includes(anchor));
-    events = events.replace(anchor, anchor + "\n extension_meet:{id:'extension_meet',name:'试验机缘',npc:'行者',min:'qi',location:'sect',body:'一个已有机制的分支。',options:[{id:'ask',label:'交换',detail:'1灵石换丸',stones:1,gain:{spare_heal:1},result:'交换完成。'},{id:'leave',label:'作别',detail:'不消耗物资',result:'你作别离开。'}]},");
+    events = insertTable(events, 'stories', "\n extension_meet:{id:'extension_meet',name:'试验机缘',npc:'行者',min:'qi',location:'sect',body:'一个已有机制的分支。',options:[{id:'ask',label:'交换',detail:'1灵石换丸',stones:1,gain:{spare_heal:1},result:'交换完成。'},{id:'leave',label:'作别',detail:'不消耗物资',result:'你作别离开。'}]},");
     writeFileSync(join(temp, 'src/full/events.ts'), events);
     writeFileSync(join(temp, 'scenario.mjs'), `
 import assert from 'node:assert/strict';

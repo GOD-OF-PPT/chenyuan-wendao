@@ -1,29 +1,171 @@
-@layer game{
-.immersive-stage:has(.tradeoffs-catalogue,.preparation-catalogue).stage-details .hub-feature{width:1180px}
-.tradeoffs-catalogue{position:relative;isolation:isolate;gap:10px;padding:18px 24px;background:var(--palette-night);color:var(--palette-ink)}
-.tradeoffs-catalogue>.catalogue-art{position:absolute;inset:auto auto 64px 16px;width:290px;height:300px;opacity:.45;pointer-events:none;z-index:-1}
-.tradeoffs-catalogue header small,.tradeoffs-catalogue small{font-size:14px;color:var(--palette-muted);line-height:1.5}
-.tradeoffs-catalogue .catalogue-tabs{flex:none;justify-content:flex-start;border-bottom:1px solid color-mix(in srgb, var(--palette-line) 33.33333333%, transparent)}
-.tradeoffs-catalogue .catalogue-tabs button{flex:0 1 240px;min-height:44px;border-color:transparent;background:transparent;font-size:18px}
-.tradeoffs-catalogue .catalogue-tabs button[aria-pressed=true]{border-bottom:2px solid var(--palette-jade);background:linear-gradient(0deg,color-mix(in srgb, var(--palette-raised) 60%, transparent),transparent)}
-.tradeoff-body{display:grid;grid-template-columns:240px minmax(0,1fr);align-items:center;gap:30px;flex:1;min-height:0}
-.tradeoff-object{display:flex;flex-direction:column;gap:8px;padding:16px 10px}
-.tradeoff-object h3{font-family:'Kaiti SC',STKaiti,serif;font-size:28px;line-height:1.4;margin:0;color:var(--palette-ink)}
-.tradeoff-object p{font-size:18px;margin:0}
-.tradeoff-reading{align-self:center;min-height:220px;padding:24px 28px;border-left:2px solid var(--palette-jade);background:color-mix(in srgb, var(--palette-panel) 93.33333333%, transparent);display:flex;justify-content:center;flex-direction:column;gap:12px;overflow-wrap:anywhere}
-.tradeoff-reading p,.outlook-reading p{font-size:18px;line-height:1.7;margin:0;white-space:pre-wrap}
-.tradeoffs-catalogue>.catalogue-pager{flex:none;align-self:flex-end}
-.tradeoffs-catalogue>.catalogue-confirm{flex:none;gap:20px;justify-content:space-between}
-.tradeoffs-catalogue>.catalogue-confirm .primary{min-height:48px;max-width:520px;white-space:normal;font-size:18px}
-.configuration-dialog>.configuration-view-tabs{display:flex;gap:8px;margin:10px 0}
-.configuration-view-tabs button{min-height:44px;font-size:16px}
-.configuration-view-tabs button[aria-pressed=true]{background:var(--palette-raised);border-color:var(--palette-jade)}
-.configuration-outlook{min-height:310px;display:flex;flex-direction:column;gap:10px}
-.configuration-outlook .outlook-context{font-size:14px;line-height:1.5;margin:0;color:var(--palette-muted)}
-.configuration-outlook .catalogue-tabs button{min-height:44px;flex:1;font-size:18px}
-.configuration-outlook .catalogue-tabs button[aria-pressed=true]{border-color:var(--palette-jade);background:var(--palette-raised)}
-.outlook-reading{min-height:160px;flex:1;padding:18px 22px;background:var(--palette-panel);border-left:2px solid var(--palette-jade);overflow-wrap:anywhere}
-.outlook-reading small{font-size:14px;line-height:1.5;color:var(--palette-muted)}
+@layer game {
+  .immersive-stage:has(
+      .tradeoffs-catalogue,
+      .preparation-catalogue
+    ).stage-details
+    .hub-feature {
+    width: 1180px;
+  }
+  .tradeoffs-catalogue {
+    position: relative;
+    isolation: isolate;
+    gap: 10px;
+    padding: 18px 24px;
+    background: var(--palette-night);
+    color: var(--palette-ink);
+  }
+  .tradeoffs-catalogue > .catalogue-art {
+    position: absolute;
+    inset: auto auto 64px 16px;
+    width: 290px;
+    height: 300px;
+    opacity: 0.45;
+    pointer-events: none;
+    z-index: -1;
+  }
+  .tradeoffs-catalogue header small,
+  .tradeoffs-catalogue small {
+    font-size: 14px;
+    color: var(--palette-muted);
+    line-height: 1.5;
+  }
+  .tradeoffs-catalogue .catalogue-tabs {
+    flex: none;
+    justify-content: flex-start;
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--palette-line) 33.33333333%, transparent);
+  }
+  .tradeoffs-catalogue .catalogue-tabs button {
+    flex: 0 1 240px;
+    min-height: 44px;
+    border-color: transparent;
+    background: transparent;
+    font-size: 18px;
+  }
+  .tradeoffs-catalogue .catalogue-tabs button[aria-pressed='true'] {
+    border-bottom: 2px solid var(--palette-jade);
+    background: linear-gradient(
+      0deg,
+      color-mix(in srgb, var(--palette-raised) 60%, transparent),
+      transparent
+    );
+  }
+  .tradeoff-body {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    align-items: center;
+    gap: 30px;
+    flex: 1;
+    min-height: 0;
+  }
+  .tradeoff-object {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px 10px;
+  }
+  .tradeoff-object h3 {
+    font-family: 'Kaiti SC', STKaiti, serif;
+    font-size: 28px;
+    line-height: 1.4;
+    margin: 0;
+    color: var(--palette-ink);
+  }
+  .tradeoff-object p {
+    font-size: 18px;
+    margin: 0;
+  }
+  .tradeoff-reading {
+    align-self: center;
+    min-height: 220px;
+    padding: 24px 28px;
+    border-left: 2px solid var(--palette-jade);
+    background: color-mix(
+      in srgb,
+      var(--palette-panel) 93.33333333%,
+      transparent
+    );
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    overflow-wrap: anywhere;
+  }
+  .tradeoff-reading p,
+  .outlook-reading p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0;
+    white-space: pre-wrap;
+  }
+  .tradeoffs-catalogue > .catalogue-pager {
+    flex: none;
+    align-self: flex-end;
+  }
+  .tradeoffs-catalogue > .catalogue-confirm {
+    flex: none;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  .tradeoffs-catalogue > .catalogue-confirm .primary {
+    min-height: 48px;
+    max-width: 520px;
+    white-space: normal;
+    font-size: 18px;
+  }
+  .configuration-dialog > .configuration-view-tabs {
+    display: flex;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .configuration-view-tabs button {
+    min-height: 44px;
+    font-size: 16px;
+  }
+  .configuration-view-tabs button[aria-pressed='true'] {
+    background: var(--palette-raised);
+    border-color: var(--palette-jade);
+  }
+  .configuration-outlook {
+    min-height: 310px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .configuration-outlook .outlook-context {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--palette-muted);
+  }
+  .configuration-outlook .catalogue-tabs button {
+    min-height: 44px;
+    flex: 1;
+    font-size: 18px;
+  }
+  .configuration-outlook .catalogue-tabs button[aria-pressed='true'] {
+    border-color: var(--palette-jade);
+    background: var(--palette-raised);
+  }
+  .outlook-reading {
+    min-height: 160px;
+    flex: 1;
+    padding: 18px 22px;
+    background: var(--palette-panel);
+    border-left: 2px solid var(--palette-jade);
+    overflow-wrap: anywhere;
+  }
+  .outlook-reading small {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--palette-muted);
+  }
 
-.single-screen .preparation-needs>article:only-child{grid-column:span 2}
-.single-screen .preparation-needs>article>div{flex-direction:column;gap:4px}}
+  .single-screen .preparation-needs > article:only-child {
+    grid-column: span 2;
+  }
+  .single-screen .preparation-needs > article > div {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

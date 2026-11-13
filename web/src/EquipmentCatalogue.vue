@@ -47,5 +47,47 @@ const act = (action: Action) => emit('act', action),
   navigate = (request: NavigationRequest) => emit('navigate', request);
 </script>
 <template>
-<details v-show="equipmentVisible" class="equipment-disclosure" data-testid="equipment-section" :open="singleScreen||equipmentOpen" @toggle="equipmentOpen=($event.target as HTMLDetailsElement).open"><summary data-testid="equipment-toggle">功法与法宝 <span>{{game.school==='sword'?'当前剑修':game.school==='talisman'?'当前符修':'查看与选择修法'}} · {{equipmentOpen?'收起':'展开'}}</span></summary><KeepAlive :max="1"><EquipmentPanel :entry="equipmentEntry" :key="game.core.runId" v-if="equipmentVisible&&(singleScreen||equipmentOpen)" :game="game" :enabled="store.available" :busy="store.busy" :highlight="highlight" @section="emit('section',$event)" :catalogue="hubView==='relics'?'relics':'skills'" :consumption="consumption" :running="store.activityRunning" :activity="store.activity" :runtime="store.activityRuntime" :saved-production="productionInspectionPlan" :saved-preparation-plan="preparationInspectionPlan" :preparation-saved="preparationInspectionSaved" @travel-plan="movePreparation" @start="startProduction" @move="moveProduction" @act="act" @track="trackProduction" @navigate="navigate"/></KeepAlive></details>
+  <details
+    v-show="equipmentVisible"
+    class="equipment-disclosure"
+    data-testid="equipment-section"
+    :open="singleScreen || equipmentOpen"
+    @toggle="equipmentOpen = ($event.target as HTMLDetailsElement).open"
+    ><summary data-testid="equipment-toggle"
+      >功法与法宝
+      <span
+        >{{
+          game.school === 'sword'
+            ? '当前剑修'
+            : game.school === 'talisman'
+              ? '当前符修'
+              : '查看与选择修法'
+        }}
+        · {{ equipmentOpen ? '收起' : '展开' }}</span
+      ></summary
+    ><KeepAlive :max="1"
+      ><EquipmentPanel
+        :entry="equipmentEntry"
+        :key="game.core.runId"
+        v-if="equipmentVisible && (singleScreen || equipmentOpen)"
+        :game="game"
+        :enabled="store.available"
+        :busy="store.busy"
+        :highlight="highlight"
+        @section="emit('section', $event)"
+        :catalogue="hubView === 'relics' ? 'relics' : 'skills'"
+        :consumption="consumption"
+        :running="store.activityRunning"
+        :activity="store.activity"
+        :runtime="store.activityRuntime"
+        :saved-production="productionInspectionPlan"
+        :saved-preparation-plan="preparationInspectionPlan"
+        :preparation-saved="preparationInspectionSaved"
+        @travel-plan="movePreparation"
+        @start="startProduction"
+        @move="moveProduction"
+        @act="act"
+        @track="trackProduction"
+        @navigate="navigate" /></KeepAlive
+  ></details>
 </template>

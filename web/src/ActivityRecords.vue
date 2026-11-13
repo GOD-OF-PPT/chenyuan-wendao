@@ -138,9 +138,83 @@ const originalAdventureReadings = computed<Reading[]>(() => {
 });
 </script>
 <template>
-<section v-if="immersive&&hubView==='activity'" class="paper activity-detail-surface play-catalogue" data-testid="activity-details"><nav v-if="originalAdventureReadings.length" class="catalogue-tabs" aria-label="本段活动分类"><button :aria-pressed="!activityPlanVisible" @click="activityPlanVisible=false">成果与停止</button><button data-testid="activity-original-plan" :aria-pressed="activityPlanVisible" @click="activityPlanVisible=true">原战策 · 只读</button></nav><div v-if="activityPlanVisible&&originalAdventureReadings.length" data-testid="activity-plan-review"><ReviewPages :rows="originalAdventureReadings" :identity="store.activity!.runId+store.activity!.id"/></div><TrainingActivity v-else :store="store" @settings="viewActivityPlan" @details="viewReceipt"/></section>
-<AdventureHistory v-if="singleScreen&&hubView==='receipt'&&store.activity?.version===6" :store="store"/>
-<nav v-if="singleScreen&&hubView==='receipt'&&store.activity&&store.activity.version<=5&&store.activity.completedCycles>0" class="catalogue-tabs" aria-label="收获记录范围"><button v-if="store.lastResult" :aria-pressed="!receiptAll" @click="receiptAll=false">本次结算</button><button data-testid="activity-history-open" :aria-pressed="receiptAll" @click="receiptAll=true">本段全部周期</button></nav>
-<ActivityHistory v-if="singleScreen&&hubView==='receipt'&&store.activity&&store.activity.version<=5&&receiptAll" :store="store"/>
-<ActionFeedback v-if="singleScreen&&hubView==='receipt'&&store.activity?.version!==6&&!receiptAll&&store.lastResult" :result="store.lastResult" :replayed="store.lastReplayed"/>
+  <section
+    v-if="immersive && hubView === 'activity'"
+    class="paper activity-detail-surface play-catalogue"
+    data-testid="activity-details"
+    ><nav
+      v-if="originalAdventureReadings.length"
+      class="catalogue-tabs"
+      aria-label="本段活动分类"
+      ><button
+        :aria-pressed="!activityPlanVisible"
+        @click="activityPlanVisible = false"
+        >成果与停止</button
+      ><button
+        data-testid="activity-original-plan"
+        :aria-pressed="activityPlanVisible"
+        @click="activityPlanVisible = true"
+        >原战策 · 只读</button
+      ></nav
+    ><div
+      v-if="activityPlanVisible && originalAdventureReadings.length"
+      data-testid="activity-plan-review"
+      ><ReviewPages
+        :rows="originalAdventureReadings"
+        :identity="store.activity!.runId + store.activity!.id" /></div
+    ><TrainingActivity
+      v-else
+      :store="store"
+      @settings="viewActivityPlan"
+      @details="viewReceipt"
+  /></section>
+  <AdventureHistory
+    v-if="
+      singleScreen && hubView === 'receipt' && store.activity?.version === 6
+    "
+    :store="store"
+  />
+  <nav
+    v-if="
+      singleScreen &&
+      hubView === 'receipt' &&
+      store.activity &&
+      store.activity.version <= 5 &&
+      store.activity.completedCycles > 0
+    "
+    class="catalogue-tabs"
+    aria-label="收获记录范围"
+    ><button
+      v-if="store.lastResult"
+      :aria-pressed="!receiptAll"
+      @click="receiptAll = false"
+      >本次结算</button
+    ><button
+      data-testid="activity-history-open"
+      :aria-pressed="receiptAll"
+      @click="receiptAll = true"
+      >本段全部周期</button
+    ></nav
+  >
+  <ActivityHistory
+    v-if="
+      singleScreen &&
+      hubView === 'receipt' &&
+      store.activity &&
+      store.activity.version <= 5 &&
+      receiptAll
+    "
+    :store="store"
+  />
+  <ActionFeedback
+    v-if="
+      singleScreen &&
+      hubView === 'receipt' &&
+      store.activity?.version !== 6 &&
+      !receiptAll &&
+      store.lastResult
+    "
+    :result="store.lastResult"
+    :replayed="store.lastReplayed"
+  />
 </template>

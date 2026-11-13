@@ -1,58 +1,571 @@
-@layer game{
-/* Production category paintings occupy their own safe area; never inventory or hit targets. */
-.single-screen .catalogue-art{display:none}
-.feature-state{display:none}
-.stage-outcome{color:var(--palette-ink);min-width:0}.stage-outcome strong{display:flex;align-items:center;gap:6px;font-size:calc(16px * var(--font-scale,1));line-height:1.45}.stage-outcome .game-icon{width:22px;height:22px;flex:none;color:var(--palette-jade)}.stage-outcome p{font-size:calc(15px * var(--font-scale,1));line-height:1.55;margin:7px 0;color:var(--palette-ink);overflow-wrap:anywhere}.stage-outcome small{display:block;font-size:calc(14px * var(--font-scale,1));line-height:1.5;color:var(--palette-muted)}.stage-outcome output{display:block;font-size:calc(26px * var(--font-scale,1));font-variant-numeric:tabular-nums;line-height:1.4;color:var(--palette-ink)}.stage-outcome progress{display:block;width:100%;height:7px;margin:8px 0;accent-color:var(--palette-jade)}.stage-outcome .stage-failure{color:var(--palette-danger)}.stage-outcome .stage-next{width:100%;min-height:44px;margin-top:8px;padding:7px;background:var(--palette-raised);color:var(--palette-ink);border-color:var(--palette-jade);font-size:calc(14px * var(--font-scale,1))}.stage-outcome .stage-success{color:var(--palette-ink)}.stage-result-body{animation:stage-result-arrive .25s ease-out}@keyframes stage-result-arrive{from{filter:brightness(1.12)}to{filter:brightness(1)}}
-.single-screen .hub-recent .stage-outcome p,.single-screen .hub-recent .stage-outcome small{display:block}
-.stage-outcome [data-testid=stage-delta]>span{display:block}.stage-outcome-actions{display:flex;gap:6px;margin-top:7px}.stage-outcome-actions button{min-width:44px;min-height:44px;flex:1;margin:0!important;padding:5px 4px!important;font-size:calc(14px * var(--font-scale,1))!important;line-height:1.35;white-space:normal}.stage-outcome-actions .stage-details{color:var(--palette-muted);background:var(--palette-panel);border-color:var(--palette-line)}.single-screen .hub-recent .section-label{margin-bottom:5px}.single-screen .hub-recent .stage-outcome p{margin:5px 0}.single-screen .hub-recent .stage-outcome .stage-result-body{min-height:0}
-@media(prefers-reduced-motion:reduce){.stage-result-body{animation:none}}
-.hub-reduced .stage-result-body{animation:none}
-@media(min-width:480px) and (max-width:1099px){.single-screen .game-hub{grid-template-columns:minmax(0,1fr) 146px}.single-screen .hub-services{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.single-screen .hub-recent{padding:6px}.single-screen .hub-recent .stage-outcome strong{font-size:calc(14px * var(--font-scale,1));gap:4px}.single-screen .hub-recent .stage-outcome .game-icon{width:18px;height:18px}.single-screen .hub-recent .stage-outcome p{font-size:calc(14px * var(--font-scale,1));line-height:1.45;margin:4px 0}.single-screen .hub-recent .stage-outcome-actions{gap:5px;margin-top:5px}.single-screen .hub-recent .stage-outcome small{margin-top:0}}
-@media(min-width:1100px){
- .single-screen.catalogue-view:has(.feature-state) .hub-feature{margin-left:210px;margin-right:0;width:calc(100% - 210px);max-width:none}
- .single-screen .feature-state{display:flex;flex-direction:column;gap:8px;position:absolute;top:82px;left:20px;bottom:calc(var(--nav-height,84px) + 8px);width:190px}
- .single-screen .feature-state .character-sheet{padding:10px 12px;flex:none}.single-screen .feature-state .character-portrait{width:68px;height:68px;margin:0 auto 5px}.single-screen .feature-state .character-heading .section-label{display:none}.single-screen .feature-state .character-heading h2{font-size:calc(19px * var(--font-scale,1));margin:4px 0}.single-screen .feature-state .realm-badge{font-size:calc(14px * var(--font-scale,1));padding:1px 12px}.single-screen .feature-state .stat{margin:7px 0}.single-screen .feature-state .stat label,.single-screen .feature-state .stat b{font-size:calc(14px * var(--font-scale,1))}.single-screen .feature-state .character-currency{font-size:calc(15px * var(--font-scale,1));margin:7px 0;padding-top:6px}.single-screen .feature-state .character-currency b{font-size:calc(18px * var(--font-scale,1))}.single-screen .feature-state .character-hint{font-size:calc(14px * var(--font-scale,1));min-height:44px;margin:0;padding:6px 0}
- .single-screen .feature-state .character-sheet{display:grid;grid-template-columns:60px minmax(0,1fr);gap:6px;align-items:center}.single-screen .feature-state .character-portrait{width:60px;height:60px;margin:0}.single-screen .feature-state .character-vitals,.single-screen .feature-state .character-hint{grid-column:1/-1}
- .single-screen .feature-state>.stage-outcome{padding:10px;background:linear-gradient(135deg,var(--palette-raised),var(--palette-night));border:1px solid var(--palette-line);border-radius:10px 2px;min-height:0}
- .single-screen .catalogue-gallery{--gallery-width:clamp(220px,23vw,290px);position:relative;isolation:isolate;background:linear-gradient(130deg,var(--palette-panel),var(--palette-night))!important}
- .single-screen .catalogue-gallery>.catalogue-art{display:flex;position:absolute;left:16px;top:120px;bottom:70px;width:var(--gallery-width);margin:0;align-items:center;justify-content:center;pointer-events:none;min-height:0}
- .single-screen .catalogue-art>.asset-image{width:100%;height:100%;max-height:420px;filter:drop-shadow(0 12px 10px color-mix(in srgb, var(--palette-shadow) 53.33333333%, transparent))}
- .single-screen .catalogue-art .asset-fallback{display:grid;place-items:center}.single-screen .catalogue-art .game-icon{width:110px;height:110px;color:var(--palette-jade);margin:0;opacity:.5}
- .single-screen .catalogue-art-halo{position:absolute;inset:8% 3%;border:1px solid color-mix(in srgb, var(--palette-line) 26.66666667%, transparent);border-radius:50%;background:radial-gradient(ellipse,color-mix(in srgb, var(--palette-jade) 14.50980392%, transparent),transparent 65%);box-shadow:inset 0 0 0 12px color-mix(in srgb, var(--palette-night) 26.66666667%, transparent)}
- .single-screen .catalogue-art-halo::after{content:'';position:absolute;inset:12px;border:1px solid color-mix(in srgb, var(--palette-gold) 20%, transparent);border-radius:50%}
- .single-screen .catalogue-art-plinth{position:absolute;bottom:4%;height:12%;left:8%;right:8%;border-bottom:1px solid color-mix(in srgb, var(--palette-line) 40%, transparent);border-radius:50%;background:radial-gradient(ellipse,color-mix(in srgb, var(--palette-jade) 13.33333333%, transparent),transparent 70%)}
- .single-screen .catalogue-gallery>:is(.catalogue-grid,.catalogue-empty,.preparation-ready,.catalogue-description,.catalogue-options,.equipment-options,.equipment-card,.school-picker,.loadout-summary,.small){margin-left:calc(var(--gallery-width) + 28px)}
- .single-screen .catalogue-gallery>.catalogue-grid{gap:12px;align-content:start}.single-screen .catalogue-gallery>.catalogue-grid>article{background:linear-gradient(125deg,var(--palette-raised),var(--palette-panel));border-color:var(--palette-line);border-radius:12px 2px;box-shadow:inset 0 0 0 3px color-mix(in srgb, var(--palette-night) 26.66666667%, transparent)}
- .single-screen .catalogue-gallery .inventory-cards>article,.single-screen .catalogue-gallery .recipe-cards>article{min-height:220px}
- .single-screen .catalogue-gallery .equipment-card{background:linear-gradient(120deg,var(--palette-raised),var(--palette-panel));border-radius:12px 2px;border-color:var(--palette-line);grid-template-columns:minmax(0,1fr) 150px}
- .single-screen .catalogue-gallery .equipment-card p{line-height:1.45}.single-screen .catalogue-gallery .equipment-actions{gap:7px}.single-screen .catalogue-gallery .equipment-actions button{min-height:44px}
- .single-screen .catalogue-gallery .catalogue-tabs button[aria-pressed=true]{box-shadow:inset 0 -3px var(--palette-gold)!important}
- .single-screen .catalogue-gallery .catalogue-action:not(:disabled):hover,.single-screen .catalogue-gallery .equipment-actions button:not(:disabled):hover{border-color:var(--palette-jade);box-shadow:0 0 14px color-mix(in srgb, var(--palette-jade) 20%, transparent)}
- .single-screen .catalogue-gallery .catalogue-confirm{border-top:1px solid color-mix(in srgb, var(--palette-line) 26.66666667%, transparent);padding-top:8px}
+@layer game {
+  /* Production category paintings occupy their own safe area; never inventory or hit targets. */
+  .single-screen .catalogue-art {
+    display: none;
+  }
+  .feature-state {
+    display: none;
+  }
+  .stage-outcome {
+    color: var(--palette-ink);
+    min-width: 0;
+  }
+  .stage-outcome strong {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: calc(16px * var(--font-scale, 1));
+    line-height: 1.45;
+  }
+  .stage-outcome .game-icon {
+    width: 22px;
+    height: 22px;
+    flex: none;
+    color: var(--palette-jade);
+  }
+  .stage-outcome p {
+    font-size: calc(15px * var(--font-scale, 1));
+    line-height: 1.55;
+    margin: 7px 0;
+    color: var(--palette-ink);
+    overflow-wrap: anywhere;
+  }
+  .stage-outcome small {
+    display: block;
+    font-size: calc(14px * var(--font-scale, 1));
+    line-height: 1.5;
+    color: var(--palette-muted);
+  }
+  .stage-outcome output {
+    display: block;
+    font-size: calc(26px * var(--font-scale, 1));
+    font-variant-numeric: tabular-nums;
+    line-height: 1.4;
+    color: var(--palette-ink);
+  }
+  .stage-outcome progress {
+    display: block;
+    width: 100%;
+    height: 7px;
+    margin: 8px 0;
+    accent-color: var(--palette-jade);
+  }
+  .stage-outcome .stage-failure {
+    color: var(--palette-danger);
+  }
+  .stage-outcome .stage-next {
+    width: 100%;
+    min-height: 44px;
+    margin-top: 8px;
+    padding: 7px;
+    background: var(--palette-raised);
+    color: var(--palette-ink);
+    border-color: var(--palette-jade);
+    font-size: calc(14px * var(--font-scale, 1));
+  }
+  .stage-outcome .stage-success {
+    color: var(--palette-ink);
+  }
+  .stage-result-body {
+    animation: stage-result-arrive 0.25s ease-out;
+  }
+  @keyframes stage-result-arrive {
+    from {
+      filter: brightness(1.12);
+    }
+    to {
+      filter: brightness(1);
+    }
+  }
+  .single-screen .hub-recent .stage-outcome p,
+  .single-screen .hub-recent .stage-outcome small {
+    display: block;
+  }
+  .stage-outcome [data-testid='stage-delta'] > span {
+    display: block;
+  }
+  .stage-outcome-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 7px;
+  }
+  .stage-outcome-actions button {
+    min-width: 44px;
+    min-height: 44px;
+    flex: 1;
+    margin: 0 !important;
+    padding: 5px 4px !important;
+    font-size: calc(14px * var(--font-scale, 1)) !important;
+    line-height: 1.35;
+    white-space: normal;
+  }
+  .stage-outcome-actions .stage-details {
+    color: var(--palette-muted);
+    background: var(--palette-panel);
+    border-color: var(--palette-line);
+  }
+  .single-screen .hub-recent .section-label {
+    margin-bottom: 5px;
+  }
+  .single-screen .hub-recent .stage-outcome p {
+    margin: 5px 0;
+  }
+  .single-screen .hub-recent .stage-outcome .stage-result-body {
+    min-height: 0;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .stage-result-body {
+      animation: none;
+    }
+  }
+  .hub-reduced .stage-result-body {
+    animation: none;
+  }
+  @media (min-width: 480px) and (max-width: 1099px) {
+    .single-screen .game-hub {
+      grid-template-columns: minmax(0, 1fr) 146px;
+    }
+    .single-screen .hub-services {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 5px;
+    }
+    .single-screen .hub-recent {
+      padding: 6px;
+    }
+    .single-screen .hub-recent .stage-outcome strong {
+      font-size: calc(14px * var(--font-scale, 1));
+      gap: 4px;
+    }
+    .single-screen .hub-recent .stage-outcome .game-icon {
+      width: 18px;
+      height: 18px;
+    }
+    .single-screen .hub-recent .stage-outcome p {
+      font-size: calc(14px * var(--font-scale, 1));
+      line-height: 1.45;
+      margin: 4px 0;
+    }
+    .single-screen .hub-recent .stage-outcome-actions {
+      gap: 5px;
+      margin-top: 5px;
+    }
+    .single-screen .hub-recent .stage-outcome small {
+      margin-top: 0;
+    }
+  }
+  @media (min-width: 1100px) {
+    .single-screen.catalogue-view:has(.feature-state) .hub-feature {
+      margin-left: 210px;
+      margin-right: 0;
+      width: calc(100% - 210px);
+      max-width: none;
+    }
+    .single-screen .feature-state {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: absolute;
+      top: 82px;
+      left: 20px;
+      bottom: calc(var(--nav-height, 84px) + 8px);
+      width: 190px;
+    }
+    .single-screen .feature-state .character-sheet {
+      padding: 10px 12px;
+      flex: none;
+    }
+    .single-screen .feature-state .character-portrait {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 5px;
+    }
+    .single-screen .feature-state .character-heading .section-label {
+      display: none;
+    }
+    .single-screen .feature-state .character-heading h2 {
+      font-size: calc(19px * var(--font-scale, 1));
+      margin: 4px 0;
+    }
+    .single-screen .feature-state .realm-badge {
+      font-size: calc(14px * var(--font-scale, 1));
+      padding: 1px 12px;
+    }
+    .single-screen .feature-state .stat {
+      margin: 7px 0;
+    }
+    .single-screen .feature-state .stat label,
+    .single-screen .feature-state .stat b {
+      font-size: calc(14px * var(--font-scale, 1));
+    }
+    .single-screen .feature-state .character-currency {
+      font-size: calc(15px * var(--font-scale, 1));
+      margin: 7px 0;
+      padding-top: 6px;
+    }
+    .single-screen .feature-state .character-currency b {
+      font-size: calc(18px * var(--font-scale, 1));
+    }
+    .single-screen .feature-state .character-hint {
+      font-size: calc(14px * var(--font-scale, 1));
+      min-height: 44px;
+      margin: 0;
+      padding: 6px 0;
+    }
+    .single-screen .feature-state .character-sheet {
+      display: grid;
+      grid-template-columns: 60px minmax(0, 1fr);
+      gap: 6px;
+      align-items: center;
+    }
+    .single-screen .feature-state .character-portrait {
+      width: 60px;
+      height: 60px;
+      margin: 0;
+    }
+    .single-screen .feature-state .character-vitals,
+    .single-screen .feature-state .character-hint {
+      grid-column: 1/-1;
+    }
+    .single-screen .feature-state > .stage-outcome {
+      padding: 10px;
+      background: linear-gradient(
+        135deg,
+        var(--palette-raised),
+        var(--palette-night)
+      );
+      border: 1px solid var(--palette-line);
+      border-radius: 10px 2px;
+      min-height: 0;
+    }
+    .single-screen .catalogue-gallery {
+      --gallery-width: clamp(220px, 23vw, 290px);
+      position: relative;
+      isolation: isolate;
+      background: linear-gradient(
+        130deg,
+        var(--palette-panel),
+        var(--palette-night)
+      ) !important;
+    }
+    .single-screen .catalogue-gallery > .catalogue-art {
+      display: flex;
+      position: absolute;
+      left: 16px;
+      top: 120px;
+      bottom: 70px;
+      width: var(--gallery-width);
+      margin: 0;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      min-height: 0;
+    }
+    .single-screen .catalogue-art > .asset-image {
+      width: 100%;
+      height: 100%;
+      max-height: 420px;
+      filter: drop-shadow(
+        0 12px 10px
+          color-mix(in srgb, var(--palette-shadow) 53.33333333%, transparent)
+      );
+    }
+    .single-screen .catalogue-art .asset-fallback {
+      display: grid;
+      place-items: center;
+    }
+    .single-screen .catalogue-art .game-icon {
+      width: 110px;
+      height: 110px;
+      color: var(--palette-jade);
+      margin: 0;
+      opacity: 0.5;
+    }
+    .single-screen .catalogue-art-halo {
+      position: absolute;
+      inset: 8% 3%;
+      border: 1px solid
+        color-mix(in srgb, var(--palette-line) 26.66666667%, transparent);
+      border-radius: 50%;
+      background: radial-gradient(
+        ellipse,
+        color-mix(in srgb, var(--palette-jade) 14.50980392%, transparent),
+        transparent 65%
+      );
+      box-shadow: inset 0 0 0 12px
+        color-mix(in srgb, var(--palette-night) 26.66666667%, transparent);
+    }
+    .single-screen .catalogue-art-halo::after {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px solid color-mix(in srgb, var(--palette-gold) 20%, transparent);
+      border-radius: 50%;
+    }
+    .single-screen .catalogue-art-plinth {
+      position: absolute;
+      bottom: 4%;
+      height: 12%;
+      left: 8%;
+      right: 8%;
+      border-bottom: 1px solid
+        color-mix(in srgb, var(--palette-line) 40%, transparent);
+      border-radius: 50%;
+      background: radial-gradient(
+        ellipse,
+        color-mix(in srgb, var(--palette-jade) 13.33333333%, transparent),
+        transparent 70%
+      );
+    }
+    .single-screen
+      .catalogue-gallery
+      > :is(
+        .catalogue-grid,
+        .catalogue-empty,
+        .preparation-ready,
+        .catalogue-description,
+        .catalogue-options,
+        .equipment-options,
+        .equipment-card,
+        .school-picker,
+        .loadout-summary,
+        .small
+      ) {
+      margin-left: calc(var(--gallery-width) + 28px);
+    }
+    .single-screen .catalogue-gallery > .catalogue-grid {
+      gap: 12px;
+      align-content: start;
+    }
+    .single-screen .catalogue-gallery > .catalogue-grid > article {
+      background: linear-gradient(
+        125deg,
+        var(--palette-raised),
+        var(--palette-panel)
+      );
+      border-color: var(--palette-line);
+      border-radius: 12px 2px;
+      box-shadow: inset 0 0 0 3px
+        color-mix(in srgb, var(--palette-night) 26.66666667%, transparent);
+    }
+    .single-screen .catalogue-gallery .inventory-cards > article,
+    .single-screen .catalogue-gallery .recipe-cards > article {
+      min-height: 220px;
+    }
+    .single-screen .catalogue-gallery .equipment-actions {
+      gap: 7px;
+    }
+    .single-screen .catalogue-gallery .equipment-actions button {
+      min-height: 44px;
+    }
+    .single-screen
+      .catalogue-gallery
+      .catalogue-tabs
+      button[aria-pressed='true'] {
+      box-shadow: inset 0 -3px var(--palette-gold) !important;
+    }
+    .single-screen .catalogue-gallery .catalogue-action:not(:disabled):hover,
+    .single-screen
+      .catalogue-gallery
+      .equipment-actions
+      button:not(:disabled):hover {
+      border-color: var(--palette-jade);
+      box-shadow: 0 0 14px
+        color-mix(in srgb, var(--palette-jade) 20%, transparent);
+    }
+    .single-screen .catalogue-gallery .catalogue-confirm {
+      border-top: 1px solid
+        color-mix(in srgb, var(--palette-line) 26.66666667%, transparent);
+      padding-top: 8px;
+    }
+  }
+
+  @media (min-width: 480px) and (max-width: 1099px) {
+    .single-screen .hub-current .battle-supplies .inline-actions {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+    }
+  }
+
+  /* The full budget is a readable action decision, shared with the main stage batch. */
+
+  /* Native inputs keep their keyboard semantics and a real 44px hit area. */
+  .app-shell.art-theme .play-catalogue :is(select, input[type='number']) {
+    color-scheme: dark;
+    accent-color: var(--palette-jade);
+    border-color: var(--palette-line) !important;
+    border-radius: 8px 2px;
+    box-shadow: inset 0 0 0 2px
+      color-mix(in srgb, var(--palette-night) 26.66666667%, transparent);
+  }
+  .app-shell.art-theme .play-catalogue label:has(input[type='checkbox']) {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    min-height: 44px;
+    cursor: pointer;
+    color: var(--palette-muted);
+    font-size: calc(14px * var(--font-scale, 1));
+  }
+  .app-shell.art-theme .play-catalogue input[type='checkbox'] {
+    appearance: none;
+    position: relative;
+    display: inline-block;
+    flex: none;
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    margin: 0;
+    padding: 0;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none;
+    cursor: pointer;
+  }
+  .app-shell.art-theme .play-catalogue input[type='checkbox']::before {
+    content: '';
+    position: absolute;
+    inset: 11px;
+    border: 1px solid var(--palette-jade);
+    border-radius: 5px 1px;
+    background: linear-gradient(
+      145deg,
+      var(--palette-raised),
+      var(--palette-panel)
+    );
+    box-shadow: inset 0 0 0 2px var(--palette-night);
+  }
+  .app-shell.art-theme .play-catalogue input[type='checkbox']::after {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 13px;
+    width: 8px;
+    height: 14px;
+    border-right: 2px solid var(--palette-ink);
+    border-bottom: 2px solid var(--palette-ink);
+    transform: rotate(45deg) scale(0);
+  }
+  .app-shell.art-theme .play-catalogue input[type='checkbox']:checked::after {
+    transform: rotate(45deg) scale(1);
+  }
+  .app-shell.art-theme .play-catalogue input[type='checkbox']:hover::before {
+    border-color: var(--palette-muted);
+    box-shadow:
+      0 0 12px color-mix(in srgb, var(--palette-jade) 26.66666667%, transparent),
+      inset 0 0 0 2px var(--palette-night);
+  }
+  @media (min-width: 1100px) {
+    .single-screen .catalogue-gallery {
+      background: linear-gradient(
+        140deg,
+        color-mix(in srgb, var(--palette-panel) 90.98039216%, transparent),
+        color-mix(in srgb, var(--palette-night) 85.09803922%, transparent)
+      ) !important;
+    }
+    .single-screen .catalogue-gallery > .catalogue-grid {
+      align-content: center;
+    }
+    .single-screen .catalogue-gallery > .catalogue-art {
+      top: 88px;
+    }
+    .single-screen .catalogue-art-halo {
+      background: radial-gradient(
+        ellipse,
+        color-mix(in srgb, var(--palette-jade) 20%, transparent),
+        transparent 68%
+      );
+    }
+  }
+
+  /* One game stage; objects and the current decision carry emphasis, rather than nested frames. */
+  .single-screen.catalogue-view .hub-feature .paper {
+    background: linear-gradient(
+      110deg,
+      color-mix(in srgb, var(--palette-night) 96.07843137%, transparent),
+      color-mix(in srgb, var(--palette-night) 90.98039216%, transparent)
+    ) !important;
+    box-shadow: 0 12px 32px
+      color-mix(in srgb, var(--palette-shadow) 50.19607843%, transparent) !important;
+    border-color: color-mix(
+      in srgb,
+      var(--palette-line) 53.33333333%,
+      transparent
+    ) !important;
+  }
+  .single-screen.catalogue-view .hub-feature .paper::before,
+  .single-screen.catalogue-view .hub-feature .paper::after {
+    content: none !important;
+  }
+  .single-screen.catalogue-view .hub-feature .feature-header {
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--palette-night) 86.66666667%, transparent),
+      transparent
+    );
+    border: 0;
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--palette-jade) 46.66666667%, transparent);
+    border-radius: 0;
+    padding: 8px 16px;
+  }
+  .single-screen.catalogue-view .feature-header h2 {
+    margin: 0;
+    letter-spacing: 0.12em;
+    line-height: 1.65;
+  }
+  .single-screen.catalogue-view .feature-actions button {
+    background: color-mix(
+      in srgb,
+      var(--palette-panel) 66.66666667%,
+      transparent
+    ) !important;
+    box-shadow: none !important;
+    border-color: color-mix(
+      in srgb,
+      var(--palette-line) 40%,
+      transparent
+    ) !important;
+  }
+  .single-screen.catalogue-view .hub-feature .catalogue-tabs {
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--palette-line) 26.66666667%, transparent);
+    padding-bottom: 4px;
+    gap: 4px;
+  }
+  .single-screen.catalogue-view .hub-feature .catalogue-tabs > button {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0;
+  }
+  .single-screen.catalogue-view
+    .hub-feature
+    .catalogue-tabs
+    > button[aria-pressed='true'] {
+    background: linear-gradient(
+      0deg,
+      color-mix(in srgb, var(--palette-line) 53.33333333%, transparent),
+      transparent
+    ) !important;
+    border-bottom-color: var(--palette-jade) !important;
+    box-shadow: inset 0 -2px var(--palette-jade) !important;
+    color: var(--palette-ink) !important;
+  }
+  .single-screen.catalogue-view .catalogue-gallery > .catalogue-grid > article {
+    background: linear-gradient(
+      100deg,
+      color-mix(in srgb, var(--palette-raised) 20%, transparent),
+      transparent
+    );
+    border: 0;
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--palette-line) 40%, transparent);
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .single-screen.catalogue-view .inventory-cards h3 > .game-icon {
+    width: 40px;
+    height: 40px;
+  }
 }
-
-@media(min-width:480px) and (max-width:1099px){.single-screen .hub-current .battle-supplies .inline-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}}
-
-/* The full budget is a readable action decision, shared with the main stage batch. */
-.cultivation-budget{grid-template-columns:minmax(0,1fr)}.cultivation-budget>article{gap:6px!important}.cultivation-budget .batch-preview{margin:0;padding:0;border:0;background:transparent!important}.cultivation-budget .batch-preview small{margin-top:3px}.cultivation-budget>article>button{margin-top:auto;min-height:44px}.cultivation-catalogue>.catalogue-tabs{flex:none}
-
-/* Native inputs keep their keyboard semantics and a real 44px hit area. */
-.app-shell.art-theme .play-catalogue :is(select,input[type=number]){color-scheme:dark;accent-color:var(--palette-jade);border-color:var(--palette-line)!important;border-radius:8px 2px;box-shadow:inset 0 0 0 2px color-mix(in srgb, var(--palette-night) 26.66666667%, transparent)}
-.app-shell.art-theme .play-catalogue label:has(input[type=checkbox]){display:inline-flex;align-items:center;gap:4px;min-height:44px;cursor:pointer;color:var(--palette-muted);font-size:calc(14px * var(--font-scale,1))}
-.app-shell.art-theme .play-catalogue input[type=checkbox]{appearance:none;position:relative;display:inline-block;flex:none;width:44px;height:44px;min-height:44px;margin:0;padding:0;border:0!important;background:transparent!important;box-shadow:none;cursor:pointer}
-.app-shell.art-theme .play-catalogue input[type=checkbox]::before{content:'';position:absolute;inset:11px;border:1px solid var(--palette-jade);border-radius:5px 1px;background:linear-gradient(145deg,var(--palette-raised),var(--palette-panel));box-shadow:inset 0 0 0 2px var(--palette-night)}
-.app-shell.art-theme .play-catalogue input[type=checkbox]::after{content:'';position:absolute;left:18px;top:13px;width:8px;height:14px;border-right:2px solid var(--palette-ink);border-bottom:2px solid var(--palette-ink);transform:rotate(45deg) scale(0)}
-.app-shell.art-theme .play-catalogue input[type=checkbox]:checked::after{transform:rotate(45deg) scale(1)}
-.app-shell.art-theme .play-catalogue input[type=checkbox]:hover::before{border-color:var(--palette-muted);box-shadow:0 0 12px color-mix(in srgb, var(--palette-jade) 26.66666667%, transparent),inset 0 0 0 2px var(--palette-night)}
-@media(min-width:1100px){.single-screen .catalogue-gallery{background:linear-gradient(140deg,color-mix(in srgb, var(--palette-panel) 90.98039216%, transparent),color-mix(in srgb, var(--palette-night) 85.09803922%, transparent))!important}.single-screen .catalogue-gallery>.catalogue-grid{align-content:center}.single-screen .catalogue-gallery>.catalogue-art{top:88px}.single-screen .catalogue-art-halo{background:radial-gradient(ellipse,color-mix(in srgb, var(--palette-jade) 20%, transparent),transparent 68%)}}
-
-/* One game stage; objects and the current decision carry emphasis, rather than nested frames. */
-.single-screen.catalogue-view .hub-feature .paper{background:linear-gradient(110deg,color-mix(in srgb, var(--palette-night) 96.07843137%, transparent),color-mix(in srgb, var(--palette-night) 90.98039216%, transparent))!important;box-shadow:0 12px 32px color-mix(in srgb, var(--palette-shadow) 50.19607843%, transparent)!important;border-color:color-mix(in srgb, var(--palette-line) 53.33333333%, transparent)!important}
-.single-screen.catalogue-view .hub-feature .paper::before,.single-screen.catalogue-view .hub-feature .paper::after{content:none!important}
-.single-screen.catalogue-view .hub-feature .feature-header{background:linear-gradient(90deg,color-mix(in srgb, var(--palette-night) 86.66666667%, transparent),transparent);border:0;border-bottom:1px solid color-mix(in srgb, var(--palette-jade) 46.66666667%, transparent);border-radius:0;padding:8px 16px}
-.single-screen.catalogue-view .feature-header h2{margin:0;letter-spacing:.12em;line-height:1.65}.single-screen.catalogue-view .feature-actions button{background:color-mix(in srgb, var(--palette-panel) 66.66666667%, transparent)!important;box-shadow:none!important;border-color:color-mix(in srgb, var(--palette-line) 40%, transparent)!important}
-.single-screen.catalogue-view .hub-feature .catalogue-tabs{border-bottom:1px solid color-mix(in srgb, var(--palette-line) 26.66666667%, transparent);padding-bottom:4px;gap:4px}
-.single-screen.catalogue-view .hub-feature .catalogue-tabs>button{background:transparent!important;border-color:transparent!important;box-shadow:none!important;border-radius:0}
-.single-screen.catalogue-view .hub-feature .catalogue-tabs>button[aria-pressed=true]{background:linear-gradient(0deg,color-mix(in srgb, var(--palette-line) 53.33333333%, transparent),transparent)!important;border-bottom-color:var(--palette-jade)!important;box-shadow:inset 0 -2px var(--palette-jade)!important;color:var(--palette-ink)!important}
-.single-screen.catalogue-view .catalogue-gallery>.catalogue-grid>article{background:linear-gradient(100deg,color-mix(in srgb, var(--palette-raised) 20%, transparent),transparent);border:0;border-bottom:1px solid color-mix(in srgb, var(--palette-line) 40%, transparent);border-radius:0;box-shadow:none}
-.single-screen.catalogue-view .inventory-cards h3>.game-icon{width:40px;height:40px}}

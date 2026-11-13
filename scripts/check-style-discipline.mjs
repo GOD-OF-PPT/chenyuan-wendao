@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {execFileSync} from 'node:child_process';
-import {postcss,parseVue,colorNames} from '../web/style-tools.mjs';
+import {postcss,parseVue,colorNames,canonicalSelector,canonicalCssValue} from '../web/style-tools.mjs';
 import {isPaintedStyle} from '../web/src/painted-style-scope.mjs';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
@@ -16,9 +16,9 @@ function hasLiteral(value){
 }
 function specificity(css){
  const debt=new Map(),add=key=>debt.set(key,(debt.get(key)??0)+1),ast=postcss.parse(css);
- const context=node=>{const conditions=[];for(let parent=node.parent;parent;parent=parent.parent)if(parent.type==='atrule'&&parent.name!=='layer')conditions.unshift([parent.name,parent.params]);return conditions;};
- ast.walkRules(rule=>{if(/#app\b/.test(rule.selector))add(JSON.stringify(['selector',context(rule),rule.selector]));});
- ast.walkDecls(d=>{if(d.important)add(JSON.stringify(['important',context(d.parent),d.parent.selector??'@'+d.parent.name,d.prop]));});return debt;
+ const context=node=>{const conditions=[];for(let parent=node.parent;parent;parent=parent.parent)if(parent.type==='atrule'&&parent.name!=='layer')conditions.unshift([parent.name,canonicalCssValue(parent.params)]);return conditions;};
+ ast.walkRules(rule=>{if(/#app\b/.test(rule.selector))add(JSON.stringify(['selector',context(rule),canonicalSelector(rule.selector)]));});
+ ast.walkDecls(d=>{if(d.important)add(JSON.stringify(['important',context(d.parent),d.parent.selector?canonicalSelector(d.parent.selector):'@'+d.parent.name,d.prop]));});return debt;
 }
 
 /** A rule-level migration ceiling, never a whole-file hash or a byte budget. */
@@ -36,7 +36,7 @@ export function inspectStyle(css,{file='inline.css',legacyCss=''}={}){
   if(declaration.important)important++;
   const paletteDefinition=path.basename(file)==='palette.css'&&roles.has(declaration.prop);
   if(paletteDefinition)definedRoles.add(declaration.prop);
-  else if(hasLiteral(declaration.value)&&!isPaintedStyle(path.basename(file),declaration.parent.selector,declaration.prop))problems.push('Unscoped interface color: '+declaration.prop);
+  else if(hasLiteral(declaration.value)&&!isPaintedStyle(path.basename(file),declaration.parent.selector,declaration.prop,canonicalSelector))problems.push('Unscoped interface color: '+declaration.prop);
  });
  const old=specificity(legacyCss);
  for(const [key,count]of specificity(css))if(count>(old.get(key)??0)){

@@ -44,7 +44,79 @@ const reviewTrial = () => emit('review'),
   openHub = (_view: string) => emit('equipment');
 </script>
 <template>
-<MilestoneGate v-if="storyView&&hubView==='trial-preparation'" :game="game" kind="trial"><TrialCatalogue :block="pendingStoryError?(store.syncIssue?'请先重新读取当前进度':'请先重试或取消原安排'):null"  :game="game" kind="preparation" :enabled="store.available" :running="store.activityRunning" :busy="store.busy" :checkpoint="store.checkpointSummary" :recovery="store.trialRecovery" @review="reviewTrial" @restore="hubView==='trial-preparation'?restore():requestTrialRestore()" @export="exportSave" @prepare="showTrialPreparation" @resume="closeHub" @navigate="navigate" @track="trackTrialMaterial" @inspect-equipment="openHub('skills')"/></MilestoneGate>
-<TrialCatalogue :block="pendingStoryError?(store.syncIssue?'请先重新读取当前进度':'请先重试或取消原安排'):null" v-if="storyView&&(['trial','battle'].includes(hubView)||hubView==='current'&&game.status==='active'&&!narrativeFor(game)&&phase!=='idle')" :game="game" kind="progress" :initial-mode="trialReadMode" :enabled="store.available" :running="store.activityRunning" :busy="store.busy" :checkpoint="store.checkpointSummary" :recovery="store.trialRecovery" @review="reviewTrial" @restore="hubView==='trial-preparation'?restore():requestTrialRestore()" @export="exportSave" @prepare="showTrialPreparation" @resume="closeHub" @navigate="navigate" @track="trackTrialMaterial" @inspect-equipment="openHub('skills')"/>
-<TrialProgressPanel v-if="!catalogueView&&(journey || store.trialRecovery)" :journey="journey" :recovery="store.trialRecovery" :checkpoint="store.checkpointSummary" :enabled="store.available && !store.busy" @restore="requestTrialRestore" @export="exportSave" @prepare="showTrialPreparation"/>
+  <MilestoneGate
+    v-if="storyView && hubView === 'trial-preparation'"
+    :game="game"
+    kind="trial"
+    ><TrialCatalogue
+      :block="
+        pendingStoryError
+          ? store.syncIssue
+            ? '请先重新读取当前进度'
+            : '请先重试或取消原安排'
+          : null
+      "
+      :game="game"
+      kind="preparation"
+      :enabled="store.available"
+      :running="store.activityRunning"
+      :busy="store.busy"
+      :checkpoint="store.checkpointSummary"
+      :recovery="store.trialRecovery"
+      @review="reviewTrial"
+      @restore="
+        hubView === 'trial-preparation' ? restore() : requestTrialRestore()
+      "
+      @export="exportSave"
+      @prepare="showTrialPreparation"
+      @resume="closeHub"
+      @navigate="navigate"
+      @track="trackTrialMaterial"
+      @inspect-equipment="openHub('skills')"
+  /></MilestoneGate>
+  <TrialCatalogue
+    :block="
+      pendingStoryError
+        ? store.syncIssue
+          ? '请先重新读取当前进度'
+          : '请先重试或取消原安排'
+        : null
+    "
+    v-if="
+      storyView &&
+      (['trial', 'battle'].includes(hubView) ||
+        (hubView === 'current' &&
+          game.status === 'active' &&
+          !narrativeFor(game) &&
+          phase !== 'idle'))
+    "
+    :game="game"
+    kind="progress"
+    :initial-mode="trialReadMode"
+    :enabled="store.available"
+    :running="store.activityRunning"
+    :busy="store.busy"
+    :checkpoint="store.checkpointSummary"
+    :recovery="store.trialRecovery"
+    @review="reviewTrial"
+    @restore="
+      hubView === 'trial-preparation' ? restore() : requestTrialRestore()
+    "
+    @export="exportSave"
+    @prepare="showTrialPreparation"
+    @resume="closeHub"
+    @navigate="navigate"
+    @track="trackTrialMaterial"
+    @inspect-equipment="openHub('skills')"
+  />
+  <TrialProgressPanel
+    v-if="!catalogueView && (journey || store.trialRecovery)"
+    :journey="journey"
+    :recovery="store.trialRecovery"
+    :checkpoint="store.checkpointSummary"
+    :enabled="store.available && !store.busy"
+    @restore="requestTrialRestore"
+    @export="exportSave"
+    @prepare="showTrialPreparation"
+  />
 </template>

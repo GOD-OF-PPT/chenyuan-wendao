@@ -59,9 +59,64 @@ const lifeBook = ref<InstanceType<typeof LifeCatalogue>>();
 defineExpose({ manage: () => lifeBook.value?.manage() });
 </script>
 <template>
-<NarrativeStageHost :active="storyView">
-<KeepAlive :max="1"><FateCatalogue :key="game.core.runId+readingGeneration+'FateCatalogue'" v-if="storyView&&(hubView==='fate'||hubView==='current'&&phase==='idle')&&game.status==='active'" :game="game" :enabled="store.available" :running="store.activityRunning" :busy="store.busy" :highlight="highlight" :journal-key="journalKey" @browse="browseDirect()" @act="storyAct" @navigate="navigate" @life="showLife" @resume="resumeEncounter" @dialogue="openHub('current')"/></KeepAlive>
-<KeepAlive :max="1"><LifeCatalogue ref="lifeBook" :key="game.core.runId+readingGeneration+game.status+'LifeCatalogue'" v-if="storyView&&(hubView==='life'||['fate','current'].includes(hubView)&&game.status!=='active')" :game="game" :end-reason="why({type:'RETIRE'})" :enabled="store.available" :running="store.activityRunning" :busy="store.busy" :has-checkpoint="store.hasCheckpoint" @end="requestEnd" @export="exportLife" @restore="restore" @restart="reset" @receipt="viewReceipt"/></KeepAlive>
-<KeepAlive :max="1"><NarrativePanel :key="game.core.runId+readingGeneration+'NarrativePanel'" v-if="storyView&&hubView==='current'&&narrativeFor(game)" :game="game" :context="narrativeContext" :enabled="store.available" :running="store.activityRunning" :busy="store.busy" :consumption="consumption" @act="storyAct" @life="showLife" @progress="openHub('trial')"/></KeepAlive>
-</NarrativeStageHost>
+  <NarrativeStageHost :active="storyView">
+    <KeepAlive :max="1"
+      ><FateCatalogue
+        :key="game.core.runId + readingGeneration + 'FateCatalogue'"
+        v-if="
+          storyView &&
+          (hubView === 'fate' || (hubView === 'current' && phase === 'idle')) &&
+          game.status === 'active'
+        "
+        :game="game"
+        :enabled="store.available"
+        :running="store.activityRunning"
+        :busy="store.busy"
+        :highlight="highlight"
+        :journal-key="journalKey"
+        @browse="browseDirect()"
+        @act="storyAct"
+        @navigate="navigate"
+        @life="showLife"
+        @resume="resumeEncounter"
+        @dialogue="openHub('current')"
+    /></KeepAlive>
+    <KeepAlive :max="1"
+      ><LifeCatalogue
+        ref="lifeBook"
+        :key="
+          game.core.runId + readingGeneration + game.status + 'LifeCatalogue'
+        "
+        v-if="
+          storyView &&
+          (hubView === 'life' ||
+            (['fate', 'current'].includes(hubView) && game.status !== 'active'))
+        "
+        :game="game"
+        :end-reason="why({ type: 'RETIRE' })"
+        :enabled="store.available"
+        :running="store.activityRunning"
+        :busy="store.busy"
+        :has-checkpoint="store.hasCheckpoint"
+        @end="requestEnd"
+        @export="exportLife"
+        @restore="restore"
+        @restart="reset"
+        @receipt="viewReceipt"
+    /></KeepAlive>
+    <KeepAlive :max="1"
+      ><NarrativePanel
+        :key="game.core.runId + readingGeneration + 'NarrativePanel'"
+        v-if="storyView && hubView === 'current' && narrativeFor(game)"
+        :game="game"
+        :context="narrativeContext"
+        :enabled="store.available"
+        :running="store.activityRunning"
+        :busy="store.busy"
+        :consumption="consumption"
+        @act="storyAct"
+        @life="showLife"
+        @progress="openHub('trial')"
+    /></KeepAlive>
+  </NarrativeStageHost>
 </template>

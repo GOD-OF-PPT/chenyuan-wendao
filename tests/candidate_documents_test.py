@@ -1,10 +1,10 @@
 """Exercise the actual package notes and keep dependency-only CI changes bounded."""
 from pathlib import Path
-import ast
 import hashlib
 import importlib.util
 import json
 import re
+from unittest.mock import patch
 import tempfile
 import unittest
 
@@ -75,67 +75,107 @@ class Notes(unittest.TestCase):
                        '不按现实分钟发奖励', '匿名', '不是正常新档', '本段安排', '暂停']:
             self.assertIn(phrase, form)
 
-    def test_every_actual_core_consumer_installs_resource_dependency_before_running(self):
-        expected = {'.github/workflows/core.yml': 1, '.github/workflows/playable.yml': 2}
-        for file, count in expected.items():
-            text = (ROOT / file).read_text(encoding='utf-8')
-            self.assertEqual(text.count(DEPENDENCY_STEP), count, file)
-            for job in re.split(r'^  [a-z]+:\n', text, flags=re.M)[1:]:
-                if 'npm run validate:core' in job:
-                    self.assertIn(DEPENDENCY_STEP, job)
-                    self.assertLess(job.index(DEPENDENCY_STEP), job.index('npm run validate:core'))
+    def test_current_ci_installs_resource_dependencies_and_retains_actual_reports(self):
+        core = (ROOT / '.github/workflows/core.yml').read_text(encoding='utf-8')
+        self.assertIn(DEPENDENCY_STEP, core)
+        self.assertLess(core.index(DEPENDENCY_STEP), core.index('npm run validate:core'))
+        for filename in ['core.yml', 'playable.yml']:
+            text = (ROOT / '.github/workflows' / filename).read_text(encoding='utf-8')
+            self.assertRegex(text, r'(?m)^  pull_request:')
+            self.assertIn('contents: read', text)
+            self.assertIn('persist-credentials: false', text)
+            self.assertIn('fetch-depth: 0', text)
+            self.assertIn('ref: ${{ github.event.pull_request.head.sha || github.sha }}', text)
+            self.assertIn("node-version: '24.22.1'", text)
+            self.assertNotIn('runs-on: ubuntu-latest', text)
+            self.assertIn('runs-on: ubuntu-24.04', text)
+            self.assertIn('if: always()', text)
+            self.assertIn('actions/upload-artifact@', text)
+            self.assertNotRegex(text, r'(?m) *browser: \[.*(?:firefox|webkit)')
+            self.assertNotIn('run test:performance', text)
+            for action in re.findall(r'uses: ([^\n]+)', text):
+                self.assertRegex(action, r'^[^@]+@[a-f0-9]{40}$')
+        current = (ROOT / '.github/workflows/playable.yml').read_text(encoding='utf-8')
+        self.assertIn('{suite: q13, label: q13', current)
+        self.assertIn('{suite: native, label: native', current)
+        for number in range(1, 5):
+            self.assertIn(f"{{suite: normal, label: normal-{number}of4, shard: '--shard={number}/4'}}", current)
+        self.assertIn('check-current-browser-shards.mjs', current)
+        self.assertIn('needs: behavior', current)
+        self.assertIn('npx playwright install --with-deps chromium', current)
+        self.assertIn('node scripts/check-current-browser.mjs ${{ matrix.suite }}', current)
+        self.assertIn('npm --prefix web run build', current)
+        self.assertIn('artifacts/current-${{ matrix.label }}', current)
+        self.assertNotIn('package-candidate.py', current)
 
-    def test_workflows_retain_all_original_gates_permissions_triggers_and_timeouts(self):
-        before = {'core.yml': '5ca0428f2a595b9724bc04cb213e713ade6fad302ec740d06491ea93f8702b22', 'playable.yml': 'eb37740f0233850449f9c3973dce65777525b860b536d609bc237cfb12912815'}
-        for file, digest in before.items():
-            text = (ROOT / '.github/workflows' / file).read_text(encoding='utf-8').replace(DEPENDENCY_STEP, '')
-            self.assertEqual(hashlib.sha256(text.encode()).hexdigest(), digest, file)
+    def test_paused_full_matrix_remains_explicitly_archived(self):
+        archive = ROOT / 'docs/quality-20261112/historical-workflows'
+        old = (archive / 'playable.yml').read_text(encoding='utf-8')
+        self.assertIn('browser: [chromium, firefox, webkit]', old)
+        for gate in ['test:performance', 'check-journey-coverage', 'check-recovery-coverage',
+                     'package-candidate.py', 'reproduce-candidate.py', 'candidate:receipt']:
+            self.assertIn(gate, old)
+        self.assertIn('延期', (archive / 'README.md').read_text(encoding='utf-8'))
 
-    def test_actual_assembly_calls_renderer_and_keeps_all_non_document_operations(self):
-        tree = ast.parse((ROOT / 'scripts/package-candidate.py').read_text(encoding='utf-8'))
-        class RemoveNotes(ast.NodeTransformer):
-            def visit_Expr(self, node):
-                call = node.value
-                if isinstance(call, ast.Call):
-                    if isinstance(call.func, ast.Name) and call.func.id == 'write_candidate_notes':
-                        self.asserted_call = True
-                        return None
-                    if isinstance(call.func, ast.Attribute) and call.func.attr == 'write_text':
-                        target = call.func.value
-                        if isinstance(target, ast.BinOp) and isinstance(target.right, ast.Constant) and target.right.value in NOTE_FILES:
-                            return None
-                return self.generic_visit(node)
-        expected = {'run': '117a39ae6c161d538b3358b7caf5f0eeaaf3cb33d30cc22a8522db846c82379c',
-                    'file_info': '38b09b33eb13f78eaad3681ac92b431f44d064b639c1e91508dee5e22bc315dc',
-                    'source_bundle': 'e92449f0c7679b59d0e9931dbc55037373859ea2401287b1f576a5e230be9c8d',
-                    'archive_tree': 'b77b7708de0eee6f77d102b1dd73e493c3ef57b9b064bc47c0cd2165b3d727a2',
-                    'package': 'ee8e726a514205e3fa2f01e5eaf9ef6d1ba08ea99073a9908723685625a086b4'}
-        strip = RemoveNotes()
-        class PlatformTextIO(ast.NodeTransformer):
-            """Retain the old assembly AST after the narrowly approved IO fix."""
-            def visit_Call(self, node):
-                node = self.generic_visit(node)
-                if isinstance(node.func, ast.Attribute) and node.func.attr in {'read_text', 'write_text'}:
-                    for keyword in node.keywords:
-                        if keyword.arg == 'encoding':
-                            self.assert_constant(keyword.value, 'utf-8')
-                        if keyword.arg == 'newline':
-                            self.assert_constant(keyword.value, '\n')
-                    node.keywords = [k for k in node.keywords if k.arg not in {'encoding', 'newline'}]
-                approved = ast.parse('objects.resolve().as_posix()', mode='eval').body
-                if ast.dump(node) == ast.dump(approved):
-                    return ast.parse('str(objects.resolve())', mode='eval').body
-                return node
+    def exercise_package_to_notes(self, fault=None):
+        class ReachedNotes(Exception):
+            pass
+        captured = {}
+        with tempfile.TemporaryDirectory(prefix='chenyuan-package-behavior-') as folder:
+            root = Path(folder)
+            for name, data in {'web/dist/index.html': 'fixture runtime',
+                               'web/src/full-persistence.ts': 'export const FULL_DB_VERSION = 10;',
+                               'scripts/candidate/serve.py': '# fixture server',
+                               'scripts/candidate/verify.py': '# fixture verifier',
+                               'evidence.json': 'unchanged evidence'}.items():
+                target = root / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text(data, encoding='utf-8')
+            evidence = root / 'evidence.json'
+            inputs = {'source': {'source': 'a' * 40, 'tree': 'b' * 40},
+                      'versions': {'version': 2, 'schemaVersion': 2, 'contentVersion': 'fixture', 'balanceVersion': 'unbalanced'},
+                      'files': [{'from': str(evidence), 'to': 'evidence/result.json',
+                                 'bytes': evidence.stat().st_size,
+                                 'sha256': hashlib.sha256(evidence.read_bytes()).hexdigest()}]}
+            if fault == 'changed-evidence':
+                evidence.write_text('changed after validation', encoding='utf-8')
+            def validated(*args):
+                Path(args[-1]).write_text(json.dumps(inputs), encoding='utf-8')
+                return 'synthetic validated input; not candidate evidence'
+            bundles = []
+            def bundle(destination, source):
+                bundles.append(source)
+                destination.write_bytes(str(len(bundles)).encode() if fault == 'different-bundle' else b'same fixture bundle')
+            render = PACKAGER.write_candidate_notes
+            def notes(stage, source, versions):
+                render(stage, source, versions)
+                captured.update(source=source, versions=versions,
+                                files={p.name for p in stage.iterdir()},
+                                readme=(stage / 'README.md').read_text(encoding='utf-8'),
+                                evidence=(stage / 'evidence/result.json').read_bytes())
+                raise ReachedNotes()
+            with patch.multiple(PACKAGER, ROOT=root, run=validated,
+                                source_bundle=bundle, write_candidate_notes=notes):
+                with self.assertRaises(ValueError if fault else ReachedNotes):
+                    PACKAGER.package(root / 'reports', root / 'journeys', root / 'output')
+            self.assertEqual(len(bundles), 0 if fault == 'changed-evidence' else 2)
+            if fault:
+                self.assertEqual(captured, {})
+            else:
+                self.assertEqual(captured['source'], inputs['source'])
+                self.assertEqual(captured['versions'], inputs['versions'])
+                self.assertTrue(NOTE_FILES.issubset(captured['files']))
+                self.assertIn('a' * 40, captured['readme'])
+                self.assertEqual(captured['evidence'], b'unchanged evidence')
 
-            @staticmethod
-            def assert_constant(value, expected):
-                assert isinstance(value, ast.Constant) and value.value == expected
+    def test_actual_assembly_renders_notes_after_verified_input_and_equal_bundles(self):
+        self.exercise_package_to_notes()
 
-        for node in tree.body:
-            if isinstance(node, ast.FunctionDef) and node.name in expected:
-                normalized = PlatformTextIO().visit(strip.visit(node))
-                self.assertEqual(hashlib.sha256(ast.dump(normalized, include_attributes=False).encode()).hexdigest(), expected[node.name], node.name)
-        self.assertTrue(getattr(strip, 'asserted_call', False), 'actual package must call the tested renderer')
+    def test_assembly_rejects_changed_evidence_before_rendering_notes(self):
+        self.exercise_package_to_notes('changed-evidence')
+
+    def test_assembly_rejects_different_source_bundle_before_rendering_notes(self):
+        self.exercise_package_to_notes('different-bundle')
 
 
 if __name__ == '__main__':

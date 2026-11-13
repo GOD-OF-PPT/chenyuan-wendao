@@ -39,7 +39,48 @@ const act = (action: Action) => emit('act', action),
   navigate = (request: NavigationRequest) => emit('navigate', request);
 </script>
 <template>
-            <div class="section-label">仙缘</div><button class="text-button" data-testid="show-life" @click="showLife">查看修仙生平 →</button><RelationshipPanel data-primary-region tabindex="-1" :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
-            <div class="choices"><button v-for="event in events" :key="event.id" :data-testid="`event-${event.id}`" :class="{highlight:highlight===`event-${event.id}`}" @click="act({type:'EVENT',event:event.id})" :disabled="!can({type:'EVENT',event:event.id})">{{event.name}} · {{event.npc}}</button></div>
-            <h3>近期手记</h3><p class="small">仅保留最近100条；当前显示{{visibleJournal.length}}条，共{{recentJournal.length}}条。完整已选事实请查看修仙生平。</p><ol id="recent-journal" class="journal"><li v-for="(line,index) in visibleJournal" :key="index">{{line}}</li></ol><button v-if="recentJournal.length>10" type="button" class="text-button" data-testid="journal-toggle" :aria-expanded="journalExpanded" aria-controls="recent-journal" @click="journalExpanded=!journalExpanded">{{journalExpanded?'收起较早条目':`展开全部 ${recentJournal.length} 条近期手记`}}</button>
-          </template>
+  <div class="section-label">仙缘</div
+  ><button class="text-button" data-testid="show-life" @click="showLife"
+    >查看修仙生平 →</button
+  ><RelationshipPanel
+    data-primary-region
+    tabindex="-1"
+    :game="game"
+    :enabled="store.available && !store.busy"
+    @navigate="navigate"
+  />
+  <div class="choices"
+    ><button
+      v-for="event in events"
+      :key="event.id"
+      :data-testid="`event-${event.id}`"
+      :class="{ highlight: highlight === `event-${event.id}` }"
+      @click="act({ type: 'EVENT', event: event.id })"
+      :disabled="!can({ type: 'EVENT', event: event.id })"
+      >{{ event.name }} · {{ event.npc }}</button
+    ></div
+  >
+  <h3>近期手记</h3
+  ><p class="small"
+    >仅保留最近100条；当前显示{{ visibleJournal.length }}条，共{{
+      recentJournal.length
+    }}条。完整已选事实请查看修仙生平。</p
+  ><ol id="recent-journal" class="journal"
+    ><li v-for="(line, index) in visibleJournal" :key="index">{{
+      line
+    }}</li></ol
+  ><button
+    v-if="recentJournal.length > 10"
+    type="button"
+    class="text-button"
+    data-testid="journal-toggle"
+    :aria-expanded="journalExpanded"
+    aria-controls="recent-journal"
+    @click="journalExpanded = !journalExpanded"
+    >{{
+      journalExpanded
+        ? '收起较早条目'
+        : `展开全部 ${recentJournal.length} 条近期手记`
+    }}</button
+  >
+</template>
