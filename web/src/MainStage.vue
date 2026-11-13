@@ -56,7 +56,7 @@ const hubTrainingMethod = defineModel<'natural' | 'assisted'>('method', {
   required: true,
 });
 const emit = defineEmits<{
-  open: [view: string, event?: Event];
+  open: [view: string, event?: Event, mode?: 'required' | 'checkpoint'];
   prepare: [event?: Event];
   destination: [request: NavigationRequest];
   act: [action: Action];
@@ -179,7 +179,7 @@ function choiceDetails(action: Action, detail: string) {
     { label: '当前条件', value: why(action) || '可选择；由你确认后执行' },
   ];
 }
-const openHub = (view: string, event?: Event) => emit('open', view, event),
+const openHub = (view: string, event?: Event, mode?: 'required' | 'checkpoint') => emit('open', view, event, mode),
   openPreparation = (event?: Event) => emit('prepare', event),
   inspectCaveDestination = (request: NavigationRequest) =>
     emit('destination', request),

@@ -205,6 +205,7 @@ export function useStageFocus(
     { flush: 'post' },
   );
   function focusContent() {
+    if (!alive) return;
     const target =
       navigation.content() ?? document.getElementById('welcome-content');
     if (target) {

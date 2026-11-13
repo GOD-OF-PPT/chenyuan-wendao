@@ -8,6 +8,8 @@ import { useConfigurationReview } from '../src/use-configuration-review';
 import { useDirectActions } from '../src/use-direct-actions';
 import { useActivityPlans } from '../src/use-activity-plans';
 import { useStageNavigation } from '../src/use-stage-navigation';
+import { useStageFocus } from '../src/use-stage-focus';
+export { RuleError } from '../../src/full/errors.ts';
 import { useDestinations } from '../src/use-destinations';
 import { useFocus, gameFocusKey } from '../src/focus';
 import { useGameConfirmation } from '../src/use-game-confirmation';
@@ -49,6 +51,7 @@ export async function createOwners(game: Game) {
   let direct!: ReturnType<typeof useDirectActions>;
   let confirmation!: ReturnType<typeof useGameConfirmation>;
   let focus!: ReturnType<typeof useFocus>;
+  let stageFocus!: ReturnType<typeof useStageFocus>;
   const host = document.createElement('div');
   document.body.append(host);
   const app = createApp({
@@ -74,6 +77,13 @@ export async function createOwners(game: Game) {
           browse: () => {},
           clearInspections: () => plans?.clearInspections(),
           dismissResume: () => {},
+        });
+        stageFocus = useStageFocus(store, focus, {
+          owner: () => navigation.owner.value,
+          advance: navigation.advance,
+          content: () => host.querySelector('button'),
+          element: () => host.querySelector('button') ?? undefined,
+          life: navigation.showLife,
         });
         plans = useActivityPlans(store, focus, {
           owner: () => navigation.owner.value,
@@ -162,6 +172,7 @@ export async function createOwners(game: Game) {
     direct,
     confirmation,
     navigation,
+    stageFocus,
     plans,
     destinations,
     closure,

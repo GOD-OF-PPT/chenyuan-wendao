@@ -93,7 +93,7 @@ function cancelLife(event: Event) {
   if (store.busy) event.preventDefault();
 }
 function closeLifeReview() {
-  if (lifeDialog.value?.open) return;
+    if (!alive || lifeDialog.value?.open) return;
   if (lifeIntent.value)
     store.discardRetryFor(lifeIntent.value.command.commandId);
   lifeIntent.value = null;
@@ -156,7 +156,7 @@ async function retryTrial() {
     trialDialog.value?.close();
 }
 function closeTrialReview() {
-  if (trialDialog.value?.open) return;
+    if (!alive || trialDialog.value?.open) return;
   if (trialIntent.value)
     store.discardRetryFor(trialIntent.value.command.commandId);
   trialIntent.value = null;
@@ -214,7 +214,7 @@ async function retryTrialRestore() {
   }
 }
 function closeTrialRestore() {
-  if (trialRestoreDialog.value?.open) return;
+    if (!alive || trialRestoreDialog.value?.open) return;
   if (trialRestoreIntent.value)
     store.discardRetryFor(trialRestoreIntent.value.command.commandId);
   trialRestoreIntent.value = null;
@@ -284,7 +284,7 @@ async function retryAscension() {
     ascensionDialog.value?.close();
 }
 function closeAscension() {
-  if (ascensionDialog.value?.open) return;
+    if (!alive || ascensionDialog.value?.open) return;
   if (ascensionIntent.value)
     store.discardRetryFor(ascensionIntent.value.command.commandId);
   ascensionIntent.value = null;

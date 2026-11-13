@@ -321,3 +321,84 @@ test('a route continuation queued before unmount cannot focus another mounted sc
   expect(result.focused).toBe(false);
   expect(result.after).toEqual(result.before);
 });
+
+test('a deferred public content-focus callback becomes inert after its owner is disposed', async ({
+  page,
+}) => {
+  const result = await page.evaluate(async () => {
+    const w = window as any,
+      o = w.owners,
+      h = w.h,
+      before = await h.inspect(h.FULL_DB_NAME);
+    const job = Promise.resolve().then(() => o.stageFocus.focusContent());
+    o.stopOwners();
+    const replacement = document.createElement('button');
+    replacement.id = 'welcome-content';
+    replacement.textContent = '另一页面';
+    document.body.append(replacement);
+    await job;
+    return {
+      focused: document.activeElement === replacement,
+      before,
+      after: await h.inspect(h.FULL_DB_NAME),
+    };
+  });
+  expect(result.focused).toBe(false);
+  expect(result.after).toEqual(result.before);
+});
+
+test('unmounting a failed closure keeps its original retry after the native close event', async ({
+  page,
+}) => {
+  await page.evaluate(async () => {
+    const w = window as any,
+      o = w.owners,
+      h = w.h,
+      proto = h.FullSaveRepository.prototype,
+      original = proto.startScheduledActivity;
+    proto.startScheduledActivity = async function (...args: any[]) {
+      proto.startScheduledActivity = original;
+      w.ownerFailed = args[1];
+      throw new w.ownersModule.RuleError(
+        'STORAGE_ABORTED',
+        'deliberate closure delivery failure',
+      );
+    };
+    await o.closure.value.requestEnd('RETIRE');
+  });
+  await page.getByTestId('life-confirm-end').click();
+  await expect
+    .poll(() => page.evaluate(() => (window as any).owners.store.error))
+    .not.toBe('');
+  const before = await page.evaluate(async () => {
+    const w = window as any,
+      o = w.owners,
+      h = w.h;
+    const dialog = document.querySelector('[data-testid=life-confirmation]')!;
+    w.ownerNativeClose = false;
+    dialog.addEventListener(
+      'close',
+      (event) => {
+        w.ownerNativeClose = event.isTrusted;
+      },
+      { once: true },
+    );
+    const retry = o.store.canRetryFor(w.ownerFailed.commandId),
+      raw = await h.inspect(h.FULL_DB_NAME);
+    o.stopOwners();
+    return { retry, raw };
+  });
+  expect(before.retry).toBe(true);
+  await expect
+    .poll(() => page.evaluate(() => (window as any).ownerNativeClose))
+    .toBe(true);
+  const after = await page.evaluate(async () => {
+    const w = window as any;
+    return {
+      retry: w.owners.store.canRetryFor(w.ownerFailed.commandId),
+      raw: await w.h.inspect(w.h.FULL_DB_NAME),
+    };
+  });
+  expect(after.raw).toEqual(before.raw);
+  expect(after.retry).toBe(true);
+});
