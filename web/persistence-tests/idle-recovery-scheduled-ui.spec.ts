@@ -35,6 +35,9 @@ for(const action of [{type:'BREAKTHROUGH'},{type:'END',ending:'depart'}])test(`s
   const {mountFaultApp}=await import('/persistence-tests/fault-app.ts');(globalThis as any).fault=mountFaultApp({execution:'scheduled'});
  },action);
  await expect.poll(()=>page.evaluate(()=>(globalThis as any).fault.store.ready)).toBe(true);
+ // The independent fault entry must consume the actual shared palette too.
+ const palette=await page.locator('.app-shell').evaluate(node=>{const s=getComputedStyle(node);return{night:s.getPropertyValue('--palette-night').trim(),ink:s.getPropertyValue('--palette-ink').trim(),color:s.color};});
+ expect(palette.night).toBe('#10282f');expect(palette.ink).toBe('#f0ebdc');expect(palette.color).toBe('rgb(240, 235, 220)');
  const before=await page.evaluate(async action=>{
   const h=(globalThis as any).h,f=(globalThis as any).fault,s=f.store,intent=s.prepareMilestone(action);await s.startPreparedMilestone(intent);
   const repo=await h.FullSaveRepository.open();try{

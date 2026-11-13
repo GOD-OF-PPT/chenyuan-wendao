@@ -1,3 +1,4 @@
+@import './palette.css';
 @layer game{
 :root{font-family:'Noto Serif CJK SC','Songti SC','SimSun',serif;color:var(--palette-dangerSurface);background:var(--palette-ink);font-synthesis:none;font-size:112.5%;--teal:var(--palette-panel);--gold:var(--palette-gold);--line:var(--palette-line);--paper:var(--palette-ink)}
 *{box-sizing:border-box}

@@ -6,6 +6,7 @@ import {newGame} from '../../src/full/engine';
 import {importRecoveryFixture as importFixture,recoveryDatabase} from './idle-recovery-ui-support';
 import {selectPlan} from './idle-route-support';
 import {activitySnapshot,useJourneyClock} from './support';
+import {paintedStyleScope} from '../src/painted-style-scope.mjs';
 
 // The exact same visible states produce before/after evidence. The clock and
 // Game are the ordinary journey helpers; this file never seeks an animation.
@@ -94,13 +95,13 @@ test('Q12 production author rules use a declared layer rather than overriding it
 
 test('Q12 interface colors use the shared semantic palette rather than isolated literal values',async({page})=>{
  await useJourneyClock(page);await page.goto('/');await expect(page.getByLabel('你的道号',{exact:true})).toBeVisible();
- const palette=await page.evaluate(()=>{
+ const palette=await page.evaluate(scope=>{
   const literals:string[]=[],roles=new Set<string>();
   function visit(rules:CSSRuleList){for(const rule of rules){
-   if('style' in rule){const style=(rule as CSSStyleRule).style;for(const property of style){const value=style.getPropertyValue(property);if(/#[\da-f]{3,8}\b|\brgba?\(/i.test(value)){if(property.startsWith('--palette-'))roles.add(property);else literals.push(property+':'+value);}}}
+   if('style' in rule){const style=(rule as CSSStyleRule).style,selector=(rule as CSSStyleRule).selectorText?.replace(/\[data-v-[a-z\d]+\]/gi,'')??'';for(const property of style){const value=style.getPropertyValue(property);if(/#[\da-f]{3,8}\b|\brgba?\(/i.test(value)){if(property.startsWith('--palette-'))roles.add(property);else if(!Object.values(scope).some((selectors:any)=>selectors[selector]?.includes(property)))literals.push(property+':'+value);}}}
    if('cssRules' in rule)visit((rule as CSSGroupingRule).cssRules);
   }}
   for(const sheet of document.styleSheets)visit(sheet.cssRules);return{roles:[...roles],literals};
- });
+ },paintedStyleScope);
  expect(palette.roles).toHaveLength(12);expect(palette.literals).toEqual([]);
 });

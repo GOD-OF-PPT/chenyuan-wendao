@@ -23,6 +23,9 @@
   "devDependencies": {
     "@playwright/test": "1.56.1",
     "@vitejs/plugin-vue": "6.0.1",
+    "@vue/compiler-sfc": "3.5.44",
+    "color-name": "2.0.0",
+    "postcss": "8.5.30",
     "typescript": "5.8.3",
     "vite": "7.3.7",
     "vue-tsc": "3.1.1"

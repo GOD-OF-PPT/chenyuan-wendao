@@ -1,15 +1,27 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import postcss from '../web/node_modules/postcss/lib/postcss.js';
-import {parse as parseVue} from '../web/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js';
+import {execFileSync} from 'node:child_process';
+import {postcss,parseVue,colorNames} from '../web/style-tools.mjs';
+import {isPaintedStyle} from '../web/src/painted-style-scope.mjs';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
 const literals=/(?:#[\da-f]{3,8}\b|\brgba?\(|\bhsla?\(|\boklch\(|\blab\()/i;
 const roles=new Set(['night','panel','raised','line','ink','muted','jade','gold','danger','dangerSurface','shadow','white'].map(name=>'--palette-'+name));
+const baseline='77a8a3933a19e04a2a9e413443f30a5d08dfc996';
+const named=new Set(Object.keys(colorNames));
+function hasLiteral(value){
+ const withoutUrls=value.replace(/url\([^)]*\)/gi,'').replace(/--[\w-]+/g,'').replace(/"[^"\\]*(?:\\.[^"\\]*)*"|'[^'\\]*(?:\\.[^'\\]*)*'/g,'');
+ return literals.test(withoutUrls)||[...withoutUrls.matchAll(/\b[a-z]+\b/gi)].some(match=>named.has(match[0].toLowerCase()));
+}
+function specificity(css){
+ const debt=new Map(),add=key=>debt.set(key,(debt.get(key)??0)+1),ast=postcss.parse(css);
+ ast.walkRules(rule=>{if(/#app\b/.test(rule.selector))add(JSON.stringify(['selector',rule.selector]));});
+ ast.walkDecls(d=>{if(d.important)add(JSON.stringify(['important',d.parent.selector??'@'+d.parent.name,d.prop]));});return debt;
+}
 
 /** A rule-level migration ceiling, never a whole-file hash or a byte budget. */
-export function inspectStyle(css,{file='inline.css',allowExistingSpecificity=false}={}){
+export function inspectStyle(css,{file='inline.css',legacyCss=''}={}){
  const problems=[],ast=postcss.parse(css,{from:file});let important=0,appSelectors=0,authorRules=0;const definedRoles=new Set();
  ast.walkRules(rule=>{
   // Keyframe steps inherit the keyframes container and are not selector rules.
@@ -23,10 +35,12 @@ export function inspectStyle(css,{file='inline.css',allowExistingSpecificity=fal
   if(declaration.important)important++;
   const paletteDefinition=path.basename(file)==='palette.css'&&roles.has(declaration.prop);
   if(paletteDefinition)definedRoles.add(declaration.prop);
-  else if(literals.test(declaration.value))problems.push('Unscoped interface color: '+declaration.prop);
+  else if(hasLiteral(declaration.value)&&!isPaintedStyle(path.basename(file),declaration.parent.selector,declaration.prop))problems.push('Unscoped interface color: '+declaration.prop);
  });
- if(!allowExistingSpecificity&&important)problems.push('New !important declaration');
- if(!allowExistingSpecificity&&appSelectors)problems.push('New #app selector');
+ const old=specificity(legacyCss);
+ for(const [key,count]of specificity(css))if(count>(old.get(key)??0)){
+  const kind=JSON.parse(key)[0];problems.push((kind==='selector'?'New #app selector specificity':'New !important declaration specificity')+': '+key);
+ }
  return {problems,important,appSelectors,authorRules,definedRoles:[...definedRoles]};
 }
 
@@ -35,7 +49,11 @@ export function checkStyles(directory=path.join(root,'web/src')){
  for(const name of fs.readdirSync(directory).filter(name=>/\.(css|vue)$/.test(name)).sort()){
   const file=path.join(directory,name),source=fs.readFileSync(file,'utf8');
   const styles=name.endsWith('.css')?[source]:(()=>{const {descriptor,errors}=parseVue(source,{filename:file});if(errors.length)throw new Error('Invalid Vue styles: '+name);return descriptor.styles.filter(style=>!style.src).map(style=>style.content);})();
-  for(const css of styles){const result=inspectStyle(css,{file,allowExistingSpecificity:true});important+=result.important;appSelectors+=result.appSelectors;result.definedRoles.forEach(role=>definedRoles.add(role));problems.push(...result.problems.map(problem=>name+': '+problem));perFile.push({file:name,important:result.important,appSelectors:result.appSelectors});}
+  const relative=path.relative(root,file).replaceAll('\\','/');
+  const listed=execFileSync('git',['ls-tree','-r','--name-only',baseline,'--',relative],{cwd:root,encoding:'utf8'}).trim();
+  const previous=listed?execFileSync('git',['show',baseline+':'+relative],{cwd:root,encoding:'utf8',maxBuffer:10_000_000}):'';
+  const oldStyles=name.endsWith('.css')?[previous]:parseVue(previous,{filename:file}).descriptor.styles.filter(style=>!style.src).map(style=>style.content);
+  for(const [index,css]of styles.entries()){const result=inspectStyle(css,{file,legacyCss:oldStyles[index]??''});important+=result.important;appSelectors+=result.appSelectors;result.definedRoles.forEach(role=>definedRoles.add(role));problems.push(...result.problems.map(problem=>name+': '+problem));perFile.push({file:name,important:result.important,appSelectors:result.appSelectors});}
  }
  if(important>828)problems.push('Existing important debt grew beyond 828');
  if(appSelectors>1021)problems.push('Existing #app selector debt grew beyond 1021');

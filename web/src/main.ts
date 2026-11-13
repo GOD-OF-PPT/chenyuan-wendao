@@ -4,7 +4,6 @@ import App from './App.vue';
 import DemoFailure from './DemoFailure.vue';
 import {requestedDemo,loadDemo} from './demo-loader';
 import {sessionKey,demoScope} from './session';
-import './palette.css';
 import './style.css';
 import './shell.css';
 import './demo.css';
