@@ -785,12 +785,13 @@ export function readLatestAwayReceipts(
           try {
             const receipt = read.result;
             if (!receipt) fail();
-            let fields: ReturnType<typeof project>;
-            try {
-              fields = project(receipt);
-            } catch {
-              fail();
-            }
+            const fields = (() => {
+              try {
+                return project(receipt);
+              } catch {
+                return fail();
+              }
+            })();
             if (
               row.key !== runId + ':' + fields.commandId ||
               fields.runId !== runId ||
