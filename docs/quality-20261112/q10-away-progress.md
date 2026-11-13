@@ -1,6 +1,6 @@
-# Q10：离开累计（本地通过，待递交）
+# Q10：离开累计（已递交）
 
-依据[0157合同](../decisions/0157-away-progress-contract.md)，完整20项中9项已递交；本项尚未交付。分支codex/quality-q10-offline-progress，基线Q07–09/2fc9547。
+依据[0157合同](../decisions/0157-away-progress-contract.md)，本项已推送并递交[PR54](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/54)，完整20项中10项已递交，未自动合并。分支codex/quality-q10-offline-progress，基线Q07–09/2fc9547；以下历史阶段保持其当时状态。
 
 ## 最终当前结果
 
