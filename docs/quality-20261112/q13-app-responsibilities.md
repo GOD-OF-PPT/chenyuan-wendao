@@ -34,6 +34,12 @@ GameSettings/DemoMenu/GameplayHelp各自持有真实dialog、相应只读目录/
 
 2012d9a类型与清洁构建通过；完整原matrix-ui-controls/store-sync-status15/15通过（34.6秒），含设置焦点、演示九节点、文件延迟/相同修订/演示scope与已保存后核对。提取时目标prop漏接的类型红修正为真实target，未用any上下文绕过。App约111.9KB，当前仍是中途结构候选，导航/详情/活动职责和最终综合未关闭。
 
+## 第六Seam：嵌套只读返回
+
+use-stage-returns集中维护详细页父层、最初页码/阅读来源与opener、取舍和生平返回，输入仅当前位置与真实焦点捕获，无Store/奖励/时钟。进入与单次consume保原嵌套优先级及run/阶段约束；App仍拥有真正导航revision、页面动作和实际focus，不以context对象转发整App。
+
+5391767清洁类型/构建和原ABC、法宝焦点、导航、文案、装备上下文完整五文件29/29通过（51.0秒），保运行钟/原计划/全库只读、完整文字与父层返回。新Seam自身嵌套/旧人生返回行为与卸载覆盖仍须补；不把原29绿替代最终完整矩阵或独立审查。
+
 ## 后续与执行边界
 
 当前无live测试。root/web node_modules仍是指向Q12的junction，不能直接在此npm ci或validate-core（会安装）；先核后仅删除link并独立安装。当前每段代码和原报告保，临时工具/日志在artifacts/q13-app。
