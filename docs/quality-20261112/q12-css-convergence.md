@@ -33,3 +33,5 @@ palette-first实际不透明文字对比探针发现未填剑印把line当文字
 后续候选已按真实SVG消费范围明确file/selector/property画色清单，恢复ScenePanel、SourceMaterials、RelicInscription及ta08/ta09物件的97条原绘画声明（含继承color与纯绘画shadow），界面文字/按钮/焦点与通用图标不获豁免。五项样式行为检查通过，额外逐画色声明与3443283原AST相同；不钉整文件或其它代码/样式。生产CSSOM调色检查同步只排明确绘画属性，不能把全部stroke当画。
 
 新增工具依赖已明确为reviewed版本并由公共包入口导出。逐项核旧lock全部包记录不变，仅增color-name2与三项显式devDependency，完整registry/integrity检查保；check_lock更新为实际审过新摘要6be5d36f…并通过113条，不随意删除锁核。当前类型检查通过，下一仍须修后清洁生产构建/完整回归与独立复核。
+
+9332f12修复阶段实际完成112文件/11,593,151字节构建、10核心/980根通过，未将6c6d5eb原194贴到该阶段。进一步独立复核发现颜色函数color()/hwb()/oklab()/lch()与条件祖先挪用specificity仍可漏过；补实际红后已加强全部CSS颜色函数与media/supports/container等条件上下文（仅忽略统一layer），五项纯行为检查通过。原review-functions-condition-red/green保，新完整构建/浏览器仍待。

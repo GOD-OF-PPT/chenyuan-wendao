@@ -14,6 +14,7 @@ test('a new component uses semantic colors inside an explicit layer without spec
   ['@layer game {.result {color:#fff}}','Unscoped interface color'],
   ['@layer game {.result {color:red}}','Unscoped interface color'],
   ['@layer game {.result {background:rebeccapurple}}','Unscoped interface color'],
+  ...['color(srgb 1 0 0)','hwb(0 0% 0%)','oklab(50% .2 .1)','lch(50% 40 30)','light-dark(red,blue)'].map(value=>['@layer game {.result {color:'+value+'}}','Unscoped interface color']),
   ['@layer game {.result {color:var(--palette-ink)!important}}','New !important'],
   ['@layer game {#app .result {color:var(--palette-ink)}}','New #app'],
  ])assert.ok(inspectStyle(css).problems.some(message=>message.includes(reason)),reason);
@@ -25,6 +26,8 @@ test('retiring an old important rule does not authorize it in another selector o
  const moved='@layer game {#app .new {color:var(--palette-ink)!important}}';
  assert.ok(inspectStyle(moved,{file:'old.css',legacyCss:legacy}).problems.some(p=>p.includes('specificity')));
  assert.ok(inspectStyle(moved,{file:'new.css',legacyCss:''}).problems.some(p=>p.includes('specificity')));
+ const conditional='@media(min-width:2000px){#app .old {color:var(--palette-ink)!important}}';
+ assert.ok(inspectStyle(legacy,{file:'old.css',legacyCss:conditional}).problems.some(p=>p.includes('specificity')));
 });
 
 test('the actual component and global style sources retain twelve roles with no growing specificity debt',()=>{

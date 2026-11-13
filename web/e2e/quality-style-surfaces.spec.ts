@@ -105,3 +105,14 @@ test('Q12 interface colors use the shared semantic palette rather than isolated 
  },paintedStyleScope);
  expect(palette.roles).toHaveLength(12);expect(palette.literals).toEqual([]);
 });
+
+test('Q12 unavailable raster art keeps authored scene and tool painting colors separate from interface roles',async({page},info)=>{
+ await page.route('**/art/**',route=>route.abort());
+ const d=driver();d.go('wilderness');await importRecoveryFixture(page,d.game);
+ await expect(page.locator('.scene-moon').first()).toHaveCSS('fill','rgb(244, 223, 172)');
+ await expect(page.locator('.mountain.far').first()).toHaveCSS('fill','rgb(102, 127, 121)');
+ await selectPlan(page,{kind:'source',sourceId:'herbs',maxCycles:1,until:'cycles',target:null,monthBudget:12,remainingMonthsReserve:1});
+ await expect(page.locator('.ta08-resource-tool .ta08-tool-wood')).toHaveCSS('stroke','rgb(140, 144, 108)');
+ await expect(page.locator('.ta08-resource-tool .ta08-tool-metal')).toHaveCSS('stroke','rgb(164, 183, 154)');
+ await capture(page,info,'original-svg-paint-fallback');
+});

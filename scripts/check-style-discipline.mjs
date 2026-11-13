@@ -6,7 +6,7 @@ import {postcss,parseVue,colorNames} from '../web/style-tools.mjs';
 import {isPaintedStyle} from '../web/src/painted-style-scope.mjs';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
-const literals=/(?:#[\da-f]{3,8}\b|\brgba?\(|\bhsla?\(|\boklch\(|\blab\()/i;
+const literals=/(?:#[\da-f]{3,8}\b|\b(?:rgba?|hsla?|hwb|lab|lch|oklab|oklch|color|device-cmyk)\()/i;
 const roles=new Set(['night','panel','raised','line','ink','muted','jade','gold','danger','dangerSurface','shadow','white'].map(name=>'--palette-'+name));
 const baseline='77a8a3933a19e04a2a9e413443f30a5d08dfc996';
 const named=new Set(Object.keys(colorNames));
@@ -16,8 +16,9 @@ function hasLiteral(value){
 }
 function specificity(css){
  const debt=new Map(),add=key=>debt.set(key,(debt.get(key)??0)+1),ast=postcss.parse(css);
- ast.walkRules(rule=>{if(/#app\b/.test(rule.selector))add(JSON.stringify(['selector',rule.selector]));});
- ast.walkDecls(d=>{if(d.important)add(JSON.stringify(['important',d.parent.selector??'@'+d.parent.name,d.prop]));});return debt;
+ const context=node=>{const conditions=[];for(let parent=node.parent;parent;parent=parent.parent)if(parent.type==='atrule'&&parent.name!=='layer')conditions.unshift([parent.name,parent.params]);return conditions;};
+ ast.walkRules(rule=>{if(/#app\b/.test(rule.selector))add(JSON.stringify(['selector',context(rule),rule.selector]));});
+ ast.walkDecls(d=>{if(d.important)add(JSON.stringify(['important',context(d.parent),d.parent.selector??'@'+d.parent.name,d.prop]));});return debt;
 }
 
 /** A rule-level migration ceiling, never a whole-file hash or a byte budget. */
