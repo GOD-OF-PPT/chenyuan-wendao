@@ -19,7 +19,8 @@ test('rule profiles keep a genuine v3 database checkpoint and original tick repl
    return{before,opened,snapshot,replay,after,completed,a,checkpoint:await current.loadCheckpoint()};
   }finally{repo.close();current?.close();}
  },repositoryFsRoot);
- expect(r.opened).toEqual(r.before);expect(r.after).toEqual(r.before);expect(r.snapshot.state.core.contentVersion).toBe('full-demo.3');expect(r.snapshot.state.core.balanceVersion).toBe('full-unbalanced.3');expect(r.snapshot.state.core.runId).toBe(r.completed.state.core.runId);expect(r.snapshot.activity).toEqual(r.completed.activity);expect(r.replay.replayed).toBe(true);expect(r.replay.state).toEqual(r.completed.state);expect(r.replay.result).toEqual(r.completed.result);expect(r.checkpoint.versions.contentVersion).toBe('full-demo.3');expect(r.checkpoint.snapshot.core.contentVersion).toBe('full-demo.3');
+ const upgraded={...r.before,version:10,stores:[...r.before.stores,'full-schedules'].sort(),'full-schedules':[]};
+ expect(r.opened).toEqual(upgraded);expect(r.after).toEqual(upgraded);expect(r.snapshot.state.core.contentVersion).toBe('full-demo.3');expect(r.snapshot.state.core.balanceVersion).toBe('full-unbalanced.3');expect(r.snapshot.state.core.runId).toBe(r.completed.state.core.runId);expect(r.snapshot.activity).toEqual(r.completed.activity);expect(r.replay.replayed).toBe(true);expect(r.replay.state).toEqual(r.completed.state);expect(r.replay.result).toEqual(r.completed.result);expect(r.checkpoint.versions.contentVersion).toBe('full-demo.3');expect(r.checkpoint.snapshot.core.contentVersion).toBe('full-demo.3');
 });
 
 test('rule profiles let the actual old repository reject a new v4 database without mutating any store',async({page})=>{
@@ -32,7 +33,7 @@ test('rule profiles let the actual old repository reject a new v4 database witho
    return{created,before,error,after:await h.inspect(name),current:await repo.loadActivitySnapshot()};
   }finally{reader?.close();repo.close();}
  },repositoryFsRoot);
- expect(r.created.state.core.contentVersion).toBe('full-demo.4');expect(r.error.code).toBe('SAVE_VERSION');expect(r.after).toEqual(r.before);expect(r.current.state).toEqual(r.created.state);
+ expect(r.created.state.core.contentVersion).toBe('full-demo.4');expect(r.error.code).toBe('DB_VERSION');expect(r.after).toEqual(r.before);expect(r.current.state).toEqual(r.created.state);
 });
 
 test('genuine old configuration and direct replies replay after later progress without repricing or rewriting the database',async({page})=>{
@@ -56,7 +57,8 @@ test('genuine old configuration and direct replies replay after later progress w
    return{before,after,snapshot,configured,answered,a,b};
   }finally{repo.close();reader?.close();}
  },repositoryFsRoot);
- expect(r.after).toEqual(r.before);expect(r.snapshot.state.core.contentVersion).toBe('full-demo.3');
+ const upgraded={...r.before,version:10,stores:[...r.before.stores,'full-schedules'].sort(),'full-schedules':[]};
+ expect(r.after).toEqual(upgraded);expect(r.snapshot.state.core.contentVersion).toBe('full-demo.3');
  for(const [replay,saved]of [[r.a,r.configured],[r.b,r.answered]]){
   expect(replay.replayed).toBe(true);expect(replay.result).toEqual(saved.result);expect(replay.state).toEqual(r.snapshot.state);expect(replay.activity).toEqual(r.snapshot.activity);
  }

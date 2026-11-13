@@ -1,11 +1,12 @@
+import{proveControl,proveCycle}from'./scheduled-proof-support';
 import {currentPageTool} from './readonly-navigation-support';
 import{expect,type Page,type Locator,type TestInfo}from'@playwright/test';
 import type{Game}from'../../src/full/types';
-import{resolve}from'../../src/full/engine';
-import{createActivity,pauseActivity,resumeActivity,completeActivity}from'../../src/full/activity';
-import{canonicalFingerprint}from'../../src/full/receipts';
-import{currentVersions}from'../../src/full/versions';
-import{validateActivityReceipt}from'../src/activity-persistence';
+
+
+
+
+
 import{snapshot,activitySnapshot as activity,openHubFeature}from'./support';
 import{recoveryDatabase as database,stored}from'./idle-recovery-ui-support';
 import{home,decision}from'./idle-route-support';
@@ -25,16 +26,11 @@ export async function readPages(root:Locator,label:string){
 export async function readTrial(page:Page,mode:string){const root=page.getByTestId('trial-preparation');await root.getByTestId('trial-mode-'+mode).click();return readPages(root,'渡劫');}
 export async function lastMs(page:Page,a:any,g:Game,raw:any){const left=a.dueAt-await page.evaluate(()=>Date.now());expect(left).toBeGreaterThan(0);expect(left).toBeLessThanOrEqual(a.cycleMs);await page.clock.fastForward(left-1);expect(await snapshot(page)).toEqual(g);expect(await database(page)).toEqual(raw);}
 export async function mutation(page:Page,g:Game,before:any,kind:'START'|'PAUSE'|'RESUME',info:TestInfo){
- const raw=await database(page),added=raw.rows['full-receipts'].filter((r:any)=>!before.rows['full-receipts'].some((x:any)=>x.key===r.key));expect(added).toHaveLength(1);const r=added[0].value;expect(r.input.kind).toBe(kind);expect(r.fingerprint).toBe(canonicalFingerprint(r.input));expect(()=>validateActivityReceipt(r,g)).not.toThrow();
- const options={ownerId:r.input.mutation.ownerId,commandId:r.input.mutation.commandId,now:r.activity.startedAt},formal=kind==='START'?createActivity(g,r.input.plan,{...options,id:r.activity.id}):kind==='PAUSE'?pauseActivity(stored(before,'activity')):resumeActivity(g,stored(before,'activity'),options);
- expect(r.activity).toEqual(formal);expect(await activity(page)).toEqual(formal);expect(await snapshot(page)).toEqual(g);expect(stored(raw,'current')).toEqual(g);expect(stored(raw,'activity')).toEqual(formal);expect(raw.rows['full-state'].filter((x:any)=>x.key!=='activity')).toEqual(before.rows['full-state'].filter((x:any)=>x.key!=='activity'));expect(raw.rows['full-receipts'].filter((x:any)=>x.key!==added[0].key)).toEqual(before.rows['full-receipts']);for(const n of Object.keys(before.rows).filter(n=>!['full-state','full-receipts'].includes(n)))expect(raw.rows[n],n).toEqual(before.rows[n]);await attach(info,kind+'-full-formal-mutation',{g,before,raw,r,formal});return{a:formal,raw,r};
+ const raw=await database(page),proof=proveControl(raw,before,g,kind);expect(await activity(page)).toEqual(proof.a);expect(await snapshot(page)).toEqual(g);await attach(info,kind+'-full-formal-mutation',{g,before,...proof});return proof;
 }
 export async function saved(page:Page,g:Game,a:any,before:any,info:TestInfo){
- await expect.poll(async()=>(await activity(page))?.completedCycles).toBe(a.completedCycles+1);await expect(page.getByTestId('save-status')).toHaveText('已保存');const raw=await database(page),next=await snapshot(page),formal=resolve(g,a.nextCommand),key=a.runId+':'+a.nextCommand.commandId,matches=raw.rows['full-receipts'].filter((x:any)=>x.key===key);expect(matches).toHaveLength(1);const r=matches[0].value,input={kind:'TICK',tick:{commandId:a.nextCommand.commandId,runId:a.runId,expectedRevision:a.gameRevision,activityId:a.id,expectedActivityRevision:a.revision,ownerId:a.ownerId,generation:a.generation}};
- expect(raw.version).toBe(9);expect(next).toEqual(formal.nextState);expect(stored(raw,'current')).toEqual(next);expect(stored(raw,'previous')).toEqual(g);expect(r.input).toEqual(input);expect(r.fingerprint).toBe(canonicalFingerprint(input));expect(r.command).toEqual(a.nextCommand);expect(r.result).toEqual(formal.result);expect(()=>validateActivityReceipt(r,next)).not.toThrow();
- const now=r.version===2?r.proof.resolvedAt:a.dueAt;if(r.version===2){expect(r.proof.activityBefore).toEqual(a);expect(r.proof.stateAfter).toEqual(next);expect(now).toBeGreaterThanOrEqual(a.dueAt);}const done=completeActivity(next,a,formal.result,{commandId:a.nextCommand.commandId,now});expect(r.activity).toEqual(done);expect(stored(raw,'activity')).toEqual(done);expect(await activity(page)).toEqual(done);
- const changed=['current','previous','activity'];if(formal.checkpointKind){changed.push('checkpoint','checkpoint-owner');expect(stored(raw,'checkpoint')).toEqual({format:'chenyuan-checkpoint',version:1,kind:formal.checkpointKind,sourceRunId:g.core.runId,sourceRevision:g.core.revision,versions:currentVersions,snapshot:g});expect(stored(raw,'checkpoint-owner')).toEqual({format:'chenyuan-checkpoint-scope',version:1,runId:g.core.runId,sourceRunId:g.core.runId,sourceRevision:g.core.revision,kind:formal.checkpointKind});}
- expect(raw.rows['full-state'].filter((x:any)=>!changed.includes(x.key))).toEqual(before.rows['full-state'].filter((x:any)=>!changed.includes(x.key)));expect(raw.rows['full-receipts'].filter((x:any)=>x.key!==key)).toEqual(before.rows['full-receipts']);for(const n of Object.keys(before.rows).filter(n=>!['full-state','full-receipts'].includes(n)))expect(raw.rows[n],n).toEqual(before.rows[n]);await attach(info,'full-official-cycle-all-stores',{g,a,before,raw,next,formal,r,done});return{g:next,raw,a:done,r};
+ await expect.poll(async()=>(await activity(page))?.completedCycles).toBe(a.completedCycles+1);await expect(page.getByTestId('save-status')).toHaveText('已保存');
+ const raw=await database(page),proof=proveCycle(raw,before,g,a);expect(await snapshot(page)).toEqual(proof.after);expect(await activity(page)).toEqual(proof.done);await attach(info,'full-official-cycle-all-stores',proof);return{g:proof.after,raw,a:proof.done,r:proof.receipt};
 }
 export async function fault(page:Page,kind:'start'|'checkpoint'|'abort-checkpoint'|'travel'){
  await page.evaluate(kind=>{const put=IDBObjectStore.prototype.put,w=window as any;w.__abcRestore=()=>IDBObjectStore.prototype.put=put;w.__abcRejected=null;

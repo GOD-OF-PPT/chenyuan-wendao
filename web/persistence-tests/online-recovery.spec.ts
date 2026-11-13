@@ -41,7 +41,7 @@ test.beforeEach(async ({ page }) => {
       'idle-sources', 'idle-production', 'idle-preparation', 'stage-r1', 'stage-r2',
       'stage-r3', 'stage-r4', 'idle-tradeoffs']) await import('/src/' + file + '.css');
     const { mountFaultApp } = await import('/persistence-tests/fault-app.ts');
-    (globalThis as any).fault = mountFaultApp();
+    (globalThis as any).fault = mountFaultApp({execution:'online'});
   });
   // This public readiness gate is setup, not an extension of action duration.
   await expect(page.getByRole('button', { name: '踏入仙途' })).toBeEnabled({ timeout: 15000 });

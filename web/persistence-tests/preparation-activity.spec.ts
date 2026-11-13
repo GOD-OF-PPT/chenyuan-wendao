@@ -267,7 +267,7 @@ test('DB7 preserves every v6 legacy activity, real checkpoint and receipt byte-f
             { kind, ...(kind === 'craft' ? { recipeId: 'healing', maxCycles: 3, until: 'cycles', targetQuantity: null } : { relicId: 'frost_sword', maxCycles: 1 }),
               stoneBudget: kind === 'craft' ? 6 : 140, stoneReserve: 0, monthBudget: kind === 'craft' ? 3 : 2, remainingMonthsReserve: 1, itemReserves: {} };
           const started = await repo.startActivity(plan, h.preparationMutation(await repo.loadActivitySnapshot())), tick = h.preparationTick(started); now = started.activity.dueAt;
-          const completed = await repo.settleActivity(tick), checkpoint = await repo.loadCheckpoint(), original = await h.inspect(name + '-source'); repo.close();
+          const completed = await repo.settleActivity(tick), checkpoint = await repo.loadCheckpoint(), original = h.legacyDatabaseFixture(await h.inspect(name + '-source'),6); repo.close();
           const old = await new Promise<IDBDatabase>((resolve, reject) => { const request = indexedDB.open(name, 6); request.onupgradeneeded = () => { for (const store of original.stores) request.result.createObjectStore(store); }; request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error); });
           await new Promise<void>((resolve, reject) => { const tx = old.transaction(original.stores, 'readwrite'); for (const store of original.stores) for (const row of original[store]) tx.objectStore(store).put(row.value, row.key); tx.oncomplete = () => resolve(); tx.onabort = () => reject(tx.error); });
           let closed = false; old.onversionchange = () => { closed = true; old.close(); }; now += 86_400_000;
@@ -283,7 +283,7 @@ test('DB7 preserves every v6 legacy activity, real checkpoint and receipt byte-f
     } finally { Date.now = realNow; }
   });
   for (const row of rows) {
-    expect(row.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(row.loaded.activity).not.toHaveProperty('rulesVersion'); expect(row.closed).toBe(true); expect(row.after.version).toBe(9); expect(row.checkpoint).not.toBeNull();
+    expect(row.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(row.loaded.activity).not.toHaveProperty('rulesVersion'); expect(row.closed).toBe(true); expect(row.after.version).toBe(10); expect(row.checkpoint).not.toBeNull();
     for (const store of row.original.stores) expect(row.after[store]).toEqual(row.original[store]);
     expect(row.loaded).toEqual({ state: row.completed.state, activity: row.completed.activity }); expect(row.checkpointAfter).toEqual(row.checkpoint);
     expect(row.replay.replayed).toBe(true); expect(row.replay.state).toEqual(row.completed.state); expect(row.replay.activity).toEqual(row.completed.activity);

@@ -32,8 +32,8 @@ export async function runRecoveryControl(page:Page,control:Locator,plan?:any){
  if(done.cycles===1){
   const formal=resolve(before,a.nextCommand),receipt=await page.evaluate(({runId,commandId})=>new Promise<any>((ok,no)=>{const q=indexedDB.open('chenyuan-playable-v1');q.onerror=()=>no(q.error);q.onsuccess=()=>{const db=q.result,t=db.transaction('full-receipts','readonly'),r=t.objectStore('full-receipts').get(runId+':'+commandId);r.onsuccess=()=>ok(r.result);t.oncomplete=()=>db.close();t.onabort=()=>{db.close();no(t.error);};};}),{runId:a.runId,commandId:a.nextCommand.commandId});
   expect(receipt.command).toEqual(a.nextCommand);expect(receipt.result).toEqual(formal.result);expect(done.game).toEqual(formal.nextState);
-  expect(receipt.proof.activityBefore).toEqual(a);expect(receipt.proof.stateAfter).toEqual(formal.nextState);expect(receipt.proof.resolvedAt).toBeGreaterThanOrEqual(a.dueAt);
-  expect(receipt.activity).toEqual(completeActivity(formal.nextState,a,formal.result,{commandId:a.nextCommand.commandId,now:receipt.proof.resolvedAt}));
+  expect(receipt.version).toBe(3);expect(receipt.proof.activityBefore).toEqual(a);expect(receipt.proof.stateAfter).toEqual(formal.nextState);expect(receipt.proof.logicalAt).toBe(a.dueAt);expect(receipt.proof.resolvedAt).toBeGreaterThanOrEqual(receipt.proof.logicalAt);
+  expect(receipt.activity).toEqual(completeActivity(formal.nextState,a,formal.result,{commandId:a.nextCommand.commandId,now:receipt.proof.logicalAt}));
  }
  return{...done,before,a};
 }

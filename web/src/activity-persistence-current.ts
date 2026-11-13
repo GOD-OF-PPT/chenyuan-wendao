@@ -14,9 +14,9 @@ export type ActivityReceiptInput =
   | { kind: 'PAUSE' | 'RESUME'; mutation: ActivityMutation }
   | { kind: 'TICK'; tick: ActivityTick };
 export interface ActivityReceipt {
-  format: 'chenyuan-activity-receipt'; version: 1 | 2; input: ActivityReceiptInput; fingerprint: string;
+  format: 'chenyuan-activity-receipt'; version: 1 | 2 | 3; input: ActivityReceiptInput; fingerprint: string;
   activity: Activity; command: Command | null; result: ActionResult | null;
-  proof?: { activityBefore: Activity; stateAfter: Game; resolvedAt: number };
+  proof?: { activityBefore: Activity; stateAfter: Game; resolvedAt: number; logicalAt?:number };
 }
 function invalid(): never { throw new RuleError('RECEIPT_INVALID', '活动回执损坏，未重复执行或覆盖原记录'); }
 function shape(value: unknown, fields: string[]): asserts value is Record<string, unknown> {
@@ -25,6 +25,7 @@ function shape(value: unknown, fields: string[]): asserts value is Record<string
 }
 /** Historical activity snapshots are checked structurally; replay returns the current snapshot. */
 export function validateActivityReceipt(value: unknown, current: Game): asserts value is ActivityReceipt {
+  if(value&&typeof value==='object'&&'version'in value&&value.version===3){validateScheduledCycleReceipt(value,current);return;}
   try {
     const proven = !!value && typeof value === 'object' && 'version' in value && value.version === 2;
     shape(value, ['format', 'version', 'input', 'fingerprint', 'activity', 'command', 'result', ...(proven ? ['proof'] : [])]);
@@ -116,6 +117,31 @@ export function validateActivityReceipt(value: unknown, current: Game): asserts 
           activity.status !== (input.kind === 'PAUSE' ? 'paused' : 'running')) invalid();
     }
   } catch { invalid(); }
+}
+function validateScheduledCycleReceipt(value:unknown,current:Game):asserts value is ActivityReceipt{
+ try{
+  shape(value,['format','version','input','fingerprint','activity','command','result','proof']);
+  if(value.format!=='chenyuan-activity-receipt'||value.version!==3)invalid();
+  shape(value.input,['kind','tick']);if(value.input.kind!=='TICK')invalid();validateActivityTick(value.input.tick);
+  if(value.fingerprint!==fingerprint(value.input)||!value.command||!value.result)invalid();
+  shape(value.proof,['activityBefore','stateAfter','resolvedAt','logicalAt']);
+  const before=value.proof.activityBefore,after=value.proof.stateAfter,tick=value.input.tick;
+  assertActivityRules(before,current);validateActivity(before);assertActivityRules(value.activity,current);validateActivity(value.activity);
+  validateGame(current);validateGame(after);
+  if(rulesVersion(after)!==rulesVersion(current)||after.core.runId!==current.core.runId||after.core.revision>current.core.revision||
+     before.id!==tick.activityId||before.runId!==tick.runId||tick.runId!==current.core.runId||before.revision!==tick.expectedActivityRevision||
+     before.gameRevision!==tick.expectedRevision||before.ownerId!==tick.ownerId||before.generation!==tick.generation||
+     !before.nextCommand||fingerprint(before.nextCommand)!==fingerprint(value.command)||before.nextCommand.commandId!==tick.commandId||
+     !Number.isSafeInteger(value.proof.resolvedAt)||!Number.isSafeInteger(value.proof.logicalAt)||
+     value.proof.logicalAt!==before.dueAt||Number(value.proof.logicalAt)<0||Number(value.proof.resolvedAt)<Number(value.proof.logicalAt))invalid();
+  validateCommandReceipt({format:'chenyuan-receipt',version:1,command:value.command,fingerprint:fingerprint(value.command),result:value.result},after);
+  const expected=completeActivity(after,before,value.result as ActionResult,{commandId:tick.commandId,now:Number(value.proof.logicalAt)});
+  if(fingerprint(expected)!==fingerprint(value.activity))invalid();
+ }catch{invalid();}
+}
+export function scheduledActivityReceipt(input:Extract<ActivityReceiptInput,{kind:'TICK'}>,activity:Activity,command:Command,result:ActionResult,
+ proof:NonNullable<ActivityReceipt['proof']>&{logicalAt:number}):ActivityReceipt{
+ return{format:'chenyuan-activity-receipt',version:3,input:structuredClone(input),fingerprint:fingerprint(input),activity:structuredClone(activity),command:structuredClone(command),result:structuredClone(result),proof:structuredClone(proof)};
 }
 export function activityReceipt(input: ActivityReceiptInput, activity: Activity, command: Command | null = null, result: ActionResult | null = null,
   proof?: ActivityReceipt['proof']): ActivityReceipt {

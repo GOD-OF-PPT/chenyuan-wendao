@@ -46,6 +46,15 @@ export async function setupPersistence(page: Page) {
         tx.onabort = () => { db.close(); reject(tx.error); };
       };
     });
+    // Historical schema fixtures have the original stores only. A DB10 clock
+    // must never be copied into a claimed pre10 database, even when it is empty.
+    const legacyDatabaseFixture = (snapshot:any,version:number) => {
+      if(!Number.isSafeInteger(version)||version<2||version>=10)throw new Error('expected an explicit historical database schema');
+      const clock=persistence.FULL_SCHEDULE_STORE;
+      if(snapshot[clock]?.length)throw new Error('a live away clock cannot be removed to manufacture a legacy fixture');
+      const original=structuredClone(snapshot);delete original[clock];original.stores=original.stores.filter((name:string)=>name!==clock);original.version=version;
+      return original;
+    };
     const legacySamples = (choice = 'leave', school = 'sword') => {
       let game = legacy.createAdventure('旧档测试', `legacy-${choice}-${school}`);
       const samples = [game];
@@ -96,6 +105,6 @@ export async function setupPersistence(page: Page) {
         ownerId: a.ownerId, generation: a.generation }); }
       finally { Date.now = realNow; }
     };
-    (globalThis as any).h = { ...persistence, engine, queries, receipts, routes, adventure, currentContent, legacyRuleRoutes, legacyRuleEngine, legacyRuleContent, legacy, seed, inspect, put, legacySamples, mutation, command, attempt, finishAction };
+    (globalThis as any).h = { ...persistence, engine, queries, receipts, routes, adventure, currentContent, legacyRuleRoutes, legacyRuleEngine, legacyRuleContent, legacy, seed, inspect, legacyDatabaseFixture, put, legacySamples, mutation, command, attempt, finishAction };
   }, root);
 }

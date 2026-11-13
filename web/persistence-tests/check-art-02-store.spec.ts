@@ -37,7 +37,7 @@ test('a received native START remains exactly acknowledged after real versioncha
   const before=await h.inspect(h.FULL_DB_NAME),intent=s.prepareMilestone({type:'CHOOSE',choice:'help'});
   h.ackIntent=structuredClone(intent);h.ackRestore=()=>proto.loadCheckpoint=load;
   proto.loadCheckpoint=async function(){const result=await load.call(this);h.ackRestore();h.ackCheckpointReadCompleted=true;await new Promise<void>(resolve=>h.ackRelease=resolve);return result;};
-  h.ackStart=s.startPreparedMilestone(intent);return{before,intent};
+  h.ackStart=s.startOnlinePreparedMilestone(intent);return{before,intent};
  });
  await expect.poll(()=>page.evaluate(()=>(globalThis as any).h.ackCheckpointReadCompleted)).toBe(true);
  const closed=await page.evaluate(async()=>{
@@ -52,7 +52,7 @@ test('a received native START remains exactly acknowledged after real versioncha
   return{aborted,native:h.ackNativeVersionChange,raw,after:await h.inspect(h.FULL_DB_NAME),ui:h.ackStore.state(),available:s.available,syncIssue:s.syncIssue,
    acknowledged:s.wasConfirmedFor(intent.mutation.commandId,intent.mutation.runId),wrongRun:s.wasConfirmedFor(intent.mutation.commandId,crypto.randomUUID()),unknown:s.wasConfirmedFor(crypto.randomUUID(),intent.mutation.runId)};
  });
- expect(closed.native).toBe(true);expect(closed.aborted).toBe('AbortError');expect(closed.raw.version).toBe(9);expect(closed.after).toEqual(closed.raw);
+ expect(closed.native).toBe(true);expect(closed.aborted).toBe('AbortError');expect(closed.raw.version).toBe(10);expect(closed.after).toEqual(closed.raw);
  expect(closed.ui.error).toContain('无法同步存档');expect(closed.ui.error).toContain('关闭');expect(closed.ui.saved).toBe(false);expect(closed.syncIssue).toBe(true);expect(closed.available).toBe(false);
  expect(closed.ui.canRetry).toBe(false);expect(closed.ui.runtime).toBeNull();expect(closed.ui.game).toEqual(prepared.before['full-state'].find((r:any)=>r.key==='current').value);
  expect(closed.ui.activity.plan).toEqual(prepared.intent.plan);expect(closed.ui.activity.completedCycles).toBe(0);
@@ -73,7 +73,7 @@ test('unsubmitted quota and lost native START replies remain unacknowledged unti
    h.ackRestore=()=>{proto.startActivity=start;IDBObjectStore.prototype.put=put;};
    if(mode==='lost')proto.startActivity=async function(...args:any[]){const outcome=await start.apply(this,args);h.ackRestore();h.ackLostOutcome=structuredClone(outcome);throw new h.ackRuleError('STORAGE_ABORTED','native START committed but reply was lost');};
    else IDBObjectStore.prototype.put=function(value:any,key?:IDBValidKey){if(this.name==='full-receipts')throw new DOMException('native START quota','QuotaExceededError');return put.call(this,value,key!);};
-   try{await s.startPreparedMilestone(intent);}finally{h.ackRestore();}
+   try{await s.startOnlinePreparedMilestone(intent);}finally{h.ackRestore();}
    const failed={ui:h.ackStore.state(),ack:s.wasConfirmedFor(intent.mutation.commandId,intent.mutation.runId),raw:await h.inspect(h.FULL_DB_NAME)};
    await s.retryFor(intent.mutation.commandId);
    const retried={ui:h.ackStore.state(),ack:s.wasConfirmedFor(intent.mutation.commandId,intent.mutation.runId),raw:await h.inspect(h.FULL_DB_NAME)};
@@ -102,7 +102,7 @@ test('a native START delivered after its Store is disposed cannot acknowledge or
   const h=(globalThis as any).h,s=h.ackStore.store,proto=h.FullSaveRepository.prototype,start=proto.startActivity,intent=s.prepareMilestone({type:'CHOOSE',choice:'leave'});
   h.ackRestore=()=>proto.startActivity=start;
   proto.startActivity=async function(...args:any[]){const outcome=await start.apply(this,args);h.ackRestore();h.ackHeldOutcome=structuredClone(outcome);await new Promise<void>(resolve=>h.ackRelease=resolve);return outcome;};
-  h.ackStart=s.startPreparedMilestone(intent);return{intent,before:h.ackStore.state()};
+  h.ackStart=s.startOnlinePreparedMilestone(intent);return{intent,before:h.ackStore.state()};
  });
  await expect.poll(()=>page.evaluate(()=>!!(globalThis as any).h.ackHeldOutcome)).toBe(true);
  const done=await page.evaluate(async()=>{

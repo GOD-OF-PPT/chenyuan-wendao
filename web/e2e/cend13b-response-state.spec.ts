@@ -1,14 +1,15 @@
+import {proveControl,proveCycle} from './scheduled-proof-support';
 import {motionClearance} from './npc-response-visual-support';
 import {test,expect,type Page,type Browser,type TestInfo} from '@playwright/test';
 import {paidResponseFixture,npcResponseFixtures,responseStageFixtures} from '../../tests/response-context-fixtures.mjs';
-import {resolve} from '../../src/full/engine';
+
 import type {Game,Action} from '../../src/full/types';
-import {createActivity,completeActivity,pauseActivity,resumeActivity} from '../../src/full/activity';
-import {canonicalFingerprint} from '../../src/full/receipts';
+
+
 import {previewAction,getTrialJourney} from '../../src/full/queries';
 import {narrativeFor} from '../src/story-pages';
 import {formatCosts} from '../src/presentation';
-import {validateActivityReceipt} from '../src/activity-persistence';
+
 import {snapshot,activitySnapshot as activity} from './support';
 import {decision,home} from './idle-route-support';
 import {importRecoveryFixture,recoveryDatabase as database,recoveryReadonly as readonly,stored} from './idle-recovery-ui-support';
@@ -72,16 +73,10 @@ async function select(page:Page,a:Action){
 async function prepare(page:Page,source:Game,a:Action,virtual=true){
  const g=await load(page,source,virtual);await openStory(page);await select(page,a);return{g,action:a,raw:await database(page)};
 }
+const legacyOnlinePages=new WeakSet<Page>();
+async function bindLegacyContinuation(page:Page){legacyOnlinePages.add(page);await page.evaluate(async()=>{const{useGame}=await import('/src/store.ts'),store=useGame();store.resumeCultivation=store.resumeOnlineCultivation;});}
 async function mutation(page:Page,g:Game,before:any,kind:'START'|'PAUSE'|'RESUME',info:TestInfo){
- const raw=await database(page),added=raw.rows['full-receipts'].filter((r:any)=>!before.rows['full-receipts'].some((x:any)=>x.key===r.key));expect(added).toHaveLength(1);
- const r=added[0].value;expect(r.input.kind).toBe(kind);expect(r.fingerprint).toBe(canonicalFingerprint(r.input));expect(()=>validateActivityReceipt(r,g)).not.toThrow();
- const opts={ownerId:r.input.mutation.ownerId,commandId:r.input.mutation.commandId,now:r.activity.startedAt};
- const formal=kind==='START'?createActivity(g,r.input.plan,{...opts,id:r.activity.id}):kind==='PAUSE'?pauseActivity(stored(before,'activity')):resumeActivity(g,stored(before,'activity'),opts);
- expect(r.activity).toEqual(formal);expect(await snapshot(page)).toEqual(g);expect(stored(raw,'current')).toEqual(g);expect(stored(raw,'activity')).toEqual(await activity(page));
- expect(raw.rows['full-state'].filter((x:any)=>x.key!=='activity')).toEqual(before.rows['full-state'].filter((x:any)=>x.key!=='activity'));
- expect(raw.rows['full-receipts'].filter((x:any)=>x.key!==added[0].key)).toEqual(before.rows['full-receipts']);
- for(const n of Object.keys(before.rows).filter(n=>!['full-state','full-receipts'].includes(n)))expect(raw.rows[n],n).toEqual(before.rows[n]);
- await attach(info,kind+'-complete-formal-and-all-stores',{g,before,raw,receipt:r,formal});return{a:r.activity,raw,receipt:r};
+ const raw=await database(page),proof=proveControl(raw,before,g,kind,legacyOnlinePages.has(page)?'online':'scheduled');expect(await snapshot(page)).toEqual(g);expect(await activity(page)).toEqual(proof.a);await attach(info,kind+'-complete-formal-and-all-stores',{g,before,...proof});return{a:proof.a,raw,receipt:proof.r};
 }
 async function start(page:Page,t:{g:Game;action:Action;raw:any},info:TestInfo){
  if(t.action.type==='DECIDE'){
@@ -94,21 +89,16 @@ async function start(page:Page,t:{g:Game;action:Action;raw:any},info:TestInfo){
  const accepted=await mutation(page,t.g,t.raw,'START',info);expect(accepted.a.plan).toEqual({kind:'milestone',action:t.action,maxCycles:1});return{...t,...accepted};
 }
 async function beginLegacyResponse(page:Page,action:Action,hold=false){
+ legacyOnlinePages.add(page);
  await page.evaluate(async({action,hold})=>{
   const {useGame}=await import('/src/store.ts'),store=useGame(),intent=store.prepareMilestone(action as any);
   if(!intent)throw Error('Explicit legacy Store setup was not accepted');
-  const pending=store.startPreparedMilestone(intent);
+  store.resumeCultivation=store.resumeOnlineCultivation;const pending=store.startOnlinePreparedMilestone(intent);
   if(hold)(window as any).__legacyResponseStart=pending;else await pending;
  },{action,hold});
 }
 async function committedTick(page:Page,g:Game,a:any,before:any,info:TestInfo){
- const raw=await database(page),formal=resolve(g,a.nextCommand),key=a.runId+':'+a.nextCommand.commandId,rows=raw.rows['full-receipts'].filter((r:any)=>r.key===key);expect(rows).toHaveLength(1);
- const r=rows[0].value;expect(r.input).toEqual({kind:'TICK',tick:{commandId:a.nextCommand.commandId,runId:a.runId,expectedRevision:a.gameRevision,activityId:a.id,expectedActivityRevision:a.revision,ownerId:a.ownerId,generation:a.generation}});
- expect(r.fingerprint).toBe(canonicalFingerprint(r.input));expect(r.command).toEqual(a.nextCommand);expect(r.result).toEqual(formal.result);expect(r.proof).toEqual({activityBefore:a,stateAfter:formal.nextState,resolvedAt:r.proof.resolvedAt});expect(r.proof.resolvedAt).toBeGreaterThanOrEqual(a.dueAt);
- const done=completeActivity(formal.nextState,a,formal.result,{commandId:a.nextCommand.commandId,now:r.proof.resolvedAt});expect(r.activity).toEqual(done);expect(await activity(page)).toEqual(done);expect(await snapshot(page)).toEqual(formal.nextState);expect(stored(raw,'current')).toEqual(formal.nextState);expect(stored(raw,'previous')).toEqual(g);expect(()=>validateActivityReceipt(r,formal.nextState)).not.toThrow();
- expect(raw.rows['full-state'].filter((x:any)=>!['current','previous','activity'].includes(x.key))).toEqual(before.rows['full-state'].filter((x:any)=>!['current','previous','activity'].includes(x.key)));
- expect(raw.rows['full-receipts'].filter((x:any)=>x.key!==key)).toEqual(before.rows['full-receipts']);for(const n of Object.keys(raw.rows).filter(n=>!['full-state','full-receipts'].includes(n)))expect(raw.rows[n],n).toEqual(before.rows[n]);
- await attach(info,'one-real-period-complete-game-activity-proof-all-stores',{g,a,before,raw,formal,receipt:r,done});return{g:formal.nextState,a:done,raw};
+ const raw=await database(page),proof=proveCycle(raw,before,g,a,legacyOnlinePages.has(page)?'online':'scheduled');expect(await activity(page)).toEqual(proof.done);expect(await snapshot(page)).toEqual(proof.after);await attach(info,'one-real-period-complete-game-activity-proof-all-stores',proof);return{g:proof.after,a:proof.done,raw};
 }
 async function tick(page:Page,t:{g:Game;a:any;raw:any},info:TestInfo){
  const left=t.a.dueAt-await page.evaluate(()=>Date.now());expect(left).toBeGreaterThan(0);expect(left).toBeLessThanOrEqual(t.a.cycleMs);
@@ -187,7 +177,7 @@ test('CEND13-B5 a genuinely committed but delayed start reply and another pages 
  await expect(caption(page)).not.toContainText('已安排');await expect(page.getByTestId('training-countdown')).toHaveCount(0);const committed=await database(page),a=stored(committed,'activity');expect(a.version).toBe(7);expect(a.status).toBe('running');expect(stored(committed,'current')).toEqual(t.g);
  const peer=await context.newPage();listen(peer);try{
   await peer.goto('/');await expect(peer.getByTestId('save-status')).toHaveText('已保存');await openStory(peer);await select(peer,t.action);await expect(caption(peer)).toHaveText('回应已安排 · 接续见上方');await expect(peer.getByTestId('training-countdown')).toHaveCount(0);
-  await peer.getByTestId('training-resume').click();await expect.poll(async()=>(await activity(peer)).generation).toBe(a.generation+1);const resumed=await mutation(peer,t.g,committed,'RESUME',info);expect(resumed.a.ownerId).not.toBe(a.ownerId);
+  await bindLegacyContinuation(peer);await peer.getByTestId('training-resume').click();await expect.poll(async()=>(await activity(peer)).generation).toBe(a.generation+1);const resumed=await mutation(peer,t.g,committed,'RESUME',info);expect(resumed.a.ownerId).not.toBe(a.ownerId);
   await page.evaluate(()=>(window as any).__c13bAck.release());await expect(page.getByTestId('save-status')).toHaveText('已保存');await expect.poll(async()=>(await activity(page)).generation).toBe(resumed.a.generation);await expect(page.getByTestId('milestone-confirm')).not.toBeVisible();await expect(caption(page)).toHaveText('回应已安排 · 接续见上方');await expect(page.getByTestId('training-countdown')).toHaveCount(0);await frame(page,info,'B5-foreign-generation-no-borrowed-local-clock');
   expect(await database(page)).toEqual(resumed.raw);await tick(peer,{g:t.g,...resumed},info);expect(await database(page)).toEqual(await database(peer));await expect(page.getByTestId('response-result')).toHaveCount(0);expect(faults.get(peer)).toEqual([]);
  }finally{await peer.close();}

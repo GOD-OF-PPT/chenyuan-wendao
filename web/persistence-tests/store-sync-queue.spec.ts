@@ -125,7 +125,7 @@ for (const phase of ['normal', 'queued'] as const) {
     test(`${phase} sync ${kind}: failed verification stops the local cycle, keeps every committed record, and reconnect requires an explicit full continuation`, async ({ page }, info) => {
       const started = await page.evaluate(async () => {
         const m = (globalThis as any).h.syncMatrix;
-        await m.f.store.startCultivation({ kind: 'cultivation', method: 'natural', maxCycles: 3,
+        await m.f.store.startOnlinePlannedActivity({ kind: 'cultivation', method: 'natural', maxCycles: 3,
           until: 'cycles', stoneBudget: 0, stoneReserve: 0 });
         return m.state();
       });
@@ -208,7 +208,7 @@ for (const phase of ['normal', 'queued'] as const) {
       expect((await page.evaluate(() => (globalThis as any).h.syncMatrix.evidence())).raw).toEqual(reconnected.raw);
 
       const resumed = await page.evaluate(async () => {
-        const m = (globalThis as any).h.syncMatrix; await m.f.store.resumeCultivation(); return m.state();
+        const m = (globalThis as any).h.syncMatrix; await m.f.store.resumeOnlineCultivation(); return m.state();
       });
       expect(resumed.game).toEqual(reconnected.snapshot.state);
       expect(resumed.activity.completedCycles).toBe(phase === 'queued' ? 1 : 0);

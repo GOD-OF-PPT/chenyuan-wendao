@@ -24,7 +24,7 @@ test('DB8 preserves real DB7 preparation, configuration proofs, checkpoint and o
         expectedActivityRevision: a.activity.revision, ownerId: a.activity.ownerId, generation: a.activity.generation };
       now = a.activity.dueAt; const learned = await source.settleActivity(tick), intent = { command: h.command(learned.state, { type: 'EQUIP', skill: 'sword_still' }),
         expectedActivityId: learned.activity.id, expectedActivityRevision: learned.activity.revision };
-      const configured = await source.configure(intent), checkpoint = await source.loadCheckpoint(), original = await h.inspect(name + '-source'); source.close();
+      const configured = await source.configure(intent), checkpoint = await source.loadCheckpoint(), original = h.legacyDatabaseFixture(await h.inspect(name + '-source'),7); source.close();
       const old = await new Promise<IDBDatabase>((resolve, reject) => { const request = indexedDB.open(name, 7); request.onupgradeneeded = () => { for (const store of original.stores) request.result.createObjectStore(store); }; request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error); });
       await new Promise<void>((resolve, reject) => { const tx = old.transaction(original.stores, 'readwrite'); for (const store of original.stores) for (const row of original[store]) tx.objectStore(store).put(row.value, row.key); tx.oncomplete = () => resolve(); tx.onabort = () => reject(tx.error); });
       let closed = false; old.onversionchange = () => { closed = true; old.close(); }; now += 86_400_000;
@@ -37,7 +37,7 @@ test('DB8 preserves real DB7 preparation, configuration proofs, checkpoint and o
       } finally { upgraded.close(); old.close(); }
     } finally { Date.now = realNow; source.close(); }
   }, root);
-  expect(r.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(r.loaded.activity).not.toHaveProperty('rulesVersion'); expect(r.closed).toBe(true); expect(r.after.version).toBe(9); expect(r.checkpoint).not.toBeNull(); expect(r.checkpointAfter).toEqual(r.checkpoint);
+  expect(r.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(r.loaded.activity).not.toHaveProperty('rulesVersion'); expect(r.closed).toBe(true); expect(r.after.version).toBe(10); expect(r.checkpoint).not.toBeNull(); expect(r.checkpointAfter).toEqual(r.checkpoint);
   for (const store of r.original.stores) expect(r.after[store]).toEqual(r.original[store]);
   expect(r.loaded).toEqual({ state: r.configured.state, activity: r.configured.activity });
   for (const replay of [r.learnReplay, r.configReplay, r.travelReplay]) { expect(replay.replayed).toBe(true); expect(replay.state).toEqual(r.configured.state); }

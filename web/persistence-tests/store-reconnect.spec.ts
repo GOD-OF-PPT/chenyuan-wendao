@@ -48,8 +48,8 @@ async function failCycle(page: Page, version: number, mode: 'lost' | 'quota') {
   await seed(page, version);
   const started = await page.evaluate(async mode => {
     const h = (globalThis as any).h, f = h.reconnectStore;
-    if (h.reconnectPlan.kind === 'milestone') await f.store.startPreparedMilestone(f.store.prepareMilestone(h.reconnectPlan.action));
-    else await f.store.startPlannedActivity(h.reconnectPlan);
+    if (h.reconnectPlan.kind === 'milestone') await f.store.startOnlinePreparedMilestone(f.store.prepareMilestone(h.reconnectPlan.action));
+    else await f.store.startOnlinePlannedActivity(h.reconnectPlan);
     const ui = h.reconnectView(), raw = await h.inspect(h.FULL_DB_NAME), expected = h.engine.resolve(ui.game, ui.activity.nextCommand);
     if (mode === 'lost') f.loseNextCycleDelivery();
     else {

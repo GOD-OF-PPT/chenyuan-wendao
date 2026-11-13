@@ -1,6 +1,8 @@
 import {resolve} from '../../src/full/engine.ts';
 import {completeActivity} from '../../src/full/activity.ts';
-import {currentVersions} from '../../src/full/versions.ts';
+import {versionsForGame} from '../../src/full/rule-profile.ts';
+import {validateScheduledActivity} from '../../src/full/scheduled-activity.ts';
+import {replayScheduledReceipt} from '../src/scheduled-persistence.ts';
 import {canonicalFingerprint} from '../../src/full/receipts.ts';
 import {validateActivityReceipt} from '../src/activity-persistence.ts';
 import {captureFixedPng} from './png-capture';
@@ -224,21 +226,53 @@ export async function readJourneyState(page:Page):Promise<{game:any;activity:any
 export async function assertSavedTrialEntry(page:Page,game:Game,a:any,info:TestInfo){
  const raw=await page.evaluate(({runId,commandId})=>new Promise<any>((ok,no)=>{
   const q=indexedDB.open('chenyuan-playable-v1');q.onupgradeneeded=()=>{q.transaction!.abort();no(Error('Entry observer cannot create storage'));};q.onerror=()=>no(q.error);
-  q.onsuccess=()=>{const db=q.result,tx=db.transaction(['full-state','full-receipts'],'readonly'),values:any={version:db.version};
+  q.onsuccess=()=>{const db=q.result;if(!db.objectStoreNames.contains('full-schedules')){db.close();no(Error('Current entry observer requires the clock store'));return;}const tx=db.transaction(['full-state','full-receipts','full-schedules'],'readonly'),values:any={version:db.version};
    for(const key of ['current','previous','activity','checkpoint','checkpoint-owner']){const r=tx.objectStore('full-state').get(key);r.onsuccess=()=>values[key]=r.result;}
    const receipt=tx.objectStore('full-receipts').get(runId+':'+commandId);receipt.onsuccess=()=>values.receipt=receipt.result;
+   const clocks=tx.objectStore('full-schedules'),keys=clocks.getAllKeys(),records=clocks.getAll();keys.onsuccess=()=>values.clockKeys=keys.result;records.onsuccess=()=>values.clocks=records.result;
    tx.oncomplete=()=>{db.close();ok(values);};tx.onabort=()=>{db.close();no(tx.error);};
   };
  }),{runId:a.runId,commandId:a.nextCommand.commandId});
  const formal=resolve(game,a.nextCommand),r=raw.receipt;
- expect(raw.version).toBe(9);expect(a.version).toBe(7);expect(a.plan).toEqual({kind:'milestone',action:{type:'START_TRIAL'},maxCycles:1});expect(a.cycleMs).toBe(15000);
- expect(raw.current).toEqual(formal.nextState);expect(raw.previous).toEqual(game);expect(raw.checkpoint).toEqual({format:'chenyuan-checkpoint',version:1,kind:'trial',sourceRunId:game.core.runId,sourceRevision:game.core.revision,versions:currentVersions,snapshot:game});
+ expect(raw.version).toBe(10);expect(a.version).toBe(7);expect(a.plan).toEqual({kind:'milestone',action:{type:'START_TRIAL'},maxCycles:1});expect(a.cycleMs).toBe(15000);
+ expect(raw.current).toEqual(formal.nextState);expect(raw.previous).toEqual(game);expect(raw.checkpoint).toEqual({format:'chenyuan-checkpoint',version:1,kind:'trial',sourceRunId:game.core.runId,sourceRevision:game.core.revision,versions:versionsForGame(game),snapshot:game});
  expect(raw['checkpoint-owner']).toEqual({format:'chenyuan-checkpoint-scope',version:1,runId:game.core.runId,sourceRunId:game.core.runId,sourceRevision:game.core.revision,kind:'trial'});
  const input={kind:'TICK',tick:{commandId:a.nextCommand.commandId,runId:a.runId,expectedRevision:a.gameRevision,activityId:a.id,expectedActivityRevision:a.revision,ownerId:a.ownerId,generation:a.generation}};
- expect(r.version).toBe(2);expect(r.input).toEqual(input);expect(r.command).toEqual(a.nextCommand);expect(r.result).toEqual(formal.result);expect(r.fingerprint).toBe(canonicalFingerprint(input));expect(()=>validateActivityReceipt(r,raw.current)).not.toThrow();expect(r.proof.activityBefore).toEqual(a);expect(r.proof.stateAfter).toEqual(raw.current);expect(r.proof.resolvedAt).toBeGreaterThanOrEqual(a.dueAt);
- expect(raw.activity).toEqual(completeActivity(raw.current,a,formal.result,{commandId:a.nextCommand.commandId,now:r.proof.resolvedAt}));expect(r.activity).toEqual(raw.activity);expect(raw.current.trial).toEqual({stage:0,answer:null});expect(raw.current.battle).toBeNull();
+ expect(r.version).toBe(3);expect(r.input).toEqual(input);expect(r.command).toEqual(a.nextCommand);expect(r.result).toEqual(formal.result);expect(r.fingerprint).toBe(canonicalFingerprint(input));expect(()=>validateActivityReceipt(r,raw.current)).not.toThrow();expect(r.proof.activityBefore).toEqual(a);expect(r.proof.stateAfter).toEqual(raw.current);expect(r.proof.logicalAt).toBe(a.dueAt);expect(r.proof.resolvedAt).toBeGreaterThanOrEqual(r.proof.logicalAt);
+ expect(raw.activity).toEqual(completeActivity(raw.current,a,formal.result,{commandId:a.nextCommand.commandId,now:r.proof.logicalAt}));expect(r.activity).toEqual(raw.activity);expect(raw.current.trial).toEqual({stage:0,answer:null});expect(raw.current.battle).toBeNull();
+ expect(raw.clockKeys).toEqual(['current']);expect(raw.clocks).toHaveLength(1);expect(()=>validateScheduledActivity({activity:raw.activity,schedule:raw.clocks[0]},raw.current)).not.toThrow();expect(raw.clocks[0].lastObservedAt).toBe(r.proof.resolvedAt);expect(raw.clocks[0].window).toBeNull();
  await info.attach('actual-entry-full-checkpoint-owner-receipt',{body:JSON.stringify({game,a,raw,formal}),contentType:'application/json'});
  return raw;
+}
+
+/** Only an explicit page reload may claim this already authorized scheduled clock.
+ * Ordinary catalogue reads keep checkArt03Read's exact no-write contract. */
+export async function reloadScheduledJourney(page:Page){
+ const before=await readJourneyDatabase(page),value=(raw:any,store:string,key:string)=>raw.rows[store].find((row:any)=>row.key===key)?.value;
+ const game=value(before,'full-state','current'),activity=value(before,'full-state','activity'),schedule=value(before,'full-schedules','current');
+ const now=await page.evaluate(()=>Date.now());
+ expect(before.version).toBe(10);
+ if(activity?.status==='running'){
+  expect(()=>validateScheduledActivity({activity,schedule},game)).not.toThrow();expect(schedule.window).toBeNull();expect(now).toBeGreaterThanOrEqual(schedule.lastObservedAt);expect(now).toBeLessThan(activity.dueAt);
+ }
+ await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');
+ const after=await readJourneyDatabase(page),current=value(after,'full-state','current'),next=value(after,'full-state','activity');
+ expect(current).toEqual(game);
+ if(activity?.status!=='running'){expect(after).toEqual(before);return{raw:after,game:current,activity:next};}
+ const oldKeys=new Set(before.rows['full-receipts'].map((row:any)=>row.key)),added=after.rows['full-receipts'].filter((row:any)=>!oldKeys.has(row.key));
+ expect(added).toHaveLength(1);const row=added[0],receipt=row.value;
+ expect(receipt.format).toBe('chenyuan-scheduled-receipt');expect(receipt.version).toBe(1);expect(receipt.input.kind).toBe('ADVANCE');expect(row.key).toBe(receipt.input.mutation.runId+':'+receipt.input.mutation.commandId);
+ expect(receipt.proof.stateBefore).toEqual(game);expect(receipt.proof.stateAfter).toEqual(game);expect(receipt.proof.activityBefore).toEqual(activity);expect(receipt.proof.scheduleBefore).toEqual(schedule);
+ expect(receipt.proof.observedAt).toBeGreaterThanOrEqual(schedule.lastObservedAt);expect(receipt.proof.observedAt).toBeLessThan(activity.dueAt);expect(receipt.proof.observedAt).toBe(now);expect(await page.evaluate(()=>Date.now())).toBe(now);
+ expect(receipt.proof.cycles).toBe(0);expect(receipt.proof.more).toBe(false);expect(receipt.proof.result).toBeNull();
+ const replay=replayScheduledReceipt(receipt,game);expect(replay.progress.cycles).toEqual([]);expect(replay.progress.state).toEqual(game);expect(replay.progress.more).toBe(false);
+ expect(next).toEqual(replay.progress.record.activity);expect(next.ownerId).not.toBe(activity.ownerId);expect(next.generation).toBe(activity.generation+1);expect(next.revision).toBe(activity.revision+1);expect(next.startedAt).toBe(activity.startedAt);expect(next.dueAt).toBe(activity.dueAt);expect(next.completedCycles).toBe(activity.completedCycles);expect(next.plan).toEqual(activity.plan);
+ const expected=structuredClone(before);
+ expected.rows['full-state'].find((entry:any)=>entry.key==='activity').value=replay.progress.record.activity;
+ expected.rows['full-schedules'].find((entry:any)=>entry.key==='current').value=replay.progress.record.schedule;
+ expected.rows['full-receipts']=[...expected.rows['full-receipts'],row].sort((a:any,b:any)=>a.key<b.key?-1:a.key>b.key?1:0);
+ expect(after).toEqual(expected);
+ return{raw:after,game:current,activity:next};
 }
 
 export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,scenario=runIdleScenario,settings:{terminalRealm?:string;reopenStages?:boolean}={}) {
@@ -288,18 +322,15 @@ export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,sc
         current = committed.activity; completed++; cycles++; stepMs += ms; onlineMs += ms;
         if(settings.reopenStages&&current.plan.kind==='battle'&&current.status==='running'&&!reopened.has(current.plan.trialStage)){
           const stage=current.plan.trialStage;reopened.add(stage);const saved=await snapshot(page),persisted=current;
-          await checkArt03Read(page,async()=>{await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');});
-          const reloaded=await readJourneyState(page);expect(reloaded.game).toEqual(saved);expect(reloaded.activity).toEqual(persisted);
-          await page.getByTestId('training-resume').click();await expect.poll(async()=>(await activitySnapshot(page)).generation, { intervals: [10, 20, 50, 100] }).toBe(persisted.generation+1);
-          current=await activitySnapshot(page);expect(current.id).toBe(activityId);expect(current.completedCycles).toBe(persisted.completedCycles);expect(current.plan).toEqual(persisted.plan);
+          const reloaded=await reloadScheduledJourney(page);expect(reloaded.game).toEqual(saved);expect(reloaded.activity.generation).toBe(persisted.generation+1);
+          current=reloaded.activity;expect(current.id).toBe(activityId);expect(current.completedCycles).toBe(persisted.completedCycles);expect(current.plan).toEqual(persisted.plan);
         }
         expect(current.id).toBe(activityId);
       }
       expect(current.status).toBe('stopped'); expect(completed).toBe(step.cycles); expect(stepMs).toBe(step.onlineMs);
       if(settings.reopenStages&&(current.plan.kind==='battle'||current.plan.kind==='milestone'&&current.plan.action.type==='START_TRIAL')){
         const saved=await snapshot(page),persisted=current;
-        await checkArt03Read(page,async()=>{await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');});
-        const reloaded=await readJourneyState(page);expect(reloaded.game).toEqual(saved);expect(reloaded.activity).toEqual(persisted);
+        const reloaded=await reloadScheduledJourney(page);expect(reloaded.game).toEqual(saved);expect(reloaded.activity).toEqual(persisted);
       }
       summary.push({ kind: step.kind, plan: selected.expectedPlan, cycles: completed, onlineMs: stepMs,
         stopReason: current.stopReason.code, realm: (await snapshot(page)).core.player.realm });
@@ -325,7 +356,8 @@ export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,sc
 }
 
 /** Read all keys and full values from every native store in one readonly transaction. */
-export async function readJourneyDatabase(page:Page,transport:'auto'|'structured'='auto'){const observed=await page.evaluate(transport=>new Promise<any>((accept,reject)=>{
+export async function readJourneyDatabase(page:Page,transport:'auto'|'structured'='auto'){
+ const observed=await page.evaluate(transport=>new Promise<any>((accept,reject)=>{
  const q=indexedDB.open('chenyuan-playable-v1');q.onupgradeneeded=()=>{q.transaction!.abort();reject(Error('Readonly catalogue cannot create Game DB'));};q.onerror=()=>reject(q.error);
  q.onsuccess=()=>{const db=q.result;try{
   const names=[...db.objectStoreNames],tx=db.transaction(names,'readonly');
@@ -338,7 +370,8 @@ export async function readJourneyDatabase(page:Page,transport:'auto'|'structured
   }catch(error){reject(error);}};
   tx.onabort=()=>{db.close();reject(tx.error??Error('Readonly catalogue transaction aborted'));};
  }catch(error){db.close();reject(error);}};
-}),transport);return observed.transport==='json'?JSON.parse(observed.text):observed.value;}
+}),transport);const value=observed.transport==='json'?JSON.parse(observed.text):observed.value;
+ return value;}
 
 // CHECK-ART03: public surface access is readonly over every native Game store.
 async function checkArt03Read(page:Page,body:()=>Promise<void>){const before=await readJourneyDatabase(page);await body();expect(await readJourneyDatabase(page)).toEqual(before);}

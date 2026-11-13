@@ -39,7 +39,7 @@ test.afterEach(async ({ page }) => {
 async function arrange(page: import('@playwright/test').Page) {
   return page.evaluate(async () => {
     const h = (globalThis as any).h, f = h.activityStore;
-    await f.store.startCultivation({ kind: 'cultivation', method: 'assisted', maxCycles: 4,
+    await f.store.startOnlinePlannedActivity({ kind: 'cultivation', method: 'assisted', maxCycles: 4,
       until: 'cycles', stoneBudget: 40, stoneReserve: 0 });
     return f.state();
   });
@@ -184,7 +184,7 @@ test('Store retry replays a committed cycle and pause/resume preserve its replay
   expect(paused.activity.status).toBe('paused'); expect(paused.runtime).toBeNull();
   expect(paused.lastReplayed).toBe(true); expect(paused.lastResult).toEqual(retried.ui.lastResult);
   expect(paused.game).toEqual(retried.ui.game); expect(paused.activity.completedCycles).toBe(1);
-  await page.evaluate(() => (globalThis as any).h.activityStore.store.resumeCultivation());
+  await page.evaluate(() => (globalThis as any).h.activityStore.store.resumeOnlineCultivation());
   const resumed = await page.evaluate(async () => {
     const f = (globalThis as any).h.activityStore;
     return { ui: f.state(), persisted: await f.persisted() };
@@ -213,7 +213,7 @@ test('same Store reconnect preserves running arrangement without offline catch-u
   expect(reopened.ui.activity.ownerId).toBe(started.activity.ownerId);
   expect(reopened.ui.activity).toEqual(before.ui.activity); expect(reopened.persisted).toEqual(before.persisted);
   expect(reopened.ui.game).toEqual(started.game);
-  await page.evaluate(() => (globalThis as any).h.activityStore.store.resumeCultivation());
+  await page.evaluate(() => (globalThis as any).h.activityStore.store.resumeOnlineCultivation());
   const resumed = await page.evaluate(() => (globalThis as any).h.activityStore.state());
   expect(resumed.runtime.remainingMs).toBe(60_000); expect(resumed.activity.ownerId).toBe(started.activity.ownerId);
   expect(resumed.activity.generation).toBeGreaterThan(started.activity.generation); expect(resumed.activity.completedCycles).toBe(0);
@@ -283,7 +283,7 @@ test('source Store replays a lost material-cycle delivery and a pause during com
   })).toEqual({ busy: false, error: '', location: 'wilderness' });
   const started = await page.evaluate(async () => {
     const f = (globalThis as any).h.activityStore;
-    await f.store.startPlannedActivity({ kind: 'source', sourceId: 'herbs', maxCycles: 5, until: 'cycles', target: null,
+    await f.store.startOnlinePlannedActivity({ kind: 'source', sourceId: 'herbs', maxCycles: 5, until: 'cycles', target: null,
       monthBudget: 60, remainingMonthsReserve: 1 });
     f.loseNextCycleDelivery(); return f.state();
   });
@@ -346,7 +346,7 @@ test('production Store retries the saved furnace and a pause while the next comm
   })).toEqual({ busy: false, error: '', herbs: 10 });
   const started = await page.evaluate(async () => {
     const f = (globalThis as any).h.activityStore;
-    await f.store.startPlannedActivity({ kind: 'craft', recipeId: 'healing', maxCycles: 5, until: 'cycles', targetQuantity: null,
+    await f.store.startOnlinePlannedActivity({ kind: 'craft', recipeId: 'healing', maxCycles: 5, until: 'cycles', targetQuantity: null,
       stoneBudget: 10, stoneReserve: 0, monthBudget: 60, remainingMonthsReserve: 1, itemReserves: {} });
     f.loseNextCycleDelivery(); return f.state();
   });

@@ -19,7 +19,7 @@ async function seedStore(page: import('@playwright/test').Page, id: string) {
   const started = await page.evaluate(async id => {
     const h = (globalThis as any).h, f = h.m02Store;
     if (f.store.busy || f.store.error || !f.store.ready) throw new Error('M02 Store fixture did not finish import');
-    await f.store.startPlannedActivity(h.m02Rows[id].plan);
+    await f.store.startOnlinePlannedActivity(h.m02Rows[id].plan);
     return { fixture: h.m02Rows[id].game, ui: f.state(), cost: h.m02Rows[id].cost, expected: h.engine.resolve(f.store.game, f.store.activity.nextCommand) };
   }, id);
   expect(started.ui.error).toBe(''); expect(started.ui.saved).toBe(true); expect(started.ui.busy).toBe(false);
