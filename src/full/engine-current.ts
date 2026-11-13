@@ -759,7 +759,8 @@ function battleTurn(g: Game, move: Move) {
     e = C.enemies[b.enemy],
     p = g.core.player,
     r = stats(g),
-    forecast = battleIntent(g);
+    forecast = battleIntent(g),
+    swordBefore = b.sword;
   let damage = 0,
     block = 0,
     interrupt = false;
@@ -870,7 +871,7 @@ function battleTurn(g: Game, move: Move) {
   if (tick) lines.push(`符印灼伤 ${tick}`);
   const breaker =
     move === 'release' &&
-    (skillEffect(g, 'finisher') === 'shatter' ||
+    ((skillEffect(g, 'finisher') === 'shatter' && swordBefore === 3) ||
       skillEffect(g, 'finisher') === 'rupture');
   if (forecast.kind === 'ward' && !breaker) damage = Math.floor(damage / 2);
   const reflected =

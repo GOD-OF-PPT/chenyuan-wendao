@@ -4,6 +4,7 @@ import * as previous from '../src/legacy/rules-v4/index.ts';
 import * as activities from '../src/full/activity.ts';
 import { ActivityLedger } from '../src/full/progression.ts';
 import { defaultEncounterPlan } from '../src/full/adventure.ts';
+import { ICONS, BRANCH_ICONS } from '../web/src/ui-icons.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as C from '../src/full/content.ts';
@@ -51,6 +52,48 @@ test('a new life exposes six pairs of mutually exclusive advanced paths while al
   for (const school of ['sword', 'talisman'])
     for (const id of Object.values(C.startingLoadouts[school]))
       assert.equal(C.skills[id].branch, undefined);
+});
+
+test('the six new branch markers reuse the original matching school and slot glyphs without changing the published sprite', () => {
+  assert.deepEqual(
+    Object.keys(BRANCH_ICONS).sort(),
+    Object.keys(C.skills)
+      .filter((id) => !Object.hasOwn(previous.content.skills, id))
+      .sort(),
+  );
+  for (const [id, original] of Object.entries(BRANCH_ICONS)) {
+    assert.equal(C.skills[id].school, previous.content.skills[original].school);
+    assert.equal(C.skills[id].slot, previous.content.skills[original].slot);
+    assert.equal(ICONS.skill[id], ICONS.skill[original]);
+  }
+});
+
+test('shatter breaks a ward only at its advertised three sword stacks, with one and two still paying the same real mana', () => {
+  for (const stacks of [1, 2, 3]) {
+    const d = spirit();
+    d.funds(160);
+    d.go('sect');
+    d.doAction({ type: 'LEARN', skill: 'sword_shatter' });
+    d.doAction({ type: 'EQUIP', skill: 'sword_shatter' });
+    d.go('terrace');
+    d.doAction({ type: 'ENCOUNTER', enemy: 'sentinel' });
+    const moves =
+      stacks === 3
+        ? ['attack', 'guard', 'guard', 'technique']
+        : ['guard', 'guard', 'guard', stacks === 1 ? 'attack' : 'technique'];
+    for (const move of moves) d.doAction({ type: 'BATTLE', move });
+    const before = d.game;
+    assert.equal(before.battle.sword, stacks);
+    assert.equal(forecast(before).kind, 'ward');
+    const raw = 18 + engine.stats(before).power + 10 * stacks + 14,
+      out = act(before, { type: 'BATTLE', move: 'release' });
+    assert.equal(
+      out.nextState.battle.hp,
+      before.battle.hp - (stacks === 3 ? raw : Math.floor(raw / 2)),
+    );
+    assert.equal(out.result.costs.mp, 18);
+    assert.equal(out.nextState.core.player.mp, before.core.player.mp - 18);
+  }
 });
 
 test('shadow healing follows actual net damage and guard or an interrupted heavy hit really prevents it', () => {

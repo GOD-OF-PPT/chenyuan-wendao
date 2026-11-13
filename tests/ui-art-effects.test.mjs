@@ -112,7 +112,7 @@ test('ordinary reading/resource actions do not play a false breakthrough and bou
   assert.equal(consume(t, r), null);
   assert.equal(t.consume(r.result, false, 'new-run', 1, 'sword'), null);
 });
-test('the one native sprite provides exactly46 unique safe symbols matching the real content IDs', () => {
+test('the one native sprite provides the original40 safe symbols across all46 current semantic IDs', () => {
   assert.deepEqual(Object.keys(ICONS.item).sort(), Object.keys(C.items).sort());
   assert.deepEqual(
     Object.keys(ICONS.skill).sort(),
@@ -124,14 +124,14 @@ test('the one native sprite provides exactly46 unique safe symbols matching the 
   );
   const ids = Object.values(ICONS).flatMap((x) => Object.values(x));
   assert.equal(ids.length, 46);
-  assert.equal(new Set(ids).size, 46);
+  assert.equal(new Set(ids).size, 40);
   const svg = readFileSync(
     new URL('../web/public/art/ui-kit.svg', import.meta.url),
     'utf8',
   );
   assert.deepEqual(
     [...svg.matchAll(/<symbol id="([^"]+)"/g)].map((m) => m[1]).sort(),
-    ids.sort(),
+    [...new Set(ids)].sort(),
   );
   assert.ok(
     !/<(?:script|image|foreignObject|text)\b|\bon\w+\s*=|https?:/i.test(

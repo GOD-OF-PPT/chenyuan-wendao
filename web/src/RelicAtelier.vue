@@ -59,6 +59,7 @@ const focus = inject(gameFocusKey),
   library = ref<HTMLDialogElement>(),
   preparation = ref<HTMLDialogElement>(),
   funding = ref(false),
+  conversionFunding = ref(false),
   sourcePage = ref(0);
 const relic = computed(() =>
   props.rows.some((r) => r.id === props.plan.relicId)
@@ -181,10 +182,11 @@ const materials = computed(() =>
     required: cost + (props.plan.itemReserves[id] ?? 0),
   })),
 );
-const stones = computed(() =>
-  owned.value && !bound.value
-    ? (conversion.value?.stones ?? 0)
-    : (relic.value?.stones ?? 0) + props.plan.stoneReserve,
+const stones = computed(
+  () => (relic.value?.stones ?? 0) + props.plan.stoneReserve,
+);
+const fundingTarget = computed(() =>
+  conversionFunding.value ? (conversion.value?.stones ?? 0) : stones.value,
 );
 const missing = computed(
   () =>
@@ -209,9 +211,9 @@ const routes = computed(() =>
 );
 const fundingTargetValid = computed(
   () =>
-    Number.isSafeInteger(stones.value) &&
-    stones.value >= 1 &&
-    stones.value <= C.maxQuantity,
+    Number.isSafeInteger(fundingTarget.value) &&
+    fundingTarget.value >= 1 &&
+    fundingTarget.value <= C.maxQuantity,
 );
 const path = (id: string) => 'art/v2/equipment/' + id + '-v1.webp';
 function close() {
@@ -228,6 +230,7 @@ function browse(event: Event) {
   open(library.value, event);
 }
 function prepare(event: Event) {
+  conversionFunding.value = false;
   funding.value = false;
   open(preparation.value, event);
 }
@@ -261,7 +264,7 @@ function go(source: ItemSource) {
     location: source.location,
     tab: '历练',
     focusId: 'source-' + source.id,
-    collection: { kind: 'stones', quantity: stones.value },
+    collection: { kind: 'stones', quantity: fundingTarget.value },
   });
 }
 function start() {
@@ -494,6 +497,7 @@ const localControls = useLocalActivityControls();
                 game.core.player.stones < (conversion?.stones ?? 0)
               "
               @click="
+                conversionFunding = true;
                 funding = true;
                 open(preparation, $event);
               "
@@ -629,7 +633,12 @@ const localControls = useLocalActivityControls();
           ><span
             >持有 {{ game.core.player.stones }} · 尚缺
             {{ Math.max(0, stones - game.core.player.stones) }}</span
-          ><button data-testid="relic-currency-sources" @click="funding = true"
+          ><button
+            data-testid="relic-currency-sources"
+            @click="
+              conversionFunding = false;
+              funding = true;
+            "
             >查看灵石来源</button
           ></div
         ><small
@@ -641,8 +650,18 @@ const localControls = useLocalActivityControls();
         ></template
       >
       <template v-else
-        ><button @click="funding = false">← 返回全部材料缺口</button
-        ><p>灵石库存目标 {{ stones }}，包含本段保留；选择路线不自动执行委托。</p
+        ><button
+          @click="
+            conversionFunding = false;
+            funding = false;
+          "
+          >← 返回全部材料缺口</button
+        ><p data-testid="relic-funding-target"
+          >{{ conversionFunding ? '认主灵石库存目标' : '灵石库存目标' }}
+          {{ fundingTarget
+          }}{{
+            conversionFunding ? '，按本次认主投入' : '，包含本段保留'
+          }}；选择路线不自动执行委托。</p
         ><div class="relic-currency-routes"
           ><article v-for="source in routes.rows" :key="source.id"
             ><strong>{{ source.label }}</strong

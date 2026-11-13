@@ -2,6 +2,7 @@ import { test, expect, type Page } from '@playwright/test';
 import * as C from '../../src/full/content';
 import { resolve } from '../../src/full/engine';
 import { driver } from '../../tests/full-route.mjs';
+import * as previous from '../../src/legacy/rules-v4/index.ts';
 import {
   importRecoveryFixture,
   recoveryDatabase,
@@ -11,10 +12,90 @@ import {
   selectLearningSkill,
   openLearningLibrary,
   selectRelic,
+  openRelicPreparation,
 } from './stage-support';
 import { captureFixedPng } from './png-capture';
 
 test.use({ viewport: { width: 1440, height: 900 } });
+test('conversion funding keeps its own 24-stone target and returning to the original material sheet restores the full 140-stone target', async ({
+  page,
+}, info) => {
+  const d = driver();
+  d.realm();
+  d.realm();
+  d.resource('jade', 7);
+  d.resource('core', 1);
+  d.funds(600);
+  d.go('cave');
+  d.doAction({ type: 'FORGE', relic: 'frost_sword' });
+  d.doAction({ type: 'FORGE', relic: 'jade_seal' });
+  d.doAction({ type: 'EQUIP_RELIC', relic: 'frost_sword' });
+  d.go('market');
+  const quantity = Math.floor(d.game.core.player.stones / C.items.herb.buy);
+  if (quantity) d.doAction({ type: 'BUY', item: 'herb', quantity });
+  const before = await importRecoveryFixture(page, d.game),
+    raw = await recoveryDatabase(page);
+  expect(before.core.player.stones).toBeLessThan(24);
+  await openHubFeature(page, 'relics');
+  await selectRelic(page, 'jade_seal');
+  await controlsFit(page, '[data-testid=relic-atelier]');
+  await page
+    .getByRole('button', { name: '查看认主灵石来源', exact: true })
+    .click();
+  await expect(page.getByTestId('relic-funding-target')).toContainText(
+    '认主灵石库存目标 24',
+  );
+  await expect(
+    page.locator('[data-testid^=relic-go-currency-]').first(),
+  ).toBeEnabled();
+  await captureFixedPng(page, info.outputPath('conversion-funding-24.png'));
+  await page
+    .getByRole('button', { name: '← 返回全部材料缺口', exact: true })
+    .click();
+  await expect(page.getByTestId('relic-stone-need')).toContainText(
+    /单件\s*140\s*\+\s*保留\s*0\s*=\s*需有\s*140/,
+  );
+  expect(await snapshot(page)).toEqual(before);
+  expect(await recoveryDatabase(page)).toEqual(raw);
+});
+for (const old of [false, true])
+  test(`original owned-relic forging details and funding keep their full price in ${old ? 'v4' : 'v5'}`, async ({
+    page,
+  }, info) => {
+    const d = old
+      ? driver('leave', 'sword', previous.engine, previous.content)
+      : driver();
+    d.realm();
+    d.realm();
+    d.resource('jade', 7);
+    d.resource('core', 1);
+    d.funds(600);
+    d.go('cave');
+    d.doAction({ type: 'FORGE', relic: 'frost_sword' });
+    d.doAction({ type: 'FORGE', relic: 'jade_seal' });
+    d.doAction({ type: 'EQUIP_RELIC', relic: 'frost_sword' });
+    const before = await importRecoveryFixture(page, d.game),
+      raw = await recoveryDatabase(page);
+    await openHubFeature(page, 'relics');
+    await selectRelic(page, 'jade_seal');
+    await openRelicPreparation(page);
+    await expect(page.getByTestId('relic-stone-need')).toContainText(
+      /单件\s*140\s*\+\s*保留\s*0\s*=\s*需有\s*140/,
+    );
+    await page.getByTestId('relic-currency-sources').click();
+    await expect(page.getByTestId('relic-preparation-dialog')).toContainText(
+      '灵石库存目标 140',
+    );
+    await expect(
+      page.locator('[data-testid^=relic-go-currency-]').first(),
+    ).toBeEnabled();
+    await captureFixedPng(
+      page,
+      info.outputPath(`original-forge-funding-${old ? 'v4' : 'v5'}.png`),
+    );
+    expect(await snapshot(page)).toEqual(before);
+    expect(await recoveryDatabase(page)).toEqual(raw);
+  });
 test('an unaffordable owned conversion retains its exact quote and a one-dew source target without executing anything', async ({
   page,
 }, info) => {
@@ -75,7 +156,12 @@ async function controlsFit(page: Page, selector: string) {
             b.left >= 0 &&
             b.right <= innerWidth &&
             b.top >= 0 &&
-            b.bottom <= innerHeight,
+            b.bottom <=
+              (root.closest('dialog')
+                ? innerHeight
+                : (document
+                    .getElementById('primary-navigation')
+                    ?.getBoundingClientRect().top ?? innerHeight)),
           hit: n.disabled || (!!hit && (hit === n || n.contains(hit))),
         };
       }),
@@ -111,6 +197,12 @@ test('eighteen real volumes remain readable and an already chosen branch explain
     await expect(page.getByTestId('jade-engraving')).toHaveAttribute(
       'data-painted',
       'true',
+    );
+    await expect(
+      page.getByTestId('skill-select-' + id).locator('svg'),
+    ).toHaveAttribute(
+      'data-build-branch',
+      String(!Object.hasOwn(previous.content.skills, id)),
     );
   }
   await selectLearningSkill(page, 'sword_pierce');

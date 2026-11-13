@@ -28,12 +28,12 @@ export const ICONS = {
     talisman_frost: 'skill-talisman_frost',
     talisman_release: 'skill-talisman_release',
     talisman_return: 'skill-talisman_return',
-    sword_pierce: 'skill-sword_pierce',
-    sword_surge: 'skill-sword_surge',
-    sword_shatter: 'skill-sword_shatter',
-    talisman_clear: 'skill-talisman_clear',
-    talisman_ember: 'skill-talisman_ember',
-    talisman_rupture: 'skill-talisman_rupture',
+    sword_pierce: 'skill-sword_still',
+    sword_surge: 'skill-sword_guard',
+    sword_shatter: 'skill-sword_echo',
+    talisman_clear: 'skill-talisman_calm',
+    talisman_ember: 'skill-talisman_frost',
+    talisman_rupture: 'skill-talisman_return',
   },
   relic: {
     frost_sword: 'relic-frost_sword',
@@ -56,3 +56,11 @@ export const ICONS = {
     export: 'action-export',
   },
 } as const;
+export const BRANCH_ICONS = Object.freeze({
+  sword_pierce: 'sword_still',
+  sword_surge: 'sword_guard',
+  sword_shatter: 'sword_echo',
+  talisman_clear: 'talisman_calm',
+  talisman_ember: 'talisman_frost',
+  talisman_rupture: 'talisman_return',
+});

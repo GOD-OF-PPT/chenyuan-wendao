@@ -256,14 +256,14 @@ test('damage is a snapshot difference, and vanished or replaced enemies never re
     false,
   );
 });
-test('sprite selections remain in the current forty-six symbols and all seven moves have distinct variants', () => {
+test('sprite selections remain in the original forty symbols and all seven moves have distinct variants', () => {
   for (const row of Object.values(ACTION_MOTIONS))
     assert.ok(ICONS[row.icon.kind][row.icon.id]);
   assert.equal(
     new Set(Object.values(MOVE_MOTIONS).map((x) => x.variant)).size,
     7,
   );
-  assert.equal(new Set(Object.values(ICONS).flatMap(Object.values)).size, 46);
+  assert.equal(new Set(Object.values(ICONS).flatMap(Object.values)).size, 40);
 });
 function activityFrame() {
   const d = driver();
