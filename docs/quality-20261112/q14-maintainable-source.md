@@ -1,5 +1,7 @@
 # Q14：守卫归档与可维护源码（已递交PR58）
 
+远端首轮并非全绿：b5的core985/Native471通过，UI193过3红、正常作业超40分钟取消。[当前CI修复记录](q14-ci-repair.md)保原失败与新d213的988根/198UI/首片8证据；完整新远端仍待。以下079完整本地结果继续保原生产身份。
+
 承接PR47前置和Q13/PR57，合同[0161](../decisions/0161-maintainable-source-and-current-ci.md)已先进入main（3804228）。已递交[PR58](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/58)，目标Q13分支，未自动合并；当前14/20项递交，完整目标active。创建工具超时后已读取真实PR确认，未重复创建。以下保全部阶段记录，最终结果以本节为准。
 
 ## 最终本地结果
