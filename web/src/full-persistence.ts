@@ -79,6 +79,7 @@ import {
   receiptReceiverState,
   type ReceiptReceiver,
   readRetainedHistory,
+  readLatestAwayReceipts,
   putRetainedBackup,
   type ReceiptAccess,
 } from './receipt-retention';
@@ -1437,41 +1438,22 @@ export class FullSaveRepository {
                 complete(null);
                 return;
               }
-              const values: unknown[] = [],
-                runPrefix = current.core.runId + ':',
-                cursor = tx
-                  .objectStore(FULL_RECEIPT_STORE)
-                  .openCursor(
-                    IDBKeyRange.bound(runPrefix, runPrefix + '\uffff'),
-                  );
-              cursor.onsuccess = () => {
-                try {
-                  if (!cursor.result) {
+              readLatestAwayReceipts(
+                tx,
+                current.core.runId,
+                activity.id,
+                activity.completedCycles,
+                (values) => {
+                  try {
                     complete(
                       summarizeAway(current, activity, schedule, values),
                     );
-                    return;
+                  } catch (error) {
+                    abort(error);
                   }
-                  const value = cursor.result.value;
-                  if (value?.format === 'chenyuan-scheduled-receipt') {
-                    if (
-                      cursor.result.key !==
-                      value.input?.mutation?.runId +
-                        ':' +
-                        value.input?.mutation?.commandId
-                    )
-                      throw new RuleError(
-                        'RECEIPT_INVALID',
-                        '累计回执键与原意图不符',
-                      );
-                    if (value.input.mutation.runId === current.core.runId)
-                      values.push(value);
-                  }
-                  cursor.result.continue();
-                } catch (error) {
-                  abort(error);
-                }
-              };
+                },
+                abort,
+              );
             },
             abort,
           );

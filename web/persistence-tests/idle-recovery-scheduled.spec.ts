@@ -211,13 +211,15 @@ test('an old online arrangement adopts forward only after explicit continue and 
    const paid=await repo.settleActivity({commandId:a.nextCommand.commandId,runId:a.runId,expectedRevision:a.gameRevision,activityId:a.id,expectedActivityRevision:a.revision,ownerId:a.ownerId,generation:a.generation});
    now+=86400000;const prior=await repo.loadActivitySnapshot(),blocked=await h.attempt(()=>repo.advanceScheduledActivity(mutation(prior,'unconfirmed-adopt')));
    const adopted=await repo.adoptScheduledActivity(mutation(prior,'explicit-adopt')),early=await repo.advanceScheduledActivity(mutation(adopted,'adopt-early'));
+   const adoptionRaw=await h.FullSaveRepository.exportRaw('scheduled-adopt'),adoptionSummary=await repo.loadAwaySummary(),afterAdoptionRead=await h.FullSaveRepository.exportRaw('scheduled-adopt');
    now=adopted.activity.dueAt;const next=await repo.advanceScheduledActivity(mutation(early,'adopt-due'));
-   return{paid,prior,blocked,adopted,early,next};
+   return{paid,prior,blocked,adopted,early,next,adoptionRaw,adoptionSummary,afterAdoptionRead};
   }finally{Date.now=realNow;repo.close();}
  });
  expect(r.prior.schedule).toBeUndefined();expect(r.prior.state).toEqual(r.paid.state);expect(r.blocked.code).toBe('SCHEDULE_REQUIRED');
  expect(r.adopted.state).toEqual(r.paid.state);expect(r.adopted.activity.id).toBe(r.paid.activity.id);expect(r.adopted.activity.plan).toEqual(r.paid.activity.plan);
  expect(r.adopted.activity.completedCycles).toBe(1);expect(r.adopted.activity.spentMonths).toBe(12);expect(r.adopted.activity.dueAt-r.adopted.schedule.lastObservedAt).toBe(30000);
+ expect(r.adoptionSummary).toBeNull();expect(r.afterAdoptionRead).toEqual(r.adoptionRaw);
  expect(r.early.cycles).toBe(0);expect(r.next.cycles).toBe(1);expect(r.next.activity.completedCycles).toBe(2);expect(r.next.activity.spentMonths).toBe(24);
 });
 

@@ -169,6 +169,7 @@ function validateMeta(value: unknown): asserts value is ReceiptMeta {
     (r.quarantined !== undefined && r.quarantined !== true)
   )
     invalid();
+  if (r.windowId !== null && r.role !== 'advance') invalid();
   if (
     !r.baseline &&
     (typeof r.key !== 'string' ||
@@ -709,6 +710,145 @@ export interface HistoryWindow<T> {
   total: number;
   retained: number;
   folded: number;
+}
+
+/** The latest committed window is protected as a whole. Select its metadata
+ * first; reading it never needs to deserialize/replay every older raw proof. */
+export function readLatestAwayReceipts(
+  tx: IDBTransaction,
+  runId: string,
+  activityId: string,
+  completedCycles: number,
+  done: (values: unknown[]) => void,
+  abort: (error: unknown) => void,
+) {
+  const prefix = runId + ':',
+    meta = tx.objectStore(RETENTION_STORE),
+    request = meta
+      .index('order')
+      .getAll(
+        IDBKeyRange.bound(['receipt', 0], ['receipt', Number.MAX_SAFE_INTEGER]),
+      ),
+    rawCount = tx
+      .objectStore(RECEIPTS)
+      .count(IDBKeyRange.bound(prefix, prefix + '\uffff')),
+    descriptorCount = meta
+      .index('receipt-key')
+      .count(
+        IDBKeyRange.bound(['receipt', prefix], ['receipt', prefix + '\uffff']),
+      );
+  const fail = (): never => {
+    throw new RuleError(
+      'RECEIPT_INVALID',
+      '返场汇总的原始证明不完整，请核对原记录',
+    );
+  };
+  let ready = 0;
+  const select = () => {
+    if (++ready !== 3) return;
+    try {
+      if (rawCount.result !== descriptorCount.result) fail();
+      const rows = request.result as ReceiptMeta[];
+      rows.forEach(validateMeta);
+      const current = rows.filter(
+          (r) => r.runId === runId && r.activityId === activityId,
+        ),
+        windows = current.filter(
+          (r) => r.role === 'advance' && r.windowId !== null,
+        ),
+        latest = windows
+          .filter((r) => !r.baseline)
+          .reduce<ReceiptMeta | null>(
+            (last, row) => (!last || row.sequence > last.sequence ? row : last),
+            null,
+          ),
+        adoption = windows.length === 0;
+      if (adoption && completedCycles === 0) {
+        done([]);
+        return;
+      }
+      // Baseline enumeration order came from legacy random keys. Read all of
+      // those candidate windows until a healthy transaction provides order;
+      // original proof replay still chooses by saved Game revisions. A new
+      // batch in an old window must retain every baseline part of that chain.
+      const group = adoption
+        ? current.filter((r) => r.role === 'start')
+        : latest
+          ? windows.filter((r) => r.windowId === latest.windowId)
+          : windows;
+      if (!group.length) fail();
+      const values: any[] = [];
+      let remaining = group.length;
+      for (const row of group) {
+        const read = tx.objectStore(RECEIPTS).get(row.key);
+        read.onsuccess = () => {
+          try {
+            const receipt = read.result;
+            if (!receipt) fail();
+            let fields: ReturnType<typeof project>;
+            try {
+              fields = project(receipt);
+            } catch {
+              fail();
+            }
+            if (
+              row.key !== runId + ':' + fields.commandId ||
+              fields.runId !== runId ||
+              fields.activityId !== activityId ||
+              fields.role !== row.role ||
+              fields.windowId !== row.windowId ||
+              (!row.baseline && receiptChecksum(receipt) !== row.checksum)
+            )
+              fail();
+            if (
+              !adoption &&
+              (receipt.format !== 'chenyuan-scheduled-receipt' ||
+                receipt.input?.kind !== 'ADVANCE' ||
+                !receipt.proof?.cycles)
+            )
+              fail();
+            values.push(receipt);
+            if (--remaining) return;
+            if (adoption) {
+              // An online activity can have completed rounds before its first
+              // scheduled payout. Its original ADOPT proves this null-summary
+              // boundary; missing/misclassified ADVANCE metadata cannot use an
+              // older START or an earlier adoption to hide newer completed work.
+              const anchors = values.filter(
+                (r) =>
+                  r.format === 'chenyuan-scheduled-receipt' &&
+                  r.input?.kind === 'ADOPT' &&
+                  r.proof?.recordAfter?.activity?.completedCycles ===
+                    completedCycles,
+              );
+              if (anchors.length !== 1) fail();
+              done(anchors);
+            } else {
+              if (
+                values.reduce(
+                  (maximum, r) =>
+                    Math.max(
+                      maximum,
+                      r.proof.recordAfter.activity.completedCycles,
+                    ),
+                  0,
+                ) !== completedCycles
+              )
+                fail();
+              done(values);
+            }
+          } catch (error) {
+            abort(error);
+          }
+        };
+      }
+    } catch (error) {
+      abort(error);
+    }
+  };
+  request.onsuccess = select;
+  rawCount.onsuccess = select;
+  descriptorCount.onsuccess = select;
 }
 /** Counts stay in the index. Deserialize and validate only the requested bounded page. */
 export function readRetainedHistory<T>(

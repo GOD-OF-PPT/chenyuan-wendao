@@ -1156,3 +1156,22 @@ test('return-summary reading delivers only its latest complete window while reta
   });
   expect(result.metrics.rawValuesDelivered).toBeLessThanOrEqual(2);
 });
+
+for(const damage of ['missing-metadata','wrong-role','wrong-role-and-window'])test(`a ${damage} latest-window descriptor is rejected instead of presenting an older summary`,async({page})=>{
+ await setupPersistence(page);
+ const result=await page.evaluate(async damage=>{
+  const h=(globalThis as any).h,name='q15-summary-descriptor-'+damage,repo=await h.FullSaveRepository.open(name),d=h.routes.driver();d.go('sect');const realNow=Date.now;let now=1700000000000;Date.now=()=>now;
+  try{
+   const seed={...h.mutation(),commandId:repo.issueCommandId()};let out=await repo.importText(JSON.stringify(d.game),seed),a:any=null;
+   const m=()=>({commandId:repo.issueCommandId(),runId:out.state.core.runId,expectedRevision:out.state.core.revision,expectedActivityId:a?.id??null,expectedActivityRevision:a?.revision??null,ownerId:'descriptor-probe'});
+   let input=m();out=await repo.startScheduledActivity({kind:'source',sourceId:'work',maxCycles:5,until:'cycles',target:null,monthBudget:60,remainingMonthsReserve:1},input);a=out.activity;
+   for(const elapsed of [30000,60000]){now+=elapsed;input=m();out=await repo.advanceScheduledActivity(input);a=out.activity;}
+   const key=input.runId+':'+input.commandId,raw=await h.inspect(name),meta=raw['full-retention'].find((r:any)=>Array.isArray(r.key)&&r.key[0]==='receipt'&&r.key[1]===key);
+   if(damage!=='missing-metadata'){meta.value.role='control';if(damage==='wrong-role-and-window')meta.value.windowId=null;}
+   await h.put(name,'full-retention',meta.key,meta.value,damage==='missing-metadata');
+   const before=await h.inspect(name),summary=await h.attempt(()=>repo.loadAwaySummary()),after=await h.inspect(name);return{summary,before,after,rawOriginal:raw['full-receipts'].find((r:any)=>r.key===key)};
+  }finally{Date.now=realNow;repo.close();}
+ },damage);
+ expect(result.summary.ok).toBe(false);expect(result.summary.code).toBe(damage==='wrong-role'?'RETENTION_INVALID':'RECEIPT_INVALID');expect(result.after).toEqual(result.before);
+ expect(result.after['full-receipts']).toContainEqual(result.rawOriginal);
+});
