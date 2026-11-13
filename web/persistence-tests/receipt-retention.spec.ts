@@ -956,3 +956,20 @@ test('a lost cleanup acknowledgment can be retried by the same logical receiver 
   expect(result.retry.ok).toBe(true);
   expect(result.after).toEqual(result.before);
 });
+
+test('acknowledged replacement replays do not accumulate stale offers in a live logical receiver',async({page})=>{
+ await setupPersistence(page);
+ const result=await page.evaluate(async()=>{
+  const h=(globalThis as any).h,path='/src/receipt-retention.ts',{receiptReceiverState}=await import(path),receiver=h.createReceiptReceiver(),name='q15-live-receiver-replays',repo=await h.FullSaveRepository.open(name,receiver);
+  let state:any=null,last:any;const samples:any[]=[];
+  for(let i=0;i<40;i++){
+   const m={...h.mutation(state),commandId:repo.issueCommandId()},out=await repo.create('重复回看原新卷',m);state=out.state;await repo.confirmDelivery(m.runId,m.commandId);
+   const replay=await repo.create('重复回看原新卷',m);if(!replay.replayed)throw Error('expected the original control replay');await repo.confirmDelivery(m.runId,m.commandId);last=m;
+   if(i===0||i===9||i===39){const held=receiptReceiverState(receiver,name);samples.push({writes:i+1,offers:held.offers.size,confirmed:held.confirmed.size});}
+  }
+  const before=await h.inspect(name);await repo.create('重复回看原新卷',last);await repo.confirmDelivery(last.runId,last.commandId);const after=await h.inspect(name);repo.close();return{samples,before,after};
+ });
+ expect(result.samples.map((s:any)=>s.offers)).toEqual([0,0,0]);expect(result.samples.every((s:any)=>s.confirmed<=512)).toBe(true);
+ expect(result.after).toEqual(result.before);expect(result.after['full-receipts']).toHaveLength(1);
+ await test.info().attach('live-receiver-memory',{body:JSON.stringify(result.samples),contentType:'application/json'});
+});

@@ -4,8 +4,6 @@ import { historicalBalanceOneFixture } from '../../tests/historical-full-runtime
 import { createDb10NativeFixture } from '../../tests/db10-native-fixture.mjs';
 import { expectBaselineUpgrade } from './retention-upgrade-proof';
 const balanceOne = await historicalBalanceOneFixture();
-const db10 = createDb10NativeFixture();
-test.afterAll(() => db10.cleanup());
 
 test('old-content migration snapshots pre-upgrade backup membership before creating its new atomic backup group', async ({
   page,
@@ -78,6 +76,8 @@ test('old-content migration snapshots pre-upgrade backup membership before creat
 test('an accepted DB10 live away window upgrades unchanged and completes its remaining 64 plus 2 cycles exactly once', async ({
   page,
 }, info) => {
+  const db10=createDb10NativeFixture();
+  try{
   await setupPersistence(page);
   const source = {
     sourceCommit: db10.sourceCommit,
@@ -212,4 +212,5 @@ test('an accepted DB10 live away window upgrades unchanged and completes its rem
     }),
     contentType: 'application/json',
   });
+  }finally{db10.cleanup();}
 });
