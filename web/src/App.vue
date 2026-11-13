@@ -9,6 +9,7 @@ import {useStageReturns} from './use-stage-returns';
 import {useConfigurationReview} from './use-configuration-review';
 import ActivityRecords from './ActivityRecords.vue';
 import {useDirectActions} from './use-direct-actions';
+import {useActivityPlans} from './use-activity-plans';
 import GameSettings from './GameSettings.vue';
 import DemoMenu from './DemoMenu.vue';
 import GameplayHelp from './GameplayHelp.vue';
@@ -131,13 +132,6 @@ const saveTone=computed(()=>!store.ready||store.busy?'pending':store.error||!sto
 const saveDisplayLabel=computed(()=>store.saveLabel==='本次未保存'?'保存待确认':store.saveLabel);
 const openingChoices=[{id:'help',name:'赠丹相助',detail:'结下赠药之缘'},{id:'trade',name:'以丹换简',detail:`获得剑简，剑修终结伤害 +${ruleContent.value.swordManual.damageBonus}`},{id:'leave',name:'保留丹药',detail:'保留回春丹，各自离开'}] as const;
 const experience=useLocalExperience();let appActive=true;const stopObserving=store.observe(value=>{const observedNavigation=navigationRevision;if(['import','restore','restart','new_game'].includes(value.kind)){readingGeneration.value++;narrativeContext.value++;stageReturns.reset();journalWrites.value=[];}if(value.kind==='action'&&value.result&&value.operation&&store.game?.core.revision===value.result.revisionAfter){const run=store.game.core.runId,revision=value.result.revisionAfter,added=value.operation==='EVENT'?0:value.operation==='BATTLE'&&value.flags.includes('battle_won')?2:1;journalWrites.value=[...journalWrites.value.filter(w=>w.run!==run||w.revision!==revision),{run,revision,added}].slice(-100);}if(value.kind==='action'&&value.result&&store.game&&!value.replayed&&store.lastFromActivity&&store.activityOwned&&store.activity?.version===7&&store.activity.plan.action.type===value.operation&&store.activity.runId===store.game?.core.runId&&value.result.revisionAfter===store.game.core.revision&&((hubView.value==='current'&&value.operation==='CHOOSE'&&value.result.phaseBefore==='opening'&&value.result.phaseAfter==='idle')||(hubView.value==='cultivation'&&value.operation==='BREAKTHROUGH'&&value.result.delta.realm.before!==value.result.delta.realm.after)||(hubView.value==='trial-preparation'&&value.operation==='START_TRIAL'&&value.result.phaseBefore==='idle'&&value.result.phaseAfter==='trial-question')))selectTab('修行');focusObserved(value,observedNavigation);experience.record(value);},experience.fault);onScopeDispose(()=>{appActive=false;stopObserving();});
-const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('');
-const trainingInspectionPlan=shallowRef<CultivationPlan|null>(null);
-const sourceInspectionPlan=shallowRef<SourcePlan|null>(null);
-const productionInspectionPlan=shallowRef<CraftPlan|ForgePlan|null>(null);
-const preparationInspectionPlan=shallowRef<PreparationPlan|null>(null),preparationInspectionSaved=ref(false),preparationInspectionExact=ref(true);
-const adventureInspectionPlan=shallowRef<AdventurePlan|null>(null),adventureInspectionSaved=ref(false),activityPlanVisible=ref(false);
-watch(()=>store.activity?.id,()=>activityPlanVisible.value=false);
 const producing=computed(()=>!!store.activity&&store.activity.status!=='stopped'&&(store.activity.plan.kind==='craft'||store.activity.plan.kind==='forge'));
 const equipmentOpen=ref(false),resumeVisible=ref(false),hubView=ref('home');
 const hubEntries=[{id:'forge',label:'丹炉',kind:'item',icon:'healing_pill'},{id:'skills',label:'功法',kind:'skill',icon:'sword_mind'},{id:'relics',label:'法宝',kind:'relic',icon:'cloud_mirror'},{id:'life',label:'生平',kind:'action',icon:'export'},{id:'goal',label:'目标',kind:'action',icon:'save'},{id:'help',label:'帮助',kind:'action',icon:'help'}] as const;
@@ -151,7 +145,6 @@ const captureStageReturn=stageReturns.captureDetail;
 const tradeoffKind=ref<ProgressionKind>('cultivation'),tradeoffSeed=ref<ProgressionVariant>('natural'),tradeoffEntry=ref(0);
 const narrativeContext=ref(0),readingGeneration=ref(0);
 const journalWrites=shallowRef<JournalWrite[]>([]);
-function clearInspections(){trainingInspectionPlan.value=null;sourceInspectionPlan.value=null;productionInspectionPlan.value=null;preparationInspectionPlan.value=null;preparationInspectionSaved.value=false;preparationInspectionExact.value=true;adventureInspectionPlan.value=null;adventureInspectionSaved.value=false;}
 function selectTab(next: string) { stageReturns.reset();clearInspections();navigationRevision++; resumeVisible.value=false; tab.value = next;hubView.value=({'修行':'home','历练':'explore','行囊':'inventory','仙缘':'fate'} as Record<string,string>)[next]??'home'; return navigationRevision; }
 const preparation = shallowRef<Action | null>(null);
 const fontScale = computed({get:()=>experience.preferences.value.fontScale,set:(value:1|1.5|2)=>{void experience.setPreferences({fontScale:value});}}), reduceMotion = computed({get:()=>experience.preferences.value.reduceMotion,set:(value:boolean)=>{void experience.setPreferences({reduceMotion:value});}}), settingsView = ref<InstanceType<typeof GameSettings>>();
@@ -216,6 +209,10 @@ onMounted(()=>document.addEventListener('keydown',featureKey));onScopeDispose(()
 function currentContent(){return [...document.querySelectorAll<HTMLElement>('.catalogue-view .play-catalogue')].find(visibleFocusTarget)??(visibleFocusTarget(contentPanel.value??null)?contentPanel.value??null:null);}
 const focus=useFocus(()=>currentContent()??settingsButton.value??null);
 provide(gameFocusKey,focus);
+const {collectionTarget,highlight,trainingInspectionPlan,sourceInspectionPlan,productionInspectionPlan,preparationInspectionPlan,preparationInspectionSaved,preparationInspectionExact,adventureInspectionPlan,adventureInspectionSaved,activityPlanVisible,hubTrainingMethod,clearInspections,inspectionOwner,arrangeTravel,travel,inspectAdventure,startAdventure,startTraining,startSource,viewActivityPlan,startProduction,inspectProduction,moveProduction,startPreparation,inspectPreparationPlan,inspectPreparation,movePreparation}=useActivityPlans(store,focus,{
+ owner:()=>navigationRevision,advance:()=>++navigationRevision,select:selectTab,open:openHub,current:()=>({singleScreen:singleScreen.value,view:hubView.value}),dismissResume:()=>resumeVisible.value=false,navigate,inspectMilestone,
+});
+
 const confirmation=useGameConfirmation({focus,appearance:()=>({fontScale:fontScale.value,reduceMotion:reduceMotion.value})});
 function confirmationSource(){
  const key=()=>JSON.stringify([core.value?.runId??null,core.value?.revision??0,store.activity?.id??null,store.activity?.revision??null,store.activity?.ownerId??null,store.syncEpoch]);
@@ -314,10 +311,9 @@ const equipmentVisible=computed(()=>tab.value==='修行'&&(!singleScreen.value&&
 const needsSchool=computed(()=>!!game.value&&phase.value==='idle'&&C.rank(game.value.core.player.realm)>=C.rank('qi')&&!game.value.school);
 watch(()=>game.value?.core.runId,()=>{if(beginningJourney&&!beginningJourney.run&&beginningJourney.owner===navigationRevision)beginningJourney.owner++;pendingStageFocus=null;navigationRevision++;clearFlowReturns();clearInspections();collectionTarget.value=null;highlight.value='';stageReturns.reset();equipmentOpen.value=needsSchool.value;resumeVisible.value=false;},{flush:'sync'});
 watch(()=>store.syncEpoch,clearFlowReturns,{flush:'sync'});
-watch([()=>store.activity?.id,()=>store.syncEpoch],()=>{trainingInspectionPlan.value=null;sourceInspectionPlan.value=null;productionInspectionPlan.value=null;preparationInspectionSaved.value=false;adventureInspectionSaved.value=false;});
 // Read-only inspection belongs to a life/navigation, and to the selected activity when saved.
 // Do not fence on revisions: a normal cycle or pause must preserve the draft.
-function inspectionOwner(activityId?:string){const runId=game.value?.core.runId,sync=store.syncEpoch;return(owner:number|null)=>owner!==null&&appActive&&navigationRevision===owner&&game.value?.core.runId===runId&&store.syncEpoch===sync&&(activityId===undefined||store.activity?.id===activityId);}
+
 
 watch(needsSchool,value=>{if(value)equipmentOpen.value=true;},{immediate:true});
 async function startJourney(){
@@ -354,86 +350,7 @@ const {storyAct,quickInventory,browse:browseDirect}=useDirectActions(store,focus
 });
 function trackTrialMaterial(target:Parameters<typeof selectTracking>[0]){selectTracking(target);void openHub('goal');}
 function retryOperation(){const owner=navigationRevision;return focus.afterAction(()=>store.retry(),()=>owner===navigationRevision);}
-// The viewing intent belongs to the accepted trip, not to a timer or a later unrelated save.
-let arrivalIntent:{id:string;runId:string;navigation:number;syncEpoch:number;location:C.LocationId;arrive:()=>void|Promise<void>}|null=null;
-async function arrangeTravel(location:C.LocationId,arrive:()=>void|Promise<void>):Promise<void>{
- if(!game.value||store.busy||!store.available)return;
- if(game.value.core.world.location===location){await arrive();return;}
- if(pendingStoryError.value){store.activityNotice='请先重试或取消原安排；同步待核对时重新读取。';return;}
- if(store.activityRunning){store.activityNotice='当前活动进行中，请先暂停再行旅。';return;}
- arrivalIntent=null;const owner=++navigationRevision,sync=store.syncEpoch;
- await store.startPlannedActivity({kind:'travel',location,maxCycles:1});
- const a=store.activity;
- if(store.error||owner!==navigationRevision||store.syncEpoch!==sync||a?.version!==6||a.plan.kind!=='travel'||a.plan.location!==location||a.status!=='running')return;
- arrivalIntent={id:a.id,runId:a.runId,navigation:owner,syncEpoch:sync,location,arrive};
-}
-watch(()=>[store.activity,game.value,store.error,store.activityOwned,store.busy,store.syncEpoch,store.activityPausing] as const,()=>{
- const pending=arrivalIntent;if(!pending)return;
- const a=store.activity,g=game.value;
- if(store.activityPausing||!g||store.syncEpoch!==pending.syncEpoch||g.core.runId!==pending.runId||navigationRevision!==pending.navigation||a?.id!==pending.id||!store.activityOwned||store.error||a.status==='paused'){arrivalIntent=null;return;}
- if(a.status!=='stopped'||store.busy)return;
- arrivalIntent=null;
- if(a.completedCycles===1&&g.core.world.location===pending.location)void pending.arrive();
-},{flush:'post'});
-async function travel(id:C.LocationId){return arrangeTravel(id,()=>{selectTab(id==='cave'?'修行':'历练');});}
-async function inspectAdventure(enemy:string){const owns=inspectionOwner();highlight.value='';const owner=await openHub('explore');await nextTick();if(owns(owner))highlight.value='encounter-'+enemy;}
-async function startAdventure(plan:AdventurePlan){
- resumeVisible.value=false;adventureInspectionPlan.value=null;adventureInspectionSaved.value=false;
- const owner=navigationRevision;await store.startPlannedActivity(plan);
- if(!store.error&&owner===navigationRevision&&plan.kind!=='travel'){selectTab('修行');}
-}
-const defaultTraining:CultivationPlan={kind:'cultivation',method:'natural',maxCycles:50,until:'xp-cap',stoneBudget:0,stoneReserve:0};
-const hubTrainingMethod=ref<'natural'|'assisted'>('natural');
-watch(()=>game.value?.core.runId,()=>hubTrainingMethod.value='natural');
-async function startTraining(plan:CultivationPlan=defaultTraining){
- if(pendingStoryError.value)return;
- resumeVisible.value=false;trainingInspectionPlan.value=null;
- const from=singleScreen.value&&hubView.value==='cultivation',owner=navigationRevision,owns=inspectionOwner(),previous=store.activity?.id,signature=JSON.stringify(plan),anchor=focus.capture();
- await store.startCultivation(plan);
- const a=store.activity,r=store.activityRuntime,g=game.value;
- if(!from||!owns(owner)||document.hidden||store.error||!store.saved||!store.available||store.busy||store.activityPausing||a?.version!==1||a.status!=='running'||a.id===previous||!store.activityOwned||a.runId!==g?.core.runId||a.gameRevision!==g?.core.revision||r?.id!==a.id||r.generation!==a.generation||JSON.stringify(a.plan)!==signature)return;
- hubTrainingMethod.value=a.plan.method;const current=inspectionOwner(a.id),next=selectTab('修行');await nextTick();
- if(current(next)&&!document.hidden&&!store.error&&!store.activityPausing&&store.activity?.status==='running'&&store.activity.generation===a.generation&&store.activityRuntime?.id===a.id&&store.activityRuntime.generation===a.generation&&store.activityOwned&&focusStillOwned(anchor))focus.target(document.querySelector<HTMLElement>('[data-testid=cultivation-active-pause]'));
-}
-function startSource(plan:SourcePlan){resumeVisible.value=false;sourceInspectionPlan.value=null;return store.startPlannedActivity(plan);}
-async function viewActivityPlan(){
- const activity=store.activity;if(!activity)return;if(activity.version===7){inspectMilestone(activity);return;}
- const plan=structuredClone(activity.plan),owns=inspectionOwner(activity.id);
- if(isPreparationPlan(plan)){await inspectPreparationPlan(plan,true);return;}
- if(plan.kind==='battle'&&(!game.value?.battle||game.value.battle.enemy!==plan.enemy||(game.value.trial?.stage??null)!==plan.trialStage)||plan.kind==='encounter'&&ruleContent.value.enemies[plan.enemy].location!==game.value?.core.world.location){const owner=await openHub('activity');if(owns(owner))activityPlanVisible.value=true;return;}
- const view=plan.kind==='cultivation'?'cultivation':plan.kind==='source'?'explore':plan.kind==='craft'?'forge':plan.kind==='forge'?'relics':isAdventurePlan(plan)?plan.kind==='battle'?'home':'explore':'cultivation';
- highlight.value='';const owner=await openHub(view);if(!owns(owner))return;
- if(plan.kind==='cultivation')trainingInspectionPlan.value=plan;
- else if(plan.kind==='source'){collectionTarget.value=plan.target;sourceInspectionPlan.value=plan;await nextTick();if(owns(owner))highlight.value='source-'+plan.sourceId;}
- else if(plan.kind==='craft'||plan.kind==='forge'){productionInspectionPlan.value=plan;await nextTick();if(owns(owner))highlight.value=plan.kind==='craft'?'craft-'+plan.recipeId:'forge-'+plan.relicId;}
- else if(isAdventurePlan(plan)){adventureInspectionPlan.value=plan;adventureInspectionSaved.value=true;if(plan.kind!=='battle')highlight.value=plan.kind==='travel'?'travel-'+plan.location:'encounter-'+plan.enemy;}
-}
-function startProduction(plan:CraftPlan|ForgePlan|PreparationPlan){if(isPreparationPlan(plan))return startPreparation(plan);resumeVisible.value=false;productionInspectionPlan.value=null;return store.startPlannedActivity(plan);}
-async function inspectProduction(action:Extract<Action,{type:'CRAFT'|'FORGE'}>){const owns=inspectionOwner();highlight.value='';const owner=await openHub(action.type==='CRAFT'?'forge':'relics');await nextTick();if(owns(owner))highlight.value=action.type==='CRAFT'?'craft-'+action.recipeId:'forge-'+action.relic;}
-async function moveProduction(plan:CraftPlan|ForgePlan){const draft=structuredClone(plan),id=draft.kind==='craft'?'craft-'+draft.recipeId:'forge-'+draft.relicId;return navigate({location:'cave',tab:draft.kind==='craft'?'行囊':'修行',focusId:id},()=>{productionInspectionPlan.value=draft;});}
 async function trackProduction(target:Parameters<typeof selectTracking>[0]){selectTracking(target);await openHub('goal');}
-function startPreparation(plan:PreparationPlan){resumeVisible.value=false;preparationInspectionPlan.value=null;return store.startPlannedActivity(plan);}
-function preparationView(plan:PreparationPlan){return plan.kind==='learn'||plan.kind==='study'?'skills':plan.kind==='buy'||plan.kind==='sell'?'market':'recovery';}
-async function inspectPreparationPlan(plan:PreparationPlan,saved=false,exact=true){
- const owns=inspectionOwner(saved?store.activity?.id:undefined),draft=structuredClone(plan);
- highlight.value='';const owner=await openHub(preparationView(draft));if(!owns(owner))return;preparationInspectionExact.value=exact;preparationInspectionPlan.value=draft;preparationInspectionSaved.value=saved;await nextTick();
- if(!owns(owner))return;highlight.value=plan.kind==='learn'?'learn-'+plan.skills[0]:plan.kind==='study'?'study-manual':plan.kind==='rest'?'recovery-rest':(plan.kind==='use'?'recovery-':'market-item-')+plan.item;
-}
-function inspectPreparation(action:Action){
- let plan:PreparationPlan;
- if(action.type==='LEARN')plan={kind:'learn',skills:[action.skill],maxCycles:1,stoneBudget:ruleContent.value.skills[action.skill].price,stoneReserve:0};
- else if(action.type==='STUDY')plan={kind:'study',manual:'jinghong',maxCycles:1,stoneBudget:ruleContent.value.swordManual.price,stoneReserve:0};
- else if(action.type==='BUY')plan={kind:'buy',item:action.item,maxCycles:action.quantity,until:'cycles',targetQuantity:null,stoneBudget:ruleContent.value.items[action.item].buy!*action.quantity,stoneReserve:0};
- else if(action.type==='SELL')plan={kind:'sell',item:action.item,maxCycles:action.quantity,itemReserve:0};
- else if(action.type==='USE'&&(action.item==='healing_pill'||action.item==='spirit_pill'))plan={kind:'use',item:action.item,maxCycles:3,targetPercent:100,itemReserve:0};
- else if(action.type==='REST')plan={kind:'rest',maxCycles:1,remainingMonthsReserve:1};
- else return;
- return inspectPreparationPlan(plan,false,false);
-}
-async function movePreparation(plan:PreparationPlan){
- const draft=structuredClone(plan),location:C.LocationId=draft.kind==='learn'||draft.kind==='study'?'sect':draft.kind==='buy'||draft.kind==='sell'?'market':'cave';
- return arrangeTravel(location,()=>inspectPreparationPlan(draft));
-}
 const {configurationError,configurationIntent,configurationSnapshot,configurationStale,configurationRetry,inspectConfiguration,closeConfiguration,refreshConfiguration,confirmConfiguration}=useConfigurationReview(store);
 const recoveryNeeded=computed(()=>!!quote({type:'REST'})?.allowed);
 const trialReturn=computed(()=>game.value?trialReturnView(game.value,store.hasCheckpoint?store.checkpointSummary:null,store.trialRecovery,store.ready&&store.available&&!store.busy&&!store.syncIssue&&!(store.warning&&!store.hasCheckpoint)):null);
