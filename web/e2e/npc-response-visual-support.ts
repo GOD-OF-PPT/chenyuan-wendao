@@ -13,4 +13,3 @@ export async function resultMomentClearance(page:Page,info:TestInfo){
  await info.attach('saved-npc-result-30px-clearance',{body:JSON.stringify(facts),contentType:'application/json'});
  expect(facts.collisions).toEqual([]);expect(facts.card.bottom).toBeLessThanOrEqual(facts.navTop);expect(facts.bodyHeight).toBeLessThanOrEqual(900);expect(facts.buttonHits.every(Boolean)).toBe(true);
 }
-
