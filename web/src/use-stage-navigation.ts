@@ -185,6 +185,7 @@ export function useStageNavigation(
     event?: Event,
     trialMode: 'required' | 'checkpoint' = 'required',
   ) {
+    if (!alive) return null;
     trialReadMode.value = trialMode;
     if (view === 'receipt')
       receiptAll.value =
@@ -215,12 +216,13 @@ export function useStageNavigation(
     if (view === 'skills' || view === 'relics') equipmentOpen.value = true;
     if (view === 'life') lifeOpen.value = true;
     await nextTick();
-    if (owner !== revision.value) return null;
+    if (!alive || owner !== revision.value) return null;
     if (!document.querySelector('dialog[open]'))
       focus.target(document.getElementById('feature-title'));
     return owner;
   }
   async function closeHub() {
+    if (!alive) return;
     const { back, opener, id } = stageReturns.consume(
       game.value?.core.runId,
       hooks.narrativeContext(),
@@ -231,7 +233,7 @@ export function useStageNavigation(
       tab.value = back.tab;
     } else selectTab('修行');
     await nextTick();
-    if (document.querySelector('dialog[open]')) return;
+    if (!alive || document.querySelector('dialog[open]')) return;
     const candidate = visibleFocusTarget(opener)
       ? opener
       : id
@@ -293,10 +295,11 @@ export function useStageNavigation(
     return owner;
   }
   async function showTrialPreparation() {
-    if (core.value?.player.realm !== 'spirit') return;
+    if (!alive || core.value?.player.realm !== 'spirit') return;
     selectTab('修行');
     if (hooks.singleScreen()) hubView.value = 'trial-preparation';
     await nextTick();
+    if (!alive) return;
     const heading = document.querySelector<HTMLElement>(
       '[data-testid="trial-preparation-title"]',
     );

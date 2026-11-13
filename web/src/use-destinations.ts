@@ -1,4 +1,4 @@
-import { computed, nextTick, type Ref } from 'vue';
+import { computed, nextTick, onScopeDispose, type Ref } from 'vue';
 import type { useGame } from './store';
 import type { useFocus } from './focus';
 import type { useStageNavigation } from './use-stage-navigation';
@@ -28,11 +28,15 @@ export function useDestinations(
   },
 ) {
   const game = computed(() => store.game);
+  let alive = true;
+  onScopeDispose(() => {
+    alive = false;
+  });
   async function navigate(
     request: NavigationRequest,
     arrived?: () => void,
   ): Promise<void> {
-    if (!game.value || store.busy || !store.available) return;
+    if (!alive || !game.value || store.busy || !store.available) return;
     if (game.value.core.world.location !== request.location)
       return plans.arrangeTravel(request.location, () =>
         navigate(request, arrived),
@@ -82,7 +86,7 @@ export function useDestinations(
       input.batch.value = 'target';
     }
     await nextTick();
-    if (navigation.owner.value !== focusRevision) return;
+    if (!alive || navigation.owner.value !== focusRevision) return;
     arrived?.();
     const element = request.focusId
       ? document.querySelector<HTMLElement>(
@@ -102,18 +106,19 @@ export function useDestinations(
     }
   }
   function inspectCaveDestination(request: NavigationRequest) {
+    if (!alive) return;
     navigation.rememberHubOrigin();
     return inspectTradeoffDestination(request);
   }
   async function inspectTradeoffDestination(request: NavigationRequest) {
-    if (!game.value) return;
+    if (!alive || !game.value) return;
     if (
       game.value.core.world.location !== request.location ||
       request.focusId?.startsWith('travel-')
     ) {
       const owns = plans.inspectionOwner();
       const owner = await navigation.openHub('explore');
-      if (owns(owner)) {
+      if (alive && owns(owner)) {
         plans.adventureInspectionPlan.value = null;
         plans.adventureInspectionSaved.value = false;
         plans.highlight.value = 'travel-' + request.location;
