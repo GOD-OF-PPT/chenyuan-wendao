@@ -1,3 +1,4 @@
+import {resultMomentClearance} from './npc-response-visual-support';
 import * as C from '../../src/full/content';
 import {currentReceiptControl} from './readonly-navigation-support';
 import {test, expect, type Page} from '@playwright/test';
@@ -126,9 +127,11 @@ test('Q02-6b the ordinary opening result does not paint a toast ellipse over its
   await expect.poll(async () => (await activity(page))?.status).toBe('running');
   await settleVisibleActivity(page);
   await page.clock.runFor(32);
-  const toast = page.locator('.action-feedback-toast');
-  await expect(toast).toBeVisible();
-  expect(await toast.evaluate(node => getComputedStyle(node, '::before').display)).toBe('none');
+  const result = page.getByTestId('result-moment');
+  await expect(result).toHaveAttribute('data-kind','choice');
+  await expect(page.locator('.action-feedback-toast')).toHaveCount(0);
+  expect(await result.evaluate(node => getComputedStyle(node, '::before').content)).toBe('none');
+  await resultMomentClearance(page,info);
   await page.screenshot({path: info.outputPath('Q02-choice-feedback.png')});
 });
 

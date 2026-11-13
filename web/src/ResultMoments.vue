@@ -8,6 +8,7 @@ import { ENEMY_ASSETS, PORTRAIT_ASSETS, TERRACE_STATE_ASSETS } from './assets';
 const props = defineProps<{
     store: ReturnType<typeof useGame>;
     reduceMotion: boolean;
+    active: boolean;
 }>();
 const emit = defineEmits<{
     dismiss: [
@@ -31,6 +32,12 @@ function dismiss() { clear(); emit('dismiss'); }
 function mediaChange() { systemReduced.value = media.matches; }
 function visibility() { if (document.hidden)
     clear(); }
+function advanceReading(event: MouseEvent) {
+    const target = event.target;
+    if (target instanceof Element && target.closest('button,a[href],summary,input,select') && !target.closest('[data-testid="result-moment"]'))
+        clear();
+}
+watch(() => props.active, value => { if (!value) clear(); }, { flush: 'sync' });
 watch(() => props.store.game?.core.runId, clear, { flush: 'sync' });
 watch([() => props.store.activity?.id, () => props.store.activity?.generation], ([id]) => { if (id)
     clear(); }, { flush: 'sync' });
@@ -46,7 +53,7 @@ onMounted(() => {
             clear();
             return;
         }
-        const s = props.store, next = tracker.consume(o, s.game, s.lastResult, s.activity, s.lastReplayed, s.saved && s.available && !s.error && !document.hidden);
+        const s = props.store, next = tracker.consume(o, s.game, s.lastResult, s.activity, s.lastReplayed, props.active && s.saved && s.available && !s.error && !document.hidden);
         if (!next)
             return;
         clearTimeout(timer);
@@ -56,8 +63,9 @@ onMounted(() => {
     });
     media.addEventListener('change', mediaChange);
     document.addEventListener('visibilitychange', visibility);
+    document.addEventListener('click', advanceReading, true);
 });
-onScopeDispose(() => { clear(); stop(); media.removeEventListener('change', mediaChange); document.removeEventListener('visibilitychange', visibility); });
+onScopeDispose(() => { clear(); stop(); media.removeEventListener('change', mediaChange); document.removeEventListener('visibilitychange', visibility); document.removeEventListener('click', advanceReading, true); });
 </script>
 <template>
  <section v-if="moment" :key="moment.key" class="result-moment" :class="{moving: moving&&!reduced}" :data-kind="moment.kind" data-testid="result-moment" aria-label="本次成果">
@@ -71,7 +79,7 @@ onScopeDispose(() => { clear(); stop(); media.removeEventListener('change', medi
 .result-moment-icon{width:48px;height:48px;color:var(--game-gold,#bdac74)}
 .result-moment-object{width:48px;height:48px;color:var(--game-gold,#bdac74)}
 .result-moment-object .asset-image{border-radius:4px}
-.result-moment:not([data-kind="harvest"]){grid-template-columns:84px minmax(0,1fr) auto;min-height:124px;box-shadow:inset 3px 0 var(--game-gold,#bdac74)}
+.result-moment:not([data-kind="harvest"]){grid-template-columns:84px minmax(0,1fr) auto;column-gap:40px;min-height:124px;box-shadow:inset 3px 0 var(--game-gold,#bdac74)}
 .result-moment:not([data-kind="harvest"]) .result-moment-object{width:84px;height:84px}
 .result-moment:not([data-kind="harvest"]) strong{font-size:26px}
 .result-moment strong{font-size:22px;line-height:1.3;font-weight:500}

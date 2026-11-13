@@ -722,7 +722,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
 <div v-if="exportError" class="error-banner" role="alert">{{exportError}}</div>
 <div v-if="importNotice" class="error-banner" role="alert" data-testid="import-notice">{{importNotice}}</div>
 <LifespanGuide v-if="!hubMain&&game" :game="game" @life="showLife" @checkpoint="showSettings"/>
-<ResultMoments :store="store" :reduce-motion="reduceMotion" @dismiss="focusContent"/>
+<ResultMoments :store="store" :reduce-motion="reduceMotion" :active="!['activity','receipt','goal','character','help'].includes(hubView)" @dismiss="focusContent"/>
 <ActionFeedbackStage :store="store" :reduce-motion="reduceMotion" :view-key="hubView+':'+tab" :playfield-active="hubMain||hubView==='current'&&storyView">
 <template #default="{operation,dismiss,hold}"><FeedbackSkip v-if="['BATTLE','BREAKTHROUGH','START_TRIAL'].includes(operation)" @hold="hold" @dismiss="dismiss"/></template>
 </ActionFeedbackStage>
