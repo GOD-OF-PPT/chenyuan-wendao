@@ -87,6 +87,8 @@ class Notes(unittest.TestCase):
             self.assertIn('fetch-depth: 0', text)
             self.assertIn('ref: ${{ github.event.pull_request.head.sha || github.sha }}', text)
             self.assertIn("node-version: '24.22.1'", text)
+            self.assertNotIn('runs-on: ubuntu-latest', text)
+            self.assertIn('runs-on: ubuntu-24.04', text)
             self.assertIn('if: always()', text)
             self.assertIn('actions/upload-artifact@', text)
             self.assertNotRegex(text, r'(?m) *browser: \[.*(?:firefox|webkit)')
