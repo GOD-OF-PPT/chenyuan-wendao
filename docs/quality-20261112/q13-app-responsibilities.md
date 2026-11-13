@@ -22,6 +22,12 @@
 
 4d95cdf类型及清洁构建通过，完整原ABC、原法宝焦点、默认持续、导航和Q11结果五文件38/38通过（52.2秒），0skip/retry/flaky。模板原需openHub的checkpoint第三参已用真实required/checkpoint联合类型保；提取时两次类型红属于接线准备，未改玩法或放宽类型。App现约131.7KB仍远非Q13完成，剩余四玩法/导航等责任与最终综合保留。
 
+## 第四Seam：四类原页签内容
+
+实际Vue AST提取四段原fallback分支到CultivationTab/ExplorationTab/InventoryTab/FateTab；各Module拥有相应报价/来源/库存/近期手记投影，显式事件仍回原动作/导航。batch与quantity保父级v-model，追踪物消耗仍沿原消费预览函数。共享只读useActionView保持原报价cache/available/busy/running和完整原因词，不另造写者；父级不再了解四段内部投影。
+
+0180aa0清洁类型/构建与当前固定桌面五文件38/38通过（58.8秒）。这些原fallback分支在当前主桌面多由既有catalogue替代，不能因此冒该非默认展示已经实际全测，也不恢复字号/移动兼容专项来执行。接线由类型与原fragment保，最终Module级新Seam覆盖/当前整体矩阵仍待。App约117.2KB，只是进度，不以四个薄壳或字节压缩声称完成目标。
+
 ## 后续与执行边界
 
 当前无live测试。root/web node_modules仍是指向Q12的junction，不能直接在此npm ci或validate-core（会安装）；先核后仅删除link并独立安装。当前每段代码和原报告保，临时工具/日志在artifacts/q13-app。
