@@ -37,6 +37,6 @@ const localControls=useLocalActivityControls();
 </template>
 
 <style scoped>
-.cultivation-ongoing{gap:12px}.cultivation-ongoing h2{margin:0;font-weight:400}.ongoing-progress{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}.ongoing-progress span{margin-left:auto;font-size:14px;color:#bad2c7}.cultivation-ongoing strong{color:#c3f5dd;font-size:26px;font-weight:400}.cultivation-ongoing>.text-button{align-self:center;min-height:44px;font-size:18px!important}.cultivation-ongoing>small{color:#c5d8ca}
-:global(.art06-status:empty){display:none}
+@layer game{.cultivation-ongoing{gap:12px}.cultivation-ongoing h2{margin:0;font-weight:400}.ongoing-progress{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}.ongoing-progress span{margin-left:auto;font-size:14px;color:var(--palette-muted)}.cultivation-ongoing strong{color:var(--palette-jade);font-size:26px;font-weight:400}.cultivation-ongoing>.text-button{align-self:center;min-height:44px;font-size:18px!important}.cultivation-ongoing>small{color:var(--palette-muted)}
+:global(.art06-status:empty){display:none}}
 </style>

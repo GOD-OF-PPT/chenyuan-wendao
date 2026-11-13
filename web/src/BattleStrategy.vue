@@ -75,6 +75,7 @@ const signed=(n:number)=>n>0?'+'+n:String(n);
 </template>
 
 <style scoped>
+@layer game{
 .immersive-stage .hub-current section.battle-automation[data-view=battle]{grid-template-rows:44px minmax(0,1fr) auto auto auto}
-section.battle-automation[data-view=battle]>.battle-authorization{padding-block:8px}
+section.battle-automation[data-view=battle]>.battle-authorization{padding-block:8px}}
 </style>

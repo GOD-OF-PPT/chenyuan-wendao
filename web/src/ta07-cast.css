@@ -1,16 +1,17 @@
+@layer game{
 /* The existing receipt owner supplies the lifetime. These shapes never settle a turn. */
-.battle-cast{position:absolute;inset:0;pointer-events:none;--cast-ink:#cae8cf;--cast-fill:#91cba531}
-.battle-cast[data-school=talisman]{--cast-ink:#e7dab0;--cast-fill:#d9bf7931}
+.battle-cast{position:absolute;inset:0;pointer-events:none;--cast-ink:var(--palette-muted);--cast-fill:color-mix(in srgb, var(--palette-jade) 19.21568627%, transparent)}
+.battle-cast[data-school=talisman]{--cast-ink:var(--palette-gold);--cast-fill:color-mix(in srgb, var(--palette-gold) 19.21568627%, transparent)}
 #app .action-motion.motion-battle:has(.battle-cast){width:var(--cast-size);height:var(--cast-size)}
-.battle-cast.cast-elixir{--cast-ink:#c4e9b4;--cast-fill:#a5cb9e31}.battle-cast.cast-spirit{--cast-ink:#addce5;--cast-fill:#93c6d331}
-.battle-cast .cast-drawing{display:block;width:100%;height:100%;overflow:visible;fill:var(--cast-fill);stroke:var(--cast-ink);stroke-width:2;stroke-linejoin:round;filter:drop-shadow(0 0 3px #bdd9b266)}
-.battle-cast .cast-thread{fill:none;stroke-width:1.5}.battle-cast .cast-orb{fill:#bce4c67a}
+.battle-cast.cast-elixir{--cast-ink:var(--palette-jade);--cast-fill:color-mix(in srgb, var(--palette-jade) 19.21568627%, transparent)}.battle-cast.cast-spirit{--cast-ink:var(--palette-muted);--cast-fill:color-mix(in srgb, var(--palette-muted) 19.21568627%, transparent)}
+.battle-cast .cast-drawing{display:block;width:100%;height:100%;overflow:visible;fill:var(--cast-fill);stroke:var(--cast-ink);stroke-width:2;stroke-linejoin:round;filter:drop-shadow(0 0 3px color-mix(in srgb, var(--palette-jade) 40%, transparent))}
+.battle-cast .cast-thread{fill:none;stroke-width:1.5}.battle-cast .cast-orb{fill:color-mix(in srgb, var(--palette-jade) 47.84313725%, transparent)}
 .battle-cast .cast-thrust{transform-origin:80px 80px;animation:ta07-thrust .46s ease-out both}
 .battle-cast .cast-ward{transform-origin:80px 130px;animation:ta07-ward .8s ease-out both}
 .battle-cast .cast-gather{transform-origin:80px 80px;animation:ta07-gather .65s ease-out both}
 .battle-cast .cast-burst{transform-origin:80px 80px;animation:ta07-burst .8s ease-out both}
-.battle-cast .cast-elixir{--cast-ink:#c4e9b4;animation:ta07-elixir .8s ease-out both}
-.battle-cast .cast-spirit{--cast-ink:#addce5;transform-origin:80px 80px;animation:ta07-spirit .85s ease-out both}
+.battle-cast .cast-elixir{--cast-ink:var(--palette-jade);animation:ta07-elixir .8s ease-out both}
+.battle-cast .cast-spirit{--cast-ink:var(--palette-muted);transform-origin:80px 80px;animation:ta07-spirit .85s ease-out both}
 .battle-cast .cast-withdraw{transform-origin:80px 80px;animation:ta07-withdraw .6s ease-out both}
 .battle-cast .cast-impact{position:absolute;inset:43% 17%;border-block:1px solid var(--cast-ink);transform:rotate(-23deg);opacity:0;animation:ta07-impact .5s ease-out both}
 .battle-cast:is(.cast-ward,.cast-elixir,.cast-spirit,.cast-withdraw) .cast-impact{display:none}
@@ -24,23 +25,23 @@
 @keyframes ta07-withdraw{from{opacity:0;transform:translateX(12px)}35%{opacity:1}to{opacity:0;transform:translateX(-14px)}}
 @keyframes ta07-impact{from{opacity:0;transform:rotate(-23deg) scaleX(.3)}35%{opacity:.7}to{opacity:0;transform:rotate(-23deg) scaleX(1)}}
 #app .battle-presence>.battle-player-art{transform-origin:50% 100%}
-#app .battle-presence .battle-preparation{position:absolute;left:30%;right:30%;top:34%;bottom:12%;opacity:0;pointer-events:none;--prep-ink:#b7d9c8}
+#app .battle-presence .battle-preparation{position:absolute;left:30%;right:30%;top:34%;bottom:12%;opacity:0;pointer-events:none;--prep-ink:var(--palette-muted)}
 #app .battle-presence[data-state=charging] .battle-preparation{opacity:calc(.2 + var(--cast-progress)*.55);transform:translateY(var(--prep-approach))}
-#app .battle-preparation[data-school=talisman]{--prep-ink:#d3c697}
+#app .battle-preparation[data-school=talisman]{--prep-ink:var(--palette-gold)}
 .battle-preparation>i{position:absolute;display:none;border-color:var(--prep-ink);color:var(--prep-ink)}
-.battle-preparation .prep-weapon{left:47%;top:12%;width:5px;height:75%;border:1px solid;background:linear-gradient(#c3ded444,#d9e7c170);rotate:16deg;transform-origin:50% 85%}
+.battle-preparation .prep-weapon{left:47%;top:12%;width:5px;height:75%;border:1px solid;background:linear-gradient(color-mix(in srgb, var(--palette-muted) 26.66666667%, transparent),color-mix(in srgb, var(--palette-ink) 43.92156863%, transparent));rotate:16deg;transform-origin:50% 85%}
 .battle-preparation[data-move=attack] .prep-weapon{display:block;rotate:65deg;height:53%;top:36%}
-.battle-preparation[data-move=technique] .prep-weapon{display:block;box-shadow:-12px 6px 0 -1px #d3e6c744,12px 6px 0 -1px #d3e6c744}
-.battle-preparation[data-move=release] .prep-weapon{display:block;width:10px;rotate:30deg;box-shadow:0 0 6px #dfd19c55}
-.battle-preparation[data-school=talisman]:is([data-move=technique],[data-move=release]) .prep-weapon{width:30px;height:48px;left:38%;top:30%;rotate:-8deg;border:2px solid;background:linear-gradient(90deg,transparent 44%,#d3c69766 46% 52%,transparent 54%)}
-.battle-preparation .prep-ward{inset:5% -12%;border:1px solid;border-radius:50% 50% 15% 15%;background:#8bb5a211}
+.battle-preparation[data-move=technique] .prep-weapon{display:block;box-shadow:-12px 6px 0 -1px color-mix(in srgb, var(--palette-muted) 26.66666667%, transparent),12px 6px 0 -1px color-mix(in srgb, var(--palette-muted) 26.66666667%, transparent)}
+.battle-preparation[data-move=release] .prep-weapon{display:block;width:10px;rotate:30deg;box-shadow:0 0 6px color-mix(in srgb, var(--palette-gold) 33.33333333%, transparent)}
+.battle-preparation[data-school=talisman]:is([data-move=technique],[data-move=release]) .prep-weapon{width:30px;height:48px;left:38%;top:30%;rotate:-8deg;border:2px solid;background:linear-gradient(90deg,transparent 44%,color-mix(in srgb, var(--palette-gold) 40%, transparent) 46% 52%,transparent 54%)}
+.battle-preparation .prep-ward{inset:5% -12%;border:1px solid;border-radius:50% 50% 15% 15%;background:color-mix(in srgb, var(--palette-jade) 6.66666667%, transparent)}
 .battle-preparation[data-move=guard] .prep-ward{display:block;transform:scale(calc(.7 + var(--cast-progress)*.25))}
 .battle-preparation:is([data-move=technique],[data-move=release]) .prep-weapon{clip-path:inset(var(--prep-unfold) 0 0)}
-.battle-preparation .prep-medicine{left:38%;top:43%;width:24px;height:22px;border:1px solid;border-radius:20% 20% 50% 50%;background:#a5cb9e44}
-.battle-preparation .prep-medicine::before{content:'';position:absolute;left:6px;bottom:28px;width:10px;height:12px;border:1px solid;border-radius:50%;background:#cae7ac55;transform:translateY(var(--prep-approach))}
+.battle-preparation .prep-medicine{left:38%;top:43%;width:24px;height:22px;border:1px solid;border-radius:20% 20% 50% 50%;background:color-mix(in srgb, var(--palette-jade) 26.66666667%, transparent)}
+.battle-preparation .prep-medicine::before{content:'';position:absolute;left:6px;bottom:28px;width:10px;height:12px;border:1px solid;border-radius:50%;background:color-mix(in srgb, var(--palette-jade) 33.33333333%, transparent);transform:translateY(var(--prep-approach))}
 .battle-preparation[data-move=heal] .prep-medicine,.battle-preparation[data-move=restore] .prep-medicine{display:block}
-.battle-preparation[data-move=restore] .prep-medicine{color:#a1d4e6;border-color:currentColor;background:#93c6d344}
-.battle-preparation[data-move=restore] .prep-medicine::before{height:24px;width:6px;left:8px;background:#9bd0e755}
+.battle-preparation[data-move=restore] .prep-medicine{color:var(--palette-muted);border-color:currentColor;background:color-mix(in srgb, var(--palette-muted) 26.66666667%, transparent)}
+.battle-preparation[data-move=restore] .prep-medicine::before{height:24px;width:6px;left:8px;background:color-mix(in srgb, var(--palette-muted) 33.33333333%, transparent)}
 .battle-preparation .prep-return{top:38%;left:8%;width:70%;height:26px;border-top:1px dashed}
 .battle-preparation .prep-return::before{content:'';position:absolute;left:0;top:-6px;width:10px;height:10px;border-left:2px solid;border-bottom:2px solid;rotate:45deg}
 .battle-preparation[data-move=flee] .prep-return{display:block}
@@ -64,4 +65,4 @@
 #app .battle-automation[data-view=manual]>.battle-presence[data-state=failed]{min-height:220px}
 #app .battle-automation[data-view=manual]>.battle-presence[data-state=failed]>:is(.battle-player-art,.enemy-art){min-height:0}
 .hub-reduced .battle-cast *,.hub-reduced .battle-presence [data-cast-role]{animation:none!important}
-@media(prefers-reduced-motion:reduce){.battle-cast *,.battle-presence [data-cast-role]{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.battle-cast *,.battle-presence [data-cast-role]{animation:none!important}}}

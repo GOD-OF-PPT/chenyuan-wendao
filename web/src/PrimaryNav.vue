@@ -24,7 +24,8 @@ const current=computed(()=>props.view&&['home','explore','forge','skills','relic
 <template><nav ref="root" id="primary-navigation" tabindex="-1" class="bottom-nav" :class="{'with-demo':demo,'stage-nav':expanded}" aria-label="主要页面"><div v-if="demo" class="demo-nav-label" data-testid="demo-persistent-label"><strong>演示存档</strong><a :href="normalHref" data-testid="demo-normal">返回正常游戏</a></div><button v-for="(entry,index) in sealed?[]:entries" :key="entry.label" :data-testid="entry.testid" :disabled="navigationGate(game,entry.view).locked" :title="navigationGate(game,entry.view).reason||undefined" :class="{active:expanded?current===entry.view:selected===entry.label}" :aria-current="(expanded?current===entry.view:selected===entry.label)?'page':undefined" @click="entry.tab?emit('select',entry.tab):emit('open',entry.view,$event)"><GameIcon class="nav-icon" :kind="entry.kind" :id="entry.icon"/><span class="nav-name">{{entry.label}}<small v-if="navigationGate(game,entry.view).locked" class="nav-gate">{{navigationGate(game,entry.view).reason}}</small><small v-else-if="'caption' in entry">{{entry.caption}}</small></span></button><small class="prototype-label">数值未平衡</small></nav></template>
 
 <style scoped>
+@layer game{
 .bottom-nav.stage-nav .nav-name{display:flex;align-items:baseline;justify-content:center;gap:4px}
 .bottom-nav.stage-nav .nav-gate{font-size:14px;line-height:1.4;color:var(--game-muted,var(--teal))}
-.bottom-nav button:disabled{opacity:1;color:var(--game-muted,var(--teal));cursor:default}
+.bottom-nav button:disabled{opacity:1;color:var(--game-muted,var(--teal));cursor:default}}
 </style>

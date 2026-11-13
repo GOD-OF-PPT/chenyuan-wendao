@@ -27,7 +27,7 @@
 | Q09 | 8 经济 | 自采炼制、委托双产出、溢价购买各有价值；完整160路线与专项对照实跑 | 已递交：[PR53](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/53)，[联合记录](q07-joint-balance.md) |
 | Q10 | 1 离线收益 | 持久截止/有界追赶/同意图幂等；预算/危险/寿元先到先停；跨页/刷新/失败重试/导入隔离；返场汇总与160路线复核 | 已递交：[PR54](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/54)，973根/461Native/完整174综合UI/正常32/160规则，原红和生产身份保；[记录](q10-away-progress.md) |
 | Q11 | 2 六类结果反馈 | 抉择、轮收获、突破、胜利、成丹、结局均绑定真实已提交结果；无重放领奖、无遮挡、减动效静态反馈 | 已递交：[PR55](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/55)，975根/184完整生产UI/两完整正常路线/3原生UI；[记录](q11-result-moments.md) |
-| Q12 | 12 CSS收敛 | 显式层级且基线图无意外变化；禁新增important/#app；主题色token收敛并实看 | 进行中；合同0159先发布main，实际样式盘点完成，尚未改样式 |
+| Q12 | 12 CSS收敛 | 显式层级且基线图无意外变化；禁新增important/#app；主题色token收敛并实看 | 已递交：[PR56](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/56)，980根/195生产UI/两完整路线/3原生UI；[记录](q12-css-convergence.md) |
 | Q13 | 13 App拆分 | 先里程碑与四tab再按职责拆分；焦点/返回/时钟归属与存档流程行为相同；目标约30KB而非新字节守卫 | 待实施 |
 | Q14 | 14 守卫改革 | 先补关键行为覆盖再归档台账/逆变换/整文件钉；格式化可审查源码；删已证不可达路径/死样式 | 前置已递交：[PR47](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/47)，937根/13资源/19UI/完整415native；格式化、遗留消费者、死代码仍待 |
 | Q15 | 15 回执备份 | 有界保留/索引分页；活动与重试所需原意图不裁；长期合成负载与真实IDB恢复 | 待实施 |
@@ -41,7 +41,7 @@ Q07–Q09联合调参、联合回归，作为一个独立数值交付；其余�
 
 Q01实查确认当前UI源仍被整文件/逆变换守卫钉死；Q02前先做Q14的必要行为接管步骤，保旧检查为明确历史验证并建立当前行为门禁，不再为新UI追加逆变换。该步骤计入Q14进度和三任务检查计数，不能因此把整个Q14或其余19项标完成。
 
-当前完整报告项递交11/20，Q11已递交[PR55](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/55)，Q14前置部分完成。前两组[综合检查](check-three-01.md)、[第二组三任务综合](check-three-02.md)原源/原红保留；[Q06/Q07/Q10综合](q10-three-task-check.md)按64689f5完整174UI、461Native、正常32及973根/160规则闭合。Q11最终46f0a97为975根/184生产UI/两完整正常路线/3原生UI，保各生产身份，不把两条冒完整32。新组三任务计1/3，下一Q12再Q13后综合；全部20项目标继续active。
+当前完整报告项递交12/20，Q12已递交[PR56](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/56)，Q14前置部分完成。前两组[综合检查](check-three-01.md)、[第二组三任务综合](check-three-02.md)原源/原红保留；[Q06/Q07/Q10综合](q10-three-task-check.md)按64689f5完整174UI、461Native、正常32及973根/160规则闭合。Q11/46f0a97的975根/184UI、Q12/050cf1d的980根/195UI及各两完整路线/3原生UI各保身份，不把两条冒完整32。新组三任务计2/3，下一Q13后强制综合；全部20项目标继续active。
 
 ## 验证与交付门槛
 

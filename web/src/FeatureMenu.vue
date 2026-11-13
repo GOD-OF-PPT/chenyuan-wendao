@@ -36,9 +36,10 @@ onScopeDispose(()=>{active=false;generation++;focus?.release(dialog.value);});
  </div>
 </template>
 <style scoped>
+@layer game{
 .feature-tools-dialog{width:420px;padding:24px;color:var(--game-ink,currentColor);border:1px solid var(--game-line,var(--line));background:var(--game-panel,var(--paper))}
 .feature-tools-dialog header{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:16px}
 .feature-tools-dialog h2{font-size:22px;margin:0}
 .feature-tools-dialog nav{display:grid;gap:12px}
-.feature-tools-dialog nav button{text-align:left;min-height:48px;font-size:18px}
+.feature-tools-dialog nav button{text-align:left;min-height:48px;font-size:18px}}
 </style>

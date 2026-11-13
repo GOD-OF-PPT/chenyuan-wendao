@@ -28,6 +28,7 @@ const {page,relocated}=useReadingMemory(()=>mode.value,()=>rows.value.map(r=>r.k
 </template>
 
 <style scoped>
+@layer game{
 .life-identity summary{min-height:44px;display:flex;align-items:center;font-size:18px}
-.life-identity p{overflow-wrap:anywhere}
+.life-identity p{overflow-wrap:anywhere}}
 </style>

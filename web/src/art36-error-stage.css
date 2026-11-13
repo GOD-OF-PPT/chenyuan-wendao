@@ -1,7 +1,8 @@
+@layer game{
 /* Keep the original error, authorization and reading context in view. */
 #app .art10-learning[data-mode=skills] .art10-study-scene[data-state=failed]{grid-template-columns:330px minmax(0,1fr);grid-template-rows:minmax(180px,1fr) auto auto}
 #app .art10-learning[data-mode=skills] .art10-study-scene[data-state=failed]>.jade-reading-place{justify-self:center}
 #app .art10-learning[data-mode=skills] .art10-study-scene[data-state=failed]>.jade-cycle-status{grid-column:1;grid-row:2;gap:0 18px}
 #app .art10-learning[data-mode=skills] .art10-study-scene[data-state=failed]>.ta09-queue{grid-column:2;grid-row:2;grid-template-columns:470px minmax(0,1fr);padding-top:0}
 #app .art10-learning[data-mode=skills] .art10-study-scene[data-state=failed]>.jade-authorization{grid-column:1/-1;grid-row:3}
-#app .art10-learning .art10-study-scene[data-state=failed] .ta09-jade .ta09-jade-inspect{padding:0 20px}
+#app .art10-learning .art10-study-scene[data-state=failed] .ta09-jade .ta09-jade-inspect{padding:0 20px}}

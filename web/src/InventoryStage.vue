@@ -58,8 +58,9 @@ onDeactivated(close);onScopeDispose(()=>{focus?.release(library.value);focus?.re
 </template>
 
 <style scoped>
+@layer game{
 .inventory-quick-use,.inventory-quick-sell{min-width:0}
 .inventory-quick-use p{font-size:18px;line-height:1.5;margin:0 0 6px}
 .inventory-main-decision>.inventory-main-uses,.inventory-main-decision>small{grid-column:1/-1}
-.inventory-main-decision [data-testid=inventory-main-uses]{grid-column:1/-1;min-height:44px}
+.inventory-main-decision [data-testid=inventory-main-uses]{grid-column:1/-1;min-height:44px}}
 </style>

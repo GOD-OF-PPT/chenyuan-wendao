@@ -29,27 +29,28 @@ const icon=computed(()=>props.kind==='breakthrough'&&props.id?{kind:'item' as co
 </div>
 </template>
 <style scoped>
-#app .goal-board{display:grid;grid-template-columns:minmax(210px,.42fr) minmax(0,1fr);gap:30px;min-height:0;min-width:0;flex:1;align-items:start;color:#dce8d6}
+@layer game{
+#app .goal-board{display:grid;grid-template-columns:minmax(210px,.42fr) minmax(0,1fr);gap:30px;min-height:0;min-width:0;flex:1;align-items:start;color:var(--palette-ink)}
 #app .goal-board-object{min-width:0;padding:4px 14px 12px;text-align:center;position:relative}
-#app .goal-board-caption{display:block;font-size:14px;letter-spacing:.12em;color:#b6cdbb;margin:0 0 6px}
-#app .goal-board-vessel{position:relative;display:flex;align-items:center;justify-content:center;min-height:224px;width:100%;max-width:244px;margin:0 auto;padding:18px 12px 38px;color:#accfbc;border:0!important;background:radial-gradient(ellipse at 50% 52%,#39665d66,transparent 66%)!important;box-shadow:none!important;isolation:isolate}
+#app .goal-board-caption{display:block;font-size:14px;letter-spacing:.12em;color:var(--palette-muted);margin:0 0 6px}
+#app .goal-board-vessel{position:relative;display:flex;align-items:center;justify-content:center;min-height:224px;width:100%;max-width:244px;margin:0 auto;padding:18px 12px 38px;color:var(--palette-jade);border:0!important;background:radial-gradient(ellipse at 50% 52%,color-mix(in srgb, var(--palette-raised) 40%, transparent),transparent 66%)!important;box-shadow:none!important;isolation:isolate}
 #app .goal-board-vessel.interactive:active{transform:translateY(2px)}
-#app .goal-board-vessel:focus-visible{outline:2px solid #9dd7b3;outline-offset:2px}
-#app .goal-board-vessel>.game-icon{width:138px!important;height:138px!important;filter:drop-shadow(0 10px 6px #031a1fb3)}
-#app .goal-board-stand{position:absolute;left:9%;right:9%;bottom:24px;height:30px;border-radius:50%;border-block:4px double #9b9c69;background:linear-gradient(#607364,#1c3e3d 70%);box-shadow:0 13px 0 -4px #0b292e,0 20px 16px #051b23;z-index:-1}
-#app .goal-board-pill::before{content:'';position:absolute;top:29px;width:142px;height:142px;border-radius:50%;background:radial-gradient(circle at 32% 24%,#9cbd9b,#356b61 48%,#0b363a 75%);box-shadow:inset -8px -10px 18px #061f2a,inset 2px 2px 1px #d9deb066;z-index:-1}
-#app .goal-board-currency{width:130px!important;height:130px!important;fill:#43857c33;stroke:currentColor;stroke-width:2}
-#app .goal-board-inspect{position:absolute;bottom:4px;left:0;right:0;font-size:18px;line-height:1.4;color:#bce4c9}
-#app .goal-board-object h3{font-size:24px!important;line-height:1.35;margin:10px 0 6px;overflow-wrap:anywhere;color:#eee6c5}
-#app .goal-board-state{display:block;font-size:18px;line-height:1.45;font-weight:400;color:#b8d9bf}
+#app .goal-board-vessel:focus-visible{outline:2px solid var(--palette-jade);outline-offset:2px}
+#app .goal-board-vessel>.game-icon{width:138px!important;height:138px!important;filter:drop-shadow(0 10px 6px color-mix(in srgb, var(--palette-shadow) 70.19607843%, transparent))}
+#app .goal-board-stand{position:absolute;left:9%;right:9%;bottom:24px;height:30px;border-radius:50%;border-block:4px double var(--palette-gold);background:linear-gradient(var(--palette-line),var(--palette-panel) 70%);box-shadow:0 13px 0 -4px var(--palette-night),0 20px 16px var(--palette-shadow);z-index:-1}
+#app .goal-board-pill::before{content:'';position:absolute;top:29px;width:142px;height:142px;border-radius:50%;background:radial-gradient(circle at 32% 24%,var(--palette-jade),var(--palette-line) 48%,var(--palette-panel) 75%);box-shadow:inset -8px -10px 18px var(--palette-night),inset 2px 2px 1px color-mix(in srgb, var(--palette-gold) 40%, transparent);z-index:-1}
+#app .goal-board-currency{width:130px!important;height:130px!important;fill:color-mix(in srgb, var(--palette-line) 20%, transparent);stroke:currentColor;stroke-width:2}
+#app .goal-board-inspect{position:absolute;bottom:4px;left:0;right:0;font-size:18px;line-height:1.4;color:var(--palette-jade)}
+#app .goal-board-object h3{font-size:24px!important;line-height:1.35;margin:10px 0 6px;overflow-wrap:anywhere;color:var(--palette-ink)}
+#app .goal-board-state{display:block;font-size:18px;line-height:1.45;font-weight:400;color:var(--palette-jade)}
 #app .goal-board-detail{font-size:18px!important;line-height:1.55;margin:8px 0;overflow-wrap:anywhere}
 #app .goal-board-context{display:grid;gap:8px;margin-top:12px;min-width:0;text-align:left}
 #app .goal-board-context :deep(p){margin:0}
-#app .goal-board[data-ready=true] .goal-board-stand{border-color:#b5cf9f}
+#app .goal-board[data-ready=true] .goal-board-stand{border-color:var(--palette-jade)}
 #app .goal-board-work{display:flex;flex-direction:column;gap:12px;min-width:0;min-height:0;padding:8px 0;align-self:center}
 #app .goal-board-conditions,#app .goal-board-routes{min-width:0}
-#app .goal-board :deep(.goal-line){position:relative;display:grid;grid-template-columns:42px minmax(0,1fr);gap:14px;padding:18px;border:0;border-block:1px solid #8aab7b66;background:linear-gradient(100deg,#2d574ebf,#112f3566);box-shadow:-4px 5px 0 #08252d66}
-#app .goal-board :deep(.goal-line>span){color:#bad3a6;border-top:2px solid #a9af79;padding-top:8px}
+#app .goal-board :deep(.goal-line){position:relative;display:grid;grid-template-columns:42px minmax(0,1fr);gap:14px;padding:18px;border:0;border-block:1px solid color-mix(in srgb, var(--palette-line) 40%, transparent);background:linear-gradient(100deg,color-mix(in srgb, var(--palette-raised) 74.90196078%, transparent),color-mix(in srgb, var(--palette-night) 40%, transparent));box-shadow:-4px 5px 0 color-mix(in srgb, var(--palette-night) 40%, transparent)}
+#app .goal-board :deep(.goal-line>span){color:var(--palette-jade);border-top:2px solid var(--palette-gold);padding-top:8px}
 #app .goal-board :deep(.goal-line>span>.game-icon){width:36px!important;height:36px!important}
 #app .goal-board :deep(.goal-line>div){font-size:18px;line-height:1.5;min-width:0}
 #app .goal-board :deep(.goal-line small){display:block;font-size:14px;line-height:1.5;margin-top:5px}
@@ -57,7 +58,7 @@ const icon=computed(()=>props.kind==='breakthrough'&&props.id?{kind:'item' as co
 #app .goal-board :deep(.source-details){margin:0 0 10px;padding:0;border:0;background:none}
 #app .goal-board :deep(.source-details p){font-size:14px;line-height:1.5;margin:6px 0}
 #app .goal-board :deep(.goal-source-grid),#app .goal-board :deep(.source-catalogue){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0}
-#app .goal-board :deep(.source-card),#app .goal-board :deep(.source-catalogue>article){display:flex;flex-direction:column;gap:8px;min-width:0;padding:14px;border:0;border-block:3px double #9fa77b88;border-radius:0;background:linear-gradient(100deg,#294f46cc,#0f2e3688);box-shadow:3px 7px 0 -2px #051e2866}
+#app .goal-board :deep(.source-card),#app .goal-board :deep(.source-catalogue>article){display:flex;flex-direction:column;gap:8px;min-width:0;padding:14px;border:0;border-block:3px double color-mix(in srgb, var(--palette-gold) 53.33333333%, transparent);border-radius:0;background:linear-gradient(100deg,color-mix(in srgb, var(--palette-raised) 80%, transparent),color-mix(in srgb, var(--palette-night) 53.33333333%, transparent));box-shadow:3px 7px 0 -2px color-mix(in srgb, var(--palette-shadow) 40%, transparent)}
 #app .goal-board :deep(.source-card strong),#app .goal-board :deep(.source-catalogue strong){font-size:18px;line-height:1.5;font-weight:400}
 #app .goal-board :deep(.source-card small),#app .goal-board :deep(.source-catalogue small){font-size:14px;line-height:1.5;overflow-wrap:anywhere}
 #app .goal-board :deep(.catalogue-pager){margin:10px 0 0;flex-wrap:wrap}
@@ -66,15 +67,15 @@ const icon=computed(()=>props.kind==='breakthrough'&&props.id?{kind:'item' as co
 #app .goal-board-decision :deep(p),#app .goal-board-decision :deep(small){font-size:14px;line-height:1.5;overflow-wrap:anywhere}
 #app .goal-board :deep(button){min-height:44px;font-size:18px;line-height:1.4;white-space:normal;max-width:100%}
 #app .goal-board :deep(.preparation-needs){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
-#app .goal-board :deep(.preparation-needs>article){position:relative;padding:12px 14px 12px 18px;border:0;border-left:3px solid #87ac8b;background:linear-gradient(90deg,#234f4c,#143338);border-radius:0}
+#app .goal-board :deep(.preparation-needs>article){position:relative;padding:12px 14px 12px 18px;border:0;border-left:3px solid var(--palette-line);background:linear-gradient(90deg,var(--palette-raised),var(--palette-panel));border-radius:0}
 #app .goal-board :deep(.preparation-needs strong),#app .goal-board :deep(.preparation-needs span){font-size:18px;line-height:1.5}
 #app .goal-board :deep(.preparation-needs small){font-size:14px;line-height:1.5}
 #app .goal-board :deep(.goal-route-choice){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0}
-#app .goal-board :deep(.goal-route-choice>button){display:grid;grid-template-columns:46px minmax(0,1fr);align-items:center;gap:6px 10px;padding:12px;text-align:left;border-radius:2px;border-color:#8dab7f66;background:#163d3f}
-#app .goal-board :deep(.goal-route-choice>button[aria-pressed=true]){border-color:#b7d6a8;background:#28564e;box-shadow:inset 0 -3px #a6c89488}
-#app .goal-board :deep(.goal-route-mark){grid-column:1;grid-row:1/3;display:grid;place-items:center;width:44px;height:50px;border:1px solid #a6b57c88;color:#e4dcaf;font-size:28px;line-height:1}
+#app .goal-board :deep(.goal-route-choice>button){display:grid;grid-template-columns:46px minmax(0,1fr);align-items:center;gap:6px 10px;padding:12px;text-align:left;border-radius:2px;border-color:color-mix(in srgb, var(--palette-line) 40%, transparent);background:var(--palette-panel)}
+#app .goal-board :deep(.goal-route-choice>button[aria-pressed=true]){border-color:var(--palette-jade);background:var(--palette-raised);box-shadow:inset 0 -3px color-mix(in srgb, var(--palette-jade) 53.33333333%, transparent)}
+#app .goal-board :deep(.goal-route-mark){grid-column:1;grid-row:1/3;display:grid;place-items:center;width:44px;height:50px;border:1px solid color-mix(in srgb, var(--palette-gold) 53.33333333%, transparent);color:var(--palette-gold);font-size:28px;line-height:1}
 #app .goal-board :deep(.goal-route-choice strong){font-size:18px;font-weight:400}
 #app .goal-board :deep(.goal-route-choice small){grid-column:2;font-size:14px;line-height:1.4}
 #app .goal-board :deep(.catalogue-description){font-size:18px;line-height:1.5;margin:12px 0 0}
-#app .goal-board :deep(.catalogue-note){font-size:14px;line-height:1.5}
+#app .goal-board :deep(.catalogue-note){font-size:14px;line-height:1.5}}
 </style>

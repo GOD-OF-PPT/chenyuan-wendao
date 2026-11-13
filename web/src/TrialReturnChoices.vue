@@ -14,17 +14,18 @@ const emit=defineEmits<{checkpoint:[Event];prepare:[Event];record:[Event]}>();
  </section>
 </template>
 <style scoped>
+@layer game{
 :global(#app .art06-stage-home.trial-return-home){grid-template-rows:minmax(0,1fr) auto;align-content:stretch;gap:0}
-.trial-return{display:grid;grid-template-columns:240px minmax(0,680px);gap:34px;align-items:center;justify-content:center;align-self:center;justify-self:center;min-width:0;width:calc(100% - 80px);max-width:1120px;padding:16px 0;color:#e4ead8}
-.trial-return-mark{height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border-block:3px double #a9b187;border-radius:44% 44% 12% 12%;background:radial-gradient(ellipse,#4f816e55,transparent 72%);color:#e2deb4}
-.trial-return-mark>span{font:104px/1.2 'Kaiti SC',STKaiti,serif;text-shadow:0 10px 18px #07242c}
+.trial-return{display:grid;grid-template-columns:240px minmax(0,680px);gap:34px;align-items:center;justify-content:center;align-self:center;justify-self:center;min-width:0;width:calc(100% - 80px);max-width:1120px;padding:16px 0;color:var(--palette-ink)}
+.trial-return-mark{height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border-block:3px double var(--palette-gold);border-radius:44% 44% 12% 12%;background:radial-gradient(ellipse,color-mix(in srgb, var(--palette-line) 33.33333333%, transparent),transparent 72%);color:var(--palette-ink)}
+.trial-return-mark>span{font:104px/1.2 'Kaiti SC',STKaiti,serif;text-shadow:0 10px 18px var(--palette-night)}
 .trial-return-mark>small{font-size:14px;line-height:1.5}
-.trial-return-decision{display:grid;gap:10px;min-width:0;padding:16px 24px;border-left:2px solid #96b98a;background:linear-gradient(100deg,#12343bf2,#112f35e8)}
-.trial-return-decision h2{font:28px/1.5 'Kaiti SC',STKaiti,serif;color:#eee7c7;margin:0}
+.trial-return-decision{display:grid;gap:10px;min-width:0;padding:16px 24px;border-left:2px solid var(--palette-jade);background:linear-gradient(100deg,color-mix(in srgb, var(--palette-panel) 94.90196078%, transparent),color-mix(in srgb, var(--palette-night) 90.98039216%, transparent))}
+.trial-return-decision h2{font:28px/1.5 'Kaiti SC',STKaiti,serif;color:var(--palette-ink);margin:0}
 .trial-return-decision p{font-size:18px;line-height:1.65;margin:0}
 .trial-return-decision small{font-size:14px;line-height:1.55}
 .trial-return-decision button{font-size:18px;min-height:48px;margin:0;white-space:normal}
 .trial-return-decision>.primary{width:100%}
 .trial-return-actions{display:flex;align-items:stretch;gap:12px;min-width:0}.trial-return-actions>button:first-child{flex:1;min-width:0}.trial-return-actions>.text-button{flex:none}
-:global(#app .trial-return-home>.cultivation-notes){justify-self:end;align-self:end;margin:0 40px 16px 0}
+:global(#app .trial-return-home>.cultivation-notes){justify-self:end;align-self:end;margin:0 40px 16px 0}}
 </style>

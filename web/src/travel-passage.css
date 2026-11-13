@@ -1,29 +1,30 @@
+@layer game{
 #app .app-shell.immersive-stage .hub-current:has(>.travel-passage){position:absolute;inset:0!important;width:100%!important;height:100%;max-width:none;max-height:none;min-height:0;margin:0;padding:0!important;border:0;background:transparent!important;box-shadow:none;transform:none!important;display:block;pointer-events:none;overflow:visible}
 #app .hub-current:has(>.travel-passage)>:not(.travel-passage){display:none!important}
-#app .travel-passage{position:absolute;inset:60px 72px 36px 260px;display:flex;flex-direction:column;gap:12px;min-width:0;padding:12px 0;background:none;border:0;color:var(--game-ink,#f0edda);pointer-events:auto;isolation:isolate}
-#app .travel-passage header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 20px;align-items:center;padding:8px 12px;background:linear-gradient(90deg,#102e33e8,#102e33c9)}
-#app .travel-passage header>small{grid-column:1;font-size:14px;line-height:1.5;color:var(--game-jade,#9ed8c2);text-align:left}
+#app .travel-passage{position:absolute;inset:60px 72px 36px 260px;display:flex;flex-direction:column;gap:12px;min-width:0;padding:12px 0;background:none;border:0;color:var(--game-ink,var(--palette-ink));pointer-events:auto;isolation:isolate}
+#app .travel-passage header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 20px;align-items:center;padding:8px 12px;background:linear-gradient(90deg,color-mix(in srgb, var(--palette-night) 90.98039216%, transparent),color-mix(in srgb, var(--palette-night) 78.82352941%, transparent))}
+#app .travel-passage header>small{grid-column:1;font-size:14px;line-height:1.5;color:var(--game-jade,var(--palette-jade));text-align:left}
 #app .travel-passage h2{grid-column:1;margin:0;font-size:30px;line-height:1.5;font-weight:500;letter-spacing:3px;text-align:left}
-#app .travel-passage header>p{grid-column:2;grid-row:1/3;margin:0;font-size:18px;line-height:1.5;color:#d1deca}
-#app .travel-passage-status{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:36px;border-bottom:1px solid #95ad8866;padding:4px 12px;background:#102e33c9}
+#app .travel-passage header>p{grid-column:2;grid-row:1/3;margin:0;font-size:18px;line-height:1.5;color:var(--palette-muted)}
+#app .travel-passage-status{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:36px;border-bottom:1px solid color-mix(in srgb, var(--palette-line) 40%, transparent);padding:4px 12px;background:color-mix(in srgb, var(--palette-night) 78.82352941%, transparent)}
 #app .travel-passage-status strong{font-size:20px;line-height:1.5;font-weight:500}
-#app .travel-passage-status [role=timer]{font-size:26px;line-height:1.5;color:var(--game-jade,#9ed8c2);font-variant-numeric:tabular-nums}
-#app .travel-passage-road{position:relative;flex:1;min-height:190px;margin:0;isolation:isolate;background:radial-gradient(ellipse at 50% 65%,#09252b88,transparent 70%)}
-#app .travel-passage-line{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:#aaa97d88;stroke-width:1.5}
-#app .travel-path-light{stroke:#a0d0ac;stroke-dasharray:7 11;opacity:.4}
-#app .travel-passage-place{position:absolute;top:64%;width:160px;display:flex;flex-direction:column;align-items:center;gap:2px;transform:translateX(-50%);color:#d4dbc0}
+#app .travel-passage-status [role=timer]{font-size:26px;line-height:1.5;color:var(--game-jade,var(--palette-jade));font-variant-numeric:tabular-nums}
+#app .travel-passage-road{position:relative;flex:1;min-height:190px;margin:0;isolation:isolate;background:radial-gradient(ellipse at 50% 65%,color-mix(in srgb, var(--palette-night) 53.33333333%, transparent),transparent 70%)}
+#app .travel-passage-line{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:color-mix(in srgb, var(--palette-gold) 53.33333333%, transparent);stroke-width:1.5}
+#app .travel-path-light{stroke:var(--palette-jade);stroke-dasharray:7 11;opacity:.4}
+#app .travel-passage-place{position:absolute;top:64%;width:160px;display:flex;flex-direction:column;align-items:center;gap:2px;transform:translateX(-50%);color:var(--palette-muted)}
 #app .travel-passage-place.from{left:12%}#app .travel-passage-place.to{left:88%}
-#app .travel-passage-place i{font-size:22px;font-style:normal;line-height:1}#app .travel-passage-place small{font-size:14px;line-height:1.5;background:#102e33c9;padding:0 4px}
-#app .travel-passage-walker{position:absolute;width:120px;height:min(180px,44%);transform:translate(-50%,-100%);fill:#183d37;stroke:#d4d5b1;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 3px 3px #061c22)}
+#app .travel-passage-place i{font-size:22px;font-style:normal;line-height:1}#app .travel-passage-place small{font-size:14px;line-height:1.5;background:color-mix(in srgb, var(--palette-night) 78.82352941%, transparent);padding:0 4px}
+#app .travel-passage-walker{position:absolute;width:120px;height:min(180px,44%);transform:translate(-50%,-100%);fill:var(--palette-raised);stroke:var(--palette-muted);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 3px 3px var(--palette-shadow))}
 #app .travel-passage-walker>.asset-image,.travel-passage-fallback{width:100%;height:100%;background:none}
-#app .traveller-shadow{fill:#061c2299;stroke:none}
-#app .travel-passage figcaption{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:14px;line-height:1.5;color:#c3d1bd}
-#app .travel-passage footer{display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid #95ad8855;padding:8px 12px;background:linear-gradient(90deg,#102e33e8,#102e33c9)}
-#app .travel-passage footer p{margin:0;font-size:18px;line-height:1.5}#app .travel-passage footer small{font-size:14px;line-height:1.5;color:#d1deca}
-#app .travel-passage .text-button{min-width:44px;min-height:44px;padding:6px 10px;font-size:18px;line-height:1.5;border:0;background:none;color:var(--game-jade,#9ed8c2);white-space:nowrap;box-shadow:none}
-#app .travel-passage .text-button:focus-visible{outline:2px solid var(--game-jade,#9ed8c2);outline-offset:2px}
+#app .traveller-shadow{fill:color-mix(in srgb, var(--palette-shadow) 60%, transparent);stroke:none}
+#app .travel-passage figcaption{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:14px;line-height:1.5;color:var(--palette-muted)}
+#app .travel-passage footer{display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid color-mix(in srgb, var(--palette-line) 33.33333333%, transparent);padding:8px 12px;background:linear-gradient(90deg,color-mix(in srgb, var(--palette-night) 90.98039216%, transparent),color-mix(in srgb, var(--palette-night) 78.82352941%, transparent))}
+#app .travel-passage footer p{margin:0;font-size:18px;line-height:1.5}#app .travel-passage footer small{font-size:14px;line-height:1.5;color:var(--palette-muted)}
+#app .travel-passage .text-button{min-width:44px;min-height:44px;padding:6px 10px;font-size:18px;line-height:1.5;border:0;background:none;color:var(--game-jade,var(--palette-jade));white-space:nowrap;box-shadow:none}
+#app .travel-passage .text-button:focus-visible{outline:2px solid var(--game-jade,var(--palette-jade));outline-offset:2px}
 #app .travel-passage[data-state=running] .travel-passage-walker>.asset-image[data-art-state=ready]{animation:passage-stride 1.4s ease-in-out infinite}
-#app .travel-passage[data-state=failed] .travel-passage-status{color:#e5c8b5;border-color:#b9907880}
+#app .travel-passage[data-state=failed] .travel-passage-status{color:var(--palette-ink);border-color:color-mix(in srgb, var(--palette-danger) 50.19607843%, transparent)}
 @keyframes passage-stride{50%{transform:translateY(-3px)}}
 @media(prefers-reduced-motion:reduce){#app .travel-passage *{animation:none!important}}
-#app .hub-reduced .travel-passage *{animation:none!important}
+#app .hub-reduced .travel-passage *{animation:none!important}}
