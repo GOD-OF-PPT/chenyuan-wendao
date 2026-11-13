@@ -1,6 +1,6 @@
-# Q12：样式层与语义调色（本地通过，待递交）
+# Q12：样式层与语义调色（已递交）
 
-依据先发布main的[0159合同](../decisions/0159-css-cascade-and-palette.md)，承接Q11/PR55。完整报告项已递交11/20；Q12尚未交付。工作区chenyuan-quality-q12，分支codex/quality-q12-css-convergence。
+依据先发布main的[0159合同](../decisions/0159-css-cascade-and-palette.md)，承接Q11/PR55。本项已推送并递交[PR56](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/56)，完整报告项已递交12/20，未自动合并。工作区chenyuan-quality-q12，分支codex/quality-q12-css-convergence；以下保历史阶段当时状态。
 
 ## 两阶段与已发生证据
 
