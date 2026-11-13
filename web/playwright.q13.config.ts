@@ -6,7 +6,7 @@ const origin = 'http://127.0.0.1:4200';
 export default {
   ...base,
   testMatch: [...new Set([...base.testMatch, ...numeric.testMatch,
-    'quality-result-moments.spec.ts', 'quality-style-surfaces.spec.ts'])],
+    'quality-result-moments.spec.ts', 'quality-style-surfaces.spec.ts', 'quality-text-containment.spec.ts'])],
   use: { ...base.use, baseURL: origin },
   projects: base.projects!.map(project => ({ ...project,
     use: { ...project.use, baseURL: origin } })),
