@@ -7,6 +7,7 @@ import {useSaveControls} from './use-save-controls';
 import {useActionView} from './use-action-view';
 import {useStageNavigation} from './use-stage-navigation';
 import {useStageFocus} from './use-stage-focus';
+import {useDestinations} from './use-destinations';
 import {useConfigurationReview} from './use-configuration-review';
 import ActivityCatalogues from './ActivityCatalogues.vue';
 import {useDirectActions} from './use-direct-actions';
@@ -162,9 +163,11 @@ const {owner:navigationOwner,tab,hubView,equipmentOpen,lifeOpen,equipmentReading
 const stageFocus=useStageFocus(store,focus,{owner:()=>navigationOwner.value,advance:()=>stageNavigation.advance(),content:currentContent,element:()=>contentPanel.value,life:()=>showLife()});
 const {armStageFocus,focusObserved,focusContent}=stageFocus;
 const activityPlans=useActivityPlans(store,focus,{
- owner:()=>navigationOwner.value,advance:()=>stageNavigation.advance(),select:selectTab,open:openHub,current:()=>({singleScreen:singleScreen.value,view:hubView.value}),dismissResume:()=>resumeVisible.value=false,navigate,inspectMilestone,
+ owner:()=>navigationOwner.value,advance:()=>stageNavigation.advance(),select:selectTab,open:openHub,current:()=>({singleScreen:singleScreen.value,view:hubView.value}),dismissResume:()=>resumeVisible.value=false,navigate:(...args)=>destinations.navigate(...args),inspectMilestone,
 });
 provide(activityPlansKey,activityPlans);
+const destinations=useDestinations(store,focus,stageNavigation,activityPlans,{singleScreen:()=>singleScreen.value,nextKind:()=>step.value?.kind,quantity,batch});
+const {navigate,inspectCaveDestination,inspectTradeoffDestination}=destinations;
 const {collectionTarget,highlight,trainingInspectionPlan,sourceInspectionPlan,productionInspectionPlan,preparationInspectionPlan,preparationInspectionSaved,preparationInspectionExact,adventureInspectionPlan,adventureInspectionSaved,activityPlanVisible,hubTrainingMethod,clearInspections,inspectionOwner,arrangeTravel,travel,inspectAdventure,startAdventure,startTraining,startSource,viewActivityPlan,startProduction,inspectProduction,moveProduction,startPreparation,inspectPreparationPlan,inspectPreparation,movePreparation}=activityPlans;
 
 const confirmation=useGameConfirmation({focus,appearance:()=>({fontScale:fontScale.value,reduceMotion:reduceMotion.value})});
@@ -195,12 +198,6 @@ const trialView=computed(()=>game.value?trialGuidance(game.value):null);
 const step=computed(()=>game.value?nextStep(game.value):null);
 function openPreparation(event?:Event){return openHub('journey',event);}
 function openTradeoffs(kind:ProgressionKind,seed:ProgressionVariant){stageReturns.captureTradeoff();tradeoffKind.value=kind;tradeoffSeed.value=seed;tradeoffEntry.value++;return openHub('tradeoffs');}
-function inspectCaveDestination(request:NavigationRequest){rememberHubOrigin();return inspectTradeoffDestination(request);}
-async function inspectTradeoffDestination(request:NavigationRequest){
- if(!game.value)return;
- if(game.value.core.world.location!==request.location||request.focusId?.startsWith('travel-')){const owns=inspectionOwner();const owner=await openHub('explore');if(owns(owner)){adventureInspectionPlan.value=null;adventureInspectionSaved.value=false;highlight.value='travel-'+request.location;}return;}
- return navigate(request);
-}
 async function inspectNext(event?:Event){
  const kind=step.value?.kind;
  if(kind==='prepare')return openPreparation(event);
@@ -268,21 +265,6 @@ const worldArt=computed(()=>game.value?sceneAssetPath(scenePresentation(game.val
 function focusCultivation(){focus.target(document.getElementById('cultivation-actions'));}
 const activeStory = computed(() => game.value && core.value?.activeEvent && stories[core.value.activeEvent.id] ? getStoryContext(game.value, core.value.activeEvent.id) : null);
 const relationships = computed(() => game.value ? getRelationships(game.value) : []);
-async function navigate(request:NavigationRequest,arrived?:()=>void):Promise<void>{
- if(!game.value||store.busy||!store.available)return;
- if(game.value.core.world.location!==request.location)return arrangeTravel(request.location,()=>navigate(request,arrived));
- stageNavigation.advance();
-  const focusRevision = selectTab(request.tab); highlight.value = request.focusId ?? '';
-  if(request.focusId&&/^(equipment-panel|school-|learn-|equip-|forge-|study-manual)/.test(request.focusId)){equipmentOpen.value=true;if(singleScreen.value)hubView.value=request.focusId.startsWith('forge-')?'relics':'skills';}if(singleScreen.value&&request.focusId?.startsWith('craft-'))hubView.value='forge';if(singleScreen.value&&request.tab==='修行'&&request.focusId?.startsWith('trial-'))hubView.value='trial-preparation';
-  if(singleScreen.value&&/^(buy-|sell-)/.test(request.focusId??''))hubView.value='market';if(singleScreen.value&&request.focusId==='rest'){hubView.value='recovery';preparationInspectionPlan.value={kind:'rest',maxCycles:1,remainingMonthsReserve:1};}if(singleScreen.value&&request.focusId==='cultivation-actions'&&step.value?.kind==='recover')hubView.value='recovery';
-  if (request.quantity) quantity.value = request.quantity;
-  if (request.collection) {collectionTarget.value = request.collection;batch.value='target';}
-  await nextTick();
-  if (navigationOwner.value !== focusRevision) return;
-  arrived?.();
-  const element = request.focusId ? document.querySelector<HTMLElement>(`[data-testid="${request.focusId}"]`) : null;
-  if(element){const target=element.matches(':disabled')?(element.closest<HTMLElement>('article,.recipe,.market-row')??element.parentElement):element;if(target){if(target!==element)target.tabIndex=-1;target.scrollIntoView({block:'center'});focus.target(target);}}
-}
 const consumptionPreview = computed(() => game.value ? createConsumptionPreview(game.value, tracking.target.value, preparation.value) : null);
 function consumption(action: Action) {
   const gaps = consumptionPreview.value?.(action) ?? [];
