@@ -136,7 +136,7 @@ async function frame(page: Page, info: TestInfo, name: string) {
         }),
       copy: [
         ...root.querySelectorAll<HTMLElement>(
-          '.relic-description h3,.relic-description p,.relic-cycle,.relic-object>strong,.relic-authorization strong,.relic-authorization small,.relic-authorization span,.relic-material-slots strong,.relic-material-slots small,.relic-object-verb,.relic-result,.relic-locked h3,.relic-locked p,.relic-locked small',
+          '.relic-description h3,.relic-description p,[data-testid=production-equip-reason],.relic-cycle,.relic-object>strong,.relic-authorization strong,.relic-authorization small,.relic-authorization span,.relic-material-slots strong,.relic-material-slots small,.relic-object-verb,.relic-result,.relic-locked h3,.relic-locked p,.relic-locked small',
         ),
       ]
         .filter(visible)

@@ -139,6 +139,9 @@ test('an unaffordable owned conversion retains its exact quote and a one-dew sou
   await openHubFeature(page, 'relics');
   await selectRelic(page, 'jade_seal');
   await ownedArtifactSize(page, 'jade_seal');
+  await expect(page.getByTestId('production-equip-reason')).toContainText(
+    '灵露',
+  );
   await controlsFit(page, '[data-testid=relic-atelier]');
   await captureFixedPng(
     page,
@@ -169,6 +172,54 @@ test('an unaffordable owned conversion retains its exact quote and a one-dew sou
   expect(await recoveryDatabase(page)).toEqual(raw);
 });
 async function controlsFit(page: Page, selector: string) {
+  const reasons = await page.locator(selector).evaluate((root) =>
+    Array.from(
+      root.querySelectorAll<HTMLElement>(
+        '[data-testid=production-equip-reason]',
+      ),
+    )
+      .filter((n) => n.checkVisibility())
+      .map((n) => {
+        const b = n.getBoundingClientRect(),
+          q = document.createRange();
+        q.selectNodeContents(n);
+        const clips: DOMRect[] = [];
+        for (
+          let p = n.parentElement;
+          p && p !== document.body;
+          p = p.parentElement
+        )
+          if (
+            /hidden|clip|auto|scroll/.test(
+              getComputedStyle(p).overflow +
+                getComputedStyle(p).overflowX +
+                getComputedStyle(p).overflowY,
+            )
+          )
+            clips.push(p.getBoundingClientRect());
+        const inside = (a: DOMRect, b: DOMRect) =>
+          a.left >= b.left - 0.5 &&
+          a.right <= b.right + 0.5 &&
+          a.top >= b.top - 0.5 &&
+          a.bottom <= b.bottom + 0.5;
+        return {
+          text: n.innerText,
+          font: parseFloat(getComputedStyle(n).fontSize),
+          range: Array.from(q.getClientRects())
+            .filter((r) => r.width && r.height)
+            .every((r) => inside(r, b) && clips.every((c) => inside(r, c))),
+          overflow:
+            n.scrollHeight <= n.clientHeight + 1 &&
+            n.scrollWidth <= n.clientWidth + 1,
+        };
+      }),
+  );
+  for (const r of reasons) {
+    expect(r.font, r.text).toBeGreaterThanOrEqual(14);
+    expect(r.range, r.text).toBe(true);
+    expect(r.overflow, r.text).toBe(true);
+  }
+
   const rows = await page.locator(selector).evaluate((root) =>
     Array.from(root.querySelectorAll('button'))
       .filter((n) => n.checkVisibility())
