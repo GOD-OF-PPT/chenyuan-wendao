@@ -33,6 +33,7 @@ export function expectBaselineUpgrade(before: any, after: any) {
       activityId: string | null = null,
       ordinal: number | null = null,
       role = 'control',
+      windowId: string | null = null,
       checkpointRevision: number | null = null;
     if (r.format === 'chenyuan-control-receipt') id = r.mutation;
     else if (r.format === 'chenyuan-receipt') id = r.command;
@@ -68,6 +69,16 @@ export function expectBaselineUpgrade(before: any, after: any) {
           baseline: true,
         });
       }
+    } else if (r.format === 'chenyuan-scheduled-receipt') {
+      id = r.input.mutation;
+      activityId = r.proof.recordAfter.activity.id;
+      role = ['START', 'ADOPT'].includes(r.input.kind)
+        ? 'start'
+        : r.input.kind === 'ADVANCE'
+          ? 'advance'
+          : 'control';
+      if (role === 'advance' && r.proof.cycles > 0)
+        windowId = r.proof.scheduleBefore?.window?.id ?? id.commandId;
     } else
       throw Error(
         'The explicit old-source fixture contains an unreviewed receipt family',
@@ -90,7 +101,7 @@ export function expectBaselineUpgrade(before: any, after: any) {
         activityId,
         ordinal,
         role,
-        windowId: null,
+        windowId,
         checkpointRevision,
         checksum: null,
       },

@@ -274,10 +274,10 @@ export function beginReceiptRetention(
     meta.indexNames.length !== 3 ||
     !meta.indexNames.contains('order') ||
     !meta.indexNames.contains('parent') ||
-    !meta.indexNames.contains('run') ||
+    !meta.indexNames.contains('receipt-key') ||
     !matches(meta.index('order'), ['kind', 'sequence']) ||
     !matches(meta.index('parent'), 'parentKey') ||
-    !matches(meta.index('run'), ['kind', 'runId']) ||
+    !matches(meta.index('receipt-key'), ['kind', 'key']) ||
     receipts.keyPath !== null ||
     receipts.autoIncrement ||
     receipts.indexNames.length !== 1 ||
@@ -305,6 +305,94 @@ export function beginReceiptRetention(
     try {
       validateCounter(read.result);
       c.counter = read.result;
+    } catch (error) {
+      abort(error);
+    }
+  };
+}
+
+/** Refuse unknown metadata before open can perform content or ownership migration. */
+export function validateReceiptRetention(
+  tx: IDBTransaction,
+  done: () => void,
+  abort: (error: unknown) => void,
+) {
+  const cursor = tx.objectStore(RETENTION_STORE).openCursor(),
+    sequences = new Set<number>();
+  const sameKey = (a: IDBValidKey, b: IDBValidKey) => {
+    try {
+      if (indexedDB.cmp(a, b) !== 0) invalid();
+    } catch {
+      invalid();
+    }
+  };
+  const sequence = (n: number) => {
+    if (sequences.has(n) || n > context(tx).counter.sequence) invalid();
+    sequences.add(n);
+  };
+  cursor.onsuccess = () => {
+    try {
+      const entry = cursor.result;
+      if (!entry) {
+        done();
+        return;
+      }
+      const key = entry.key,
+        row = entry.value;
+      if (key === 'counter') validateCounter(row);
+      else if (Array.isArray(key) && key[0] === 'receipt' && key.length === 2) {
+        validateMeta(row);
+        sameKey(key, receiptKey(row.key));
+        sequence(row.sequence);
+        const fields = Object.keys(row)
+          .filter((k) => k !== 'quarantined')
+          .sort()
+          .join(',');
+        if (
+          fields !==
+          'activityId,baseline,checkpointRevision,checksum,commandId,format,key,kind,ordinal,parentKey,pending,receiverId,role,runId,sequence,version,windowId'
+        )
+          invalid();
+      } else if (
+        Array.isArray(key) &&
+        key[0] === 'history' &&
+        key.length === 3
+      ) {
+        validateHistory(row);
+        sameKey(key, historyKey(row.runId, row.activityId));
+        if (
+          Object.keys(row).sort().join(',') !==
+          'activityId,baseline,deleted,format,kind,runId,total,version'
+        )
+          invalid();
+      } else if (
+        Array.isArray(key) &&
+        key[0] === 'backup' &&
+        key.length === 2
+      ) {
+        validateBackup(row);
+        sameKey(key, ['backup', row.group]);
+        sequence(row.sequence);
+        if (
+          Object.keys(row).sort().join(',') !==
+          'format,group,keys,kind,parents,sequence,version'
+        )
+          invalid();
+      } else if (
+        Array.isArray(key) &&
+        key[0] === 'baseline-backup' &&
+        key.length === 2
+      ) {
+        if (
+          !row ||
+          row.format !== 'chenyuan-baseline-backup' ||
+          row.version !== 1 ||
+          Object.keys(row).sort().join(',') !== 'format,key,version'
+        )
+          invalid();
+        sameKey(key, ['baseline-backup', row.key]);
+      } else invalid();
+      entry.continue();
     } catch (error) {
       abort(error);
     }
@@ -478,7 +566,7 @@ export function createReceiptRetention(
   const meta = tx.objectStore(RETENTION_STORE);
   meta.createIndex('order', ['kind', 'sequence']);
   meta.createIndex('parent', 'parentKey');
-  meta.createIndex('run', ['kind', 'runId']);
+  meta.createIndex('receipt-key', ['kind', 'key']);
   tx.objectStore(RECEIPTS).createIndex(HISTORY_INDEX, [
     'input.kind',
     'activity.runId',
@@ -519,18 +607,19 @@ export function createReceiptRetention(
       abort(error);
     }
   };
-  const backups = tx.objectStore('full-backups').openCursor();
+  // Capture original membership before the same upgrade transaction can append
+  // a new migration group. A live cursor could adopt its newly created keys.
+  const backups = tx.objectStore('full-backups').getAllKeys();
   backups.onsuccess = () => {
-    if (!backups.result) return;
-    meta.put(
-      {
-        format: 'chenyuan-baseline-backup',
-        version: 1,
-        key: backups.result.key,
-      },
-      ['baseline-backup', backups.result.key],
-    );
-    backups.result.continue();
+    try {
+      for (const key of backups.result)
+        meta.put({ format: 'chenyuan-baseline-backup', version: 1, key }, [
+          'baseline-backup',
+          key,
+        ]);
+    } catch (error) {
+      abort(error);
+    }
   };
 }
 
@@ -649,16 +738,24 @@ export function readRetainedHistory<T>(
         runRawCount = tx
           .objectStore(RECEIPTS)
           .count(IDBKeyRange.bound(runPrefix, runPrefix + '\uffff')),
-        runMetaCount = tx
+        prefixMetaCount = tx
           .objectStore(RETENTION_STORE)
-          .index('run')
-          .count(['receipt', runId]),
+          .index('receipt-key')
+          .count(
+            IDBKeyRange.bound(
+              ['receipt', runPrefix],
+              ['receipt', runPrefix + '\uffff'],
+            ),
+          ),
         count = index.count(range);
       count.onsuccess = () => {
         try {
           const total = h?.total ?? 0;
           if (
-            runRawCount.result !== runMetaCount.result ||
+            // Compare the same key interval on both sides, including any
+            // legitimate protected run sharing its prefix. Ownership below is
+            // still exact run/activity data from the cycle index.
+            runRawCount.result !== prefixMetaCount.result ||
             count.result !== total - (h?.deleted ?? 0)
           )
             throw new RuleError(

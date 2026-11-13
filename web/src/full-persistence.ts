@@ -65,6 +65,7 @@ import {
   RETENTION_STORE,
   REPLAY_LIMIT,
   beginReceiptRetention,
+  validateReceiptRetention,
   createReceiptRetention,
   storedReceiptEpoch,
   rememberReceiptOffer,
@@ -1188,6 +1189,9 @@ export class FullSaveRepository {
     });
     const repository = new FullSaveRepository(db, receiver);
     try {
+      await repository.transaction('readonly', (tx, complete, abort) =>
+        validateReceiptRetention(tx, () => complete(undefined), abort),
+      );
       await repository.migrateContent();
       return repository;
     } catch (error) {
