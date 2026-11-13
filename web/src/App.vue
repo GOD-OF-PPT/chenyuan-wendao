@@ -15,9 +15,9 @@ import GameSettings from './GameSettings.vue';
 import DemoMenu from './DemoMenu.vue';
 import GameplayHelp from './GameplayHelp.vue';
 import LegacyContent from './LegacyContent.vue';
-import ExplorationTab from './ExplorationTab.vue';
-import InventoryTab from './InventoryTab.vue';
-import FateTab from './FateTab.vue';
+
+
+
 
 import { computed, nextTick, onMounted, onScopeDispose, provide, ref, shallowRef, watch } from 'vue';
 import { useGame } from './store';
@@ -27,74 +27,74 @@ import {navigationGate} from './navigation-gates';
 import FeatureMenu from './FeatureMenu.vue';
 import * as C from '../../src/full/content.ts';
 import { gamePhase } from '../../src/full/contracts.ts';
-import { getBreakthroughGoal, previewAction, getStoryContext, getRelationships, getLifeOverview, getTrialJourney, getAscensionChoices } from '../../src/full/queries.ts';
+import {getStoryContext,getRelationships,getLifeOverview,getTrialJourney} from '../../src/full/queries.ts';
 import type { Action, Move } from '../../src/full/types.ts';
 import { stories } from '../../src/full/events.ts';
-import { getTrackedGoal, createConsumptionPreview, type CollectionTarget } from '../../src/full/goals.ts';
+import {getTrackedGoal,createConsumptionPreview} from '../../src/full/goals.ts';
 import { useTracking } from './use-tracking';
-import { formatCosts, formatDelta } from './presentation';
+import {formatDelta} from './presentation';
 import type { NavigationRequest } from './navigation';
-import {repeats} from '../../src/full/repetition';
+
 import GoalPanel from './GoalPanel.vue';
 import CharacterPanel from './CharacterPanel.vue';
 import GameHud from './GameHud.vue';
 import SealedLifeHud from './SealedLifeHud.vue';
-import SealedLifeStage from './SealedLifeStage.vue';
+
 import SealedLifeNav from './SealedLifeNav.vue';
 import ScenePanel from './ScenePanel.vue';
-import BattlePanel from './BattlePanel.vue';
+
 import PrimaryNav from './PrimaryNav.vue';
 import AssetImage from './AssetImage.vue';
 import PortraitImage from './PortraitImage.vue';
 import GameIcon from './GameIcon.vue';
-import ProgressTrack from './ProgressTrack.vue';
-import ChoiceCard from './ChoiceCard.vue';
+
+
 import ActionEffects from './ActionEffects.vue';
 import ActionFeedbackStage from './ActionFeedbackStage.vue';
 import ResultMoments from './ResultMoments.vue';
 import FeedbackSkip from './FeedbackSkip.vue';
 import StoryCatalogues from './StoryCatalogues.vue';
 import CultivationStageHost from './CultivationStageHost.vue';
-import CultivationSite from './CultivationSite.vue';
-import CultivationOngoing from './CultivationOngoing.vue';
+
+
 import MilestoneGate from './MilestoneGate.vue';
-import OpeningOffering from './OpeningOffering.vue';
-import OpeningResponse from './OpeningResponse.vue';
-import CaveThresholdObject from './CaveThresholdObject.vue';
-import CultivationNotes from './CultivationNotes.vue';
+
+
+
+
 import ActionExecution from './ActionExecution.vue';
 import StageOutcome from './StageOutcome.vue';
 import {recoveryMessage} from './activity-view';
-import ExplorePanel from './ExplorePanel.vue';
-import GoodsPanel from './GoodsPanel.vue';
-import PreparationPanel from './PreparationPanel.vue';
-import TrainingPlanner from './TrainingPlanner.vue';
-import ProgressionChoices from './ProgressionChoices.vue';
+
+
+
+
+
 import type {ProgressionKind,ProgressionVariant} from '../../src/full/progression.ts';
 import TrainingActivity from './TrainingActivity.vue';
-import AdventureHistory from './AdventureHistory.vue';
-import ActivityHistory from './ActivityHistory.vue';
-import {ADVENTURE_CYCLE_MS,isAdventurePlan, singleBattlePlan, type AdventurePlan} from '../../src/full/adventure.ts';
-import MarketPlanner from './MarketPlanner.vue';
-import RecoveryPlanner from './RecoveryPlanner.vue';
+
+
+import {singleBattlePlan} from '../../src/full/adventure.ts';
+
+
 import ConfigurationDialog from './ConfigurationDialog.vue';
-import {isPreparationPlan,type PreparationPlan} from '../../src/full/preparation.ts';
-import type {Game} from '../../src/full/types.ts';
-import {previewActivity,type CultivationPlan,type SourcePlan,type CraftPlan,type ForgePlan} from '../../src/full/activity.ts';
-import NarrativePanel from './NarrativePanel.vue';
-import FateCatalogue from './FateCatalogue.vue';
-import LifeCatalogue from './LifeCatalogue.vue';
+
+
+
+
+
+
 import LifespanGuide from './LifespanGuide.vue';
-import CultivationFallback from './CultivationFallback.vue';
+
 import {lifespanGuidance} from './lifespan-guidance';
 import TrialCatalogue from './TrialCatalogue.vue';
-import {narrativeFor,type Reading} from './story-pages';
-import ReviewPages from './ReviewPages.vue';
+import {narrativeFor} from './story-pages';
+
 import {nextStep} from './play-flow';
 import {trialGuidance} from './trial-goal';
-import {trialReturnView} from './trial-return';
-import TrialReturnChoices from './TrialReturnChoices.vue';
-import {NPC_PORTRAITS,SCENE_ASSETS,DESKTOP_UI_ASSETS,PANEL_MATERIAL_ASSETS,sceneAssetPath} from './assets';
+
+
+import {SCENE_ASSETS,PANEL_MATERIAL_ASSETS,sceneAssetPath} from './assets';
 import {scenePresentation} from './scene-presentation';
 import ActionFeedback from './ActionFeedback.vue';
 import EquipmentPanel from './EquipmentPanel.vue';
@@ -105,19 +105,18 @@ import TrialPreparationPanel from './TrialPreparationPanel.vue';
 import TrialProgressPanel from './TrialProgressPanel.vue';
 import type { AscensionEnding } from '../../src/full/ascension.ts';
 import {useLocalExperience} from './use-local-experience';
-import LocalExperiencePanel from './LocalExperiencePanel.vue';
+
 import {useSession} from './session';
 import MilestoneReview from './MilestoneReview.vue';
-import {useMilestoneReview,type PreparedMilestone} from './milestone-view';
+import {useMilestoneReview} from './milestone-view';
 import {isMilestoneAction} from '../../src/full/milestones.ts';
 import {demoSpec} from '../../src/demo.ts';
 import {normalLink} from './demo-loader';
 import {guidanceFor} from './guidance';
 import GuidancePanel from './GuidancePanel.vue';
-import CataloguePager from './CataloguePager.vue';
+
 import GameConfirmDialog from './GameConfirmDialog.vue';
 import {useGameConfirmation} from './use-game-confirmation';
-const helpPage=ref(0);
 import {journalAnchors,type JournalLedger,type JournalWrite} from './journal-anchors';
 
 const session=useSession(),demoMenuView=ref<InstanceType<typeof DemoMenu>>();
@@ -131,7 +130,6 @@ const uiLocked=computed(()=>store.busy||!store.available);
 const pendingStoryError=computed(()=>store.unresolved);
 const saveTone=computed(()=>!store.ready||store.busy?'pending':store.error||!store.available?'problem':store.game&&store.saved?'saved':'idle');
 const saveDisplayLabel=computed(()=>store.saveLabel==='本次未保存'?'保存待确认':store.saveLabel);
-const openingChoices=[{id:'help',name:'赠丹相助',detail:'结下赠药之缘'},{id:'trade',name:'以丹换简',detail:`获得剑简，剑修终结伤害 +${ruleContent.value.swordManual.damageBonus}`},{id:'leave',name:'保留丹药',detail:'保留回春丹，各自离开'}] as const;
 const experience=useLocalExperience();let appActive=true;const stopObserving=store.observe(value=>{const observedNavigation=navigationRevision;if(['import','restore','restart','new_game'].includes(value.kind)){readingGeneration.value++;narrativeContext.value++;stageReturns.reset();journalWrites.value=[];}if(value.kind==='action'&&value.result&&value.operation&&store.game?.core.revision===value.result.revisionAfter){const run=store.game.core.runId,revision=value.result.revisionAfter,added=value.operation==='EVENT'?0:value.operation==='BATTLE'&&value.flags.includes('battle_won')?2:1;journalWrites.value=[...journalWrites.value.filter(w=>w.run!==run||w.revision!==revision),{run,revision,added}].slice(-100);}if(value.kind==='action'&&value.result&&store.game&&!value.replayed&&store.lastFromActivity&&store.activityOwned&&store.activity?.version===7&&store.activity.plan.action.type===value.operation&&store.activity.runId===store.game?.core.runId&&value.result.revisionAfter===store.game.core.revision&&((hubView.value==='current'&&value.operation==='CHOOSE'&&value.result.phaseBefore==='opening'&&value.result.phaseAfter==='idle')||(hubView.value==='cultivation'&&value.operation==='BREAKTHROUGH'&&value.result.delta.realm.before!==value.result.delta.realm.after)||(hubView.value==='trial-preparation'&&value.operation==='START_TRIAL'&&value.result.phaseBefore==='idle'&&value.result.phaseAfter==='trial-question')))selectTab('修行');focusObserved(value,observedNavigation);experience.record(value);},experience.fault);onScopeDispose(()=>{appActive=false;stopObserving();});
 const producing=computed(()=>!!store.activity&&store.activity.status!=='stopped'&&(store.activity.plan.kind==='craft'||store.activity.plan.kind==='forge'));
 const equipmentOpen=ref(false),resumeVisible=ref(false),hubView=ref('home');
@@ -245,7 +243,6 @@ function journalKey(index:number){return journalKeys.value[(game.value?.journal.
 const tracking = useTracking(game);
 const trialView=computed(()=>game.value?trialGuidance(game.value):null);
 const step=computed(()=>game.value?nextStep(game.value):null);
-const needsPreparation=computed(()=>step.value?.kind==='prepare');
 function openPreparation(event?:Event){return openHub('journey',event);}
 function openTradeoffs(kind:ProgressionKind,seed:ProgressionVariant){stageReturns.captureTradeoff();tradeoffKind.value=kind;tradeoffSeed.value=seed;tradeoffEntry.value++;return openHub('tradeoffs');}
 function inspectCaveDestination(request:NavigationRequest){rememberHubOrigin();return inspectTradeoffDestination(request);}
@@ -301,12 +298,10 @@ const guidance=computed(()=>guidanceFor(game.value,store.lastReplayed?null:store
 watch(()=>game.value?.core.runId,()=>skippedGuides.value=[]);
 async function skipGuidance(){skippedGuides.value=[...skippedGuides.value,guidance.value.id];await nextTick();focusContent();}
 async function showGameplayHelp(){const opener=settings.value?.open?settingsButton.value??null:focus.capture();settings.value?.close();await nextTick();focus.open(gameplayHelp.value,opener);}
-const goal = computed(() => game.value ? getBreakthroughGoal(game.value) : null);
 const journey = computed(() => game.value ? getTrialJourney(game.value) : null);
 const overview = computed(() => game.value ? getLifeOverview(game.value) : null);
 const lifeOpen = ref(false), lifeSection = ref<HTMLDetailsElement>();
 const {quote,can,why,cost}=useActionView(store);
-function choiceDetails(action:Action,detail:string){const p=quote(action);return [{label:'即刻代价',value:formatCosts(p?.actualCosts??p?.costs??null)},{label:'已知结果',value:detail},{label:'预计变化',value:p?.delta?formatDelta(p.delta):'条件未满足，当前不会执行'},{label:'当前条件',value:why(action)||'可选择；由你确认后执行'}];}
 function viewReceipt(){if(store.activity?.version===7&&store.activity.stopReason?.code!=='STATE_CHANGED')return inspectMilestone(store.activity);return openHub('receipt');}
 const stoppedTraining = computed(()=>store.activity?.status==='stopped'&&store.activity.stopReason?.code!=='STATE_CHANGED');
 function act(action: Action) { resumeVisible.value=false;if(action.type==='TRAVEL')return travel(action.location);if(action.type==='BATTLE')return battle(action.move);if(action.type==='ENCOUNTER')return inspectAdventure(action.enemy);if(action.type==='CULTIVATE'){const n=action.count??1;return startTraining({kind:'cultivation',method:action.method,maxCycles:n,until:'cycles',stoneBudget:action.method==='natural'?0:Math.min(core.value?.player.stones??0,(quote({...action,count:1})?.costs?.stones??0)*n),stoneReserve:0});}if(action.type==='SOURCE'){const n=action.count??1,source=ruleContent.value.sources[action.sourceId],target=action.target?{kind:'item' as const,id:action.target.item,quantity:action.target.quantity}:batch.value==='target'?collectionTarget.value:null;return startSource({kind:'source',sourceId:action.sourceId,maxCycles:n,until:target?'target':'cycles',target,monthBudget:n*source.months,remainingMonthsReserve:1});}if(action.type==='CRAFT'||action.type==='FORGE')return inspectProduction(action);if(['BUY','SELL','USE','REST','LEARN','STUDY'].includes(action.type))return inspectPreparation(action);if(action.type==='SCHOOL'||action.type==='EQUIP'||action.type==='EQUIP_RELIC')return inspectConfiguration(action);if(store.activityRunning){store.activityNotice='当前活动进行中，请先暂停再行动。';return;}if (action.type === 'START_TRIAL') return showTrialPreparation(); if (action.type === 'END') return reviewAscension(action.ending); if(isMilestoneAction(action))return selectMilestone(action); const owner=navigationRevision; return focus.afterAction(async()=>{await store.act(action);},()=>owner===navigationRevision); }
@@ -318,16 +313,9 @@ function trackTrialMaterial(target:Parameters<typeof selectTracking>[0]){selectT
 function retryOperation(){const owner=navigationRevision;return focus.afterAction(()=>store.retry(),()=>owner===navigationRevision);}
 async function trackProduction(target:Parameters<typeof selectTracking>[0]){selectTracking(target);await openHub('goal');}
 const {configurationError,configurationIntent,configurationSnapshot,configurationStale,configurationRetry,inspectConfiguration,closeConfiguration,refreshConfiguration,confirmConfiguration}=useConfigurationReview(store);
-const recoveryNeeded=computed(()=>!!quote({type:'REST'})?.allowed);
-const trialReturn=computed(()=>game.value?trialReturnView(game.value,store.hasCheckpoint?store.checkpointSummary:null,store.trialRecovery,store.ready&&store.available&&!store.busy&&!store.syncIssue&&!(store.warning&&!store.hasCheckpoint)):null);
 const cultivationHome=computed(()=>!!game.value&&phase.value==='idle'&&tab.value==='修行'&&core.value?.world.location==='cave');
 const worldArt=computed(()=>game.value?sceneAssetPath(scenePresentation(game.value),cultivationHome.value&&!producing.value&&!['home','cultivation','goal','journey'].includes(hubView.value)):undefined);
 function focusCultivation(){focus.target(document.getElementById('cultivation-actions'));}
-const breakthrough = computed<Action>(() => ({ type: core.value?.player.realm === 'spirit' ? 'START_TRIAL' : 'BREAKTHROUGH' }));
-const primaryBreakthrough=computed(()=>cultivationHome.value&&(core.value?.player.realm==='spirit'?core.value.player.xp>=realm.value.xpCap:!!quote(breakthrough.value)?.allowed));
-const breakthroughLabel=computed(()=>core.value?.player.realm==='mortal'?'引气入体':core.value?.player.realm==='spirit'?'查看渡劫准备':'确认突破');
-const caveGate=computed(()=>cultivationHome.value&&(primaryBreakthrough.value||needsPreparation.value)&&step.value?.kind!=='recover');
-const caveThreshold=computed(()=>immersive.value&&core.value?.world.location==='cave'&&(caveGate.value&&!trialReturn.value?.choice||store.activity?.version===7&&store.activity.status!=='stopped'&&store.activity.plan.action.type==='BREAKTHROUGH'));
 const activeStory = computed(() => game.value && core.value?.activeEvent && stories[core.value.activeEvent.id] ? getStoryContext(game.value, core.value.activeEvent.id) : null);
 const relationships = computed(() => game.value ? getRelationships(game.value) : []);
 async function navigate(request:NavigationRequest,arrived?:()=>void):Promise<void>{
@@ -373,7 +361,6 @@ const requestEnd=(type:'RETIRE'|'END_LIFE')=>closureDecisions.value?.requestEnd(
 const reviewTrial=()=>closureDecisions.value?.reviewTrial();
 const reviewAscension=(ending:AscensionEnding)=>closureDecisions.value?.reviewAscension(ending);
 const requestTrialRestore=()=>closureDecisions.value?.requestTrialRestore();
-const ascension=computed(()=>game.value?getAscensionChoices(game.value):null);
 onMounted(async() => {await experience.init();if(appActive)await initialiseGame();});
 </script>
 
