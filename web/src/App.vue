@@ -11,6 +11,7 @@ import {useDestinations} from './use-destinations';
 import {useConfigurationReview} from './use-configuration-review';
 import ActivityCatalogues from './ActivityCatalogues.vue';
 import {useDirectActions} from './use-direct-actions';
+import {usePlayerActions} from './use-player-actions';
 import {useActivityPlans,activityPlansKey} from './use-activity-plans';
 import GameSettings from './GameSettings.vue';
 import DemoMenu from './DemoMenu.vue';
@@ -251,7 +252,7 @@ const lifeSection = ref<HTMLDetailsElement>();
 const {quote,can,why,cost}=useActionView(store);
 function viewReceipt(){if(store.activity?.version===7&&store.activity.stopReason?.code!=='STATE_CHANGED')return inspectMilestone(store.activity);return openHub('receipt');}
 const stoppedTraining = computed(()=>store.activity?.status==='stopped'&&store.activity.stopReason?.code!=='STATE_CHANGED');
-function act(action: Action) { resumeVisible.value=false;if(action.type==='TRAVEL')return travel(action.location);if(action.type==='BATTLE')return battle(action.move);if(action.type==='ENCOUNTER')return inspectAdventure(action.enemy);if(action.type==='CULTIVATE'){const n=action.count??1;return startTraining({kind:'cultivation',method:action.method,maxCycles:n,until:'cycles',stoneBudget:action.method==='natural'?0:Math.min(core.value?.player.stones??0,(quote({...action,count:1})?.costs?.stones??0)*n),stoneReserve:0});}if(action.type==='SOURCE'){const n=action.count??1,source=ruleContent.value.sources[action.sourceId],target=action.target?{kind:'item' as const,id:action.target.item,quantity:action.target.quantity}:batch.value==='target'?collectionTarget.value:null;return startSource({kind:'source',sourceId:action.sourceId,maxCycles:n,until:target?'target':'cycles',target,monthBudget:n*source.months,remainingMonthsReserve:1});}if(action.type==='CRAFT'||action.type==='FORGE')return inspectProduction(action);if(['BUY','SELL','USE','REST','LEARN','STUDY'].includes(action.type))return inspectPreparation(action);if(action.type==='SCHOOL'||action.type==='EQUIP'||action.type==='EQUIP_RELIC')return inspectConfiguration(action);if(store.activityRunning){store.activityNotice='当前活动进行中，请先暂停再行动。';return;}if (action.type === 'START_TRIAL') return showTrialPreparation(); if (action.type === 'END') return reviewAscension(action.ending); if(isMilestoneAction(action))return selectMilestone(action); const owner=navigationOwner.value; return focus.afterAction(async()=>{await store.act(action);},()=>owner===navigationOwner.value); }
+const {act}=usePlayerActions(store,focus,activityPlans,{owner:()=>navigationOwner.value,dismissResume:()=>resumeVisible.value=false,trial:showTrialPreparation,ending:ending=>reviewAscension(ending),configuration:action=>inspectConfiguration(action),milestone:selectMilestone},{batch});
 const {storyAct,quickInventory,browse:browseDirect}=useDirectActions(store,focus,confirmation,{
  owner:()=>navigationOwner.value,viewIdentity:()=>[hubView.value,tab.value,detailParent.value?.view,detailParent.value?.tab],
  source:confirmationSource,blocked:confirmationBlocked,openCurrent:()=>openHub('current'),regular:act,
@@ -270,7 +271,6 @@ function consumption(action: Action) {
   const gaps = consumptionPreview.value?.(action) ?? [];
   return gaps.length ? '会消耗追踪物资：' + gaps.map(gap => `${ruleContent.value.items[gap.id!].name}将缺${gap.missing}`).join('、') + '；材料未被预留。' : '';
 }
-function battle(move:Move){if(!game.value?.battle||store.activityRunning)return;return startAdventure(singleBattlePlan(game.value,move));}
 const closureDecisions=ref<InstanceType<typeof ClosureDecisions>>();
 const closureNavigation:ClosureNavigation={
  owner:()=>navigationOwner.value,
