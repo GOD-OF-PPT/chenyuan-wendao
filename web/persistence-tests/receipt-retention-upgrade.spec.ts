@@ -5,6 +5,54 @@ import { createDb10NativeFixture } from '../../tests/db10-native-fixture.mjs';
 import { expectBaselineUpgrade } from './retention-upgrade-proof';
 const balanceOne = await historicalBalanceOneFixture();
 
+test('creating and reclaiming the exact historical source cannot reload another live native page', async ({
+  page,
+  context,
+}, info) => {
+  const frames: string[] = [];
+  page.on('websocket', (socket) =>
+    socket.on('framereceived', (event) => {
+      if (typeof event.payload === 'string') frames.push(event.payload);
+    }),
+  );
+  await setupPersistence(page);
+  const initial = await page.evaluate(() => ({
+    time: performance.timeOrigin,
+    marker: ((window as any).__q15LiveMarker = crypto.randomUUID()),
+  }));
+  let fixture: any, peer: any;
+  try {
+    fixture = createDb10NativeFixture();
+    peer = await context.newPage();
+    await peer.goto('/persistence-tests/harness.html');
+    await peer.evaluate(async (url) => {
+      const old = await import(url);
+      const repo = await old.FullSaveRepository.open('q15-watch-isolation');
+      repo.close();
+    }, fixture.repositoryUrl);
+    fixture.cleanup();
+    // Observe actual Vite watcher delivery; this does not advance a game clock.
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const final = await page.evaluate(() => ({
+      time: performance.timeOrigin,
+      marker: (window as any).__q15LiveMarker,
+    }));
+    await info.attach('historical-source-watch-isolation', {
+      body: JSON.stringify({ initial, final, frames }),
+      contentType: 'application/json',
+    });
+    expect(final).toEqual(initial);
+    expect(
+      frames
+        .map((frame) => JSON.parse(frame))
+        .filter((frame) => frame.type === 'full-reload'),
+    ).toEqual([]);
+  } finally {
+    fixture?.cleanup();
+    await peer?.close();
+  }
+});
+
 test('old-content migration snapshots pre-upgrade backup membership before creating its new atomic backup group', async ({
   page,
 }) => {

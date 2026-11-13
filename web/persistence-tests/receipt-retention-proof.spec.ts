@@ -1,3 +1,4 @@
+import { proveControl } from '../e2e/scheduled-proof-support';
 import { test, expect } from '@playwright/test';
 import { setupPersistence } from './support';
 import { proveRetentionDelta } from '../e2e/retention-proof-support';
@@ -137,4 +138,68 @@ test('the all-store retention proof accepts a native configuration but rejects f
       name,
     ).toThrow();
   }
+});
+
+test('the formal START archive proof keeps pending other-life scheduled originals outside its current summary', async ({
+  page,
+}) => {
+  await setupPersistence(page);
+  const pair = await page.evaluate(async () => {
+    const h = (globalThis as any).h,
+      name = 'q15-archive-proof-pending-other',
+      repo = await h.FullSaveRepository.open(name),
+      d = h.routes.driver();
+    d.go('sect');
+    const realNow = Date.now;
+    let now = 1700000000000,
+      prior: any = null,
+      record: any;
+    Date.now = () => now;
+    const mutation = (s: any) => ({
+        commandId: repo.issueCommandId(),
+        runId: s.state.core.runId,
+        expectedRevision: s.state.core.revision,
+        expectedActivityId: s.activity?.id ?? null,
+        expectedActivityRevision: s.activity?.revision ?? null,
+        ownerId: 'proof-owner',
+      }),
+      plan = {
+        kind: 'source',
+        sourceId: 'work',
+        maxCycles: 5,
+        until: 'cycles',
+        target: null,
+        monthBudget: 60,
+        remainingMonthsReserve: 1,
+      },
+      snapshot = (raw: any) => ({
+        version: raw.version,
+        rows: Object.fromEntries(raw.stores.map((n: string) => [n, raw[n]])),
+      });
+    try {
+      for (let i = 0; i < 2; i++) {
+        const m = { ...h.mutation(prior), commandId: repo.issueCommandId() },
+          seed = await repo.importText(JSON.stringify(d.game), m),
+          start = await repo.startScheduledActivity(
+            plan,
+            mutation({ state: seed.state, activity: null }),
+          );
+        now += 135000;
+        record = await repo.advanceScheduledActivity(mutation(start));
+        prior = record.state;
+      }
+      record = await repo.pauseScheduledActivity(mutation(record));
+      const before = snapshot(await h.inspect(name)),
+        m = mutation(record),
+        started = await repo.startScheduledActivity(plan, m);
+      await repo.confirmDelivery(m.runId, m.commandId);
+      const after = snapshot(await h.inspect(name));
+      return { before, after, game: record.state, started };
+    } finally {
+      Date.now = realNow;
+      repo.close();
+    }
+  });
+  expect(pair.started.state).toEqual(pair.game);
+  proveControl(pair.after, pair.before, pair.game, 'START');
 });
