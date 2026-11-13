@@ -401,47 +401,10 @@
     margin: 0;
     font-size: calc(14px * var(--font-scale, 1));
   }
-  .equipment-catalogue .equipment-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 170px;
-    gap: 16px;
-    padding: 12px;
-    margin: 0;
-    border: 1px solid var(--palette-line);
-    background: var(--palette-panel);
-    flex: 1;
-    align-content: start;
-  }
-  .equipment-catalogue .equipment-card p {
-    font-size: calc(16px * var(--font-scale, 1));
-    line-height: 1.5;
-    margin: 8px 0;
-  }
   .equipment-catalogue .equipment-actions {
     display: flex;
     flex-direction: column;
     gap: 8px;
-  }
-  .equipment-catalogue .equipment-options {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    font-size: calc(14px * var(--font-scale, 1));
-    margin: 0;
-  }
-  .equipment-catalogue .equipment-options select {
-    padding: 5px;
-  }
-  .equipment-catalogue .loadout-summary {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
-  .equipment-catalogue .loadout-summary > div {
-    padding: 12px;
-  }
-  .equipment-catalogue .loadout-summary strong {
-    font-size: calc(18px * var(--font-scale, 1));
   }
   .equipment-catalogue .school-picker h3 {
     margin: 8px 0 16px;
@@ -849,34 +812,9 @@
     .catalogue-note button {
       margin-left: 8px;
     }
-    .equipment-catalogue .equipment-card {
-      grid-template-columns: minmax(0, 1fr) 130px;
-      padding: 8px;
-      gap: 8px;
-    }
-    .equipment-catalogue .equipment-card p {
-      font-size: calc(15px * var(--font-scale, 1));
-    }
     .equipment-catalogue .equipment-actions button {
       font-size: calc(14px * var(--font-scale, 1));
       padding: 6px;
-    }
-    .equipment-catalogue .equipment-options {
-      font-size: calc(14px * var(--font-scale, 1));
-      gap: 6px;
-    }
-    .equipment-catalogue .equipment-options select {
-      font-size: calc(14px * var(--font-scale, 1));
-      max-width: 125px;
-    }
-    .equipment-catalogue .equipment-options label {
-      display: flex;
-      align-items: center;
-      gap: 3px;
-    }
-    .equipment-catalogue .equipment-options input {
-      min-height: 24px;
-      width: 20px;
     }
     .source-catalogue > article > div {
       flex-direction: column;
@@ -907,14 +845,7 @@
       font-size: calc(14px * var(--font-scale, 1));
       padding: 4px;
     }
-    .single-screen .hub-current .battle-actions {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .single-screen .hub-current .battle-actions button {
-      min-height: 64px;
-      padding: 5px;
-    }
-    .single-screen .hub-current .battle-actions small,
+
     .single-screen .hub-current .move-purpose {
       font-size: calc(14px * var(--font-scale, 1));
     }
@@ -1116,24 +1047,8 @@
     .single-screen .hub-current .intent > span {
       display: none;
     }
-    .single-screen .hub-current .battle-actions strong {
-      display: block;
-    }
-    .single-screen .hub-current .battle-actions .move-purpose,
-    .single-screen .hub-current .battle-actions small:first-of-type {
-      display: inline;
-      font-size: calc(14px * var(--font-scale, 1));
-      line-height: 1.35;
-    }
-    .single-screen .hub-current .battle-actions small:first-of-type {
-      margin-left: 4px;
-    }
     .single-screen .hub-current .battle-latest {
       display: none;
-    }
-    .single-screen .hub-current .battle-actions .move-reason {
-      font-size: calc(14px * var(--font-scale, 1));
-      margin-top: 2px;
     }
   }
 

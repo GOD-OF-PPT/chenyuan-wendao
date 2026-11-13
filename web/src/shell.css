@@ -212,9 +212,6 @@
   .battle-player b {
     margin-left: 6px;
   }
-  .battle-actions button {
-    min-height: 78px;
-  }
   .enemy-row {
     flex-wrap: wrap;
   }
@@ -493,9 +490,6 @@
     .locations {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    .battle-actions button {
-      padding: 12px;
-    }
     .battle-player {
       font-size: var(--ui15);
     }
@@ -635,10 +629,6 @@
   }
   .welcome-art > :not(.welcome-backdrop) {
     z-index: 2;
-  }
-  .equipment-card h3 > .game-icon {
-    color: var(--palette-line);
-    margin-right: 5px;
   }
   .item-glyph .game-icon {
     width: 28px;
@@ -884,13 +874,7 @@
     .scene-copy {
       overflow-wrap: anywhere;
     }
-    .text-enlarged .battle-actions {
-      grid-template-columns: 1fr;
-    }
     .text-enlarged .locations {
-      grid-template-columns: 1fr;
-    }
-    .text-enlarged .loadout-summary {
       grid-template-columns: 1fr;
     }
     .text-enlarged .equipment-actions {
@@ -919,9 +903,6 @@
     }
     .text-enlarged .choices:not(.two) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .text-enlarged .equipment-card {
-      grid-template-columns: 1fr;
     }
     .text-enlarged .equipment-actions {
       display: grid;
@@ -952,14 +933,6 @@
     min-width: 0;
     max-width: 100%;
     margin-left: 0;
-  }
-  .equipment-options label {
-    min-width: 0;
-    max-width: 100%;
-    overflow-wrap: anywhere;
-  }
-  .equipment-options select {
-    max-width: 100%;
   }
   .scene-copy .eyebrow {
     overflow-wrap: anywhere;

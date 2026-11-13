@@ -351,19 +351,6 @@
     .single-screen .catalogue-gallery .recipe-cards > article {
       min-height: 220px;
     }
-    .single-screen .catalogue-gallery .equipment-card {
-      background: linear-gradient(
-        120deg,
-        var(--palette-raised),
-        var(--palette-panel)
-      );
-      border-radius: 12px 2px;
-      border-color: var(--palette-line);
-      grid-template-columns: minmax(0, 1fr) 150px;
-    }
-    .single-screen .catalogue-gallery .equipment-card p {
-      line-height: 1.45;
-    }
     .single-screen .catalogue-gallery .equipment-actions {
       gap: 7px;
     }

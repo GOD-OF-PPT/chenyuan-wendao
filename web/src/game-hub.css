@@ -430,19 +430,7 @@
   .single-screen .hub-current .battle-resource {
     font-size: var(--ui14);
   }
-  .single-screen .hub-current .battle-actions {
-    margin-top: 6px;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 6px;
-  }
-  .single-screen .hub-current .battle-actions button {
-    padding: 7px;
-    min-height: 90px;
-  }
-  .single-screen .hub-current .battle-actions strong {
-    font-size: var(--ui15);
-  }
-  .single-screen .hub-current .battle-actions small,
+
   .single-screen .hub-current .move-purpose {
     font-size: var(--ui14);
     line-height: 1.4;
