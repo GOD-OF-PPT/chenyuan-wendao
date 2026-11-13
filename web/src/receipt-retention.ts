@@ -254,13 +254,7 @@ export function requireCurrentReceiptId(
   const state = context(tx).counter;
   if (access.derived && access.commandId.startsWith('cycle:')) return;
   const epoch = receiptIdEpoch(access.commandId);
-  if (
-    epoch === state.epoch ||
-    (epoch === null &&
-      (state.epoch === 0 ||
-        (access.destination && access.runId !== state.runId)))
-  )
-    return;
+  if (epoch === state.epoch || (epoch === null && state.epoch === 0)) return;
   throw new RuleError(
     'RECEIPT_EXPIRED',
     '这次操作已归入旧记载，请核对当前进度后重新选择；原操作未再次执行。',
@@ -545,6 +539,7 @@ export function createReceiptRetention(
 export function clearRetainedReceipts(tx: IDBTransaction) {
   const receipts = tx.objectStore(RECEIPTS),
     meta = tx.objectStore(RETENTION_STORE),
+    checkpoint = tx.objectStore(STATE).get('checkpoint'),
     values = receipts.getAll(),
     keys = receipts.getAllKeys(),
     rows = meta
@@ -554,7 +549,7 @@ export function clearRetainedReceipts(tx: IDBTransaction) {
       );
   let ready = 0;
   const captured = () => {
-    if (++ready !== 3) return;
+    if (++ready !== 4) return;
     try {
       const old = rows.result as ReceiptMeta[];
       old.forEach(validateMeta);
@@ -568,7 +563,12 @@ export function clearRetainedReceipts(tx: IDBTransaction) {
           record(tx, key, values.result[i], true);
           continue;
         }
-        if (row.baseline || row.pending) continue;
+        if (
+          row.baseline ||
+          row.pending ||
+          protectsCheckpoint(row, checkpoint.result)
+        )
+          continue;
         if (receiptChecksum(values.result[i]) !== row.checksum) {
           row.baseline = true;
           row.quarantined = true;
@@ -587,6 +587,23 @@ export function clearRetainedReceipts(tx: IDBTransaction) {
   values.onsuccess = captured;
   keys.onsuccess = captured;
   rows.onsuccess = captured;
+  checkpoint.onsuccess = captured;
+}
+function protectsCheckpoint(row: ReceiptMeta, checkpoint: unknown) {
+  if (checkpoint === undefined) return false;
+  if (
+    !checkpoint ||
+    typeof checkpoint !== 'object' ||
+    !('sourceRunId' in checkpoint) ||
+    typeof checkpoint.sourceRunId !== 'string' ||
+    !('sourceRevision' in checkpoint) ||
+    !integer(checkpoint.sourceRevision)
+  )
+    invalid();
+  return (
+    row.runId === checkpoint.sourceRunId &&
+    row.checkpointRevision === checkpoint.sourceRevision
+  );
 }
 function retireEpoch(tx: IDBTransaction, row: ReceiptMeta) {
   const epoch = row.commandId ? receiptIdEpoch(row.commandId) : null,
@@ -924,12 +941,7 @@ function collectReceipts(
         for (const r of current)
           if (r.windowId === latest.windowId) protect.add(r);
       if (cp)
-        for (const r of rows)
-          if (
-            r.runId === cp.sourceRunId &&
-            r.checkpointRevision === cp.sourceRevision
-          )
-            protect.add(r);
+        for (const r of rows) if (protectsCheckpoint(r, cp)) protect.add(r);
       const ordinary = rows
           .filter((r) => !protect.has(r))
           .sort((x, y) => y.sequence - x.sequence),
