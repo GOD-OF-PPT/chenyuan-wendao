@@ -1,4 +1,4 @@
-# Q13：App 职责拆分（本地验证完成）
+# Q13：App 职责拆分（已递交PR57）
 
 依据先发布main的[0160合同](../decisions/0160-app-responsibility-modules.md)，承接Q12/PR56。工作区chenyuan-quality-q13，分支codex/quality-q13-app-responsibilities。以下各Seam保原阶段生产身份；最终结果以本节为准。
 
@@ -9,6 +9,8 @@
 13既有表面的文字/几何/计算样式同Q12，仅同源端口归一化；9PNG字节相同，另4图有2、4、7、47像素轻微差异、最大通道差5，不冒全像素一致。13表面与检查点图以及正常路线筑基/飞升图共16张当前原尺寸PNG直接实看。原160规则与联合数值报告的83份完整输入分别逐hash相同，承接原`64689f5`/`eab42b8`生产身份，没有声称本次重跑160。
 
 独立[双轴审查](q13-review.md)发现的两项生命周期/原重试问题与检查点参数问题均同点红绿关闭；[Q11/Q12/Q13三任务综合](q13-three-task-check.md)已闭合。原focus-first 9过13红在抽取前后完全同判定，legacy错误cwd 34过2错与更正cwd后36过分开；equipment首次仅日志34项、无终态JSON不称完成，后完整196覆盖。Node22.12低于项目下限导致模块导入错误的原980过1错保留。原日志/JSON/PNG在`artifacts/q13-app/`，文档收尾不重签生产源。全部20目标active，Q14剩余与Q15–Q20继续；兼容/环境性能暂停，真人、长期平衡和整体美术不由本轮工程通过代替。
+
+已递交[PR57](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/57)，目标Q12分支，未自动合并。最终验证后只有本目录和README文档变化，生产源/配置与原报告身份不变。
 
 ## 阶段记录
 
