@@ -1,3 +1,4 @@
+import {proveRetentionDelta} from './retention-proof-support';
 import {expect} from '@playwright/test';
 import {resolve} from '../../src/full/engine.ts';
 import {createActivity,pauseActivity,resumeActivity,completeActivity} from '../../src/full/activity.ts';
@@ -32,7 +33,7 @@ export function controlActivity(receipt:any,game:Game,kind:string,mode:ProofMode
 
 /** No filtering away new stores: construct and compare the entire authorized delta. */
 export function proveControl(raw:any,before:any,game:Game,kind:string,mode:ProofMode='scheduled'){
- expect(raw.version).toBe(10);expect(before.version).toBe(10);
+ expect(raw.version).toBe(11);expect(before.version).toBe(11);
  const added=addedReceipts(raw,before);expect(added).toHaveLength(1);const row=added[0],r=row.value,a=controlActivity(r,game,kind,mode),m=r.input.mutation;
  expect(row.key).toBe(m.runId+':'+m.commandId);expect(m.runId).toBe(game.core.runId);expect(m.expectedRevision).toBe(game.core.revision);
  const old=proofValue(before,'full-state','activity')??null,clock=proofValue(before,'full-schedules','current');
@@ -63,12 +64,12 @@ export function proveControl(raw:any,before:any,game:Game,kind:string,mode:Proof
   if(kind==='START'&&old)put(expected,'full-backups','activity/'+m.runId+'/'+m.commandId+'/previous',old);
  }
  expect(proofValue(raw,'full-state','current')).toEqual(game);expect(proofValue(raw,'full-state','activity')).toEqual(a);
- put(expected,'full-state','activity',a);put(expected,'full-receipts',row.key,r);expect(raw).toEqual(expected);
+ put(expected,'full-state','activity',a);put(expected,'full-receipts',row.key,r);proveRetentionDelta(before,expected,raw,added);
  return{a,raw,r};
 }
 
 export function proveCycle(raw:any,accepted:any,before:Game,a:any,mode:ProofMode='scheduled'){
- expect(raw.version).toBe(10);expect(accepted.version).toBe(10);
+ expect(raw.version).toBe(11);expect(accepted.version).toBe(11);
  expect(proofValue(accepted,'full-state','current')).toEqual(before);expect(proofValue(accepted,'full-state','activity')).toEqual(a);
  const formal=resolve(before,a.nextCommand),after=proofValue(raw,'full-state','current'),key=a.runId+':'+a.nextCommand.commandId,rows=raw.rows['full-receipts'].filter((r:any)=>r.key===key);expect(rows).toHaveLength(1);const receipt=rows[0].value;
  const input={kind:'TICK',tick:{commandId:a.nextCommand.commandId,runId:a.runId,expectedRevision:a.gameRevision,activityId:a.id,expectedActivityRevision:a.revision,ownerId:a.ownerId,generation:a.generation}};
@@ -91,6 +92,6 @@ export function proveCycle(raw:any,accepted:any,before:Game,a:any,mode:ProofMode
  const done=completeActivity(after,a,formal.result,{commandId:a.nextCommand.commandId,now:reconstructionNow});expect(receipt.activity).toEqual(done);expect(proofValue(raw,'full-state','activity')).toEqual(done);
  put(expected,'full-state','current',after);put(expected,'full-state','previous',before);put(expected,'full-state','activity',done);put(expected,'full-receipts',key,receipt);
  if(formal.checkpointKind){const cp={format:'chenyuan-checkpoint',version:1,kind:formal.checkpointKind,sourceRunId:before.core.runId,sourceRevision:before.core.revision,versions:versionsForGame(before),snapshot:before},owner={format:'chenyuan-checkpoint-scope',version:1,runId:before.core.runId,sourceRunId:before.core.runId,sourceRevision:before.core.revision,kind:formal.checkpointKind};put(expected,'full-state','checkpoint',cp);put(expected,'full-state','checkpoint-owner',owner);}
- expect(raw).toEqual(expected);
+ proveRetentionDelta(accepted,expected,raw,mode==='scheduled'?[added.find((r:any)=>r.key===key),added.find((r:any)=>r.key!==key)]:added);
  return{a,before,accepted,after,formal,done,raw,key,receipt,reconstructionNow,batch};
 }

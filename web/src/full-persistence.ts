@@ -213,7 +213,9 @@ function archiveSchedule(
       try {
         if (read.result === undefined) return;
         const values = records.result.filter(
-          (value) => value?.format === 'chenyuan-scheduled-receipt',
+          (value) =>
+            value?.format === 'chenyuan-scheduled-receipt' &&
+            value.input?.mutation?.runId === current.core.runId,
         );
         const summary = summarizeAway(current, activity, read.result, values);
         if (summary) {
@@ -1462,7 +1464,8 @@ export class FullSaveRepository {
                         'RECEIPT_INVALID',
                         '累计回执键与原意图不符',
                       );
-                    values.push(value);
+                    if (value.input.mutation.runId === current.core.runId)
+                      values.push(value);
                   }
                   cursor.result.continue();
                 } catch (error) {

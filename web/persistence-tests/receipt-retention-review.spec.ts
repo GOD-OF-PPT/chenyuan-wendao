@@ -462,3 +462,65 @@ for (const family of ['receipt', 'history', 'backup', 'unknown'])
     expect(result.after).toEqual(result.before);
     expect(result.modes.every((m: string) => m === 'readonly')).toBe(true);
   });
+
+test('retained scheduled replies from a prefixed old run cannot enter the current away summary', async ({
+  page,
+}) => {
+  await setupPersistence(page);
+  const result = await page.evaluate(async () => {
+    const h = (globalThis as any).h,
+      name = 'q15-summary-prefix',
+      repo = await h.FullSaveRepository.open(name),
+      d = h.routes.driver();
+    d.go('sect');
+    const realNow = Date.now;
+    let now = 1700000000000,
+      prior: any = null,
+      last: any;
+    Date.now = () => now;
+    try {
+      for (const runId of ['summary:prior', 'summary']) {
+        const m = {
+            ...h.mutation(prior),
+            runId,
+            commandId: repo.issueCommandId(),
+          },
+          seed = await repo.importText(JSON.stringify(d.game), m),
+          mutation = (s: any) => ({
+            commandId: repo.issueCommandId(),
+            runId: s.state.core.runId,
+            expectedRevision: s.state.core.revision,
+            expectedActivityId: s.activity?.id ?? null,
+            expectedActivityRevision: s.activity?.revision ?? null,
+            ownerId: 'q15-summary-prefix',
+          }),
+          start = await repo.startScheduledActivity(
+            {
+              kind: 'source',
+              sourceId: 'work',
+              maxCycles: 5,
+              until: 'cycles',
+              target: null,
+              monthBudget: 60,
+              remainingMonthsReserve: 1,
+            },
+            mutation({ state: seed.state, activity: null }),
+          );
+        now += 135000;
+        last = await repo.advanceScheduledActivity(mutation(start));
+        prior = last.state;
+      }
+      const before = await h.inspect(name),
+        summary = await h.attempt(() => repo.loadAwaySummary()),
+        after = await h.inspect(name);
+      return { before, after, summary, last };
+    } finally {
+      Date.now = realNow;
+      repo.close();
+    }
+  });
+  expect(result.summary.ok).toBe(true);
+  expect(result.summary.value).toMatchObject({ runId: 'summary', cycles: 4 });
+  expect(result.after).toEqual(result.before);
+  expect(result.last.activity.completedCycles).toBe(4);
+});

@@ -1,3 +1,4 @@
+import {proveRetentionDelta} from './retention-proof-support';
 import {resolve} from '../../src/full/engine.ts';
 import {completeActivity} from '../../src/full/activity.ts';
 import {versionsForGame} from '../../src/full/rule-profile.ts';
@@ -234,7 +235,7 @@ export async function assertSavedTrialEntry(page:Page,game:Game,a:any,info:TestI
   };
  }),{runId:a.runId,commandId:a.nextCommand.commandId});
  const formal=resolve(game,a.nextCommand),r=raw.receipt;
- expect(raw.version).toBe(10);expect(a.version).toBe(7);expect(a.plan).toEqual({kind:'milestone',action:{type:'START_TRIAL'},maxCycles:1});expect(a.cycleMs).toBe(15000);
+ expect(raw.version).toBe(11);expect(a.version).toBe(7);expect(a.plan).toEqual({kind:'milestone',action:{type:'START_TRIAL'},maxCycles:1});expect(a.cycleMs).toBe(15000);
  expect(raw.current).toEqual(formal.nextState);expect(raw.previous).toEqual(game);expect(raw.checkpoint).toEqual({format:'chenyuan-checkpoint',version:1,kind:'trial',sourceRunId:game.core.runId,sourceRevision:game.core.revision,versions:versionsForGame(game),snapshot:game});
  expect(raw['checkpoint-owner']).toEqual({format:'chenyuan-checkpoint-scope',version:1,runId:game.core.runId,sourceRunId:game.core.runId,sourceRevision:game.core.revision,kind:'trial'});
  const input={kind:'TICK',tick:{commandId:a.nextCommand.commandId,runId:a.runId,expectedRevision:a.gameRevision,activityId:a.id,expectedActivityRevision:a.revision,ownerId:a.ownerId,generation:a.generation}};
@@ -251,7 +252,7 @@ export async function reloadScheduledJourney(page:Page){
  const before=await readJourneyDatabase(page),value=(raw:any,store:string,key:string)=>raw.rows[store].find((row:any)=>row.key===key)?.value;
  const game=value(before,'full-state','current'),activity=value(before,'full-state','activity'),schedule=value(before,'full-schedules','current');
  const now=await page.evaluate(()=>Date.now());
- expect(before.version).toBe(10);
+ expect(before.version).toBe(11);
  if(activity?.status==='running'){
   expect(()=>validateScheduledActivity({activity,schedule},game)).not.toThrow();expect(schedule.window).toBeNull();expect(now).toBeGreaterThanOrEqual(schedule.lastObservedAt);expect(now).toBeLessThan(activity.dueAt);
  }
@@ -271,7 +272,7 @@ export async function reloadScheduledJourney(page:Page){
  expected.rows['full-state'].find((entry:any)=>entry.key==='activity').value=replay.progress.record.activity;
  expected.rows['full-schedules'].find((entry:any)=>entry.key==='current').value=replay.progress.record.schedule;
  expected.rows['full-receipts']=[...expected.rows['full-receipts'],row].sort((a:any,b:any)=>a.key<b.key?-1:a.key>b.key?1:0);
- expect(after).toEqual(expected);
+ proveRetentionDelta(before,expected,after,added);
  return{raw:after,game:current,activity:next};
 }
 
