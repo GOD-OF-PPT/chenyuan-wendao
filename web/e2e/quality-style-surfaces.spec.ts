@@ -91,3 +91,16 @@ test('Q12 production author rules use a declared layer rather than overriding it
  });
  expect(coverage.styleRules).toBeGreaterThan(0);expect(coverage.layers.length).toBeGreaterThan(0);expect(coverage.outside).toEqual([]);
 });
+
+test('Q12 interface colors use the shared semantic palette rather than isolated literal values',async({page})=>{
+ await useJourneyClock(page);await page.goto('/');await expect(page.getByLabel('你的道号',{exact:true})).toBeVisible();
+ const palette=await page.evaluate(()=>{
+  const literals:string[]=[],roles=new Set<string>();
+  function visit(rules:CSSRuleList){for(const rule of rules){
+   if('style' in rule){const style=(rule as CSSStyleRule).style;for(const property of style){const value=style.getPropertyValue(property);if(/#[\da-f]{3,8}\b|\brgba?\(/i.test(value)){if(property.startsWith('--palette-'))roles.add(property);else literals.push(property+':'+value);}}}
+   if('cssRules' in rule)visit((rule as CSSGroupingRule).cssRules);
+  }}
+  for(const sheet of document.styleSheets)visit(sheet.cssRules);return{roles:[...roles],literals};
+ });
+ expect(palette.roles).toHaveLength(12);expect(palette.literals).toEqual([]);
+});
