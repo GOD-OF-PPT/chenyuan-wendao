@@ -28,6 +28,12 @@
 
 0180aa0清洁类型/构建与当前固定桌面五文件38/38通过（58.8秒）。这些原fallback分支在当前主桌面多由既有catalogue替代，不能因此冒该非默认展示已经实际全测，也不恢复字号/移动兼容专项来执行。接线由类型与原fragment保，最终Module级新Seam覆盖/当前整体矩阵仍待。App约117.2KB，只是进度，不以四个薄壳或字节压缩声称完成目标。
 
+## 第五Seam：设置与阅读dialog
+
+GameSettings/DemoMenu/GameplayHelp各自持有真实dialog、相应只读目录/主题状态与焦点释放。设置继续使用原Experience，文件/导出/重开/恢复只发明确事件给原控制Module；父级只读代理实际DOMref保文件读取来源dialog和稳定import opener。帮助主题从公开selectTopic进入，guideEnabled仍父级v-model，不另建本地偏好或Game。
+
+2012d9a类型与清洁构建通过；完整原matrix-ui-controls/store-sync-status15/15通过（34.6秒），含设置焦点、演示九节点、文件延迟/相同修订/演示scope与已保存后核对。提取时目标prop漏接的类型红修正为真实target，未用any上下文绕过。App约111.9KB，当前仍是中途结构候选，导航/详情/活动职责和最终综合未关闭。
+
 ## 后续与执行边界
 
 当前无live测试。root/web node_modules仍是指向Q12的junction，不能直接在此npm ci或validate-core（会安装）；先核后仅删除link并独立安装。当前每段代码和原报告保，临时工具/日志在artifacts/q13-app。
