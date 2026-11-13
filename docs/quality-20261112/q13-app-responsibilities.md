@@ -52,6 +52,14 @@ use-direct-actions维护原prepareDirect/确认内容、暂停安排后果、原
 
 57e5b39清洁类型/构建通过；原direct-actions、NPC、ABC、八UI bug完整四文件39/39通过（43.1秒），包括付费回应取消/真实quota、迟到文件/原授权与只读缺口责任。App尚约104KB，仍有当前主舞台/详情、活动调度接线和导航焦点组合待拆，本项未递交。
 
+## 第九Seam：活动记录与原战策阅读
+
+ActivityRecords拥有原战策readings投影和活动/交锋/逐轮记录表面，维持原四个顶层节点，不增加DOM容器。原allReceipts与originalPlan为父级v-model，用于导航进入/活动变化重置；组件仅只读同Store并发明确settings/details事件，分页/保存中原控制仍由原Module负责。
+
+5092942清洁类型/构建和idle-adventure、导航、文案、装备上下文完整四文件29/29通过（62.587秒），含真实30秒/逐招周期、收获全记录、原页码承接与刷新后不重复成果。新增公共stageReturns四项接口测试亦通过，Node无事件捕获路径的DOM全局依赖先红后以捕获适配器短路修正；不改浏览器真实event分支。仅提取脚本用锁定Prettier格式化，可审查源码，不压字节。
+
+当前App约101.3KB，依赖已核后仅移除Q12 junction并独立安装，后续可在无浏览器作业时跑core。主舞台/更多当前详情与活动职责、其它新Seam卸载异步覆盖、独立review及最终综合仍未完成，Q13未递交。
+
 ## 后续与执行边界
 
 当前无live测试。root/web node_modules仍是指向Q12的junction，不能直接在此npm ci或validate-core（会安装）；先核后仅删除link并独立安装。当前每段代码和原报告保，临时工具/日志在artifacts/q13-app。
