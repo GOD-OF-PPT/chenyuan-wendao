@@ -1,3 +1,4 @@
+import {confirmedDelivery} from '../persistence-tests/support';
 import {proveControl,proveCycle} from './scheduled-proof-support';
 import {resultMomentClearance} from './npc-response-visual-support';
 import {test,expect,type Page,type Browser,type TestInfo} from '@playwright/test';
@@ -179,7 +180,7 @@ test('CEND13-B5 a genuinely committed but delayed start reply and another pages 
   await peer.goto('/');await expect(peer.getByTestId('save-status')).toHaveText('已保存');await openStory(peer);await select(peer,t.action);await expect(caption(peer)).toHaveText('回应已安排 · 接续见上方');await expect(peer.getByTestId('training-countdown')).toHaveCount(0);
   await bindLegacyContinuation(peer);await peer.getByTestId('training-resume').click();await expect.poll(async()=>(await activity(peer)).generation).toBe(a.generation+1);const resumed=await mutation(peer,t.g,committed,'RESUME',info);expect(resumed.a.ownerId).not.toBe(a.ownerId);
   await page.evaluate(()=>(window as any).__c13bAck.release());await expect(page.getByTestId('save-status')).toHaveText('已保存');await expect.poll(async()=>(await activity(page)).generation).toBe(resumed.a.generation);await expect(page.getByTestId('milestone-confirm')).not.toBeVisible();await expect(caption(page)).toHaveText('回应已安排 · 接续见上方');await expect(page.getByTestId('training-countdown')).toHaveCount(0);await frame(page,info,'B5-foreign-generation-no-borrowed-local-clock');
-  expect(await database(page)).toEqual(resumed.raw);await tick(peer,{g:t.g,...resumed},info);expect(await database(page)).toEqual(await database(peer));await expect(page.getByTestId('response-result')).toHaveCount(0);expect(faults.get(peer)).toEqual([]);
+  const startReceipt=committed.rows['full-receipts'].find((r:any)=>r.value?.input?.kind==='START'&&r.value.activity?.id===a.id);expect(startReceipt).toBeDefined();expect(await database(page)).toEqual(confirmedDelivery(resumed.raw,startReceipt.key));await tick(peer,{g:t.g,...resumed,raw:await database(peer)},info);expect(await database(page)).toEqual(await database(peer));await expect(page.getByTestId('response-result')).toHaveCount(0);expect(faults.get(peer)).toEqual([]);
  }finally{await peer.close();}
 });
 

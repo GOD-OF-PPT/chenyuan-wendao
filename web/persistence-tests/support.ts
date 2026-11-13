@@ -5,7 +5,7 @@ import {repositoryFsRoot as root} from './fs-root';
 export function confirmedDelivery(snapshot:any, identity:{runId:string;commandId:string}|string) {
   const copy=structuredClone(snapshot),key=typeof identity==='string'?identity:identity.runId+':'+identity.commandId;
   const rows=copy.format==='chenyuan-raw-database-backup'
-    ? copy.stores.find((s:any)=>s.name==='full-retention')?.entries : copy['full-retention'];
+    ? copy.stores.find((s:any)=>s.name==='full-retention')?.entries : copy.rows?.['full-retention']??copy['full-retention'];
   expect(Array.isArray(rows),'schema11 delivery proof must include the entire retention store').toBe(true);
   const root=rows.find((r:any)=>Array.isArray(r.key)&&r.key[0]==='receipt'&&r.key[1]===key);
   expect(root?.value).toMatchObject({format:'chenyuan-retained-receipt',version:1,kind:'receipt',key,

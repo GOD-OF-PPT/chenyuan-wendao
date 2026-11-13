@@ -71,3 +71,5 @@ be2792c构建112文件/11,638,228字节，十核心989过；runtime81558a613f4c0
 0662a54已推送独立分支并开草稿PR59，远端SHA和upstream0/0核同；本地112文件/11,638,650字节构建、989根/十核心过。该冻结的完整Native496为495过1红，原trace显示组件初始evaluate期间发生实际重新导航。补两页原生同点场景，WebSocket直接记录full-reload及triggeredBy=本次回收的.generated/q14-db10-666-*源码，timeOrigin变更/本页marker消失。不是推测DB停顿或改游戏时钟。Vite仅忽略这类唯一临时固定源路径的watch，正常src热更新、代码加载与全部两worker并发保持；原生同点红后5/5（完整proof与升级文件）过。
 
 最后独立Spec指出START归档的测试expected仍混入旧人生pending scheduled原件；补真实两人生/旧pending当前完整summary案例在原helper红，expected现与生产实际run边界一致，所有store仍最后逐深比较。两项修复均无测试重试/时限放宽或案例撤出。当前声明498 Native，尚需最新冻结终态。PR59保持草稿，不记本项已完成；旧066远端所有run终态仍按其原SHA观察。
+
+05d7ece本地完整498/498 Native通过，声明/首跑成员逐项相同、0skip/retry/flaky；989根/十核心与原112文件构建同源。该头完整198 UI本地和远端均196过2红，均为漏接的两个独立证明消费者：即时法宝配装仅比较原store却漏metadata，及held START原回复送达后仍要求pending=true。仅接回现有严格全库delta和同原run/command的ACK-only证明，保存t.g/正式resolve/费用/clock/generation/借钟拒绝等原断言；peer下一tick从实际ACK之后的完整只读快照核。两完整文件11/11过，未将196+11标完整通过。新候选还需当前完整198与32终态。
