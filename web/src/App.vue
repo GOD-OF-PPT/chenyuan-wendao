@@ -5,7 +5,7 @@ import MainStage from './MainStage.vue';
 import type {ClosureNavigation} from './closure-navigation';
 import {useSaveControls} from './use-save-controls';
 import {useActionView} from './use-action-view';
-import {useStageReturns} from './use-stage-returns';
+import {useStageNavigation} from './use-stage-navigation';
 import {useStageFocus} from './use-stage-focus';
 import {useConfigurationReview} from './use-configuration-review';
 import ActivityCatalogues from './ActivityCatalogues.vue';
@@ -123,27 +123,19 @@ const session=useSession(),demoMenuView=ref<InstanceType<typeof DemoMenu>>();
 const demoMenu=computed(()=>demoMenuView.value?.element);
 const demoNode=session.kind==='demo'?demoSpec(session.node!.nodeId):null;
 const ruleContent=useRuleContent(()=>store.game);
-const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
+const store = useGame(), name = ref('顾长青'), batch = ref<number | 'target'>(1), quantity = ref(1);
 provide('game-scene',store);
 const {milestoneReview,milestoneStale,milestoneRetry,selectMilestone,inspectMilestone,closeMilestone,confirmMilestone:confirmMilestoneAction}=useMilestoneReview(store);
 const uiLocked=computed(()=>store.busy||!store.available);
 const pendingStoryError=computed(()=>store.unresolved);
 const saveTone=computed(()=>!store.ready||store.busy?'pending':store.error||!store.available?'problem':store.game&&store.saved?'saved':'idle');
 const saveDisplayLabel=computed(()=>store.saveLabel==='本次未保存'?'保存待确认':store.saveLabel);
-const experience=useLocalExperience();let appActive=true;const stopObserving=store.observe(value=>{const observedNavigation=navigationRevision;if(['import','restore','restart','new_game'].includes(value.kind)){readingGeneration.value++;narrativeContext.value++;stageReturns.reset();journalWrites.value=[];}if(value.kind==='action'&&value.result&&value.operation&&store.game?.core.revision===value.result.revisionAfter){const run=store.game.core.runId,revision=value.result.revisionAfter,added=value.operation==='EVENT'?0:value.operation==='BATTLE'&&value.flags.includes('battle_won')?2:1;journalWrites.value=[...journalWrites.value.filter(w=>w.run!==run||w.revision!==revision),{run,revision,added}].slice(-100);}if(value.kind==='action'&&value.result&&store.game&&!value.replayed&&store.lastFromActivity&&store.activityOwned&&store.activity?.version===7&&store.activity.plan.action.type===value.operation&&store.activity.runId===store.game?.core.runId&&value.result.revisionAfter===store.game.core.revision&&((hubView.value==='current'&&value.operation==='CHOOSE'&&value.result.phaseBefore==='opening'&&value.result.phaseAfter==='idle')||(hubView.value==='cultivation'&&value.operation==='BREAKTHROUGH'&&value.result.delta.realm.before!==value.result.delta.realm.after)||(hubView.value==='trial-preparation'&&value.operation==='START_TRIAL'&&value.result.phaseBefore==='idle'&&value.result.phaseAfter==='trial-question')))selectTab('修行');focusObserved(value,observedNavigation);experience.record(value);},experience.fault);onScopeDispose(()=>{appActive=false;stopObserving();});
+const experience=useLocalExperience();let appActive=true;const stopObserving=store.observe(value=>{const observedNavigation=navigationOwner.value;if(['import','restore','restart','new_game'].includes(value.kind)){readingGeneration.value++;narrativeContext.value++;stageReturns.reset();journalWrites.value=[];}if(value.kind==='action'&&value.result&&value.operation&&store.game?.core.revision===value.result.revisionAfter){const run=store.game.core.runId,revision=value.result.revisionAfter,added=value.operation==='EVENT'?0:value.operation==='BATTLE'&&value.flags.includes('battle_won')?2:1;journalWrites.value=[...journalWrites.value.filter(w=>w.run!==run||w.revision!==revision),{run,revision,added}].slice(-100);}if(value.kind==='action'&&value.result&&store.game&&!value.replayed&&store.lastFromActivity&&store.activityOwned&&store.activity?.version===7&&store.activity.plan.action.type===value.operation&&store.activity.runId===store.game?.core.runId&&value.result.revisionAfter===store.game.core.revision&&((hubView.value==='current'&&value.operation==='CHOOSE'&&value.result.phaseBefore==='opening'&&value.result.phaseAfter==='idle')||(hubView.value==='cultivation'&&value.operation==='BREAKTHROUGH'&&value.result.delta.realm.before!==value.result.delta.realm.after)||(hubView.value==='trial-preparation'&&value.operation==='START_TRIAL'&&value.result.phaseBefore==='idle'&&value.result.phaseAfter==='trial-question')))selectTab('修行');focusObserved(value,observedNavigation);experience.record(value);},experience.fault);onScopeDispose(()=>{appActive=false;stopObserving();});
 const producing=computed(()=>!!store.activity&&store.activity.status!=='stopped'&&(store.activity.plan.kind==='craft'||store.activity.plan.kind==='forge'));
-const equipmentOpen=ref(false),resumeVisible=ref(false),hubView=ref('home');
-let navigationRevision = 0;
-const detailViews=new Set(['cultivation','goal','character','receipt','activity','journey','tradeoffs','recovery','market','trial-preparation']);
-const stageReturns=useStageReturns(()=>({view:hubView.value,tab:tab.value}),()=>focus.capture());
-const {detailParent,readingReturn}=stageReturns;
-const clearFlowReturns=stageReturns.clearFlow;
-const rememberHubOrigin=stageReturns.remember;
-const captureStageReturn=stageReturns.captureDetail;
+const resumeVisible=ref(false);
 const tradeoffKind=ref<ProgressionKind>('cultivation'),tradeoffSeed=ref<ProgressionVariant>('natural'),tradeoffEntry=ref(0);
 const narrativeContext=ref(0),readingGeneration=ref(0);
 const journalWrites=shallowRef<JournalWrite[]>([]);
-function selectTab(next: string) { stageReturns.reset();clearInspections();navigationRevision++; resumeVisible.value=false; tab.value = next;hubView.value=({'修行':'home','历练':'explore','行囊':'inventory','仙缘':'fate'} as Record<string,string>)[next]??'home'; return navigationRevision; }
 const preparation = shallowRef<Action | null>(null);
 const fontScale = computed({get:()=>experience.preferences.value.fontScale,set:(value:1|1.5|2)=>{void experience.setPreferences({fontScale:value});}}), reduceMotion = computed({get:()=>experience.preferences.value.reduceMotion,set:(value:boolean)=>{void experience.setPreferences({reduceMotion:value});}}), settingsView = ref<InstanceType<typeof GameSettings>>();
 const settings=computed(()=>settingsView.value?.element);
@@ -162,57 +154,15 @@ const activityRailVisible=computed(()=>store.ready&&immersive.value&&game.value?
 provide(primaryActivityControls,activityRailVisible);
 const storyView=computed(()=>singleScreen.value&&(['fate','life','trial','battle'].includes(hubView.value)||hubView.value==='current'&&phase.value!=='opening'||hubView.value==='trial-preparation'));
 const catalogueView=computed(()=>storyView.value||singleScreen.value&&(['journey','tradeoffs','explore','inventory','forge','skills','relics','goal','market','recovery','receipt','activity'].includes(hubView.value)||hubView.value==='cultivation'));
-const hubTitle=computed(()=>['skills','relics'].includes(hubView.value)&&equipmentSection.value?({school:'修法 · 剑符择道',skills:'功法 · 研习与配装',relics:'法宝 · 炼制与装备',manual:'剑简 · 参悟与研习',summary:'配装 · 三法一器'} as Record<string,string>)[equipmentSection.value]:({tradeoffs:'行前取舍 · 当前一段',activity:'本段活动 · 成果与停止',market:'坊市 · 货架与取舍',recovery:'药匣 · 恢复与疗养',journey:'突破筹备 · 下一步',explore:'历练 · 云岚山海',inventory:'行囊 · 随身物资',forge:'丹炉 · 择方温炉',skills:'功法 · 研习与配装',relics:'法宝 · 炼制与装备',life:'修仙生平',goal:'目标与筹备',fate:'仙缘 · 人物与手记',cultivation:ruleContent.value.realms[game.value?.core.player.realm??'mortal'].name+'修行','trial-preparation':'登仙 · 行前核对',current:(game.value?narrativeFor(game.value)?.title:null)??(game.value?.battle?ruleContent.value.enemies[game.value.battle.enemy].name:trialView.value?.title??'仙缘 · 人物与手记'),trial:'渡劫行程与续行',battle:'术法说明与战报',receipt:'本次行动结算',character:'道者 · 寿元与配装'} as Record<string,string>)[hubView.value]??'行道详情');
-const equipmentReading=shallowRef({runId:'',section:''});
-const equipmentEntry=ref(0);
-const equipmentSection=computed(()=>equipmentReading.value.runId===game.value?.core.runId?equipmentReading.value.section:'');
-const preferHomeNavigation=ref(false);
-watch(()=>store.activity?.id,()=>preferHomeNavigation.value=false);
-function selectPrimaryTab(next:string){browseDirect();preferHomeNavigation.value=next==='修行';return selectTab(next);}
-function openPrimaryFeature(view:string,event?:Event){browseDirect();if(view==='skills'||view==='relics')equipmentEntry.value++;return openHub(view,event);}
-const navigationView=computed(()=>{
- const view=detailViews.has(hubView.value)?detailParent.value?.view??hubView.value:hubView.value;
- if(view==='current')return game.value?.battle||game.value?.trial?'explore':'fate';
- if(view==='home'&&(game.value?.battle||game.value?.trial))return'explore';
- const activity=store.activity;
- if(view==='home'&&!preferHomeNavigation.value&&activity?.version===6&&activity.runId===game.value?.core.runId&&activity.gameRevision===game.value?.core.revision&&activity.plan.kind!=='travel')return'explore';
- if(view==='home'&&phase.value==='event')return'fate';
- return ['skills','relics'].includes(view)?equipmentSection.value==='relics'?'relics':'skills':view;
-});
-const receiptAll=ref(false);
-const trialReadMode=ref<'required'|'checkpoint'>('required');
-async function openHub(view:string,event?:Event,trialMode:'required'|'checkpoint'='required'){
- trialReadMode.value=trialMode;
- if(view==='receipt')receiptAll.value=!!store.activity&&store.activity.completedCycles>0&&!store.lastResult;
- if(view==='help'){await showGameplayHelp();return null;}
- const detail=immersive.value&&detailViews.has(view);
- stageReturns.enter(view,detail,event);
- const independent=['goal','receipt','character'].includes(view);
- const owner=detail?++navigationRevision:selectTab(independent?tab.value:view==='inventory'||view==='forge'?'行囊':view==='life'||view==='fate'?'仙缘':view==='explore'?'历练':'修行');
- hubView.value=view;
- if(view==='skills'||view==='relics')equipmentOpen.value=true;
- if(view==='life')lifeOpen.value=true;
- await nextTick();
- if(owner!==navigationRevision)return null;
- if(!document.querySelector('dialog[open]'))focus.target(document.getElementById('feature-title'));
- return owner;
-}
-async function closeHub(){
- const {back,opener,id}=stageReturns.consume(game.value?.core.runId,narrativeContext.value);
- if(back){navigationRevision++;hubView.value=back.view;tab.value=back.tab;}else selectTab('修行');await nextTick();
- if(document.querySelector('dialog[open]'))return;
- const candidate=visibleFocusTarget(opener)?opener:id?document.querySelector<HTMLElement>(`[data-testid="${CSS.escape(id)}"]`):null;
- focus.target(visibleFocusTarget(candidate)?candidate:document.querySelector<HTMLElement>('[data-testid=hub-current]'));
-}
-function featureKey(event:KeyboardEvent){if(event.key==='Escape'&&singleScreen.value&&hubView.value!=='home'&&!document.querySelector('dialog[open]')){event.preventDefault();void closeHub();}}
-onMounted(()=>document.addEventListener('keydown',featureKey));onScopeDispose(()=>document.removeEventListener('keydown',featureKey));
 function currentContent(){return [...document.querySelectorAll<HTMLElement>('.catalogue-view .play-catalogue')].find(visibleFocusTarget)??(visibleFocusTarget(contentPanel.value??null)?contentPanel.value??null:null);}
 const focus=useFocus(()=>currentContent()??settingsButton.value??null);
 provide(gameFocusKey,focus);
-const stageFocus=useStageFocus(store,focus,{owner:()=>navigationRevision,advance:()=>++navigationRevision,content:currentContent,element:()=>contentPanel.value,life:()=>showLife()});
+const stageNavigation=useStageNavigation(store,focus,{singleScreen:()=>singleScreen.value,immersive:()=>immersive.value,narrativeContext:()=>narrativeContext.value,content:currentContent,lifeElement:()=>lifeSection.value,settings:()=>settings.value,settingsButton:()=>settingsButton.value,help:showGameplayHelp,browse:()=>browseDirect(),clearInspections:()=>clearInspections(),dismissResume:()=>resumeVisible.value=false});
+const {owner:navigationOwner,tab,hubView,equipmentOpen,lifeOpen,equipmentReading,equipmentEntry,equipmentSection,detailViews,stageReturns,detailParent,readingReturn,clearFlowReturns,rememberHubOrigin,captureStageReturn,selectTab,selectPrimaryTab,openPrimaryFeature,navigationView,receiptAll,trialReadMode,openHub,closeHub,showLife,showTrialPreparation,hubTitle}=stageNavigation;
+const stageFocus=useStageFocus(store,focus,{owner:()=>navigationOwner.value,advance:()=>stageNavigation.advance(),content:currentContent,element:()=>contentPanel.value,life:()=>showLife()});
 const {armStageFocus,focusObserved,focusContent}=stageFocus;
 const activityPlans=useActivityPlans(store,focus,{
- owner:()=>navigationRevision,advance:()=>++navigationRevision,select:selectTab,open:openHub,current:()=>({singleScreen:singleScreen.value,view:hubView.value}),dismissResume:()=>resumeVisible.value=false,navigate,inspectMilestone,
+ owner:()=>navigationOwner.value,advance:()=>stageNavigation.advance(),select:selectTab,open:openHub,current:()=>({singleScreen:singleScreen.value,view:hubView.value}),dismissResume:()=>resumeVisible.value=false,navigate,inspectMilestone,
 });
 provide(activityPlansKey,activityPlans);
 const {collectionTarget,highlight,trainingInspectionPlan,sourceInspectionPlan,productionInspectionPlan,preparationInspectionPlan,preparationInspectionSaved,preparationInspectionExact,adventureInspectionPlan,adventureInspectionSaved,activityPlanVisible,hubTrainingMethod,clearInspections,inspectionOwner,arrangeTravel,travel,inspectAdventure,startAdventure,startTraining,startSource,viewActivityPlan,startProduction,inspectProduction,moveProduction,startPreparation,inspectPreparationPlan,inspectPreparation,movePreparation}=activityPlans;
@@ -220,7 +170,7 @@ const {collectionTarget,highlight,trainingInspectionPlan,sourceInspectionPlan,pr
 const confirmation=useGameConfirmation({focus,appearance:()=>({fontScale:fontScale.value,reduceMotion:reduceMotion.value})});
 function confirmationSource(){
  const key=()=>JSON.stringify([core.value?.runId??null,core.value?.revision??0,store.activity?.id??null,store.activity?.revision??null,store.activity?.ownerId??null,store.syncEpoch]);
- // navigationRevision also advances on ordinary input; modal return tracks the actual view.
+ // navigationOwner.value also advances on ordinary input; modal return tracks the actual view.
  const viewKey=()=>JSON.stringify([hubView.value,tab.value,detailParent.value?.view??null,detailParent.value?.tab??null]);
  const original=key(),view=viewKey(),run=core.value?.runId??null;
  return{current:()=>appActive&&key()===original&&viewKey()===view,mayReturn:()=>appActive&&(core.value?.runId??null)===run&&viewKey()===view};
@@ -230,12 +180,12 @@ const {importNotice,exportError,importFile,exportSave,exportRaw,reset,restore,ex
  source:confirmationSource,blocked:confirmationBlocked,settings:()=>settings.value,importOpener:()=>importButton.value,
  completed:()=>{selectTab('修行');settings.value?.close();},
 });
-async function confirmMilestone(retrying=false){const review=milestoneReview.value,owner=navigationRevision,sync=store.syncEpoch;await confirmMilestoneAction(retrying);if(!retrying&&review?.prepared&&review.plan.action.type==='CHOOSE'&&!milestoneReview.value)armStageFocus(review.prepared,owner,sync,'stage');}
+async function confirmMilestone(retrying=false){const review=milestoneReview.value,owner=navigationOwner.value,sync=store.syncEpoch;await confirmMilestoneAction(retrying);if(!retrying&&review?.prepared&&review.plan.action.type==='CHOOSE'&&!milestoneReview.value)armStageFocus(review.prepared,owner,sync,'stage');}
 function showSettings(event?:Event){const records=settings.value?.querySelector<HTMLDetailsElement>('[data-testid=local-records-panel]');if(records)records.open=false;focus.open(settings.value,event?.currentTarget instanceof HTMLElement?event.currentTarget:settingsButton.value??focus.capture());}
 async function showDemoMenu(event?:Event){const opener=settings.value?.open?settingsButton.value??null:event?.currentTarget instanceof HTMLElement?event.currentTarget:focus.capture();settings.value?.close();await nextTick();focus.open(demoMenu.value,opener);}
 async function initialiseGame(){if(store.busy)return;await store.init();if(appActive)resumeVisible.value=session.kind==='normal'&&!!store.game&&store.available;if(appActive&&session.kind==='demo'&&store.available&&!store.game&&!store.busy)await store.importText(JSON.stringify(session.node!.game));}
 function focusRegion(id:string){if(id==='goal-panel'&&singleScreen.value&&hubView.value!=='goal'){void openHub('goal');return;}focus.target(document.getElementById(id));}
-function focusPrimary(){navigationRevision++;focus.target(currentContent()?.querySelector<HTMLElement>('[data-primary-region]')??currentContent());}
+function focusPrimary(){stageNavigation.advance();focus.target(currentContent()?.querySelector<HTMLElement>('[data-primary-region]')??currentContent());}
 const game = computed(() => store.game), core = computed(() => game.value?.core);
 let journalLedger:JournalLedger|undefined,journalGeneration=-1;
 const journalKeys=computed(()=>{const g=game.value,generation=readingGeneration.value;if(!g)return[];if(generation!==journalGeneration){journalLedger=undefined;journalGeneration=generation;}journalLedger=journalAnchors(journalLedger,g.journal,g.core.runId,g.core.revision,journalWrites.value);return journalLedger.keys;});
@@ -257,7 +207,7 @@ async function inspectNext(event?:Event){
  if(kind==='school')return showEquipment(event);
  if(kind==='record')return showLife();
  if(kind==='encounter'&&!game.value?.battle&&phase.value!=='opening')return openHub('current',event);
- const owner=navigationRevision;await closeHub();await nextTick();if(navigationRevision!==owner+1)return;
+ const owner=navigationOwner.value;await closeHub();await nextTick();if(navigationOwner.value!==owner+1)return;
  const stage=document.querySelector<HTMLElement>('[data-testid=hub-current]');
  focus.target(stage?.querySelector<HTMLElement>('button.primary:not(:disabled),button.cultivate-primary:not(:disabled)')??stage);
 }
@@ -268,7 +218,7 @@ async function inspectLifespan(event:Event){const owns=inspectionOwner();const o
 const hubGoal=computed(()=>game.value?getTrackedGoal(game.value,tracking.target.value):null);
 const hudGoalContext=computed(()=>{const g=game.value,o=hubGoal.value;return g&&o&&!lifeState.value?.hint?{runId:g.core.runId,revision:g.core.revision,goal:o}:null;});
 const hubGoalHint=computed(()=>{if(tracking.target.value.kind==='breakthrough'&&trialView.value)return trialView.value.state;const g=hubGoal.value;if(!g)return'';if(g.completed)return'目标已达成';const d=g.deficits.find(d=>d.kind==='xp')??g.deficits.find(d=>d.kind==='item')??g.deficits[0];if(!d)return g.preview?.failure?.message??'准备已齐，可核对行动。';const label=d.kind==='item'?ruleContent.value.items[d.id!].name:({stones:'灵石',mp:'灵力',months:'余寿游戏月',xp:'修为',hp:'气血'}as const)[d.kind];return`尚缺${label} ${d.missing}${g.deficits.length>1?'（另 '+(g.deficits.length-1)+' 项）':''}`;});
-function selectTracking(target:Parameters<typeof tracking.select>[0]){navigationRevision++;tracking.select(target);}
+function selectTracking(target:Parameters<typeof tracking.select>[0]){stageNavigation.advance();tracking.select(target);}
 watch([() => tracking.target.value, () => game.value?.core.runId], () => { collectionTarget.value = null; highlight.value = ''; });
 watch(() => game.value?.core.player.realm, () => { if (tracking.target.value.kind === 'breakthrough') { collectionTarget.value = null; highlight.value = ''; } });
 const realm = computed(() => ruleContent.value.realms[core.value?.player.realm ?? 'mortal']);
@@ -277,7 +227,7 @@ const phase = computed(() => game.value ? gamePhase(game.value) : null);
 watch([()=>game.value?.core.runId,()=>phase.value,()=>game.value?.core.activeEvent?.instanceId,()=>store.syncEpoch],()=>{narrativeContext.value++;stageReturns.clearReading();},{flush:'sync'});
 const equipmentVisible=computed(()=>tab.value==='修行'&&(!singleScreen.value&&phase.value!=='opening'||singleScreen.value&&['skills','relics'].includes(hubView.value))&&game.value?.status==='active');
 const needsSchool=computed(()=>!!game.value&&phase.value==='idle'&&C.rank(game.value.core.player.realm)>=C.rank('qi')&&!game.value.school);
-watch(()=>game.value?.core.runId,()=>{stageFocus.lifeChanged();navigationRevision++;clearFlowReturns();clearInspections();collectionTarget.value=null;highlight.value='';stageReturns.reset();equipmentOpen.value=needsSchool.value;resumeVisible.value=false;},{flush:'sync'});
+watch(()=>game.value?.core.runId,()=>{stageFocus.lifeChanged();stageNavigation.advance();clearFlowReturns();clearInspections();collectionTarget.value=null;highlight.value='';stageReturns.reset();equipmentOpen.value=needsSchool.value;resumeVisible.value=false;},{flush:'sync'});
 watch(()=>store.syncEpoch,clearFlowReturns,{flush:'sync'});
 // Read-only inspection belongs to a life/navigation, and to the selected activity when saved.
 // Do not fence on revisions: a normal cycle or pause must preserve the draft.
@@ -285,8 +235,8 @@ watch(()=>store.syncEpoch,clearFlowReturns,{flush:'sync'});
 
 watch(needsSchool,value=>{if(value)equipmentOpen.value=true;},{immediate:true});
 const startJourney=()=>stageFocus.startJourney(name.value);
-async function showEquipment(event?:Event){rememberHubOrigin(event);const opener=stageReturns.opener,owner=selectTab('修行');if(singleScreen.value)hubView.value='skills';equipmentOpen.value=true;await nextTick();if(owner===navigationRevision&&!document.querySelector('dialog[open]')&&(document.activeElement===opener||document.activeElement===document.body))focus.target(document.querySelector<HTMLElement>('[data-testid="equipment-panel"]'));}
-async function showBreakthroughGoal(){captureStageReturn('goal');const opener=focus.capture();selectTracking({kind:'breakthrough'});if(singleScreen.value)hubView.value='goal';const owner=navigationRevision;await nextTick();if(owner===navigationRevision&&!document.querySelector('dialog[open]')&&(document.activeElement===opener||document.activeElement===document.body))focusRegion('goal-panel');}
+async function showEquipment(event?:Event){rememberHubOrigin(event);const opener=stageReturns.opener,owner=selectTab('修行');if(singleScreen.value)hubView.value='skills';equipmentOpen.value=true;await nextTick();if(owner===navigationOwner.value&&!document.querySelector('dialog[open]')&&(document.activeElement===opener||document.activeElement===document.body))focus.target(document.querySelector<HTMLElement>('[data-testid="equipment-panel"]'));}
+async function showBreakthroughGoal(){captureStageReturn('goal');const opener=focus.capture();selectTracking({kind:'breakthrough'});if(singleScreen.value)hubView.value='goal';const owner=navigationOwner.value;await nextTick();if(owner===navigationOwner.value&&!document.querySelector('dialog[open]')&&(document.activeElement===opener||document.activeElement===document.body))focusRegion('goal-panel');}
 const inspectingInventory=computed(()=>game.value?.status==='active'&&phase.value!=='idle'&&tab.value==='行囊');
 async function resumeEncounter(){if(game.value&&narrativeFor(game.value)){await openHub('current');return;}selectTab('修行');await nextTick();focusContent();}
 const catalogueGuide=ref<HTMLDialogElement>();
@@ -300,17 +250,17 @@ async function skipGuidance(){skippedGuides.value=[...skippedGuides.value,guidan
 async function showGameplayHelp(){const opener=settings.value?.open?settingsButton.value??null:focus.capture();settings.value?.close();await nextTick();focus.open(gameplayHelp.value,opener);}
 const journey = computed(() => game.value ? getTrialJourney(game.value) : null);
 const overview = computed(() => game.value ? getLifeOverview(game.value) : null);
-const lifeOpen = ref(false), lifeSection = ref<HTMLDetailsElement>();
+const lifeSection = ref<HTMLDetailsElement>();
 const {quote,can,why,cost}=useActionView(store);
 function viewReceipt(){if(store.activity?.version===7&&store.activity.stopReason?.code!=='STATE_CHANGED')return inspectMilestone(store.activity);return openHub('receipt');}
 const stoppedTraining = computed(()=>store.activity?.status==='stopped'&&store.activity.stopReason?.code!=='STATE_CHANGED');
-function act(action: Action) { resumeVisible.value=false;if(action.type==='TRAVEL')return travel(action.location);if(action.type==='BATTLE')return battle(action.move);if(action.type==='ENCOUNTER')return inspectAdventure(action.enemy);if(action.type==='CULTIVATE'){const n=action.count??1;return startTraining({kind:'cultivation',method:action.method,maxCycles:n,until:'cycles',stoneBudget:action.method==='natural'?0:Math.min(core.value?.player.stones??0,(quote({...action,count:1})?.costs?.stones??0)*n),stoneReserve:0});}if(action.type==='SOURCE'){const n=action.count??1,source=ruleContent.value.sources[action.sourceId],target=action.target?{kind:'item' as const,id:action.target.item,quantity:action.target.quantity}:batch.value==='target'?collectionTarget.value:null;return startSource({kind:'source',sourceId:action.sourceId,maxCycles:n,until:target?'target':'cycles',target,monthBudget:n*source.months,remainingMonthsReserve:1});}if(action.type==='CRAFT'||action.type==='FORGE')return inspectProduction(action);if(['BUY','SELL','USE','REST','LEARN','STUDY'].includes(action.type))return inspectPreparation(action);if(action.type==='SCHOOL'||action.type==='EQUIP'||action.type==='EQUIP_RELIC')return inspectConfiguration(action);if(store.activityRunning){store.activityNotice='当前活动进行中，请先暂停再行动。';return;}if (action.type === 'START_TRIAL') return showTrialPreparation(); if (action.type === 'END') return reviewAscension(action.ending); if(isMilestoneAction(action))return selectMilestone(action); const owner=navigationRevision; return focus.afterAction(async()=>{await store.act(action);},()=>owner===navigationRevision); }
+function act(action: Action) { resumeVisible.value=false;if(action.type==='TRAVEL')return travel(action.location);if(action.type==='BATTLE')return battle(action.move);if(action.type==='ENCOUNTER')return inspectAdventure(action.enemy);if(action.type==='CULTIVATE'){const n=action.count??1;return startTraining({kind:'cultivation',method:action.method,maxCycles:n,until:'cycles',stoneBudget:action.method==='natural'?0:Math.min(core.value?.player.stones??0,(quote({...action,count:1})?.costs?.stones??0)*n),stoneReserve:0});}if(action.type==='SOURCE'){const n=action.count??1,source=ruleContent.value.sources[action.sourceId],target=action.target?{kind:'item' as const,id:action.target.item,quantity:action.target.quantity}:batch.value==='target'?collectionTarget.value:null;return startSource({kind:'source',sourceId:action.sourceId,maxCycles:n,until:target?'target':'cycles',target,monthBudget:n*source.months,remainingMonthsReserve:1});}if(action.type==='CRAFT'||action.type==='FORGE')return inspectProduction(action);if(['BUY','SELL','USE','REST','LEARN','STUDY'].includes(action.type))return inspectPreparation(action);if(action.type==='SCHOOL'||action.type==='EQUIP'||action.type==='EQUIP_RELIC')return inspectConfiguration(action);if(store.activityRunning){store.activityNotice='当前活动进行中，请先暂停再行动。';return;}if (action.type === 'START_TRIAL') return showTrialPreparation(); if (action.type === 'END') return reviewAscension(action.ending); if(isMilestoneAction(action))return selectMilestone(action); const owner=navigationOwner.value; return focus.afterAction(async()=>{await store.act(action);},()=>owner===navigationOwner.value); }
 const {storyAct,quickInventory,browse:browseDirect}=useDirectActions(store,focus,confirmation,{
- owner:()=>navigationRevision,viewIdentity:()=>[hubView.value,tab.value,detailParent.value?.view,detailParent.value?.tab],
+ owner:()=>navigationOwner.value,viewIdentity:()=>[hubView.value,tab.value,detailParent.value?.view,detailParent.value?.tab],
  source:confirmationSource,blocked:confirmationBlocked,openCurrent:()=>openHub('current'),regular:act,
 });
 function trackTrialMaterial(target:Parameters<typeof selectTracking>[0]){selectTracking(target);void openHub('goal');}
-function retryOperation(){const owner=navigationRevision;return focus.afterAction(()=>store.retry(),()=>owner===navigationRevision);}
+function retryOperation(){const owner=navigationOwner.value;return focus.afterAction(()=>store.retry(),()=>owner===navigationOwner.value);}
 async function trackProduction(target:Parameters<typeof selectTracking>[0]){selectTracking(target);await openHub('goal');}
 const {configurationError,configurationIntent,configurationSnapshot,configurationStale,configurationRetry,inspectConfiguration,closeConfiguration,refreshConfiguration,confirmConfiguration}=useConfigurationReview(store);
 const cultivationHome=computed(()=>!!game.value&&phase.value==='idle'&&tab.value==='修行'&&core.value?.world.location==='cave');
@@ -321,14 +271,14 @@ const relationships = computed(() => game.value ? getRelationships(game.value) :
 async function navigate(request:NavigationRequest,arrived?:()=>void):Promise<void>{
  if(!game.value||store.busy||!store.available)return;
  if(game.value.core.world.location!==request.location)return arrangeTravel(request.location,()=>navigate(request,arrived));
- ++navigationRevision;
+ stageNavigation.advance();
   const focusRevision = selectTab(request.tab); highlight.value = request.focusId ?? '';
   if(request.focusId&&/^(equipment-panel|school-|learn-|equip-|forge-|study-manual)/.test(request.focusId)){equipmentOpen.value=true;if(singleScreen.value)hubView.value=request.focusId.startsWith('forge-')?'relics':'skills';}if(singleScreen.value&&request.focusId?.startsWith('craft-'))hubView.value='forge';if(singleScreen.value&&request.tab==='修行'&&request.focusId?.startsWith('trial-'))hubView.value='trial-preparation';
   if(singleScreen.value&&/^(buy-|sell-)/.test(request.focusId??''))hubView.value='market';if(singleScreen.value&&request.focusId==='rest'){hubView.value='recovery';preparationInspectionPlan.value={kind:'rest',maxCycles:1,remainingMonthsReserve:1};}if(singleScreen.value&&request.focusId==='cultivation-actions'&&step.value?.kind==='recover')hubView.value='recovery';
   if (request.quantity) quantity.value = request.quantity;
   if (request.collection) {collectionTarget.value = request.collection;batch.value='target';}
   await nextTick();
-  if (navigationRevision !== focusRevision) return;
+  if (navigationOwner.value !== focusRevision) return;
   arrived?.();
   const element = request.focusId ? document.querySelector<HTMLElement>(`[data-testid="${request.focusId}"]`) : null;
   if(element){const target=element.matches(':disabled')?(element.closest<HTMLElement>('article,.recipe,.market-row')??element.parentElement):element;if(target){if(target!==element)target.tabIndex=-1;target.scrollIntoView({block:'center'});focus.target(target);}}
@@ -339,20 +289,9 @@ function consumption(action: Action) {
   return gaps.length ? '会消耗追踪物资：' + gaps.map(gap => `${ruleContent.value.items[gap.id!].name}将缺${gap.missing}`).join('、') + '；材料未被预留。' : '';
 }
 function battle(move:Move){if(!game.value?.battle||store.activityRunning)return;return startAdventure(singleBattlePlan(game.value,move));}
-async function showLife(event?:Event) {
-  const run=game.value?.core.runId,context=narrativeContext.value;let owner:number;
-  if(singleScreen.value&&game.value){stageReturns.enterReading(game.value.core.runId,context,event,settings.value?.open?settingsButton.value??null:undefined);owner=++navigationRevision;tab.value='仙缘';hubView.value='life';}else{rememberHubOrigin(event);owner=selectTab('仙缘');}settings.value?.close();lifeOpen.value = true;
-  await nextTick();if(!appActive||owner!==navigationRevision||run!==game.value?.core.runId||context!==narrativeContext.value)return;const title=document.querySelector<HTMLElement>('[data-testid=life-title]');focus.target(title??lifeSection.value??currentContent());return owner;
-}
-async function showTrialPreparation() {
-  if (core.value?.player.realm !== 'spirit') return;
-  selectTab('修行');if(singleScreen.value)hubView.value='trial-preparation'; await nextTick();
-  const heading = document.querySelector<HTMLElement>('[data-testid="trial-preparation-title"]');
-  heading?.scrollIntoView({block:'start'}); heading?.focus({preventScroll:true});
-}
 const closureDecisions=ref<InstanceType<typeof ClosureDecisions>>();
 const closureNavigation:ClosureNavigation={
- owner:()=>navigationRevision,
+ owner:()=>navigationOwner.value,
  leaveSettings:()=>{const opener=settings.value?.open?settingsButton.value??null:focus.capture();settings.value?.close();return opener;},
  accepted:(review,owner,sync,target)=>armStageFocus(review,owner,sync,target),
  showTrialPreparation,
