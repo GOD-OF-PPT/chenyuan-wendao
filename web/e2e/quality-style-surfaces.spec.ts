@@ -3,15 +3,23 @@ import {writeFileSync,mkdirSync} from 'node:fs';
 import path from 'node:path';
 import {driver,fullRoute} from '../../tests/full-route.mjs';
 import {newGame} from '../../src/full/engine';
-import {importRecoveryFixture,recoveryDatabase} from './idle-recovery-ui-support';
+import {importRecoveryFixture as importFixture,recoveryDatabase} from './idle-recovery-ui-support';
 import {selectPlan} from './idle-route-support';
 import {activitySnapshot,useJourneyClock} from './support';
 
 // The exact same visible states produce before/after evidence. The clock and
 // Game are the ordinary journey helpers; this file never seeks an animation.
+async function importRecoveryFixture(page:Page,game:any){
+ const actual=await importFixture(page,game),raw=await recoveryDatabase(page);
+ await page.getByTestId('game-settings').click();await page.getByTestId('reduce-effects').check();await page.getByRole('button',{name:'关闭设置',exact:true}).click();
+ expect(await recoveryDatabase(page)).toEqual(raw);return actual;
+}
 async function capture(page:Page,info:TestInfo,name:string){
  await expect.poll(()=>page.locator('[data-art-state="loading"]').evaluateAll(nodes=>nodes.filter(n=>n.checkVisibility()).length)).toBe(0);
  await page.evaluate(()=>document.fonts.ready);
+ // Let ordinary native transitions settle. This host wait does not advance or
+ // replace page.clock, finish an activity, pause or seek a CSS animation.
+ await new Promise(resolve=>setTimeout(resolve,300));
  const before=await recoveryDatabase(page);
  const styles=await page.locator('#app *').evaluateAll(nodes=>nodes.filter(n=>n.checkVisibility()).map(n=>{
   const s=getComputedStyle(n),r=n.getBoundingClientRect(),properties=['display','position','color','backgroundColor','backgroundImage','fontFamily','fontSize','lineHeight','fontWeight','borderColor','borderWidth','padding','margin','opacity','visibility','transform','boxShadow','outline','zIndex'];
