@@ -69,3 +69,17 @@ test('Q12 sealed home and its complete current life record remain stable',async(
  const d=fullRoute('help','sword','purchase',false,'transmit');await importRecoveryFixture(page,d.game);await capture(page,info,'sealed-home');
  await page.getByTestId('sealed-open-life').click();await capture(page,info,'sealed-record');
 });
+
+test('Q12 production author rules use a declared layer rather than overriding it from outside',async({page})=>{
+ await useJourneyClock(page);await page.goto('/');await expect(page.getByLabel('你的道号',{exact:true})).toBeVisible();
+ const coverage=await page.evaluate(()=>{
+  const outside:string[]=[],layers=new Set<string>();let styleRules=0;
+  function visit(rules:CSSRuleList,inside:boolean){for(const rule of rules){
+   if(rule instanceof CSSStyleRule){styleRules++;if(!inside)outside.push(rule.selectorText);}
+   else if(rule instanceof CSSLayerBlockRule){layers.add(rule.name);visit(rule.cssRules,true);}
+   else if(rule instanceof CSSMediaRule||rule instanceof CSSSupportsRule)visit(rule.cssRules,inside);
+  }}
+  for(const sheet of document.styleSheets)visit(sheet.cssRules,false);return {styleRules,outside,layers:[...layers]};
+ });
+ expect(coverage.styleRules).toBeGreaterThan(0);expect(coverage.layers.length).toBeGreaterThan(0);expect(coverage.outside).toEqual([]);
+});
