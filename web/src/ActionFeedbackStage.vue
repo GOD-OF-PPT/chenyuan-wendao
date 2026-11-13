@@ -5,6 +5,7 @@ import type {Game} from '../../src/full/types.ts';
 import type {Observation} from './local-events';
 import {activityFeedbackObservation,createActionFeedbackTracker,type ActionNotice} from './action-feedback';
 import GameIcon from './GameIcon.vue';
+import {resultMomentKind} from './result-moments';
 import BattleCast from './BattleCast.vue';
 import {battleSpot,castActors,clearBattlePose,useBattleWitness} from './battle-choreography';
 const {store:scene,reduceMotion,viewKey,playfieldActive}=defineProps<{store:ReturnType<typeof useGame>;reduceMotion:boolean;viewKey:string;playfieldActive:boolean}>();
@@ -36,6 +37,7 @@ watch(()=>[observation.value,scene.busy,scene.saved,scene.available,scene.error,
  unmarkPending();
  if(store.error){const key=JSON.stringify([observation.value?.commandId,store.error]);if(key!==lastFailure){clear();lastFailure=key;state.value='error';mark(pending?.element??null,'command-error');timer=setTimeout(()=>{state.value='idle';},1400);}return;}
  const next=tracker.consume(activityFeedbackObservation(observation.value,store.activity,store.lastResult),store.game,store.lastResult,store.lastReplayed,store.saved&&store.available,before.value);if(!next){if(state.value==='pending')state.value='idle';return;}if(store.activityPausing||store.lastFromActivity&&(!playfieldActive||next.family!=='battle'&&store.activity?.version!==7)||document.hidden){state.value='idle';return;}
+ if(resultMomentKind(next.operation,next.terminal&&next.variant==='victory')){clear();mark(pending?.element??null,'command-success');return;}
  clearTimeout(timer);const owner=++generation,origin=pending;await nextTick();await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));if(owner!==generation||store.busy||store.error||document.hidden)return;
  notice.value=next;state.value='success';mark(origin?.element??null,'command-success');
  const op=next.operation,family=next.family,control=family==='dialogue'&&next.variant==='control',cast=witness.forNotice(next),spot=op==='BATTLE'?battleSpot(cast):null;
