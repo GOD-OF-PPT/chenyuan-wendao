@@ -1,3 +1,4 @@
+@layer game{
 .art06-site{position:relative;display:grid;grid-template-columns:minmax(260px,.95fr) minmax(380px,1fr);gap:24px;align-items:center;min-height:0;width:100%;color:#e4ecdf;text-align:left;isolation:isolate}
 .art06-sanctum{position:relative;min-width:0;height:370px;display:grid;align-items:end;justify-items:center;isolation:isolate;background:radial-gradient(ellipse at 50% 68%,#062e3444,transparent 70%)}
 .art06-meditator.asset-image{position:absolute!important;inset:8% 8% 32px!important;width:84%!important;height:84%!important;z-index:2;pointer-events:none;filter:drop-shadow(0 12px 15px #001d21a3);transform-origin:50% 85%}
@@ -41,4 +42,4 @@
 .training-planner .art06-site{grid-template-columns:240px minmax(320px,1fr) minmax(350px,1.1fr);grid-template-rows:auto auto;gap:8px 18px;align-content:center}.training-planner .art06-site .art06-practice{display:contents}.training-planner .art06-sanctum{grid-column:1;grid-row:1/3;align-self:center}.training-planner .art06-progress{grid-column:3;grid-row:1;align-self:start}.training-planner .art06-methods{grid-column:2;grid-row:1}.training-planner .art06-main-decision{grid-column:3;grid-row:2;align-self:start}.training-planner .art06-parameters{grid-column:2;grid-row:2;align-self:start}
 
 /* Let the sanctum remain a scene; local decisions retain readable backing. */
-#app .immersive-stage:has(.training-planner).stage-details .hub-feature,#app .immersive-stage .training-planner{background:transparent!important;border:0!important;box-shadow:none!important}.training-planner .art06-main-decision,.training-planner .art06-progress{background:#102d32ed;padding:10px 14px}.training-planner .art06-methods{align-self:start}
+#app .immersive-stage:has(.training-planner).stage-details .hub-feature,#app .immersive-stage .training-planner{background:transparent!important;border:0!important;box-shadow:none!important}.training-planner .art06-main-decision,.training-planner .art06-progress{background:#102d32ed;padding:10px 14px}.training-planner .art06-methods{align-self:start}}

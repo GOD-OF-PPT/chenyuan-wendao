@@ -47,5 +47,6 @@ const can=(action:Action)=>props.available&&!props.busy&&!props.running&&!blocke
 </template>
 
 <style scoped>
-.training-planner :deep(button){font-size:18px}
+@layer game{
+    .training-planner :deep(button){font-size:18px}}
 </style>

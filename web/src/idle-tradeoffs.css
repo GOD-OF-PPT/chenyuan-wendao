@@ -1,3 +1,4 @@
+@layer game{
 .immersive-stage:has(.tradeoffs-catalogue,.preparation-catalogue).stage-details .hub-feature{width:1180px}
 .tradeoffs-catalogue{position:relative;isolation:isolate;gap:10px;padding:18px 24px;background:#102d32;color:#e7e5ce}
 .tradeoffs-catalogue>.catalogue-art{position:absolute;inset:auto auto 64px 16px;width:290px;height:300px;opacity:.45;pointer-events:none;z-index:-1}
@@ -25,4 +26,4 @@
 .outlook-reading small{font-size:14px;line-height:1.5;color:#c3d6c9}
 
 .single-screen .preparation-needs>article:only-child{grid-column:span 2}
-.single-screen .preparation-needs>article>div{flex-direction:column;gap:4px}
+.single-screen .preparation-needs>article>div{flex-direction:column;gap:4px}}

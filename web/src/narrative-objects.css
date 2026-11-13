@@ -1,3 +1,4 @@
+@layer game{
 /* ART05 fixed desktop: real people, response slips and the readable life scroll. */
 #app :is([data-testid=life-confirmation],[data-testid=ascension-confirmation],[data-testid=trial-restore-confirmation]) p{font-size:18px}
 #app .story-book.art05-story{display:flex;flex-direction:column;flex:1;min-width:0;min-height:0;margin:0;padding:12px 18px;gap:8px;color:#e8edda;background:linear-gradient(105deg,#102f34ed,#143a3bc2)!important;border:0;box-shadow:none!important}
@@ -121,4 +122,4 @@
 
 #app .art32-threshold .choice-inspection h2{line-height:1.65}
 
-#app .art32-threshold .response-figure>figcaption,#app .art32-threshold .response-presence>small,#app .art32-threshold .narrative-object-cycle{background:#0b2932f5;text-shadow:0 1px 2px #031c25}
+#app .art32-threshold .response-figure>figcaption,#app .art32-threshold .response-presence>small,#app .art32-threshold .narrative-object-cycle{background:#0b2932f5;text-shadow:0 1px 2px #031c25}}

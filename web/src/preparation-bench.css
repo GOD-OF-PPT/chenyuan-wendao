@@ -1,3 +1,4 @@
+@layer game{
 #app .preparation-catalogue{background:transparent!important;border:0!important;box-shadow:none!important;padding:12px 18px!important}
 #app .preparation-catalogue>header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 #app .preparation-catalogue>header>div{margin-right:auto}
@@ -44,4 +45,4 @@
 #app:has([data-testid=error]) .preparation-catalogue .goal-board-work{gap:4px}
 #app:has([data-testid=error]) .preparation-catalogue .preparation-materials{margin-top:4px;padding:4px 0}
 #app:has([data-testid=error]) .preparation-catalogue .preparation-material-art{height:64px}
-#app:has([data-testid=error]) .preparation-catalogue .preparation-stones{height:64px}
+#app:has([data-testid=error]) .preparation-catalogue .preparation-stones{height:64px}}

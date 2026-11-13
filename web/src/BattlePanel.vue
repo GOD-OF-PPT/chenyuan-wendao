@@ -23,5 +23,5 @@ const battle=computed(()=>props.game.battle!),enemy=computed(()=>ruleContent.val
  </BattleStrategy>
 </template>
 <style scoped>
-.battle-details{margin-top:12px}.battle-details summary{min-height:44px;cursor:pointer;line-height:1.7;padding-block:8px;font-size:var(--ui15)}.battle-details p{overflow-wrap:anywhere}.battle-log{height:160px}
+@layer game{.battle-details{margin-top:12px}.battle-details summary{min-height:44px;cursor:pointer;line-height:1.7;padding-block:8px;font-size:var(--ui15)}.battle-details p{overflow-wrap:anywhere}.battle-log{height:160px}}
 </style>

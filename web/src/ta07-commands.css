@@ -1,3 +1,4 @@
+@layer game{
 .battle-deck{display:block;min-width:0}
 .ta07-command-console{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:8px 18px;color:#edf0dc;min-width:0}
 .ta07-strike-group{min-width:0}
@@ -41,4 +42,4 @@
 .ta07-command-console button:active:not(:disabled) .ta07-command-object{transform:translateY(2px)}
 .ta07-command-console .ta07-shared-reason{grid-column:1/-1;margin:0;padding:3px 12px;border-left:2px solid #c9b786;color:#ead6b3;font-size:14px;line-height:1.6}
 .hub-reduced .ta07-command-console button,.hub-reduced .ta07-command-console .ta07-command-object{transition:none!important;transform:none!important}
-@media(prefers-reduced-motion:reduce){.ta07-command-console button,.ta07-command-console .ta07-command-object{transition:none!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.ta07-command-console button,.ta07-command-console .ta07-command-object{transition:none!important;transform:none!important}}}

@@ -1,3 +1,4 @@
+@layer game{
 /* Production category paintings occupy their own safe area; never inventory or hit targets. */
 .single-screen .catalogue-art{display:none}
 .feature-state{display:none}
@@ -54,4 +55,4 @@
 .single-screen.catalogue-view .hub-feature .catalogue-tabs>button{background:transparent!important;border-color:transparent!important;box-shadow:none!important;border-radius:0}
 .single-screen.catalogue-view .hub-feature .catalogue-tabs>button[aria-pressed=true]{background:linear-gradient(0deg,#36766088,transparent)!important;border-bottom-color:#a8d9ba!important;box-shadow:inset 0 -2px #a8d9ba!important;color:#e5f2ce!important}
 .single-screen.catalogue-view .catalogue-gallery>.catalogue-grid>article{background:linear-gradient(100deg,#254d4633,transparent);border:0;border-bottom:1px solid #7c9a8366;border-radius:0;box-shadow:none}
-.single-screen.catalogue-view .inventory-cards h3>.game-icon{width:40px;height:40px}
+.single-screen.catalogue-view .inventory-cards h3>.game-icon{width:40px;height:40px}}

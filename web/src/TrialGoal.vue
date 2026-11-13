@@ -13,6 +13,7 @@ const view=computed(()=>trialGuidance(props.game));
  </section>
 </template>
 <style scoped>
+@layer game{
 .trial-goal{display:grid;grid-template-columns:240px minmax(0,1fr);gap:16px 36px;align-items:center;min-width:0;padding:12px 24px;color:#dce8d6}
 .trial-goal-seal{width:210px;height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;justify-self:center;border-block:3px double #a5b185;border-radius:44% 44% 12% 12%;background:radial-gradient(ellipse,#467c6e66,#123d3e33 65%,transparent 70%);box-shadow:inset 0 0 0 10px #6a9b7c11;color:#dbdfb7}
 .trial-goal-seal>span{font:104px/1.3 'Kaiti SC',STKaiti,serif;text-shadow:0 8px 14px #061e28}
@@ -27,5 +28,5 @@ const view=computed(()=>trialGuidance(props.game));
 .trial-goal-road li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 10px;align-items:center;min-width:0;color:#b6c5b7}
 .trial-goal-road li>span{grid-row:1/3;display:grid;place-items:center;width:42px;height:48px;border:1px solid #8c9c7866;border-radius:50% 50% 3px 3px;font:24px/1.2 'Kaiti SC',STKaiti,serif}
 .trial-goal-road strong{font-size:18px;font-weight:400;line-height:1.5}.trial-goal-road small{font-size:14px;line-height:1.5}
-.trial-goal-road [data-step-state=current]{color:#e1dfb5}.trial-goal-road [data-step-state=complete]{color:#afd8ba}
+.trial-goal-road [data-step-state=current]{color:#e1dfb5}.trial-goal-road [data-step-state=complete]{color:#afd8ba}}
 </style>

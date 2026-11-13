@@ -75,6 +75,7 @@ onScopeDispose(() => { clear(); stop(); media.removeEventListener('change', medi
  </section>
 </template>
 <style scoped>
+@layer game{
 .result-moment{display:grid;grid-template-columns:48px minmax(0,1fr) auto;align-items:center;gap:12px;margin:0 24px 8px;padding:10px 16px;background:var(--game-panel,#17383d);border:1px solid var(--game-gold,#bdac74);color:var(--game-ink,#eee5ca);text-align:left}
 .result-moment-icon{width:48px;height:48px;color:var(--game-gold,#bdac74)}
 .result-moment-object{width:48px;height:48px;color:var(--game-gold,#bdac74)}
@@ -90,5 +91,5 @@ onScopeDispose(() => { clear(); stop(); media.removeEventListener('change', medi
 .result-moment.moving[data-kind="harvest"] p{animation:result-rise .7s ease-out both}
 @keyframes result-rise{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
 @keyframes result-bloom{0%{opacity:.4;transform:scale(.8)}25%{opacity:1;transform:scale(1.12)}70%,100%{opacity:1;transform:scale(1)}}
-@media(prefers-reduced-motion:reduce){.result-moment.moving .result-moment-object,.result-moment.moving p{animation:none}}
+@media(prefers-reduced-motion:reduce){.result-moment.moving .result-moment-object,.result-moment.moving p{animation:none}}}
 </style>

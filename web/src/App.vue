@@ -1014,4 +1014,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
   </div>
 </template>
 <style src="./closure-focus.css"></style>
-<style>.art06-progress:has(>.art06-harvest){padding-bottom:4px}</style>
+<style>
+@layer game{
+    .art06-progress:has(>.art06-harvest){padding-bottom:4px}}
+</style>

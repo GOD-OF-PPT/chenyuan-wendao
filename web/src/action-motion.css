@@ -1,3 +1,4 @@
+@layer game{
 /* Receipt-bound decoration; optional skip uses the existing activity controls. */
 .action-feedback-layer{position:fixed;inset:0;z-index:22;pointer-events:none;overflow:hidden}
 .app-shell.art-theme .interaction-press{filter:brightness(1.08);outline:1px solid #b5ddba;outline-offset:-3px}
@@ -87,4 +88,4 @@
 .motion-battle[data-variant=victory]{--motion-color:#e5d69c}.motion-battle[data-variant=victory] .motion-slash,.motion-battle[data-variant=defeat] .motion-slash{display:none}
 .motion-battle[data-variant=victory] .motion-ring{animation-name:motion-ascend}.motion-battle[data-variant=defeat] .motion-ring{border-style:dotted;animation-name:motion-travel}
 
-.motion-dialogue[data-variant=control]{z-index:17;transform:translate(-50%,-50%) scale(.16)}
+.motion-dialogue[data-variant=control]{z-index:17;transform:translate(-50%,-50%) scale(.16)}}

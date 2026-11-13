@@ -1,3 +1,4 @@
+@layer game{
 /* The existing receipt owner supplies the lifetime. These shapes never settle a turn. */
 .battle-cast{position:absolute;inset:0;pointer-events:none;--cast-ink:#cae8cf;--cast-fill:#91cba531}
 .battle-cast[data-school=talisman]{--cast-ink:#e7dab0;--cast-fill:#d9bf7931}
@@ -64,4 +65,4 @@
 #app .battle-automation[data-view=manual]>.battle-presence[data-state=failed]{min-height:220px}
 #app .battle-automation[data-view=manual]>.battle-presence[data-state=failed]>:is(.battle-player-art,.enemy-art){min-height:0}
 .hub-reduced .battle-cast *,.hub-reduced .battle-presence [data-cast-role]{animation:none!important}
-@media(prefers-reduced-motion:reduce){.battle-cast *,.battle-presence [data-cast-role]{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.battle-cast *,.battle-presence [data-cast-role]{animation:none!important}}}

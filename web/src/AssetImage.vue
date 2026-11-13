@@ -11,4 +11,6 @@ async function loaded(event:Event){const node=event.currentTarget as HTMLImageEl
 function failed(event:Event){if(current(event.currentTarget as HTMLImageElement))state.value='failed';}
 </script>
 <template><div class="asset-image" :data-asset-id="assetId" :data-art-state="state" :data-art-path="path"><div v-if="state!=='ready'" class="asset-fallback"><slot/></div><img v-if="source" :key="source" ref="image" :src="source" alt="" aria-hidden="true" :loading="eager?'eager':'lazy'" decoding="async" :style="{visibility:state==='ready'?'visible':'hidden',objectFit:fit,objectPosition:position}" @load="loaded" @error="failed"></div></template>
-<style scoped>.asset-image{position:relative;width:100%;height:100%;overflow:hidden}.asset-image>img{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.asset-fallback{width:100%;height:100%}</style>
+<style scoped>
+@layer game{.asset-image{position:relative;width:100%;height:100%;overflow:hidden}.asset-image>img{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.asset-fallback{width:100%;height:100%}}
+</style>

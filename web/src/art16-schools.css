@@ -1,3 +1,4 @@
+@layer game{
 #app .equipment-panel[data-section=school]{background:transparent!important;border:0!important;isolation:isolate}
 #app .art16-school-picker{position:relative;isolation:isolate;display:flex;flex-direction:column;flex:1;min-height:0;min-width:0;gap:4px}
 #app .art16-school-picker>.school-sanctum{position:absolute!important;inset:-94px -16px -34px;z-index:-2;width:auto!important;height:auto!important;min-height:0;overflow:hidden;border-radius:2px;pointer-events:none}
@@ -53,4 +54,4 @@
 #app .configuration-slots:has(>.changed):not(:has(>.changed~.changed)){grid-template-columns:repeat(3,minmax(0,1fr))}
 #app .configuration-slots:has(>.changed):not(:has(>.changed~.changed))>.changed{grid-column:1/-1;order:-1;border-width:1px 0;background:linear-gradient(90deg,#2b544c,#163a3b);gap:20px}
 #app .configuration-slots:has(>.changed):not(:has(>.changed~.changed))>.changed>.game-icon{width:72px;height:72px}
-#app .configuration-slots:has(>.changed):not(:has(>.changed~.changed))>article:not(.changed){border:0;background:transparent}
+#app .configuration-slots:has(>.changed):not(:has(>.changed~.changed))>article:not(.changed){border:0;background:transparent}}

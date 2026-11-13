@@ -18,5 +18,5 @@ const checkpoint=computed(()=>!!store?.hasCheckpoint&&!!store.checkpointSummary&
  </section>
 </template>
 <style scoped>
-.lifespan-stage{display:grid;gap:12px;font-size:18px;line-height:1.5}.lifespan-stage h2{font-size:26px;margin:0;line-height:1.65}.lifespan-stage p{margin:0}.lifespan-stage small{font-size:14px;color:#d2dfbd}.lifespan-stage button{min-height:44px;font-size:18px}.lifespan-stage .cultivate-primary{width:100%;margin-top:4px}
+@layer game{.lifespan-stage{display:grid;gap:12px;font-size:18px;line-height:1.5}.lifespan-stage h2{font-size:26px;margin:0;line-height:1.65}.lifespan-stage p{margin:0}.lifespan-stage small{font-size:14px;color:#d2dfbd}.lifespan-stage button{min-height:44px;font-size:18px}.lifespan-stage .cultivate-primary{width:100%;margin-top:4px}}
 </style>

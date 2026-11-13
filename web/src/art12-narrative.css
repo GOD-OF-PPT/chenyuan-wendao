@@ -1,3 +1,4 @@
+@layer game{
 /* ART12: fixed desktop folios. Read and preselect stay separate from formal actions. */
 #app .art05-story .encounter-table.art12-encounter{grid-template-columns:250px minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;column-gap:28px;row-gap:14px}
 #app .art05-story .encounter-table.art12-encounter:not([data-mode=people]){grid-template-columns:210px minmax(0,1fr);grid-template-rows:minmax(0,1fr)}
@@ -79,4 +80,4 @@
 
 /* Q02: captions occupy their own solid text area below the painted person. */
 #app .art05-story .art30-meeting>:is(.encounter-presence,.response-presence){gap:12px}
-#app .art05-story .art30-meeting>:is(.encounter-presence,.response-presence)>small{flex:0 0 auto;position:relative;padding:6px 8px;background:#0b2e33f5;line-height:1.5}
+#app .art05-story .art30-meeting>:is(.encounter-presence,.response-presence)>small{flex:0 0 auto;position:relative;padding:6px 8px;background:#0b2e33f5;line-height:1.5}}

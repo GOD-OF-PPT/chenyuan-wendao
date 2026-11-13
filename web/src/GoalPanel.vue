@@ -166,11 +166,12 @@ const boardReady=computed(()=>focus.value?.kind==='item'?!!itemView.value?.compl
 </section>
 </template>
 <style scoped>
+@layer game{
 #app #goal-panel{padding:8px 16px!important;border:0!important;background:none!important;box-shadow:none!important;gap:10px}
 #app #goal-panel .goal-board-tools{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;min-height:44px}
 #app #goal-panel :deep(.goal-board){flex:none}
 #app #goal-panel :deep(.goal-board-pill:has(.item-artifact)):before{display:none}
 #app #goal-panel .goal-management{flex:1;margin:0!important;border:0;border-bottom:1px solid #a7b57f55;background:none;padding:0}
 #app #goal-panel .goal-management>summary{min-height:44px;display:flex;align-items:center;font-size:18px}
-:global(.immersive-stage.stage-details .hub-feature:has(>.right-column:not([style*="display: none"]))){background:linear-gradient(90deg,#0e2e3477,#0c2832dd 62%,#0b2630c7)!important;border-color:transparent;box-shadow:none}
+:global(.immersive-stage.stage-details .hub-feature:has(>.right-column:not([style*="display: none"]))){background:linear-gradient(90deg,#0e2e3477,#0c2832dd 62%,#0b2630c7)!important;border-color:transparent;box-shadow:none}}
 </style>

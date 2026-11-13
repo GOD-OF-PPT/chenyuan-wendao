@@ -1,4 +1,5 @@
 @import './ta08-source.css';
+@layer game{
 /* CEND09: keep actual source facts, give the landscape and current object priority. */
 #app div.source-field.art34-source-field[data-source]{
  --source-reading:#0b292feb;
@@ -43,4 +44,5 @@
  &[data-state=failed] .ta08-bag-inspect{min-height:44px;grid-template-columns:68px minmax(0,1fr)}
  &[data-state=failed] .ta08-bag-vessel{width:68px;height:46px}
  &[data-state=failed] .source-arrangement{padding:4px 14px;gap:4px 12px}
+}
 }

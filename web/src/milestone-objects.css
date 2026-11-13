@@ -1,3 +1,4 @@
+@layer game{
 #app .milestone-gate{display:grid;grid-template-columns:minmax(150px,.35fr) minmax(0,1fr);gap:16px;min-width:0;min-height:0;width:100%;color:var(--ink,#e6ead8)}
 #app .milestone-object{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;min-width:0;padding:8px 12px;border-right:1px solid #8d8d5d70;background:radial-gradient(ellipse at 50% 42%,#2d645143,transparent 68%)}
 #app .milestone-object-content{display:flex;flex-direction:column;justify-content:center;gap:10px;min-width:0;min-height:0}
@@ -38,4 +39,4 @@
 .hub-reduced .milestone-gate *{animation:none!important;transition:none!important}
 
 #app [data-testid=trial-entry-confirmation] .reading-text p,#app [data-testid=trial-review-cost]{font-size:calc(18px * var(--font-scale,1));line-height:1.5}
-#app .hub-current .milestone-gate{background:#102d32f2;padding:16px;max-width:1100px;margin:auto;text-align:left}
+#app .hub-current .milestone-gate{background:#102d32f2;padding:16px;max-width:1100px;margin:auto;text-align:left}}

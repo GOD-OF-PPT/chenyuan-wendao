@@ -1,3 +1,4 @@
+@layer game{
 :root{font-family:'Noto Serif CJK SC','Songti SC','SimSun',serif;color:#302c23;background:#e4e6dc;font-synthesis:none;font-size:112.5%;--teal:#294746;--gold:#806237;--line:#cfc3aa;--paper:#faf6ea}
 *{box-sizing:border-box}
 body{margin:0}
@@ -273,4 +274,4 @@ progress.cultivation::-moz-progress-bar{background:#a0874f}
 .life-confirm p{overflow-wrap:anywhere;line-height:1.8}
 .life-confirm button{margin:6px;max-width:100%}
 
-.in-battle{display:flex;flex-direction:column}.in-battle>*{order:3}.in-battle>.scene{order:0}.in-battle>.content-panel{order:1}.in-battle>.trial-progress{order:2}.content-panel.battle-content{padding:14px 20px;min-height:0}.battle-guidance{margin-bottom:8px}.battle-guidance>summary{cursor:pointer;min-height:44px;line-height:1.7;font-size:var(--ui14);padding-block:8px}
+.in-battle{display:flex;flex-direction:column}.in-battle>*{order:3}.in-battle>.scene{order:0}.in-battle>.content-panel{order:1}.in-battle>.trial-progress{order:2}.content-panel.battle-content{padding:14px 20px;min-height:0}.battle-guidance{margin-bottom:8px}.battle-guidance>summary{cursor:pointer;min-height:44px;line-height:1.7;font-size:var(--ui14);padding-block:8px}}

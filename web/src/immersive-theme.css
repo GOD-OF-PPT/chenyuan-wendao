@@ -1,3 +1,4 @@
+@layer game{
 /* User-selected jade theme. This layer owns palette and feedback, not layout or game rules. */
 .app-shell.art-theme{--game-base:#10282f;--game-panel:#17383d;--game-raised:#23494a;--game-line:#668d81;--game-ink:#f0ebdc;--game-muted:#c3cfc2;--game-jade:#9ed8c2;--game-gold:#d6bf86;color:var(--game-ink)}
 .app-shell.art-theme .paper{background:linear-gradient(135deg,#1a3c3ef5,#112c33fa),url('/art/v2/ui/xuan-paper-v2.webp')!important;background-size:auto,384px!important;background-color:var(--game-panel)!important;color:var(--game-ink)!important;border-color:#718976!important;box-shadow:inset 0 0 0 2px #112c33,0 8px 26px #04191c88!important}
@@ -105,4 +106,4 @@
 
 .app-shell.art-theme .eyebrow{color:var(--game-muted)!important}
 
-.progress-emblem strong{display:grid;align-content:center;width:120px;height:120px;border-radius:50%;background:#153238}
+.progress-emblem strong{display:grid;align-content:center;width:120px;height:120px;border-radius:50%;background:#153238}}

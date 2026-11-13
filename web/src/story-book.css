@@ -1,3 +1,4 @@
+@layer game{
 /* T06: complete reading pages, visible decisions and original command boundaries. */
 .single-screen .story-book{display:flex;flex-direction:column;flex:1;gap:10px;min-height:0;margin:0;padding:16px;background:linear-gradient(125deg,#214647ec,#102c35f5);border:1px solid #7a9b8a;box-shadow:inset 0 0 0 4px #102d33,inset 0 0 0 5px #66897966}
 .single-screen .story-book>header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:none;margin:0}
@@ -46,4 +47,4 @@
 }
 @media(prefers-reduced-motion:reduce){.single-screen .narrative-choices .choice-act{transform:none!important}}
 
-.single-screen .trial-book.checkpoint-blocked .book-caption{display:none}
+.single-screen .trial-book.checkpoint-blocked .book-caption{display:none}}

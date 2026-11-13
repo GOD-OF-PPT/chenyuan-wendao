@@ -1,3 +1,4 @@
+@layer game{
 /* Readable objects follow the existing saved period; these styles never settle it. */
 #app .ta09-jade{position:relative;min-width:0;min-height:0;height:auto;max-height:240px;align-self:stretch;color:#c4d4b7;--jade-page-gap:22px;--jade-page-turn:3deg}
 #app .ta09-jade-inspect{position:relative;display:block;width:100%;height:100%;min-height:44px;box-sizing:border-box;padding:12px 16px 74px;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important;transform:none!important;color:inherit}
@@ -56,4 +57,4 @@
 
 #app .jade-study-scene[data-state=failed] .jade-slots{min-height:44px}
 #app .jade-study-scene[data-state=failed] .jade-slots button{display:flex;align-items:center;gap:8px;min-height:44px;padding-block:4px}
-#app .jade-study-scene[data-state=failed] .jade-slots span{top:10px}
+#app .jade-study-scene[data-state=failed] .jade-slots span{top:10px}}

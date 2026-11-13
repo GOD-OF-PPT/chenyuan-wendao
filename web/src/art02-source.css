@@ -1,3 +1,4 @@
+@layer game{
 .immersive-stage .source-planner.source-object-planner{display:flex;flex-direction:column;gap:0;min-height:0}
 .source-field{display:grid;grid-template-rows:minmax(0,1fr) auto;gap:12px;min-height:0;flex:1;color:#edf0df}
 .source-field-scene{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) 310px;grid-template-rows:52px minmax(0,1fr);min-height:0;gap:8px 18px;padding:16px 20px;background:#0c2e32}
@@ -59,4 +60,4 @@
 #app .art34-source-library .source-point-grid>button:is(:hover,:focus-visible){border-color:#acc7a0!important}
 #app .art34-source-library .catalogue-pager{display:grid;grid-template-columns:80px minmax(0,1fr) 80px;gap:12px;align-items:center;margin:16px 0 0;padding:0}
 #app .art34-source-library .catalogue-pager>span{width:auto;justify-self:stretch;text-align:center;font-size:14px;line-height:1.65}
-#app .art34-source-library button{min-height:44px;min-width:44px;font-size:18px;line-height:1.65}
+#app .art34-source-library button{min-height:44px;min-width:44px;font-size:18px;line-height:1.65}}

@@ -1,3 +1,4 @@
+@layer game{
 /* Online cultivation uses the existing game stage, with persistent real progress. */
 .training-activity{color:var(--game-ink,#eef0dd);min-width:0;padding:2px 8px}
 .training-activity header{display:flex;align-items:center;justify-content:space-between;gap:12px;line-height:1.5}
@@ -22,4 +23,4 @@
 .training-estimate{padding:12px 18px;background:linear-gradient(135deg,#244d49aa,#15343caa);border-left:2px solid #a5c7a0}.training-estimate>strong{font-size:var(--ui18);color:#e2edce}.training-estimate p{margin:6px 0}.training-estimate small{display:block;font-size:var(--ui14);line-height:1.5;color:#c0d6c6}
 .training-start{min-height:52px;font-size:var(--ui25)}.training-offline-note{font-size:var(--ui14);line-height:1.5;color:#bbd1c4;margin:0}
 
-.training-stop-summary{color:#eef0dd;min-width:0}.training-stop-summary strong{display:block;font-size:var(--ui18);line-height:1.5;color:#d6e6bc}.single-screen .training-stop-summary p,.single-screen .training-stop-summary small{display:block;font-size:var(--ui14);line-height:1.5;margin:6px 0}.training-stop-summary footer{display:flex;gap:6px;margin-top:8px}.training-stop-summary button{min-height:44px;flex:1;font-size:var(--ui14);padding:5px}.feature-state>.training-stop-summary{padding:8px 10px;border:1px solid #6c9786;border-radius:10px 2px;background:linear-gradient(140deg,#204544,#102c33)}
+.training-stop-summary{color:#eef0dd;min-width:0}.training-stop-summary strong{display:block;font-size:var(--ui18);line-height:1.5;color:#d6e6bc}.single-screen .training-stop-summary p,.single-screen .training-stop-summary small{display:block;font-size:var(--ui14);line-height:1.5;margin:6px 0}.training-stop-summary footer{display:flex;gap:6px;margin-top:8px}.training-stop-summary button{min-height:44px;flex:1;font-size:var(--ui14);padding:5px}.feature-state>.training-stop-summary{padding:8px 10px;border:1px solid #6c9786;border-radius:10px 2px;background:linear-gradient(140deg,#204544,#102c33)}}

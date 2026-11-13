@@ -12,6 +12,7 @@ defineEmits<{skip:[];help:[];expand:[Event]}>();
   </aside>
 </template>
 <style scoped>
+@layer game{
 .gameplay-guidance{border-inline-start:3px solid #8b692f;background:#eee5cf;padding:12px 16px;margin-bottom:20px;overflow-wrap:anywhere}
-.gameplay-guidance h3{margin:0}.gameplay-guidance p{margin:8px 0}.guide-actions{display:flex;gap:12px;flex-wrap:wrap}
+.gameplay-guidance h3{margin:0}.gameplay-guidance p{margin:8px 0}.guide-actions{display:flex;gap:12px;flex-wrap:wrap}}
 </style>

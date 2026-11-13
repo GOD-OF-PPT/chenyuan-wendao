@@ -34,6 +34,7 @@ const tools={sword:'translate(123 126) rotate(35)',seal:'translate(83 156) rotat
  </div>
 </template>
 <style scoped>
+@layer game{
 .relic-inscription-object{position:relative;display:flex;flex:1;flex-direction:column;min-height:0;width:100%;height:100%;isolation:isolate}
 .relic-object-inspect{position:relative;display:flex!important;flex:1;flex-direction:column;justify-content:center;align-items:center;min-width:44px;min-height:44px;width:100%;padding:8px 12px 50px!important;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important;transform:none!important;color:#d3dec9}
 .relic-object-inspect:focus-visible{outline:2px solid #9fd8c4;outline-offset:-3px}.relic-object-inspect:hover .relic-object-verb{color:#e5f1d4;border-color:#b9d9b1}
@@ -50,5 +51,5 @@ const tools={sword:'translate(123 126) rotate(35)',seal:'translate(83 156) rotat
 .relic-form-surface[data-form=sword] .relic-sealing{translate:0 -28px}
 @keyframes relic-unseal{from{filter:brightness(.8);transform:translateY(4px)}to{filter:none;transform:none}}
 :global(.hub-reduced .relic-inscription-object *){animation:none!important;transition:none!important}:global(.hub-reduced .relic-tool),:global(.hub-reduced .relic-sealing){transform:none!important}
-@media(prefers-reduced-motion:reduce){.relic-inscription-object *{animation:none!important;transition:none!important}.relic-tool,.relic-sealing{transform:none!important}}
+@media(prefers-reduced-motion:reduce){.relic-inscription-object *{animation:none!important;transition:none!important}.relic-tool,.relic-sealing{transform:none!important}}}
 </style>

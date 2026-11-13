@@ -1,3 +1,4 @@
+@layer game{
 /* R3 fixed desktop: choose an object, then one main decision. No rule clock. */
 .immersive-stage .learning-planner{display:grid;grid-template-columns:240px minmax(0,1fr) 360px;grid-template-rows:auto auto minmax(0,1fr);gap:10px 22px;height:100%;min-height:0;padding:0;background:none;border:0;box-shadow:none}
 .immersive-stage .learning-planner>.preparation-heading{grid-column:1/-1;grid-row:1;min-height:36px}
@@ -83,4 +84,4 @@
 .immersive-stage [data-section=relics] .production-start{font-size:22px!important;min-height:54px;border-radius:28px}
 .immersive-stage [data-section=relics] .production-locked{grid-column:1/-1;grid-row:2/4}
 
-.immersive-stage [data-section=relics] .production-planner>.catalogue-pager button{min-width:84px;width:84px;min-height:44px;padding:8px;font-size:16px}
+.immersive-stage [data-section=relics] .production-planner>.catalogue-pager button{min-width:84px;width:84px;min-height:44px;padding:8px;font-size:16px}}

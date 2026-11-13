@@ -1,3 +1,4 @@
+@layer game{
 /* The current activity uses its original controls and clock in a content-sized record. */
 .immersive-stage.stage-details .hub-feature:has(>.center-column>.activity-detail-surface){bottom:auto;height:fit-content;gap:8px;background:linear-gradient(145deg,#153b3df5,#10282ff8);border-color:#769f8e88;box-shadow:-24px 16px 50px #061b2377}
 .immersive-stage.stage-details .hub-feature:has(.activity-detail-surface)>.center-column{flex:none}
@@ -19,4 +20,4 @@
 .immersive-stage .activity-detail-surface>[data-testid=activity-plan-review]>.review-pages{display:flex;flex-direction:column;height:260px;min-height:260px;gap:12px}
 .immersive-stage .activity-detail-surface .review-pages .catalogue-pager{margin-top:auto}
 
-.immersive-stage .activity-detail-surface .review-pages>.reading-text{flex:1;min-height:0}
+.immersive-stage .activity-detail-surface .review-pages>.reading-text{flex:1;min-height:0}}

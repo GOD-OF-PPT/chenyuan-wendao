@@ -1,3 +1,4 @@
+@layer game{
 /* T05: finite pages and a visible command deadline. Content stays in the DOM or on a named page. */
 .art-theme{background-color:#10282f;color:#f0ebdc}
 .art-theme .topbar,.art-theme .bottom-nav{background:linear-gradient(110deg,#10282ff5,#183b3df5)!important;color:#f0ebdc}
@@ -48,4 +49,4 @@
 
 @media(min-width:480px) and (max-width:1099px){.preparation-catalogue .source-catalogue{grid-template-columns:1fr}.preparation-catalogue .source-catalogue>article>div{flex-direction:row}.single-screen .hub-battle+.hub-aside .hub-goal>p{display:none}}
 
-.catalogue-guide{width:min(580px,calc(100vw - 32px));max-height:calc(100dvh - 32px);padding:20px}.catalogue-guide>header{display:flex;align-items:center;justify-content:space-between;gap:16px}.catalogue-guide h2{font-size:var(--ui24);margin:0}.catalogue-guide button{min-height:44px}.catalogue-guide .gameplay-guidance{margin:12px 0 0}
+.catalogue-guide{width:min(580px,calc(100vw - 32px));max-height:calc(100dvh - 32px);padding:20px}.catalogue-guide>header{display:flex;align-items:center;justify-content:space-between;gap:16px}.catalogue-guide h2{font-size:var(--ui24);margin:0}.catalogue-guide button{min-height:44px}.catalogue-guide .gameplay-guidance{margin:12px 0 0}}

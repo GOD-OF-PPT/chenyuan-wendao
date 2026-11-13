@@ -42,6 +42,7 @@ const surfaces=[
  </defs>
 </template>
 <style>
+@layer game{
 #app .source-field.ta08-field .ta08-resource-tool{stroke-width:1.3;color:#9fae8a}
 #app .source-field.ta08-field .ta08-task-drawing{stroke-width:1.15;stroke:#91a48b;filter:drop-shadow(0 4px 3px #061d2580)}
 #app .source-field.ta08-field .ta08-tool-wood{stroke:#8c906c}
@@ -54,5 +55,5 @@ const surfaces=[
 #app .source-field.ta08-field .ta08-task-jade{stroke:#9cc5a4}
 #app .source-field.ta08-field .ta08-task-grain{stroke:#435e4899;stroke-width:1}
 #app .source-field.ta08-field .ta08-task-ink{stroke:#314e3bd9;stroke-width:1.5}
-#app .source-field.ta08-field .ta08-task-inlay{stroke:#a8ac78;stroke-width:1.2}
+#app .source-field.ta08-field .ta08-task-inlay{stroke:#a8ac78;stroke-width:1.2}}
 </style>

@@ -1,3 +1,4 @@
+@layer game{
 /* Fixed desktop menu layers. Gameplay and reading have separate surfaces. */
 .game-menus-desktop.immersive-stage .stage-nav.bottom-nav.with-demo{display:flex;padding-inline:270px 180px}
 .game-menus-desktop.immersive-stage .hub-stage>.scene.terrace{background:transparent}
@@ -43,4 +44,4 @@
 .game-menus-desktop .demo-menu .demo-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .game-menus-desktop .demo-menu .demo-list a{padding:14px 18px;min-height:106px;gap:8px;border-color:#7d9e8466}
 .game-menus-desktop .demo-menu .demo-list strong{font-size:20px;color:#e4e8ca}
-.game-menus-desktop .demo-menu .demo-list span{font-size:18px;line-height:1.6;color:#c5d6c6}
+.game-menus-desktop .demo-menu .demo-list span{font-size:18px;line-height:1.6;color:#c5d6c6}}

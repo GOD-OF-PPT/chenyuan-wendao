@@ -1,3 +1,4 @@
+@layer game{
 #app .hub-current.art17-current{inset:0!important;width:100%!important;height:100%;padding:0!important;transform:none!important;background:transparent!important;display:grid;align-items:stretch}
 #app .art17-stage.art06-stage-home{position:relative;align-content:stretch;gap:0;grid-template-rows:minmax(0,1fr) auto}
 #app .art17-threshold.milestone-gate{grid-template-columns:minmax(350px,430px) minmax(0,540px);justify-content:space-between;align-items:end;gap:110px;width:100%;height:100%;min-height:0;max-width:none;margin:0;padding:28px 60px 28px 86px;background:transparent!important;box-sizing:border-box}
@@ -58,4 +59,4 @@
 #app .art17-object[data-item=none] .art17-orbit{opacity:0}
 #app .art17-object[data-item=none][data-engaged=true][data-phase=running] .art17-orbit{opacity:1}
 
-#app .art17-preparation-decision{display:grid;gap:8px}#app .art17-preparation-decision .primary{width:100%;font-size:22px;min-height:52px}
+#app .art17-preparation-decision{display:grid;gap:8px}#app .art17-preparation-decision .primary{width:100%;font-size:22px;min-height:52px}}

@@ -1,3 +1,4 @@
+@layer game{
 /* The chosen world object stays visible while finite authorization remains explicit. */
 .immersive-stage{--r2-surface:#102e36e8;--r2-line:#91b49a66;--r2-jade:#cce9c7}
 .immersive-stage .explore-catalogue{background:linear-gradient(100deg,#102d34db,#153b3b8a)!important}
@@ -90,4 +91,4 @@
 .immersive-stage .battle-automation[data-view=manual]>.battle-current-activity{grid-column:2;grid-row:5}
 .immersive-stage .battle-automation[data-view=strategy]{grid-template-columns:minmax(0,1fr) 320px;gap:10px 24px;align-content:start}
 .immersive-stage .battle-automation[data-view=strategy] .battle-authorization{gap:4px}
-.immersive-stage .battle-automation[data-view=strategy]{padding:18px;background:var(--r2-surface);border:1px solid var(--r2-line);border-radius:4px}
+.immersive-stage .battle-automation[data-view=strategy]{padding:18px;background:var(--r2-surface);border:1px solid var(--r2-line);border-radius:4px}}

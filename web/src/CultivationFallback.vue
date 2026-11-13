@@ -25,5 +25,5 @@ function choose(event:MouseEvent){
  <slot v-else/>
 </template>
 <style scoped>
-.cultivation-fallback{display:grid;gap:10px;line-height:1.5;font-size:18px}.cultivation-fallback h2{margin:0;font-size:28px}.cultivation-fallback p{margin:0}.cultivation-fallback small{font-size:14px;color:#c5d8ca}.cultivation-fallback button{width:100%;min-height:54px;font-size:24px}
+@layer game{.cultivation-fallback{display:grid;gap:10px;line-height:1.5;font-size:18px}.cultivation-fallback h2{margin:0;font-size:28px}.cultivation-fallback p{margin:0}.cultivation-fallback small{font-size:14px;color:#c5d8ca}.cultivation-fallback button{width:100%;min-height:54px;font-size:24px}}
 </style>

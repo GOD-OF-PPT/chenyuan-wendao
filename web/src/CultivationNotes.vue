@@ -18,6 +18,7 @@ onScopeDispose(()=>focus?.release(dialog.value));
  </div>
 </template>
 <style scoped>
+@layer game{
 .cultivation-notes{min-width:0;align-self:start}
 .cultivation-notes-open{display:flex!important;align-items:center;gap:12px;min-height:48px;padding:4px 8px!important;border:0!important;border-bottom:1px solid #8cb49e66!important;border-radius:0!important;background:none!important;box-shadow:none!important;text-align:left;color:#c8e1ca!important;font-size:18px!important}
 .cultivation-notes-open strong,.cultivation-notes-open small{display:block;font-weight:400;line-height:1.4}.cultivation-notes-open strong{font-size:18px}#app .cultivation-notes-open small{font-size:14px;color:#b7d0bd;line-height:1.65}
@@ -29,5 +30,5 @@ onScopeDispose(()=>focus?.release(dialog.value));
 .cultivation-notes-options:not(.notes-rich) :deep(button){display:block;width:100%;min-height:48px;margin:0;padding:10px 14px;border:0;border-bottom:1px solid #93b99b66;border-radius:1px;background:#183e3d!important;color:#e1ebd4;font-size:18px!important;line-height:1.5;text-align:left}.cultivation-notes-options:not(.notes-rich)>:deep(button+button){margin-top:8px}
 .cultivation-notes-dialog.notes-rich-dialog{width:960px}
 :global(.hub-reduced .cultivation-notes .cultivation-notes-book i){transition:none!important;transform:none!important}
-@media(prefers-reduced-motion:reduce){.cultivation-notes-book i{transition:none!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.cultivation-notes-book i{transition:none!important;transform:none!important}}}
 </style>

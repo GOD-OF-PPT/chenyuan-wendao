@@ -14,6 +14,7 @@ const emit=defineEmits<{checkpoint:[Event];prepare:[Event];record:[Event]}>();
  </section>
 </template>
 <style scoped>
+@layer game{
 :global(#app .art06-stage-home.trial-return-home){grid-template-rows:minmax(0,1fr) auto;align-content:stretch;gap:0}
 .trial-return{display:grid;grid-template-columns:240px minmax(0,680px);gap:34px;align-items:center;justify-content:center;align-self:center;justify-self:center;min-width:0;width:calc(100% - 80px);max-width:1120px;padding:16px 0;color:#e4ead8}
 .trial-return-mark{height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border-block:3px double #a9b187;border-radius:44% 44% 12% 12%;background:radial-gradient(ellipse,#4f816e55,transparent 72%);color:#e2deb4}
@@ -26,5 +27,5 @@ const emit=defineEmits<{checkpoint:[Event];prepare:[Event];record:[Event]}>();
 .trial-return-decision button{font-size:18px;min-height:48px;margin:0;white-space:normal}
 .trial-return-decision>.primary{width:100%}
 .trial-return-actions{display:flex;align-items:stretch;gap:12px;min-width:0}.trial-return-actions>button:first-child{flex:1;min-width:0}.trial-return-actions>.text-button{flex:none}
-:global(#app .trial-return-home>.cultivation-notes){justify-self:end;align-self:end;margin:0 40px 16px 0}
+:global(#app .trial-return-home>.cultivation-notes){justify-self:end;align-self:end;margin:0 40px 16px 0}}
 </style>

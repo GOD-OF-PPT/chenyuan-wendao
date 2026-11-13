@@ -36,6 +36,7 @@ const localControls=useLocalActivityControls();
  </section>
 </template>
 <style>
+@layer game{
 #app .market-planner:has(>.market-counter){display:flex;flex-direction:column;gap:8px;min-height:0;height:100%}
 .market-counter .counter-table{grid-area:1/2;position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(100px,1fr) 160px minmax(100px,1fr);grid-template-rows:auto auto;align-content:center;gap:6px 10px;padding:6px 12px 4px;border-top:1px solid #7f9b8266;background:radial-gradient(ellipse at 50% 75%,#42625155,transparent 68%);min-height:0}
 .market-counter .counter-table:before{content:'';position:absolute;inset:35% 3% 12%;z-index:-1;border-block:2px solid #b7ab7b44;border-radius:50% 50% 8px 8px/12% 12% 6px 6px;background:linear-gradient(110deg,#2d5048bf,#153a3e99,#2e5043aa);box-shadow:0 9px 10px #071e2855;pointer-events:none}
@@ -56,5 +57,5 @@ const localControls=useLocalActivityControls();
 .market-counter[data-status=failed] .counter-cycle{color:#efd1b2}
 @keyframes counter-settle{from{filter:brightness(1.2)}to{filter:none}}
 .hub-reduced .market-counter *{animation:none!important;transition:none!important}.hub-reduced .market-counter .market-shelves>button:active{translate:none}
-@media(prefers-reduced-motion:reduce){.market-counter *{animation:none!important;transition:none!important}.market-counter .market-shelves>button:active{translate:none}}
+@media(prefers-reduced-motion:reduce){.market-counter *{animation:none!important;transition:none!important}.market-counter .market-shelves>button:active{translate:none}}}
 </style>

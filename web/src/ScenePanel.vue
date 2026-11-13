@@ -60,6 +60,7 @@ const photoBox=computed(()=>{const box=terraceViewport(size.value.width,size.val
   </section>
 </template>
 <style scoped>
+@layer game{
 .scene{position:relative;height:auto;min-height:340px;display:flex;align-items:flex-end;isolation:isolate;overflow:hidden;border:1px solid #777e6c;background:#b0c0b7;color:#fff7e5}
 .scene.wilderness{background:#728c89}.scene.secret{background:#859497}.scene.terrace{background:#a1b3b2}.scene.compact{min-height:206px}
 .scene-image{position:absolute;inset:0}.scene-state-layer{z-index:1;pointer-events:none;filter:drop-shadow(0 5px 5px #182b2b77)}.scene-landscape{position:absolute;inset:0;width:100%;height:100%;fill:none}.scene-moon{fill:#f4dfac;opacity:.7}.mountain.far{fill:#667f79;opacity:.5}.mountain.middle{fill:#466762;opacity:.6}.scene-mist{fill:#d8e0ce;opacity:.6}.mountain.near{fill:#2f5350;opacity:.65}
@@ -69,5 +70,5 @@ const photoBox=computed(()=>{const box=terraceViewport(size.value.width,size.val
 @media(max-width:760px){.scene{min-height:232px}.scene.compact{min-height:154px}.scene-copy{margin:20px 56px 20px 22px;max-width:calc(100% - 78px);padding:10px 12px}.scene-copy h2{overflow-wrap:anywhere;font-size:calc(1.5rem * var(--font-scale,1));margin:6px 0}.scene-copy p{letter-spacing:normal;font-size:calc(0.77777778rem * var(--font-scale,1))}.scene-copy .eyebrow{font-size:calc(0.72222222rem * var(--font-scale,1))}.scene-seal{right:16px;top:16px;font-size:calc(0.72222222rem * var(--font-scale,1));padding:5px}}
 .scene.terrace{background:linear-gradient(100deg,#143438,#344f50)}.scene.terrace .scene-copy{max-width:38%;margin-right:auto}
 .photo-gate-state .scene-gate{fill:none;stroke:none}.photo-door-outline{fill:none!important;stroke:#b5985e!important;stroke-width:1;opacity:.15}.photo-gate-state .gate-light{opacity:1}.photo-lightning{fill:none;stroke:#fff4d4;stroke-width:3;filter:drop-shadow(0 0 3px #fff0c2)}
-.scene.battle-location{min-height:64px}.battle-location .scene-copy{margin:8px 64px 8px 16px;padding:6px 10px}.battle-location .scene-copy h2{font-size:calc(1.1111111rem * var(--font-scale,1));margin:0;letter-spacing:.06em}.battle-location .scene-seal{top:10px;right:16px;padding:4px}
+.scene.battle-location{min-height:64px}.battle-location .scene-copy{margin:8px 64px 8px 16px;padding:6px 10px}.battle-location .scene-copy h2{font-size:calc(1.1111111rem * var(--font-scale,1));margin:0;letter-spacing:.06em}.battle-location .scene-seal{top:10px;right:16px;padding:4px}}
 </style>

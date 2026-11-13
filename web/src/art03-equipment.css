@@ -1,3 +1,4 @@
+@layer game{
 .single-screen.catalogue-view .equipment-disclosure:has(.equipment-objects){display:flex;height:100%}
 .immersive-stage .equipment-disclosure:has(.equipment-objects)::details-content{display:flex;flex:1;min-height:0}
 .immersive-stage .equipment-panel.equipment-objects{height:auto;flex:1;display:flex!important;flex-direction:column;min-height:0;gap:10px;background:linear-gradient(130deg,#102b2fe8,#0b252add)!important}
@@ -111,4 +112,4 @@
 #app .art10-relic-stage .relic-form-surface[data-form=sword]{position:absolute;width:auto;height:146%;aspect-ratio:1;left:50%;top:50%;transform:translate(-50%,-50%)}
 #app .art10-relic-stage .relic-object-verb{left:12px;right:auto;bottom:24px;writing-mode:vertical-rl;min-height:44px;border:0}
 
-#app .relic-object .relic-object-inspect{background:none!important}
+#app .relic-object .relic-object-inspect{background:none!important}}

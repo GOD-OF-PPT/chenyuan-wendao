@@ -1,3 +1,4 @@
+@layer game{
 /* Calm illustrations follow the existing physical page groups and real cycle state. */
 .jade-painted-cover,.jade-painted-leaf{pointer-events:none}
 .ta09-jade:not([data-painted=true]) :is(.jade-painted-cover,.jade-painted-leaf){visibility:hidden}
@@ -11,4 +12,4 @@
 #app .art10-learning .art10-study-scene .ta09-jade[data-painted=true] .ta09-jade-inspect{padding:18px 20px 40px}
 #app .art10-learning[data-mode=manual][data-complete=true] .jade-reading-place{width:min(100%,1100px);grid-template-columns:380px minmax(0,1fr)}
 #app .art10-learning[data-mode=skills] .art10-study-scene:not([data-state=failed])>.art10-scroll-rail{display:grid;grid-template-columns:470px minmax(0,1fr);align-items:center;column-gap:18px}
-#app .art10-learning[data-mode=skills] .art10-study-scene:not([data-state=failed]) .ta09-jade[data-painted=true] .ta09-jade-inspect{padding:4px 20px}
+#app .art10-learning[data-mode=skills] .art10-study-scene:not([data-state=failed]) .ta09-jade[data-painted=true] .ta09-jade-inspect{padding:4px 20px}}

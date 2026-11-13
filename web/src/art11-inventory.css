@@ -1,3 +1,4 @@
+@layer game{
 /* ART11: the selected material and its next decision stay on the game stage. */
 #app .art11-inventory{position:relative;isolation:isolate;display:flex;flex-direction:column;flex:1;min-height:0;gap:8px}
 #app .goods-catalogue:has(>.art11-inventory){padding:12px 18px;gap:6px}
@@ -110,4 +111,4 @@
 
 /* UX31: separate the bowl without shrinking the fallback icon or text. */
 #app .art11-recovery .recovery-vessel:has(.asset-fallback) .recovery-jade-bowl{bottom:6px}
-#app .art11-recovery .supply-plan-open{white-space:pre-line}
+#app .art11-recovery .supply-plan-open{white-space:pre-line}}

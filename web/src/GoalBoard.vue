@@ -29,6 +29,7 @@ const icon=computed(()=>props.kind==='breakthrough'&&props.id?{kind:'item' as co
 </div>
 </template>
 <style scoped>
+@layer game{
 #app .goal-board{display:grid;grid-template-columns:minmax(210px,.42fr) minmax(0,1fr);gap:30px;min-height:0;min-width:0;flex:1;align-items:start;color:#dce8d6}
 #app .goal-board-object{min-width:0;padding:4px 14px 12px;text-align:center;position:relative}
 #app .goal-board-caption{display:block;font-size:14px;letter-spacing:.12em;color:#b6cdbb;margin:0 0 6px}
@@ -76,5 +77,5 @@ const icon=computed(()=>props.kind==='breakthrough'&&props.id?{kind:'item' as co
 #app .goal-board :deep(.goal-route-choice strong){font-size:18px;font-weight:400}
 #app .goal-board :deep(.goal-route-choice small){grid-column:2;font-size:14px;line-height:1.4}
 #app .goal-board :deep(.catalogue-description){font-size:18px;line-height:1.5;margin:12px 0 0}
-#app .goal-board :deep(.catalogue-note){font-size:14px;line-height:1.5}
+#app .goal-board :deep(.catalogue-note){font-size:14px;line-height:1.5}}
 </style>

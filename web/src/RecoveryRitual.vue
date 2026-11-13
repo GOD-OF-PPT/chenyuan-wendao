@@ -44,7 +44,7 @@ const localControls=useLocalActivityControls();
  </div>
 </template>
 <style>
-.recovery-planner:has(>.recovery-ritual){gap:8px}.recovery-planner>.recovery-ritual{flex:1;min-height:0}
+@layer game{.recovery-planner:has(>.recovery-ritual){gap:8px}.recovery-planner>.recovery-ritual{flex:1;min-height:0}
 .recovery-ritual .recovery-body>.recovery-stat{display:grid;grid-template-columns:1fr auto;gap:5px 8px;padding:8px 0;background:none;border:0;border-bottom:1px solid #7a9b8055;border-radius:0;min-width:0}
 .recovery-ritual .recovery-body span,.recovery-ritual .recovery-body strong{font-size:18px;line-height:1.5}.recovery-ritual .recovery-body progress{width:100%;height:8px;grid-column:1/-1;accent-color:#c77f78}.recovery-ritual .recovery-mp progress{accent-color:#79b9c6}.recovery-ritual .recovery-stat[data-restored=true]{animation:recovery-saved 1.4s ease-out}
 .recovery-ritual .recovery-object-heading{display:flex;align-items:center;gap:12px;min-width:0}.recovery-ritual .recovery-object-heading>div:last-child{min-width:0}.recovery-ritual h3{font-size:23px;line-height:1.4;margin:2px 0 0}.recovery-ritual p{font-size:18px;line-height:1.5;margin:0}.recovery-ritual small{font-size:14px;line-height:1.5}.recovery-ritual .recovery-unit{font-size:18px;line-height:1.5;color:#cae6b9}
@@ -55,5 +55,5 @@ const localControls=useLocalActivityControls();
 .recovery-ritual .supply-plan-open{font-size:18px;min-height:66px;padding:8px 10px;gap:3px;line-height:1.5}.recovery-ritual .preparation-estimate{gap:4px;padding-top:6px}.recovery-ritual .preparation-reason{min-height:0}.recovery-ritual .recovery-decision>.primary{min-height:48px;font-size:18px;line-height:1.5}
 @keyframes recovery-breathe{50%{transform:scale(.96);filter:drop-shadow(0 0 5px #9bceb266)}}@keyframes recovery-saved{0%{background-color:#87c5a333}100%{background-color:transparent}}
 .hub-reduced .recovery-ritual *{animation:none!important;transition:none!important}
-@media(prefers-reduced-motion:reduce){.recovery-ritual *{animation:none!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){.recovery-ritual *{animation:none!important;transition:none!important}}}
 </style>

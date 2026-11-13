@@ -61,5 +61,6 @@ const actionLabel=computed(()=>scene?.unresolved?(scene.syncIssue?'先重新读�
 </template>
 
 <style scoped>
-#app .source-start.text-button{background:transparent!important;box-shadow:none!important;transition:none!important}
+@layer game{
+    #app .source-start.text-button{background:transparent!important;box-shadow:none!important;transition:none!important}}
 </style>

@@ -20,6 +20,7 @@ const objects=computed(()=>props.ids.map(id=>{
  </div>
 </template>
 <style scoped>
+@layer game{
 :global(#app .configuration-dialog [data-testid=config-focus]>.changed){background:transparent!important}
 .config-art{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);align-items:center;flex:0 0 180px;width:180px;min-width:0;gap:6px;isolation:isolate}
 .config-art-group{flex-basis:300px;width:300px;grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -31,5 +32,5 @@ const objects=computed(()=>props.ids.map(id=>{
 .config-art :deep(.asset-fallback){display:grid;grid-template-rows:minmax(0,1fr) auto;place-items:center;gap:4px}
 #app .config-art :deep(.game-icon){width:72px;height:72px;flex:none;color:var(--jade,#b4d8bd)}
 .config-art small{display:block;font-size:14px;line-height:1.5;color:var(--jade,#b4d8bd);overflow-wrap:anywhere}
-.config-art figcaption{padding-top:4px}
+.config-art figcaption{padding-top:4px}}
 </style>

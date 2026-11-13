@@ -1,3 +1,4 @@
+@layer game{
 #app .app-shell.immersive-stage .hub-current:has(>.travel-passage){position:absolute;inset:0!important;width:100%!important;height:100%;max-width:none;max-height:none;min-height:0;margin:0;padding:0!important;border:0;background:transparent!important;box-shadow:none;transform:none!important;display:block;pointer-events:none;overflow:visible}
 #app .hub-current:has(>.travel-passage)>:not(.travel-passage){display:none!important}
 #app .travel-passage{position:absolute;inset:60px 72px 36px 260px;display:flex;flex-direction:column;gap:12px;min-width:0;padding:12px 0;background:none;border:0;color:var(--game-ink,#f0edda);pointer-events:auto;isolation:isolate}
@@ -26,4 +27,4 @@
 #app .travel-passage[data-state=failed] .travel-passage-status{color:#e5c8b5;border-color:#b9907880}
 @keyframes passage-stride{50%{transform:translateY(-3px)}}
 @media(prefers-reduced-motion:reduce){#app .travel-passage *{animation:none!important}}
-#app .hub-reduced .travel-passage *{animation:none!important}
+#app .hub-reduced .travel-passage *{animation:none!important}}

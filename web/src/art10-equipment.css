@@ -1,3 +1,4 @@
+@layer game{
 /* ART10: one reading place or one workpiece; complete shelves open on request. */
 #app .art10-equipment>.catalogue-tabs{position:relative;z-index:2;display:flex;justify-content:center;gap:20px;min-height:44px;border-bottom:1px solid #a2b79738;background:none;padding:0;flex:none}
 #app .art10-equipment>.catalogue-tabs button{width:auto;flex:0 0 auto;min-width:92px;min-height:44px;border:0!important;border-radius:0;background:none!important;box-shadow:none!important;color:#c8d6bf;font-size:18px;position:relative;padding:6px 12px}
@@ -101,4 +102,4 @@
 
 #app .relic-sanctum{inset:-16px -16px 0}#app .relic-sanctum img{object-position:left top}
 
-#app .relic-object-inspect{padding-bottom:22px!important}
+#app .relic-object-inspect{padding-bottom:22px!important}}

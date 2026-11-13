@@ -1,3 +1,4 @@
+@layer game{
 .art-theme{--art18-frame:url('/art/v2/ui/dialog-ink-rim-art37-v1.webp');--art18-command:url('/art/v2/ui/action-jade-plaque-art37-v1.webp')}
 #app dialog[open],.art18-confirm-portal dialog[open]{box-sizing:border-box;max-inline-size:calc(100vw - 64px);max-block-size:calc(100dvh - 64px);color:#eef0dc;border-color:#839c86;border-radius:9px 3px;background:radial-gradient(ellipse at 10% 0,#28514c70,transparent 65%),#102d35;box-shadow:0 20px 70px #03151ee0,0 0 0 1px #b2c4a638}
 #app dialog[open]::before,.art18-confirm-portal dialog[open]::before{inset:0;border-radius:inherit;border-image-slice:48 fill!important}
@@ -26,4 +27,4 @@ body .art-theme button.primary.danger:not(:disabled):active{box-shadow:inset 0 3
 body .art-theme :is(button.primary.danger,[data-testid=restart],[data-testid=local-clear],[data-testid=local-clear-memory]):disabled{color:#c7bbb0;border-color:#7f776c!important;background:#3c353b!important;box-shadow:none}
 #app dialog[open] :is(input,select,textarea){box-sizing:border-box;max-inline-size:100%;color-scheme:dark}
 .hub-reduced :is(dialog,button,.file-button),.art18-confirm-portal.hub-reduced :is(dialog,button){animation:none!important;transition:none!important}
-@media(prefers-reduced-motion:reduce){#app dialog[open],.art18-confirm-portal dialog[open],.art-theme :is(button,.file-button){animation:none!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){#app dialog[open],.art18-confirm-portal dialog[open],.art-theme :is(button,.file-button){animation:none!important;transition:none!important}}}

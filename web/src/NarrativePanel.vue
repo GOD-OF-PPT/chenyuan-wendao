@@ -43,7 +43,8 @@ const seconds=(a:Action)=>isMilestoneAction(a)?MILESTONE_CYCLE_MS[a.type]/1000:0
 </template>
 
 <style scoped>
+@layer game{
 .direct-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .direct-choice-context{grid-column:1/-1;font-size:18px;line-height:1.5;margin:0 0 8px}
-:deep(.response-copy .direct-choices){display:grid}
+:deep(.response-copy .direct-choices){display:grid}}
 </style>

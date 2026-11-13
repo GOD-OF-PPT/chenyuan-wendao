@@ -1,3 +1,4 @@
+@layer game{
 .art-theme{--art18-ink:#0c292f;--art18-ink-raised:#193d3e;--art18-jade:#9bcbb2;--art18-gold:#b2a072;--art18-text:#eee9d6;--art18-frame:url('/art/v2/ui/dialog-jade-frame-v1.webp');--art18-command:url('/art/v2/ui/action-jade-frame-v1.webp')}
 .art-theme dialog{isolation:isolate;color:var(--art18-text);background:var(--art18-ink);border-color:#9c956e;box-shadow:0 18px 54px #031820bb,0 0 0 1px #bfd0a333}
 .art-theme dialog::before,.single-screen.catalogue-view.art-theme .hub-feature dialog.paper::before{content:''!important;position:absolute;inset:0;z-index:-1;pointer-events:none;border:18px solid transparent!important;border-image:var(--art18-frame) 96 fill stretch!important;opacity:1!important;box-sizing:border-box}
@@ -35,4 +36,4 @@
 .art-theme .error-banner button{border-color:#b6b48a;background:#1a4541;color:#f0e4cc}
 @keyframes art18-unseal{from{outline-color:#9bcbb2}to{outline-color:transparent}}
 .hub-reduced :is(dialog,button,.file-button),.art18-confirm-portal.hub-reduced :is(dialog,button){animation:none!important;transition:none!important}
-@media(prefers-reduced-motion:reduce){.art-theme :is(dialog,button,.file-button){animation:none!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){.art-theme :is(dialog,button,.file-button){animation:none!important;transition:none!important}}}

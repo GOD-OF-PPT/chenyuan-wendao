@@ -1,7 +1,8 @@
+@layer game{
 .single-screen dialog.life-confirm.closure-focus{width:680px;padding:24px;background:linear-gradient(135deg,#153a3e,#0d272e);border-color:#91aa82;box-shadow:0 22px 90px #00191dcc}
 .single-screen dialog.life-confirm.closure-focus>p,.single-screen .closure-focus .review-pages p,.single-screen .closure-focus .milestone-notes>p{font-size:18px;line-height:1.65}
 .single-screen dialog.life-confirm.closure-focus>p:first-of-type{padding:14px 16px;background:#24494a;border-left:3px solid #b3d1a2;color:#eff0d5}
 .single-screen .closure-focus .milestone-notes{border-block:1px solid #849c7955;padding:4px 0;margin:14px 0}
 .single-screen .closure-focus .milestone-notes>summary{padding:8px 4px;color:#c4d8b5}
 .single-screen .closure-focus>.primary{display:block;width:calc(100% - 12px);margin-top:12px}
-.single-screen .closure-focus .review-pages .reading-text{min-height:100px}
+.single-screen .closure-focus .review-pages .reading-text{min-height:100px}}

@@ -15,8 +15,9 @@ defineProps<{summary:AwaySummary}>();
  </section>
 </template>
 <style scoped>
+@layer game{
 .away-summary{padding-block:10px;border-top:1px solid var(--line);text-align:left}
 .away-summary strong{font-size:18px;color:var(--game-jade,var(--teal))}
 .away-summary p{margin:6px 0;font-size:18px;line-height:1.5}
-.away-summary small{display:block;font-size:14px;line-height:1.5}
+.away-summary small{display:block;font-size:14px;line-height:1.5}}
 </style>

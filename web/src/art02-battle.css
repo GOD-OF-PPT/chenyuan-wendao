@@ -1,3 +1,4 @@
+@layer game{
 .battle-presence{position:relative;isolation:isolate;overflow:hidden;min-height:300px;height:100%;background:#102f36;color:#edf0dc}
 .battle-presence>.battle-backdrop{position:absolute;inset:0;z-index:-3}
 .battle-presence::before{content:'';position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#0b2634d9,transparent 46%,#102a34a8),linear-gradient(#0d2734bd,transparent 58%,#102d35e8)}
@@ -44,4 +45,4 @@
 .immersive-stage .hub-current .battle-automation[data-view=manual]>.battle-current-activity{grid-column:1;grid-row:5}
 .hub-reduced .battle-presence .actor-impact::after{animation:none;opacity:0}.hub-reduced .battle-deck button:active{transform:none}
 .battle-presence:is([data-state=inactive],[data-state=failed],[data-state=paused]) .enemy-art.actor-impact{animation:none}.battle-presence:is([data-state=inactive],[data-state=failed],[data-state=paused]) .enemy-art.actor-impact::after{animation:none;opacity:0}
-@media(prefers-reduced-motion:reduce){.battle-presence .actor-impact::after{animation:none;opacity:0}.battle-deck button:active{transform:none}}
+@media(prefers-reduced-motion:reduce){.battle-presence .actor-impact::after{animation:none;opacity:0}.battle-deck button:active{transform:none}}}
