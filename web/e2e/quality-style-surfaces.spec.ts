@@ -3,7 +3,7 @@ import {writeFileSync,mkdirSync} from 'node:fs';
 import path from 'node:path';
 import {driver,fullRoute} from '../../tests/full-route.mjs';
 import {newGame} from '../../src/full/engine';
-import {importRecoveryFixture,recoveryDatabase,runRecoveryPlan} from './idle-recovery-ui-support';
+import {importRecoveryFixture,recoveryDatabase} from './idle-recovery-ui-support';
 import {selectPlan} from './idle-route-support';
 import {activitySnapshot,useJourneyClock} from './support';
 
@@ -44,7 +44,7 @@ test('Q12 running cultivation retains its actual first frame and original remain
 test('Q12 recipe materials and display settings remain completely readable',async({page},info)=>{
  const d=driver();d.resource('herb',2);d.funds(2);d.go('cave');await importRecoveryFixture(page,d.game);
  await selectPlan(page,{kind:'craft',recipeId:'healing',maxCycles:1,until:'cycles',targetQuantity:null,stoneBudget:2,stoneReserve:0,monthBudget:12,itemReserves:{},remainingMonthsReserve:1});
- await page.getByRole('button',{name:'取消调整',exact:true}).click();await capture(page,info,'recipe-materials');
+ await capture(page,info,'recipe-materials');
  await page.getByTestId('game-settings').click();await expect(page.getByTestId('reduce-effects')).toBeVisible();await capture(page,info,'display-settings');
 });
 
