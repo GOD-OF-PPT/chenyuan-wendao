@@ -206,3 +206,161 @@ test('AdventureHistory renders the actual retained battle window and its folded 
   await page.screenshot({ path: test.info().outputPath('folded-battle.png') });
   await page.evaluate(() => (globalThis as any).h.cleanup());
 });
+
+test('legal run ids with overlapping key prefixes do not mix protected old originals into current history', async ({
+  page,
+}) => {
+  await setupPersistence(page);
+  const result = await page.evaluate(async () => {
+    const h = (globalThis as any).h,
+      name = 'q15-overlapping-runs',
+      repo = await h.FullSaveRepository.open(name),
+      d = h.routes.driver();
+    d.go('cave');
+    const first = {
+        ...h.mutation(),
+        runId: 'overlap:prior',
+        commandId: repo.issueCommandId(),
+      },
+      a = await repo.importText(JSON.stringify(d.game), first);
+    const second = {
+        ...h.mutation(a.state),
+        runId: 'overlap',
+        commandId: repo.issueCommandId(),
+      },
+      b = await repo.importText(JSON.stringify(d.game), second),
+      m = {
+        commandId: repo.issueCommandId(),
+        runId: b.state.core.runId,
+        expectedRevision: b.state.core.revision,
+        expectedActivityId: null,
+        expectedActivityRevision: null,
+        ownerId: 'q15-overlap',
+      };
+    const started = await repo.startActivity(
+        {
+          kind: 'cultivation',
+          method: 'natural',
+          maxCycles: 1,
+          until: 'cycles',
+          stoneBudget: 0,
+          stoneReserve: 0,
+        },
+        m,
+      ),
+      before = await h.inspect(name),
+      history = await h.attempt(() =>
+        repo.loadActivityHistory(started.activity.id),
+      ),
+      after = await h.inspect(name);
+    repo.close();
+    return { before, after, history, first };
+  });
+  expect(result.history.ok).toBe(true);
+  expect(result.history.value).toMatchObject({
+    total: 0,
+    retained: 0,
+    folded: 0,
+    rows: [],
+  });
+  expect(result.after).toEqual(result.before);
+  expect(
+    result.after['full-receipts'].some(
+      (r: any) => r.key === result.first.runId + ':' + result.first.commandId,
+    ),
+  ).toBe(true);
+});
+
+for (const family of ['receipt', 'history', 'backup', 'unknown'])
+  test(`future ${family} metadata rejects opening before any content write and preserves the full inventory`, async ({
+    page,
+  }) => {
+    await setupPersistence(page);
+    const result = await page.evaluate(async (family) => {
+      const h = (globalThis as any).h,
+        name = 'q15-future-family-' + family,
+        repo = await h.FullSaveRepository.open(name),
+        d = h.routes.driver();
+      d.go('cave');
+      const seed = { ...h.mutation(), commandId: repo.issueCommandId() },
+        initial = await repo.importText(JSON.stringify(d.game), seed),
+        plan = {
+          kind: 'cultivation',
+          method: 'natural',
+          maxCycles: 1,
+          until: 'cycles',
+          stoneBudget: 0,
+          stoneReserve: 0,
+        },
+        m = {
+          commandId: repo.issueCommandId(),
+          runId: initial.state.core.runId,
+          expectedRevision: initial.state.core.revision,
+          expectedActivityId: null,
+          expectedActivityRevision: null,
+          ownerId: 'q15-future',
+        };
+      const started = await repo.startActivity(plan, m),
+        a = started.activity,
+        realNow = Date.now;
+      let done: any;
+      Date.now = () => a.dueAt;
+      try {
+        done = await repo.settleActivity({
+          commandId: a.nextCommand.commandId,
+          runId: a.runId,
+          expectedRevision: a.gameRevision,
+          activityId: a.id,
+          expectedActivityRevision: a.revision,
+          ownerId: a.ownerId,
+          generation: a.generation,
+        });
+      } finally {
+        Date.now = realNow;
+      }
+      await repo.startActivity(plan, {
+        ...m,
+        commandId: repo.issueCommandId(),
+        expectedRevision: done.state.core.revision,
+        expectedActivityId: done.activity.id,
+        expectedActivityRevision: done.activity.revision,
+      });
+      repo.close();
+      const snapshot = await h.inspect(name),
+        row =
+          family === 'unknown'
+            ? {
+                key: 'future-unrecognized',
+                value: { format: 'chenyuan-future-metadata', version: 2 },
+              }
+            : snapshot['full-retention'].find(
+                (r: any) => r.value.kind === family,
+              );
+      if (!row)
+        throw Error('The real fixture did not create its metadata family');
+      row.value.version = 2;
+      await h.put(name, 'full-retention', row.key, row.value);
+      const before = await h.inspect(name),
+        transaction = IDBDatabase.prototype.transaction,
+        modes: string[] = [];
+      IDBDatabase.prototype.transaction = function (...args: any[]) {
+        if (this.name === name) modes.push(args[1] ?? 'readonly');
+        return Reflect.apply(transaction, this, args);
+      };
+      let opened: any;
+      try {
+        opened = await h.attempt(async () => {
+          const next = await h.FullSaveRepository.open(name);
+          next.close();
+          return true;
+        });
+      } finally {
+        IDBDatabase.prototype.transaction = transaction;
+      }
+      return { before, after: await h.inspect(name), opened, modes };
+    }, family);
+    expect(result.opened.ok).toBe(false);
+    expect(result.opened.code).toBe('RETENTION_INVALID');
+    expect(result.after).toEqual(result.before);
+    expect(result.modes.every((m: string) => m === 'readonly')).toBe(true);
+  });
