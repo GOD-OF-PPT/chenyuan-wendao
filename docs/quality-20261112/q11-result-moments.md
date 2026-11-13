@@ -1,6 +1,6 @@
-# Q11：六类真实成果反馈（本地通过，待递交）
+# Q11：六类真实成果反馈（已递交）
 
-依据先发布main的[0158合同](../decisions/0158-committed-result-moments.md)。Q10已递交PR54，完整报告项递交10/20；本项尚未交付。独立工作区`chenyuan-quality-q11`、分支`codex/quality-q11-result-moments`，承接Q10最终f50cb01，不污染其64689f5原测试身份。
+依据先发布main的[0158合同](../decisions/0158-committed-result-moments.md)。本项已推送并递交[PR55](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/55)，完整报告项递交11/20，未自动合并。独立工作区`chenyuan-quality-q11`、分支`codex/quality-q11-result-moments`，承接Q10最终f50cb01，不污染其64689f5原测试身份。以下保历史阶段当时状态。
 
 ## 当前实现
 
