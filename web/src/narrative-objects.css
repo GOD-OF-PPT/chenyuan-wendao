@@ -556,7 +556,8 @@
     display: block;
     font-size: 22px;
     line-height: 1.4;
-    padding-block: 3px;
+    padding-block: 1px;
+    margin-block: -1px;
     font-weight: 400;
   }
   #app .art05-story .response-copy .choice-act small {

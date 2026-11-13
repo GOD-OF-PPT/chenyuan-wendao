@@ -203,8 +203,8 @@ const icon = computed(() =>
   #app .goal-board-object h3 {
     font-size: 24px !important;
     line-height: 1.35;
-    padding-block: 3px;
-    margin: 10px 0 6px;
+    padding-block: 2px;
+    margin: 8px 0 4px;
     overflow-wrap: anywhere;
     color: var(--palette-ink);
   }
