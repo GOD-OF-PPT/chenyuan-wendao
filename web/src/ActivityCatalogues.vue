@@ -65,6 +65,7 @@ const {
   startPreparation,
   startAdventure,
   movePreparation,
+  moveProduction,
   travel,
   viewActivityPlan,
 } = plans;
