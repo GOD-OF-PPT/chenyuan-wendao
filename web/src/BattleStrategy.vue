@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { isPreviousRules, isLegacyRules } from '../../src/full/rule-profile';
 import { useRuleContent } from './rule-content';
 
 import { computed, ref, watch, inject } from 'vue';
@@ -248,7 +249,9 @@ function purpose(move: Move) {
   if (move === 'release')
     return props.game.school === 'sword'
       ? '消耗剑意；满层可打断重击'
-      : '结算并清除符印';
+      : isLegacyRules(props.game) || isPreviousRules(props.game)
+        ? '结算并清除符印'
+        : '结算并清除符印；已有符印可断重击';
   if (move === 'technique')
     return props.game.school === 'sword'
       ? '按已装备起手术法积蓄剑意'
@@ -419,7 +422,11 @@ const signed = (n: number) => (n > 0 ? '+' + n : String(n));
             type="checkbox"
             aria-label="应对敌方重击"
           />应对重击：{{
-            game.school === 'sword' ? '满剑意打断，否则护体' : '优先凝神护体'
+            isLegacyRules(game) || isPreviousRules(game)
+              ? game.school === 'sword'
+                ? '满剑意打断，否则护体'
+                : '优先凝神护体'
+              : '预判蓄势、反震与护阵；可断则终结，否则护体'
           }}</label
         ><label
           >{{ game.school === 'sword' ? '剑意' : '符印' }}释放门槛<select

@@ -9,7 +9,7 @@ import {
   getTrialJourney,
   previewAction,
 } from '../../src/full/queries.ts';
-import { intent } from '../../src/full/engine.ts';
+import { battleIntent } from '../../src/full/engine.ts';
 import * as C from '../../src/full/content.ts';
 import { formatCosts } from './presentation';
 import { readingPages, type Reading } from './story-pages';
@@ -147,7 +147,7 @@ const rows = computed<Reading[]>(() => {
         });
     }
     if (g.battle) {
-      const forecast = intent(g.battle);
+      const forecast = battleIntent(g);
       rows.unshift({
         key: 'intent',
         title: '当前意图',

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { isLegacyRules } from '../../src/full/rule-profile';
+import { isLegacyRules, isPreviousRules } from '../../src/full/rule-profile';
 import { useRuleContent } from './rule-content';
 
 import { computed } from 'vue';
@@ -90,7 +90,9 @@ const p = computed(() => props.game.core.player),
         data-testid="save-summary"
         ><span class="save-state" role="status" data-testid="save-status"
           ><GameIcon kind="action" id="save" />{{ saveLabel }}</span
-        ><small v-if="isLegacyRules(game)" data-testid="legacy-rules"
+        ><small
+          v-if="isLegacyRules(game) || isPreviousRules(game)"
+          data-testid="legacy-rules"
           >旧约数值</small
         ></div
       ><div

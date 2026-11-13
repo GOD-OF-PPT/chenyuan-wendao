@@ -1,70 +1,608 @@
-import {proveRetentionDelta} from './retention-proof-support';
-import{proveCycle,proveControl}from'./scheduled-proof-support';
-import {forgePeriodMs} from '../../src/full/online-periods';
-import{test,expect,type Page,type TestInfo}from'@playwright/test';
-import type{Game}from'../../src/full/types';
-import{resolve,validateGame}from'../../src/full/engine';
-import{driver}from'../../tests/full-route.mjs';
+import { proveRetentionDelta } from './retention-proof-support';
+import { proveCycle, proveControl } from './scheduled-proof-support';
+import { forgePeriodMs } from '../../src/full/online-periods';
+import { test, expect, type Page, type TestInfo } from '@playwright/test';
+import type { Game } from '../../src/full/types';
+import { resolve, validateGame } from '../../src/full/engine';
+import { driver } from '../../tests/full-route.mjs';
 
-import*as C from'../../src/full/content';
-import{selectSource,openSourceSettings,closeSourceSettings}from'./stage-support';
-import{answerGameConfirmation}from'./game-confirmation-support';
+import * as C from '../../src/full/content';
+import {
+  selectSource,
+  openSourceSettings,
+  closeSourceSettings,
+} from './stage-support';
+import { answerGameConfirmation } from './game-confirmation-support';
 
+import { snapshot, activitySnapshot as activity } from './support';
+import {
+  importRecoveryFixture,
+  recoveryDatabase as database,
+  stored as stateValue,
+} from './idle-recovery-ui-support';
+import { captureFixedPng } from './png-capture';
+import { feedbackExamples } from '../../tests/action-feedback-fixtures.mjs';
+import { openHubFeature } from './support';
+import { selectPlan } from './idle-route-support';
+import {
+  selectLearningSkill,
+  openLearningLibrary,
+  openLearningSettings,
+  closeLearningSettings,
+} from './stage-support';
+import { validateConfigurationReceipt } from '../src/configuration-persistence';
 
-
-import{snapshot,activitySnapshot as activity}from'./support';
-import{importRecoveryFixture,recoveryDatabase as database,stored as stateValue}from'./idle-recovery-ui-support';
-import{captureFixedPng}from'./png-capture';
-import{feedbackExamples}from'../../tests/action-feedback-fixtures.mjs';
-import{openHubFeature}from'./support';
-import{selectPlan}from'./idle-route-support';
-import{selectLearningSkill,openLearningLibrary,openLearningSettings,closeLearningSettings}from'./stage-support';
-import{validateConfigurationReceipt}from'../src/configuration-persistence';
-
-import{selectRelic}from'./stage-support';
-test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});test.setTimeout(90000);
-async function attach(info:TestInfo,name:string,data:unknown){await info.attach(name,{body:JSON.stringify(data),contentType:'application/json'});}
-async function lastMs(page:Page,a:any,before:any,accepted:any){const left=a.dueAt-await page.evaluate(()=>Date.now());expect(left).toBeGreaterThan(0);expect(left).toBeLessThanOrEqual(a.cycleMs);await page.clock.fastForward(left-1);expect(await snapshot(page)).toEqual(before);expect(await database(page)).toEqual(accepted);}
-async function tick(page:Page,a:any,before:Game,info:TestInfo,name:string){const raw=await database(page);await lastMs(page,a,before,raw);await page.clock.fastForward(1);return saved(page,a,before,raw,info,name);}
-async function quota(page:Page,kind:'START'|'TICK'){await page.evaluate(kind=>{const put=IDBObjectStore.prototype.put;IDBObjectStore.prototype.put=function(v:any,k?:IDBValidKey){if(this.transaction.db.name==='chenyuan-playable-v1'&&this.name==='full-receipts'&&v?.input?.kind===kind){(window as any).__uir3504Rejected=structuredClone(v);IDBObjectStore.prototype.put=put;throw new DOMException('UIR3504 '+kind+' quota','QuotaExceededError');}return k===undefined?put.call(this,v):put.call(this,v,k);};},kind);}
-async function saved(page:Page,a:any,before:Game,accepted:any,info:TestInfo,name:string){
- await expect.poll(async()=>(await activity(page))?.completedCycles).toBe(a.completedCycles+1);await expect(page.getByTestId('save-status')).toHaveText('已保存');const raw=await database(page),proof=proveCycle(raw,accepted,before,a);expect(await snapshot(page)).toEqual(proof.after);expect(await activity(page)).toEqual(proof.done);await attach(info,name+'-complete-formal-game-activity-all-stores',proof);return proof;
+import { selectRelic } from './stage-support';
+test.use({
+  viewport: { width: 1440, height: 900 },
+  actionTimeout: 8000,
+  navigationTimeout: 15000,
+});
+test.setTimeout(90000);
+async function attach(info: TestInfo, name: string, data: unknown) {
+  await info.attach(name, {
+    body: JSON.stringify(data),
+    contentType: 'application/json',
+  });
+}
+async function lastMs(page: Page, a: any, before: any, accepted: any) {
+  const left = a.dueAt - (await page.evaluate(() => Date.now()));
+  expect(left).toBeGreaterThan(0);
+  expect(left).toBeLessThanOrEqual(a.cycleMs);
+  await page.clock.fastForward(left - 1);
+  expect(await snapshot(page)).toEqual(before);
+  expect(await database(page)).toEqual(accepted);
+}
+async function tick(
+  page: Page,
+  a: any,
+  before: Game,
+  info: TestInfo,
+  name: string,
+) {
+  const raw = await database(page);
+  await lastMs(page, a, before, raw);
+  await page.clock.fastForward(1);
+  return saved(page, a, before, raw, info, name);
+}
+async function quota(page: Page, kind: 'START' | 'TICK') {
+  await page.evaluate((kind) => {
+    const put = IDBObjectStore.prototype.put;
+    IDBObjectStore.prototype.put = function (v: any, k?: IDBValidKey) {
+      if (
+        this.transaction.db.name === 'chenyuan-playable-v1' &&
+        this.name === 'full-receipts' &&
+        v?.input?.kind === kind
+      ) {
+        (window as any).__uir3504Rejected = structuredClone(v);
+        IDBObjectStore.prototype.put = put;
+        throw new DOMException(
+          'UIR3504 ' + kind + ' quota',
+          'QuotaExceededError',
+        );
+      }
+      return k === undefined ? put.call(this, v) : put.call(this, v, k);
+    };
+  }, kind);
+}
+async function saved(
+  page: Page,
+  a: any,
+  before: Game,
+  accepted: any,
+  info: TestInfo,
+  name: string,
+) {
+  await expect
+    .poll(async () => (await activity(page))?.completedCycles)
+    .toBe(a.completedCycles + 1);
+  await expect(page.getByTestId('save-status')).toHaveText('已保存');
+  const raw = await database(page),
+    proof = proveCycle(raw, accepted, before, a);
+  expect(await snapshot(page)).toEqual(proof.after);
+  expect(await activity(page)).toEqual(proof.done);
+  await attach(info, name + '-complete-formal-game-activity-all-stores', proof);
+  return proof;
 }
 
-async function holdWrite(page:Page){await page.evaluate(()=>new Promise<void>((accept,reject)=>{
- const req=indexedDB.open('chenyuan-playable-v1');req.onerror=()=>reject(req.error);req.onsuccess=()=>{const db=req.result,names=[...db.objectStoreNames],tx=db.transaction(names,'readwrite'),rows:any={};let holding=true,pending=names.length;
-  const w=window as any;w.__ta08ReleaseWrite=()=>holding=false;const loop=()=>{const read=tx.objectStore('full-state').get('current');read.onsuccess=()=>{w.__ta08HeldGame=read.result;if(holding)loop();};};
-  for(const name of names){rows[name]=[];const cursor=tx.objectStore(name).openCursor();cursor.onsuccess=()=>{if(cursor.result){rows[name].push({key:cursor.result.key,value:cursor.result.value});cursor.result.continue();}else if(--pending===0){w.__ta08HeldDB={version:db.version,rows};loop();accept();}};}
-  tx.oncomplete=()=>db.close();tx.onabort=()=>{db.close();reject(tx.error);};
- };
-}));}
+async function holdWrite(page: Page) {
+  await page.evaluate(
+    () =>
+      new Promise<void>((accept, reject) => {
+        const req = indexedDB.open('chenyuan-playable-v1');
+        req.onerror = () => reject(req.error);
+        req.onsuccess = () => {
+          const db = req.result,
+            names = [...db.objectStoreNames],
+            tx = db.transaction(names, 'readwrite'),
+            rows: any = {};
+          let holding = true,
+            pending = names.length;
+          const w = window as any;
+          w.__ta08ReleaseWrite = () => (holding = false);
+          const loop = () => {
+            const read = tx.objectStore('full-state').get('current');
+            read.onsuccess = () => {
+              w.__ta08HeldGame = read.result;
+              if (holding) loop();
+            };
+          };
+          for (const name of names) {
+            rows[name] = [];
+            const cursor = tx.objectStore(name).openCursor();
+            cursor.onsuccess = () => {
+              if (cursor.result) {
+                rows[name].push({
+                  key: cursor.result.key,
+                  value: cursor.result.value,
+                });
+                cursor.result.continue();
+              } else if (--pending === 0) {
+                w.__ta08HeldDB = { version: db.version, rows };
+                loop();
+                accept();
+              }
+            };
+          }
+          tx.oncomplete = () => db.close();
+          tx.onabort = () => {
+            db.close();
+            reject(tx.error);
+          };
+        };
+      }),
+  );
+}
 
-async function configurationProof(page:Page,before:any,action:any,raw:any,info:TestInfo){await expect.poll(async()=>(await snapshot(page)).core.revision).toBe(before.core.revision+1);const after=await database(page),added=after.rows['full-receipts'].filter((r:any)=>!raw.rows['full-receipts'].some((o:any)=>o.key===r.key));expect(added).toHaveLength(1);const receipt=added[0].value;expect(receipt.format).toBe('chenyuan-configuration-receipt');expect(receipt.intent.command).toMatchObject({...action,runId:before.core.runId,expectedRevision:before.core.revision});expect(receipt.intent.expectedActivityId).toBeNull();expect(receipt.intent.expectedActivityRevision).toBeNull();const formal=resolve(before,receipt.intent.command);expect(receipt.before).toEqual(before);expect(receipt.after).toEqual(formal.nextState);expect(receipt.result).toEqual(formal.result);expect(()=>validateConfigurationReceipt(receipt,formal.nextState)).not.toThrow();expect(await snapshot(page)).toEqual(formal.nextState);expect(stateValue(after,'current')).toEqual(formal.nextState);expect(stateValue(after,'previous')).toEqual(before);expect(after.rows['full-state'].filter((r:any)=>!['current','previous'].includes(r.key))).toEqual(raw.rows['full-state'].filter((r:any)=>!['current','previous'].includes(r.key)));expect(after.rows['full-receipts'].filter((r:any)=>r.key!==added[0].key)).toEqual(raw.rows['full-receipts']);const expected=structuredClone(raw);expected.rows['full-state']=structuredClone(after.rows['full-state']);expected.rows['full-receipts']=[...expected.rows['full-receipts'],added[0]].sort((a:any,b:any)=>a.key<b.key?-1:a.key>b.key?1:0);proveRetentionDelta(raw,expected,after,added);expect(await activity(page)).toBeNull();await expect(page.getByTestId('action-execution')).toHaveCount(0);await attach(info,'actual-configuration-full-proof',{before,action,formal,receipt,raw:after});return after;}
+async function configurationProof(
+  page: Page,
+  before: any,
+  action: any,
+  raw: any,
+  info: TestInfo,
+) {
+  await expect
+    .poll(async () => (await snapshot(page)).core.revision)
+    .toBe(before.core.revision + 1);
+  const after = await database(page),
+    added = after.rows['full-receipts'].filter(
+      (r: any) => !raw.rows['full-receipts'].some((o: any) => o.key === r.key),
+    );
+  expect(added).toHaveLength(1);
+  const receipt = added[0].value;
+  expect(receipt.format).toBe('chenyuan-configuration-receipt');
+  expect(receipt.intent.command).toMatchObject({
+    ...action,
+    runId: before.core.runId,
+    expectedRevision: before.core.revision,
+  });
+  expect(receipt.intent.expectedActivityId).toBeNull();
+  expect(receipt.intent.expectedActivityRevision).toBeNull();
+  const formal = resolve(before, receipt.intent.command);
+  expect(receipt.before).toEqual(before);
+  expect(receipt.after).toEqual(formal.nextState);
+  expect(receipt.result).toEqual(formal.result);
+  expect(() =>
+    validateConfigurationReceipt(receipt, formal.nextState),
+  ).not.toThrow();
+  expect(await snapshot(page)).toEqual(formal.nextState);
+  expect(stateValue(after, 'current')).toEqual(formal.nextState);
+  expect(stateValue(after, 'previous')).toEqual(before);
+  expect(
+    after.rows['full-state'].filter(
+      (r: any) => !['current', 'previous'].includes(r.key),
+    ),
+  ).toEqual(
+    raw.rows['full-state'].filter(
+      (r: any) => !['current', 'previous'].includes(r.key),
+    ),
+  );
+  expect(
+    after.rows['full-receipts'].filter((r: any) => r.key !== added[0].key),
+  ).toEqual(raw.rows['full-receipts']);
+  const expected = structuredClone(raw);
+  expected.rows['full-state'] = structuredClone(after.rows['full-state']);
+  expected.rows['full-receipts'] = [
+    ...expected.rows['full-receipts'],
+    added[0],
+  ].sort((a: any, b: any) => (a.key < b.key ? -1 : a.key > b.key ? 1 : 0));
+  proveRetentionDelta(raw, expected, after, added);
+  expect(await activity(page)).toBeNull();
+  await expect(page.getByTestId('action-execution')).toHaveCount(0);
+  await attach(info, 'actual-configuration-full-proof', {
+    before,
+    action,
+    formal,
+    receipt,
+    raw: after,
+  });
+  return after;
+}
 
-const faults=new WeakMap<Page,string[]>();
-test.beforeEach(async({page})=>{const a:string[]=[];faults.set(page,a);page.on('pageerror',e=>a.push(e.message));});
-test.afterEach(async({page},info)=>{await attach(info,'uncaught-page-errors',faults.get(page));expect(faults.get(page)).toEqual([]);});
-function lawful(owned:string[]=[],bound?:string,ready?:string){const d=driver('leave','sword');d.realm();d.realm();for(const id of [...new Set([...owned,...ready?[ready]:[]])]){for(const[item,n]of Object.entries(C.relics[id].inputs))d.resource(item,n);d.funds(C.relics[id].stones);d.go('cave');if(owned.includes(id))d.doAction({type:'FORGE',relic:id});}if(bound)d.doAction({type:'EQUIP_RELIC',relic:bound});d.funds(1000);d.go('cave');validateGame(d.game);return d;}
-async function openRelic(page:Page,id:string){await openHubFeature(page,'relics');await selectRelic(page,id);}
-const stage=(page:Page)=>page.getByTestId('relic-atelier');
-const origin=(page:Page)=>stage(page).locator('.relic-description details');
-async function readonly(page:Page,g:Game,raw:any,a:any=null){expect(await snapshot(page)).toEqual(g);expect(await database(page)).toEqual(raw);expect(await activity(page)).toEqual(a);}
-async function frame(page:Page,info:TestInfo,name:string){await expect(stage(page)).toBeVisible();await captureFixedPng(page,info.outputPath(name+'.png'));const g=await stage(page).evaluate(root=>{const box=(n:Element)=>{const r=n.getBoundingClientRect();return{left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height};},b=box(root),nav=box(document.getElementById('primary-navigation')!),inside=(r:any)=>r.left>=b.left-1&&r.right<=b.right+1&&r.top>=b.top-1&&r.bottom<=b.bottom+1&&r.bottom<=nav.top;return{root:b,nav,libraryRight:box(root.querySelector('.relic-heading')!).right-box(root.querySelector('[data-testid=relic-library-open]')!).right,controls:[...root.querySelectorAll<HTMLElement>('button,summary')].filter(x=>x.checkVisibility()&&!x.closest('dialog:not([open])')).map(x=>{const r=box(x),hit=document.elementFromPoint((r.left+r.right)/2,(r.top+r.bottom)/2);return{text:x.innerText,box:r,inside:inside(r),hit:x.matches(':disabled')||hit===x||!!hit&&x.contains(hit)};}),text:[...root.querySelectorAll<HTMLElement>('.relic-description h3,.relic-description p,.relic-description strong,.relic-description small,.relic-description summary,[data-testid=production-relic-state],.relic-authorization strong,.relic-authorization small')].filter(x=>x.checkVisibility()).map(x=>{const range=document.createRange();range.selectNodeContents(x);return{text:x.innerText,font:parseFloat(getComputedStyle(x).fontSize),min:x.matches('small,.production-unit')?14:18,inside:[...range.getClientRects()].filter(x=>x.width&&x.height).every(inside)};})};});expect(g.root.left).toBeGreaterThanOrEqual(0);expect(g.root.right).toBeLessThanOrEqual(1440);expect(g.root.bottom).toBeLessThanOrEqual(g.nav.top);expect(Math.abs(g.libraryRight)).toBeLessThanOrEqual(1);for(const x of g.controls){expect(x.box.width,x.text).toBeGreaterThanOrEqual(44);expect(x.box.height,x.text).toBeGreaterThanOrEqual(44);expect(x.inside,x.text).toBe(true);expect(x.hit,x.text).toBe(true);}for(const x of g.text){expect(x.font,x.text).toBeGreaterThanOrEqual(x.min);expect(x.inside,x.text).toBe(true);}await attach(info,name+'-geometry',g);}
-async function costs(page:Page,id:string,visible=true){const r=C.relics[id],p=stage(page).locator('.production-unit');await expect(p).toHaveText('每件 '+r.stones+' 灵石 · '+C.actionDurations.forge+' 游戏月 · '+forgePeriodMs(await snapshot(page))/1000+' 秒 · 只铸造1件');if(visible)await expect(p).toBeVisible();else await expect(p).toBeHidden();}
-async function reveal(page:Page){const d=origin(page);await expect(d).toHaveCount(1);await d.locator('summary').click();await expect(d).toHaveAttribute('open','');return d;}
+const faults = new WeakMap<Page, string[]>();
+test.beforeEach(async ({ page }) => {
+  const a: string[] = [];
+  faults.set(page, a);
+  page.on('pageerror', (e) => a.push(e.message));
+});
+test.afterEach(async ({ page }, info) => {
+  await attach(info, 'uncaught-page-errors', faults.get(page));
+  expect(faults.get(page)).toEqual([]);
+});
+function lawful(owned: string[] = [], bound?: string, ready?: string) {
+  const d = driver('leave', 'sword');
+  d.realm();
+  d.realm();
+  for (const id of [...new Set([...owned, ...(ready ? [ready] : [])])]) {
+    for (const [item, n] of Object.entries(C.relics[id].inputs))
+      d.resource(item, n);
+    d.funds(C.relics[id].stones);
+    d.go('cave');
+    if (owned.includes(id)) d.doAction({ type: 'FORGE', relic: id });
+  }
+  if (bound) d.doAction({ type: 'EQUIP_RELIC', relic: bound });
+  if (bound && owned.some((id) => id !== bound)) d.resource('dew', 1);
+  d.funds(1000);
+  d.go('cave');
+  validateGame(d.game);
+  return d;
+}
+async function openRelic(page: Page, id: string) {
+  await openHubFeature(page, 'relics');
+  await selectRelic(page, id);
+}
+const stage = (page: Page) => page.getByTestId('relic-atelier');
+const origin = (page: Page) =>
+  stage(page).locator('.relic-description details');
+async function readonly(page: Page, g: Game, raw: any, a: any = null) {
+  expect(await snapshot(page)).toEqual(g);
+  expect(await database(page)).toEqual(raw);
+  expect(await activity(page)).toEqual(a);
+}
+async function frame(page: Page, info: TestInfo, name: string) {
+  await expect(stage(page)).toBeVisible();
+  await captureFixedPng(page, info.outputPath(name + '.png'));
+  const g = await stage(page).evaluate((root) => {
+    const box = (n: Element) => {
+        const r = n.getBoundingClientRect();
+        return {
+          left: r.left,
+          right: r.right,
+          top: r.top,
+          bottom: r.bottom,
+          width: r.width,
+          height: r.height,
+        };
+      },
+      b = box(root),
+      nav = box(document.getElementById('primary-navigation')!),
+      inside = (r: any) =>
+        r.left >= b.left - 1 &&
+        r.right <= b.right + 1 &&
+        r.top >= b.top - 1 &&
+        r.bottom <= b.bottom + 1 &&
+        r.bottom <= nav.top;
+    return {
+      root: b,
+      nav,
+      libraryRight:
+        box(root.querySelector('.relic-heading')!).right -
+        box(root.querySelector('[data-testid=relic-library-open]')!).right,
+      controls: [...root.querySelectorAll<HTMLElement>('button,summary')]
+        .filter((x) => x.checkVisibility() && !x.closest('dialog:not([open])'))
+        .map((x) => {
+          const r = box(x),
+            hit = document.elementFromPoint(
+              (r.left + r.right) / 2,
+              (r.top + r.bottom) / 2,
+            );
+          return {
+            text: x.innerText,
+            box: r,
+            inside: inside(r),
+            hit:
+              x.matches(':disabled') || hit === x || (!!hit && x.contains(hit)),
+          };
+        }),
+      text: [
+        ...root.querySelectorAll<HTMLElement>(
+          '.relic-description h3,.relic-description p,.relic-description strong,.relic-description small,.relic-description summary,[data-testid=production-relic-state],.relic-authorization strong,.relic-authorization small',
+        ),
+      ]
+        .filter((x) => x.checkVisibility())
+        .map((x) => {
+          const range = document.createRange();
+          range.selectNodeContents(x);
+          return {
+            text: x.innerText,
+            font: parseFloat(getComputedStyle(x).fontSize),
+            min: x.matches('small,.production-unit') ? 14 : 18,
+            inside: [...range.getClientRects()]
+              .filter((x) => x.width && x.height)
+              .every(inside),
+          };
+        }),
+    };
+  });
+  expect(g.root.left).toBeGreaterThanOrEqual(0);
+  expect(g.root.right).toBeLessThanOrEqual(1440);
+  expect(g.root.bottom).toBeLessThanOrEqual(g.nav.top);
+  expect(Math.abs(g.libraryRight)).toBeLessThanOrEqual(1);
+  for (const x of g.controls) {
+    expect(x.box.width, x.text).toBeGreaterThanOrEqual(44);
+    expect(x.box.height, x.text).toBeGreaterThanOrEqual(44);
+    expect(x.inside, x.text).toBe(true);
+    expect(x.hit, x.text).toBe(true);
+  }
+  for (const x of g.text) {
+    expect(x.font, x.text).toBeGreaterThanOrEqual(x.min);
+    expect(x.inside, x.text).toBe(true);
+  }
+  await attach(info, name + '-geometry', g);
+}
+async function costs(page: Page, id: string, visible = true) {
+  const r = C.relics[id],
+    p = stage(page).locator('.production-unit');
+  await expect(p).toHaveText(
+    '每件 ' +
+      r.stones +
+      ' 灵石 · ' +
+      C.actionDurations.forge +
+      ' 游戏月 · ' +
+      forgePeriodMs(await snapshot(page)) / 1000 +
+      ' 秒 · 只铸造1件',
+  );
+  if (visible) await expect(p).toBeVisible();
+  else await expect(p).toBeHidden();
+}
+async function reveal(page: Page) {
+  const d = origin(page);
+  await expect(d).toHaveCount(1);
+  await d.locator('summary').click();
+  await expect(d).toHaveAttribute('open', '');
+  return d;
+}
 
-test('CEND07-F02B-B1 every unowned artifact has one current blueprint fact honest visible cost and the full readonly catalogue',async({page},info)=>{
- const before=await importRecoveryFixture(page,lawful().game),raw=await database(page);await openRelic(page,'frost_sword');await captureFixedPng(page,info.outputPath('unowned-before-hierarchy-assertions.png'));await expect.soft(stage(page).locator('.relic-heading>small')).toHaveCount(0);await expect.soft(page.getByTestId('production-fire')).toBeHidden();await expect.soft(stage(page).locator('.relic-bond-reference')).toHaveCount(0);
- for(const[id,r]of Object.entries(C.relics)){await selectRelic(page,id);await expect(page.getByTestId('production-relic-state')).toHaveText('器谱冷胚示意\n尚未炼成');await expect(stage(page).locator('.relic-description')).toContainText(r.description);await costs(page,id);await expect(origin(page)).toHaveCount(0);await expect(stage(page).locator('.relic-action button.primary')).toHaveCount(1);await readonly(page,before,raw);await frame(page,info,id+'-one-blueprint-and-real-next-decision');}
- await page.getByTestId('relic-library-open').click();await expect(page.getByTestId('relic-library-dialog')).toContainText('器架');await page.getByTestId('relic-library-close').click();await readonly(page,before,raw);
+test('CEND07-F02B-B1 every unowned artifact has one current blueprint fact honest visible cost and the full readonly catalogue', async ({
+  page,
+}, info) => {
+  const before = await importRecoveryFixture(page, lawful().game),
+    raw = await database(page);
+  await openRelic(page, 'frost_sword');
+  await captureFixedPng(
+    page,
+    info.outputPath('unowned-before-hierarchy-assertions.png'),
+  );
+  await expect.soft(stage(page).locator('.relic-heading>small')).toHaveCount(0);
+  await expect.soft(page.getByTestId('production-fire')).toBeHidden();
+  await expect
+    .soft(stage(page).locator('.relic-bond-reference'))
+    .toHaveCount(0);
+  for (const [id, r] of Object.entries(C.relics)) {
+    await selectRelic(page, id);
+    await expect(page.getByTestId('production-relic-state')).toHaveText(
+      '器谱冷胚示意\n尚未炼成',
+    );
+    await expect(stage(page).locator('.relic-description')).toContainText(
+      r.description,
+    );
+    await costs(page, id);
+    await expect(origin(page)).toHaveCount(0);
+    await expect(
+      stage(page).locator('.relic-action button.primary'),
+    ).toHaveCount(1);
+    await readonly(page, before, raw);
+    await frame(page, info, id + '-one-blueprint-and-real-next-decision');
+  }
+  await page.getByTestId('relic-library-open').click();
+  await expect(page.getByTestId('relic-library-dialog')).toContainText('器架');
+  await page.getByTestId('relic-library-close').click();
+  await readonly(page, before, raw);
 });
-test('CEND07-F02B-B2 owned and bound facts lead to compare or browse while complete forge origin is readonly and immediate equip remains atomic',async({page},info)=>{
- const before=await importRecoveryFixture(page,lawful(['jade_seal','cloud_mirror'],'cloud_mirror').game),raw=await database(page);await openRelic(page,'jade_seal');await captureFixedPng(page,info.outputPath('owned-before-origin-assertions.png'));await expect(stage(page).locator('.relic-material-slots')).toHaveCount(0);await page.getByTestId('relic-preparation-open').click();for(const[id,n]of Object.entries(C.relics.jade_seal.inputs)){await expect(page.getByTestId('production-source-'+id)).toContainText(C.items[id].name);await expect(page.getByTestId('production-source-'+id)).toContainText('单件 '+n+' + 保留 0');}await page.getByTestId('relic-preparation-close').click();expect.soft(await origin(page).count()).toBe(1);if(await origin(page).count()){await costs(page,'jade_seal',false);await reveal(page);await costs(page,'jade_seal');await expect(stage(page).locator('.relic-bond-reference')).toContainText(C.relics.cloud_mirror.name);await expect(stage(page).locator('.relic-bond-reference')).toContainText(C.relics.cloud_mirror.description);await frame(page,info,'owned-full-forge-origin-and-other-current-relic');}
- await readonly(page,before,raw);await page.getByTestId('equip-relic-jade_seal').click();await expect(page.getByRole('dialog')).toContainText(C.relics.jade_seal.name);await page.getByTestId('configuration-cancel').click();await readonly(page,before,raw);await page.getByTestId('equip-relic-jade_seal').click();await page.getByTestId('configuration-confirm').click();const after=await configurationProof(page,before,{type:'EQUIP_RELIC',relic:'jade_seal'},raw,info);await expect(page.getByTestId('production-relic-state')).toHaveText('已装备为本命');await expect.soft(stage(page).locator('.relic-bond-reference')).toHaveCount(0);await expect(page.getByTestId('relic-library-browse')).toBeEnabled();await expect.soft(page.getByTestId('production-fire')).toBeHidden();await page.clock.runFor(1200);await frame(page,info,'one-actual-bound-fact-and-browse-primary');expect(await database(page)).toEqual(after);await selectRelic(page,'cloud_mirror');await selectRelic(page,'jade_seal');expect(await database(page)).toEqual(after);
+test('CEND07-F02B-B2 owned and bound facts lead to compare or browse while complete forge origin is readonly and immediate equip remains atomic', async ({
+  page,
+}, info) => {
+  const before = await importRecoveryFixture(
+      page,
+      lawful(['jade_seal', 'cloud_mirror'], 'cloud_mirror').game,
+    ),
+    raw = await database(page);
+  await openRelic(page, 'jade_seal');
+  await captureFixedPng(
+    page,
+    info.outputPath('owned-before-origin-assertions.png'),
+  );
+  await expect(stage(page).locator('.relic-material-slots')).toHaveCount(0);
+  await page.getByTestId('relic-preparation-open').click();
+  for (const [id, n] of Object.entries(C.relics.jade_seal.inputs)) {
+    await expect(page.getByTestId('production-source-' + id)).toContainText(
+      C.items[id].name,
+    );
+    await expect(page.getByTestId('production-source-' + id)).toContainText(
+      '单件 ' + n + ' + 保留 0',
+    );
+  }
+  await page.getByTestId('relic-preparation-close').click();
+  expect.soft(await origin(page).count()).toBe(1);
+  if (await origin(page).count()) {
+    await costs(page, 'jade_seal', false);
+    await reveal(page);
+    await costs(page, 'jade_seal');
+    await expect(stage(page).locator('.relic-bond-reference')).toContainText(
+      C.relics.cloud_mirror.name,
+    );
+    await expect(stage(page).locator('.relic-bond-reference')).toContainText(
+      C.relics.cloud_mirror.description,
+    );
+    await frame(page, info, 'owned-full-forge-origin-and-other-current-relic');
+  }
+  await readonly(page, before, raw);
+  await page.getByTestId('equip-relic-jade_seal').click();
+  await expect(page.getByRole('dialog')).toContainText(C.relics.jade_seal.name);
+  await page.getByTestId('configuration-cancel').click();
+  await readonly(page, before, raw);
+  await page.getByTestId('equip-relic-jade_seal').click();
+  await page.getByTestId('configuration-confirm').click();
+  const after = await configurationProof(
+    page,
+    before,
+    { type: 'EQUIP_RELIC', relic: 'jade_seal' },
+    raw,
+    info,
+  );
+  await expect(page.getByTestId('production-relic-state')).toHaveText(
+    '已装备为本命',
+  );
+  await expect
+    .soft(stage(page).locator('.relic-bond-reference'))
+    .toHaveCount(0);
+  await expect(page.getByTestId('relic-library-browse')).toBeEnabled();
+  await expect.soft(page.getByTestId('production-fire')).toBeHidden();
+  await page.clock.runFor(1200);
+  await frame(page, info, 'one-actual-bound-fact-and-browse-primary');
+  expect(await database(page)).toEqual(after);
+  await selectRelic(page, 'cloud_mirror');
+  await selectRelic(page, 'jade_seal');
+  expect(await database(page)).toEqual(after);
 });
-test('CEND07-F02B-B3 an owned forge origin stays open across a readonly goal and an unrelated original thirty-second source period',async({page},info)=>{
- const d=lawful(['jade_seal']);d.go('sect');const before=await importRecoveryFixture(page,d.game);await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-source').click();await selectSource(page,'work');await openSourceSettings(page,true);await page.getByLabel('取材次数',{exact:true}).selectOption('1');await page.getByLabel('累计游戏月预算',{exact:true}).fill(String(C.sources.work.months));await closeSourceSettings(page);await page.getByTestId('source-start').click();await expect.poll(async()=>(await activity(page))?.status).toBe('running');const a=await activity(page),accepted=await database(page);expect(a.cycleMs).toBe(30000);await openRelic(page,'jade_seal');expect.soft(await origin(page).count()).toBe(1);if(await origin(page).count())await reveal(page);await page.getByTestId('hub-goal').click();await page.getByTestId('hub-close').click();if(await origin(page).count())await expect(origin(page)).toHaveAttribute('open','');await readonly(page,before,accepted,a);await lastMs(page,a,before,accepted);await page.clock.fastForward(1);const done=await saved(page,a,before,accepted,info,'original-commission-while-reading-forge-origin');expect.soft(await origin(page).count()).toBe(1);if(await origin(page).count()){await expect(origin(page)).toHaveAttribute('open','');await costs(page,'jade_seal');}await frame(page,info,'ordinary-period-keeps-owned-forge-origin-open');expect(await database(page)).toEqual(done.raw);
+test('CEND07-F02B-B3 an owned forge origin stays open across a readonly goal and an unrelated original thirty-second source period', async ({
+  page,
+}, info) => {
+  const d = lawful(['jade_seal']);
+  d.go('sect');
+  const before = await importRecoveryFixture(page, d.game);
+  await page.getByTestId('tab-1').click();
+  await page.getByTestId('explore-mode-source').click();
+  await selectSource(page, 'work');
+  await openSourceSettings(page, true);
+  await page.getByLabel('取材次数', { exact: true }).selectOption('1');
+  await page
+    .getByLabel('累计游戏月预算', { exact: true })
+    .fill(String(C.sources.work.months));
+  await closeSourceSettings(page);
+  await page.getByTestId('source-start').click();
+  await expect.poll(async () => (await activity(page))?.status).toBe('running');
+  const a = await activity(page),
+    accepted = await database(page);
+  expect(a.cycleMs).toBe(30000);
+  await openRelic(page, 'jade_seal');
+  expect.soft(await origin(page).count()).toBe(1);
+  if (await origin(page).count()) await reveal(page);
+  await page.getByTestId('hub-goal').click();
+  await page.getByTestId('hub-close').click();
+  if (await origin(page).count())
+    await expect(origin(page)).toHaveAttribute('open', '');
+  await readonly(page, before, accepted, a);
+  await lastMs(page, a, before, accepted);
+  await page.clock.fastForward(1);
+  const done = await saved(
+    page,
+    a,
+    before,
+    accepted,
+    info,
+    'original-commission-while-reading-forge-origin',
+  );
+  expect.soft(await origin(page).count()).toBe(1);
+  if (await origin(page).count()) {
+    await expect(origin(page)).toHaveAttribute('open', '');
+    await costs(page, 'jade_seal');
+  }
+  await frame(page, info, 'ordinary-period-keeps-owned-forge-origin-open');
+  expect(await database(page)).toEqual(done.raw);
 });
-test('CEND07-F02B-B4 a positive-cost forge keeps original start and held tick failures readable before its full sixty-second atomic ownership handoff',async({page},info)=>{
- const before=await importRecoveryFixture(page,lawful([],undefined,'jade_seal').game),raw=await database(page);await openRelic(page,'jade_seal');await costs(page,'jade_seal');await quota(page,'START');await page.getByTestId('production-start').click();await expect(page.getByTestId('error')).toContainText('存储空间不足');expect(await database(page)).toEqual(raw);await expect(page.getByTestId('production-fire')).toContainText('查看上方提示');await frame(page,info,'start-failure-keeps-real-cost-and-readable-original-retry');const original=await page.evaluate(()=>(window as any).__uir3504Rejected);await page.getByTestId('retry').click();await expect.poll(async()=>(await activity(page))?.status).toBe('running');const a=await activity(page),accepted=await database(page);expect(a.version).toBe(4);expect(a.cycleMs).toBe(60000);const start=accepted.rows['full-receipts'].find((r:any)=>r.value?.input?.kind==='START').value;expect(start.input).toEqual(original.input);expect(start.fingerprint).toEqual(original.fingerprint);const startProof=proveControl(accepted,raw,before,'START');expect(startProof.r).toEqual(start);expect(startProof.a).toEqual(a);await page.clock.fastForward(30000);expect(await snapshot(page)).toEqual(before);expect(await database(page)).toEqual(accepted);await expect(page.getByTestId('production-fire')).toContainText('淬炼器纹');await frame(page,info,'original-sixty-second-inscription-halfway');await lastMs(page,a,before,accepted);await quota(page,'TICK');await holdWrite(page);try{await page.clock.fastForward(1);await expect(page.getByTestId('save-status')).toHaveText('保存中');await expect(page.getByTestId('production-fire')).toContainText('封存器纹');expect(await page.evaluate(()=>(window as any).__ta08HeldGame)).toEqual(before);await expect(stage(page)).toHaveAttribute('data-owned','false');await frame(page,info,'saving-still-unowned-and-cost-visible');}finally{await page.evaluate(()=>(window as any).__ta08ReleaseWrite());}await expect(page.getByTestId('error')).toContainText('存储空间不足');expect(await database(page)).toEqual(accepted);expect((await activity(page)).nextCommand).toEqual(a.nextCommand);await frame(page,info,'tick-failure-retains-native-command-and-readable-materials');await page.getByTestId('retry').click();const done=await saved(page,a,before,accepted,info,'first-saved-forge-after-original-tick-retry');expect(done.after.ownedRelics).toEqual([...before.ownedRelics,'jade_seal']);expect(done.after.loadout).toEqual(before.loadout);expect.soft(await origin(page).count()).toBe(1);if(await origin(page).count()){await costs(page,'jade_seal',false);await reveal(page);await costs(page,'jade_seal');}await page.clock.runFor(32);await expect(page.getByTestId('production-relic-state')).toHaveText('已炼成\n尚未装备');await frame(page,info,'actual-owned-not-bound-and-full-forge-origin');await page.clock.runFor(1200);await page.getByTestId('hub-goal').click();await page.getByTestId('hub-close').click();await page.clock.fastForward(86400000);expect(await database(page)).toEqual(done.raw);await expect(page.getByTestId('relic-result')).toHaveCount(0);await expect(stage(page)).toHaveAttribute('data-bound','false');
+test('CEND07-F02B-B4 a positive-cost forge keeps original start and held tick failures readable before its full sixty-second atomic ownership handoff', async ({
+  page,
+}, info) => {
+  const before = await importRecoveryFixture(
+      page,
+      lawful([], undefined, 'jade_seal').game,
+    ),
+    raw = await database(page);
+  await openRelic(page, 'jade_seal');
+  await costs(page, 'jade_seal');
+  await quota(page, 'START');
+  await page.getByTestId('production-start').click();
+  await expect(page.getByTestId('error')).toContainText('存储空间不足');
+  expect(await database(page)).toEqual(raw);
+  await expect(page.getByTestId('production-fire')).toContainText(
+    '查看上方提示',
+  );
+  await frame(
+    page,
+    info,
+    'start-failure-keeps-real-cost-and-readable-original-retry',
+  );
+  const original = await page.evaluate(() => (window as any).__uir3504Rejected);
+  await page.getByTestId('retry').click();
+  await expect.poll(async () => (await activity(page))?.status).toBe('running');
+  const a = await activity(page),
+    accepted = await database(page);
+  expect(a.version).toBe(4);
+  expect(a.cycleMs).toBe(60000);
+  const start = accepted.rows['full-receipts'].find(
+    (r: any) => r.value?.input?.kind === 'START',
+  ).value;
+  expect(start.input).toEqual(original.input);
+  expect(start.fingerprint).toEqual(original.fingerprint);
+  const startProof = proveControl(accepted, raw, before, 'START');
+  expect(startProof.r).toEqual(start);
+  expect(startProof.a).toEqual(a);
+  await page.clock.fastForward(30000);
+  expect(await snapshot(page)).toEqual(before);
+  expect(await database(page)).toEqual(accepted);
+  await expect(page.getByTestId('production-fire')).toContainText('淬炼器纹');
+  await frame(page, info, 'original-sixty-second-inscription-halfway');
+  await lastMs(page, a, before, accepted);
+  await quota(page, 'TICK');
+  await holdWrite(page);
+  try {
+    await page.clock.fastForward(1);
+    await expect(page.getByTestId('save-status')).toHaveText('保存中');
+    await expect(page.getByTestId('production-fire')).toContainText('封存器纹');
+    expect(await page.evaluate(() => (window as any).__ta08HeldGame)).toEqual(
+      before,
+    );
+    await expect(stage(page)).toHaveAttribute('data-owned', 'false');
+    await frame(page, info, 'saving-still-unowned-and-cost-visible');
+  } finally {
+    await page.evaluate(() => (window as any).__ta08ReleaseWrite());
+  }
+  await expect(page.getByTestId('error')).toContainText('存储空间不足');
+  expect(await database(page)).toEqual(accepted);
+  expect((await activity(page)).nextCommand).toEqual(a.nextCommand);
+  await frame(
+    page,
+    info,
+    'tick-failure-retains-native-command-and-readable-materials',
+  );
+  await page.getByTestId('retry').click();
+  const done = await saved(
+    page,
+    a,
+    before,
+    accepted,
+    info,
+    'first-saved-forge-after-original-tick-retry',
+  );
+  expect(done.after.ownedRelics).toEqual([...before.ownedRelics, 'jade_seal']);
+  expect(done.after.loadout).toEqual(before.loadout);
+  expect.soft(await origin(page).count()).toBe(1);
+  if (await origin(page).count()) {
+    await costs(page, 'jade_seal', false);
+    await reveal(page);
+    await costs(page, 'jade_seal');
+  }
+  await page.clock.runFor(32);
+  await expect(page.getByTestId('production-relic-state')).toHaveText(
+    '已炼成\n尚未装备',
+  );
+  await frame(page, info, 'actual-owned-not-bound-and-full-forge-origin');
+  await page.clock.runFor(1200);
+  await page.getByTestId('hub-goal').click();
+  await page.getByTestId('hub-close').click();
+  await page.clock.fastForward(86400000);
+  expect(await database(page)).toEqual(done.raw);
+  await expect(page.getByTestId('relic-result')).toHaveCount(0);
+  await expect(stage(page)).toHaveAttribute('data-bound', 'false');
 });

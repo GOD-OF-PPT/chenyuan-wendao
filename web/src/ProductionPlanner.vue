@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { costsForAction } from '../../src/full/costs';
 import { useRuleContent } from './rule-content';
 
 import { computed, ref, watch, onDeactivated } from 'vue';
@@ -351,7 +352,7 @@ function need(id: string) {
     C.maxQuantity,
     Math.max(
       1,
-      unit.value.items[id] * n + (limits.value.itemReserves[id] ?? 0),
+      (unit.value.items[id] ?? 0) * n + (limits.value.itemReserves[id] ?? 0),
     ),
   );
 }
@@ -562,7 +563,16 @@ onDeactivated(() => dialog.value?.close());
         changeFuture();
       "
       @material="
-        (id) => emit('track', { kind: 'item', id, quantity: need(id) })
+        (id) =>
+          emit('track', {
+            kind: 'item',
+            id,
+            quantity: Math.max(
+              need(id),
+              costsForAction(game, { type: 'EQUIP_RELIC', relic: selected })
+                .items[id] ?? 0,
+            ),
+          })
       "
       @limits="openLimits()"
       @start="emit('start', plan)"

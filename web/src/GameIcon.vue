@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { ICONS } from './ui-icons';
+import { ICONS, BRANCH_ICONS } from './ui-icons';
 const props = defineProps<{ kind: keyof typeof ICONS; id: string }>();
+const branch = computed(
+  () => props.kind === 'skill' && Object.hasOwn(BRANCH_ICONS, props.id),
+);
 const symbol = computed(
   () =>
     (ICONS[props.kind] as Record<string, string>)[props.id] ??
@@ -22,8 +25,10 @@ const url = computed(
     aria-hidden="true"
     focusable="false"
     :data-icon="symbol"
+    :data-build-branch="branch"
   >
     <use :href="url" />
+    <circle v-if="branch" cx="19" cy="5" r="2" fill="currentColor" />
   </svg>
 </template>
 <style scoped>

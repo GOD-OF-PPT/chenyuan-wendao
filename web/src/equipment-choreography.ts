@@ -16,6 +16,12 @@ export const JADE_FORMS: Record<string, { form: string; variant: string }> = {
   talisman_frost: { form: 'seal', variant: 'advanced' },
   talisman_release: { form: 'fan', variant: 'base' },
   talisman_return: { form: 'fan', variant: 'advanced' },
+  sword_pierce: { form: 'heart', variant: 'advanced' },
+  sword_surge: { form: 'blade', variant: 'advanced' },
+  sword_shatter: { form: 'scroll', variant: 'advanced' },
+  talisman_clear: { form: 'knot', variant: 'advanced' },
+  talisman_ember: { form: 'seal', variant: 'advanced' },
+  talisman_rupture: { form: 'fan', variant: 'advanced' },
 };
 export const MANUAL_FORM = 'manual';
 export const RELIC_FORMS = {

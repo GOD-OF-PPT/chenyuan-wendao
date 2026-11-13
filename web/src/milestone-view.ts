@@ -14,7 +14,7 @@ import {
   previewAction,
 } from '../../src/full/queries.ts';
 import { ASCENSION_ENDINGS } from '../../src/full/ascension.ts';
-import { TRIAL_ANSWERS } from '../../src/full/trial-rules.ts';
+import { trialAnswersForGame } from '../../src/full/trial-rules.ts';
 import * as C from '../../src/full/content.ts';
 import type { MilestoneIntent, useGame } from './store';
 import { formatCosts, formatDelta } from './presentation';
@@ -226,12 +226,12 @@ export function milestonePresentation(game: Game, action: MilestoneAction) {
       break;
     case 'ANSWER_TRIAL': {
       const j = getTrialJourney(game)!;
-      title = TRIAL_ANSWERS[action.answer].label;
+      title = trialAnswersForGame(game)[action.answer].label;
       speaker = '问心';
       body =
         j.openingMemory +
         '接纳旧我，稳住心神；或放下旧念，以进攻开路。两条道路皆可向前，不另判善恶成败。';
-      effect = TRIAL_ANSWERS[action.answer].record;
+      effect = trialAnswersForGame(game)[action.answer].record;
       next = '答案保存后进入第一关；当前天劫战策须另行安排，不自动出招。';
       break;
     }

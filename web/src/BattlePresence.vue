@@ -12,7 +12,7 @@ import {
 } from 'vue';
 import type { Game } from '../../src/full/types';
 import * as C from '../../src/full/content';
-import { intent } from '../../src/full/engine';
+import { battleIntent } from '../../src/full/engine';
 import { ENEMY_ASSETS, BATTLE_PLAYER_ASSET, sceneAssetPath } from './assets';
 import { BATTLE_SHAPES, useBattlePreparation } from './battle-choreography';
 import { scenePresentation } from './scene-presentation';
@@ -30,7 +30,7 @@ const battle = computed(() => props.game.battle!),
   enemy = computed(() => ruleContent.value.enemies[battle.value.enemy]),
   player = computed(() => props.game.core.player),
   realm = computed(() => ruleContent.value.realms[player.value.realm]);
-const forecast = computed(() => intent(battle.value)),
+const forecast = computed(() => battleIntent(props.game)),
   backdrop = computed(() => sceneAssetPath(scenePresentation(props.game)));
 const identity = computed(
   () =>

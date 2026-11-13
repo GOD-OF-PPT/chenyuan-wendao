@@ -1171,6 +1171,14 @@ export function createActivity(
         'ALREADY_LEARNED',
         '研习清单中已有掌握的功法，不会重复收费',
       );
+    const branches = [...game.learned, ...plan.skills]
+      .map((id) => C.skills[id].branch)
+      .filter(Boolean);
+    if (new Set(branches).size !== branches.length)
+      throw new RuleError(
+        'SKILL_BRANCH',
+        '研习清单包含互斥选路；同组此生只能掌握一卷，请先取舍',
+      );
     if (plan.skills.some((id) => C.rank(C.skills[id].min) > C.rank(realm)))
       throw new RuleError('REALM_REQUIRED', '研习清单中有尚未达到境界的功法');
   }

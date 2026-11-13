@@ -83,6 +83,12 @@ export function costsForAction(game: Game, action: Action): ActionCosts {
     case 'CHOOSE':
       if (action.choice !== 'leave') cost.items.healing_pill = 1;
       break;
+    case 'EQUIP_RELIC':
+      if (game.loadout.relic && game.loadout.relic !== action.relic) {
+        cost.stones = 24;
+        cost.items.dew = 1;
+      }
+      break;
     case 'CULTIVATE':
       Object.assign(cost, {
         stones:
@@ -156,14 +162,28 @@ export function costsForAction(game: Game, action: Action): ActionCosts {
     }
     case 'BATTLE': {
       if (action.move === 'technique') {
-        const builder = game.loadout.builder && C.skills[game.loadout.builder];
+        const builder = game.loadout.builder
+          ? C.skills[game.loadout.builder]
+          : null;
         cost.mp =
-          game.school === 'talisman' && builder && builder.effect === 'frost'
-            ? 10
-            : 8;
+          builder?.effect === 'surge' || builder?.effect === 'ember'
+            ? 12
+            : builder?.effect === 'frost'
+              ? 10
+              : 8;
       }
-      if (action.move === 'release')
-        cost.mp = game.school === 'sword' ? 12 : 10;
+      if (action.move === 'release') {
+        const finisher =
+          game.loadout.finisher && C.skills[game.loadout.finisher];
+        cost.mp =
+          finisher && finisher.effect === 'shatter'
+            ? 18
+            : finisher && finisher.effect === 'rupture'
+              ? 16
+              : game.school === 'sword'
+                ? 12
+                : 10;
+      }
       if (action.move === 'heal') cost.items.healing_pill = 1;
       if (action.move === 'restore') cost.items.spirit_pill = 1;
       break;

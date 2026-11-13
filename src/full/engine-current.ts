@@ -220,6 +220,9 @@ function validateSnapshot(
     fail('SAVE_EQUIPMENT', '功法或法宝引用无效');
   const learned = value.learned as string[],
     owned = value.ownedRelics as string[];
+  const branches = learned.map((id) => C.skills[id].branch).filter(Boolean);
+  if (new Set(branches).size !== branches.length)
+    fail('SAVE_EQUIPMENT', '同一人生不能掌握互斥的升级功法');
   if (
     learned.some((k) => C.rank(C.skills[k].min) > C.rank(p.realm as C.RealmId))
   )
@@ -510,7 +513,10 @@ export function stats(g: Game) {
     guard: 24 + Math.floor(r.power * 1.2) + (mind === 'still' ? 6 : 0),
     cultivationBonus: mind === 'still' || mind === 'calm' ? 25 : 0,
     markDamage:
-      9 + Math.floor(r.power / 3) + (relicEffect(g) === 'soul_lamp' ? 4 : 0),
+      9 +
+      Math.floor(r.power / 3) +
+      (relicEffect(g) === 'soul_lamp' ? 4 : 0) +
+      (skillEffect(g, 'builder') === 'ember' ? 8 : 0),
     manualDamageBonus:
       g.school === 'sword' && g.core.learnedSkills.includes(C.swordManual.id)
         ? C.swordManual.damageBonus
@@ -518,10 +524,75 @@ export function stats(g: Game) {
   };
 }
 export function intent(b: Battle) {
+  return forecastForBattle(b, null);
+}
+export function battleIntent(game: Game) {
+  validateGame(game);
+  if (!game.battle) fail('NO_BATTLE', '当前没有战斗');
+  return forecastForBattle(game.battle, game.trial?.answer ?? null);
+}
+function forecastForBattle(b: Battle, answer: 'accept' | 'release' | null) {
   const e = C.enemies[b.enemy];
-  return b.round % 3 === 1
+  const reflection =
+    e.mechanism === 'reflection' ||
+    (b.enemy === 'trial_gate' && answer === 'accept');
+  if (reflection) {
+    const phase = b.round % 4;
+    if (phase === 1)
+      return {
+        kind: 'reflect',
+        name: '镜照反震 · 返还直伤35%（最多45），护体或符印可应对',
+        damage: 0,
+      };
+    if (phase === 2)
+      return { kind: 'prepare', name: '正在蓄势 · 下回合重击', damage: 0 };
+    return phase === 3
+      ? { kind: 'heavy', name: '蓄势重击', damage: e.heavy }
+      : { kind: 'attack', name: '试探进攻', damage: e.attack };
+  }
+  if (e.mechanism === 'ward') {
+    const phase = b.round % 4;
+    if (phase === 0)
+      return {
+        kind: 'ward',
+        name: '护阵 · 直伤减半，符印灼伤照常',
+        damage: e.attack,
+      };
+    if (phase === 1)
+      return {
+        kind: 'prepare',
+        name: '正在蓄势 · 下回合重压225，寻常终结不能打断',
+        damage: 0,
+      };
+    if (phase === 2)
+      return {
+        kind: 'pressure',
+        name: '阵中重压 · 护体或破阵终结应对',
+        damage: 225,
+      };
+    return { kind: 'attack', name: '试探进攻', damage: e.attack };
+  }
+  if (e.mechanism === 'drain' && b.round % 4 === 3)
+    return {
+      kind: 'drain',
+      name: '噬血 · 按实际气血损失恢复自身',
+      damage: e.attack,
+    };
+  if (e.mechanism === 'drain' && b.round % 4 === 0)
+    return {
+      kind: 'attack',
+      name: '噬血试探 · 净伤害回补心魇',
+      damage: e.attack,
+    };
+  const phase =
+    e.mechanism === 'drain'
+      ? b.round % 4
+      : b.enemy === 'trial_gate' && answer === 'release'
+        ? (b.round + 1) % 3
+        : b.round % 3;
+  return phase === 1
     ? { kind: 'prepare', name: '正在蓄势 · 下回合重击', damage: 0 }
-    : b.round % 3 === 2
+    : phase === 2
       ? { kind: 'heavy', name: '蓄势重击', damage: e.heavy }
       : { kind: 'attack', name: '试探进攻', damage: e.attack };
 }
@@ -688,7 +759,8 @@ function battleTurn(g: Game, move: Move) {
     e = C.enemies[b.enemy],
     p = g.core.player,
     r = stats(g),
-    forecast = intent(b);
+    forecast = battleIntent(g),
+    swordBefore = b.sword;
   let damage = 0,
     block = 0,
     interrupt = false;
@@ -698,7 +770,9 @@ function battleTurn(g: Game, move: Move) {
     p.mp -= n;
   };
   const costs = costsForAction(g, { type: 'BATTLE', move });
-  const extra = relicEffect(g) === 'frost_sword' ? 5 : 0,
+  const extra =
+      (relicEffect(g) === 'frost_sword' ? 5 : 0) +
+      (skillEffect(g, 'mind') === 'pierce' ? 10 : 0),
     releaseBonus = g.trial?.answer
       ? TRIAL_ANSWERS[g.trial.answer].attackBonus
       : 0;
@@ -729,7 +803,11 @@ function battleTurn(g: Game, move: Move) {
         block = 16 + Math.floor(r.power / 2);
         b.sword = Math.min(3, b.sword + 1);
       } else {
-        damage = 16 + r.power + extra;
+        damage =
+          16 +
+          r.power +
+          extra +
+          (skillEffect(g, 'builder') === 'surge' ? 12 : 0);
         b.sword = Math.min(3, b.sword + 2);
       }
       lines.push(`${C.skills[g.loadout.builder!].name}，剑意 ${b.sword}/3`);
@@ -738,7 +816,9 @@ function battleTurn(g: Game, move: Move) {
       const frost = skillEffect(g, 'builder') === 'frost';
       mana(costs.mp);
       b.marks.push(frost ? 3 : 2);
-      block = (frost ? 5 : 12) + Math.floor(r.power / 2);
+      block =
+        (frost ? 5 : skillEffect(g, 'builder') === 'ember' ? 3 : 12) +
+        Math.floor(r.power / 2);
       lines.push(
         `${C.skills[g.loadout.builder!].name}，留下${frost ? 3 : 2}回合符印`,
       );
@@ -750,6 +830,10 @@ function battleTurn(g: Game, move: Move) {
       mana(costs.mp);
       damage = 18 + r.power + extra + 10 * b.sword + r.manualDamageBonus;
       interrupt = b.sword === 3 && forecast.kind === 'heavy';
+      if (skillEffect(g, 'finisher') === 'shatter') {
+        damage += 14;
+        interrupt ||= b.sword === 3 && forecast.kind === 'pressure';
+      }
       if (skillEffect(g, 'finisher') === 'echo') {
         damage -= 6;
         p.hp = Math.min(r.maxHp, p.hp + 16 + Math.floor(r.power / 2));
@@ -766,11 +850,16 @@ function battleTurn(g: Game, move: Move) {
         r.power +
         extra +
         b.marks.reduce((a, n) => a + n * r.markDamage, 0);
+      interrupt =
+        forecast.kind === 'heavy' ||
+        (forecast.kind === 'pressure' &&
+          skillEffect(g, 'finisher') === 'rupture');
+      if (skillEffect(g, 'finisher') === 'rupture') damage += 14;
       b.marks = [];
       if (skillEffect(g, 'finisher') === 'return')
         p.mp = Math.min(r.maxMp, p.mp + 18);
       lines.push(
-        `${C.skills[g.loadout.finisher!].name} ${damage}，结算符印余威`,
+        `${C.skills[g.loadout.finisher!].name} ${damage}，结算符印余威${interrupt ? '，打断来势' : ''}`,
       );
     }
   }
@@ -780,6 +869,15 @@ function battleTurn(g: Game, move: Move) {
   }
   const tick = b.marks.length * r.markDamage;
   if (tick) lines.push(`符印灼伤 ${tick}`);
+  const breaker =
+    move === 'release' &&
+    ((skillEffect(g, 'finisher') === 'shatter' && swordBefore === 3) ||
+      skillEffect(g, 'finisher') === 'rupture');
+  if (forecast.kind === 'ward' && !breaker) damage = Math.floor(damage / 2);
+  const reflected =
+    forecast.kind === 'reflect' && damage > 0
+      ? Math.min(45, Math.ceil(Math.min(b.hp, damage + releaseBonus) * 0.35))
+      : 0;
   damage += tick + (damage > 0 ? releaseBonus : 0);
   b.marks = b.marks.map((n) => n - 1).filter((n) => n > 0);
   b.hp -= damage;
@@ -787,6 +885,25 @@ function battleTurn(g: Game, move: Move) {
     p.hp = Math.min(r.maxHp, p.hp + 4);
     if (move === 'attack' || move === 'guard')
       p.mp = Math.min(r.maxMp, p.mp + 6);
+  }
+  let armor =
+    (relicEffect(g) === 'jade_seal' ? 8 : 0) +
+    (skillEffect(g, 'mind') === 'clear' ? 8 : 0);
+  if (g.trial) {
+    const aid = causalAid(g);
+    if (g.trial.answer) armor += TRIAL_ANSWERS[g.trial.answer].damageReduction;
+    armor += aid.allDamageReduction;
+    if (b.enemy === 'trial_thunder') armor += aid.thunderDamageReduction;
+  }
+  if (reflected) {
+    const loss = Math.max(0, reflected - block - armor);
+    p.hp -= loss;
+    lines.push(`反震伤害 ${loss}`);
+    if (p.hp <= 0) {
+      log(g, lines.join(' · '));
+      loseBattle(g, '反震耗尽气血，本次不获战利品');
+      return;
+    }
   }
   if (b.hp <= 0) {
     g.wins++;
@@ -818,15 +935,13 @@ function battleTurn(g: Game, move: Move) {
     }
     return;
   }
-  let armor = relicEffect(g) === 'jade_seal' ? 8 : 0;
-  if (g.trial) {
-    const aid = causalAid(g);
-    if (g.trial.answer) armor += TRIAL_ANSWERS[g.trial.answer].damageReduction;
-    armor += aid.allDamageReduction;
-    if (b.enemy === 'trial_thunder') armor += aid.thunderDamageReduction;
-  }
   const loss = interrupt ? 0 : Math.max(0, forecast.damage - block - armor);
   p.hp -= loss;
+  if (e.mechanism === 'drain' && loss > 0) {
+    const healed = Math.min(loss, e.hp - b.hp);
+    b.hp += healed;
+    lines.push(`心魇噬血恢复 ${healed}`);
+  }
   lines.push(forecast.kind === 'prepare' ? '敌人正在蓄势' : `承受伤害 ${loss}`);
   b.round++;
   b.log = [...b.log, ...lines].slice(-8);
@@ -1062,6 +1177,13 @@ function one(g: Game, a: Action) {
       const s = C.skills[a.skill];
       needRealm(g, requirements.minRealm!);
       if (g.learned.includes(a.skill)) fail('ALREADY_LEARNED', '已掌握此法');
+      const conflict =
+        s.branch && g.learned.find((id) => C.skills[id].branch === s.branch);
+      if (conflict)
+        fail(
+          'SKILL_BRANCH',
+          `已选择${C.skills[conflict].name}，此生不能兼修${s.name}`,
+        );
       pay();
       g.learned.push(a.skill);
       log(g, `你研习${s.name}。${s.description}`);
@@ -1091,6 +1213,7 @@ function one(g: Game, a: Action) {
     case 'EQUIP_RELIC':
       if (!g.ownedRelics.includes(a.relic)) fail('NOT_OWNED', '尚未炼成此法宝');
       if (g.loadout.relic === a.relic) fail('NO_CHANGE', '已装备');
+      pay();
       g.loadout.relic = a.relic;
       log(g, `${C.relics[a.relic].name}与你的心神相连。`);
       break;
