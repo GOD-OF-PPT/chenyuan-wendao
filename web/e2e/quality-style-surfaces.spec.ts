@@ -97,8 +97,10 @@ test('Q12 interface colors use the shared semantic palette rather than isolated 
  await useJourneyClock(page);await page.goto('/');await expect(page.getByLabel('你的道号',{exact:true})).toBeVisible();
  const palette=await page.evaluate(scope=>{
   const literals:string[]=[],roles=new Set<string>();
+  const normalized=(selector:string)=>selector.replace(/\[data-v-[a-z\d]+\]/gi,'').replace(/\s*([,>+~])\s*/g,'$1').replace(/\[([^\]=]+)=["']([\w-]+)["']\]/g,'[$1=$2]').trim();
+  const art=Object.values(scope).flatMap((selectors:any)=>Object.entries(selectors).map(([selector,properties])=>[normalized(selector),properties]as const));
   function visit(rules:CSSRuleList){for(const rule of rules){
-   if('style' in rule){const style=(rule as CSSStyleRule).style,selector=(rule as CSSStyleRule).selectorText?.replace(/\[data-v-[a-z\d]+\]/gi,'')??'';for(const property of style){const value=style.getPropertyValue(property);if(/#[\da-f]{3,8}\b|\brgba?\(/i.test(value)){if(property.startsWith('--palette-'))roles.add(property);else if(!Object.values(scope).some((selectors:any)=>selectors[selector]?.includes(property)))literals.push(property+':'+value);}}}
+   if('style' in rule){const style=(rule as CSSStyleRule).style,selector=normalized((rule as CSSStyleRule).selectorText??'');for(const property of style){const value=style.getPropertyValue(property);if(/#[\da-f]{3,8}\b|\brgba?\(/i.test(value)){if(property.startsWith('--palette-'))roles.add(property);else if(!art.some(([allowed,properties]:any)=>allowed===selector&&properties.includes(property)))literals.push(selector+' '+property+':'+value);}}}
    if('cssRules' in rule)visit((rule as CSSGroupingRule).cssRules);
   }}
   for(const sheet of document.styleSheets)visit(sheet.cssRules);return{roles:[...roles],literals};
