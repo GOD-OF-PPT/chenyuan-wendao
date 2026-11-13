@@ -738,10 +738,8 @@ const stoppedTraining = computed(
 );
 const playerOwner = usePlayerActions(
   store,
-  focus,
   activityPlans,
   {
-    owner: () => navigationOwner.value,
     dismissResume: () => (resumeVisible.value = false),
     trial: showTrialPreparation,
     ending: (ending) => reviewAscension(ending),
@@ -869,45 +867,451 @@ onMounted(async () => {
 </script>
 
 <template>
-<div class="app-shell art-theme" data-theme="jade" :class="{'is-saving':store.busy,'text-enlarged':fontScale>1,'has-game':!!game,'cultivation-home':cultivationHome,'is-opening':phase==='opening','single-screen':singleScreen&&!!game,'game-menus-desktop':singleScreen,'hub-visible':hubMain,'hub-reduced':reduceMotion,'catalogue-view':catalogueView,'immersive-stage':immersive,'sealed-stage':immersive&&game?.status!=='active','stage-forge':immersive&&hubView==='forge','stage-details':immersive&&detailViews.has(hubView)}" :data-opening-reader="singleScreen&&phase==='opening'&&hubView==='current'" :data-font-scale="fontScale" :data-session="session.kind" :style="{'--font-scale':fontScale,'--nav-height':navHeight+'px','--notice-height':noticeHeight+'px'}">
-<CultivationStageHost :active="!!game&&['home','cultivation','current','trial-preparation'].includes(hubView)" :handoff="hubMain&&store.activity?.version===7&&store.activity.status==='stopped'" v-slot="{milestoneResult,milestoneText,milestoneDetail}">
-<AssetImage v-if="store.ready&&game" class="world-ambience" :path="worldArt" asset-id="world-ambience" eager aria-hidden="true"/>
-<nav class="skip-links" aria-label="快捷定位"><a :href="game?'#game-content':'#welcome-content'" @click.prevent="focusContent">跳到当前内容</a><a v-if="game" href="#primary-navigation" @click.prevent="focusRegion('primary-navigation')">{{game.status==='active'?'跳到主导航':'跳到封卷导航'}}</a><a v-if="game" href="#goal-panel" @click.prevent="focusRegion('goal-panel')">{{game.status==='active'?'跳到当前目标':'跳到此卷历程'}}</a></nav>
-<StatusSurfaces ref="statusView" :immersive="immersive" :hub-main="hubMain" :view="hubView" :tab="tab" :story-view="storyView" :activity-rail-visible="activityRailVisible" :local-ready="experience.ready.value" :reduce-motion="reduceMotion" :target="tracking.target.value" :export-error="exportError" :import-notice="importNotice" v-model:resume-visible="resumeVisible" @open="openHub" @life="showLife" @help="showGameplayHelp" @settings="showSettings" @plan="viewActivityPlan" @receipt="viewReceipt" @export="exportSave" @demos="showDemoMenu" @reset="reset" @primary="focusPrimary" @retry="retryOperation" @reload="initialiseGame" @raw="exportRaw" @focus="focusContent" @height="noticeHeight=$event"/>
-<main v-if="store.ready && !game && !demoNode" id="welcome-content" tabindex="-1" class="welcome">
-<div class="welcome-art"><AssetImage class="welcome-backdrop" :path="SCENE_ASSETS.wilderness" asset-id="welcome-wilderness" eager/><div class="welcome-copy"><span class="eyebrow">尘缘问道 · 试玩版</span><h2>凡心未改，<br>仙途已在眼前。</h2><p>不计片刻，不赶境界。<br>采一味灵草，结一段因果，修属于自己的长生路。</p></div></div>
-<form class="paper welcome-form" @submit.prevent="startJourney">
-<span class="eyebrow">新建人生 / 凡心入道</span><h2>从此刻，问道。</h2><label for="name">你的道号</label>
-<input id="name" name="dao-name" spellcheck="false" v-model="name" maxlength="16" required autocomplete="off" :disabled="uiLocked">
-<p>安排修炼，积累材料，筹备下一步。数值未平衡；游戏月在已安排的周期完成时消耗，暂停后阅读不消耗寿元。</p>
-<button class="primary" type="submit" :disabled="uiLocked">踏入仙途 <span>→</span></button>
-<div class="welcome-secondary"><button type="button" data-testid="demo-menu-welcome" @click="showDemoMenu" :disabled="store.busy">演示节点</button><button type="button" data-testid="welcome-help" @click="showGameplayHelp">玩法帮助</button></div>
-<label class="file-button">导入已有存档<input type="file" name="save-import" accept=".json,application/json" @change="importFile" :disabled="uiLocked"></label>
-<details class="welcome-details"><summary>本机存档与试玩记录</summary><p class="small">必要试玩记录只保存在本机，不上传、不记录道号；可在设置关闭、清空或知情导出。进度仅保存在当前浏览器，导出备份可用于迁移。</p></details>
-</form>
-</main>
-<main v-if="store.ready&&!game&&demoNode" class="paper demo-banner"><h2>演示进度尚未就绪</h2><p>请核对上方错误后重试同次操作或重新读取；不会改动正常进度。</p><button @click="initialiseGame" :disabled="store.busy">重新读取演示进度</button></main>
-<div v-if="game&&core" class="effects-stage"><ActionEffects :result="store.lastResult" :replayed="store.lastReplayed" :run-id="core.runId" :revision="core.revision" :school="game.school" :reduce-motion="reduceMotion" @focus-fallback="focusContent" :busy="store.busy" :eligible="store.saved && store.available && !store.error && hubMain && !store.lastFromActivity"/></div>
-<ActionExecution :execution="store.execution"/>
-<MainStage v-if="store.ready&&game&&core&&(hubMain||immersive&&game.battle)" ref="mainStage" :hub-main="hubMain" :immersive="immersive" :cultivation-home="cultivationHome" :resume-visible="resumeVisible" :demo-node="!!demoNode" :target="tracking.target.value" :goal-hint="hubGoalHint" v-model:method="hubTrainingMethod" :adventure-inspection-plan="adventureInspectionPlan" :adventure-inspection-saved="adventureInspectionSaved" :milestone-sequence="milestoneResult?.sequence??null" :milestone-text="milestoneText" :milestone-detail="milestoneDetail" @open="openHub" @prepare="openPreparation" @destination="inspectCaveDestination" @act="act" @battle="battle" @travel="travel" @start="plan=>plan.kind==='cultivation'?startTraining(plan):startAdventure(plan)" @school="showEquipment" @life="showLife" @manage-life="inspectLifespan" @settings="showSettings" @plan="viewActivityPlan" @receipt="viewReceipt" @compare="openTradeoffs('cultivation',$event)" @trial="showTrialPreparation" @tab="selectTab" @next="inspectNext" @export="exportSave" @demos="showDemoMenu"/>
-<aside v-if="!immersive&&game&&game.status==='active'&&singleScreen&&!hubMain&&catalogueView" class="feature-state" data-testid="feature-state"><CharacterPanel :game="game" compact @inspect="openHub('character',$event)"/><TrainingActivity v-if="store.activity&&store.activity.status!=='stopped'" :store="store" compact @settings="viewActivityPlan" @details="viewReceipt"/><TrainingActivity v-else-if="stoppedTraining" :store="store" summary @settings="viewActivityPlan" @details="viewReceipt"/><StageOutcome v-else :game="game" :result="store.lastResult" :busy="store.busy" :saved="store.saved" :available="store.available" :error="store.error" :sync-issue="store.syncIssue" :replayed="store.lastReplayed" :execution="store.execution" :next="step?.title??'查看当前目标'" @next="inspectNext()" @details="viewReceipt"/></aside>
-<GameWorkspace v-if="store.ready&&game&&core" ref="workspace" :hub-main="hubMain" :single-screen="singleScreen" :immersive="immersive" :story-view="storyView" :catalogue-view="catalogueView" :cultivation-home="cultivationHome" :reading-generation="readingGeneration" :narrative-context="narrativeContext" :journal-key="journalKey" :consumption="consumption" :guidance-enabled="guidanceEnabled" :skipped-guides="skippedGuides" :tradeoff-kind="tradeoffKind" :tradeoff-seed="tradeoffSeed" :tradeoff-entry="tradeoffEntry" v-model:batch="batch" v-model:quantity="quantity" v-model:preparation="preparation" @prepare="openPreparation" @compare="openTradeoffs" @school="showEquipment" @resume="resumeEncounter" @primary="focusPrimary" @focus-cultivation="focusCultivation" @breakthrough-goal="showBreakthroughGoal" @help="topic=>{if(topic)helpBook?.selectTopic(topic);showGameplayHelp();}" @guide="showCatalogueGuide" @skip="skipGuidance"/>
-    <SealedLifeNav v-if="store.ready&&immersive&&game&&game.status!=='active'" :view="hubView" :demo="!!demoNode" :normal-href="demoNode?normalLink():undefined" @open="openHub" @settings="showSettings" @height="navHeight=$event"/>
-    <PrimaryNav v-else-if="store.ready&&game&&(game.status==='active'||demoNode)" :game="game" :demo="!!demoNode" :normal-href="demoNode?normalLink():undefined" :sealed="game.status!=='active'" :selected="tab" :expanded="immersive" :view="navigationView" @open="openPrimaryFeature" @select="selectPrimaryTab" @height="navHeight=$event"/>
-    <button v-if="store.ready&&immersive" class="stage-journal" data-testid="stage-details" @click="store.lastResult||store.activity?.version===6||store.activity&&store.activity.version<=5&&store.activity.completedCycles>0?viewReceipt():openHub('life',$event)">行道手记 ›</button>
-    <MilestoneReview v-if="milestoneReview" :key="milestoneReview.identity" :review="milestoneReview" :stale="milestoneStale" :retry="milestoneRetry" :busy="store.busy" :available="store.available" :error="store.error" :pending-error="pendingStoryError" @confirm="!pendingStoryError&&confirmMilestone()" @retry="confirmMilestone(true)" @close="closeMilestone"/>
-    <ConfigurationDialog v-if="configurationIntent&&configurationSnapshot" :key="configurationIntent.command.commandId" :intent="configurationIntent" :snapshot="configurationSnapshot" :stale="configurationStale" :busy="store.busy" :available="store.available" :error="configurationError" :retry="configurationRetry" @confirm="confirmConfiguration()" @retry="confirmConfiguration(true)" @refresh="refreshConfiguration" @close="closeConfiguration"/>
-  <dialog ref="catalogueGuide" class="paper catalogue-guide" data-testid="catalogue-guide" aria-labelledby="catalogue-guide-title"><header><h2 id="catalogue-guide-title" tabindex="-1" data-dialog-initial>行道指引</h2><button aria-label="关闭行道指引" @click="catalogueGuide?.close()">关闭</button></header><GuidancePanel v-if="catalogueView&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" :guide="guidance" @skip="skipCatalogueGuide" @help="showGameplayHelp"/></dialog>
-    <GameSettings ref="settingsView" :experience="experience" :target="tracking.target.value" :save-label="saveDisplayLabel" :export-error="exportError" :import-notice="importNotice" @help="showGameplayHelp" @demos="showDemoMenu" @life="showLife" @retire="requestEnd('RETIRE')" @import="importFile" @export="exportSave" @raw="exportRaw" @restart="reset" @restore="restore"/>
-    <DemoMenu ref="demoMenuView"/>
-    <GameplayHelp ref="helpBook" v-model:enabled="guidanceEnabled" @reset="skippedGuides=[]"/>
-<ClosureDecisions ref="closureDecisions" :single-screen="singleScreen" :can="can" :navigation="closureNavigation"/>
+  <div
+    class="app-shell art-theme"
+    data-theme="jade"
+    :class="{
+      'is-saving': store.busy,
+      'text-enlarged': fontScale > 1,
+      'has-game': !!game,
+      'cultivation-home': cultivationHome,
+      'is-opening': phase === 'opening',
+      'single-screen': singleScreen && !!game,
+      'game-menus-desktop': singleScreen,
+      'hub-visible': hubMain,
+      'hub-reduced': reduceMotion,
+      'catalogue-view': catalogueView,
+      'immersive-stage': immersive,
+      'sealed-stage': immersive && game?.status !== 'active',
+      'stage-forge': immersive && hubView === 'forge',
+      'stage-details': immersive && detailViews.has(hubView),
+    }"
+    :data-opening-reader="
+      singleScreen && phase === 'opening' && hubView === 'current'
+    "
+    :data-font-scale="fontScale"
+    :data-session="session.kind"
+    :style="{
+      '--font-scale': fontScale,
+      '--nav-height': navHeight + 'px',
+      '--notice-height': noticeHeight + 'px',
+    }"
+  >
+    <CultivationStageHost
+      :active="
+        !!game &&
+        ['home', 'cultivation', 'current', 'trial-preparation'].includes(
+          hubView,
+        )
+      "
+      :handoff="
+        hubMain &&
+        store.activity?.version === 7 &&
+        store.activity.status === 'stopped'
+      "
+      v-slot="{ milestoneResult, milestoneText, milestoneDetail }"
+    >
+      <AssetImage
+        v-if="store.ready && game"
+        class="world-ambience"
+        :path="worldArt"
+        asset-id="world-ambience"
+        eager
+        aria-hidden="true"
+      />
+      <nav class="skip-links" aria-label="快捷定位"
+        ><a
+          :href="game ? '#game-content' : '#welcome-content'"
+          @click.prevent="focusContent"
+          >跳到当前内容</a
+        ><a
+          v-if="game"
+          href="#primary-navigation"
+          @click.prevent="focusRegion('primary-navigation')"
+          >{{ game.status === 'active' ? '跳到主导航' : '跳到封卷导航' }}</a
+        ><a
+          v-if="game"
+          href="#goal-panel"
+          @click.prevent="focusRegion('goal-panel')"
+          >{{ game.status === 'active' ? '跳到当前目标' : '跳到此卷历程' }}</a
+        ></nav
+      >
+      <StatusSurfaces
+        ref="statusView"
+        :immersive="immersive"
+        :hub-main="hubMain"
+        :view="hubView"
+        :tab="tab"
+        :story-view="storyView"
+        :activity-rail-visible="activityRailVisible"
+        :local-ready="experience.ready.value"
+        :reduce-motion="reduceMotion"
+        :target="tracking.target.value"
+        :export-error="exportError"
+        :import-notice="importNotice"
+        v-model:resume-visible="resumeVisible"
+        @open="openHub"
+        @life="showLife"
+        @help="showGameplayHelp"
+        @settings="showSettings"
+        @plan="viewActivityPlan"
+        @receipt="viewReceipt"
+        @export="exportSave"
+        @demos="showDemoMenu"
+        @reset="reset"
+        @primary="focusPrimary"
+        @retry="retryOperation"
+        @reload="initialiseGame"
+        @raw="exportRaw"
+        @focus="focusContent"
+        @height="noticeHeight = $event"
+      />
+      <main
+        v-if="store.ready && !game && !demoNode"
+        id="welcome-content"
+        tabindex="-1"
+        class="welcome"
+      >
+        <div class="welcome-art"
+          ><AssetImage
+            class="welcome-backdrop"
+            :path="SCENE_ASSETS.wilderness"
+            asset-id="welcome-wilderness"
+            eager
+          /><div class="welcome-copy"
+            ><span class="eyebrow">尘缘问道 · 试玩版</span
+            ><h2>凡心未改，<br />仙途已在眼前。</h2
+            ><p
+              >不计片刻，不赶境界。<br />采一味灵草，结一段因果，修属于自己的长生路。</p
+            ></div
+          ></div
+        >
+        <form class="paper welcome-form" @submit.prevent="startJourney">
+          <span class="eyebrow">新建人生 / 凡心入道</span><h2>从此刻，问道。</h2
+          ><label for="name">你的道号</label>
+          <input
+            id="name"
+            name="dao-name"
+            spellcheck="false"
+            v-model="name"
+            maxlength="16"
+            required
+            autocomplete="off"
+            :disabled="uiLocked"
+          />
+          <p
+            >安排修炼，积累材料，筹备下一步。数值未平衡；游戏月在已安排的周期完成时消耗，暂停后阅读不消耗寿元。</p
+          >
+          <button class="primary" type="submit" :disabled="uiLocked"
+            >踏入仙途 <span>→</span></button
+          >
+          <div class="welcome-secondary"
+            ><button
+              type="button"
+              data-testid="demo-menu-welcome"
+              @click="showDemoMenu"
+              :disabled="store.busy"
+              >演示节点</button
+            ><button
+              type="button"
+              data-testid="welcome-help"
+              @click="showGameplayHelp"
+              >玩法帮助</button
+            ></div
+          >
+          <label class="file-button"
+            >导入已有存档<input
+              type="file"
+              name="save-import"
+              accept=".json,application/json"
+              @change="importFile"
+              :disabled="uiLocked"
+          /></label>
+          <details class="welcome-details"
+            ><summary>本机存档与试玩记录</summary
+            ><p class="small"
+              >必要试玩记录只保存在本机，不上传、不记录道号；可在设置关闭、清空或知情导出。进度仅保存在当前浏览器，导出备份可用于迁移。</p
+            ></details
+          >
+        </form>
+      </main>
+      <main v-if="store.ready && !game && demoNode" class="paper demo-banner"
+        ><h2>演示进度尚未就绪</h2
+        ><p>请核对上方错误后重试同次操作或重新读取；不会改动正常进度。</p
+        ><button @click="initialiseGame" :disabled="store.busy"
+          >重新读取演示进度</button
+        ></main
+      >
+      <div v-if="game && core" class="effects-stage"
+        ><ActionEffects
+          :result="store.lastResult"
+          :replayed="store.lastReplayed"
+          :run-id="core.runId"
+          :revision="core.revision"
+          :school="game.school"
+          :reduce-motion="reduceMotion"
+          @focus-fallback="focusContent"
+          :busy="store.busy"
+          :eligible="
+            store.saved &&
+            store.available &&
+            !store.error &&
+            hubMain &&
+            !store.lastFromActivity
+          "
+      /></div>
+      <ActionExecution :execution="store.execution" />
+      <MainStage
+        v-if="
+          store.ready && game && core && (hubMain || (immersive && game.battle))
+        "
+        ref="mainStage"
+        :hub-main="hubMain"
+        :immersive="immersive"
+        :cultivation-home="cultivationHome"
+        :resume-visible="resumeVisible"
+        :demo-node="!!demoNode"
+        :target="tracking.target.value"
+        :goal-hint="hubGoalHint"
+        v-model:method="hubTrainingMethod"
+        :adventure-inspection-plan="adventureInspectionPlan"
+        :adventure-inspection-saved="adventureInspectionSaved"
+        :milestone-sequence="milestoneResult?.sequence ?? null"
+        :milestone-text="milestoneText"
+        :milestone-detail="milestoneDetail"
+        @open="openHub"
+        @prepare="openPreparation"
+        @destination="inspectCaveDestination"
+        @act="act"
+        @battle="battle"
+        @travel="travel"
+        @start="
+          (plan) =>
+            plan.kind === 'cultivation'
+              ? startTraining(plan)
+              : startAdventure(plan)
+        "
+        @school="showEquipment"
+        @life="showLife"
+        @manage-life="inspectLifespan"
+        @settings="showSettings"
+        @plan="viewActivityPlan"
+        @receipt="viewReceipt"
+        @compare="openTradeoffs('cultivation', $event)"
+        @trial="showTrialPreparation"
+        @tab="selectTab"
+        @next="inspectNext"
+        @export="exportSave"
+        @demos="showDemoMenu"
+      />
+      <aside
+        v-if="
+          !immersive &&
+          game &&
+          game.status === 'active' &&
+          singleScreen &&
+          !hubMain &&
+          catalogueView
+        "
+        class="feature-state"
+        data-testid="feature-state"
+        ><CharacterPanel
+          :game="game"
+          compact
+          @inspect="openHub('character', $event)" /><TrainingActivity
+          v-if="store.activity && store.activity.status !== 'stopped'"
+          :store="store"
+          compact
+          @settings="viewActivityPlan"
+          @details="viewReceipt" /><TrainingActivity
+          v-else-if="stoppedTraining"
+          :store="store"
+          summary
+          @settings="viewActivityPlan"
+          @details="viewReceipt" /><StageOutcome
+          v-else
+          :game="game"
+          :result="store.lastResult"
+          :busy="store.busy"
+          :saved="store.saved"
+          :available="store.available"
+          :error="store.error"
+          :sync-issue="store.syncIssue"
+          :replayed="store.lastReplayed"
+          :execution="store.execution"
+          :next="step?.title ?? '查看当前目标'"
+          @next="inspectNext()"
+          @details="viewReceipt"
+      /></aside>
+      <GameWorkspace
+        v-if="store.ready && game && core"
+        ref="workspace"
+        :hub-main="hubMain"
+        :single-screen="singleScreen"
+        :immersive="immersive"
+        :story-view="storyView"
+        :catalogue-view="catalogueView"
+        :cultivation-home="cultivationHome"
+        :reading-generation="readingGeneration"
+        :narrative-context="narrativeContext"
+        :journal-key="journalKey"
+        :consumption="consumption"
+        :guidance-enabled="guidanceEnabled"
+        :skipped-guides="skippedGuides"
+        :tradeoff-kind="tradeoffKind"
+        :tradeoff-seed="tradeoffSeed"
+        :tradeoff-entry="tradeoffEntry"
+        v-model:batch="batch"
+        v-model:quantity="quantity"
+        v-model:preparation="preparation"
+        @prepare="openPreparation"
+        @compare="openTradeoffs"
+        @school="showEquipment"
+        @resume="resumeEncounter"
+        @primary="focusPrimary"
+        @focus-cultivation="focusCultivation"
+        @breakthrough-goal="showBreakthroughGoal"
+        @help="
+          (topic) => {
+            if (topic) helpBook?.selectTopic(topic);
+            showGameplayHelp();
+          }
+        "
+        @guide="showCatalogueGuide"
+        @skip="skipGuidance"
+      />
+      <SealedLifeNav
+        v-if="store.ready && immersive && game && game.status !== 'active'"
+        :view="hubView"
+        :demo="!!demoNode"
+        :normal-href="demoNode ? normalLink() : undefined"
+        @open="openHub"
+        @settings="showSettings"
+        @height="navHeight = $event"
+      />
+      <PrimaryNav
+        v-else-if="
+          store.ready && game && (game.status === 'active' || demoNode)
+        "
+        :game="game"
+        :demo="!!demoNode"
+        :normal-href="demoNode ? normalLink() : undefined"
+        :sealed="game.status !== 'active'"
+        :selected="tab"
+        :expanded="immersive"
+        :view="navigationView"
+        @open="openPrimaryFeature"
+        @select="selectPrimaryTab"
+        @height="navHeight = $event"
+      />
+      <button
+        v-if="store.ready && immersive"
+        class="stage-journal"
+        data-testid="stage-details"
+        @click="
+          store.lastResult ||
+          store.activity?.version === 6 ||
+          (store.activity &&
+            store.activity.version <= 5 &&
+            store.activity.completedCycles > 0)
+            ? viewReceipt()
+            : openHub('life', $event)
+        "
+        >行道手记 ›</button
+      >
+      <MilestoneReview
+        v-if="milestoneReview"
+        :key="milestoneReview.identity"
+        :review="milestoneReview"
+        :stale="milestoneStale"
+        :retry="milestoneRetry"
+        :busy="store.busy"
+        :available="store.available"
+        :error="store.error"
+        :pending-error="pendingStoryError"
+        @confirm="!pendingStoryError && confirmMilestone()"
+        @retry="confirmMilestone(true)"
+        @close="closeMilestone"
+      />
+      <ConfigurationDialog
+        v-if="configurationIntent && configurationSnapshot"
+        :key="configurationIntent.command.commandId"
+        :intent="configurationIntent"
+        :snapshot="configurationSnapshot"
+        :stale="configurationStale"
+        :busy="store.busy"
+        :available="store.available"
+        :error="configurationError"
+        :retry="configurationRetry"
+        @confirm="confirmConfiguration()"
+        @retry="confirmConfiguration(true)"
+        @refresh="refreshConfiguration"
+        @close="closeConfiguration"
+      />
+      <dialog
+        ref="catalogueGuide"
+        class="paper catalogue-guide"
+        data-testid="catalogue-guide"
+        aria-labelledby="catalogue-guide-title"
+        ><header
+          ><h2 id="catalogue-guide-title" tabindex="-1" data-dialog-initial
+            >行道指引</h2
+          ><button aria-label="关闭行道指引" @click="catalogueGuide?.close()"
+            >关闭</button
+          ></header
+        ><GuidancePanel
+          v-if="
+            catalogueView &&
+            guidanceEnabled &&
+            !skippedGuides.includes(guidance.id)
+          "
+          :guide="guidance"
+          @skip="skipCatalogueGuide"
+          @help="showGameplayHelp"
+      /></dialog>
+      <GameSettings
+        ref="settingsView"
+        :experience="experience"
+        :target="tracking.target.value"
+        :save-label="saveDisplayLabel"
+        :export-error="exportError"
+        :import-notice="importNotice"
+        @help="showGameplayHelp"
+        @demos="showDemoMenu"
+        @life="showLife"
+        @retire="requestEnd('RETIRE')"
+        @import="importFile"
+        @export="exportSave"
+        @raw="exportRaw"
+        @restart="reset"
+        @restore="restore"
+      />
+      <DemoMenu ref="demoMenuView" />
+      <GameplayHelp
+        ref="helpBook"
+        v-model:enabled="guidanceEnabled"
+        @reset="skippedGuides = []"
+      />
+      <ClosureDecisions
+        ref="closureDecisions"
+        :single-screen="singleScreen"
+        :can="can"
+        :navigation="closureNavigation"
+      />
     </CultivationStageHost>
-    <GameConfirmDialog v-if="confirmation.request.value" :key="confirmation.request.value.id" :request="confirmation.request.value" @answer="confirmation.answer($event)"/>
+    <GameConfirmDialog
+      v-if="confirmation.request.value"
+      :key="confirmation.request.value.id"
+      :request="confirmation.request.value"
+      @answer="confirmation.answer($event)"
+    />
   </div>
 </template>
 <style src="./closure-focus.css"></style>
 <style>
-@layer game{
-    .art06-progress:has(>.art06-harvest){padding-bottom:4px}}
+@layer game {
+  .art06-progress:has(> .art06-harvest) {
+    padding-bottom: 4px;
+  }
+}
 </style>

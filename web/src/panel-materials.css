@@ -1,49 +1,300 @@
-@layer game{
-/* T04S: painted materials supplement the existing game stage, without moving its code. */
-.single-screen .game-hub :is(.hub-current,.hub-goal,.hub-recent){color:var(--palette-panel);background:var(--palette-ink) url('/art/v2/ui/xuan-paper-v2.webp') repeat;background-size:384px;border:1px solid var(--palette-line);box-shadow:inset 0 0 0 2px var(--palette-ink),0 8px 24px color-mix(in srgb, var(--palette-shadow) 65.09803922%, transparent)}
-.single-screen .game-hub :is(.hub-current,.hub-goal,.hub-recent)::before{inset:5px;border:1px solid var(--palette-muted);border-radius:6px 2px;box-shadow:inset 0 0 0 2px color-mix(in srgb, var(--palette-ink) 65.09803922%, transparent)}
-.single-screen .game-hub :is(.hub-current,.hub-goal,.hub-recent)::after{content:'';position:absolute;inset:9px;border:1px solid color-mix(in srgb, var(--palette-muted) 33.33333333%, transparent);border-radius:2px 6px;pointer-events:none}
-.single-screen .hub-current>h2,.single-screen .hub-opening-title h2,.single-screen .hub-action-heading h2,.single-screen .hub-goal h2{color:var(--palette-panel);text-shadow:0 1px color-mix(in srgb, var(--palette-white) 60%, transparent)}
-.single-screen .hub-current{border-top:2px solid var(--palette-gold)}
-.single-screen .hub-current.hub-cultivating{--vignette-width:clamp(140px,14vw,200px);isolation:isolate}
-.hub-cultivating .hub-meditation-art{position:absolute;left:8px;bottom:8px;width:var(--vignette-width);height:calc(100% - 18px);pointer-events:none;z-index:-1}
-.hub-cultivating .hub-action-heading{padding-left:var(--vignette-width)}
-.hub-cultivating .hub-action-heading h2{flex:1;text-align:center;letter-spacing:.12em}
-.hub-cultivating .hub-main-action{padding-left:var(--vignette-width);display:flex;flex-direction:column;justify-content:center}
-.hub-cultivating .hub-school{padding-left:var(--vignette-width)}
-.hub-cultivating .hub-action-facts{margin-bottom:10px}
-.hub-cultivating .hub-action-facts span{padding:2px 5px;border-bottom:1px solid color-mix(in srgb, var(--palette-line) 33.33333333%, transparent)}
-.single-screen .hub-current .cultivate-primary{background:linear-gradient(var(--palette-line),var(--palette-raised) 55%,var(--palette-panel));border-color:var(--palette-gold);color:var(--palette-ink);box-shadow:inset 0 0 0 3px var(--palette-raised),inset 0 0 0 4px color-mix(in srgb, var(--palette-gold) 60%, transparent),0 3px 7px color-mix(in srgb, var(--palette-raised) 36.07843137%, transparent)}
-.single-screen .hub-current .cultivate-primary:hover:enabled{background:linear-gradient(var(--palette-line),var(--palette-raised) 55%,var(--palette-raised));box-shadow:inset 0 0 0 3px var(--palette-raised),inset 0 0 0 4px var(--palette-gold),0 0 14px color-mix(in srgb, var(--palette-gold) 40%, transparent)}
-.single-screen .hub-current .cultivate-primary:active:enabled{background:linear-gradient(var(--palette-raised),var(--palette-raised));box-shadow:inset 0 2px 6px color-mix(in srgb, var(--palette-night) 80%, transparent),inset 0 0 0 3px var(--palette-gold)}
-.single-screen .hub-current .cultivate-primary:disabled{background:var(--palette-ink);color:var(--palette-raised);border-color:var(--palette-line);box-shadow:inset 0 0 0 3px var(--palette-ink)}
-.single-screen .hub-action-options{gap:8px;align-items:flex-start}
-.hub-action-options label{display:flex;align-items:center;gap:5px;white-space:nowrap}
-.single-screen .hub-action-options select{background:var(--palette-ink);border-color:var(--palette-line);border-radius:4px;color:var(--palette-raised)}
-.single-screen .hub-action-options .text-button:disabled{background:var(--palette-ink);color:var(--palette-raised);border:1px solid var(--palette-muted);border-radius:4px}
-.single-screen .hub-current .cultivation-alternatives button{border-radius:9px 3px;border-color:var(--palette-line);box-shadow:inset 0 0 0 3px var(--palette-panel),inset 0 0 0 4px color-mix(in srgb, var(--palette-gold) 33.33333333%, transparent)}
-.single-screen .hub-current .cultivation-alternatives button:disabled{background:linear-gradient(125deg,var(--palette-raised),var(--palette-panel));color:var(--palette-ink);border-color:var(--palette-line)}
-.single-screen .hub-current .cultivation-alternatives button:disabled small{color:inherit}
-.single-screen .hub-current .cultivation-alternatives button:hover:enabled{background:linear-gradient(125deg,var(--palette-raised),var(--palette-raised));color:var(--palette-ink)}
-.single-screen .hub-current .cultivation-alternatives button:active:enabled{background:var(--palette-panel);color:var(--palette-ink)}
-.single-screen .hub-goal{text-align:center;padding:10px;isolation:isolate}
-.single-screen .hub-goal .section-label,.single-screen .hub-recent .section-label{font-family:'Kaiti SC',STKaiti,serif;font-size:var(--ui18);letter-spacing:.16em;color:var(--palette-raised)}
-.single-screen .hub-goal .section-label{display:block;margin:0}
-.single-screen .hub-mountain-art{position:absolute;left:10px;top:10px;height:70px;width:calc(100% - 20px);opacity:.18;z-index:-1;pointer-events:none}
-.single-screen .hub-goal h2{font-size:var(--ui27);letter-spacing:.12em;margin-bottom:8px}
-.single-screen .hub-goal progress{background:var(--palette-muted);accent-color:var(--palette-line)}
-.single-screen .hub-goal progress::-webkit-progress-bar{background:var(--palette-muted)}
-.single-screen .hub-goal progress::-webkit-progress-value{background:linear-gradient(90deg,var(--palette-line),var(--palette-jade))}
-.single-screen .hub-goal progress::-moz-progress-bar{background:linear-gradient(90deg,var(--palette-line),var(--palette-jade))}
-.single-screen .hub-goal button{background:var(--palette-ink);border-color:var(--palette-line);color:var(--palette-raised);border-radius:5px 2px}
-.single-screen .hub-goal button:hover:enabled{background:var(--palette-muted);color:var(--palette-raised);border-color:var(--palette-line)}
-.single-screen .hub-goal button:active:enabled{background:var(--palette-muted);color:var(--palette-raised)}
-.single-screen .hub-recent{isolation:isolate;background-image:linear-gradient(color-mix(in srgb, var(--palette-ink) 90.98039216%, transparent),color-mix(in srgb, var(--palette-ink) 74.90196078%, transparent)),url('/art/v2/ui/mountain-wash-v1.webp'),url('/art/v2/ui/xuan-paper-v2.webp')!important;background-size:auto,100% auto,384px!important;background-position:center,right bottom,center!important;background-repeat:no-repeat,no-repeat,repeat!important}
-.single-screen .hub-recent .section-label{display:block;border-bottom:1px solid color-mix(in srgb, var(--palette-line) 40%, transparent);padding-bottom:5px}
-.single-screen :is(.hub-current,.hub-aside) .text-button{color:var(--palette-raised)}
-.single-screen :is(.hub-current,.hub-aside) .text-button:hover:enabled{background:var(--palette-ink);color:var(--palette-raised)}
-.single-screen :is(.hub-current,.hub-aside) .text-button:active:enabled{background:var(--palette-muted);color:var(--palette-raised)}
-.single-screen .game-hub button:focus-visible,.single-screen .game-hub select:focus-visible{outline:3px solid var(--palette-line);outline-offset:3px}
-@media(min-height:800px){.single-screen .hub-mountain-art{position:relative;left:auto;top:auto;height:58px;width:100%;margin:2px 0 5px;opacity:1;z-index:auto}.single-screen .hub-cultivating .hub-meditation-art{bottom:6px;height:calc(100% - 12px)}}
+@layer game {
+  /* T04S: painted materials supplement the existing game stage, without moving its code. */
+  .single-screen .game-hub :is(.hub-current, .hub-goal, .hub-recent) {
+    color: var(--palette-panel);
+    background: var(--palette-ink) url('/art/v2/ui/xuan-paper-v2.webp') repeat;
+    background-size: 384px;
+    border: 1px solid var(--palette-line);
+    box-shadow:
+      inset 0 0 0 2px var(--palette-ink),
+      0 8px 24px
+        color-mix(in srgb, var(--palette-shadow) 65.09803922%, transparent);
+  }
+  .single-screen .game-hub :is(.hub-current, .hub-goal, .hub-recent)::before {
+    inset: 5px;
+    border: 1px solid var(--palette-muted);
+    border-radius: 6px 2px;
+    box-shadow: inset 0 0 0 2px
+      color-mix(in srgb, var(--palette-ink) 65.09803922%, transparent);
+  }
+  .single-screen .game-hub :is(.hub-current, .hub-goal, .hub-recent)::after {
+    content: '';
+    position: absolute;
+    inset: 9px;
+    border: 1px solid
+      color-mix(in srgb, var(--palette-muted) 33.33333333%, transparent);
+    border-radius: 2px 6px;
+    pointer-events: none;
+  }
+  .single-screen .hub-current > h2,
+  .single-screen .hub-opening-title h2,
+  .single-screen .hub-action-heading h2,
+  .single-screen .hub-goal h2 {
+    color: var(--palette-panel);
+    text-shadow: 0 1px color-mix(in srgb, var(--palette-white) 60%, transparent);
+  }
+  .single-screen .hub-current {
+    border-top: 2px solid var(--palette-gold);
+  }
+  .single-screen .hub-current.hub-cultivating {
+    --vignette-width: clamp(140px, 14vw, 200px);
+    isolation: isolate;
+  }
+  .hub-cultivating .hub-meditation-art {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    width: var(--vignette-width);
+    height: calc(100% - 18px);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .hub-cultivating .hub-action-heading {
+    padding-left: var(--vignette-width);
+  }
+  .hub-cultivating .hub-action-heading h2 {
+    flex: 1;
+    text-align: center;
+    letter-spacing: 0.12em;
+  }
+  .hub-cultivating .hub-main-action {
+    padding-left: var(--vignette-width);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hub-cultivating .hub-school {
+    padding-left: var(--vignette-width);
+  }
+  .hub-cultivating .hub-action-facts {
+    margin-bottom: 10px;
+  }
+  .hub-cultivating .hub-action-facts span {
+    padding: 2px 5px;
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--palette-line) 33.33333333%, transparent);
+  }
+  .single-screen .hub-current .cultivate-primary {
+    background: linear-gradient(
+      var(--palette-line),
+      var(--palette-raised) 55%,
+      var(--palette-panel)
+    );
+    border-color: var(--palette-gold);
+    color: var(--palette-ink);
+    box-shadow:
+      inset 0 0 0 3px var(--palette-raised),
+      inset 0 0 0 4px color-mix(in srgb, var(--palette-gold) 60%, transparent),
+      0 3px 7px
+        color-mix(in srgb, var(--palette-raised) 36.07843137%, transparent);
+  }
+  .single-screen .hub-current .cultivate-primary:hover:enabled {
+    background: linear-gradient(
+      var(--palette-line),
+      var(--palette-raised) 55%,
+      var(--palette-raised)
+    );
+    box-shadow:
+      inset 0 0 0 3px var(--palette-raised),
+      inset 0 0 0 4px var(--palette-gold),
+      0 0 14px color-mix(in srgb, var(--palette-gold) 40%, transparent);
+  }
+  .single-screen .hub-current .cultivate-primary:active:enabled {
+    background: linear-gradient(var(--palette-raised), var(--palette-raised));
+    box-shadow:
+      inset 0 2px 6px color-mix(in srgb, var(--palette-night) 80%, transparent),
+      inset 0 0 0 3px var(--palette-gold);
+  }
+  .single-screen .hub-current .cultivate-primary:disabled {
+    background: var(--palette-ink);
+    color: var(--palette-raised);
+    border-color: var(--palette-line);
+    box-shadow: inset 0 0 0 3px var(--palette-ink);
+  }
+  .single-screen .hub-action-options {
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .hub-action-options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+  }
+  .single-screen .hub-action-options select {
+    background: var(--palette-ink);
+    border-color: var(--palette-line);
+    border-radius: 4px;
+    color: var(--palette-raised);
+  }
+  .single-screen .hub-action-options .text-button:disabled {
+    background: var(--palette-ink);
+    color: var(--palette-raised);
+    border: 1px solid var(--palette-muted);
+    border-radius: 4px;
+  }
+  .single-screen .hub-current .cultivation-alternatives button {
+    border-radius: 9px 3px;
+    border-color: var(--palette-line);
+    box-shadow:
+      inset 0 0 0 3px var(--palette-panel),
+      inset 0 0 0 4px
+        color-mix(in srgb, var(--palette-gold) 33.33333333%, transparent);
+  }
+  .single-screen .hub-current .cultivation-alternatives button:disabled {
+    background: linear-gradient(
+      125deg,
+      var(--palette-raised),
+      var(--palette-panel)
+    );
+    color: var(--palette-ink);
+    border-color: var(--palette-line);
+  }
+  .single-screen .hub-current .cultivation-alternatives button:disabled small {
+    color: inherit;
+  }
+  .single-screen .hub-current .cultivation-alternatives button:hover:enabled {
+    background: linear-gradient(
+      125deg,
+      var(--palette-raised),
+      var(--palette-raised)
+    );
+    color: var(--palette-ink);
+  }
+  .single-screen .hub-current .cultivation-alternatives button:active:enabled {
+    background: var(--palette-panel);
+    color: var(--palette-ink);
+  }
+  .single-screen .hub-goal {
+    text-align: center;
+    padding: 10px;
+    isolation: isolate;
+  }
+  .single-screen .hub-goal .section-label,
+  .single-screen .hub-recent .section-label {
+    font-family: 'Kaiti SC', STKaiti, serif;
+    font-size: var(--ui18);
+    letter-spacing: 0.16em;
+    color: var(--palette-raised);
+  }
+  .single-screen .hub-goal .section-label {
+    display: block;
+    margin: 0;
+  }
+  .single-screen .hub-mountain-art {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    height: 70px;
+    width: calc(100% - 20px);
+    opacity: 0.18;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .single-screen .hub-goal h2 {
+    font-size: var(--ui27);
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+  .single-screen .hub-goal progress {
+    background: var(--palette-muted);
+    accent-color: var(--palette-line);
+  }
+  .single-screen .hub-goal progress::-webkit-progress-bar {
+    background: var(--palette-muted);
+  }
+  .single-screen .hub-goal progress::-webkit-progress-value {
+    background: linear-gradient(
+      90deg,
+      var(--palette-line),
+      var(--palette-jade)
+    );
+  }
+  .single-screen .hub-goal progress::-moz-progress-bar {
+    background: linear-gradient(
+      90deg,
+      var(--palette-line),
+      var(--palette-jade)
+    );
+  }
+  .single-screen .hub-goal button {
+    background: var(--palette-ink);
+    border-color: var(--palette-line);
+    color: var(--palette-raised);
+    border-radius: 5px 2px;
+  }
+  .single-screen .hub-goal button:hover:enabled {
+    background: var(--palette-muted);
+    color: var(--palette-raised);
+    border-color: var(--palette-line);
+  }
+  .single-screen .hub-goal button:active:enabled {
+    background: var(--palette-muted);
+    color: var(--palette-raised);
+  }
+  .single-screen .hub-recent {
+    isolation: isolate;
+    background-image:
+      linear-gradient(
+        color-mix(in srgb, var(--palette-ink) 90.98039216%, transparent),
+        color-mix(in srgb, var(--palette-ink) 74.90196078%, transparent)
+      ),
+      url('/art/v2/ui/mountain-wash-v1.webp'),
+      url('/art/v2/ui/xuan-paper-v2.webp') !important;
+    background-size:
+      auto,
+      100% auto,
+      384px !important;
+    background-position:
+      center,
+      right bottom,
+      center !important;
+    background-repeat: no-repeat, no-repeat, repeat !important;
+  }
+  .single-screen .hub-recent .section-label {
+    display: block;
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--palette-line) 40%, transparent);
+    padding-bottom: 5px;
+  }
+  .single-screen :is(.hub-current, .hub-aside) .text-button {
+    color: var(--palette-raised);
+  }
+  .single-screen :is(.hub-current, .hub-aside) .text-button:hover:enabled {
+    background: var(--palette-ink);
+    color: var(--palette-raised);
+  }
+  .single-screen :is(.hub-current, .hub-aside) .text-button:active:enabled {
+    background: var(--palette-muted);
+    color: var(--palette-raised);
+  }
+  .single-screen .game-hub button:focus-visible,
+  .single-screen .game-hub select:focus-visible {
+    outline: 3px solid var(--palette-line);
+    outline-offset: 3px;
+  }
+  @media (min-height: 800px) {
+    .single-screen .hub-mountain-art {
+      position: relative;
+      left: auto;
+      top: auto;
+      height: 58px;
+      width: 100%;
+      margin: 2px 0 5px;
+      opacity: 1;
+      z-index: auto;
+    }
+    .single-screen .hub-cultivating .hub-meditation-art {
+      bottom: 6px;
+      height: calc(100% - 12px);
+    }
+  }
 
-.single-screen .hub-aside{gap:10px}.single-screen .hub-services button{padding-block:6px;min-height:64px}}
+  .single-screen .hub-aside {
+    gap: 10px;
+  }
+  .single-screen .hub-services button {
+    padding-block: 6px;
+    min-height: 64px;
+  }
+}

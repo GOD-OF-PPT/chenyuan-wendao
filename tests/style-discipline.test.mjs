@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {inspectStyle,checkStyles} from '../scripts/check-style-discipline.mjs';
-import {postcss,parseVue} from '../web/style-tools.mjs';
+import {postcss,parseVue,canonicalSelector,canonicalCssValue} from '../web/style-tools.mjs';
 import {isPaintedStyle,paintedStyleScope} from '../web/src/painted-style-scope.mjs';
 
 test('a new component uses semantic colors inside an explicit layer without specificity escalation',()=>{
@@ -30,6 +30,14 @@ test('retiring an old important rule does not authorize it in another selector o
  assert.ok(inspectStyle(legacy,{file:'old.css',legacyCss:conditional}).problems.some(p=>p.includes('specificity')));
 });
 
+test('selector formatting preserves existing debt while changed combinators and literal values cannot borrow it',()=>{
+ const original='@layer game {#app .old>button,#app [data-word="a b"] {color:var(--palette-ink)!important}}';
+ const formatted='@layer game { #app .old > button,\n #app [data-word="a b"] { color: var(--palette-ink) !important; } }';
+ assert.deepEqual(inspectStyle(formatted,{legacyCss:original}).problems,[]);
+ for(const changed of [formatted.replace(' > ',' + '),formatted.replace('a b','a  b')])
+  assert.ok(inspectStyle(changed,{legacyCss:original}).problems.some(p=>p.includes('specificity')));
+});
+
 test('the actual component and global style sources retain twelve roles with no growing specificity debt',()=>{
  const report=checkStyles();assert.deepEqual(report.problems,[]);assert.equal(report.passed,true);assert.equal(report.definedRoles.length,12);assert.ok(report.styles>90);
 });
@@ -43,7 +51,7 @@ test('a documented SVG painting can retain its paint without exempting nearby in
 test('actual scene and object painting retains every original scoped paint declaration through interface recoloring',()=>{
  function paintValues(file,source){
   const styles=file.endsWith('.css')?[source]:parseVue(source,{filename:file}).descriptor.styles.filter(s=>!s.src).map(s=>s.content),values=[];
-  for(const css of styles)postcss.parse(css).walkDecls(d=>{if(isPaintedStyle(file.split('/').at(-1),d.parent.selector,d.prop))values.push([d.parent.selector,d.prop,d.value,!!d.important]);});return values;
+  for(const css of styles)postcss.parse(css).walkDecls(d=>{if(isPaintedStyle(file.split('/').at(-1),d.parent.selector,d.prop,canonicalSelector))values.push([canonicalSelector(d.parent.selector),d.prop,canonicalCssValue(d.value),!!d.important]);});return values;
  }
  for(const name of Object.keys(paintedStyleScope)){
   const file='web/src/'+name,baseline=execFileSync('git',['show','3443283:'+file],{encoding:'utf8',maxBuffer:10_000_000});

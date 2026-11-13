@@ -185,25 +185,353 @@ defineExpose({
 });
 </script>
 <template>
-<main v-show="!hubMain" class="game-grid" :class="{'hub-feature':singleScreen}" :aria-busy="store.busy">
-<header v-if="singleScreen" class="feature-header"><div><h2 id="feature-title" tabindex="-1">{{game.status==='active'?hubTitle:hubView==='goal'?'此卷历程':['current','fate'].includes(hubView)?'修仙生平':hubTitle}}</h2></div><div class="feature-actions"><FeatureMenu :identity="game.core.runId+':'+hubView" :guide="catalogueView&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" :preparation="hubView!=='journey'&&phase==='idle'&&!!realm.pill" :goal="hubView!=='goal'" :blueprints="navigationGate(game,'relics').locked" :sealed="game.status!=='active'" @browse="browseDirect()" @guide="showCatalogueGuide()" @preparation="openPreparation()" @goal="openHub('goal')" @blueprints="openPrimaryFeature('relics')"/><button data-testid="hub-close" :aria-label="detailParent||hubView==='life'&&readingReturn?'返回原玩法':'返回主舞台'" @click="closeHub">{{detailParent||hubView==='life'&&readingReturn?'返回原处':'返回舞台'}} <GameIcon kind="action" id="close"/></button></div></header>
-<section v-show="!hubMain&&(!singleScreen||!['goal','character'].includes(hubView))" class="center-column" :class="{'in-battle':game.battle&&!inspectingInventory}">
-<ScenePanel v-if="!singleScreen" :meditation="cultivationHome&&!producing&&!immersive" :battle-stage="!!game.battle&&!inspectingInventory" :game="game" :eyebrow="phase==='opening'?'初遇 / 山雨破庙':location.subtitle" :title="phase==='opening'?'雨中故人':game.status==='ascended'?overview!.title:game.battle?location.name:activeStory?.name??location.name" :description="game.status==='ascended'?'此卷已收，来路犹存。':game.battle?'先辨来势，再决进退。':'山海不言，修行自有回响。'" :with-action="!cultivationHome&&(!game.battle||inspectingInventory)"><button v-if="!cultivationHome&&(!game.battle||inspectingInventory)" type="button" class="scene-action-link" data-testid="scene-action-jump" @click="focusPrimary">{{phase==='opening'?'前往抉择':'前往当前操作'}} ↓</button></ScenePanel>
+  <main
+    v-show="!hubMain"
+    class="game-grid"
+    :class="{ 'hub-feature': singleScreen }"
+    :aria-busy="store.busy"
+  >
+    <header v-if="singleScreen" class="feature-header"
+      ><div
+        ><h2 id="feature-title" tabindex="-1">{{
+          game.status === 'active'
+            ? hubTitle
+            : hubView === 'goal'
+              ? '此卷历程'
+              : ['current', 'fate'].includes(hubView)
+                ? '修仙生平'
+                : hubTitle
+        }}</h2></div
+      ><div class="feature-actions"
+        ><FeatureMenu
+          :identity="game.core.runId + ':' + hubView"
+          :guide="
+            catalogueView &&
+            guidanceEnabled &&
+            !skippedGuides.includes(guidance.id)
+          "
+          :preparation="
+            hubView !== 'journey' && phase === 'idle' && !!realm.pill
+          "
+          :goal="hubView !== 'goal'"
+          :blueprints="navigationGate(game, 'relics').locked"
+          :sealed="game.status !== 'active'"
+          @browse="browseDirect()"
+          @guide="showCatalogueGuide()"
+          @preparation="openPreparation()"
+          @goal="openHub('goal')"
+          @blueprints="openPrimaryFeature('relics')" /><button
+          data-testid="hub-close"
+          :aria-label="
+            detailParent || (hubView === 'life' && readingReturn)
+              ? '返回原玩法'
+              : '返回主舞台'
+          "
+          @click="closeHub"
+          >{{
+            detailParent || (hubView === 'life' && readingReturn)
+              ? '返回原处'
+              : '返回舞台'
+          }}
+          <GameIcon kind="action" id="close" /></button></div
+    ></header>
+    <section
+      v-show="
+        !hubMain && (!singleScreen || !['goal', 'character'].includes(hubView))
+      "
+      class="center-column"
+      :class="{ 'in-battle': game.battle && !inspectingInventory }"
+    >
+      <ScenePanel
+        v-if="!singleScreen"
+        :meditation="cultivationHome && !producing && !immersive"
+        :battle-stage="!!game.battle && !inspectingInventory"
+        :game="game"
+        :eyebrow="phase === 'opening' ? '初遇 / 山雨破庙' : location.subtitle"
+        :title="
+          phase === 'opening'
+            ? '雨中故人'
+            : game.status === 'ascended'
+              ? overview!.title
+              : game.battle
+                ? location.name
+                : (activeStory?.name ?? location.name)
+        "
+        :description="
+          game.status === 'ascended'
+            ? '此卷已收，来路犹存。'
+            : game.battle
+              ? '先辨来势，再决进退。'
+              : '山海不言，修行自有回响。'
+        "
+        :with-action="!cultivationHome && (!game.battle || inspectingInventory)"
+        ><button
+          v-if="!cultivationHome && (!game.battle || inspectingInventory)"
+          type="button"
+          class="scene-action-link"
+          data-testid="scene-action-jump"
+          @click="focusPrimary"
+          >{{ phase === 'opening' ? '前往抉择' : '前往当前操作' }} ↓</button
+        ></ScenePanel
+      >
 
-<ActivityCatalogues :view="hubView" :single-screen="singleScreen" :immersive="immersive" :reading-generation="readingGeneration" :tradeoff-kind="tradeoffKind" :tradeoff-seed="tradeoffSeed" :tradeoff-entry="tradeoffEntry" :quantity="quantity" :consumption="consumption" v-model:all-receipts="receiptAll" @act="act" @navigate="navigate" @destination="inspectTradeoffDestination" @track="trackProduction" @home="closeHub" @prepare="openPreparation" @compare="openTradeoffs" @open="openHub" @school="showEquipment" @trial="showTrialPreparation" @quick="quickInventory" @receipt="viewReceipt"/>
-<StoryCatalogues ref="lifeBook" :active="storyView" :view="hubView" :reading-generation="readingGeneration" :narrative-context="narrativeContext" :journal-key="journalKey" :consumption="consumption" @browse="browseDirect" @act="storyAct" @navigate="navigate" @life="showLife" @resume="resumeEncounter" @dialogue="openHub('current')" @end="requestEnd" @export="exportLife" @restore="restore" @restart="reset" @receipt="viewReceipt" @progress="openHub('trial')"/>
-<TrialSurfaces :view="hubView" :story-view="storyView" :catalogue-view="catalogueView" :read-mode="trialReadMode" @review="reviewTrial" @restore="restore" @restore-trial="requestTrialRestore" @export="exportSave" @prepare="showTrialPreparation" @resume="closeHub" @navigate="navigate" @track="trackTrialMaterial" @equipment="openHub('skills')"/>
-<LegacyContent ref="legacyContent" :hub-main="hubMain" :story-view="storyView" :single-screen="singleScreen" :immersive="immersive" :view="hubView" :tab="tab" :cultivation-home="cultivationHome" :guide="guidance" :guidance-enabled="guidanceEnabled" :skipped-guides="skippedGuides" :consumption="consumption" v-model:batch="batch" v-model:quantity="quantity" @act="act" @battle="battle" @travel="travel" @navigate="navigate" @track="selectTracking" @home="closeHub" @resume="resumeEncounter" @life="showLife" @school="showEquipment" @focus-cultivation="focusCultivation" @breakthrough-goal="showBreakthroughGoal" @help="topic=>emit('help',topic)" @skip="skipGuidance" @export="exportLife" @restore="restore" @restart="reset" @receipt="viewReceipt"/>
-        <div v-if="!storyView&&tab==='仙缘'&&phase!=='idle'&&game.status==='active'" class="paper inline-actions"><button type="button" class="text-button" data-testid="show-life" @click="showLife">查看修仙生平 →</button><button type="button" data-testid="resume-encounter" @click="resumeEncounter">返回当前遭遇</button></div>
-        <RelationshipPanel v-if="!storyView&&tab==='仙缘' && phase!=='idle'" :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
-        <details v-if="!storyView&&tab==='仙缘' && game.status==='active'&&(!singleScreen||hubView==='life')" ref="lifeSection" class="paper life-section" :open="lifeOpen" @toggle="lifeOpen=($event.target as HTMLDetailsElement).open" data-testid="life-section"><summary>修仙生平 · 查看、导出与收卷</summary><LifePanel v-if="lifeOpen" :game="game" :enabled="store.available" :busy="store.busy" :has-checkpoint="store.hasCheckpoint" @end="requestEnd" @export="exportLife" @restore="restore" @restart="reset"/></details>
-        <GrowthPanel v-if="!singleScreen&&tab==='修行' && phase==='idle' && C.rank(core.player.realm)>=C.rank('foundation') && core.player.realm!=='spirit'" :game="game" :enabled="store.available && !store.busy" @navigate="navigate" @track="selectTracking"/>
-        <TrialPreparationPanel v-if="!storyView&&(!singleScreen||hubView==='trial-preparation')&&tab==='修行' && phase==='idle' && core.player.realm==='spirit'" :game="game" :enabled="store.available && !store.busy" :checkpoint="store.checkpointSummary" @navigate="navigate" @track="selectTracking" @review="reviewTrial" @restore="restore" @inspect-equipment="openHub('skills')"/>
-        <EquipmentCatalogue :tab="tab" :view="hubView" :single-screen="singleScreen" :entry="equipmentEntry" :consumption="consumption" v-model:open="equipmentOpen" @act="act" @track="trackProduction" @navigate="navigate" @section="equipmentReading=$event"/>
-        <div v-if="!hubMain&&!catalogueView&&(!singleScreen||!['receipt','character','journey','explore','inventory','forge','skills','relics','cultivation'].includes(hubView))" class="feedback paper" aria-live="polite" data-testid="feedback"><span>手记</span><p>{{game.journal.at(-1)}}</p><ActionFeedback v-if="store.lastResult" :result="store.lastResult" :replayed="store.lastReplayed"/></div>
-      </section>
-      <aside v-show="!singleScreen||hubView==='goal'" class="right-column"><GoalPanel :write-blocked="!!pendingStoryError" :game="game" :target="tracking.target.value" :enabled="store.available && !store.busy" :notice="tracking.notice.value" @select="selectTracking" @navigate="navigate" @current="game.battle?selectTab('修行'):openHub('current',$event)" @preparation="preparation=$event"/><section v-if="!singleScreen" class="paper recent-action"><div class="section-label">最近行动</div><p>{{game.journal.at(-1)}}</p><p v-if="store.lastResult" class="small">{{formatDelta(store.lastResult.delta)}}</p></section><section v-if="!singleScreen" class="paper fate-summary"><div class="section-label">仙缘因果</div><div v-for="person in relationships.slice(0,2)" :key="person.id" :data-testid="`fate-summary-${person.id}`"><PortraitImage class="fate-portrait" :id="person.id" :fallback="person.seal"/><h3>{{person.name}} · {{person.label}}</h3><p class="small">{{person.summary}}</p></div><button class="text-button" @click="selectTab('仙缘')">展开仙缘 →</button></section>
-      <section v-if="!singleScreen" class="note"><span>此地机缘</span><p>{{location.description}}</p><small>试玩版本 · 数值未平衡<br>约30分钟理解玩法，不限定通关时间</small></section></aside>
-      <CharacterPanel v-if="!singleScreen||hubView==='character'" :game="game" :details-only="immersive"/>
-    </main>
+      <ActivityCatalogues
+        :view="hubView"
+        :single-screen="singleScreen"
+        :immersive="immersive"
+        :reading-generation="readingGeneration"
+        :tradeoff-kind="tradeoffKind"
+        :tradeoff-seed="tradeoffSeed"
+        :tradeoff-entry="tradeoffEntry"
+        :quantity="quantity"
+        :consumption="consumption"
+        v-model:all-receipts="receiptAll"
+        @act="act"
+        @navigate="navigate"
+        @destination="inspectTradeoffDestination"
+        @track="trackProduction"
+        @home="closeHub"
+        @prepare="openPreparation"
+        @compare="openTradeoffs"
+        @open="openHub"
+        @school="showEquipment"
+        @trial="showTrialPreparation"
+        @quick="quickInventory"
+        @receipt="viewReceipt"
+      />
+      <StoryCatalogues
+        ref="lifeBook"
+        :active="storyView"
+        :view="hubView"
+        :reading-generation="readingGeneration"
+        :narrative-context="narrativeContext"
+        :journal-key="journalKey"
+        :consumption="consumption"
+        @browse="browseDirect"
+        @act="storyAct"
+        @navigate="navigate"
+        @life="showLife"
+        @resume="resumeEncounter"
+        @dialogue="openHub('current')"
+        @end="requestEnd"
+        @export="exportLife"
+        @restore="restore"
+        @restart="reset"
+        @receipt="viewReceipt"
+        @progress="openHub('trial')"
+      />
+      <TrialSurfaces
+        :view="hubView"
+        :story-view="storyView"
+        :catalogue-view="catalogueView"
+        :read-mode="trialReadMode"
+        @review="reviewTrial"
+        @restore="restore"
+        @restore-trial="requestTrialRestore"
+        @export="exportSave"
+        @prepare="showTrialPreparation"
+        @resume="closeHub"
+        @navigate="navigate"
+        @track="trackTrialMaterial"
+        @equipment="openHub('skills')"
+      />
+      <LegacyContent
+        ref="legacyContent"
+        :hub-main="hubMain"
+        :story-view="storyView"
+        :single-screen="singleScreen"
+        :immersive="immersive"
+        :view="hubView"
+        :tab="tab"
+        :cultivation-home="cultivationHome"
+        :guide="guidance"
+        :guidance-enabled="guidanceEnabled"
+        :skipped-guides="skippedGuides"
+        :consumption="consumption"
+        v-model:batch="batch"
+        v-model:quantity="quantity"
+        @act="act"
+        @battle="battle"
+        @travel="travel"
+        @navigate="navigate"
+        @track="selectTracking"
+        @home="closeHub"
+        @resume="resumeEncounter"
+        @life="showLife"
+        @school="showEquipment"
+        @focus-cultivation="focusCultivation"
+        @breakthrough-goal="showBreakthroughGoal"
+        @help="(topic) => emit('help', topic)"
+        @skip="skipGuidance"
+        @export="exportLife"
+        @restore="restore"
+        @restart="reset"
+        @receipt="viewReceipt"
+      />
+      <div
+        v-if="
+          !storyView &&
+          tab === '仙缘' &&
+          phase !== 'idle' &&
+          game.status === 'active'
+        "
+        class="paper inline-actions"
+        ><button
+          type="button"
+          class="text-button"
+          data-testid="show-life"
+          @click="showLife"
+          >查看修仙生平 →</button
+        ><button
+          type="button"
+          data-testid="resume-encounter"
+          @click="resumeEncounter"
+          >返回当前遭遇</button
+        ></div
+      >
+      <RelationshipPanel
+        v-if="!storyView && tab === '仙缘' && phase !== 'idle'"
+        :game="game"
+        :enabled="store.available && !store.busy"
+        @navigate="navigate"
+      />
+      <details
+        v-if="
+          !storyView &&
+          tab === '仙缘' &&
+          game.status === 'active' &&
+          (!singleScreen || hubView === 'life')
+        "
+        ref="lifeSection"
+        class="paper life-section"
+        :open="lifeOpen"
+        @toggle="lifeOpen = ($event.target as HTMLDetailsElement).open"
+        data-testid="life-section"
+        ><summary>修仙生平 · 查看、导出与收卷</summary
+        ><LifePanel
+          v-if="lifeOpen"
+          :game="game"
+          :enabled="store.available"
+          :busy="store.busy"
+          :has-checkpoint="store.hasCheckpoint"
+          @end="requestEnd"
+          @export="exportLife"
+          @restore="restore"
+          @restart="reset"
+      /></details>
+      <GrowthPanel
+        v-if="
+          !singleScreen &&
+          tab === '修行' &&
+          phase === 'idle' &&
+          C.rank(core.player.realm) >= C.rank('foundation') &&
+          core.player.realm !== 'spirit'
+        "
+        :game="game"
+        :enabled="store.available && !store.busy"
+        @navigate="navigate"
+        @track="selectTracking"
+      />
+      <TrialPreparationPanel
+        v-if="
+          !storyView &&
+          (!singleScreen || hubView === 'trial-preparation') &&
+          tab === '修行' &&
+          phase === 'idle' &&
+          core.player.realm === 'spirit'
+        "
+        :game="game"
+        :enabled="store.available && !store.busy"
+        :checkpoint="store.checkpointSummary"
+        @navigate="navigate"
+        @track="selectTracking"
+        @review="reviewTrial"
+        @restore="restore"
+        @inspect-equipment="openHub('skills')"
+      />
+      <EquipmentCatalogue
+        :tab="tab"
+        :view="hubView"
+        :single-screen="singleScreen"
+        :entry="equipmentEntry"
+        :consumption="consumption"
+        v-model:open="equipmentOpen"
+        @act="act"
+        @track="trackProduction"
+        @navigate="navigate"
+        @section="equipmentReading = $event"
+      />
+      <div
+        v-if="
+          !hubMain &&
+          !catalogueView &&
+          (!singleScreen ||
+            ![
+              'receipt',
+              'character',
+              'journey',
+              'explore',
+              'inventory',
+              'forge',
+              'skills',
+              'relics',
+              'cultivation',
+            ].includes(hubView))
+        "
+        class="feedback paper"
+        aria-live="polite"
+        data-testid="feedback"
+        ><span>手记</span><p>{{ game.journal.at(-1) }}</p
+        ><ActionFeedback
+          v-if="store.lastResult"
+          :result="store.lastResult"
+          :replayed="store.lastReplayed"
+      /></div>
+    </section>
+    <aside v-show="!singleScreen || hubView === 'goal'" class="right-column"
+      ><GoalPanel
+        :write-blocked="!!pendingStoryError"
+        :game="game"
+        :target="tracking.target.value"
+        :enabled="store.available && !store.busy"
+        :notice="tracking.notice.value"
+        @select="selectTracking"
+        @navigate="navigate"
+        @current="game.battle ? selectTab('修行') : openHub('current', $event)"
+        @preparation="preparation = $event"
+      /><section v-if="!singleScreen" class="paper recent-action"
+        ><div class="section-label">最近行动</div
+        ><p>{{ game.journal.at(-1) }}</p
+        ><p v-if="store.lastResult" class="small">{{
+          formatDelta(store.lastResult.delta)
+        }}</p></section
+      ><section v-if="!singleScreen" class="paper fate-summary"
+        ><div class="section-label">仙缘因果</div
+        ><div
+          v-for="person in relationships.slice(0, 2)"
+          :key="person.id"
+          :data-testid="`fate-summary-${person.id}`"
+          ><PortraitImage
+            class="fate-portrait"
+            :id="person.id"
+            :fallback="person.seal"
+          /><h3>{{ person.name }} · {{ person.label }}</h3
+          ><p class="small">{{ person.summary }}</p></div
+        ><button class="text-button" @click="selectTab('仙缘')"
+          >展开仙缘 →</button
+        ></section
+      >
+      <section v-if="!singleScreen" class="note"
+        ><span>此地机缘</span><p>{{ location.description }}</p
+        ><small
+          >试玩版本 · 数值未平衡<br />约30分钟理解玩法，不限定通关时间</small
+        ></section
+      ></aside
+    >
+    <CharacterPanel
+      v-if="!singleScreen || hubView === 'character'"
+      :game="game"
+      :details-only="immersive"
+    />
+  </main>
 </template>

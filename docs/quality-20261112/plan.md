@@ -29,7 +29,7 @@
 | Q11 | 2 六类结果反馈 | 抉择、轮收获、突破、胜利、成丹、结局均绑定真实已提交结果；无重放领奖、无遮挡、减动效静态反馈 | 已递交：[PR55](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/55)，975根/184完整生产UI/两完整正常路线/3原生UI；[记录](q11-result-moments.md) |
 | Q12 | 12 CSS收敛 | 显式层级且基线图无意外变化；禁新增important/#app；主题色token收敛并实看 | 已递交：[PR56](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/56)，980根/195生产UI/两完整路线/3原生UI；[记录](q12-css-convergence.md) |
 | Q13 | 13 App拆分 | 先里程碑与四tab再按职责拆分；焦点/返回/时钟归属与存档流程行为相同；目标约30KB而非新字节守卫 | 已递交：[PR57](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/57)，984根/471Native/196完整UI/正常32，App36,656字节；[记录](q13-app-responsibilities.md)与[审查](q13-review.md) |
-| Q14 | 14 守卫改革 | 先补关键行为覆盖再归档台账/逆变换/整文件钉；格式化可审查源码；删已证不可达路径/死样式 | 前置已递交：[PR47](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/47)，937根/13资源/19UI/完整415native；格式化、遗留消费者、死代码仍待 |
+| Q14 | 14 守卫改革 | 先补关键行为覆盖再归档台账/逆变换/整文件钉；格式化可审查源码；删已证不可达路径/死样式 | 进行中；前置[PR47](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/47)保原身份；[剩余实现](q14-maintainable-source.md)已可读化301源、移除孤立台账/死组件/Store短写并改受限CI，完整冻结验证/审查待 |
 | Q15 | 15 回执备份 | 有界保留/索引分页；活动与重试所需原意图不裁；长期合成负载与真实IDB恢复 | 待实施 |
 | Q16 | 16 构筑战斗 | 功法互斥分支、法宝转换取舍、符修补正、至少2–3种敌方机制；剑符/危险/撤退与160路线回归 | 待实施 |
 | Q17 | 17 重玩 | 此生账本、两结尾独占回响、明确选择的NG+传承与有种子的部分事件变体；重开不改旧人生 | 待实施 |

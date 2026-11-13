@@ -64,7 +64,7 @@ test('a stored arrangement cannot renew an old selection when activity CAS chang
   expect(result.runRace.after).toEqual(result.runRace.before); expect(result.runRace.ui.error).toContain('所属人生已经切换');
 });
 
-test('failed arrangement retries its original frozen command and all nine ordinary Store short writes are refused', async ({ page }) => {
+test('failed arrangement retries its original frozen command and ordinary Store short write entry points are absent', async ({ page }) => {
   const failed = await page.evaluate(async () => {
     const h = (globalThis as any).h, f = h.milestoneStore, intent = f.store.prepareMilestone({ type: 'CHOOSE', choice: 'trade' }), before = await h.inspect(h.FULL_DB_NAME);
     const put = IDBObjectStore.prototype.put;
@@ -82,10 +82,12 @@ test('failed arrangement retries its original frozen command and all nine ordina
   await page.evaluate(() => (globalThis as any).h.milestoneStore.store.pauseCultivation());
   const blocked = await page.evaluate(async () => {
     const h = (globalThis as any).h, f = h.milestoneStore, before = await h.inspect(h.FULL_DB_NAME);
-    for (const sample of h.milestoneSamples) await f.store.actPrepared(h.command(f.store.game, sample.action));
-    return { before, after: await h.inspect(h.FULL_DB_NAME), notice: f.store.activityNotice };
+    // Current gameplay uses the family-specific plan/configuration/direct owners.
+    // Legacy repository execute remains independently tested for migration/replay.
+    const entryPoints = ['act', 'prepareAction', 'actPrepared'].map(key => typeof f.store[key]);
+    return { before, after: await h.inspect(h.FULL_DB_NAME), entryPoints };
   });
-  expect(blocked.after).toEqual(blocked.before); expect(blocked.notice).toContain('请安排活动');
+  expect(blocked.after).toEqual(blocked.before); expect(blocked.entryPoints).toEqual(['undefined', 'undefined', 'undefined']);
 });
 
 test('lost ending delivery replays the exact committed life once, preserves readable results and never starts another cycle', async ({ page }) => {

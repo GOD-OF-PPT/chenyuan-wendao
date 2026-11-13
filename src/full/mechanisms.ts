@@ -16,9 +16,13 @@ export const skillMechanisms = Object.freeze({
   detonate: { school: 'talisman', slot: 'finisher' },
   return: { school: 'talisman', slot: 'finisher' },
 } as const);
-for (const definition of Object.values(skillMechanisms)) Object.freeze(definition);
+for (const definition of Object.values(skillMechanisms))
+  Object.freeze(definition);
 export type SkillEffect = keyof typeof skillMechanisms;
 export const relicMechanisms = Object.freeze({
-  frost_sword: true, jade_seal: true, soul_lamp: true, cloud_mirror: true,
+  frost_sword: true,
+  jade_seal: true,
+  soul_lamp: true,
+  cloud_mirror: true,
 });
 export type RelicEffect = keyof typeof relicMechanisms;

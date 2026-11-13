@@ -12,6 +12,8 @@
     "test:setup": "node scripts/validate-core.mjs --install-dependencies",
     "test:historical": "node scripts/check-historical-guards.mjs",
     "test:behavior": "node scripts/check-current-browser.mjs",
+    "format:source": "prettier --write \"src/**/*.ts\" \"web/src/**/*.{ts,vue,css}\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"web/src/**/*.{ts,vue,css}\"",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "check:content": "node --experimental-strip-types scripts/check-full-content.mjs",
     "replay": "node --experimental-strip-types scripts/replay.mjs",

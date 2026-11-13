@@ -11,5 +11,5 @@ for(const [path,p] of Object.entries(lock.packages)) {
   assert.match(p.integrity,/^sha512-[A-Za-z0-9+/]+=*$/,path);
 }
 const digest=crypto.createHash('sha256').update(JSON.stringify(lock)+'\n').digest('hex');
-assert.equal(digest,'6be5d36f12e39f65e042e0cdaeb0dbe1b6d2cf8f7ad03fb7990d235358d6a7ae','Generated lock differs from reviewed dependency lock');
+assert.equal(digest,'bba1e5f25f900c116dde302a988012c35db320f051cddd0e3ee0b12391dcc546','Generated lock differs from reviewed dependency lock');
 console.log('LOCK VERIFIED',digest,Object.keys(lock.packages).length,'entries');
