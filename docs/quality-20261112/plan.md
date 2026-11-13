@@ -2,6 +2,8 @@
 
 2026-11-12，用户要求依据四份质量评审设置目标并完整实施。原生目标为 active，实施起点为 `97c10d195bd99ea734ddea46a1edeac7b461fe79`。本文件为本轮唯一进度入口；历史 Goal1–4 与失败记录保留在 Git，不复活已删除的过程目录。
 
+独立功能PR的最新递交与冻结验收见[交付状态](delivery-status.md)；main下方开工状态表保初始安排，功能分支实施记录保各自受测来源，不以未合并main冒已发布产品。
+
 ## 范围与依据
 
 - [综合结论](review/00-synthesis.md)为主清单；[体验](review/01-player-experience.md)、[设计](review/02-game-design.md)、[工程](review/03-engineering.md)为证据，原图在 review/ux-shots。
