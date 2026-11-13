@@ -12,13 +12,19 @@ concurrency:
   cancel-in-progress: true
 jobs:
   behavior:
-    name: current (${{ matrix.suite }}, 1440x900 Chromium)
+    name: current (${{ matrix.label }}, 1440x900 Chromium)
     runs-on: ubuntu-latest
     timeout-minutes: 40
     strategy:
       fail-fast: false
       matrix:
-        suite: [q13, native, normal]
+        include:
+          - {suite: q13, label: q13, shard: ''}
+          - {suite: native, label: native, shard: ''}
+          - {suite: normal, label: normal-1of4, shard: '--shard=1/4'}
+          - {suite: normal, label: normal-2of4, shard: '--shard=2/4'}
+          - {suite: normal, label: normal-3of4, shard: '--shard=3/4'}
+          - {suite: normal, label: normal-4of4, shard: '--shard=4/4'}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -46,14 +52,47 @@ jobs:
           npx playwright install --with-deps chromium
           sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=60 -o Acquire::https::Timeout=60 install -y fonts-noto-cjk
       - name: Declare and execute every current member
-        run: node scripts/check-current-browser.mjs ${{ matrix.suite }} artifacts/current-${{ matrix.suite }}
+        run: node scripts/check-current-browser.mjs ${{ matrix.suite }} artifacts/current-${{ matrix.label }} ${{ matrix.shard }}
       - name: Preserve actual reports and diagnostics
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: current-${{ matrix.suite }}-${{ github.run_attempt }}
+          name: current-${{ matrix.label }}-${{ github.run_attempt }}
           path: |
-            artifacts/current-${{ matrix.suite }}
+            artifacts/current-${{ matrix.label }}
             web/build-report
           retention-days: 30
           if-no-files-found: error
+  normal-coverage:
+    name: complete current normal coverage
+    needs: behavior
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.22.1'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: current-normal-*of4-${{ github.run_attempt }}
+          path: artifacts/normal-shards
+      - name: Require the complete current normal union without skip or retry
+        run: node scripts/check-current-browser-shards.mjs artifacts/normal-shards artifacts/current-normal-coverage.json
+      - name: Require every fixed desktop job
+        env:
+          BEHAVIOR_RESULT: ${{ needs.behavior.result }}
+        run: test "$BEHAVIOR_RESULT" = success
+      - name: Preserve union proof
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: current-normal-union-${{ github.run_attempt }}
+          path: artifacts/current-normal-coverage.json
+          if-no-files-found: error
+          retention-days: 30

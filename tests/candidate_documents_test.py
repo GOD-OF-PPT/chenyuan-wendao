@@ -94,11 +94,16 @@ class Notes(unittest.TestCase):
             for action in re.findall(r'uses: ([^\n]+)', text):
                 self.assertRegex(action, r'^[^@]+@[a-f0-9]{40}$')
         current = (ROOT / '.github/workflows/playable.yml').read_text(encoding='utf-8')
-        self.assertIn('suite: [q13, native, normal]', current)
+        self.assertIn('{suite: q13, label: q13', current)
+        self.assertIn('{suite: native, label: native', current)
+        for number in range(1, 5):
+            self.assertIn(f"{{suite: normal, label: normal-{number}of4, shard: '--shard={number}/4'}}", current)
+        self.assertIn('check-current-browser-shards.mjs', current)
+        self.assertIn('needs: behavior', current)
         self.assertIn('npx playwright install --with-deps chromium', current)
         self.assertIn('node scripts/check-current-browser.mjs ${{ matrix.suite }}', current)
         self.assertIn('npm --prefix web run build', current)
-        self.assertIn('artifacts/current-${{ matrix.suite }}', current)
+        self.assertIn('artifacts/current-${{ matrix.label }}', current)
         self.assertNotIn('package-candidate.py', current)
 
     def test_paused_full_matrix_remains_explicitly_archived(self):
