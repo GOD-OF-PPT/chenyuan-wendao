@@ -43,6 +43,7 @@ artifacts/
 web/idle-report/
 web/quality-report/
 web/quality-results/
+web/q11-report/
 web/idle-results/
 web/idle-persistence-results/
 journey-evidence/

@@ -1,5 +1,5 @@
 import {proveControl,proveCycle} from './scheduled-proof-support';
-import {motionClearance} from './npc-response-visual-support';
+import {resultMomentClearance} from './npc-response-visual-support';
 import {test,expect,type Page,type Browser,type TestInfo} from '@playwright/test';
 import {paidResponseFixture,npcResponseFixtures,responseStageFixtures} from '../../tests/response-context-fixtures.mjs';
 
@@ -169,7 +169,7 @@ test('CEND13-B4 a native tick quota and held retry keep the accepted response di
  try{await page.getByTestId('retry').click();await expect(page.getByTestId('save-status')).toHaveText('保存中');await expect(caption(page)).not.toContainText('预选');await expect(caption(page)).not.toContainText('已保存');expect(await page.evaluate(()=>(window as any).__c13bHeldDB)).toEqual(accepted.raw);await frame(page,info,'B4-native-retry-before-atomic-save');}
  finally{await page.evaluate(()=>(window as any).__c13bRelease());}
  await expect.poll(async()=>(await activity(page)).completedCycles).toBe(1);await expect(page.getByTestId('save-status')).toHaveText('已保存');const done=await committedTick(page,t.g,accepted.a,accepted.raw,info);const r=done.raw.rows['full-receipts'].find((x:any)=>x.key===accepted.a.runId+':'+accepted.a.nextCommand.commandId).value;expect(r.input).toEqual(rejected);
- await expect(page.getByTestId('encounter-table')).toHaveAttribute('data-person','shen');await expect.poll(async()=>{await page.clock.runFor(16);return page.getByTestId('encounter-result').isVisible();}).toBe(true);await expect(page.getByTestId('response-result')).toHaveCount(0);await motionClearance(page,info);await page.screenshot({path:info.outputPath('B4-legacy-saved-response-original-stamp.png')});await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');expect(await database(page)).toEqual(done.raw);await expect(page.locator('[data-testid=encounter-result],[data-testid=response-result]')).toHaveCount(0);
+ await expect(page.getByTestId('encounter-table')).toHaveAttribute('data-person','shen');await expect.poll(async()=>{await page.clock.runFor(16);return page.getByTestId('encounter-result').isVisible();}).toBe(true);await expect(page.getByTestId('response-result')).toHaveCount(0);await resultMomentClearance(page,info);await page.screenshot({path:info.outputPath('B4-legacy-saved-response-original-stamp.png')});await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');expect(await database(page)).toEqual(done.raw);await expect(page.locator('[data-testid=encounter-result],[data-testid=response-result]')).toHaveCount(0);
 });
 
 test('CEND13-B5 a genuinely committed but delayed start reply and another pages generation never create a local borrowed response clock or duplicate reward',async({page,context},info)=>{
