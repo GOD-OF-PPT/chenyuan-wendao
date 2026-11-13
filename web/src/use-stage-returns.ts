@@ -28,14 +28,14 @@ export function useStageReturns(
     openerId: string | undefined;
   function remember(event?: Event) {
     opener =
-      event?.currentTarget instanceof HTMLElement
+      event?.currentTarget && event.currentTarget instanceof HTMLElement
         ? event.currentTarget
         : capture();
     openerId = opener?.dataset.testid;
   }
   function origin(event?: Event): StageOrigin {
     const source =
-      event?.currentTarget instanceof HTMLElement
+      event?.currentTarget && event.currentTarget instanceof HTMLElement
         ? event.currentTarget
         : capture();
     return {
