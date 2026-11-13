@@ -46,6 +46,12 @@ use-configuration-review聚拢原snapshot/intent、Game与activity CAS的stale�
 
 6e97c33清洁类型/构建通过；idle-preparation、原同步错误/导航/装备上下文完整四文件25/25通过（47.3秒）。旧全Game/活动/全库、确认/取消、同意图quota和已保存后sync核对均保。App仍约108KB级，本项未交付，最终完整矩阵、独立review与新Seam生命周期测试仍待。
 
+## 第八Seam：轻量行动与会面承接
+
+use-direct-actions维护原prepareDirect/确认内容、暂停安排后果、原意图提交、会面viewEpoch及保存后转入当前会面的handoff、行囊即时使用后的焦点。明确导航适配仅owner/viewIdentity/source/blocked/openCurrent/regular；共享Store/Focus/Confirmation，不创建另一写者。新卸载alive检查防异步回复抢页，原同步/失败守卫仍在。
+
+57e5b39清洁类型/构建通过；原direct-actions、NPC、ABC、八UI bug完整四文件39/39通过（43.1秒），包括付费回应取消/真实quota、迟到文件/原授权与只读缺口责任。App尚约104KB，仍有当前主舞台/详情、活动调度接线和导航焦点组合待拆，本项未递交。
+
 ## 后续与执行边界
 
 当前无live测试。root/web node_modules仍是指向Q12的junction，不能直接在此npm ci或validate-core（会安装）；先核后仅删除link并独立安装。当前每段代码和原报告保，临时工具/日志在artifacts/q13-app。
