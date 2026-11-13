@@ -4,12 +4,27 @@ import {newGame,resolve} from '../../src/full/engine';
 import {previewAction} from '../../src/full/queries';
 import {driver} from '../../tests/full-route.mjs';
 import * as C from '../../src/full/content';
-import {importRecoveryFixture,recoveryDatabase} from './idle-recovery-ui-support';
+import {importRecoveryFixture,recoveryDatabase,runRecoveryPlan,recoveryMove} from './idle-recovery-ui-support';
+import {trialPreparationRunner} from '../../tests/trial-preparation-route.mjs';
 import {snapshot,activitySnapshot} from './support';
 import {selectPlan,home} from './idle-route-support';
 import {openInventoryLibrary} from './stage-support';
 
 test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});
+
+test('Q13 the actual cave recovery entry opens its verified checkpoint chapter without writing',async({page},info)=>{
+  await importRecoveryFixture(page,trialPreparationRunner('sword','buy-product',1).ledger.game);
+  await runRecoveryPlan(page,{kind:'milestone',action:{type:'START_TRIAL'},maxCycles:1});
+  await runRecoveryPlan(page,{kind:'milestone',action:{type:'ANSWER_TRIAL',answer:'accept'},maxCycles:1});
+  await recoveryMove(page,'flee');await home(page);
+  await expect(page.getByTestId('trial-return-inspect')).toBeVisible();
+  const before=await recoveryDatabase(page);
+  await page.getByTestId('trial-return-inspect').click();
+  await expect(page.getByTestId('trial-mode-checkpoint')).toHaveAttribute('aria-pressed','true');
+  await expect(page.getByTestId('trial-checkpoint-committed')).toBeVisible();
+  expect(await recoveryDatabase(page)).toEqual(before);
+  await page.screenshot({path:info.outputPath('actual-cave-checkpoint-chapter.png')});
+});
 
 async function clocks(page:Page){return page.locator('[data-testid$="-clock"],[data-testid$="-countdown"]').evaluateAll(nodes=>nodes.filter(n=>n.getClientRects().length&&getComputedStyle(n).visibility==='visible'&&!n.querySelector('[data-testid$="-clock"],[data-testid$="-countdown"]')).map(n=>({id:(n as HTMLElement).dataset.testid,text:n.textContent})));}
 
