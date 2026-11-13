@@ -940,7 +940,12 @@ export class FullSaveRepository {
     const receiver = receiptReceiverState(this.receiver, this.db.name);
     // A committed cleanup whose response was lost is idempotent within the
     // same logical receiver, including reconnect; no second storage write.
-    if (receiver.confirmed.has(key)) return Promise.resolve();
+    if (receiver.confirmed.has(key)) {
+      // A replay offers the same reply again. Its cached confirmation must
+      // retire that new offer too, or healthy replays accumulate stale keys.
+      receiver.offers.delete(key);
+      return Promise.resolve();
+    }
     if (!receiver.offers.has(key))
       throw new RuleError(
         'RECEIPT_NOT_DELIVERED',

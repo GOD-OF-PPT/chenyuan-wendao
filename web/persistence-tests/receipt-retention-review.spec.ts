@@ -205,6 +205,104 @@ test('AdventureHistory renders the actual retained battle window and its folded 
   ).toEqual(r.raw);
   await page.screenshot({ path: test.info().outputPath('folded-battle.png') });
   await page.evaluate(() => (globalThis as any).h.cleanup());
+  // Verify the same saved window through the actual App, theme and visible
+  // original receipt entry as well as the focused component seam above.
+  await page.evaluate(async () => {
+    const h = (globalThis as any).h,
+      path = '/persistence-tests/fault-app.ts',
+      { mountFaultApp } = await import(path);
+    h.q15Product = mountFaultApp();
+  });
+  await expect
+    .poll(() =>
+      page.evaluate(() => (globalThis as any).h.q15Product.store.ready),
+    )
+    .toBe(true);
+  await page.getByTestId('activity-inspect').click();
+  await page
+    .getByTestId('activity-details')
+    .getByTestId('adventure-receipts')
+    .click();
+  await expect(page.getByTestId('adventure-history-folded')).toContainText(
+    '较早 141 次明细已归入累计',
+  );
+  const productPager = page.getByRole('navigation', { name: '逐次记录翻页' });
+  await expect(productPager).toContainText('共 256 项');
+  const measureGeometry = () =>
+    productPager.evaluate((node) => {
+      const box = node.getBoundingClientRect(),
+        fold = document
+          .querySelector('[data-testid="adventure-history-folded"]')!
+          .getBoundingClientRect(),
+        button =
+          node.querySelector('[data-testid="catalogue-next"]:not(:disabled)') ??
+          node.querySelector('[data-testid="catalogue-prev"]')!,
+        b = button.getBoundingClientRect(),
+        hit = document.elementFromPoint(b.x + b.width / 2, b.y + b.height / 2);
+      const clips: any[] = [];
+      for (let p = node.parentElement; p; p = p.parentElement) {
+        const s = getComputedStyle(p);
+        if (/hidden|clip|auto|scroll/.test(s.overflowY)) {
+          const r = p.getBoundingClientRect();
+          clips.push({ top: r.top, bottom: r.bottom });
+        }
+      }
+      return {
+        pager: { top: box.top, bottom: box.bottom },
+        fold: { top: fold.top, bottom: fold.bottom },
+        clips,
+        navigationTop: document
+          .querySelector('nav[aria-label="主要页面"]')!
+          .getBoundingClientRect().top,
+        contentBottom: node.closest('.hub-feature')!.getBoundingClientRect()
+          .bottom,
+        centerHit: !!hit && (button === hit || button.contains(hit)),
+        height: innerHeight,
+        night: getComputedStyle(document.querySelector('.app-shell')!)
+          .getPropertyValue('--palette-night')
+          .trim(),
+      };
+    });
+  const allGeometry: any[] = [];
+  for (let selected = 0; selected < 64; selected++) {
+    if (selected) {
+      await productPager.getByTestId('catalogue-next').click();
+      await expect(productPager).toContainText(`${selected + 1} / 64 页`);
+    }
+    await expect(
+      page.locator('.adventure-history-grid article strong').first(),
+    ).toContainText(`第 ${142 + selected * 4} 次`);
+    const geometry = await measureGeometry();
+    expect(geometry.night).toBe('#10282f');
+    expect(geometry.centerHit).toBe(true);
+    expect(geometry.fold.bottom).toBeLessThanOrEqual(geometry.pager.top);
+    expect(geometry.pager.bottom).toBeLessThanOrEqual(geometry.height);
+    expect(geometry.pager.bottom).toBeLessThanOrEqual(geometry.navigationTop);
+    expect(geometry.pager.bottom).toBeLessThanOrEqual(geometry.contentBottom);
+    for (const clip of geometry.clips) {
+      expect(geometry.fold.top).toBeGreaterThanOrEqual(clip.top);
+      expect(geometry.pager.bottom).toBeLessThanOrEqual(clip.bottom);
+    }
+    allGeometry.push({ page: selected + 1, ...geometry });
+    if (selected === 0)
+      await page.screenshot({
+        path: test.info().outputPath('folded-battle-product-first.png'),
+      });
+  }
+  expect(allGeometry).toHaveLength(64);
+  expect(
+    await page.evaluate(() =>
+      (globalThis as any).h.inspect((globalThis as any).h.FULL_DB_NAME),
+    ),
+  ).toEqual(r.raw);
+  await page.screenshot({
+    path: test.info().outputPath('folded-battle-product.png'),
+  });
+  await test.info().attach('folded-history-product-geometry', {
+    body: JSON.stringify(allGeometry),
+    contentType: 'application/json',
+  });
+  await page.evaluate(() => (globalThis as any).h.q15Product.dispose());
 });
 
 test('legal run ids with overlapping key prefixes do not mix protected old originals into current history', async ({

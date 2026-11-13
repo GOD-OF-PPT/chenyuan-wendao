@@ -75,6 +75,7 @@ const moveName: Record<string, string> = {
 <template>
   <section
     class="adventure-history"
+    :class="{ 'history-folded': !!history?.folded }"
     data-testid="adventure-history"
     aria-label="本安排逐次记录"
   >
@@ -190,6 +191,18 @@ const moveName: Record<string, string> = {
   }
   .history-totals strong {
     font-size: 18px;
+  }
+  .adventure-history.history-folded {
+    gap: 6px;
+  }
+  .adventure-history.history-folded .adventure-history-grid {
+    gap: 8px;
+  }
+  .adventure-history.history-folded article {
+    padding: 8px 12px;
+  }
+  .adventure-history.history-folded p {
+    margin: 4px 0;
   }
 }
 </style>
