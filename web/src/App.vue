@@ -2,6 +2,7 @@
 import {useRuleContent} from './rule-content';
 import ClosureDecisions from './ClosureDecisions.vue';
 import type {ClosureNavigation} from './closure-navigation';
+import {useSaveControls} from './use-save-controls';
 
 import { computed, nextTick, onMounted, onScopeDispose, provide, ref, shallowRef, watch } from 'vue';
 import { useGame } from './store';
@@ -12,11 +13,10 @@ import FeatureMenu from './FeatureMenu.vue';
 import * as C from '../../src/full/content.ts';
 import { availableEvents } from '../../src/full/engine.ts';
 import { gamePhase } from '../../src/full/contracts.ts';
-import { getBreakthroughGoal, previewAction, getStoryContext, getRelationships, getLifeOverview, exportLifeText, getTrialJourney, getAscensionChoices } from '../../src/full/queries.ts';
+import { getBreakthroughGoal, previewAction, getStoryContext, getRelationships, getLifeOverview, getTrialJourney, getAscensionChoices } from '../../src/full/queries.ts';
 import type { ActionPreview } from '../../src/full/queries.ts';
 import type { Action, Move } from '../../src/full/types.ts';
 import { stories } from '../../src/full/events.ts';
-import { MAX_SAVE_BYTES } from '../../src/full/versions.ts';
 import { getTrackedGoal, planCollection, createConsumptionPreview, type CollectionTarget } from '../../src/full/goals.ts';
 import { useTracking } from './use-tracking';
 import { formatCosts, formatDelta } from './presentation';
@@ -100,7 +100,7 @@ import {useSession} from './session';
 import MilestoneReview from './MilestoneReview.vue';
 import {useMilestoneReview,type PreparedMilestone} from './milestone-view';
 import {isMilestoneAction} from '../../src/full/milestones.ts';
-import {demoCatalog,demoSpec,demoSave,parseDemoSave} from '../../src/demo.ts';
+import {demoCatalog,demoSpec} from '../../src/demo.ts';
 import {demoLink,normalLink} from './demo-loader';
 import {guidanceFor,guideCatalog} from './guidance';
 import GuidancePanel from './GuidancePanel.vue';
@@ -122,7 +122,6 @@ const pendingStoryError=computed(()=>store.unresolved);
 const saveTone=computed(()=>!store.ready||store.busy?'pending':store.error||!store.available?'problem':store.game&&store.saved?'saved':'idle');
 const saveDisplayLabel=computed(()=>store.saveLabel==='本次未保存'?'保存待确认':store.saveLabel);
 const openingChoices=[{id:'help',name:'赠丹相助',detail:'结下赠药之缘'},{id:'trade',name:'以丹换简',detail:`获得剑简，剑修终结伤害 +${ruleContent.value.swordManual.damageBonus}`},{id:'leave',name:'保留丹药',detail:'保留回春丹，各自离开'}] as const;
-const importNotice=ref(''),importReadRevision=ref(0);
 const experience=useLocalExperience();let appActive=true;const stopObserving=store.observe(value=>{const observedNavigation=navigationRevision;if(['import','restore','restart','new_game'].includes(value.kind)){readingGeneration.value++;narrativeContext.value++;readingReturn.value=null;detailParent.value=null;clearFlowReturns();journalWrites.value=[];}if(value.kind==='action'&&value.result&&value.operation&&store.game?.core.revision===value.result.revisionAfter){const run=store.game.core.runId,revision=value.result.revisionAfter,added=value.operation==='EVENT'?0:value.operation==='BATTLE'&&value.flags.includes('battle_won')?2:1;journalWrites.value=[...journalWrites.value.filter(w=>w.run!==run||w.revision!==revision),{run,revision,added}].slice(-100);}if(value.kind==='action'&&value.result&&store.game&&!value.replayed&&store.lastFromActivity&&store.activityOwned&&store.activity?.version===7&&store.activity.plan.action.type===value.operation&&store.activity.runId===store.game?.core.runId&&value.result.revisionAfter===store.game.core.revision&&((hubView.value==='current'&&value.operation==='CHOOSE'&&value.result.phaseBefore==='opening'&&value.result.phaseAfter==='idle')||(hubView.value==='cultivation'&&value.operation==='BREAKTHROUGH'&&value.result.delta.realm.before!==value.result.delta.realm.after)||(hubView.value==='trial-preparation'&&value.operation==='START_TRIAL'&&value.result.phaseBefore==='idle'&&value.result.phaseAfter==='trial-question')))selectTab('修行');focusObserved(value,observedNavigation);experience.record(value);},experience.fault);onScopeDispose(()=>{appActive=false;stopObserving();});
 const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('');
 const trainingInspectionPlan=shallowRef<CultivationPlan|null>(null);
@@ -152,7 +151,7 @@ const journalWrites=shallowRef<JournalWrite[]>([]);
 function clearInspections(){trainingInspectionPlan.value=null;sourceInspectionPlan.value=null;productionInspectionPlan.value=null;preparationInspectionPlan.value=null;preparationInspectionSaved.value=false;preparationInspectionExact.value=true;adventureInspectionPlan.value=null;adventureInspectionSaved.value=false;}
 function selectTab(next: string) { clearFlowReturns();readingReturn.value=null;detailParent.value=null;clearInspections();navigationRevision++; resumeVisible.value=false; tab.value = next;hubView.value=({'修行':'home','历练':'explore','行囊':'inventory','仙缘':'fate'} as Record<string,string>)[next]??'home'; return navigationRevision; }
 const preparation = shallowRef<Action | null>(null);
-const fontScale = computed({get:()=>experience.preferences.value.fontScale,set:(value:1|1.5|2)=>{void experience.setPreferences({fontScale:value});}}), reduceMotion = computed({get:()=>experience.preferences.value.reduceMotion,set:(value:boolean)=>{void experience.setPreferences({reduceMotion:value});}}), settings = ref<HTMLDialogElement>(), exportError = ref('');
+const fontScale = computed({get:()=>experience.preferences.value.fontScale,set:(value:1|1.5|2)=>{void experience.setPreferences({fontScale:value});}}), reduceMotion = computed({get:()=>experience.preferences.value.reduceMotion,set:(value:boolean)=>{void experience.setPreferences({reduceMotion:value});}}), settings = ref<HTMLDialogElement>();
 const settingsButton=ref<HTMLButtonElement>(),contentPanel=ref<HTMLElement>(),navHeight=ref(0);
 const importButton=ref<HTMLButtonElement>(),importInput=ref<HTMLInputElement>();
 const noticeRegion=ref<HTMLElement>(),noticeHeight=ref(0);
@@ -232,6 +231,10 @@ function confirmationSource(){
  return{current:()=>appActive&&key()===original&&viewKey()===view,mayReturn:()=>appActive&&(core.value?.runId??null)===run&&viewKey()===view};
 }
 function confirmationBlocked(){return store.busy?'当前行动正在保存，请先等保存落定。':!store.available?'存档当前不可写，请先重新读取。':store.unresolved?'上次行动尚未落定，请先重试或核对原结果。':'';}
+const {importNotice,exportError,importFile,exportSave,exportRaw,reset,restore,exportLife}=useSaveControls(store,session,confirmation,name,{
+ source:confirmationSource,blocked:confirmationBlocked,settings:()=>settings.value,importOpener:()=>importButton.value,
+ completed:()=>{selectTab('修行');settings.value?.close();},
+});
 let pendingContentFocus:{owner:number;opener:Element|null}|null=null;
 let beginningJourney:{owner:number;run:string;anchor:Element|null}|null=null;
 type StageFocus={owner:number;sync:number;id:string;run:string;generation:number;ownerId:string;command:string;revision:number;action:string;target:'stage'|'life';anchor:Element|null;ready:boolean};
@@ -544,52 +547,6 @@ const collectionLabel = computed(() => collectionTarget.value ? `${collectionTar
 const knownItems = computed(() => Object.entries(ruleContent.value.items).filter(([id, item]) => !core.value || C.rank(item.min) <= C.rank(core.value.player.realm) || core.value.inventory[id] > 0));
 const localRecipes = computed(() => Object.entries(ruleContent.value.recipes).filter(([, recipe]) => !core.value || C.rank(recipe.min) <= C.rank(core.value.player.realm)));
 function battle(move:Move){if(!game.value?.battle||store.activityRunning)return;return startAdventure(singleBattlePlan(game.value,move));}
-function download(text: string, filename: string, mime = 'application/json') {
-  const url = URL.createObjectURL(new Blob([text], { type: mime }));
-  const a = document.createElement('a'); a.href = url; a.download = filename; a.click();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
-function exportSave() { if (game.value) download(JSON.stringify(session.kind==='demo'?demoSave(session.node!.nodeId,session.node!.sourceDigest,game.value):game.value, null, 2), session.kind==='demo'?'尘缘问道-演示存档.json':'尘缘问道-存档.json'); }
-async function exportRaw() {
-  exportError.value = '';
-  try { const text = await store.rawText(); if (text) download(text, '尘缘问道-原始数据库备份.json'); else exportError.value = '当前没有可导出的数据库'; }
-  catch (e) { exportError.value = e instanceof Error ? e.message : String(e); }
-}
-async function importFile(event: Event) {
-  const input = event.target as HTMLInputElement, file = input.files?.[0], owner=++importReadRevision.value,originDialog=input.closest<HTMLDialogElement>('dialog[open]');
-  importNotice.value='';
-  if (!file) return;
-  input.value='';
-  const intent=store.prepareImport();if(!intent)return;
-  const source=confirmationSource();
-  const owns=()=>appActive&&owner===importReadRevision.value;
-  const unchanged=()=>!store.busy&&store.available&&source.current()&&(game.value?.core.runId??null)===intent.expectedRunId&&(game.value?.core.revision??0)===intent.expectedRevision;
-  if (file.size > MAX_SAVE_BYTES) { store.validationError('存档大于 1 MB，未导入'); input.value = ''; return; }
-  try {
-    let raw=await file.text();
-    if(!owns())return;
-    if(!unchanged()||originDialog&&!originDialog.open){importNotice.value='读取文件期间进度已变化，或已离开原页面，未导入。请重新选择文件并核对。';return;}
-    if(session.kind==='demo'){try{raw=JSON.stringify(parseDemoSave(raw,session.node!.nodeId,session.node!.sourceDigest));}catch(e){store.validationError(e instanceof Error?e.message:'演示存档无法核对。');return;}}
-    const message=(session.kind==='demo'?'导入将替换本节点的演示进度，正常存档保留。请先核对需要保留的备份。':'导入将替换当前进度。建议先导出备份，再明确确认本次覆盖。')+'\n所选文件：'+file.name;
-    if (!game.value || await confirmation.ask({kind:'import',title:'导入存档',message,action:'覆盖并导入',cancel:'保留当前进度',current:()=>owns()&&source.current(),blocked:confirmationBlocked,mayReturn:()=>owns()&&source.mayReturn(),opener:settings.value?.open?importButton.value??null:undefined})) {
-      if(owns()&&unchanged())await store.importPrepared(raw,intent);
-      else if(owns())importNotice.value='确认期间进度或安排已变化，本次未导入。请重新选择文件并核对。';
-    }
-  } catch { if(owns())importNotice.value='文件无法读取，未导入。已有进度保留，请重新选择可读取的存档。'; }
-}
-async function reset() {
-  const source=confirmationSource(),originalName=core.value?.player.name??name.value;
-  if (await confirmation.ask({kind:'restart',title:session.kind==='demo'?'重载演示节点':'重开人生',message:session.kind==='demo'?'重新载入会替换本节点的演示进度，正常存档保留。':'重新开始会替换当前进度。请先导出需要保留的存档；确认后才重开人生。',action:session.kind==='demo'?'重载此节点':'确认重开',cancel:session.kind==='demo'?'保留演示进度':'继续此生',current:source.current,blocked:confirmationBlocked,mayReturn:source.mayReturn})&&source.current()&&!confirmationBlocked()) {
-    if(session.kind==='demo')await store.importText(JSON.stringify(session.node!.game));else await store.restart(originalName); if (!store.error) { selectTab('修行'); settings.value?.close(); }
-  }
-}
-async function restore() {
-  const intent=store.prepareCheckpoint();if(!intent)return;const source=confirmationSource();
-  if (await confirmation.ask({kind:'restore',title:'恢复完整准备',message:'回到最近的完整准备检查点，当前进度将被替换。检查点原件仍保留，请核对后确认。',action:'确认恢复',cancel:'保留当前进度',current:source.current,blocked:confirmationBlocked,mayReturn:source.mayReturn})&&source.current()&&!confirmationBlocked()) {
-    await store.restorePrepared(intent); if (!store.error) { selectTab('修行'); settings.value?.close(); }
-  }
-}
-function exportLife() { if (game.value) download(exportLifeText(game.value), '尘缘问道-生平.txt', 'text/plain;charset=utf-8'); }
 async function showLife(event?:Event) {
   const run=game.value?.core.runId,context=narrativeContext.value;let owner:number;
   rememberHubOrigin(event);if(settings.value?.open){hubOpener=settingsButton.value??null;hubOpenerId=undefined;}settings.value?.close();
