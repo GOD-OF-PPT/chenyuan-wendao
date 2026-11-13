@@ -3,8 +3,12 @@ import { inject, onScopeDispose, ref } from 'vue';
 import { gameFocusKey } from './focus';
 import { demoCatalog } from '../../src/demo.ts';
 import { demoLink } from './demo-loader';
-const demoMenu = ref<HTMLDialogElement>(), focus = inject(gameFocusKey)!;
-const demoMenuNodes = demoCatalog.map(node => ({ ...node, href: demoLink(node.id) }));
+const demoMenu = ref<HTMLDialogElement>(),
+  focus = inject(gameFocusKey)!;
+const demoMenuNodes = demoCatalog.map((node) => ({
+  ...node,
+  href: demoLink(node.id),
+}));
 onScopeDispose(() => focus.release(demoMenu.value));
 defineExpose({ element: demoMenu });
 </script>

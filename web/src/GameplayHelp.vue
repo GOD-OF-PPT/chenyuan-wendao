@@ -4,12 +4,16 @@ import { gameFocusKey } from './focus';
 import { guideCatalog } from './guidance';
 import CataloguePager from './CataloguePager.vue';
 const emit = defineEmits<{
-    reset: [
-    ];
-}>(), guidanceEnabled = defineModel<boolean>('enabled', { required: true });
-const gameplayHelp = ref<HTMLDialogElement>(), helpPage = ref(0), focus = inject(gameFocusKey)!;
+    reset: [];
+  }>(),
+  guidanceEnabled = defineModel<boolean>('enabled', { required: true });
+const gameplayHelp = ref<HTMLDialogElement>(),
+  helpPage = ref(0),
+  focus = inject(gameFocusKey)!;
 const resetSkipped = () => emit('reset');
-function selectTopic(id: string) { helpPage.value = guideCatalog.findIndex(guide => guide.id === id); }
+function selectTopic(id: string) {
+  helpPage.value = guideCatalog.findIndex((guide) => guide.id === id);
+}
 onScopeDispose(() => focus.release(gameplayHelp.value));
 defineExpose({ element: gameplayHelp, selectTopic });
 </script>

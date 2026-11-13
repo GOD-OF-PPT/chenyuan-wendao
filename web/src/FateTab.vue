@@ -6,29 +6,37 @@ import * as C from '../../src/full/content.ts';
 import { contentForGame } from '../../src/full/rule-content.ts';
 import { useActionView } from './use-action-view';
 const store = inject<ReturnType<typeof useGame>>('game-scene')!;
-const game = computed(() => store.game!), core = computed(() => game.value.core), ruleContent = computed(() => contentForGame(game.value));
+const game = computed(() => store.game!),
+  core = computed(() => game.value.core),
+  ruleContent = computed(() => contentForGame(game.value));
 const { quote, can, why, cost } = useActionView(store);
 import { ref, watch } from 'vue';
 import RelationshipPanel from './RelationshipPanel.vue';
 import type { NavigationRequest } from './navigation';
 import { availableEvents } from '../../src/full/engine.ts';
 const props = defineProps<{
-    highlight: string;
+  highlight: string;
 }>();
 const emit = defineEmits<{
-    act: [
-        action: Action
-    ];
-    life: [
-    ];
-    navigate: [
-        request: NavigationRequest
-    ];
+  act: [action: Action];
+  life: [];
+  navigate: [request: NavigationRequest];
 }>();
-const journalExpanded = ref(false), recentJournal = computed(() => [...game.value.journal].reverse()), visibleJournal = computed(() => journalExpanded.value ? recentJournal.value : recentJournal.value.slice(0, 10));
-watch(() => game.value.core.runId, () => journalExpanded.value = false);
+const journalExpanded = ref(false),
+  recentJournal = computed(() => [...game.value.journal].reverse()),
+  visibleJournal = computed(() =>
+    journalExpanded.value
+      ? recentJournal.value
+      : recentJournal.value.slice(0, 10),
+  );
+watch(
+  () => game.value.core.runId,
+  () => (journalExpanded.value = false),
+);
 const events = computed(() => availableEvents(game.value));
-const act = (action: Action) => emit('act', action), showLife = () => emit('life'), navigate = (request: NavigationRequest) => emit('navigate', request);
+const act = (action: Action) => emit('act', action),
+  showLife = () => emit('life'),
+  navigate = (request: NavigationRequest) => emit('navigate', request);
 </script>
 <template>
             <div class="section-label">仙缘</div><button class="text-button" data-testid="show-life" @click="showLife">查看修仙生平 →</button><RelationshipPanel data-primary-region tabindex="-1" :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>

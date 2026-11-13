@@ -1,7 +1,18 @@
 <script setup lang="ts">
-import { computed, inject, nextTick, onScopeDispose, ref, shallowRef } from 'vue';
+import {
+  computed,
+  inject,
+  nextTick,
+  onScopeDispose,
+  ref,
+  shallowRef,
+} from 'vue';
 import type { Action } from '../../src/full/types.ts';
-import { getLifeRecord, getTrialPreparation, getAscensionChoices } from '../../src/full/queries.ts';
+import {
+  getLifeRecord,
+  getTrialPreparation,
+  getAscensionChoices,
+} from '../../src/full/queries.ts';
 import type { LifeRecord } from '../../src/full/life-record.ts';
 import { formatAgeMonths } from '../../src/full/life-record.ts';
 import type { AscensionEnding } from '../../src/full/ascension.ts';
@@ -9,205 +20,438 @@ import type { SaveMutation } from './full-persistence';
 import type { CheckpointSummary, useGame } from './store';
 import { gameFocusKey } from './focus';
 import { useRuleContent } from './rule-content';
-import { prepareMilestoneReview, milestoneReviewStale, type PreparedMilestone } from './milestone-view';
+import {
+  prepareMilestoneReview,
+  milestoneReviewStale,
+  type PreparedMilestone,
+} from './milestone-view';
 import { formatCosts } from './presentation';
 import type { Reading } from './story-pages';
 import ReviewPages from './ReviewPages.vue';
 import type { ClosureNavigation } from './closure-navigation';
 const props = defineProps<{
-    singleScreen: boolean;
-    can: (action: Action) => boolean;
-    navigation: ClosureNavigation;
+  singleScreen: boolean;
+  can: (action: Action) => boolean;
+  navigation: ClosureNavigation;
 }>();
-const store = inject<ReturnType<typeof useGame>>('game-scene')!, focus = inject(gameFocusKey)!;
-const game = computed(() => store.game), ruleContent = useRuleContent(() => store.game);
-const pendingStoryError = computed(() => store.unresolved), uiLocked = computed(() => store.busy || !store.available);
+const store = inject<ReturnType<typeof useGame>>('game-scene')!,
+  focus = inject(gameFocusKey)!;
+const game = computed(() => store.game),
+  ruleContent = useRuleContent(() => store.game);
+const pendingStoryError = computed(() => store.unresolved),
+  uiLocked = computed(() => store.busy || !store.available);
 const can = (action: Action) => props.can(action);
 const lifeDialog = ref<HTMLDialogElement>();
-const lifeIntent = shallowRef<(PreparedMilestone & {
-    record: LifeRecord;
-}) | null>(null);
+const lifeIntent = shallowRef<
+  | (PreparedMilestone & {
+      record: LifeRecord;
+    })
+  | null
+>(null);
 const lifeStale = computed(() => milestoneReviewStale(store, lifeIntent.value));
 let alive = true;
 async function requestEnd(type: 'RETIRE' | 'END_LIFE') {
-    if (!alive || !game.value || pendingStoryError.value || !can({ type }))
-        return;
-    const prepared = prepareMilestoneReview(store, { type });
-    if (!prepared)
-        return;
-    lifeIntent.value = { ...prepared, record: getLifeRecord(game.value) };
-    const opener = props.navigation.leaveSettings();
-    await nextTick();
-    if (alive)
-        focus.open(lifeDialog.value, opener);
+  if (!alive || !game.value || pendingStoryError.value || !can({ type }))
+    return;
+  const prepared = prepareMilestoneReview(store, { type });
+  if (!prepared) return;
+  lifeIntent.value = { ...prepared, record: getLifeRecord(game.value) };
+  const opener = props.navigation.leaveSettings();
+  await nextTick();
+  if (alive) focus.open(lifeDialog.value, opener);
 }
 async function confirmEnd() {
-    const intent = lifeIntent.value;
-    if (!intent || store.busy || pendingStoryError.value || lifeStale.value)
-        return;
-    const owner = props.navigation.owner(), sync = store.syncEpoch;
-    await store.startPreparedMilestone(intent.intent);
-    if (alive && lifeIntent.value === intent && (!store.error || store.wasConfirmedFor(intent.command.commandId, intent.command.runId))) {
-        lifeDialog.value?.close();
-        props.navigation.accepted(intent, owner, sync, 'life');
-    }
+  const intent = lifeIntent.value;
+  if (!intent || store.busy || pendingStoryError.value || lifeStale.value)
+    return;
+  const owner = props.navigation.owner(),
+    sync = store.syncEpoch;
+  await store.startPreparedMilestone(intent.intent);
+  if (
+    alive &&
+    lifeIntent.value === intent &&
+    (!store.error ||
+      store.wasConfirmedFor(intent.command.commandId, intent.command.runId))
+  ) {
+    lifeDialog.value?.close();
+    props.navigation.accepted(intent, owner, sync, 'life');
+  }
 }
 async function retryEnd() {
-    const review = lifeIntent.value;
-    if (!review || !store.canRetryFor(review.command.commandId))
-        return;
-    await store.retryFor(review.command.commandId);
-    if (alive && lifeIntent.value === review && (!store.error || store.wasConfirmedFor(review.command.commandId, review.command.runId)))
-        lifeDialog.value?.close();
+  const review = lifeIntent.value;
+  if (!review || !store.canRetryFor(review.command.commandId)) return;
+  await store.retryFor(review.command.commandId);
+  if (
+    alive &&
+    lifeIntent.value === review &&
+    (!store.error ||
+      store.wasConfirmedFor(review.command.commandId, review.command.runId))
+  )
+    lifeDialog.value?.close();
 }
-function cancelLife(event: Event) { if (store.busy)
-    event.preventDefault(); }
+function cancelLife(event: Event) {
+  if (store.busy) event.preventDefault();
+}
 function closeLifeReview() {
-    if (lifeDialog.value?.open)
-        return;
-    if (lifeIntent.value)
-        store.discardRetryFor(lifeIntent.value.command.commandId);
-    lifeIntent.value = null;
+  if (lifeDialog.value?.open) return;
+  if (lifeIntent.value)
+    store.discardRetryFor(lifeIntent.value.command.commandId);
+  lifeIntent.value = null;
 }
 const trialDialog = ref<HTMLDialogElement>();
-const trialIntent = shallowRef<(PreparedMilestone & {
-    view: ReturnType<typeof getTrialPreparation>;
-}) | null>(null);
-const trialStale = computed(() => milestoneReviewStale(store, trialIntent.value));
+const trialIntent = shallowRef<
+  | (PreparedMilestone & {
+      view: ReturnType<typeof getTrialPreparation>;
+    })
+  | null
+>(null);
+const trialStale = computed(() =>
+  milestoneReviewStale(store, trialIntent.value),
+);
 async function reviewTrial() {
-    if (!alive || !game.value || pendingStoryError.value || !can({ type: 'START_TRIAL' }))
-        return;
-    const prepared = prepareMilestoneReview(store, { type: 'START_TRIAL' });
-    if (!prepared)
-        return;
-    trialIntent.value = { ...prepared, view: getTrialPreparation(game.value) };
-    const opener = document.querySelector<HTMLElement>('[data-testid=trial-review-entry]');
-    props.navigation.leaveSettings();
-    await nextTick();
-    if (alive)
-        focus.open(trialDialog.value, opener);
+  if (
+    !alive ||
+    !game.value ||
+    pendingStoryError.value ||
+    !can({ type: 'START_TRIAL' })
+  )
+    return;
+  const prepared = prepareMilestoneReview(store, { type: 'START_TRIAL' });
+  if (!prepared) return;
+  trialIntent.value = { ...prepared, view: getTrialPreparation(game.value) };
+  const opener = document.querySelector<HTMLElement>(
+    '[data-testid=trial-review-entry]',
+  );
+  props.navigation.leaveSettings();
+  await nextTick();
+  if (alive) focus.open(trialDialog.value, opener);
 }
 async function confirmTrial() {
-    const intent = trialIntent.value;
-    if (!intent || store.busy || pendingStoryError.value || trialStale.value)
-        return;
-    const owner = props.navigation.owner(), sync = store.syncEpoch;
-    await store.startPreparedMilestone(intent.intent);
-    if (alive && trialIntent.value === intent && (!store.error || store.wasConfirmedFor(intent.command.commandId, intent.command.runId))) {
-        trialDialog.value?.close();
-        props.navigation.accepted(intent, owner, sync, 'stage');
-    }
+  const intent = trialIntent.value;
+  if (!intent || store.busy || pendingStoryError.value || trialStale.value)
+    return;
+  const owner = props.navigation.owner(),
+    sync = store.syncEpoch;
+  await store.startPreparedMilestone(intent.intent);
+  if (
+    alive &&
+    trialIntent.value === intent &&
+    (!store.error ||
+      store.wasConfirmedFor(intent.command.commandId, intent.command.runId))
+  ) {
+    trialDialog.value?.close();
+    props.navigation.accepted(intent, owner, sync, 'stage');
+  }
 }
-async function retryTrial() { const intent = trialIntent.value; if (!intent || !store.canRetryFor(intent.command.commandId))
-    return; await store.retryFor(intent.command.commandId); if (alive && trialIntent.value === intent && (!store.error || store.wasConfirmedFor(intent.command.commandId, intent.command.runId)))
-    trialDialog.value?.close(); }
-function closeTrialReview() { if (trialDialog.value?.open)
-    return; if (trialIntent.value)
-    store.discardRetryFor(trialIntent.value.command.commandId); trialIntent.value = null; }
+async function retryTrial() {
+  const intent = trialIntent.value;
+  if (!intent || !store.canRetryFor(intent.command.commandId)) return;
+  await store.retryFor(intent.command.commandId);
+  if (
+    alive &&
+    trialIntent.value === intent &&
+    (!store.error ||
+      store.wasConfirmedFor(intent.command.commandId, intent.command.runId))
+  )
+    trialDialog.value?.close();
+}
+function closeTrialReview() {
+  if (trialDialog.value?.open) return;
+  if (trialIntent.value)
+    store.discardRetryFor(trialIntent.value.command.commandId);
+  trialIntent.value = null;
+}
 const trialRestoreDialog = ref<HTMLDialogElement>();
 const trialRestoreIntent = shallowRef<{
-    command: SaveMutation;
-    checkpoint: CheckpointSummary;
+  command: SaveMutation;
+  checkpoint: CheckpointSummary;
 } | null>(null);
-const trialRestoreStale = computed(() => !!trialRestoreIntent.value && (!game.value || game.value.core.runId !== trialRestoreIntent.value.command.expectedRunId || game.value.core.revision !== trialRestoreIntent.value.command.expectedRevision));
+const trialRestoreStale = computed(
+  () =>
+    !!trialRestoreIntent.value &&
+    (!game.value ||
+      game.value.core.runId !==
+        trialRestoreIntent.value.command.expectedRunId ||
+      game.value.core.revision !==
+        trialRestoreIntent.value.command.expectedRevision),
+);
 async function requestTrialRestore() {
-    if (!alive || store.checkpointSummary?.kind !== 'trial' || pendingStoryError.value)
-        return;
-    const command = store.prepareCheckpoint();
-    if (!command)
-        return;
-    trialRestoreIntent.value = { command, checkpoint: structuredClone(store.checkpointSummary) };
-    const opener = document.querySelector<HTMLElement>('[data-testid=trial-restore-open]');
-    await nextTick();
-    if (alive)
-        focus.open(trialRestoreDialog.value, opener);
+  if (
+    !alive ||
+    store.checkpointSummary?.kind !== 'trial' ||
+    pendingStoryError.value
+  )
+    return;
+  const command = store.prepareCheckpoint();
+  if (!command) return;
+  trialRestoreIntent.value = {
+    command,
+    checkpoint: structuredClone(store.checkpointSummary),
+  };
+  const opener = document.querySelector<HTMLElement>(
+    '[data-testid=trial-restore-open]',
+  );
+  await nextTick();
+  if (alive) focus.open(trialRestoreDialog.value, opener);
 }
 async function confirmTrialRestore() {
-    const review = trialRestoreIntent.value;
-    if (!review || store.busy || trialRestoreStale.value)
-        return;
-    await store.restorePrepared(review.command);
-    if (alive && !store.error) {
-        trialRestoreDialog.value?.close();
-        await props.navigation.showTrialPreparation();
-    }
+  const review = trialRestoreIntent.value;
+  if (!review || store.busy || trialRestoreStale.value) return;
+  await store.restorePrepared(review.command);
+  if (alive && !store.error) {
+    trialRestoreDialog.value?.close();
+    await props.navigation.showTrialPreparation();
+  }
 }
 async function retryTrialRestore() {
-    const review = trialRestoreIntent.value;
-    if (!review || store.busy || !store.canRetryFor(review.command.commandId))
-        return;
-    await store.retryFor(review.command.commandId);
-    if (alive && !store.error) {
-        trialRestoreDialog.value?.close();
-        await props.navigation.showTrialPreparation();
-    }
+  const review = trialRestoreIntent.value;
+  if (!review || store.busy || !store.canRetryFor(review.command.commandId))
+    return;
+  await store.retryFor(review.command.commandId);
+  if (alive && !store.error) {
+    trialRestoreDialog.value?.close();
+    await props.navigation.showTrialPreparation();
+  }
 }
-function closeTrialRestore() { if (trialRestoreDialog.value?.open)
-    return; if (trialRestoreIntent.value)
-    store.discardRetryFor(trialRestoreIntent.value.command.commandId); trialRestoreIntent.value = null; }
+function closeTrialRestore() {
+  if (trialRestoreDialog.value?.open) return;
+  if (trialRestoreIntent.value)
+    store.discardRetryFor(trialRestoreIntent.value.command.commandId);
+  trialRestoreIntent.value = null;
+}
 const ascensionDialog = ref<HTMLDialogElement>();
-const ascensionIntent = shallowRef<(PreparedMilestone & {
-    view: ReturnType<typeof getAscensionChoices>;
-    choice: ReturnType<typeof getAscensionChoices>['choices'][number];
-    ending: AscensionEnding;
-}) | null>(null);
-const ascensionStale = computed(() => milestoneReviewStale(store, ascensionIntent.value));
+const ascensionIntent = shallowRef<
+  | (PreparedMilestone & {
+      view: ReturnType<typeof getAscensionChoices>;
+      choice: ReturnType<typeof getAscensionChoices>['choices'][number];
+      ending: AscensionEnding;
+    })
+  | null
+>(null);
+const ascensionStale = computed(() =>
+  milestoneReviewStale(store, ascensionIntent.value),
+);
 async function reviewAscension(ending: AscensionEnding) {
-    if (!alive || !game.value || pendingStoryError.value || !can({ type: 'END', ending }))
-        return;
-    const prepared = prepareMilestoneReview(store, { type: 'END', ending });
-    if (!prepared)
-        return;
-    const view = getAscensionChoices(game.value);
-    ascensionIntent.value = { ...prepared, view, choice: view.choices.find(choice => choice.ending === ending)!, ending };
-    const opener = document.querySelector<HTMLElement>(`[data-testid=ending-${ending}]`);
-    await nextTick();
-    if (alive)
-        focus.open(ascensionDialog.value, opener);
+  if (
+    !alive ||
+    !game.value ||
+    pendingStoryError.value ||
+    !can({ type: 'END', ending })
+  )
+    return;
+  const prepared = prepareMilestoneReview(store, { type: 'END', ending });
+  if (!prepared) return;
+  const view = getAscensionChoices(game.value);
+  ascensionIntent.value = {
+    ...prepared,
+    view,
+    choice: view.choices.find((choice) => choice.ending === ending)!,
+    ending,
+  };
+  const opener = document.querySelector<HTMLElement>(
+    `[data-testid=ending-${ending}]`,
+  );
+  await nextTick();
+  if (alive) focus.open(ascensionDialog.value, opener);
 }
 async function confirmAscension() {
-    const review = ascensionIntent.value;
-    if (!review || store.busy || pendingStoryError.value || ascensionStale.value)
-        return;
-    const owner = props.navigation.owner(), sync = store.syncEpoch;
-    await store.startPreparedMilestone(review.intent);
-    if (alive && ascensionIntent.value === review && (!store.error || store.wasConfirmedFor(review.command.commandId, review.command.runId))) {
-        ascensionDialog.value?.close();
-        props.navigation.accepted(review, owner, sync, 'life');
-    }
+  const review = ascensionIntent.value;
+  if (!review || store.busy || pendingStoryError.value || ascensionStale.value)
+    return;
+  const owner = props.navigation.owner(),
+    sync = store.syncEpoch;
+  await store.startPreparedMilestone(review.intent);
+  if (
+    alive &&
+    ascensionIntent.value === review &&
+    (!store.error ||
+      store.wasConfirmedFor(review.command.commandId, review.command.runId))
+  ) {
+    ascensionDialog.value?.close();
+    props.navigation.accepted(review, owner, sync, 'life');
+  }
 }
 async function retryAscension() {
-    const review = ascensionIntent.value;
-    if (!review || !store.canRetryFor(review.command.commandId))
-        return;
-    await store.retryFor(review.command.commandId);
-    if (alive && ascensionIntent.value === review && (!store.error || store.wasConfirmedFor(review.command.commandId, review.command.runId)))
-        ascensionDialog.value?.close();
+  const review = ascensionIntent.value;
+  if (!review || !store.canRetryFor(review.command.commandId)) return;
+  await store.retryFor(review.command.commandId);
+  if (
+    alive &&
+    ascensionIntent.value === review &&
+    (!store.error ||
+      store.wasConfirmedFor(review.command.commandId, review.command.runId))
+  )
+    ascensionDialog.value?.close();
 }
-function closeAscension() { if (ascensionDialog.value?.open)
-    return; if (ascensionIntent.value)
-    store.discardRetryFor(ascensionIntent.value.command.commandId); ascensionIntent.value = null; }
+function closeAscension() {
+  if (ascensionDialog.value?.open) return;
+  if (ascensionIntent.value)
+    store.discardRetryFor(ascensionIntent.value.command.commandId);
+  ascensionIntent.value = null;
+}
 function confirmationReadings(kind: string): Reading[] {
-    if (kind === 'life' && lifeIntent.value) {
-        const r = lifeIntent.value.record;
-        return [{ key: 'identity', title: '当前人生', testId: 'life-review', text: r.overview.name + ' · ' + r.overview.ageLabel + ' · ' + r.overview.realmName + ' · 行道' + r.overview.elapsedMonths + '游戏月' }, { key: 'scope', title: '保留与恢复', text: '当前存档与人物记录保留，可导出；恢复检查点会回退完整准备状态。此确认不会开启新的人生。' }];
-    }
-    if (kind === 'ending' && ascensionIntent.value) {
-        const r = ascensionIntent.value.view.record;
-        return [{ key: 'identity', title: '当前人生', testId: 'ascension-review-identity', text: r.overview.name + ' · ' + r.overview.ageLabel + ' · 行道' + r.overview.elapsedMonths + '游戏月' }, { key: 'opening', title: '开卷', text: r.opening.text }, { key: 'training', title: '配装', text: r.training.school + ' · ' + r.training.loadout.map(s => s.name).join(' / ') + ' · ' + r.training.equippedRelic }, ...r.decisions.map(d => ({ key: d.id, title: d.npc, text: d.text })), { key: 'pledges', title: '护阵', text: r.pledges.text }];
-    }
-    if (kind === 'restore' && trialRestoreIntent.value) {
-        const r = trialRestoreIntent.value.checkpoint.target;
-        return [{ key: 'identity', title: '恢复目标', testId: 'trial-restore-target', text: r.name + ' · ' + ruleContent.value.realms[r.realm].name + ' · 行道' + r.months + '游戏月' }, { key: 'supplies', title: '准备状态', text: '气血 ' + r.hp + ' · 灵力 ' + r.mp + ' · 渡劫引 ' + r.inventory.ascension_seal }];
-    }
-    if (kind === 'entry' && trialIntent.value) {
-        const r = trialIntent.value.view, p = r.preparation, m = r.snapshotSummary;
-        return [{ key: 'identity', title: '正式入场', testId: 'trial-review-identity', text: m.name + ' · ' + m.realm + ' · ' + formatAgeMonths(m.ageMonths) + ' · 行道' + m.elapsedMonths + '游戏月' }, { key: 'stats', title: '气血灵力', text: '气血 ' + p.hp + ' / ' + p.maxHp + ' · 灵力 ' + p.mp + ' / ' + p.maxMp + ' · 灵石 ' + m.stones }, { key: 'loadout', title: '配装', text: p.loadout.map(s => s.name).join(' / ') + ' · ' + p.relic }, { key: 'scope', title: '完整准备范围', text: '包括全部已掌握与剑简资格、背包、装备/法宝、人物选择、里程碑与当前进度，不只保存境界。' }, { key: 'inventory', title: '准备物资', text: m.inventory.map(i => i.name + ' ×' + i.quantity).join(' · ') }, { key: 'records', title: '已掌握记录', text: '已掌握 ' + m.learned.length + '项，已有法宝 ' + m.relics.length + '件，已选事件 ' + m.choiceCount + '项。' }, { key: 'journey', title: '入场之后', text: '开始后先回答问心，准备与消耗跨三关保留。此处只确认入场，不代表已经渡劫成功。' }];
-    }
-    return [];
+  if (kind === 'life' && lifeIntent.value) {
+    const r = lifeIntent.value.record;
+    return [
+      {
+        key: 'identity',
+        title: '当前人生',
+        testId: 'life-review',
+        text:
+          r.overview.name +
+          ' · ' +
+          r.overview.ageLabel +
+          ' · ' +
+          r.overview.realmName +
+          ' · 行道' +
+          r.overview.elapsedMonths +
+          '游戏月',
+      },
+      {
+        key: 'scope',
+        title: '保留与恢复',
+        text: '当前存档与人物记录保留，可导出；恢复检查点会回退完整准备状态。此确认不会开启新的人生。',
+      },
+    ];
+  }
+  if (kind === 'ending' && ascensionIntent.value) {
+    const r = ascensionIntent.value.view.record;
+    return [
+      {
+        key: 'identity',
+        title: '当前人生',
+        testId: 'ascension-review-identity',
+        text:
+          r.overview.name +
+          ' · ' +
+          r.overview.ageLabel +
+          ' · 行道' +
+          r.overview.elapsedMonths +
+          '游戏月',
+      },
+      { key: 'opening', title: '开卷', text: r.opening.text },
+      {
+        key: 'training',
+        title: '配装',
+        text:
+          r.training.school +
+          ' · ' +
+          r.training.loadout.map((s) => s.name).join(' / ') +
+          ' · ' +
+          r.training.equippedRelic,
+      },
+      ...r.decisions.map((d) => ({ key: d.id, title: d.npc, text: d.text })),
+      { key: 'pledges', title: '护阵', text: r.pledges.text },
+    ];
+  }
+  if (kind === 'restore' && trialRestoreIntent.value) {
+    const r = trialRestoreIntent.value.checkpoint.target;
+    return [
+      {
+        key: 'identity',
+        title: '恢复目标',
+        testId: 'trial-restore-target',
+        text:
+          r.name +
+          ' · ' +
+          ruleContent.value.realms[r.realm].name +
+          ' · 行道' +
+          r.months +
+          '游戏月',
+      },
+      {
+        key: 'supplies',
+        title: '准备状态',
+        text:
+          '气血 ' +
+          r.hp +
+          ' · 灵力 ' +
+          r.mp +
+          ' · 渡劫引 ' +
+          r.inventory.ascension_seal,
+      },
+    ];
+  }
+  if (kind === 'entry' && trialIntent.value) {
+    const r = trialIntent.value.view,
+      p = r.preparation,
+      m = r.snapshotSummary;
+    return [
+      {
+        key: 'identity',
+        title: '正式入场',
+        testId: 'trial-review-identity',
+        text:
+          m.name +
+          ' · ' +
+          m.realm +
+          ' · ' +
+          formatAgeMonths(m.ageMonths) +
+          ' · 行道' +
+          m.elapsedMonths +
+          '游戏月',
+      },
+      {
+        key: 'stats',
+        title: '气血灵力',
+        text:
+          '气血 ' +
+          p.hp +
+          ' / ' +
+          p.maxHp +
+          ' · 灵力 ' +
+          p.mp +
+          ' / ' +
+          p.maxMp +
+          ' · 灵石 ' +
+          m.stones,
+      },
+      {
+        key: 'loadout',
+        title: '配装',
+        text: p.loadout.map((s) => s.name).join(' / ') + ' · ' + p.relic,
+      },
+      {
+        key: 'scope',
+        title: '完整准备范围',
+        text: '包括全部已掌握与剑简资格、背包、装备/法宝、人物选择、里程碑与当前进度，不只保存境界。',
+      },
+      {
+        key: 'inventory',
+        title: '准备物资',
+        text: m.inventory.map((i) => i.name + ' ×' + i.quantity).join(' · '),
+      },
+      {
+        key: 'records',
+        title: '已掌握记录',
+        text:
+          '已掌握 ' +
+          m.learned.length +
+          '项，已有法宝 ' +
+          m.relics.length +
+          '件，已选事件 ' +
+          m.choiceCount +
+          '项。',
+      },
+      {
+        key: 'journey',
+        title: '入场之后',
+        text: '开始后先回答问心，准备与消耗跨三关保留。此处只确认入场，不代表已经渡劫成功。',
+      },
+    ];
+  }
+  return [];
 }
-onScopeDispose(() => { alive = false; for (const dialog of [lifeDialog, trialDialog, trialRestoreDialog, ascensionDialog])
-    focus.release(dialog.value); });
+onScopeDispose(() => {
+  alive = false;
+  for (const dialog of [
+    lifeDialog,
+    trialDialog,
+    trialRestoreDialog,
+    ascensionDialog,
+  ])
+    focus.release(dialog.value);
+});
 defineExpose({ requestEnd, reviewTrial, reviewAscension, requestTrialRestore });
 </script>
 <template>

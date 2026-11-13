@@ -8,42 +8,54 @@ import { useActionView } from './use-action-view';
 import GameIcon from './GameIcon.vue';
 import LocalExperiencePanel from './LocalExperiencePanel.vue';
 const props = defineProps<{
-    experience: ReturnType<typeof useLocalExperience>;
-    target: TrackingTarget;
-    saveLabel: string;
-    exportError: string;
-    importNotice: string;
+  experience: ReturnType<typeof useLocalExperience>;
+  target: TrackingTarget;
+  saveLabel: string;
+  exportError: string;
+  importNotice: string;
 }>();
 const emit = defineEmits<{
-    help: [
-    ];
-    demos: [
-    ];
-    life: [
-        event: MouseEvent
-    ];
-    retire: [
-    ];
-    import: [
-        event: Event
-    ];
-    export: [
-    ];
-    raw: [
-    ];
-    restart: [
-    ];
-    restore: [
-    ];
+  help: [];
+  demos: [];
+  life: [event: MouseEvent];
+  retire: [];
+  import: [event: Event];
+  export: [];
+  raw: [];
+  restart: [];
+  restore: [];
 }>();
-const store = inject<ReturnType<typeof useGame>>('game-scene')!, focus = inject(gameFocusKey)!;
-const game = computed(() => store.game), core = computed(() => game.value?.core), uiLocked = computed(() => store.busy || !store.available), saveDisplayLabel = computed(() => props.saveLabel);
+const store = inject<ReturnType<typeof useGame>>('game-scene')!,
+  focus = inject(gameFocusKey)!;
+const game = computed(() => store.game),
+  core = computed(() => game.value?.core),
+  uiLocked = computed(() => store.busy || !store.available),
+  saveDisplayLabel = computed(() => props.saveLabel);
 const { can } = useActionView(store);
-const settings = ref<HTMLDialogElement>(), importButton = ref<HTMLButtonElement>(), importInput = ref<HTMLInputElement>();
-const fontScale = computed({ get: () => props.experience.preferences.value.fontScale, set: (value: 1 | 1.5 | 2) => { void props.experience.setPreferences({ fontScale: value }); } });
-const reduceMotion = computed({ get: () => props.experience.preferences.value.reduceMotion, set: (value: boolean) => { void props.experience.setPreferences({ reduceMotion: value }); } });
-const showGameplayHelp = () => emit('help'), showDemoMenu = () => emit('demos'), showLife = (event: MouseEvent) => emit('life', event), requestEnd = (_type: 'RETIRE') => emit('retire');
-const importFile = (event: Event) => emit('import', event), exportSave = () => emit('export'), exportRaw = () => emit('raw'), reset = () => emit('restart'), restore = () => emit('restore');
+const settings = ref<HTMLDialogElement>(),
+  importButton = ref<HTMLButtonElement>(),
+  importInput = ref<HTMLInputElement>();
+const fontScale = computed({
+  get: () => props.experience.preferences.value.fontScale,
+  set: (value: 1 | 1.5 | 2) => {
+    void props.experience.setPreferences({ fontScale: value });
+  },
+});
+const reduceMotion = computed({
+  get: () => props.experience.preferences.value.reduceMotion,
+  set: (value: boolean) => {
+    void props.experience.setPreferences({ reduceMotion: value });
+  },
+});
+const showGameplayHelp = () => emit('help'),
+  showDemoMenu = () => emit('demos'),
+  showLife = (event: MouseEvent) => emit('life', event),
+  requestEnd = (_type: 'RETIRE') => emit('retire');
+const importFile = (event: Event) => emit('import', event),
+  exportSave = () => emit('export'),
+  exportRaw = () => emit('raw'),
+  reset = () => emit('restart'),
+  restore = () => emit('restore');
 onScopeDispose(() => focus.release(settings.value));
 defineExpose({ element: settings, importButton });
 </script>

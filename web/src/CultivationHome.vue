@@ -4,7 +4,10 @@ import type { useGame } from './store';
 import type { Action } from '../../src/full/types.ts';
 import type { NavigationRequest } from './navigation';
 import { previewAction, getBreakthroughGoal } from '../../src/full/queries.ts';
-import { previewActivity, type CultivationPlan } from '../../src/full/activity.ts';
+import {
+  previewActivity,
+  type CultivationPlan,
+} from '../../src/full/activity.ts';
 import { gamePhase } from '../../src/full/contracts.ts';
 import * as C from '../../src/full/content.ts';
 import { contentForGame } from '../../src/full/rule-content.ts';
@@ -24,67 +27,136 @@ import LifespanGuide from './LifespanGuide.vue';
 import TrainingActivity from './TrainingActivity.vue';
 import TrialReturnChoices from './TrialReturnChoices.vue';
 const props = defineProps<{
-    immersive: boolean;
-    cultivationHome: boolean;
+  immersive: boolean;
+  cultivationHome: boolean;
 }>();
-const hubTrainingMethod = defineModel<'natural' | 'assisted'>('method', { required: true });
+const hubTrainingMethod = defineModel<'natural' | 'assisted'>('method', {
+  required: true,
+});
 const emit = defineEmits<{
-    open: [
-        view: string,
-        event?: Event,
-        mode?: 'required' | 'checkpoint'
-    ];
-    prepare: [
-        event?: Event
-    ];
-    destination: [
-        request: NavigationRequest
-    ];
-    act: [
-        action: Action
-    ];
-    start: [
-        plan?: CultivationPlan
-    ];
-    school: [
-        event?: Event
-    ];
-    life: [
-        event: Event
-    ];
-    settings: [
-    ];
-    inspectPlan: [
-    ];
-    receipt: [
-    ];
-    compare: [
-        method: 'natural' | 'assisted'
-    ];
+  open: [view: string, event?: Event, mode?: 'required' | 'checkpoint'];
+  prepare: [event?: Event];
+  destination: [request: NavigationRequest];
+  act: [action: Action];
+  start: [plan?: CultivationPlan];
+  school: [event?: Event];
+  life: [event: Event];
+  settings: [];
+  inspectPlan: [];
+  receipt: [];
+  compare: [method: 'natural' | 'assisted'];
 }>();
 const store = inject<ReturnType<typeof useGame>>('game-scene')!;
-const game = computed(() => store.game!), core = computed(() => game.value.core), ruleContent = computed(() => contentForGame(game.value)), realm = computed(() => ruleContent.value.realms[core.value.player.realm]);
+const game = computed(() => store.game!),
+  core = computed(() => game.value.core),
+  ruleContent = computed(() => contentForGame(game.value)),
+  realm = computed(() => ruleContent.value.realms[core.value.player.realm]);
 const quote = (action: Action) => previewAction(game.value, action);
-const can = (action: Action) => store.available && !store.busy && !store.activityRunning && !!quote(action)?.allowed;
-const cost = (action: Action) => { const preview = quote(action), c = preview.costs; if (!c)
-    return ''; const text = formatCosts(c); return preview.requestedSteps > 1 ? '每次 ' + text : text; };
-const step = computed(() => nextStep(game.value)), needsPreparation = computed(() => step.value?.kind === 'prepare');
-const needsSchool = computed(() => gamePhase(game.value) === 'idle' && C.rank(core.value.player.realm) >= C.rank('qi') && !game.value.school);
-const goal = computed(() => getBreakthroughGoal(game.value)), lifeState = computed(() => lifespanGuidance(game.value));
-const pendingStoryError = computed(() => store.unresolved), uiLocked = computed(() => store.busy || !store.available);
-const recoveryNeeded = computed(() => !!quote({ type: 'REST' })?.allowed), producing = computed(() => !!store.activity && store.activity.status !== 'stopped' && (store.activity.plan.kind === 'craft' || store.activity.plan.kind === 'forge'));
-const breakthrough = computed<Action>(() => ({ type: core.value.player.realm === 'spirit' ? 'START_TRIAL' : 'BREAKTHROUGH' }));
-const primaryBreakthrough = computed(() => props.cultivationHome && (core.value.player.realm === 'spirit' ? core.value.player.xp >= realm.value.xpCap : !!quote(breakthrough.value)?.allowed));
-const breakthroughLabel = computed(() => core.value.player.realm === 'mortal' ? '引气入体' : core.value.player.realm === 'spirit' ? '查看渡劫准备' : '确认突破');
-const caveGate = computed(() => props.cultivationHome && (primaryBreakthrough.value || needsPreparation.value) && step.value?.kind !== 'recover');
-const trialReturn = computed(() => trialReturnView(game.value, store.hasCheckpoint ? store.checkpointSummary : null, store.trialRecovery, store.ready && store.available && !store.busy && !store.syncIssue && !(store.warning && !store.hasCheckpoint)));
-const defaultTraining: CultivationPlan = { kind: 'cultivation', method: 'natural', maxCycles: 50, until: 'xp-cap', stoneBudget: 0, stoneReserve: 0 };
-const hubTrainingPlan = computed<CultivationPlan>(() => ({ ...defaultTraining, method: hubTrainingMethod.value, stoneBudget: hubTrainingMethod.value === 'natural' ? 0 : Math.min(core.value.player.stones, (quote({ type: 'CULTIVATE', method: 'assisted', count: 1 })?.costs?.stones ?? 0) * 50) }));
-const hubCycle = computed(() => quote({ type: 'CULTIVATE', method: hubTrainingMethod.value, count: 1 })), hubTrainingQuote = computed(() => previewActivity(game.value, hubTrainingPlan.value));
-const naturalCycle = computed(() => quote({ type: 'CULTIVATE', method: 'natural', count: 1 })), trainingQuote = computed(() => previewActivity(game.value, defaultTraining));
-const openHub = (view: string, event?: Event, mode?: 'required' | 'checkpoint') => emit('open', view, event, mode);
+const can = (action: Action) =>
+  store.available &&
+  !store.busy &&
+  !store.activityRunning &&
+  !!quote(action)?.allowed;
+const cost = (action: Action) => {
+  const preview = quote(action),
+    c = preview.costs;
+  if (!c) return '';
+  const text = formatCosts(c);
+  return preview.requestedSteps > 1 ? '每次 ' + text : text;
+};
+const step = computed(() => nextStep(game.value)),
+  needsPreparation = computed(() => step.value?.kind === 'prepare');
+const needsSchool = computed(
+  () =>
+    gamePhase(game.value) === 'idle' &&
+    C.rank(core.value.player.realm) >= C.rank('qi') &&
+    !game.value.school,
+);
+const goal = computed(() => getBreakthroughGoal(game.value)),
+  lifeState = computed(() => lifespanGuidance(game.value));
+const pendingStoryError = computed(() => store.unresolved),
+  uiLocked = computed(() => store.busy || !store.available);
+const recoveryNeeded = computed(() => !!quote({ type: 'REST' })?.allowed),
+  producing = computed(
+    () =>
+      !!store.activity &&
+      store.activity.status !== 'stopped' &&
+      (store.activity.plan.kind === 'craft' ||
+        store.activity.plan.kind === 'forge'),
+  );
+const breakthrough = computed<Action>(() => ({
+  type: core.value.player.realm === 'spirit' ? 'START_TRIAL' : 'BREAKTHROUGH',
+}));
+const primaryBreakthrough = computed(
+  () =>
+    props.cultivationHome &&
+    (core.value.player.realm === 'spirit'
+      ? core.value.player.xp >= realm.value.xpCap
+      : !!quote(breakthrough.value)?.allowed),
+);
+const breakthroughLabel = computed(() =>
+  core.value.player.realm === 'mortal'
+    ? '引气入体'
+    : core.value.player.realm === 'spirit'
+      ? '查看渡劫准备'
+      : '确认突破',
+);
+const caveGate = computed(
+  () =>
+    props.cultivationHome &&
+    (primaryBreakthrough.value || needsPreparation.value) &&
+    step.value?.kind !== 'recover',
+);
+const trialReturn = computed(() =>
+  trialReturnView(
+    game.value,
+    store.hasCheckpoint ? store.checkpointSummary : null,
+    store.trialRecovery,
+    store.ready &&
+      store.available &&
+      !store.busy &&
+      !store.syncIssue &&
+      !(store.warning && !store.hasCheckpoint),
+  ),
+);
+const defaultTraining: CultivationPlan = {
+  kind: 'cultivation',
+  method: 'natural',
+  maxCycles: 50,
+  until: 'xp-cap',
+  stoneBudget: 0,
+  stoneReserve: 0,
+};
+const hubTrainingPlan = computed<CultivationPlan>(() => ({
+  ...defaultTraining,
+  method: hubTrainingMethod.value,
+  stoneBudget:
+    hubTrainingMethod.value === 'natural'
+      ? 0
+      : Math.min(
+          core.value.player.stones,
+          (quote({ type: 'CULTIVATE', method: 'assisted', count: 1 })?.costs
+            ?.stones ?? 0) * 50,
+        ),
+}));
+const hubCycle = computed(() =>
+    quote({ type: 'CULTIVATE', method: hubTrainingMethod.value, count: 1 }),
+  ),
+  hubTrainingQuote = computed(() =>
+    previewActivity(game.value, hubTrainingPlan.value),
+  );
+const naturalCycle = computed(() =>
+    quote({ type: 'CULTIVATE', method: 'natural', count: 1 }),
+  ),
+  trainingQuote = computed(() => previewActivity(game.value, defaultTraining));
+const openHub = (
+  view: string,
+  event?: Event,
+  mode?: 'required' | 'checkpoint',
+) => emit('open', view, event, mode);
 const openPreparation = (event?: Event) => emit('prepare', event);
-const inspectCaveDestination = (request: NavigationRequest) => emit('destination', request);
+const inspectCaveDestination = (request: NavigationRequest) =>
+  emit('destination', request);
 const act = (action: Action) => emit('act', action);
 const startTraining = (plan?: CultivationPlan) => emit('start', plan);
 const showEquipment = (event?: Event) => emit('school', event);
@@ -92,7 +164,8 @@ const inspectLifespan = (event: Event) => emit('life', event);
 const showSettings = () => emit('settings');
 const viewActivityPlan = () => emit('inspectPlan');
 const viewReceipt = () => emit('receipt');
-const openTradeoffs = (_kind: 'cultivation', method: 'natural' | 'assisted') => emit('compare', method);
+const openTradeoffs = (_kind: 'cultivation', method: 'natural' | 'assisted') =>
+  emit('compare', method);
 </script>
 <template>
 <div v-if="immersive" class="art06-stage-home" :class="{'art17-stage':caveGate&&!trialReturn?.choice,'art17-needs-material':needsPreparation,'trial-return-home':!!trialReturn?.choice}">

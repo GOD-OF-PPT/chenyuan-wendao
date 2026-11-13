@@ -25,6 +25,7 @@
     "demo:generate": "node --experimental-strip-types scripts/demo-nodes.mjs"
   },
   "devDependencies": {
+    "prettier": "3.6.2",
     "typescript": "5.8.3"
   }
 }

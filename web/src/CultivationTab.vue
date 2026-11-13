@@ -7,7 +7,9 @@ import { contentForGame } from '../../src/full/rule-content.ts';
 import { useActionView } from './use-action-view';
 import { formatCosts } from './presentation';
 const store = inject<ReturnType<typeof useGame>>('game-scene')!;
-const game = computed(() => store.game!), core = computed(() => game.value.core), ruleContent = computed(() => contentForGame(game.value));
+const game = computed(() => store.game!),
+  core = computed(() => game.value.core),
+  ruleContent = computed(() => contentForGame(game.value));
 const { quote, can, why, cost } = useActionView(store);
 import AssetImage from './AssetImage.vue';
 import GameIcon from './GameIcon.vue';
@@ -15,33 +17,56 @@ import BatchPreview from './BatchPreview.vue';
 import { DESKTOP_UI_ASSETS } from './assets';
 import { getBreakthroughGoal } from '../../src/full/queries.ts';
 const props = defineProps<{
-    cultivationHome: boolean;
+  cultivationHome: boolean;
 }>();
 const batch = defineModel<number | 'target'>('batch', { required: true });
 const emit = defineEmits<{
-    act: [
-        action: Action
-    ];
-    travel: [
-        location: C.LocationId
-    ];
-    school: [
-    ];
-    focus: [
-    ];
-    trackBreakthrough: [
-    ];
+  act: [action: Action];
+  travel: [location: C.LocationId];
+  school: [];
+  focus: [];
+  trackBreakthrough: [];
 }>();
-const natural = computed<Action>(() => ({ type: 'CULTIVATE', method: 'natural', count: batch.value === 'target' ? C.maxBatch : batch.value }));
-const assisted = computed<Action>(() => ({ type: 'CULTIVATE', method: 'assisted', count: batch.value === 'target' ? C.maxBatch : batch.value }));
-const naturalPreview = computed(() => quote(natural.value)), goal = computed(() => getBreakthroughGoal(game.value));
-const realm = computed(() => ruleContent.value.realms[core.value.player.realm]), location = computed(() => C.locations[core.value.world.location]);
-const needsSchool = computed(() => C.rank(core.value.player.realm) >= C.rank('qi') && !game.value.school);
-const breakthrough = computed<Action>(() => ({ type: core.value.player.realm === 'spirit' ? 'START_TRIAL' : 'BREAKTHROUGH' }));
-const primaryBreakthrough = computed(() => props.cultivationHome && (core.value.player.realm === 'spirit' ? core.value.player.xp >= realm.value.xpCap : !!quote(breakthrough.value)?.allowed));
-const breakthroughLabel = computed(() => core.value.player.realm === 'mortal' ? '引气入体' : core.value.player.realm === 'spirit' ? '查看渡劫准备' : '确认突破');
+const natural = computed<Action>(() => ({
+  type: 'CULTIVATE',
+  method: 'natural',
+  count: batch.value === 'target' ? C.maxBatch : batch.value,
+}));
+const assisted = computed<Action>(() => ({
+  type: 'CULTIVATE',
+  method: 'assisted',
+  count: batch.value === 'target' ? C.maxBatch : batch.value,
+}));
+const naturalPreview = computed(() => quote(natural.value)),
+  goal = computed(() => getBreakthroughGoal(game.value));
+const realm = computed(() => ruleContent.value.realms[core.value.player.realm]),
+  location = computed(() => C.locations[core.value.world.location]);
+const needsSchool = computed(
+  () => C.rank(core.value.player.realm) >= C.rank('qi') && !game.value.school,
+);
+const breakthrough = computed<Action>(() => ({
+  type: core.value.player.realm === 'spirit' ? 'START_TRIAL' : 'BREAKTHROUGH',
+}));
+const primaryBreakthrough = computed(
+  () =>
+    props.cultivationHome &&
+    (core.value.player.realm === 'spirit'
+      ? core.value.player.xp >= realm.value.xpCap
+      : !!quote(breakthrough.value)?.allowed),
+);
+const breakthroughLabel = computed(() =>
+  core.value.player.realm === 'mortal'
+    ? '引气入体'
+    : core.value.player.realm === 'spirit'
+      ? '查看渡劫准备'
+      : '确认突破',
+);
 const uiLocked = computed(() => store.busy || !store.available);
-const act = (action: Action) => emit('act', action), travel = (location: C.LocationId) => emit('travel', location), showEquipment = () => emit('school'), focusCultivation = () => emit('focus'), showBreakthroughGoal = () => emit('trackBreakthrough');
+const act = (action: Action) => emit('act', action),
+  travel = (location: C.LocationId) => emit('travel', location),
+  showEquipment = () => emit('school'),
+  focusCultivation = () => emit('focus'),
+  showBreakthroughGoal = () => emit('trackBreakthrough');
 </script>
 <template>
             <template v-if="core.world.location === 'cave'">
