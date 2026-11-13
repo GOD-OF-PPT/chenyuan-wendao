@@ -7,6 +7,7 @@ import {useSaveControls} from './use-save-controls';
 import {useActionView} from './use-action-view';
 import {useStageReturns} from './use-stage-returns';
 import {useConfigurationReview} from './use-configuration-review';
+import {useDirectActions} from './use-direct-actions';
 import GameSettings from './GameSettings.vue';
 import DemoMenu from './DemoMenu.vue';
 import GameplayHelp from './GameplayHelp.vue';
@@ -31,7 +32,6 @@ import { useTracking } from './use-tracking';
 import { formatCosts, formatDelta } from './presentation';
 import type { NavigationRequest } from './navigation';
 import {repeats} from '../../src/full/repetition';
-import {isDirectAction,type DirectAction} from '../../src/full/direct-actions';
 import GoalPanel from './GoalPanel.vue';
 import CharacterPanel from './CharacterPanel.vue';
 import GameHud from './GameHud.vue';
@@ -178,8 +178,8 @@ const equipmentEntry=ref(0);
 const equipmentSection=computed(()=>equipmentReading.value.runId===game.value?.core.runId?equipmentReading.value.section:'');
 const preferHomeNavigation=ref(false);
 watch(()=>store.activity?.id,()=>preferHomeNavigation.value=false);
-function selectPrimaryTab(next:string){directViewEpoch++;preferHomeNavigation.value=next==='修行';return selectTab(next);}
-function openPrimaryFeature(view:string,event?:Event){directViewEpoch++;if(view==='skills'||view==='relics')equipmentEntry.value++;return openHub(view,event);}
+function selectPrimaryTab(next:string){browseDirect();preferHomeNavigation.value=next==='修行';return selectTab(next);}
+function openPrimaryFeature(view:string,event?:Event){browseDirect();if(view==='skills'||view==='relics')equipmentEntry.value++;return openHub(view,event);}
 const navigationView=computed(()=>{
  const view=detailViews.has(hubView.value)?detailParent.value?.view??hubView.value:hubView.value;
  if(view==='current')return game.value?.battle||game.value?.trial?'explore':'fate';
@@ -351,34 +351,10 @@ function choiceDetails(action:Action,detail:string){const p=quote(action);return
 function viewReceipt(){if(store.activity?.version===7&&store.activity.stopReason?.code!=='STATE_CHANGED')return inspectMilestone(store.activity);return openHub('receipt');}
 const stoppedTraining = computed(()=>store.activity?.status==='stopped'&&store.activity.stopReason?.code!=='STATE_CHANGED');
 function act(action: Action) { resumeVisible.value=false;if(action.type==='TRAVEL')return travel(action.location);if(action.type==='BATTLE')return battle(action.move);if(action.type==='ENCOUNTER')return inspectAdventure(action.enemy);if(action.type==='CULTIVATE'){const n=action.count??1;return startTraining({kind:'cultivation',method:action.method,maxCycles:n,until:'cycles',stoneBudget:action.method==='natural'?0:Math.min(core.value?.player.stones??0,(quote({...action,count:1})?.costs?.stones??0)*n),stoneReserve:0});}if(action.type==='SOURCE'){const n=action.count??1,source=ruleContent.value.sources[action.sourceId],target=action.target?{kind:'item' as const,id:action.target.item,quantity:action.target.quantity}:batch.value==='target'?collectionTarget.value:null;return startSource({kind:'source',sourceId:action.sourceId,maxCycles:n,until:target?'target':'cycles',target,monthBudget:n*source.months,remainingMonthsReserve:1});}if(action.type==='CRAFT'||action.type==='FORGE')return inspectProduction(action);if(['BUY','SELL','USE','REST','LEARN','STUDY'].includes(action.type))return inspectPreparation(action);if(action.type==='SCHOOL'||action.type==='EQUIP'||action.type==='EQUIP_RELIC')return inspectConfiguration(action);if(store.activityRunning){store.activityNotice='当前活动进行中，请先暂停再行动。';return;}if (action.type === 'START_TRIAL') return showTrialPreparation(); if (action.type === 'END') return reviewAscension(action.ending); if(isMilestoneAction(action))return selectMilestone(action); const owner=navigationRevision; return focus.afterAction(async()=>{await store.act(action);},()=>owner===navigationRevision); }
-let directViewEpoch=0;
-watch(()=>[hubView.value,tab.value,detailParent.value?.view,detailParent.value?.tab],()=>directViewEpoch++,{flush:'sync'});
-let directVisit:{command:string;run:string;event:string;view:number;sync:number}|null=null;
-async function finishDirectVisit(){
- const p=directVisit;if(!p)return;
- if(!appActive||directViewEpoch!==p.view||store.syncEpoch!==p.sync||game.value?.core.runId!==p.run){directVisit=null;return;}
- if(store.busy||store.error||!store.wasConfirmedFor(p.command,p.run)||game.value.core.activeEvent?.id!==p.event)return;
- directVisit=null;await openHub('current');
-}
-watch(()=>[store.busy,store.error,store.game,store.syncEpoch,hubView.value,tab.value],()=>{void finishDirectVisit();},{flush:'post'});
-async function lightAction(action:DirectAction,confirm=true){
- if(!game.value||pendingStoryError.value||store.busy||store.activityRunning)return;
- const before=game.value,intent=store.prepareDirect(action);if(!intent)return;
- const source=confirmationSource(),quote=previewAction(before,action);if(!quote.allowed)return;
- const consequence=store.activity?.status==='paused'?'本次行动将结束已暂停的原活动，已完成成果保留，未完成部分不再续行。':'';
- const event=action.type==='EVENT'?getStoryContext(before,action.event):action.type==='DECIDE'&&before.core.activeEvent?getStoryContext(before,before.core.activeEvent.id):null;
- const detail=action.type==='DECIDE'?event?.options.find(o=>o.id===action.option)?.detail:action.type==='EVENT'?event?.body:'';
- const label=action.type==='EVENT'?'拜访 · '+event?.name:action.type==='DECIDE'?event?.options.find(o=>o.id===action.option)?.label:action.type==='USE'?'服用1枚'+ruleContent.value.items[action.item].name:'售出1件'+ruleContent.value.items[action.item].name;
- if(confirm&&!await confirmation.ask({kind:'light-action',title:label??'确认本次行动',message:[detail,'本次投入：'+formatCosts(quote.actualCosts??quote.costs),'预计变化：'+(quote.delta?formatDelta(quote.delta):'无'),consequence].filter(Boolean).join('\n'),action:label??'确认行动',cancel:'再想想',current:source.current,blocked:confirmationBlocked,mayReturn:source.mayReturn}))return;
- if(!source.current()||confirmationBlocked())return;
- const owner=navigationRevision,anchor=focus.capture();
- if(action.type==='EVENT')directVisit={command:intent.command.commandId,run:intent.command.runId,event:action.event,view:directViewEpoch,sync:store.syncEpoch};
- await store.executeDirect(intent);
- await finishDirectVisit();
- if(!confirm&&owner===navigationRevision&&!store.error){await nextTick();if(anchor&&!anchor.isConnected&&(document.activeElement===document.body||document.activeElement?.matches('[data-testid=inventory-library-open]')))focus.target(['[data-testid=inventory-main-source]','[data-testid=inventory-main-uses]','[data-testid=inventory-library-open]'].map(selector=>document.querySelector<HTMLElement>(selector)).find(visibleFocusTarget)??null);}
-}
-function storyAct(action:Action){if(!pendingStoryError.value)return isDirectAction(action)&&['EVENT','DECIDE'].includes(action.type)?lightAction(action):act(action);}
-function quickInventory(action:Action){if(isDirectAction(action)&&['USE','SELL'].includes(action.type))return lightAction(action,false);}
+const {storyAct,quickInventory,browse:browseDirect}=useDirectActions(store,focus,confirmation,{
+ owner:()=>navigationRevision,viewIdentity:()=>[hubView.value,tab.value,detailParent.value?.view,detailParent.value?.tab],
+ source:confirmationSource,blocked:confirmationBlocked,openCurrent:()=>openHub('current'),regular:act,
+});
 function trackTrialMaterial(target:Parameters<typeof selectTracking>[0]){selectTracking(target);void openHub('goal');}
 function retryOperation(){const owner=navigationRevision;return focus.afterAction(()=>store.retry(),()=>owner===navigationRevision);}
 // The viewing intent belongs to the accepted trip, not to a timer or a later unrelated save.
@@ -586,7 +562,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
 </main>
 <aside v-if="!immersive&&game&&game.status==='active'&&singleScreen&&!hubMain&&catalogueView" class="feature-state" data-testid="feature-state"><CharacterPanel :game="game" compact @inspect="openHub('character',$event)"/><TrainingActivity v-if="store.activity&&store.activity.status!=='stopped'" :store="store" compact @settings="viewActivityPlan" @details="viewReceipt"/><TrainingActivity v-else-if="stoppedTraining" :store="store" summary @settings="viewActivityPlan" @details="viewReceipt"/><StageOutcome v-else :game="game" :result="store.lastResult" :busy="store.busy" :saved="store.saved" :available="store.available" :error="store.error" :sync-issue="store.syncIssue" :replayed="store.lastReplayed" :execution="store.execution" :next="step?.title??'查看当前目标'" @next="inspectNext()" @details="viewReceipt"/></aside>
 <main v-if="store.ready&&game && core" v-show="!hubMain" class="game-grid" :class="{'hub-feature':singleScreen}" :aria-busy="store.busy">
-<header v-if="singleScreen" class="feature-header"><div><h2 id="feature-title" tabindex="-1">{{game.status==='active'?hubTitle:hubView==='goal'?'此卷历程':['current','fate'].includes(hubView)?'修仙生平':hubTitle}}</h2></div><div class="feature-actions"><FeatureMenu :identity="game.core.runId+':'+hubView" :guide="catalogueView&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" :preparation="hubView!=='journey'&&phase==='idle'&&!!realm.pill" :goal="hubView!=='goal'" :blueprints="navigationGate(game,'relics').locked" :sealed="game.status!=='active'" @browse="directViewEpoch++" @guide="showCatalogueGuide()" @preparation="openPreparation()" @goal="openHub('goal')" @blueprints="openPrimaryFeature('relics')"/><button data-testid="hub-close" :aria-label="detailParent||hubView==='life'&&readingReturn?'返回原玩法':'返回主舞台'" @click="closeHub">{{detailParent||hubView==='life'&&readingReturn?'返回原处':'返回舞台'}} <GameIcon kind="action" id="close"/></button></div></header>
+<header v-if="singleScreen" class="feature-header"><div><h2 id="feature-title" tabindex="-1">{{game.status==='active'?hubTitle:hubView==='goal'?'此卷历程':['current','fate'].includes(hubView)?'修仙生平':hubTitle}}</h2></div><div class="feature-actions"><FeatureMenu :identity="game.core.runId+':'+hubView" :guide="catalogueView&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" :preparation="hubView!=='journey'&&phase==='idle'&&!!realm.pill" :goal="hubView!=='goal'" :blueprints="navigationGate(game,'relics').locked" :sealed="game.status!=='active'" @browse="browseDirect()" @guide="showCatalogueGuide()" @preparation="openPreparation()" @goal="openHub('goal')" @blueprints="openPrimaryFeature('relics')"/><button data-testid="hub-close" :aria-label="detailParent||hubView==='life'&&readingReturn?'返回原玩法':'返回主舞台'" @click="closeHub">{{detailParent||hubView==='life'&&readingReturn?'返回原处':'返回舞台'}} <GameIcon kind="action" id="close"/></button></div></header>
 <section v-show="!hubMain&&(!singleScreen||!['goal','character'].includes(hubView))" class="center-column" :class="{'in-battle':game.battle&&!inspectingInventory}">
 <ScenePanel v-if="!singleScreen" :meditation="cultivationHome&&!producing&&!immersive" :battle-stage="!!game.battle&&!inspectingInventory" :game="game" :eyebrow="phase==='opening'?'初遇 / 山雨破庙':location.subtitle" :title="phase==='opening'?'雨中故人':game.status==='ascended'?overview!.title:game.battle?location.name:activeStory?.name??location.name" :description="game.status==='ascended'?'此卷已收，来路犹存。':game.battle?'先辨来势，再决进退。':'山海不言，修行自有回响。'" :with-action="!cultivationHome&&(!game.battle||inspectingInventory)"><button v-if="!cultivationHome&&(!game.battle||inspectingInventory)" type="button" class="scene-action-link" data-testid="scene-action-jump" @click="focusPrimary">{{phase==='opening'?'前往抉择':'前往当前操作'}} ↓</button></ScenePanel>
 
@@ -603,7 +579,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
 <KeepAlive :max="2"><ExplorePanel :key="game.core.runId+'ExplorePanel'+hubView" v-if="singleScreen&&hubView==='explore'" :game="game" :busy="store.busy" :available="store.available" :highlight="highlight" :collection="collectionTarget" :purchase-quantity="quantity" :running="store.activityRunning" :saved-adventure-plan="adventureInspectionPlan" :plan-saved="adventureInspectionSaved" :activity="store.activity" :runtime="store.activityRuntime" :saved-source-plan="sourceInspectionPlan" :saved-preparation-plan="preparationInspectionPlan" :preparation-saved="preparationInspectionSaved" :preparation-exact="preparationInspectionExact" :consumption="consumption" @travel-plan="movePreparation" @track="trackProduction" @start="plan=>plan.kind==='source'?startSource(plan):isAdventurePlan(plan)?startAdventure(plan):startPreparation(plan)" @act="act" @travel="travel" @home="closeHub"/></KeepAlive>
 <KeepAlive :max="2"><GoodsPanel :key="game.core.runId+'GoodsPanel'+hubView" v-if="singleScreen&&(hubView==='inventory'||hubView==='forge')" :minimal="immersive&&hubView==='forge'" :mode="hubView==='forge'?'forge':'inventory'" :game="game" :busy="store.busy" :available="store.available" :highlight="highlight" :consumption="consumption" :running="store.activityRunning" :activity="store.activity" :runtime="store.activityRuntime" :saved-production="productionInspectionPlan" :saved-preparation-plan="preparationInspectionPlan" :preparation-saved="preparationInspectionSaved" @travel-plan="movePreparation" @start="startProduction" @move="moveProduction" @act="act" @quick="quickInventory" @track="trackProduction" @travel="travel"/></KeepAlive>
 <NarrativeStageHost :active="storyView">
-<KeepAlive :max="1"><FateCatalogue :key="game.core.runId+readingGeneration+'FateCatalogue'" v-if="storyView&&(hubView==='fate'||hubView==='current'&&phase==='idle')&&game.status==='active'" :game="game" :enabled="store.available" :running="store.activityRunning" :busy="store.busy" :highlight="highlight" :journal-key="journalKey" @browse="directViewEpoch++" @act="storyAct" @navigate="navigate" @life="showLife" @resume="resumeEncounter" @dialogue="openHub('current')"/></KeepAlive>
+<KeepAlive :max="1"><FateCatalogue :key="game.core.runId+readingGeneration+'FateCatalogue'" v-if="storyView&&(hubView==='fate'||hubView==='current'&&phase==='idle')&&game.status==='active'" :game="game" :enabled="store.available" :running="store.activityRunning" :busy="store.busy" :highlight="highlight" :journal-key="journalKey" @browse="browseDirect()" @act="storyAct" @navigate="navigate" @life="showLife" @resume="resumeEncounter" @dialogue="openHub('current')"/></KeepAlive>
 <KeepAlive :max="1"><LifeCatalogue ref="lifeBook" :key="game.core.runId+readingGeneration+game.status+'LifeCatalogue'" v-if="storyView&&(hubView==='life'||['fate','current'].includes(hubView)&&game.status!=='active')" :game="game" :end-reason="why({type:'RETIRE'})" :enabled="store.available" :running="store.activityRunning" :busy="store.busy" :has-checkpoint="store.hasCheckpoint" @end="requestEnd" @export="exportLife" @restore="restore" @restart="reset" @receipt="viewReceipt"/></KeepAlive>
 <KeepAlive :max="1"><NarrativePanel :key="game.core.runId+readingGeneration+'NarrativePanel'" v-if="storyView&&hubView==='current'&&narrativeFor(game)" :game="game" :context="narrativeContext" :enabled="store.available" :running="store.activityRunning" :busy="store.busy" :consumption="consumption" @act="storyAct" @life="showLife" @progress="openHub('trial')"/></KeepAlive>
 </NarrativeStageHost>
