@@ -139,6 +139,7 @@ test('an unaffordable owned conversion retains its exact quote and a one-dew sou
   await openHubFeature(page, 'relics');
   await selectRelic(page, 'jade_seal');
   await ownedArtifactSize(page, 'jade_seal');
+  await expect(page.getByTestId('production-equip-reason')).toBeVisible();
   await expect(page.getByTestId('production-equip-reason')).toContainText(
     '灵露',
   );
