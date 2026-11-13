@@ -4,6 +4,8 @@
 
 独立功能PR的最新递交与冻结验收见[交付状态](delivery-status.md)；main下方开工状态表保初始安排，功能分支实施记录保各自受测来源，不以未合并main冒已发布产品。
 
+2026-11-14最新：已递交16/20；Q16/PR60及Q14/Q15/Q16综合已按接受源7c67f7b闭合，见[终态](q16-ci-acceptance.md)与[综合](q16-three-task-check.md)。继续Q17—Q20，原生目标保持active。
+
 ## 范围与依据
 
 - [综合结论](review/00-synthesis.md)为主清单；[体验](review/01-player-experience.md)、[设计](review/02-game-design.md)、[工程](review/03-engineering.md)为证据，原图在 review/ux-shots。
