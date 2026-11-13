@@ -48,7 +48,7 @@ export function proveControl(raw:any,before:any,game:Game,kind:string,mode:Proof
    if(old)put(expected,'full-backups',prefix+'/activity',old);
    if(clock){
     put(expected,'full-backups',prefix+'/schedule',clock);
-    const values=before.rows['full-receipts'].map((v:any)=>v.value).filter((v:any)=>v?.format==='chenyuan-scheduled-receipt');
+    const values=before.rows['full-receipts'].map((v:any)=>v.value).filter((v:any)=>v?.format==='chenyuan-scheduled-receipt'&&v.input.mutation.runId===game.core.runId);
     const summary=summarizeAway(game,old,clock,values);
     if(summary){const receipts=values.filter((v:any)=>v.input.kind==='ADVANCE'&&v.proof.recordAfter.activity.id===old.id&&(v.proof.scheduleBefore?.window?.id??v.input.mutation.commandId)===summary.id&&v.proof.cycles>0);put(expected,'full-backups',prefix+'/away-summary',{format:'chenyuan-away-summary-archive',version:1,summary,receipts});}
    }

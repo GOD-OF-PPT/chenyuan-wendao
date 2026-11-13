@@ -65,3 +65,9 @@ be2792c构建112文件/11,638,228字节，十核心989过；runtime81558a613f4c0
 正常路线原首条全程1/1通过；相关完整5文件34/34 UI通过，均为修复阶段而非完整198或32。真实prefix旧人生的scheduled原件仍受保护，另补同点红：当前人生prefix的summary读取误吸旧prefix:prior窗口。只按实际input.mutation.runId归属进入当前summary，archive同理；原键/证明校验保留，原生红后1/1绿。
 
 完整三层最终验收尚待本轮新冻结源；不得把34+159或正常1+原32相加成当前完整通过。所有old/dirty/冻结身份及失败产物分开。
+
+## 草稿与原生夹具隔离
+
+0662a54已推送独立分支并开草稿PR59，远端SHA和upstream0/0核同；本地112文件/11,638,650字节构建、989根/十核心过。该冻结的完整Native496为495过1红，原trace显示组件初始evaluate期间发生实际重新导航。补两页原生同点场景，WebSocket直接记录full-reload及triggeredBy=本次回收的.generated/q14-db10-666-*源码，timeOrigin变更/本页marker消失。不是推测DB停顿或改游戏时钟。Vite仅忽略这类唯一临时固定源路径的watch，正常src热更新、代码加载与全部两worker并发保持；原生同点红后5/5（完整proof与升级文件）过。
+
+最后独立Spec指出START归档的测试expected仍混入旧人生pending scheduled原件；补真实两人生/旧pending当前完整summary案例在原helper红，expected现与生产实际run边界一致，所有store仍最后逐深比较。两项修复均无测试重试/时限放宽或案例撤出。当前声明498 Native，尚需最新冻结终态。PR59保持草稿，不记本项已完成；旧066远端所有run终态仍按其原SHA观察。
