@@ -5,6 +5,7 @@ import { currentVersions, type SaveVersions } from '../../src/full/versions.ts';
 import { previewAction, type ResourceDeficit } from '../../src/full/queries.ts';
 import type { Action, Command, Game } from '../../src/full/types.ts';
 import type { ActionResult } from '../../src/full/contracts.ts';
+import { receiptIdEpoch } from './receipt-command-id.ts';
 
 export const LOCAL_RECORD_LIMIT = 1000,
   LOCAL_BYTE_LIMIT = 1_000_000;
@@ -100,6 +101,13 @@ const uuid =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 export const publicId = (value: unknown): string | null =>
   typeof value === 'string' && uuid.test(value) ? value : null;
+const publicCommandId = (value: unknown): string | null =>
+  publicId(value) ??
+  (typeof value === 'string' &&
+  receiptIdEpoch(value) !== null &&
+  uuid.test(value.slice(value.indexOf('-') + 1))
+    ? value
+    : null);
 const kinds: ObservationKind[] = [
   'session',
   'resume',
@@ -210,6 +218,9 @@ const errorCodes = new Set([
   'REALM_CHAIN',
   'REALM_REQUIRED',
   'RECEIPT_INVALID',
+  'RECEIPT_EXPIRED',
+  'RECEIPT_NOT_DELIVERED',
+  'RETENTION_INVALID',
   'RECIPE_INPUT',
   'RECIPE_MATERIAL_ROUTE',
   'RELIC_EFFECT',
@@ -410,7 +421,7 @@ export function writeObservation(
         : source.kind;
   const value = base(kind, after ?? before);
   value.replayed = replayed;
-  value.commandId = publicId(
+  value.commandId = publicCommandId(
     source.kind === 'action' ? source.command.commandId : source.commandId,
   );
   value.sourceRunId = publicId(
@@ -579,8 +590,8 @@ export function validateRecord(record: unknown): asserts record is LocalRecord {
       typeof o.replayed === 'boolean' &&
       typeof o.identifiersRedacted === 'boolean',
   );
-  for (const id of [o.commandId, o.runId, o.sourceRunId])
-    valid(id === null || publicId(id));
+  valid(o.commandId === null || publicCommandId(o.commandId));
+  for (const id of [o.runId, o.sourceRunId]) valid(id === null || publicId(id));
   for (const rev of [o.revisionBefore, o.revisionAfter, o.observedRevision])
     if (rev !== null) integer(rev);
   valid(

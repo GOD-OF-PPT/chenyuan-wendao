@@ -16,7 +16,11 @@ import type {
   CommitOutcome,
   SaveCheckpoint,
 } from '../../src/full/contracts.ts';
-import { FullSaveRepository, rawBackupText } from './full-persistence';
+import {
+  FullSaveRepository,
+  rawBackupText,
+  createReceiptReceiver,
+} from './full-persistence';
 import type {
   ControlOutcome,
   SaveMutation,
@@ -112,6 +116,9 @@ export const useGame = defineStore('game', () => {
     totalMs: number;
     phase: 'running' | 'saving' | 'pausing';
   } | null>(null);
+  const receiptReceiver = createReceiptReceiver();
+  const deliveryDebt = new Map<string, { runId: string; commandId: string }>();
+  const retentionWarning = '进度已保存；部分旧记载暂未整理，原件已保留。';
   const activityOwner = crypto.randomUUID(),
     activityClock = createActivityClock();
   const activityRunning = computed(() => activity.value?.status === 'running');
@@ -184,7 +191,7 @@ export const useGame = defineStore('game', () => {
       ? String(value.code)
       : '';
   const mutation = (): SaveMutation => ({
-    commandId: crypto.randomUUID(),
+    commandId: repository!.issueCommandId(),
     runId: crypto.randomUUID(),
     expectedRunId: game.value?.core.runId ?? null,
     expectedRevision: game.value?.core.revision ?? 0,
@@ -213,7 +220,7 @@ export const useGame = defineStore('game', () => {
   function activityMutation(): ActivityMutation | null {
     if (!game.value || !repository || !available.value) return null;
     return {
-      commandId: crypto.randomUUID(),
+      commandId: repository!.issueCommandId(),
       runId: game.value.core.runId,
       expectedRevision: game.value.core.revision,
       expectedActivityId: activity.value?.id ?? null,
@@ -314,7 +321,7 @@ export const useGame = defineStore('game', () => {
           )
             return;
           const intent: ActivityMutation = {
-            commandId: crypto.randomUUID(),
+            commandId: repository!.issueCommandId(),
             runId: current.runId,
             expectedRevision: current.gameRevision,
             expectedActivityId: current.id,
@@ -413,7 +420,7 @@ export const useGame = defineStore('game', () => {
             },
           }
         : null;
-      warning.value = '';
+      warning.value = deliveryDebt.size ? retentionWarning : '';
     } catch (value) {
       if (!currentRead()) return;
       if (codeOf(value) === 'STORAGE_CLOSED') throw value;
@@ -572,7 +579,10 @@ export const useGame = defineStore('game', () => {
     pendingCycle = null;
     canRetry.value = false;
     try {
-      const opened = await FullSaveRepository.open(session.gameDatabase);
+      const opened = await FullSaveRepository.open(
+        session.gameDatabase,
+        receiptReceiver,
+      );
       if (!owns()) {
         opened.close();
         return;
@@ -742,6 +752,22 @@ export const useGame = defineStore('game', () => {
         outcome = await operation();
       if (!owns()) return;
       confirmed = true;
+      if (commandId) {
+        const runId = outcome.state.core.runId;
+        // Only this awaited response creates delivery debt. Reads, peer progress
+        // and an internally offered reply that never arrived cannot do so.
+        deliveryDebt.set(runId + ':' + commandId, { runId, commandId });
+        for (const [key, debt] of deliveryDebt) {
+          try {
+            await source.confirmDelivery(debt.runId, debt.commandId);
+            deliveryDebt.delete(key);
+          } catch {
+            if (owns()) warning.value = retentionWarning;
+          }
+          if (!owns()) return;
+        }
+        if (!owns()) return;
+      }
       if (commandId) {
         confirmedCommands.delete(commandId);
         confirmedCommands.set(commandId, outcome.state.core.runId);
@@ -959,7 +985,7 @@ export const useGame = defineStore('game', () => {
     const intent: DirectIntent = {
       command: {
         ...action,
-        commandId: crypto.randomUUID(),
+        commandId: repository!.issueCommandId(),
         runId: game.value.core.runId,
         expectedRevision: game.value.core.revision,
       },
@@ -1006,7 +1032,7 @@ export const useGame = defineStore('game', () => {
     return structuredClone({
       command: {
         ...action,
-        commandId: crypto.randomUUID(),
+        commandId: repository!.issueCommandId(),
         runId: game.value.core.runId,
         expectedRevision: game.value.core.revision,
       },

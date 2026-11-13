@@ -1,3 +1,4 @@
+import {confirmedDelivery} from './support';
 import { test, expect } from '@playwright/test';
 import { setupPersistence } from './support';
 import {repositoryFsRoot as root} from './fs-root';
@@ -89,7 +90,7 @@ test('Store configuration lost delivery stays retryable after refresh makes its 
   expect(r.failed.error).toContain('回复丢失'); expect(r.failed.canRetry).toBe(true); expect(r.matchingRetry).toBe(true);
   expect(r.failed.game.core.revision).toBeGreaterThan(r.intent.command.expectedRevision); expect(r.failed.game).toEqual(r.delivered.state); expect(r.failed.lastResult).toBeNull();
   expect(r.after.error).toBe(''); expect(r.after.lastReplayed).toBe(true); expect(r.after.lastFromActivity).toBe(false);
-  expect(r.after.lastResult).toEqual(r.delivered.result); expect(r.after.game).toEqual(r.delivered.state); expect(r.afterRetry).toEqual(r.beforeRetry); expect(r.attempts).toEqual([r.intent, r.intent]);
+  expect(r.after.lastResult).toEqual(r.delivered.result); expect(r.after.game).toEqual(r.delivered.state); expect(r.afterRetry).toEqual(confirmedDelivery(r.beforeRetry,r.intent.command)); expect(r.attempts).toEqual([r.intent, r.intent]);
 });
 
 test('Store configuration rejects an old paused-activity confirmation after another arrangement replaces it at the same Game revision', async ({ page }) => {

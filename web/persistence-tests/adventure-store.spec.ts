@@ -1,3 +1,4 @@
+import {confirmedDelivery} from './support';
 import { test, expect } from '@playwright/test';
 import { setupPersistence } from './support';
 
@@ -64,7 +65,7 @@ test('Store lost battle-turn delivery replays the original result and begins a f
     const h = (globalThis as any).h, f = h.activityStore; return { ui: f.state(), raw: await h.inspect(h.FULL_DB_NAME) };
   });
   expect(replay.ui.error).toBe(''); expect(replay.ui.lastReplayed).toBe(true); expect(replay.ui.lastFromActivity).toBe(true);
-  expect(replay.ui.game).toEqual(failed.ui.game); expect(replay.ui.lastResult).toEqual(failed.delivered.outcome.result); expect(replay.raw).toEqual(failed.raw);
+  expect(replay.ui.game).toEqual(failed.ui.game); expect(replay.ui.lastResult).toEqual(failed.delivered.outcome.result); expect(replay.raw).toEqual(confirmedDelivery(failed.raw,failed.delivered.outcome.result));
   expect(replay.ui.runtime.remainingMs).toBe(3000); await page.clock.runFor(2999); expect(await page.evaluate(() => (globalThis as any).h.activityStore.store.game)).toEqual(failed.ui.game);
   await page.evaluate(() => (globalThis as any).h.activityStore.store.pauseCultivation());
 });

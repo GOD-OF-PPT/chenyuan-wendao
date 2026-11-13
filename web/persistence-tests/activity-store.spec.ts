@@ -1,3 +1,4 @@
+import {confirmedDelivery} from './support';
 import { test, expect } from '@playwright/test';
 import { setupPersistence } from './support';
 
@@ -178,7 +179,7 @@ test('Store retry replays a committed cycle and pause/resume preserve its replay
   expect(retried.ui.error).toBe(''); expect(retried.ui.canRetry).toBe(false); expect(retried.ui.lastReplayed).toBe(true);
   expect(retried.ui.lastResult).toEqual(failed.delivery.outcome.result); expect(retried.ui.lastFromActivity).toBe(true);
   expect(retried.ui.game).toEqual(failed.persisted.state); expect(retried.persisted).toEqual(failed.persisted);
-  expect(retried.raw).toEqual(failed.raw); expect(retried.ui.runtime.remainingMs).toBe(60_000);
+  expect(retried.raw).toEqual(confirmedDelivery(failed.raw,failed.delivery.outcome.result)); expect(retried.ui.runtime.remainingMs).toBe(60_000);
   await page.evaluate(() => (globalThis as any).h.activityStore.store.pauseCultivation());
   const paused = await page.evaluate(() => (globalThis as any).h.activityStore.state());
   expect(paused.activity.status).toBe('paused'); expect(paused.runtime).toBeNull();
@@ -308,7 +309,7 @@ test('source Store replays a lost material-cycle delivery and a pause during com
   });
   expect(retry.ui.error).toBe(''); expect(retry.ui.lastReplayed).toBe(true); expect(retry.ui.lastFromActivity).toBe(true);
   expect(retry.ui.lastResult).toEqual(failed.delivery.outcome.result); expect(retry.persisted).toEqual(failed.persisted);
-  expect(retry.raw).toEqual(failed.raw); expect(retry.ui.runtime.remainingMs).toBe(30_000);
+  expect(retry.raw).toEqual(confirmedDelivery(failed.raw,failed.delivery.outcome.result)); expect(retry.ui.runtime.remainingMs).toBe(30_000);
   await page.evaluate(() => (globalThis as any).h.activityStore.holdNextCycleDelivery());
   await page.clock.runFor(30_000);
   await expect.poll(() => page.evaluate(() => (globalThis as any).h.activityStore.holding)).toBe(true);
@@ -371,7 +372,7 @@ test('production Store retries the saved furnace and a pause while the next comm
   });
   expect(replay.ui.lastReplayed).toBe(true); expect(replay.ui.lastFromActivity).toBe(true);
   expect(replay.ui.lastResult).toEqual(failed.delivery.outcome.result); expect(replay.persisted).toEqual(failed.persisted);
-  expect(replay.raw).toEqual(failed.raw); expect(replay.ui.runtime.remainingMs).toBe(30_000);
+  expect(replay.raw).toEqual(confirmedDelivery(failed.raw,failed.delivery.outcome.result)); expect(replay.ui.runtime.remainingMs).toBe(30_000);
   await page.evaluate(() => (globalThis as any).h.activityStore.holdNextCycleDelivery());
   await page.clock.runFor(30_000);
   await expect.poll(() => page.evaluate(() => (globalThis as any).h.activityStore.holding)).toBe(true);

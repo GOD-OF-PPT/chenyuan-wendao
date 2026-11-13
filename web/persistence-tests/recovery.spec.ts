@@ -277,7 +277,7 @@ test('v2 to v3 upgrades the authoritative full state instead of replaying preser
     return { legacy, full, cp, current, loadedCP, oldWrite, raw: await h.inspect(name) };
   });
   expect(result.current).toEqual(result.full); expect(result.loadedCP).toEqual(result.cp);
-  expect(result.current.core.player.realm).toBe('golden'); expect(result.raw.version).toBe(10);
+  expect(result.current.core.player.realm).toBe('golden'); expect(result.raw.version).toBe(11);
   expect(result.raw.state.find((x: any) => x.key === 'current').value).toEqual(result.legacy);
   expect(result.oldWrite.ok).toBe(false);
 });
@@ -384,7 +384,7 @@ test('quota during v2 scope upgrade rolls schema and ownership back and permits 
     return { failed, before, after, current, loaded, final: await h.inspect(name) };
   });
   expect(result.failed.code).toBe('STORAGE_QUOTA'); expect(result.after).toEqual(result.before);
-  expect(result.after.version).toBe(2); expect(result.final.version).toBe(10); expect(result.loaded).toEqual(result.current);
+  expect(result.after.version).toBe(2); expect(result.final.version).toBe(11); expect(result.loaded).toEqual(result.current);
 });
 
 test('unknown v2 schema or empty full stores beside legacy progress never upgrade into a fresh run', async ({ page }) => {

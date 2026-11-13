@@ -1,3 +1,4 @@
+import {confirmedDelivery} from './support';
 import { test, expect, type Page, type TestInfo } from '@playwright/test';
 import { performance as hostPerformance } from 'node:perf_hooks';
 import { setupPersistence } from './support';
@@ -198,7 +199,7 @@ for (const mode of ['quota', 'lost'] as const) for (const recovery of ['retry', 
       expect(recovered.probe.attempts[1].tick).toEqual(recovered.probe.attempts[0].tick);
       expect(recovered.raw['full-receipts'].filter((row: any) => row.key === track.receiptKey)).toHaveLength(1);
       if (mode === 'lost') {
-        expect(recovered.raw).toEqual(track.failed.raw);
+        expect(recovered.raw).toEqual(confirmedDelivery(track.failed.raw,track.command));
         await expect(page.getByTestId('action-motion')).toHaveCount(0);
       }
     } else {

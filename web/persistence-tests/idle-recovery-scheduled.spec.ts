@@ -1,3 +1,4 @@
+import {expectBaselineUpgrade} from './retention-upgrade-proof';
 import {test,expect} from '@playwright/test';
 import {setupPersistence} from './support';
 import {repositoryFsRoot} from './fs-root';
@@ -17,7 +18,7 @@ test('a real scheduled source persists four due periods together with its fiftee
    return{original,started,completed,expected,expectedActivity:a,snapshot,raw,summary,afterSummary:await h.FullSaveRepository.exportRaw(name),now,scheduleStore:h.FULL_SCHEDULE_STORE};
   }finally{Date.now=realNow;reopened?.close();repo.close();}
  },repositoryFsRoot);
- expect(r.raw.database.version).toBe(10);expect(r.started.state).toEqual(r.original.state);expect(r.completed.state).toEqual(r.expected);expect(r.completed.activity).toEqual(r.expectedActivity);expect(r.completed.activity.completedCycles).toBe(4);
+ expect(r.raw.database.version).toBe(11);expect(r.started.state).toEqual(r.original.state);expect(r.completed.state).toEqual(r.expected);expect(r.completed.activity).toEqual(r.expectedActivity);expect(r.completed.activity.completedCycles).toBe(4);
  expect(r.completed.state.core.player.stones-r.original.state.core.player.stones).toBe(80);expect(r.completed.activity.dueAt-r.now).toBe(15000);expect(r.snapshot.state).toEqual(r.completed.state);expect(r.snapshot.activity).toEqual(r.completed.activity);
  const clock=r.raw.stores.find((s:any)=>s.name===r.scheduleStore);expect(clock.entries).toHaveLength(1);expect(clock.entries[0].value.activityId).toBe(r.completed.activity.id);expect(clock.entries[0].value.activityRevision).toBe(r.completed.activity.revision);
  expect(r.summary.cycles).toBe(4);expect(r.summary.costs.months).toBe(48);expect(r.summary.delta.stones).toBe(80);expect(r.summary.delta.months).toBe(48);expect(r.afterSummary).toEqual(r.raw);
@@ -151,7 +152,7 @@ for(const broken of [false,true])test(`DB9 ${broken?'failed migration rolls back
  expect(r.before.database.version).toBe(9);
  if(broken){expect(r.opened.ok).toBe(false);expect(r.after).toEqual(r.before);}
  else{
-  expect(r.opened.ok).toBe(true);expect(r.after.database.version).toBe(10);expect(r.after.stores.filter((x:any)=>x.name!=='full-schedules')).toEqual(r.before.stores);
+  expect(r.opened.ok).toBe(true);expect(r.after.database.version).toBe(11);expectBaselineUpgrade(r.before,r.after);
   expect(r.after.stores.find((x:any)=>x.name==='full-schedules').entries).toEqual([]);expect(r.opened.value.schedule).toBeUndefined();expect(r.oldAttempt.code).toBe('DB_VERSION');
  }
 });
@@ -210,13 +211,15 @@ test('an old online arrangement adopts forward only after explicit continue and 
    const paid=await repo.settleActivity({commandId:a.nextCommand.commandId,runId:a.runId,expectedRevision:a.gameRevision,activityId:a.id,expectedActivityRevision:a.revision,ownerId:a.ownerId,generation:a.generation});
    now+=86400000;const prior=await repo.loadActivitySnapshot(),blocked=await h.attempt(()=>repo.advanceScheduledActivity(mutation(prior,'unconfirmed-adopt')));
    const adopted=await repo.adoptScheduledActivity(mutation(prior,'explicit-adopt')),early=await repo.advanceScheduledActivity(mutation(adopted,'adopt-early'));
+   const adoptionRaw=await h.FullSaveRepository.exportRaw('scheduled-adopt'),adoptionSummary=await repo.loadAwaySummary(),afterAdoptionRead=await h.FullSaveRepository.exportRaw('scheduled-adopt');
    now=adopted.activity.dueAt;const next=await repo.advanceScheduledActivity(mutation(early,'adopt-due'));
-   return{paid,prior,blocked,adopted,early,next};
+   return{paid,prior,blocked,adopted,early,next,adoptionRaw,adoptionSummary,afterAdoptionRead};
   }finally{Date.now=realNow;repo.close();}
  });
  expect(r.prior.schedule).toBeUndefined();expect(r.prior.state).toEqual(r.paid.state);expect(r.blocked.code).toBe('SCHEDULE_REQUIRED');
  expect(r.adopted.state).toEqual(r.paid.state);expect(r.adopted.activity.id).toBe(r.paid.activity.id);expect(r.adopted.activity.plan).toEqual(r.paid.activity.plan);
  expect(r.adopted.activity.completedCycles).toBe(1);expect(r.adopted.activity.spentMonths).toBe(12);expect(r.adopted.activity.dueAt-r.adopted.schedule.lastObservedAt).toBe(30000);
+ expect(r.adoptionSummary).toBeNull();expect(r.afterAdoptionRead).toEqual(r.adoptionRaw);
  expect(r.early.cycles).toBe(0);expect(r.next.cycles).toBe(1);expect(r.next.activity.completedCycles).toBe(2);expect(r.next.activity.spentMonths).toBe(24);
 });
 

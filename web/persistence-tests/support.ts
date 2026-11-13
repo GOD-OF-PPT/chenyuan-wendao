@@ -1,5 +1,28 @@
-import type { Page } from '@playwright/test';
+import {expect, type Page} from '@playwright/test';
 import {repositoryFsRoot as root} from './fs-root';
+
+/** Exact expected ACK-only transition. Keep every store, raw proof and metadata field in equality. */
+export function confirmedDelivery(snapshot:any, identity:{runId:string;commandId:string}|string) {
+  const copy=structuredClone(snapshot),key=typeof identity==='string'?identity:identity.runId+':'+identity.commandId;
+  const rows=copy.format==='chenyuan-raw-database-backup'
+    ? copy.stores.find((s:any)=>s.name==='full-retention')?.entries : copy.rows?.['full-retention']??copy['full-retention'];
+  expect(Array.isArray(rows),'schema11 delivery proof must include the entire retention store').toBe(true);
+  const root=rows.find((r:any)=>Array.isArray(r.key)&&r.key[0]==='receipt'&&r.key[1]===key);
+  expect(root?.value).toMatchObject({format:'chenyuan-retained-receipt',version:1,kind:'receipt',key,
+    parentKey:key,baseline:false,pending:true});
+  expect(root.value.runId+':'+root.value.commandId).toBe(key);
+  expect(typeof root.value.receiverId).toBe('string');expect(typeof root.value.checksum).toBe('string');
+  const siblings=rows.filter((r:any)=>r.value?.kind==='receipt'&&r.value.parentKey===key);
+  expect(siblings.length).toBeGreaterThan(0);
+  for(const row of siblings){
+    expect(row.key).toEqual(['receipt',row.value.key]);
+    expect(row.value).toMatchObject({format:'chenyuan-retained-receipt',version:1,runId:root.value.runId,
+      parentKey:key,receiverId:root.value.receiverId,baseline:false,pending:true});
+    // Only delivery changes. No collection is expected in these original small fixtures.
+    row.value.pending=false;
+  }
+  return copy;
+}
 
 export async function setupPersistence(page: Page) {
   await page.goto('/persistence-tests/harness.html');
@@ -52,9 +75,22 @@ export async function setupPersistence(page: Page) {
       if(!Number.isSafeInteger(version)||version<2||version>=10)throw new Error('expected an explicit historical database schema');
       const clock=persistence.FULL_SCHEDULE_STORE;
       if(snapshot[clock]?.length)throw new Error('a live away clock cannot be removed to manufacture a legacy fixture');
-      const original=structuredClone(snapshot);delete original[clock];original.stores=original.stores.filter((name:string)=>name!==clock);original.version=version;
+      const original=structuredClone(snapshot);
+      // This constructs an explicitly historical schema, not a current all-store
+      // comparison. Current retention metadata has no place in DB2..9 fixtures.
+      if(original['full-retention'] && original.version!==11)throw new Error('unrecognized source retention schema');
+      delete original[clock];delete original['full-retention'];original.stores=original.stores.filter((name:string)=>name!==clock&&name!=='full-retention');original.version=version;
       return original;
     };
+    const emptyLegacyDatabase=async(name:string)=>new Promise<void>((yes,no)=>{
+      const request=indexedDB.open(name,10);let created=false;
+      request.onerror=()=>no(request.error);
+      request.onupgradeneeded=(event)=>{
+        if(event.oldVersion!==0){request.transaction!.abort();return;}
+        created=true;for(const store of ['full-state','full-receipts','full-backups','full-schedules'])request.result.createObjectStore(store);
+      };
+      request.onsuccess=()=>{request.result.close();created?yes():no(Error('historical fixture requires a fresh test database'));};
+    });
     const legacySamples = (choice = 'leave', school = 'sword') => {
       let game = legacy.createAdventure('旧档测试', `legacy-${choice}-${school}`);
       const samples = [game];
@@ -105,6 +141,6 @@ export async function setupPersistence(page: Page) {
         ownerId: a.ownerId, generation: a.generation }); }
       finally { Date.now = realNow; }
     };
-    (globalThis as any).h = { ...persistence, engine, queries, receipts, routes, adventure, currentContent, legacyRuleRoutes, legacyRuleEngine, legacyRuleContent, legacy, seed, inspect, legacyDatabaseFixture, put, legacySamples, mutation, command, attempt, finishAction };
+    (globalThis as any).h = { ...persistence, engine, queries, receipts, routes, adventure, currentContent, legacyRuleRoutes, legacyRuleEngine, legacyRuleContent, legacy, seed, inspect, legacyDatabaseFixture, emptyLegacyDatabase, put, legacySamples, mutation, command, attempt, finishAction };
   }, root);
 }

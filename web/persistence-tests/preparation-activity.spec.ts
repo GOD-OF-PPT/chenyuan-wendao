@@ -283,7 +283,7 @@ test('DB7 preserves every v6 legacy activity, real checkpoint and receipt byte-f
     } finally { Date.now = realNow; }
   });
   for (const row of rows) {
-    expect(row.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(row.loaded.activity).not.toHaveProperty('rulesVersion'); expect(row.closed).toBe(true); expect(row.after.version).toBe(10); expect(row.checkpoint).not.toBeNull();
+    expect(row.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(row.loaded.activity).not.toHaveProperty('rulesVersion'); expect(row.closed).toBe(true); expect(row.after.version).toBe(11); expect(row.checkpoint).not.toBeNull();
     for (const store of row.original.stores) expect(row.after[store]).toEqual(row.original[store]);
     expect(row.loaded).toEqual({ state: row.completed.state, activity: row.completed.activity }); expect(row.checkpointAfter).toEqual(row.checkpoint);
     expect(row.replay.replayed).toBe(true); expect(row.replay.state).toEqual(row.completed.state); expect(row.replay.activity).toEqual(row.completed.activity);

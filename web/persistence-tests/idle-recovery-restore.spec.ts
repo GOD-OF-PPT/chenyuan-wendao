@@ -114,7 +114,7 @@ test('M04-N5 a fixed full restore rejects another page real action and its repla
   }finally{repo.close();other.close();}
  });
  expect(r.stale.code).toBe('STALE_REVISION');expect(r.after).toEqual(r.before);expect(r.oldTick.code).toBe('RUN_MISMATCH');
- expect(r.replayOld.code).toBe('STALE_REVISION');expect(r.foreign.code).toBe('STALE_REVISION');expect(r.afterNew).toEqual(r.protectedNew);expect(r.replacement.core.player.realm).toBe('mortal');
+ expect(r.replayOld.code).toBe('RUN_MISMATCH');expect(r.foreign.code).toBe('STALE_REVISION');expect(r.afterNew).toEqual(r.protectedNew);expect(r.replacement.core.player.realm).toBe('mortal');
 });
 
 test('M04-N6 missing foreign purpose and future-version checkpoints cannot replace any real current or archived record',async({page})=>{

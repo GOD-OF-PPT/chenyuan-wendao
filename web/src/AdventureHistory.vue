@@ -75,6 +75,7 @@ const moveName: Record<string, string> = {
 <template>
   <section
     class="adventure-history"
+    :class="{ 'history-folded': !!history?.folded }"
     data-testid="adventure-history"
     aria-label="本安排逐次记录"
   >
@@ -90,7 +91,14 @@ const moveName: Record<string, string> = {
       >{{ error }} <button @click="load()">重新读取</button></p
     >
     <template v-if="history"
-      ><div class="adventure-history-grid"
+      ><p
+        v-if="history.folded"
+        class="small"
+        data-testid="adventure-history-folded"
+        >较早 {{ history.folded }} 次明细已归入累计；可翻阅最近
+        {{ history.retained }} 次，本段共完成 {{ history.total }} 次。</p
+      >
+      <div class="adventure-history-grid"
         ><article v-for="row in history.rows" :key="row.command.commandId"
           ><strong
             >第 {{ row.activity.completedCycles }} 次 ·
@@ -122,7 +130,7 @@ const moveName: Record<string, string> = {
       ><CataloguePager
         :page="history.page"
         :pages="history.pages"
-        :total="history.total"
+        :total="history.retained"
         label="逐次记录"
         @change="load($event)"
     /></template>
@@ -183,6 +191,18 @@ const moveName: Record<string, string> = {
   }
   .history-totals strong {
     font-size: 18px;
+  }
+  .adventure-history.history-folded {
+    gap: 6px;
+  }
+  .adventure-history.history-folded .adventure-history-grid {
+    gap: 8px;
+  }
+  .adventure-history.history-folded article {
+    padding: 8px 12px;
+  }
+  .adventure-history.history-folded p {
+    margin: 4px 0;
   }
 }
 </style>

@@ -1,3 +1,4 @@
+import {confirmedDelivery} from './support';
 import { test, expect } from '@playwright/test';
 import { positiveCostIds, setupPositiveCosts, expectPositiveCost, expectImported, savePositiveEvidence } from './positive-cost-support';
 
@@ -57,7 +58,7 @@ for (const id of positiveCostIds) test(`M02 Store ${id} lost committed delivery 
   expect(replay.ui.lastReplayed).toBe(true); expect(replay.ui.lastFromActivity).toBe(true);
   expect(replay.ui.lastResult).toEqual(started.expected.result); expect(replay.ui.game).toEqual(started.expected.nextState);
   expect(replay.ui.activity).toEqual(failed.persisted.activity); expect(replay.ui.runtime).toBeNull();
-  expect(replay.raw).toEqual(failed.raw); expect(replay.persisted).toEqual(failed.persisted);
+  expect(replay.raw).toEqual(confirmedDelivery(failed.raw,started.expected.result)); expect(replay.persisted).toEqual(failed.persisted);
   expect(replay.second.replayed).toBe(true); expect(replay.second.result).toEqual(started.expected.result);
 });
 
@@ -95,7 +96,7 @@ for (const id of ['assisted', 'forge', 'breakthrough']) for (const progression o
     });
     await savePositiveEvidence(info, { id, progression, started, external, released });
     expect(released.ui.game).toEqual(external.current.state); expect(released.ui.activity).toEqual(external.current.activity);
-    expect(released.ui.runtime).toBeNull(); expect(released.persisted).toEqual(external.current); expect(released.raw).toEqual(external.raw);
+    expect(released.ui.runtime).toBeNull(); expect(released.persisted).toEqual(external.current); expect(released.raw).toEqual(confirmedDelivery(external.raw,started.expected.result));
     expect(released.ui.error).toBe(''); expect(released.ui.saved).toBe(true);
     for (const state of released.trace.states) {
       expect(state.game).toEqual(external.current.state); expect(state.activity).toEqual(external.current.activity);
@@ -124,7 +125,7 @@ test('M02 Store a matching read preserves the first committed breakthrough resul
     return { ui: f.state(), raw: await h.inspect(h.FULL_DB_NAME), trace: h.m02Trace };
   });
   await savePositiveEvidence(info, { started, matching, released });
-  expect(released.ui.game).toEqual(started.expected.nextState); expect(released.raw).toEqual(matching.raw);
+  expect(released.ui.game).toEqual(started.expected.nextState); expect(released.raw).toEqual(confirmedDelivery(matching.raw,started.expected.result));
   expect(released.ui.lastResult).toEqual(started.expected.result); expect(released.ui.lastReplayed).toBe(false);
   expect(released.ui.lastFromActivity).toBe(true); expect(released.ui.runtime).toBeNull();
   expect(released.trace.observations.filter((o: any) => o.kind === 'action')).toHaveLength(1);
@@ -189,7 +190,7 @@ test('M02 Store a failed confirmation reread preserves paid state and requires s
   expect(failed.ui.activity).toEqual(paid.current.activity); expect(failed.ui.saved).toBe(false); expect(failed.syncIssue).toBe(true);
   expect(failed.confirmed).toBe(true); expect(failed.ui.canRetry).toBe(false); expect(failed.ui.runtime).toBeNull();
   expect(failed.trace.observations.filter((o: any) => o.kind === 'action')).toHaveLength(0);
-  expect(failed.raw).toEqual(paid.raw); expect(reopened.raw).toEqual(paid.raw); expect(reopened.ui.game).toEqual(paid.current.state);
+  expect(failed.raw).toEqual(confirmedDelivery(paid.raw,started.expected.result)); expect(reopened.raw).toEqual(failed.raw); expect(reopened.ui.game).toEqual(paid.current.state);
   expect(reopened.ui.activity).toEqual(paid.current.activity); expect(reopened.ui.saved).toBe(true); expect(reopened.ui.runtime).toBeNull();
 });
 
@@ -216,7 +217,7 @@ test('M02 Store a lost forge receipt replays against later foreign progress with
   });
   await savePositiveEvidence(info, { started, foreign, replay });
   expect(foreign.paid.state).toEqual(started.expected.nextState); expect(replay.ui.game).toEqual(foreign.current.state);
-  expect(replay.ui.activity).toEqual(foreign.current.activity); expect(replay.raw).toEqual(foreign.raw);
+  expect(replay.ui.activity).toEqual(foreign.current.activity); expect(replay.raw).toEqual(confirmedDelivery(foreign.raw,started.expected.result));
   expect(replay.ui.lastResult).toEqual(started.expected.result); expect(replay.ui.lastReplayed).toBe(true);
   expect(replay.ui.saved).toBe(true); expect(replay.ui.runtime).toBeNull(); expect(replay.ui.error).toBe('');
 });

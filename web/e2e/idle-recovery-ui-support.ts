@@ -1,3 +1,5 @@
+import {proveRetentionDelta} from './retention-proof-support';
+import {summarizeAway} from '../src/away-summary';
 import {expect,type Page,type Locator} from '@playwright/test';
 import {resolve} from '../../src/full/engine.ts';
 import {completeActivity} from '../../src/full/activity.ts';
@@ -67,9 +69,19 @@ export async function assertRestored(page:Page,before:any){
  expected.core.runId=game.core.runId;expected.core.revision=0;if(expected.core.activeEvent)expected.core.activeEvent.instanceId=game.core.runId+':'+expected.core.activeEvent.id;
  expect(game.core.runId).not.toBe(old.core.runId);expect(game).toEqual(expected);expect(stored(after,'previous')).toEqual(old);expect(stored(after,'checkpoint')).toEqual(cp);expect(stored(after,'activity')).toBeNull();
  expect(stored(after,'checkpoint-owner')).toEqual({format:'chenyuan-checkpoint-scope',version:1,runId:game.core.runId,sourceRunId:cp.sourceRunId,sourceRevision:cp.sourceRevision,kind:cp.kind});
- expect(after.rows['full-receipts']).toHaveLength(1);const record=after.rows['full-receipts'][0],r=record.value;
+ const candidates=after.rows['full-receipts'].filter((row:any)=>row.value?.format==='chenyuan-control-receipt'&&row.value.kind==='RESTORE'&&row.value.mutation.runId===game.core.runId);
+ expect(candidates).toHaveLength(1);const record=candidates[0],r=record.value;
  expect(r).toEqual({format:'chenyuan-control-receipt',version:1,kind:'RESTORE',mutation:{commandId:r.mutation.commandId,runId:game.core.runId,expectedRunId:old.core.runId,expectedRevision:old.core.revision},fingerprint:canonicalFingerprint({kind:'RESTORE',mutation:r.mutation,checkpoint:'active'})});
- expect(record.key).toBe(game.core.runId+':'+r.mutation.commandId);for(const row of before.rows['full-backups'])expect(after.rows['full-backups'].find((x:any)=>x.key===row.key)).toEqual(row);
- const activity=stored(before,'activity');if(activity)expect(after.rows['full-backups'].find((x:any)=>x.key==='restoration/'+r.mutation.commandId+'/activity')?.value).toEqual(activity);
+ expect(record.key).toBe(game.core.runId+':'+r.mutation.commandId);
+ const full=structuredClone(before),put=(store:string,key:string,value:any)=>{const rows=full.rows[store],found=rows.find((x:any)=>x.key===key);if(found)found.value=value;else rows.push({key,value});rows.sort((a:any,b:any)=>a.key<b.key?-1:a.key>b.key?1:0);},remove=(store:string,key:string)=>full.rows[store]=full.rows[store].filter((r:any)=>r.key!==key),
+   activity=stored(before,'activity'),schedule=before.rows['full-schedules'].find((x:any)=>x.key==='current')?.value,prefix='restoration/'+r.mutation.commandId;
+ put('full-state','current',game);put('full-state','previous',old);put('full-state','checkpoint-owner',{format:'chenyuan-checkpoint-scope',version:1,runId:game.core.runId,sourceRunId:cp.sourceRunId,sourceRevision:cp.sourceRevision,kind:cp.kind});remove('full-state','activity');remove('full-schedules','current');
+ if(activity)put('full-backups',prefix+'/activity',activity);
+ if(schedule){
+  put('full-backups',prefix+'/schedule',schedule);
+  const values=before.rows['full-receipts'].map((x:any)=>x.value).filter((x:any)=>x?.format==='chenyuan-scheduled-receipt'&&x.input.mutation.runId===old.core.runId),summary=summarizeAway(old,activity,schedule,values);
+  if(summary){const receipts=values.filter((v:any)=>v.input.kind==='ADVANCE'&&v.proof.recordAfter.activity.id===activity.id&&(v.proof.scheduleBefore?.window?.id??v.input.mutation.commandId)===summary.id&&v.proof.cycles>0);put('full-backups',prefix+'/away-summary',{format:'chenyuan-away-summary-archive',version:1,summary,receipts});}
+ }
+ put('full-receipts',record.key,r);proveRetentionDelta(before,full,after,[record],true);
  return{after,game,cp,receipt:r};
 }

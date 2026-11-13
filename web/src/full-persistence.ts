@@ -61,6 +61,29 @@ import {
 import type { DirectIntent } from '../../src/full/direct-actions.ts';
 import { validateDirectIntent } from '../../src/full/direct-actions.ts';
 import { directReceipt, validateDirectReceipt } from './direct-persistence';
+import {
+  RETENTION_STORE,
+  REPLAY_LIMIT,
+  beginReceiptRetention,
+  validateReceiptRetention,
+  createReceiptRetention,
+  storedReceiptEpoch,
+  rememberReceiptOffer,
+  offeredReceiptKeys,
+  issueReceiptId,
+  requireCurrentReceiptId,
+  putRetainedReceipt,
+  clearRetainedReceipts,
+  confirmReceiptDelivery,
+  createReceiptReceiver,
+  receiptReceiverState,
+  type ReceiptReceiver,
+  readRetainedHistory,
+  readLatestAwayReceipts,
+  putRetainedBackup,
+  type ReceiptAccess,
+} from './receipt-retention';
+export { createReceiptReceiver } from './receipt-retention';
 export type {
   ActivityMutation,
   ActivityOutcome,
@@ -69,13 +92,14 @@ export type {
 } from '../../src/full/activity.ts';
 
 export const FULL_DB_NAME = 'chenyuan-playable-v1';
-export const FULL_DB_VERSION = 10;
+export const FULL_DB_VERSION = 11;
 export const FULL_STATE_STORE = 'full-state';
 export const FULL_RECEIPT_STORE = 'full-receipts';
 export const FULL_BACKUP_STORE = 'full-backups';
 export const FULL_SCHEDULE_STORE = 'full-schedules';
 const legacyStores = [FULL_STATE_STORE, FULL_RECEIPT_STORE, FULL_BACKUP_STORE];
-const stores = [...legacyStores, FULL_SCHEDULE_STORE];
+const preRetentionStores = [...legacyStores, FULL_SCHEDULE_STORE];
+const stores = [...preRetentionStores, RETENTION_STORE];
 export interface ScheduledOutcome extends ActivityOutcome {
   schedule?: AwaySchedule;
   cycles: number;
@@ -177,7 +201,7 @@ function archiveSchedule(
     read = clocks.get('current');
   read.onsuccess = () => {
     if (read.result !== undefined)
-      tx.objectStore(FULL_BACKUP_STORE).put(read.result, prefix + '/schedule');
+      putRetainedBackup(tx, read.result, prefix + '/schedule');
   };
   // Queue the read before the caller can clear receipts. Its result belongs to
   // this same transaction even when the archive callback runs after that clear.
@@ -190,7 +214,9 @@ function archiveSchedule(
       try {
         if (read.result === undefined) return;
         const values = records.result.filter(
-          (value) => value?.format === 'chenyuan-scheduled-receipt',
+          (value) =>
+            value?.format === 'chenyuan-scheduled-receipt' &&
+            value.input?.mutation?.runId === current.core.runId,
         );
         const summary = summarizeAway(current, activity, read.result, values);
         if (summary) {
@@ -202,7 +228,8 @@ function archiveSchedule(
                 value.input.mutation.commandId) === summary.id &&
               value.proof.cycles > 0,
           );
-          tx.objectStore(FULL_BACKUP_STORE).put(
+          putRetainedBackup(
+            tx,
             {
               format: 'chenyuan-away-summary-archive',
               version: 1,
@@ -227,10 +254,7 @@ function archiveActivity(
   abort: (error: unknown) => void,
 ): void {
   if (activity)
-    tx.objectStore(FULL_BACKUP_STORE).put(
-      structuredClone(activity),
-      prefix + '/activity',
-    );
+    putRetainedBackup(tx, structuredClone(activity), prefix + '/activity');
   archiveSchedule(tx, prefix, current, activity, abort);
   tx.objectStore(FULL_STATE_STORE).delete('activity');
 }
@@ -255,13 +279,17 @@ function invalidateActivity(activity: Activity, state: Game): Activity {
 function readReceipt(
   store: IDBObjectStore,
   key: string,
+  access: ReceiptAccess,
   use: (value: unknown) => void,
   abort: (error: unknown) => void,
 ): void {
   const request = store.get(key);
   const deliver = (value: unknown) => {
     try {
+      if (value === undefined)
+        requireCurrentReceiptId(store.transaction, access);
       use(value);
+      if (value !== undefined) rememberReceiptOffer(store.transaction, key);
     } catch (error) {
       abort(error);
     }
@@ -304,6 +332,8 @@ export interface ActivityHistoryPage {
   page: number;
   pages: number;
   total: number;
+  retained: number;
+  folded: number;
 }
 interface ControlReceipt {
   format: 'chenyuan-control-receipt';
@@ -421,7 +451,8 @@ function ensureCheckpointScope(
               checkpointScope(cp, current.core.runId),
               'checkpoint-owner',
             );
-            tx.objectStore(FULL_BACKUP_STORE).put(
+            putRetainedBackup(
+              tx,
               { kind: 'checkpoint-scope', mutation, checkpoint: cp },
               'scope/' + mutation.commandId,
             );
@@ -808,7 +839,7 @@ function migrateTransaction(
                 'ACTIVITY_INVALID',
                 '旧活动不属于迁移来源，原记录保留',
               );
-            backup.put(activityRaw, prefix + '/activity');
+            putRetainedBackup(tx, activityRaw, prefix + '/activity');
           }
           const activityPresent = state.count('activity');
           activityPresent.onsuccess = () => {
@@ -821,14 +852,22 @@ function migrateTransaction(
               );
           };
           state.delete('activity');
-          backup.put(raw, prefix + '/current');
+          putRetainedBackup(tx, raw, prefix + '/current');
           if (oldOwner !== undefined)
-            backup.put(oldOwner, prefix + '/checkpoint-owner');
+            putRetainedBackup(tx, oldOwner, prefix + '/checkpoint-owner');
           if (previousRaw !== undefined)
-            backup.put(previousRaw, prefix + '/previous');
+            putRetainedBackup(tx, previousRaw, prefix + '/previous');
           if (readCheckpoint.result !== undefined)
-            backup.put(readCheckpoint.result, prefix + '/checkpoint');
-          backup.put({ kind: 'content', mutation }, prefix + '/identity');
+            putRetainedBackup(
+              tx,
+              readCheckpoint.result,
+              prefix + '/checkpoint',
+            );
+          putRetainedBackup(
+            tx,
+            { kind: 'content', mutation },
+            prefix + '/identity',
+          );
           state.put(reidentify(migrated, mutation.runId), 'current');
           if (convertedPrevious) state.put(convertedPrevious, 'previous');
           else state.delete('previous');
@@ -854,15 +893,21 @@ function migrateTransaction(
             try {
               if (cursor.result) {
                 const index = receiptIndex++;
-                backup.put(cursor.result.value, prefix + '/receipts/' + index);
-                backup.put(
+                putRetainedBackup(
+                  tx,
+                  cursor.result.value,
+                  prefix + '/receipts/' + index,
+                );
+                putRetainedBackup(
+                  tx,
                   cursor.result.key,
                   prefix + '/receipt-keys/' + index,
                 );
                 cursor.result.continue();
               } else {
-                receipts.clear();
-                receipts.put(
+                clearRetainedReceipts(tx);
+                putRetainedReceipt(
+                  tx,
                   receipt,
                   mutation.runId + ':' + mutation.commandId,
                 );
@@ -885,10 +930,57 @@ function migrateTransaction(
 /** No state is returned until the containing transaction completes. */
 export class FullSaveRepository {
   private closed = false;
-  private constructor(private readonly db: IDBDatabase) {
+  private receiptEpoch = 0;
+  issueCommandId(): string {
+    this.assertOpen();
+    return issueReceiptId(this.receiptEpoch);
+  }
+  confirmDelivery(runId: string, commandId: string): Promise<void> {
+    this.assertOpen();
+    if (!validText(runId) || !validText(commandId))
+      throw new RuleError('INVALID_MUTATION', '本次记录身份无效');
+    const key = runId + ':' + commandId;
+    const receiver = receiptReceiverState(this.receiver, this.db.name);
+    // A committed cleanup whose response was lost is idempotent within the
+    // same logical receiver, including reconnect; no second storage write.
+    if (receiver.confirmed.has(key)) {
+      // A replay offers the same reply again. Its cached confirmation must
+      // retire that new offer too, or healthy replays accumulate stale keys.
+      receiver.offers.delete(key);
+      return Promise.resolve();
+    }
+    if (!receiver.offers.has(key))
+      throw new RuleError(
+        'RECEIPT_NOT_DELIVERED',
+        '这个接收实例尚未取得原回复，未代替确认。',
+      );
+    return this.transaction('readwrite', (tx, complete, abort) =>
+      confirmReceiptDelivery(
+        tx,
+        runId,
+        commandId,
+        () => complete(undefined),
+        abort,
+      ),
+    ).then(() => {
+      receiver.offers.delete(key);
+      receiver.confirmed.delete(key);
+      receiver.confirmed.add(key);
+      if (receiver.confirmed.size > REPLAY_LIMIT)
+        receiver.confirmed.delete(receiver.confirmed.values().next().value!);
+    });
+  }
+  private constructor(
+    private readonly db: IDBDatabase,
+    private readonly receiver: ReceiptReceiver,
+  ) {
     db.onversionchange = () => this.close();
   }
-  static async open(name = FULL_DB_NAME): Promise<FullSaveRepository> {
+  static async open(
+    name = FULL_DB_NAME,
+    receiver = createReceiptReceiver(),
+  ): Promise<FullSaveRepository> {
+    receiptReceiverState(receiver, name);
     if (!globalThis.indexedDB)
       throw new RuleError(
         'STORAGE_UNAVAILABLE',
@@ -914,7 +1006,8 @@ export class FullSaveRepository {
           transaction.abort();
           return;
         }
-        const required = event.oldVersion >= 10 ? stores : legacyStores;
+        const required =
+          event.oldVersion >= 10 ? preRetentionStores : legacyStores;
         if (
           (event.oldVersion >= 2 &&
             required.some(
@@ -927,6 +1020,18 @@ export class FullSaveRepository {
           failure = new RuleError(
             'DB_SCHEMA',
             '数据库结构不匹配，原件保留，请导出或使用匹配版本',
+          );
+          transaction.abort();
+          return;
+        }
+        if (
+          event.oldVersion > 0 &&
+          event.oldVersion < 11 &&
+          connection.objectStoreNames.contains(RETENTION_STORE)
+        ) {
+          failure = new RuleError(
+            'DB_SCHEMA',
+            '旧数据库含有无法确认的留存信息，原件保留',
           );
           transaction.abort();
           return;
@@ -946,6 +1051,10 @@ export class FullSaveRepository {
         for (const store of stores)
           if (!connection.objectStoreNames.contains(store))
             connection.createObjectStore(store);
+        createReceiptRetention(connection, transaction, (error) => {
+          failure = error;
+          transaction.abort();
+        });
         if (event.oldVersion >= 2) {
           migrateTransaction(
             transaction,
@@ -1012,8 +1121,13 @@ export class FullSaveRepository {
               const backup = transaction.objectStore(FULL_BACKUP_STORE),
                 prefix = 'migration/' + mutation.commandId;
               for (const [key, raw] of Object.entries(records))
-                if (raw !== undefined) backup.put(raw, prefix + '/' + key);
-              backup.put({ kind: 'legacy-v1', mutation }, prefix + '/identity');
+                if (raw !== undefined)
+                  putRetainedBackup(transaction, raw, prefix + '/' + key);
+              putRetainedBackup(
+                transaction,
+                { kind: 'legacy-v1', mutation },
+                prefix + '/identity',
+              );
               transaction
                 .objectStore(FULL_STATE_STORE)
                 .put(reidentify(source, mutation.runId), 'current');
@@ -1039,9 +1153,11 @@ export class FullSaveRepository {
                 mutation,
                 fingerprint: fingerprint(records.current),
               };
-              transaction
-                .objectStore(FULL_RECEIPT_STORE)
-                .put(receipt, mutation.runId + ':' + mutation.commandId);
+              putRetainedReceipt(
+                transaction,
+                receipt,
+                mutation.runId + ':' + mutation.commandId,
+              );
             } catch (error) {
               failure = error;
               transaction.abort();
@@ -1079,8 +1195,11 @@ export class FullSaveRepository {
     }).catch((error) => {
       throw storageFailure(error);
     });
-    const repository = new FullSaveRepository(db);
+    const repository = new FullSaveRepository(db, receiver);
     try {
+      await repository.transaction('readonly', (tx, complete, abort) =>
+        validateReceiptRetention(tx, () => complete(undefined), abort),
+      );
       await repository.migrateContent();
       return repository;
     } catch (error) {
@@ -1211,7 +1330,12 @@ export class FullSaveRepository {
       const complete = (result: T) => {
         value = result;
       };
-      tx.oncomplete = () => accept(value);
+      tx.oncomplete = () => {
+        this.receiptEpoch = storedReceiptEpoch(tx);
+        const receiver = receiptReceiverState(this.receiver, this.db.name);
+        for (const key of offeredReceiptKeys(tx)) receiver.offers.add(key);
+        accept(value);
+      };
       tx.onabort = () => reject(storageFailure(failure ?? tx.error));
       tx.onerror = () => {};
       const abort = (error: unknown) => {
@@ -1219,6 +1343,11 @@ export class FullSaveRepository {
         tx.abort();
       };
       try {
+        beginReceiptRetention(
+          tx,
+          abort,
+          receiptReceiverState(this.receiver, this.db.name).id,
+        );
         operation(tx, complete, abort);
       } catch (error) {
         abort(error);
@@ -1309,35 +1438,22 @@ export class FullSaveRepository {
                 complete(null);
                 return;
               }
-              const values: unknown[] = [],
-                cursor = tx.objectStore(FULL_RECEIPT_STORE).openCursor();
-              cursor.onsuccess = () => {
-                try {
-                  if (!cursor.result) {
+              readLatestAwayReceipts(
+                tx,
+                current.core.runId,
+                activity.id,
+                activity.completedCycles,
+                (values) => {
+                  try {
                     complete(
                       summarizeAway(current, activity, schedule, values),
                     );
-                    return;
+                  } catch (error) {
+                    abort(error);
                   }
-                  const value = cursor.result.value;
-                  if (value?.format === 'chenyuan-scheduled-receipt') {
-                    if (
-                      cursor.result.key !==
-                      value.input?.mutation?.runId +
-                        ':' +
-                        value.input?.mutation?.commandId
-                    )
-                      throw new RuleError(
-                        'RECEIPT_INVALID',
-                        '累计回执键与原意图不符',
-                      );
-                    values.push(value);
-                  }
-                  cursor.result.continue();
-                } catch (error) {
-                  abort(error);
-                }
-              };
+                },
+                abort,
+              );
             },
             abort,
           );
@@ -1347,7 +1463,7 @@ export class FullSaveRepository {
       };
     });
   }
-  /** Complete per-command history for this activity in the current run; battle.log is only a recent excerpt. */
+  /** Indexed bounded detail window; cumulative totals remain on the saved activity. */
   loadActivityHistory(
     activityId: string,
     page = 0,
@@ -1376,90 +1492,58 @@ export class FullSaveRepository {
                 abort(
                   new RuleError('SAVE_SHAPE', '主存档内容缺失，原记录保留'),
                 );
-              else complete({ rows: [], page: 0, pages: 1, total: 0 });
+              else
+                complete({
+                  rows: [],
+                  page: 0,
+                  pages: 1,
+                  total: 0,
+                  retained: 0,
+                  folded: 0,
+                });
             };
             return;
           }
           validateGame(read.result);
-          const current = read.result,
-            rows: ActivityHistoryPage['rows'] = [];
-          const prefix = current.core.runId + ':cycle:' + activityId + ':';
-          const cursor = tx
-            .objectStore(FULL_RECEIPT_STORE)
-            .openCursor(IDBKeyRange.bound(prefix, prefix + '\uffff'));
-          cursor.onsuccess = () => {
-            try {
-              const entry = cursor.result;
-              if (!entry) {
-                rows.sort(
-                  (a, b) =>
-                    a.result.revisionAfter - b.result.revisionAfter ||
-                    a.command.commandId.localeCompare(b.command.commandId),
-                );
-                if (
-                  new Set(rows.map((row) => row.result.revisionAfter)).size !==
-                  rows.length
-                )
-                  throw new RuleError(
-                    'RECEIPT_INVALID',
-                    '活动记录包含重复进度，未省略或合并原件',
-                  );
-                const total = rows.length,
-                  pages = Math.max(1, Math.ceil(total / pageSize)),
-                  selected = Math.min(page, pages - 1);
-                complete({
-                  rows: rows.slice(
-                    selected * pageSize,
-                    (selected + 1) * pageSize,
-                  ),
-                  page: selected,
-                  pages,
-                  total,
-                });
-                return;
-              }
+          const current = read.result;
+          readRetainedHistory(
+            tx,
+            current.core.runId,
+            activityId,
+            page,
+            pageSize,
+            (value, key) => {
+              validateActivityReceipt(value, current);
+              const receipt = value;
               if (
-                typeof entry.key !== 'string' ||
-                !entry.key.startsWith(prefix)
+                receipt.input.kind !== 'TICK' ||
+                receipt.activity.id !== activityId ||
+                receipt.activity.runId !== current.core.runId ||
+                !receipt.command ||
+                !receipt.result ||
+                key !==
+                  receipt.input.tick.runId + ':' + receipt.input.tick.commandId
               )
-                throw new RuleError('RECEIPT_INVALID', '活动记录归属不符');
-              validateActivityReceipt(entry.value, current);
-              const receipt = entry.value;
-              const intent =
-                receipt.input.kind === 'TICK'
-                  ? receipt.input.tick
-                  : receipt.input.mutation;
-              if (entry.key !== intent.runId + ':' + intent.commandId)
                 throw new RuleError(
                   'RECEIPT_INVALID',
-                  '活动记录键与回执身份不符',
+                  '活动周期归属或正式结果不完整',
                 );
-              if (
-                receipt.input.kind === 'TICK' &&
-                receipt.activity.id === activityId
-              ) {
-                if (!receipt.command || !receipt.result)
-                  throw new RuleError(
-                    'RECEIPT_INVALID',
-                    '活动周期缺少正式结果',
-                  );
-                rows.push({
-                  command: receipt.command,
-                  result: receipt.result,
-                  activity: receipt.activity,
-                });
-              }
-              entry.continue();
-            } catch (error) {
-              abort(error);
-            }
-          };
+              return {
+                command: receipt.command,
+                result: receipt.result,
+                activity: receipt.activity,
+              };
+            },
+            complete,
+            abort,
+          );
         } catch (error) {
           abort(error);
         }
       };
     });
   }
+
   startActivity(
     plan: ActivityPlan,
     mutation: ActivityMutation,
@@ -1555,6 +1639,7 @@ export class FullSaveRepository {
                 readReceipt(
                   receipts,
                   mutation.runId + ':' + mutation.commandId,
+                  { runId: mutation.runId, commandId: mutation.commandId },
                   (stored) => {
                     try {
                       if (stored !== undefined) {
@@ -1664,7 +1749,12 @@ export class FullSaveRepository {
                               ),
                             );
                         };
-                        receipts.put(receipt, key);
+                        putRetainedReceipt(
+                          tx,
+                          receipt,
+                          key,
+                          mutation.runId + ':' + mutation.commandId,
+                        );
                         committed.push({
                           before: previous,
                           after: cycle.stateAfter,
@@ -1682,7 +1772,8 @@ export class FullSaveRepository {
                         progress,
                       );
                       validateScheduledReceipt(receipt, progress.state);
-                      receipts.put(
+                      putRetainedReceipt(
+                        tx,
                         receipt,
                         mutation.runId + ':' + mutation.commandId,
                       );
@@ -1742,6 +1833,11 @@ export class FullSaveRepository {
               readReceipt(
                 receipts,
                 intent.runId + ':' + intent.commandId,
+                {
+                  runId: intent.runId,
+                  commandId: intent.commandId,
+                  derived: input.kind === 'TICK',
+                },
                 (stored) => {
                   try {
                     if (stored !== undefined) {
@@ -1849,7 +1945,8 @@ export class FullSaveRepository {
                         now: Date.now(),
                       });
                       if (activity)
-                        tx.objectStore(FULL_BACKUP_STORE).put(
+                        putRetainedBackup(
+                          tx,
                           activity,
                           'activity/' +
                             intent.runId +
@@ -1910,7 +2007,8 @@ export class FullSaveRepository {
                             'checkpoint-owner',
                           );
                         }
-                        receipts.put(
+                        putRetainedReceipt(
+                          tx,
                           activityReceipt(
                             input,
                             next,
@@ -1952,7 +2050,8 @@ export class FullSaveRepository {
                     }
                     validateActivity(next, current);
                     state.put(next, 'activity');
-                    receipts.put(
+                    putRetainedReceipt(
+                      tx,
                       activityReceipt(input, next),
                       intent.runId + ':' + intent.commandId,
                     );
@@ -2002,6 +2101,7 @@ export class FullSaveRepository {
               readReceipt(
                 receipts,
                 command.runId + ':' + command.commandId,
+                { runId: command.runId, commandId: command.commandId },
                 (stored) => {
                   try {
                     if (stored !== undefined) {
@@ -2104,7 +2204,8 @@ export class FullSaveRepository {
                     state.put(current, 'previous');
                     state.put(outcome.nextState, 'current');
                     if (nextActivity) state.put(nextActivity, 'activity');
-                    receipts.put(
+                    putRetainedReceipt(
+                      tx,
                       configurationReceipt(
                         intent,
                         current,
@@ -2156,6 +2257,7 @@ export class FullSaveRepository {
               readReceipt(
                 receipts,
                 command.runId + ':' + command.commandId,
+                { runId: command.runId, commandId: command.commandId },
                 (stored) => {
                   try {
                     if (stored !== undefined) {
@@ -2216,7 +2318,8 @@ export class FullSaveRepository {
                     state.put(current, 'previous');
                     state.put(outcome.nextState, 'current');
                     if (nextActivity) state.put(nextActivity, 'activity');
-                    receipts.put(
+                    putRetainedReceipt(
+                      tx,
                       directReceipt(
                         intent,
                         current,
@@ -2347,6 +2450,11 @@ export class FullSaveRepository {
               readReceipt(
                 receipts,
                 mutation.runId + ':' + mutation.commandId,
+                {
+                  runId: mutation.runId,
+                  commandId: mutation.commandId,
+                  destination: true,
+                },
                 (storedReceipt) => {
                   try {
                     if (storedReceipt !== undefined) {
@@ -2450,7 +2558,7 @@ export class FullSaveRepository {
                     state.put(candidate, 'current');
                     state.delete('checkpoint');
                     state.delete('checkpoint-owner');
-                    receipts.clear();
+                    clearRetainedReceipts(tx);
                     const receipt: ControlReceipt = {
                       format: 'chenyuan-control-receipt',
                       version: 1,
@@ -2458,7 +2566,8 @@ export class FullSaveRepository {
                       mutation: structuredClone(mutation),
                       fingerprint: print,
                     };
-                    receipts.put(
+                    putRetainedReceipt(
+                      tx,
                       receipt,
                       mutation.runId + ':' + mutation.commandId,
                     );
@@ -2503,6 +2612,11 @@ export class FullSaveRepository {
               readReceipt(
                 receipts,
                 mutation.runId + ':' + mutation.commandId,
+                {
+                  runId: mutation.runId,
+                  commandId: mutation.commandId,
+                  destination: true,
+                },
                 (storedReceipt) => {
                   try {
                     if (storedReceipt !== undefined) {
@@ -2623,7 +2737,7 @@ export class FullSaveRepository {
                               'checkpoint-owner',
                             );
                             // The complete original checkpoint remains reusable.
-                            receipts.clear();
+                            clearRetainedReceipts(tx);
                             const receipt: ControlReceipt = {
                               format: 'chenyuan-control-receipt',
                               version: 1,
@@ -2631,7 +2745,8 @@ export class FullSaveRepository {
                               mutation,
                               fingerprint: print,
                             };
-                            receipts.put(
+                            putRetainedReceipt(
+                              tx,
                               receipt,
                               mutation.runId + ':' + mutation.commandId,
                             );
@@ -2681,6 +2796,7 @@ export class FullSaveRepository {
               readReceipt(
                 receipts,
                 command.runId + ':' + command.commandId,
+                { runId: command.runId, commandId: command.commandId },
                 (storedReceipt) => {
                   try {
                     if (storedReceipt !== undefined) {
@@ -2825,7 +2941,8 @@ export class FullSaveRepository {
                       fingerprint: print,
                       result: outcome.result,
                     };
-                    receipts.put(
+                    putRetainedReceipt(
+                      tx,
                       receipt,
                       command.runId + ':' + command.commandId,
                     );

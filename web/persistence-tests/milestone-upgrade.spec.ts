@@ -41,7 +41,7 @@ test('DB9 preserves DB8 Game, v6 activity, configuration and historical ordinary
       } finally { upgraded.close(); oldDB.close(); }
     } finally { Date.now = realNow; source.close(); }
   });
-  expect(r.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(r.loaded.activity).not.toHaveProperty('rulesVersion'); expect(r.closed).toBe(true); expect(r.after.version).toBe(10); expect(r.oldClient.name).toBe('VersionError');
+  expect(r.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(r.loaded.activity).not.toHaveProperty('rulesVersion'); expect(r.closed).toBe(true); expect(r.after.version).toBe(11); expect(r.oldClient.name).toBe('VersionError');
   for (const store of r.original.stores) expect(r.after[store]).toEqual(r.original[store]);
   expect(r.loaded).toEqual({ state: r.old.nextState, activity: r.arrived.activity }); expect(r.checkpointAfter).toEqual(r.checkpoint);
   expect(r.travelReplay.replayed).toBe(true); expect(r.travelReplay.state).toEqual(r.old.nextState); expect(r.travelReplay.result).toEqual(r.arrived.result);

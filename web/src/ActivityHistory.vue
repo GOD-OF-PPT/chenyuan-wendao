@@ -86,10 +86,15 @@ async function load(page = requestedPage.value) {
     if (
       !Number.isSafeInteger(result.total) ||
       result.total < required ||
+      !Number.isSafeInteger(result.retained) ||
+      result.retained < 0 ||
+      result.retained > result.total ||
+      !Number.isSafeInteger(result.folded) ||
+      result.folded !== result.total - result.retained ||
       !Number.isSafeInteger(result.pages) ||
-      result.pages !== Math.max(1, Math.ceil(result.total)) ||
+      result.pages !== Math.max(1, Math.ceil(result.retained)) ||
       result.page !== Math.min(page, result.pages - 1) ||
-      result.rows.length !== Math.min(1, result.total - result.page) ||
+      result.rows.length !== Math.min(1, result.retained - result.page) ||
       result.rows.some(
         (row) =>
           row.command.runId !== c.run ||
@@ -210,7 +215,14 @@ function commandName(command: Command) {
       ></p
     >
     <template v-else-if="history"
-      ><div class="history-grid"
+      ><p
+        v-if="history.folded"
+        class="history-note"
+        data-testid="activity-history-folded"
+        >较早 {{ history.folded }} 次明细已归入累计；可翻阅最近
+        {{ history.retained }} 次，本段共完成 {{ history.total }} 次。</p
+      >
+      <div class="history-grid"
         ><article
           v-for="row in history.rows"
           :key="row.command.commandId"
@@ -239,7 +251,7 @@ function commandName(command: Command) {
       ><CataloguePager
         :page="history.page"
         :pages="history.pages"
-        :total="history.total"
+        :total="history.retained"
         label="逐次记录"
         @change="load($event)"
     /></template>

@@ -1,3 +1,4 @@
+import {proveRetentionDelta} from './retention-proof-support';
 import {expect,type Page} from '@playwright/test';
 import type {Action,Game} from '../../src/full/types';
 import {resolve} from '../../src/full/engine';
@@ -18,6 +19,7 @@ export async function expectDirectOutcome(page:Page,before:Game,rawBefore:any,ac
   expect(await activitySnapshot(page)).toBeNull();expect(stored(raw,'activity')).toBeNull();
   expect(raw.rows['full-state'].filter((x:any)=>!['current','previous','activity'].includes(x.key))).toEqual(rawBefore.rows['full-state'].filter((x:any)=>!['current','previous','activity'].includes(x.key)));
   expect(raw.rows['full-receipts'].filter((x:any)=>x.key!==added[0].key)).toEqual(rawBefore.rows['full-receipts']);
-  for(const name of Object.keys(rawBefore.rows).filter(n=>!['full-state','full-receipts'].includes(n)))expect(raw.rows[name],name).toEqual(rawBefore.rows[name]);
+  const expected=structuredClone(rawBefore);expected.rows['full-state']=structuredClone(raw.rows['full-state']);expected.rows['full-receipts']=[...expected.rows['full-receipts'],added[0]].sort((a:any,b:any)=>a.key<b.key?-1:a.key>b.key?1:0);
+  proveRetentionDelta(rawBefore,expected,raw,added);
   return{g:formal.nextState,raw,receipt};
 }

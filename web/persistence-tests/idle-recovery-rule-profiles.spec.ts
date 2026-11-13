@@ -1,3 +1,4 @@
+import {expectBaselineUpgrade} from './retention-upgrade-proof';
 import {test,expect} from '@playwright/test';
 import {setupPersistence} from './support';
 import {repositoryFsRoot} from './fs-root';
@@ -19,8 +20,7 @@ test('rule profiles keep a genuine v3 database checkpoint and original tick repl
    return{before,opened,snapshot,replay,after,completed,a,checkpoint:await current.loadCheckpoint()};
   }finally{repo.close();current?.close();}
  },repositoryFsRoot);
- const upgraded={...r.before,version:10,stores:[...r.before.stores,'full-schedules'].sort(),'full-schedules':[]};
- expect(r.opened).toEqual(upgraded);expect(r.after).toEqual(upgraded);expect(r.snapshot.state.core.contentVersion).toBe('full-demo.3');expect(r.snapshot.state.core.balanceVersion).toBe('full-unbalanced.3');expect(r.snapshot.state.core.runId).toBe(r.completed.state.core.runId);expect(r.snapshot.activity).toEqual(r.completed.activity);expect(r.replay.replayed).toBe(true);expect(r.replay.state).toEqual(r.completed.state);expect(r.replay.result).toEqual(r.completed.result);expect(r.checkpoint.versions.contentVersion).toBe('full-demo.3');expect(r.checkpoint.snapshot.core.contentVersion).toBe('full-demo.3');
+ expectBaselineUpgrade(r.before,r.opened);expect(r.after).toEqual(r.opened);expect(r.snapshot.state.core.contentVersion).toBe('full-demo.3');expect(r.snapshot.state.core.balanceVersion).toBe('full-unbalanced.3');expect(r.snapshot.state.core.runId).toBe(r.completed.state.core.runId);expect(r.snapshot.activity).toEqual(r.completed.activity);expect(r.replay.replayed).toBe(true);expect(r.replay.state).toEqual(r.completed.state);expect(r.replay.result).toEqual(r.completed.result);expect(r.checkpoint.versions.contentVersion).toBe('full-demo.3');expect(r.checkpoint.snapshot.core.contentVersion).toBe('full-demo.3');
 });
 
 test('rule profiles let the actual old repository reject a new v4 database without mutating any store',async({page})=>{
@@ -57,8 +57,7 @@ test('genuine old configuration and direct replies replay after later progress w
    return{before,after,snapshot,configured,answered,a,b};
   }finally{repo.close();reader?.close();}
  },repositoryFsRoot);
- const upgraded={...r.before,version:10,stores:[...r.before.stores,'full-schedules'].sort(),'full-schedules':[]};
- expect(r.after).toEqual(upgraded);expect(r.snapshot.state.core.contentVersion).toBe('full-demo.3');
+ expectBaselineUpgrade(r.before,r.after);expect(r.snapshot.state.core.contentVersion).toBe('full-demo.3');
  for(const [replay,saved]of [[r.a,r.configured],[r.b,r.answered]]){
   expect(replay.replayed).toBe(true);expect(replay.result).toEqual(saved.result);expect(replay.state).toEqual(r.snapshot.state);expect(replay.activity).toEqual(r.snapshot.activity);
  }
