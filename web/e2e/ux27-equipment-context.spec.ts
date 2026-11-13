@@ -1,41 +1,272 @@
 import { proveCycle } from './scheduled-proof-support';
-import {currentPageTool} from './readonly-navigation-support';
-import {test,expect,type Page,type TestInfo} from '@playwright/test';
+import { currentPageTool } from './readonly-navigation-support';
+import { test, expect, type Page, type TestInfo } from '@playwright/test';
 
-
-
-
-import {stored} from './idle-recovery-ui-support';
+import { stored } from './idle-recovery-ui-support';
 import * as C from '../../src/full/content';
-import {answerGameConfirmation} from './game-confirmation-support';
-import {control600} from './idle-recovery-ui-support';
-import {driver} from '../../tests/full-route.mjs';
-import {snapshot,activitySnapshot as activity,openHubFeature} from './support';
-import {importRecoveryFixture,recoveryDatabase as database,recoveryReadonly as readonly} from './idle-recovery-ui-support';
-import {selectLearningSkill,openLearningSettings,closeLearningSettings} from './stage-support';
-test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});test.setTimeout(60000);
-async function oneSaved(page:Page,a:any,before:any,accepted:any){
- await expect.poll(async()=>(await activity(page))?.completedCycles).toBe(a.completedCycles+1);await expect(page.getByTestId('save-status')).toHaveText('已保存');const raw=await database(page),proof=proveCycle(raw,accepted,before,a);expect(await snapshot(page)).toEqual(proof.after);expect(await activity(page)).toEqual(proof.done);return{game:proof.after,raw,receipt:proof.receipt};
-}
-const modes=['school','skills','relics','manual','summary'] as const;
-async function selectCategory(page:Page,mode:typeof modes[number]){if(mode==='relics')await openHubFeature(page,'relics');else await page.getByTestId('equipment-mode-'+mode).click();}
-const titles={school:'修法 · 剑符择道',skills:'功法 · 研习与配装',relics:'法宝 · 炼制与装备',manual:'剑简 · 参悟与研习',summary:'配装 · 三法一器'};
-async function fixture(page:Page){const d=driver();d.realm();d.realm();d.funds(2000);d.go('sect');return importRecoveryFixture(page,d.game);}
-async function context(page:Page,mode:typeof modes[number]){await expect(page.getByTestId('equipment-panel')).toHaveAttribute('data-section',mode);await expect(page.locator('#feature-title')).toHaveText(titles[mode]);await expect(page.getByTestId('hub-'+(mode==='relics'?'relics':'skills'))).toHaveAttribute('aria-current','page');await expect(page.locator('#primary-navigation [aria-current=page]')).toHaveCount(1);if(mode==='relics')await expect(page.getByTestId('equipment-mode-relics')).toHaveCount(0);else await expect(page.getByTestId('equipment-mode-'+mode)).toHaveAttribute('aria-pressed','true');}
-async function frame(page:Page,info:TestInfo,name:string){await page.screenshot({path:info.outputPath(name+'.png')});const geo=await page.locator('#feature-title').evaluate(n=>{const r=n.getBoundingClientRect(),range=document.createRange();range.selectNodeContents(n);return{font:parseFloat(getComputedStyle(n).fontSize),ink:[...range.getClientRects()].every(x=>x.left>=r.left-.5&&x.right<=r.right+.5&&x.top>=r.top-.5&&x.bottom<=r.bottom+.5),scroll:[document.documentElement.scrollWidth,document.documentElement.scrollHeight]};});expect(geo.font).toBeGreaterThanOrEqual(18);expect(geo.ink).toBe(true);expect(geo.scroll[0]).toBeLessThanOrEqual(1440);expect(geo.scroll[1]).toBeLessThanOrEqual(900);const targets=await page.locator('[data-testid=equipment-panel]>.catalogue-tabs button,#primary-navigation button').evaluateAll(nodes=>nodes.map(n=>{const r=n.getBoundingClientRect(),hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return{id:(n as HTMLElement).dataset.testid,width:r.width,height:r.height,hit:!!hit&&(hit===n||n.contains(hit))};}));for(const target of targets){expect(target.width,target.id).toBeGreaterThanOrEqual(44);expect(target.height,target.id).toBeGreaterThanOrEqual(44);expect(target.hit,target.id).toBe(true);}await info.attach(name+'-geometry',{body:JSON.stringify(geo),contentType:'application/json'});}
-for(const entry of ['skills','relics']as const)test('UX27-C1 '+entry+' all five readonly categories align outer title and navigation and preserve parent return',async({page},info)=>{
- const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await fixture(page);const raw=await database(page);await readonly(page,()=>openHubFeature(page,entry));
- for(const mode of modes){await readonly(page,()=>selectCategory(page,mode));await page.screenshot({path:info.outputPath(entry+'-'+mode+'-before-context-assertion.png')});await context(page,mode);await frame(page,info,entry+'-'+mode);await readonly(page,async()=>(await currentPageTool(page,'feature-goal')).click());await expect(page.getByTestId('goal-panel')).toBeVisible();await expect(page.getByTestId('hub-'+(mode==='relics'?'relics':'skills'))).toHaveAttribute('aria-current','page');await readonly(page,()=>page.getByTestId('hub-close').click());await context(page,mode);await expect(page.getByTestId('feature-menu-open')).toBeFocused();}
- expect(await database(page)).toEqual(raw);expect(errors).toEqual([]);
+import { answerGameConfirmation } from './game-confirmation-support';
+import { control600 } from './idle-recovery-ui-support';
+import { driver } from '../../tests/full-route.mjs';
+import {
+  snapshot,
+  activitySnapshot as activity,
+  openHubFeature,
+} from './support';
+import {
+  importRecoveryFixture,
+  recoveryDatabase as database,
+  recoveryReadonly as readonly,
+} from './idle-recovery-ui-support';
+import {
+  selectLearningSkill,
+  openLearningSettings,
+  closeLearningSettings,
+} from './stage-support';
+test.use({
+  viewport: { width: 1440, height: 900 },
+  actionTimeout: 8000,
+  navigationTimeout: 15000,
 });
-test('UX27-C2 running nondefault queue keeps original dueAt command budgets draft and unbroken countdown while browsing and returning',async({page},info)=>{
- const before=await fixture(page);await openHubFeature(page,'skills');for(const id of ['sword_still','sword_guard']){await selectLearningSkill(page,id);await page.getByTestId('learn-'+id).click();}
- await openLearningSettings(page);await page.getByLabel('累计研习灵石预算').fill('777');await page.getByLabel('研习灵石保留量').fill('9');await closeLearningSettings(page);await page.getByTestId('preparation-start').click();await expect.poll(async()=>(await activity(page))?.status).toBe('running');const a=await activity(page),accepted=await database(page);expect(a.plan.stoneBudget).toBe(777);expect(a.plan.stoneReserve).toBe(9);await page.clock.runFor(7000);await expect(page.getByTestId('training-countdown')).toHaveText('23.0 秒');
- for(const mode of modes){await readonly(page,()=>selectCategory(page,mode));await context(page,mode);expect(await activity(page)).toEqual(a);await expect(page.getByTestId('training-countdown')).toHaveText('23.0 秒');}
- await page.getByTestId('equipment-mode-skills').click();await openLearningSettings(page);await expect(page.getByLabel('累计研习灵石预算')).toHaveValue('777');await expect(page.getByLabel('研习灵石保留量')).toHaveValue('9');const queue=page.getByLabel('有限研习清单',{exact:true});await expect(queue).toContainText('2 / 12');await queue.getByTestId('catalogue-prev').click();await expect(queue).toContainText(C.skills.sword_still.name);await queue.getByTestId('catalogue-next').click();await expect(queue).toContainText(C.skills.sword_guard.name);await closeLearningSettings(page);await frame(page,info,'running-original-queue-preserved');expect(await snapshot(page)).toEqual(before);expect(await database(page)).toEqual(accepted);await page.clock.runFor(a.cycleMs-7001);expect(await database(page)).toEqual(accepted);await page.clock.runFor(1);await expect.poll(async()=>(await activity(page)).completedCycles).toBe(1);await expect(page.getByTestId('save-status')).toHaveText('已保存');await oneSaved(page,a,before,accepted);await context(page,'skills');await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activity(page)).status).toBe('paused');
+test.setTimeout(60000);
+async function oneSaved(page: Page, a: any, before: any, accepted: any) {
+  await expect
+    .poll(async () => (await activity(page))?.completedCycles)
+    .toBe(a.completedCycles + 1);
+  await expect(page.getByTestId('save-status')).toHaveText('已保存');
+  const raw = await database(page),
+    proof = proveCycle(raw, accepted, before, a);
+  expect(await snapshot(page)).toEqual(proof.after);
+  expect(await activity(page)).toEqual(proof.done);
+  return { game: proof.after, raw, receipt: proof.receipt };
+}
+const modes = ['school', 'skills', 'relics', 'manual', 'summary'] as const;
+async function selectCategory(page: Page, mode: (typeof modes)[number]) {
+  if (mode === 'relics') await openHubFeature(page, 'relics');
+  else await page.getByTestId('equipment-mode-' + mode).click();
+}
+const titles = {
+  school: '修法 · 剑符择道',
+  skills: '功法 · 研习与配装',
+  relics: '法宝 · 炼制与装备',
+  manual: '剑简 · 参悟与研习',
+  summary: '配装 · 三法一器',
+};
+async function fixture(page: Page) {
+  const d = driver();
+  d.realm();
+  d.realm();
+  d.funds(2000);
+  d.go('sect');
+  return importRecoveryFixture(page, d.game);
+}
+async function context(page: Page, mode: (typeof modes)[number]) {
+  await expect(page.getByTestId('equipment-panel')).toHaveAttribute(
+    'data-section',
+    mode,
+  );
+  await expect(page.locator('#feature-title')).toHaveText(titles[mode]);
+  await expect(
+    page.getByTestId('hub-' + (mode === 'relics' ? 'relics' : 'skills')),
+  ).toHaveAttribute('aria-current', 'page');
+  await expect(
+    page.locator('#primary-navigation [aria-current=page]'),
+  ).toHaveCount(1);
+  if (mode === 'relics')
+    await expect(page.getByTestId('equipment-mode-relics')).toHaveCount(0);
+  else
+    await expect(page.getByTestId('equipment-mode-' + mode)).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
+}
+async function frame(page: Page, info: TestInfo, name: string) {
+  await page.screenshot({ path: info.outputPath(name + '.png') });
+  const geo = await page.locator('#feature-title').evaluate((n) => {
+    const r = n.getBoundingClientRect(),
+      range = document.createRange();
+    range.selectNodeContents(n);
+    return {
+      font: parseFloat(getComputedStyle(n).fontSize),
+      ink: [...range.getClientRects()].every(
+        (x) =>
+          x.left >= r.left - 0.5 &&
+          x.right <= r.right + 0.5 &&
+          x.top >= r.top - 0.5 &&
+          x.bottom <= r.bottom + 0.5,
+      ),
+      scroll: [
+        document.documentElement.scrollWidth,
+        document.documentElement.scrollHeight,
+      ],
+    };
+  });
+  expect(geo.font).toBeGreaterThanOrEqual(18);
+  expect(geo.ink).toBe(true);
+  expect(geo.scroll[0]).toBeLessThanOrEqual(1440);
+  expect(geo.scroll[1]).toBeLessThanOrEqual(900);
+  const targets = await page
+    .locator(
+      '[data-testid=equipment-panel]>.catalogue-tabs button,#primary-navigation button',
+    )
+    .evaluateAll((nodes) =>
+      nodes.map((n) => {
+        const r = n.getBoundingClientRect(),
+          hit = document.elementFromPoint(
+            r.x + r.width / 2,
+            r.y + r.height / 2,
+          );
+        return {
+          id: (n as HTMLElement).dataset.testid,
+          width: r.width,
+          height: r.height,
+          hit: !!hit && (hit === n || n.contains(hit)),
+        };
+      }),
+    );
+  for (const target of targets) {
+    expect(target.width, target.id).toBeGreaterThanOrEqual(44);
+    expect(target.height, target.id).toBeGreaterThanOrEqual(44);
+    expect(target.hit, target.id).toBe(true);
+  }
+  await info.attach(name + '-geometry', {
+    body: JSON.stringify(geo),
+    contentType: 'application/json',
+  });
+}
+for (const entry of ['skills', 'relics'] as const)
+  test(
+    'UX27-C1 ' +
+      entry +
+      ' all five readonly categories align outer title and navigation and preserve parent return',
+    async ({ page }, info) => {
+      const errors: string[] = [];
+      page.on('pageerror', (e) => errors.push(e.message));
+      await fixture(page);
+      const raw = await database(page);
+      await readonly(page, () => openHubFeature(page, entry));
+      for (const mode of modes) {
+        await readonly(page, () => selectCategory(page, mode));
+        await page.screenshot({
+          path: info.outputPath(
+            entry + '-' + mode + '-before-context-assertion.png',
+          ),
+        });
+        await context(page, mode);
+        await frame(page, info, entry + '-' + mode);
+        await readonly(page, async () =>
+          (await currentPageTool(page, 'feature-goal')).click(),
+        );
+        await expect(page.getByTestId('goal-panel')).toBeVisible();
+        await expect(
+          page.getByTestId('hub-' + (mode === 'relics' ? 'relics' : 'skills')),
+        ).toHaveAttribute('aria-current', 'page');
+        await readonly(page, () => page.getByTestId('hub-close').click());
+        await context(page, mode);
+        await expect(page.getByTestId('feature-menu-open')).toBeFocused();
+      }
+      expect(await database(page)).toEqual(raw);
+      expect(errors).toEqual([]);
+    },
+  );
+test('UX27-C2 running nondefault queue keeps original dueAt command budgets draft and unbroken countdown while browsing and returning', async ({
+  page,
+}, info) => {
+  const before = await fixture(page);
+  await openHubFeature(page, 'skills');
+  for (const id of ['sword_still', 'sword_guard']) {
+    await selectLearningSkill(page, id);
+    await page.getByTestId('learn-' + id).click();
+  }
+  await openLearningSettings(page);
+  await page.getByLabel('累计研习灵石预算').fill('777');
+  await page.getByLabel('研习灵石保留量').fill('9');
+  await closeLearningSettings(page);
+  await page.getByTestId('preparation-start').click();
+  await expect.poll(async () => (await activity(page))?.status).toBe('running');
+  const a = await activity(page),
+    accepted = await database(page);
+  expect(a.plan.stoneBudget).toBe(777);
+  expect(a.plan.stoneReserve).toBe(9);
+  await page.clock.runFor(7000);
+  await expect(page.getByTestId('training-countdown')).toHaveText('23.0 秒');
+  for (const mode of modes) {
+    await readonly(page, () => selectCategory(page, mode));
+    await context(page, mode);
+    expect(await activity(page)).toEqual(a);
+    await expect(page.getByTestId('training-countdown')).toHaveText('23.0 秒');
+  }
+  await page.getByTestId('equipment-mode-skills').click();
+  await openLearningSettings(page);
+  await expect(page.getByLabel('累计研习灵石预算')).toHaveValue('777');
+  await expect(page.getByLabel('研习灵石保留量')).toHaveValue('9');
+  const queue = page.getByLabel('有限研习清单', { exact: true });
+  await expect(queue).toContainText('2 / ' + Object.keys(C.skills).length);
+  await queue.getByTestId('catalogue-prev').click();
+  await expect(queue).toContainText(C.skills.sword_still.name);
+  await queue.getByTestId('catalogue-next').click();
+  await expect(queue).toContainText(C.skills.sword_guard.name);
+  await closeLearningSettings(page);
+  await frame(page, info, 'running-original-queue-preserved');
+  expect(await snapshot(page)).toEqual(before);
+  expect(await database(page)).toEqual(accepted);
+  await page.clock.runFor(a.cycleMs - 7001);
+  expect(await database(page)).toEqual(accepted);
+  await page.clock.runFor(1);
+  await expect.poll(async () => (await activity(page)).completedCycles).toBe(1);
+  await expect(page.getByTestId('save-status')).toHaveText('已保存');
+  await oneSaved(page, a, before, accepted);
+  await context(page, 'skills');
+  await page.getByTestId('training-pause').click();
+  await expect.poll(async () => (await activity(page)).status).toBe('paused');
 });
 
-test('UX27-C3 readonly slot inspection and replacement life retire old context without changing authorization',async({page},info)=>{
- await fixture(page);await openHubFeature(page,'relics');await page.getByTestId('equipment-mode-summary').click();await context(page,'summary');await readonly(page,()=>page.getByTestId('loadout-node-relic').click());await context(page,'relics');await readonly(page,()=>page.getByTestId('equipment-mode-summary').click());const equipped=(await snapshot(page)).loadout.mind;await readonly(page,()=>page.getByTestId('loadout-node-mind').click());await context(page,equipped?'skills':'school');await readonly(page,()=>page.getByTestId('equipment-mode-manual').click());await context(page,'manual');
- const raw=await database(page),old=await snapshot(page),d=driver('leave');await page.getByTestId('game-settings').click();await page.getByLabel('导入存档',{exact:true}).setInputFiles({name:'lawful-ux27-replacement.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(d.game))});await answerGameConfirmation(page,'import');await control600(page,raw);if(await page.getByRole('button',{name:'关闭设置',exact:true}).isVisible())await page.getByRole('button',{name:'关闭设置',exact:true}).click();const current=await snapshot(page),expected=structuredClone(d.game);expected.core.runId=current.core.runId;expected.core.revision=0;if(expected.core.activeEvent)expected.core.activeEvent.instanceId=current.core.runId+':'+expected.core.activeEvent.id;expect(current).toEqual(expected);expect(current.core.runId).not.toBe(old.core.runId);expect(await activity(page)).toBeNull();await readonly(page,()=>openHubFeature(page,'skills'));await context(page,'skills');await frame(page,info,'replacement-life-new-skills');
+test('UX27-C3 readonly slot inspection and replacement life retire old context without changing authorization', async ({
+  page,
+}, info) => {
+  await fixture(page);
+  await openHubFeature(page, 'relics');
+  await page.getByTestId('equipment-mode-summary').click();
+  await context(page, 'summary');
+  await readonly(page, () => page.getByTestId('loadout-node-relic').click());
+  await context(page, 'relics');
+  await readonly(page, () =>
+    page.getByTestId('equipment-mode-summary').click(),
+  );
+  const equipped = (await snapshot(page)).loadout.mind;
+  await readonly(page, () => page.getByTestId('loadout-node-mind').click());
+  await context(page, equipped ? 'skills' : 'school');
+  await readonly(page, () => page.getByTestId('equipment-mode-manual').click());
+  await context(page, 'manual');
+  const raw = await database(page),
+    old = await snapshot(page),
+    d = driver('leave');
+  await page.getByTestId('game-settings').click();
+  await page
+    .getByLabel('导入存档', { exact: true })
+    .setInputFiles({
+      name: 'lawful-ux27-replacement.json',
+      mimeType: 'application/json',
+      buffer: Buffer.from(JSON.stringify(d.game)),
+    });
+  await answerGameConfirmation(page, 'import');
+  await control600(page, raw);
+  if (
+    await page
+      .getByRole('button', { name: '关闭设置', exact: true })
+      .isVisible()
+  )
+    await page.getByRole('button', { name: '关闭设置', exact: true }).click();
+  const current = await snapshot(page),
+    expected = structuredClone(d.game);
+  expected.core.runId = current.core.runId;
+  expected.core.revision = 0;
+  if (expected.core.activeEvent)
+    expected.core.activeEvent.instanceId =
+      current.core.runId + ':' + expected.core.activeEvent.id;
+  expect(current).toEqual(expected);
+  expect(current.core.runId).not.toBe(old.core.runId);
+  expect(await activity(page)).toBeNull();
+  await readonly(page, () => openHubFeature(page, 'skills'));
+  await context(page, 'skills');
+  await frame(page, info, 'replacement-life-new-skills');
 });

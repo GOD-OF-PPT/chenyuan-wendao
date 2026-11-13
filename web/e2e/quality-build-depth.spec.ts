@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 import * as C from '../../src/full/content';
 import { resolve } from '../../src/full/engine';
 import { driver } from '../../tests/full-route.mjs';
@@ -17,6 +18,29 @@ import {
 import { captureFixedPng } from './png-capture';
 
 test.use({ viewport: { width: 1440, height: 900 } });
+const originalPaintedBounds = JSON.parse(
+  readFileSync(
+    new URL(
+      '../../tests/fixtures/ui-bounds/art27-legacy-painted-bounds.json',
+      import.meta.url,
+    ),
+    'utf8',
+  ),
+);
+async function ownedArtifactSize(page: Page, id: string) {
+  const asset = page.locator(`[data-asset-id="relic-selected-${id}"]`);
+  await expect(asset).toHaveAttribute('data-art-state', 'ready');
+  const size = await asset.locator('img').evaluate(
+    (node, b) => {
+      const i = node as HTMLImageElement,
+        r = i.getBoundingClientRect(),
+        scale = Math.min(r.width / i.naturalWidth, r.height / i.naturalHeight);
+      return { width: (b[2] - b[0]) * scale, height: (b[3] - b[1]) * scale };
+    },
+    originalPaintedBounds['art/v2/equipment/' + id + '-v1.webp'].alphaBBox16,
+  );
+  expect(Math.max(size.width, size.height)).toBeGreaterThanOrEqual(280);
+}
 test('conversion funding keeps its own 24-stone target and returning to the original material sheet restores the full 140-stone target', async ({
   page,
 }, info) => {
@@ -114,6 +138,12 @@ test('an unaffordable owned conversion retains its exact quote and a one-dew sou
   expect(before.core.inventory.dew).toBe(0);
   await openHubFeature(page, 'relics');
   await selectRelic(page, 'jade_seal');
+  await ownedArtifactSize(page, 'jade_seal');
+  await controlsFit(page, '[data-testid=relic-atelier]');
+  await captureFixedPng(
+    page,
+    info.outputPath('conversion-missing-dew-stage.png'),
+  );
   await page.getByTestId('equip-relic-jade_seal').click();
   await expect(page.getByTestId('configuration-cost')).toContainText('灵露 ×1');
   await expect(page.getByTestId('configuration-confirm')).toBeDisabled();

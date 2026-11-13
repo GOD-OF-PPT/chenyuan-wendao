@@ -271,61 +271,65 @@ test('multiple DB10 windows use their real saved revisions rather than baseline 
   const fixture = createDb10NativeFixture();
   try {
     await setupPersistence(page);
-    const result = await page.evaluate(async (url) => {
-      const h = (globalThis as any).h,
-        old = await import(url),
-        name = 'q15-db10-window-order',
-        d = h.routes.driver();
-      d.go('sect');
-      const repo = await old.FullSaveRepository.open(name),
-        realNow = Date.now;
-      let now = 1700000000000,
-        current: any;
-      Date.now = () => now;
-      try {
-        const initial = await repo.importText(
-            JSON.stringify(d.game),
-            h.mutation(),
-          ),
-          m = (s: any, id: string) => ({
-            commandId: id,
-            runId: s.state.core.runId,
-            expectedRevision: s.state.core.revision,
-            expectedActivityId: s.activity?.id ?? null,
-            expectedActivityRevision: s.activity?.revision ?? null,
-            ownerId: 'db10-order',
-          }),
-          start = await repo.startScheduledActivity(
-            {
-              kind: 'source',
-              sourceId: 'work',
-              maxCycles: 5,
-              until: 'cycles',
-              target: null,
-              monthBudget: 60,
-              remainingMonthsReserve: 1,
-            },
-            m({ state: initial.state, activity: null }, 'db10-start'),
+    const result = await page.evaluate(
+      async ({ url, routesUrl }) => {
+        const h = (globalThis as any).h,
+          old = await import(url),
+          name = 'q15-db10-window-order',
+          routes = await import(routesUrl),
+          d = routes.driver();
+        d.go('sect');
+        const repo = await old.FullSaveRepository.open(name),
+          realNow = Date.now;
+        let now = 1700000000000,
+          current: any;
+        Date.now = () => now;
+        try {
+          const initial = await repo.importText(
+              JSON.stringify(d.game),
+              h.mutation(),
+            ),
+            m = (s: any, id: string) => ({
+              commandId: id,
+              runId: s.state.core.runId,
+              expectedRevision: s.state.core.revision,
+              expectedActivityId: s.activity?.id ?? null,
+              expectedActivityRevision: s.activity?.revision ?? null,
+              ownerId: 'db10-order',
+            }),
+            start = await repo.startScheduledActivity(
+              {
+                kind: 'source',
+                sourceId: 'work',
+                maxCycles: 5,
+                until: 'cycles',
+                target: null,
+                monthBudget: 60,
+                remainingMonthsReserve: 1,
+              },
+              m({ state: initial.state, activity: null }, 'db10-start'),
+            );
+          now += 30000;
+          const first = await repo.advanceScheduledActivity(
+            m(start, 'z-older-window'),
           );
-        now += 30000;
-        const first = await repo.advanceScheduledActivity(
-          m(start, 'z-older-window'),
-        );
-        now += 60000;
-        await repo.advanceScheduledActivity(m(first, 'a-latest-window'));
-        const expected = await repo.loadAwaySummary(),
-          before = await h.FullSaveRepository.exportRaw(name);
-        current = await h.FullSaveRepository.open(name);
-        const afterUpgrade = await h.FullSaveRepository.exportRaw(name),
-          summary = await current.loadAwaySummary(),
-          after = await h.FullSaveRepository.exportRaw(name);
-        return { expected, before, afterUpgrade, summary, after };
-      } finally {
-        Date.now = realNow;
-        repo.close();
-        current?.close();
-      }
-    }, fixture.repositoryUrl);
+          now += 60000;
+          await repo.advanceScheduledActivity(m(first, 'a-latest-window'));
+          const expected = await repo.loadAwaySummary(),
+            before = await h.FullSaveRepository.exportRaw(name);
+          current = await h.FullSaveRepository.open(name);
+          const afterUpgrade = await h.FullSaveRepository.exportRaw(name),
+            summary = await current.loadAwaySummary(),
+            after = await h.FullSaveRepository.exportRaw(name);
+          return { expected, before, afterUpgrade, summary, after };
+        } finally {
+          Date.now = realNow;
+          repo.close();
+          current?.close();
+        }
+      },
+      { url: fixture.repositoryUrl, routesUrl: fixture.routesUrl },
+    );
     expect(result.expected.cycles).toBe(2);
     expectBaselineUpgrade(result.before, result.afterUpgrade);
     expect(result.summary).toEqual(result.expected);

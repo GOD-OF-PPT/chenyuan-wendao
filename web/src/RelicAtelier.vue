@@ -396,6 +396,34 @@ const localControls = useLocalActivityControls();
         ><section class="relic-description production-object"
           ><h3>{{ relic.name }}</h3
           ><p>{{ relic.description }}</p
+          ><div
+            v-if="owned && !bound && conversion"
+            class="relic-conversion-info"
+          >
+            <p data-testid="relic-conversion-cost"
+              >认主投入：{{ formatCosts(conversion) }}</p
+            >
+            <div class="relic-conversion-actions">
+              <button
+                v-if="(conversion.items.dew ?? 0) > game.core.inventory.dew"
+                @click="emit('material', 'dew')"
+                >查看灵露来源</button
+              >
+              <button
+                v-if="game.core.player.stones < conversion.stones"
+                @click="
+                  conversionFunding = true;
+                  funding = true;
+                  open(preparation, $event);
+                "
+                >查看认主灵石来源</button
+              >
+            </div>
+            <small
+              v-if="!conflict && equipment?.failure"
+              data-testid="production-equip-reason"
+              >{{ equipment.failure.message }}</small
+            > </div
           ><strong
             v-if="
               state !== 'idle' || (!owned && activity?.status === 'stopped')
@@ -478,30 +506,6 @@ const localControls = useLocalActivityControls();
               :disabled="!!conflict"
               @click="emit('equip')"
               >与本命比较 · 确认后认主</button
-            ><small
-              v-if="owned && !bound && conversion"
-              data-testid="relic-conversion-cost"
-              >认主投入：{{ formatCosts(conversion) }}</small
-            ><button
-              v-if="
-                owned &&
-                !bound &&
-                (conversion?.items.dew ?? 0) > game.core.inventory.dew
-              "
-              @click="emit('material', 'dew')"
-              >查看灵露来源</button
-            ><button
-              v-if="
-                owned &&
-                !bound &&
-                game.core.player.stones < (conversion?.stones ?? 0)
-              "
-              @click="
-                conversionFunding = true;
-                funding = true;
-                open(preparation, $event);
-              "
-              >查看认主灵石来源</button
             ></template
           ><button
             v-else-if="owned || !realmReady"
@@ -532,7 +536,7 @@ const localControls = useLocalActivityControls();
             }}</button
           >
           <small
-            v-if="!owned || conflict || (!bound && equipment?.failure)"
+            v-if="!owned || conflict"
             :data-testid="owned ? 'production-equip-reason' : undefined"
             >{{
               conflict ||
@@ -702,3 +706,12 @@ const localControls = useLocalActivityControls();
     </dialog>
   </div>
 </template>
+<style scoped>
+@layer game {
+  .relic-conversion-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+</style>
