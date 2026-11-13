@@ -16,6 +16,12 @@
 
 74fff18当前类型/构建通过；完整matrix-ui-controls与store-sync-status共15/15通过，39.854秒，保晚到文件、同run新revision、演示scope隔离、显式确认/原写锁/已保存后同步待核等原断言。App由约166KB降到142.8KB只是目前结构结果，目标约30KB不是字节帽；四玩法内容、导航与其它职责仍待继续。
 
+## 第三Seam：洞府修行决策
+
+`CultivationHome.vue`从原Vue AST精确移出洞府分支，保原DOM顺序且不加容器。由同一注入Store只读计算nextStep/目标、寿元/恢复、原报价、渡劫返回和默认/所选修炼计划；方式仍为父级v-model，原查看已保存安排回填方式继续成立。明确事件只交还原导航、开始、准备/比较、人物/设置，不接存储或自建时钟。
+
+4d95cdf类型及清洁构建通过，完整原ABC、原法宝焦点、默认持续、导航和Q11结果五文件38/38通过（52.2秒），0skip/retry/flaky。模板原需openHub的checkpoint第三参已用真实required/checkpoint联合类型保；提取时两次类型红属于接线准备，未改玩法或放宽类型。App现约131.7KB仍远非Q13完成，剩余四玩法/导航等责任与最终综合保留。
+
 ## 后续与执行边界
 
 当前无live测试。root/web node_modules仍是指向Q12的junction，不能直接在此npm ci或validate-core（会安装）；先核后仅删除link并独立安装。当前每段代码和原报告保，临时工具/日志在artifacts/q13-app。
