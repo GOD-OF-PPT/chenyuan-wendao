@@ -998,10 +998,161 @@ test('acknowledged replacement replays do not accumulate stale offers in a live 
   expect(result.samples.every((s: any) => s.confirmed <= 512)).toBe(true);
   expect(result.after).toEqual(result.before);
   expect(result.after['full-receipts']).toHaveLength(1);
-  await test
-    .info()
-    .attach('live-receiver-memory', {
-      body: JSON.stringify(result.samples),
-      contentType: 'application/json',
-    });
+  await test.info().attach('live-receiver-memory', {
+    body: JSON.stringify(result.samples),
+    contentType: 'application/json',
+  });
+});
+
+test('return-summary reading delivers only its latest complete window while retaining and validating the exact original proof', async ({
+  page,
+}, info) => {
+  await setupPersistence(page);
+  const result = await page.evaluate(async () => {
+    const h = (globalThis as any).h,
+      name = 'q15-summary-read-window',
+      repo = await h.FullSaveRepository.open(name),
+      d = h.routes.driver();
+    d.go('sect');
+    const realNow = Date.now;
+    let now = 1700000000000;
+    Date.now = () => now;
+    try {
+      const seed = { ...h.mutation(), commandId: repo.issueCommandId() };
+      let out = await repo.importText(JSON.stringify(d.game), seed);
+      await repo.confirmDelivery(seed.runId, seed.commandId);
+      let a: any = null;
+      const m = () => ({
+        commandId: repo.issueCommandId(),
+        runId: out.state.core.runId,
+        expectedRevision: out.state.core.revision,
+        expectedActivityId: a?.id ?? null,
+        expectedActivityRevision: a?.revision ?? null,
+        ownerId: 'q15-summary-reader',
+      });
+      let input = m();
+      out = await repo.startScheduledActivity(
+        {
+          kind: 'source',
+          sourceId: 'work',
+          maxCycles: 50,
+          until: 'cycles',
+          target: null,
+          monthBudget: 600,
+          remainingMonthsReserve: 1,
+        },
+        input,
+      );
+      a = out.activity;
+      await repo.confirmDelivery(seed.runId, input.commandId);
+      for (const elapsed of [135000, 30000]) {
+        now += elapsed;
+        input = m();
+        out = await repo.advanceScheduledActivity(input);
+        a = out.activity;
+        await repo.confirmDelivery(seed.runId, input.commandId);
+      }
+      for (let i = 0; i < 100; i++) {
+        input = m();
+        out = await repo.pauseScheduledActivity(input);
+        a = out.activity;
+        await repo.confirmDelivery(seed.runId, input.commandId);
+        input = m();
+        out = await repo.resumeScheduledActivity(input);
+        a = out.activity;
+        await repo.confirmDelivery(seed.runId, input.commandId);
+      }
+      const before = await h.inspect(name),
+        path = '/src/away-summary.ts',
+        { summarizeAway } = await import(path),
+        reference = summarizeAway(
+          out.state,
+          a,
+          out.schedule,
+          before['full-receipts']
+            .map((r: any) => r.value)
+            .filter((v: any) => v.format === 'chenyuan-scheduled-receipt'),
+        ),
+        prototype = IDBObjectStore.prototype,
+        methods = ['get', 'getAll', 'openCursor'] as const,
+        restore: Array<() => void> = [],
+        metrics = { requests: 0, rawValuesDelivered: 0 };
+      for (const method of methods) {
+        const original = prototype[method];
+        prototype[method] = function (...args: any[]) {
+          const q = Reflect.apply(original, this, args);
+          if (
+            this.transaction.db.name === name &&
+            this.transaction.mode === 'readonly' &&
+            this.name === 'full-receipts'
+          ) {
+            metrics.requests++;
+            q.addEventListener('success', () => {
+              metrics.rawValuesDelivered +=
+                method === 'getAll'
+                  ? q.result.length
+                  : q.result === undefined || q.result === null
+                    ? 0
+                    : 1;
+            });
+          }
+          return q;
+        };
+        restore.push(() => (prototype[method] = original));
+      }
+      let summary: any;
+      try {
+        summary = await repo.loadAwaySummary();
+      } finally {
+        for (const undo of restore) undo();
+      }
+      const after = await h.inspect(name),
+        root = before['full-receipts'].find(
+          (r: any) =>
+            r.value.format === 'chenyuan-scheduled-receipt' &&
+            r.value.input.kind === 'ADVANCE' &&
+            r.value.input.mutation.commandId === summary.id,
+        ),
+        bad = structuredClone(root.value);
+      bad.proof.result.delta.stones++;
+      await h.put(name, 'full-receipts', root.key, bad);
+      const damaged = await h.inspect(name),
+        rejected = await h.attempt(() => repo.loadAwaySummary()),
+        afterRejected = await h.inspect(name);
+      return {
+        before,
+        after,
+        reference,
+        summary,
+        metrics,
+        damaged,
+        afterRejected,
+        rejected,
+      };
+    } finally {
+      Date.now = realNow;
+      repo.close();
+    }
+  });
+  expect(result.before['full-receipts'].length).toBeGreaterThan(200);
+  expect(result.summary).toEqual(result.reference);
+  expect(result.summary).toMatchObject({
+    cycles: 1,
+    costs: { months: 12 },
+    delta: { stones: 20 },
+  });
+  expect(result.after).toEqual(result.before);
+  expect(result.rejected.code).toBe('RECEIPT_INVALID');
+  expect(result.afterRejected).toEqual(result.damaged);
+  await info.attach('latest-window-native-read-cost', {
+    body: JSON.stringify({
+      rawRetained: result.before['full-receipts'].length,
+      metrics: result.metrics,
+      summaryCycles: result.summary.cycles,
+      originalInventoryPreserved: true,
+      corruptOriginalRejected: true,
+    }),
+    contentType: 'application/json',
+  });
+  expect(result.metrics.rawValuesDelivered).toBeLessThanOrEqual(2);
 });
