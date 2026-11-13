@@ -6,6 +6,7 @@ import type {ClosureNavigation} from './closure-navigation';
 import {useSaveControls} from './use-save-controls';
 import {useActionView} from './use-action-view';
 import {useStageReturns} from './use-stage-returns';
+import {useConfigurationReview} from './use-configuration-review';
 import GameSettings from './GameSettings.vue';
 import DemoMenu from './DemoMenu.vue';
 import GameplayHelp from './GameplayHelp.vue';
@@ -75,7 +76,6 @@ import MarketPlanner from './MarketPlanner.vue';
 import RecoveryPlanner from './RecoveryPlanner.vue';
 import ConfigurationDialog from './ConfigurationDialog.vue';
 import {isPreparationPlan,type PreparationPlan} from '../../src/full/preparation.ts';
-import type {ConfigurationAction,ConfigurationIntent} from '../../src/full/configuration.ts';
 import type {Game} from '../../src/full/types.ts';
 import {previewActivity,type CultivationPlan,type SourcePlan,type CraftPlan,type ForgePlan} from '../../src/full/activity.ts';
 import NarrativePanel from './NarrativePanel.vue';
@@ -461,16 +461,7 @@ async function movePreparation(plan:PreparationPlan){
  const draft=structuredClone(plan),location:C.LocationId=draft.kind==='learn'||draft.kind==='study'?'sect':draft.kind==='buy'||draft.kind==='sell'?'market':'cave';
  return arrangeTravel(location,()=>inspectPreparationPlan(draft));
 }
-const configurationError=ref(''),configurationIntent=shallowRef<ConfigurationIntent|null>(null),configurationSnapshot=shallowRef<Game|null>(null);
-const configurationStale=computed(()=>!!configurationIntent.value&&(!game.value||game.value.core.runId!==configurationIntent.value.command.runId||game.value.core.revision!==configurationIntent.value.command.expectedRevision||(store.activity?.id??null)!==configurationIntent.value.expectedActivityId||(store.activity?.revision??null)!==configurationIntent.value.expectedActivityRevision));
-const configurationRetry=computed(()=>!!configurationIntent.value&&store.canRetryFor(configurationIntent.value.command.commandId));
-async function inspectConfiguration(action:ConfigurationAction){
- const intent=store.prepareConfiguration(action);if(!intent||!game.value)return;
- configurationError.value='';configurationSnapshot.value=structuredClone(game.value);configurationIntent.value=intent;
-}
-function closeConfiguration(){if(store.busy)return;const intent=configurationIntent.value;if(intent)store.discardRetryFor(intent.command.commandId);configurationIntent.value=null;configurationSnapshot.value=null;}
-function refreshConfiguration(){const action=configurationIntent.value?.command;if(!action)return;closeConfiguration();void inspectConfiguration(action.type==='SCHOOL'?{type:'SCHOOL',school:action.school}:action.type==='EQUIP'?{type:'EQUIP',skill:action.skill}:{type:'EQUIP_RELIC',relic:action.relic});}
-async function confirmConfiguration(retry=false){const intent=configurationIntent.value;if(!intent||!retry&&configurationStale.value||store.busy)return;if(retry)await store.retryFor(intent.command.commandId);else await store.applyConfiguration(intent);configurationError.value=store.error;const committed=store.syncIssue&&store.lastResult?.commandId===intent.command.commandId&&store.lastResult.runId===intent.command.runId;if((!store.error||committed)&&configurationIntent.value===intent)closeConfiguration();}
+const {configurationError,configurationIntent,configurationSnapshot,configurationStale,configurationRetry,inspectConfiguration,closeConfiguration,refreshConfiguration,confirmConfiguration}=useConfigurationReview(store);
 const recoveryNeeded=computed(()=>!!quote({type:'REST'})?.allowed);
 const trialReturn=computed(()=>game.value?trialReturnView(game.value,store.hasCheckpoint?store.checkpointSummary:null,store.trialRecovery,store.ready&&store.available&&!store.busy&&!store.syncIssue&&!(store.warning&&!store.hasCheckpoint)):null);
 const cultivationHome=computed(()=>!!game.value&&phase.value==='idle'&&tab.value==='修行'&&core.value?.world.location==='cave');
