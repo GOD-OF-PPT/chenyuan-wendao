@@ -1,6 +1,16 @@
-# Q13：App 职责拆分（进行中）
+# Q13：App 职责拆分（本地验证完成）
 
-依据先发布main的[0160合同](../decisions/0160-app-responsibility-modules.md)，承接Q12/PR56。完整报告项递交12/20；本项未递交，全部20目标active。工作区chenyuan-quality-q13，分支codex/quality-q13-app-responsibilities。
+依据先发布main的[0160合同](../decisions/0160-app-responsibility-modules.md)，承接Q12/PR56。工作区chenyuan-quality-q13，分支codex/quality-q13-app-responsibilities。以下各Seam保原阶段生产身份；最终结果以本节为准。
+
+最终清洁生产者`4b0eba2a0f2352e5b2090a982987df7e94073f2a`，tree `34330b5b225a87fc4bd0eacd96684bb233299dff`，运行源摘要`e3d93c68899d17701290834ff898e9d2eaa4f08237ace2e8d17cb745764108bf`。App由约166KB变为36,656字节可读脚本与组合模板；这是职责划分结果，不是新字节帽。确认、传输、配置、直接行动、活动安排、只读返回、导航、焦点各有明确owner；MainStage、四旧tab与各目录/状态表面各自消费真实只读投影，GameWorkspace按`game-owners.ts`注入逐个类型Module，没有通用App context或第二Store/时钟/写者。
+
+同源最终十核心门禁全部通过：984/984根测试与13/13资源接口；完整Native471/471（46文件，244.476559秒）、Q11/Q12/Q13完整UI196/196（28文件，297.995076秒）、完整正常32/32（3文件，880.301761秒）。三组即时声明与实际成员逐例一致，0跳过/失败/重试/漂移，实际worker0/1；同版loader另核完整use/expect/正则和原时限，原完整Game/CP/最后1ms/预算/周期均保。Node为已安装24.22.1，根和web依赖是独立目录。构建112文件/11,626,309字节，与运行源核同。
+
+13既有表面的文字/几何/计算样式同Q12，仅同源端口归一化；9PNG字节相同，另4图有2、4、7、47像素轻微差异、最大通道差5，不冒全像素一致。13表面与检查点图以及正常路线筑基/飞升图共16张当前原尺寸PNG直接实看。原160规则与联合数值报告的83份完整输入分别逐hash相同，承接原`64689f5`/`eab42b8`生产身份，没有声称本次重跑160。
+
+独立[双轴审查](q13-review.md)发现的两项生命周期/原重试问题与检查点参数问题均同点红绿关闭；[Q11/Q12/Q13三任务综合](q13-three-task-check.md)已闭合。原focus-first 9过13红在抽取前后完全同判定，legacy错误cwd 34过2错与更正cwd后36过分开；equipment首次仅日志34项、无终态JSON不称完成，后完整196覆盖。Node22.12低于项目下限导致模块导入错误的原980过1错保留。原日志/JSON/PNG在`artifacts/q13-app/`，文档收尾不重签生产源。全部20目标active，Q14剩余与Q15–Q20继续；兼容/环境性能暂停，真人、长期平衡和整体美术不由本轮工程通过代替。
+
+## 阶段记录
 
 ## 第一Seam：四组重大确认
 
@@ -62,7 +72,7 @@ ActivityRecords拥有原战策readings投影和活动/交锋/逐轮记录表面�
 
 ## 后续与执行边界
 
-当前无live测试。root/web node_modules仍是指向Q12的junction，不能直接在此npm ci或validate-core（会安装）；先核后仅删除link并独立安装。当前每段代码和原报告保，临时工具/日志在artifacts/q13-app。
+本节为当时的阶段状态。后续已核对并仅移除Q12依赖junction，再独立安装root/web依赖；最终检查均使用独立目录。当前每段代码和原报告保，临时工具/日志在artifacts/q13-app。
 
 继续按Seam拆四玩法内容与剩余导航/只读/活动启动等，不能只转发一个巨型context。补新Seam卸载/旧异步回调的意义行为覆盖，独立双轴复核。Q13末次必须实际完整当前Native、正常32及Q11/Q12/Q13完整UI综合和核心构建，原最后1ms/时限/几何/完整Game/CP保，不按当前18或15子集关闭本项。
 
