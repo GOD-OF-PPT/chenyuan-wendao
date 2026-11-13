@@ -4,7 +4,12 @@ import type { Action, Game, Move } from './types.ts';
 import type { ActionResult, GamePhase, RuleFailure } from './contracts.ts';
 import { gamePhase } from './contracts.ts';
 import { costsForAction, remainingMonths } from './costs.ts';
-import { intent, previewResolution, resolve, validateGame } from './engine.ts';
+import {
+  battleIntent,
+  previewResolution,
+  resolve,
+  validateGame,
+} from './engine.ts';
 import { canonicalFingerprint as fingerprint } from './receipts.ts';
 import { RuleError } from './errors.ts';
 import { TRIAL_STAGES } from './trial-rules.ts';
@@ -552,12 +557,49 @@ export function adventureDecision(a: AdventureActivity): AdventureDecision {
     );
     if (healing) return healing;
   }
-  if (strategy.respondHeavy && intent(game.battle).kind === 'heavy') {
-    if (game.school === 'sword' && game.battle.sword === 3) {
-      const release = candidate('release', '满剑意可按正式规则打断本次重击');
+  const forecast = battleIntent(game);
+  if (strategy.respondHeavy && forecast.kind === 'reflect') {
+    const guard = candidate(
+      'guard',
+      '镜照反震期护体回灵；已有符印照常灼伤，不触发直伤反震',
+    );
+    if (guard) return guard;
+  }
+  if (strategy.respondHeavy && ['heavy', 'pressure'].includes(forecast.kind)) {
+    const finisher =
+      game.loadout.finisher && C.skills[game.loadout.finisher].effect;
+    const canBreak =
+      forecast.kind === 'heavy' ||
+      finisher === 'shatter' ||
+      finisher === 'rupture';
+    if (
+      canBreak &&
+      (game.school === 'sword'
+        ? game.battle.sword === 3
+        : game.battle.marks.length > 0)
+    ) {
+      const release = candidate(
+        'release',
+        game.school === 'sword'
+          ? '满剑意可按正式规则打断来势'
+          : '引爆已有符印，按正式规则打断来势',
+      );
       if (release) return release;
     }
     const guard = candidate('guard', '敌方将重击，按战策先护体');
+    if (guard) return guard;
+  }
+  if (
+    strategy.respondHeavy &&
+    forecast.kind === 'prepare' &&
+    game.school === 'talisman'
+  ) {
+    // Preserve a live mark for the following heavy hit, rather than spending it one turn early.
+    const sustain = game.battle.marks.some((turns) => turns > 1)
+      ? candidate('guard', '符印可留到重击，先护持回灵')
+      : candidate('technique', '蓄势时续符，留给下一回合引爆断势');
+    if (sustain) return sustain;
+    const guard = candidate('guard', '续符受当前预算限制，先护体回灵');
     if (guard) return guard;
   }
   if (

@@ -104,7 +104,7 @@ const slots = {
   builder: '起手术法',
   finisher: '终结术法',
 } as const;
-const rows = computed(() =>
+const rows = computed<[string, C.Skill][]>(() =>
   Object.entries(ruleContent.value.skills).filter(
     ([id, s]) =>
       (filter.value === 'all' ||
@@ -126,6 +126,19 @@ const skill = computed(() =>
 const pending = computed(
   () => queue.value.filter((id) => !props.game.learned.includes(id)).length,
 );
+const branchConflict = computed(() => {
+  const s = skill.value;
+  if (!s || !('branch' in s) || !s.branch) return '';
+  const id = [...props.game.learned, ...queue.value].find((id) => {
+    const other = ruleContent.value.skills[id];
+    return (
+      id !== selected.value && 'branch' in other && other.branch === s.branch
+    );
+  });
+  return id
+    ? `已选择${ruleContent.value.skills[id].name}；此生同组只能掌握一卷。`
+    : '';
+});
 const queueView = ref<QueueView | null>(null);
 function rememberQueue(view: QueueView) {
   if (view.runId === props.game.core.runId) queueView.value = view;
@@ -341,7 +354,8 @@ function add() {
   if (
     !skill.value ||
     props.game.learned.includes(selected.value) ||
-    queue.value.includes(selected.value)
+    queue.value.includes(selected.value) ||
+    !!branchConflict.value
   )
     return;
   queue.value = [...queue.value, selected.value];
@@ -500,13 +514,17 @@ defaults();
                   }}</small
                 ></div
               ><p>{{ skill.description }}</p
-              ><strong data-testid="learn-reason">{{
-                known
-                  ? currentSlot === selected
-                    ? '当前' + slots[skill.slot]
-                    : '已掌握'
-                  : unit?.failure?.message
-              }}</strong
+              ><strong
+                data-testid="learn-reason"
+                :data-branch-conflict="!!branchConflict"
+                >{{
+                  branchConflict ||
+                  (known
+                    ? currentSlot === selected
+                      ? '当前' + slots[skill.slot]
+                      : '已掌握'
+                    : unit?.failure?.message)
+                }}</strong
               ><component :is="known ? 'details' : 'div'"
                 ><summary v-if="known" style="min-height: 44px; font-size: 18px"
                   >初习资料</summary
@@ -532,7 +550,7 @@ defaults();
                   v-if="!known"
                   :data-testid="'learn-' + selected"
                   :class="{ primary: !pending }"
-                  :disabled="queue.includes(selected)"
+                  :disabled="queue.includes(selected) || !!branchConflict"
                   @click="add"
                   >{{
                     queue.includes(selected) ? '已收入卷串' : '收入待研卷串'
@@ -723,7 +741,9 @@ defaults();
         v-if="mode === 'skills'"
         class="learning-queue"
         aria-label="有限研习清单"
-        ><strong>本段清单 · {{ queue.length }} / 12 卷</strong
+        ><strong
+          >本段清单 · {{ queue.length }} /
+          {{ Object.keys(ruleContent.skills).length }} 卷</strong
         ><div v-for="id in queued.rows" :key="id" class="learning-queue-row"
           ><span
             >{{ ruleContent.skills[id].name

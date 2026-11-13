@@ -15,6 +15,12 @@ export const skillMechanisms = Object.freeze({
   frost: { school: 'talisman', slot: 'builder' },
   detonate: { school: 'talisman', slot: 'finisher' },
   return: { school: 'talisman', slot: 'finisher' },
+  pierce: { school: 'sword', slot: 'mind' },
+  surge: { school: 'sword', slot: 'builder' },
+  shatter: { school: 'sword', slot: 'finisher' },
+  clear: { school: 'talisman', slot: 'mind' },
+  ember: { school: 'talisman', slot: 'builder' },
+  rupture: { school: 'talisman', slot: 'finisher' },
 } as const);
 for (const definition of Object.values(skillMechanisms))
   Object.freeze(definition);

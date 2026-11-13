@@ -28,6 +28,12 @@ export const ICONS = {
     talisman_frost: 'skill-talisman_frost',
     talisman_release: 'skill-talisman_release',
     talisman_return: 'skill-talisman_return',
+    sword_pierce: 'skill-sword_pierce',
+    sword_surge: 'skill-sword_surge',
+    sword_shatter: 'skill-sword_shatter',
+    talisman_clear: 'skill-talisman_clear',
+    talisman_ember: 'skill-talisman_ember',
+    talisman_rupture: 'skill-talisman_rupture',
   },
   relic: {
     frost_sword: 'relic-frost_sword',

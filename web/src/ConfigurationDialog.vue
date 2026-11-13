@@ -3,6 +3,8 @@ import { computed, inject, onMounted, onScopeDispose, ref } from 'vue';
 import type { Game } from '../../src/full/types.ts';
 import type { ConfigurationIntent } from '../../src/full/configuration.ts';
 import { configurationPreview } from '../../src/full/configuration.ts';
+import { costsForAction } from '../../src/full/costs.ts';
+import { formatCosts } from './presentation';
 import * as C from '../../src/full/content.ts';
 import { gameFocusKey } from './focus';
 import ConfigArt from './ConfigArt.vue';
@@ -18,6 +20,7 @@ const props = defineProps<{
 }>();
 const emit = defineEmits<{ confirm: []; retry: []; refresh: []; close: [] }>();
 const cmd = computed(() => props.intent.command);
+const conversion = computed(() => costsForAction(props.snapshot, cmd.value));
 const dialog = ref<HTMLDialogElement>(),
   focus = inject(gameFocusKey),
   q = computed(() => configurationPreview(props.snapshot, cmd.value));
@@ -161,7 +164,9 @@ onScopeDispose(() => focus?.release(dialog.value));
       "
       >{{ effects }}</p
     >
-    <p>无需灵石、丹药或游戏岁月。保存后才生效；原安排不会自动继续。</p>
+    <p data-testid="configuration-cost"
+      >{{ formatCosts(conversion) }}。确认成功后生效；原安排不会自动继续。</p
+    >
     <p v-if="stale" role="status">{{
       retry
         ? '原确认的回复待核对，请重试原确认；不会重复换装。'

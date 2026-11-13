@@ -142,6 +142,7 @@ const equipment = computed(() =>
     : null,
 );
 const atCave = computed(() => props.game.core.world.location === 'cave');
+const conversion = computed(() => equipment.value?.costs);
 const travel = computed(() =>
   !atCave.value
     ? previewAction(props.game, { type: 'TRAVEL', location: 'cave' })
@@ -180,8 +181,10 @@ const materials = computed(() =>
     required: cost + (props.plan.itemReserves[id] ?? 0),
   })),
 );
-const stones = computed(
-  () => (relic.value?.stones ?? 0) + props.plan.stoneReserve,
+const stones = computed(() =>
+  owned.value && !bound.value
+    ? (conversion.value?.stones ?? 0)
+    : (relic.value?.stones ?? 0) + props.plan.stoneReserve,
 );
 const missing = computed(
   () =>
@@ -465,13 +468,37 @@ const localControls = useLocalActivityControls();
               !owned && limitsShort ? '核对完整限额' : '完整铸器安排'
             }}</button
           >
-          <button
-            v-if="owned && !bound"
-            class="primary"
-            :data-testid="'equip-relic-' + plan.relicId"
-            :disabled="!!conflict || !equipment?.allowed"
-            @click="emit('equip')"
-            >与本命比较 · 确认后认主</button
+          <template v-if="owned && !bound"
+            ><button
+              class="primary"
+              :data-testid="'equip-relic-' + plan.relicId"
+              :disabled="!!conflict"
+              @click="emit('equip')"
+              >与本命比较 · 确认后认主</button
+            ><small
+              v-if="owned && !bound && conversion"
+              data-testid="relic-conversion-cost"
+              >认主投入：{{ formatCosts(conversion) }}</small
+            ><button
+              v-if="
+                owned &&
+                !bound &&
+                (conversion?.items.dew ?? 0) > game.core.inventory.dew
+              "
+              @click="emit('material', 'dew')"
+              >查看灵露来源</button
+            ><button
+              v-if="
+                owned &&
+                !bound &&
+                game.core.player.stones < (conversion?.stones ?? 0)
+              "
+              @click="
+                funding = true;
+                open(preparation, $event);
+              "
+              >查看认主灵石来源</button
+            ></template
           ><button
             v-else-if="owned || !realmReady"
             class="primary"

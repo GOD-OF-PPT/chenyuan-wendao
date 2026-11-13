@@ -6,8 +6,8 @@ import type {
   RelicEffect,
 } from './mechanisms.ts';
 export type { School, SkillSlot } from './mechanisms.ts';
-export const VERSION: string = 'full-demo.4';
-export const BALANCE: string = 'full-unbalanced.4';
+export const VERSION: string = 'full-demo.5';
+export const BALANCE: string = 'full-unbalanced.5';
 export const realmIds = [
   'mortal',
   'qi',
@@ -555,6 +555,7 @@ export interface Skill {
   price: number;
   description: string;
   effect: SkillEffect;
+  branch?: string;
 }
 export const skills: Record<string, Skill> = {
   sword_mind: {
@@ -567,6 +568,7 @@ export const skills: Record<string, Skill> = {
     effect: 'sword',
   },
   sword_still: {
+    branch: 'sword-mind',
     name: '止水剑心',
     school: 'sword',
     slot: 'mind',
@@ -585,6 +587,7 @@ export const skills: Record<string, Skill> = {
     effect: 'build',
   },
   sword_guard: {
+    branch: 'sword-builder',
     name: '听雨剑势',
     school: 'sword',
     slot: 'builder',
@@ -603,6 +606,7 @@ export const skills: Record<string, Skill> = {
     effect: 'release',
   },
   sword_echo: {
+    branch: 'sword-finisher',
     name: '回风归一',
     school: 'sword',
     slot: 'finisher',
@@ -621,6 +625,7 @@ export const skills: Record<string, Skill> = {
     effect: 'talisman',
   },
   talisman_calm: {
+    branch: 'talisman-mind',
     name: '太清符心',
     school: 'talisman',
     slot: 'mind',
@@ -639,6 +644,7 @@ export const skills: Record<string, Skill> = {
     effect: 'mark',
   },
   talisman_frost: {
+    branch: 'talisman-builder',
     name: '寒霜符',
     school: 'talisman',
     slot: 'builder',
@@ -657,6 +663,7 @@ export const skills: Record<string, Skill> = {
     effect: 'detonate',
   },
   talisman_return: {
+    branch: 'talisman-finisher',
     name: '归元符',
     school: 'talisman',
     slot: 'finisher',
@@ -664,6 +671,70 @@ export const skills: Record<string, Skill> = {
     price: 160,
     description: '消耗 10 灵力，收割符印，同时恢复灵力。',
     effect: 'return',
+  },
+  sword_pierce: {
+    name: '破妄剑心',
+    school: 'sword',
+    slot: 'mind',
+    min: 'foundation',
+    price: 100,
+    branch: 'sword-mind',
+    effect: 'pierce',
+    description: '直接伤害 +10；与止水剑心互斥，没有静修与护体加成。',
+  },
+  sword_surge: {
+    name: '惊涛剑势',
+    school: 'sword',
+    slot: 'builder',
+    min: 'foundation',
+    price: 80,
+    branch: 'sword-builder',
+    effect: 'surge',
+    description:
+      '耗灵12，直接伤害比基础起势高12、积2层剑意，无随招护体；与听雨剑势互斥。',
+  },
+  sword_shatter: {
+    name: '断岳斩',
+    school: 'sword',
+    slot: 'finisher',
+    min: 'golden',
+    price: 160,
+    branch: 'sword-finisher',
+    effect: 'shatter',
+    description:
+      '耗灵18，终结伤害 +14；满3层可破护阵、打断重压，无回血；与回风归一互斥。',
+  },
+  talisman_clear: {
+    name: '清虚符心',
+    school: 'talisman',
+    slot: 'mind',
+    min: 'foundation',
+    price: 100,
+    branch: 'talisman-mind',
+    effect: 'clear',
+    description: '每次受伤减8；与太清符心互斥，没有静修与攻击回灵加成。',
+  },
+  talisman_ember: {
+    name: '烬火符',
+    school: 'talisman',
+    slot: 'builder',
+    min: 'foundation',
+    price: 80,
+    branch: 'talisman-builder',
+    effect: 'ember',
+    description:
+      '耗灵12，二回合符印每回合灼伤 +8，随招护体较弱；与寒霜符互斥。',
+  },
+  talisman_rupture: {
+    name: '裂阵符',
+    school: 'talisman',
+    slot: 'finisher',
+    min: 'golden',
+    price: 160,
+    branch: 'talisman-finisher',
+    effect: 'rupture',
+    description:
+      '耗灵16，收印伤害 +14，可破护阵并打断重压，无回灵；与归元符互斥。',
   },
 };
 export interface Relic {
@@ -714,6 +785,7 @@ export interface Enemy {
   stones: number;
   loot: Record<string, number>;
   trial?: boolean;
+  mechanism?: 'reflection' | 'drain' | 'ward';
 }
 export const enemies: Record<string, Enemy> = {
   wolf: {
@@ -750,6 +822,7 @@ export const enemies: Record<string, Enemy> = {
     loot: { jade: 2, core: 1 },
   },
   puppet: {
+    mechanism: 'reflection',
     name: '古境剑傀',
     min: 'golden',
     location: 'secret',
@@ -761,6 +834,7 @@ export const enemies: Record<string, Enemy> = {
     loot: { lotus: 2 },
   },
   shadow: {
+    mechanism: 'drain',
     name: '照影心魇',
     min: 'nascent',
     location: 'secret',
@@ -772,6 +846,7 @@ export const enemies: Record<string, Enemy> = {
     loot: { soul: 2 },
   },
   sentinel: {
+    mechanism: 'ward',
     name: '云台守灵',
     min: 'spirit',
     location: 'terrace',

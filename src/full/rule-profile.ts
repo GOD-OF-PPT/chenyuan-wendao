@@ -2,6 +2,7 @@ import { VERSION, BALANCE } from './content.ts';
 import type { Game } from './types.ts';
 import { RuleError } from './errors.ts';
 import { RuleError as LegacyRuleError } from '../legacy/rules-v3/src/full/errors.ts';
+import { RuleError as PreviousRuleError } from '../legacy/rules-v4/src/full/errors.ts';
 import type { ActionResult, SaveCheckpoint } from './contracts.ts';
 import type {
   ActionResult as OldResult,
@@ -9,6 +10,7 @@ import type {
 } from '../legacy/rules-v3/src/full/contracts.ts';
 
 export const LEGACY_RULES_VERSION = 'full-demo.3/full-unbalanced.3';
+export const PREVIOUS_RULES_VERSION = 'full-demo.4/full-unbalanced.4';
 export const CURRENT_RULES_VERSION = VERSION + '/' + BALANCE;
 const object = (v: unknown): v is Record<string, unknown> =>
   !!v && typeof v === 'object' && !Array.isArray(v);
@@ -20,10 +22,19 @@ export function isLegacyRules(value: unknown): boolean {
     value.core.balanceVersion === 'full-unbalanced.3'
   );
 }
+export function isPreviousRules(value: unknown): boolean {
+  return (
+    object(value) &&
+    object(value.core) &&
+    value.core.contentVersion === 'full-demo.4' &&
+    value.core.balanceVersion === 'full-unbalanced.4'
+  );
+}
 export function rulesVersion(game: Game): string {
   if (!object(game) || !object(game.core))
     throw new RuleError('SAVE_VERSION', '内容或数值版本不匹配，请保留原存档');
   if (isLegacyRules(game)) return LEGACY_RULES_VERSION;
+  if (isPreviousRules(game)) return PREVIOUS_RULES_VERSION;
   if (
     game.core.contentVersion === VERSION &&
     game.core.balanceVersion === BALANCE
@@ -45,6 +56,8 @@ export function activityRulesVersion(value: unknown): string {
   if (!object(value))
     throw new RuleError('ACTIVITY_INVALID', '活动规则标记无效，原记录保留');
   if (!Object.hasOwn(value, 'rulesVersion')) return LEGACY_RULES_VERSION;
+  if (value.rulesVersion === PREVIOUS_RULES_VERSION)
+    return PREVIOUS_RULES_VERSION;
   if (value.rulesVersion === CURRENT_RULES_VERSION)
     return CURRENT_RULES_VERSION;
   throw new RuleError('ACTIVITY_INVALID', '活动规则标记无效，原记录保留');
@@ -81,7 +94,7 @@ export function legacyCall<T>(read: () => T): T {
   try {
     return read();
   } catch (error) {
-    if (error instanceof LegacyRuleError)
+    if (error instanceof LegacyRuleError || error instanceof PreviousRuleError)
       throw new RuleError(error.code, error.message);
     throw error;
   }

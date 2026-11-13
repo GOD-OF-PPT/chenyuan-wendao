@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { enemyMechanismText } from '../../src/full/combat-rules';
 import { useRuleContent } from './rule-content';
 
 import { computed, ref, watch, inject } from 'vue';
@@ -383,6 +384,9 @@ restore();
             ><small
               >迎战30秒 · 每回合3秒；普通原始伤害 {{ enemy.attack }} ·
               重击原始伤害 {{ enemy.heavy }}。</small
+            ><small data-testid="enemy-mechanism">{{
+              enemyMechanismText(game, encounter.enemy)
+            }}</small
             ><p data-testid="encounter-loot">胜利后：{{ rewardText }}</p></div
           ></div
         ><CataloguePager
