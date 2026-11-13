@@ -8,6 +8,9 @@ import {snapshot,activitySnapshot} from '../e2e/support';
 import {runVisibleIdleRoute,decision,selectPlan,settleVisibleActivity} from '../e2e/idle-route-support';
 import {runRecoveryPlan,recoveryDatabase,recoveryReadonly} from '../e2e/idle-recovery-ui-support';
 test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});
+// Each case retains its own fresh Context and full proof. Avoid making the two
+// every-round reload readers compete on the current two-core CI runner.
+test.describe.configure({mode:'default'});
 function prepare(o:any,identity:any){
  const r=createIdleRoute(o,identity);r.begin();while(C.rank(r.game.core.player.realm)<C.rank('spirit')){r.project(o.preparation);r.project('natural');r.milestone({type:'BREAKTHROUGH'},'明确本次突破');}
  r.project(o.preparation);r.buy('healing_pill',12,'本次回春筹备');r.buy('spirit_pill',4,'本次回灵筹备');r.project('natural');r.go('cave','核对完整体魄');const maximum=stats(r.game);if(r.game.core.player.hp<maximum.maxHp||r.game.core.player.mp<maximum.maxMp)r.run({kind:'rest',maxCycles:1,remainingMonthsReserve:1},'明确一次疗养');r.go('terrace','明确前往登仙台');return{success:true,failure:null,game:r.game,steps:r.activity.steps,onlineMs:r.activity.onlineMs};
