@@ -7,7 +7,7 @@ import {historicalBalanceOneFixture} from '../../tests/historical-full-runtime.m
 const balanceOne = await historicalBalanceOneFixture();
 async function seedBalanceOne(page: any, name: string) {
   return page.evaluate(async ({name, fixture}: any) => {
-    const h = (globalThis as any).h, repo = await h.FullSaveRepository.open(name); repo.close();
+    const h = (globalThis as any).h; await h.emptyLegacyDatabase(name);
     for (const [key,value] of [['current',fixture.current],['previous',fixture.previous],['checkpoint',fixture.checkpoint],['checkpoint-owner',fixture.owner]]) await h.put(name,h.FULL_STATE_STORE,key,value);
     await h.put(name,h.FULL_RECEIPT_STORE,fixture.command.runId+':'+fixture.command.commandId,fixture.receipt);
     await h.put(name,h.FULL_RECEIPT_STORE,'raw-undefined',undefined);
@@ -45,7 +45,11 @@ test('balance migration preserves snapshots and all raw receipts, creates a new 
     expect(restored.core.world).toEqual(result.cp.snapshot.core.world); expect(restored.core.balanceVersion).toBe('full-unbalanced.3');
   }
   expect(result.restoredAgain.core.runId).not.toBe(result.restored.core.runId);
-  expect(result.first['full-receipts']).toHaveLength(1); expect(result.first['full-receipts'][0].value.kind).toBe('MIGRATE');
+  const migration=result.first['full-receipts'].filter((r:any)=>r.value?.kind==='MIGRATE');
+  expect(migration).toHaveLength(1);expect(migration[0].value.mutation.runId).toBe(result.current.core.runId);
+  for(const original of seeded.before['full-receipts'])expect(result.first['full-receipts']).toContainEqual(original);
+  expect(result.first['full-receipts']).toHaveLength(seeded.before['full-receipts'].length+1);
+  for(const original of seeded.before['full-receipts'])expect(result.first['full-retention'].find((r:any)=>Array.isArray(r.key)&&r.key[0]==='receipt'&&r.key[1]===original.key)?.value).toMatchObject({baseline:true,pending:false,checksum:null});
 });
 
 test('quota failure while archiving a receipt aborts the whole balance migration, then retry works', async ({ page }) => {

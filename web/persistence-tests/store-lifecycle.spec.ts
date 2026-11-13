@@ -301,7 +301,7 @@ for(const delivery of ['success','failure'] as const)test(`a delayed CREATE foll
   const h=(globalThis as any).lifecycle;h.g=h.gate('snapshot',delivery);h.restartBegan=performance.now();
   h.restarting=h.launch(()=>h.f.store.restart('控制新卷'));
   const entered=await h.g.entered,elapsed=performance.now()-h.restartBegan,raw=await h.inspect();
-  const created=raw[h.FULL_RECEIPT_STORE].filter((row:any)=>row.value?.format==='chenyuan-control-receipt'&&row.value.kind==='CREATE');
+  const created=raw[h.FULL_RECEIPT_STORE].filter((row:any)=>row.value?.format==='chenyuan-control-receipt'&&row.value.kind==='CREATE'&&row.value.mutation.runId===h.f.store.game.core.runId);
   return{entered,elapsed,raw,created,state:h.state()};
  },delivery);
  // This control operation waits its real existing 0.6-second presentation gate;
@@ -322,6 +322,6 @@ for(const delivery of ['success','failure'] as const)test(`a delayed CREATE foll
  expect(result.ok).toBe(true);expect(after.state.game).toEqual(external.done.state);expect(after.state.activity).toEqual(external.done.activity);
  expect(after.raw).toEqual(external.raw);expect(after.raw).toEqual(refreshed.raw);expect(after.state.saved).toBe(true);expect(after.state.error).toBe('');expect(after.state.canRetry).toBe(false);expect(after.state.runtime).toBeNull();
  expect(after.state.available).toBe(true);expect(after.state.syncIssue).toBe(false);expect(after.observations.filter((row:any)=>row.kind==='save_error')).toHaveLength(0);
- const created=after.raw['full-receipts'].filter((row:any)=>row.value?.format==='chenyuan-control-receipt'&&row.value.kind==='CREATE');
+ const created=after.raw['full-receipts'].filter((row:any)=>row.value?.format==='chenyuan-control-receipt'&&row.value.kind==='CREATE'&&row.value.mutation.runId===after.state.game.core.runId);
  expect(created).toEqual(held.created);expect(after.observations.filter((row:any)=>row.kind==='restart')).toHaveLength(1);
 });

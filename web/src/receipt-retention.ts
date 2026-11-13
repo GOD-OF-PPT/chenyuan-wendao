@@ -1,3 +1,5 @@
+import { issueReceiptId, receiptIdEpoch } from './receipt-command-id.ts';
+export { issueReceiptId, receiptIdEpoch } from './receipt-command-id.ts';
 import { RuleError } from '../../src/full/errors.ts';
 import { canonicalFingerprint } from '../../src/full/receipts.ts';
 import type { CommandReceipt } from '../../src/full/contracts.ts';
@@ -16,12 +18,17 @@ export type ReceiptReceiver = { readonly [receiverBrand]: true };
 interface ReceiverState {
   id: string;
   offers: Map<string, Set<string>>;
+  confirmed: Map<string, Set<string>>;
 }
 const receivers = new WeakMap<ReceiptReceiver, ReceiverState>();
 /** One logical Store scope, retained across connection replacement, never persisted as a capability. */
 export function createReceiptReceiver(): ReceiptReceiver {
   const token = Object.freeze({}) as ReceiptReceiver;
-  receivers.set(token, { id: crypto.randomUUID(), offers: new Map() });
+  receivers.set(token, {
+    id: crypto.randomUUID(),
+    offers: new Map(),
+    confirmed: new Map(),
+  });
   return token;
 }
 export function receiptReceiverState(token: ReceiptReceiver, database: string) {
@@ -29,7 +36,9 @@ export function receiptReceiverState(token: ReceiptReceiver, database: string) {
   if (!state) throw new RuleError('INVALID_MUTATION', '接收实例身份无效');
   let offers = state.offers.get(database);
   if (!offers) state.offers.set(database, (offers = new Set()));
-  return { id: state.id, offers };
+  let confirmed = state.confirmed.get(database);
+  if (!confirmed) state.confirmed.set(database, (confirmed = new Set()));
+  return { id: state.id, offers, confirmed };
 }
 const RECEIPTS = 'full-receipts',
   STATE = 'full-state';
@@ -227,19 +236,6 @@ export function receiptChecksum(value: unknown) {
     text.length + ':' + (a >>> 0).toString(16) + ':' + (b >>> 0).toString(16)
   );
 }
-export function issueReceiptId(epoch: number) {
-  if (!integer(epoch)) invalid();
-  return 'r' + epoch.toString(36) + '-' + crypto.randomUUID();
-}
-export function receiptIdEpoch(id: string): number | null {
-  const match =
-    /^r([0-9a-z]+)-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.exec(
-      id,
-    );
-  if (!match) return null;
-  const n = parseInt(match[1], 36);
-  return integer(n) ? n : null;
-}
 export interface ReceiptAccess {
   runId: string;
   commandId: string;
@@ -275,11 +271,13 @@ export function beginReceiptRetention(
   if (
     meta.keyPath !== null ||
     meta.autoIncrement ||
-    meta.indexNames.length !== 2 ||
+    meta.indexNames.length !== 3 ||
     !meta.indexNames.contains('order') ||
     !meta.indexNames.contains('parent') ||
+    !meta.indexNames.contains('run') ||
     !matches(meta.index('order'), ['kind', 'sequence']) ||
     !matches(meta.index('parent'), 'parentKey') ||
+    !matches(meta.index('run'), ['kind', 'runId']) ||
     receipts.keyPath !== null ||
     receipts.autoIncrement ||
     receipts.indexNames.length !== 1 ||
@@ -480,6 +478,7 @@ export function createReceiptRetention(
   const meta = tx.objectStore(RETENTION_STORE);
   meta.createIndex('order', ['kind', 'sequence']);
   meta.createIndex('parent', 'parentKey');
+  meta.createIndex('run', ['kind', 'runId']);
   tx.objectStore(RECEIPTS).createIndex(HISTORY_INDEX, [
     'input.kind',
     'activity.runId',
@@ -646,11 +645,26 @@ export function readRetainedHistory<T>(
           ['TICK', runId, activityId, 0],
           ['TICK', runId, activityId, Number.MAX_SAFE_INTEGER],
         ),
+        runPrefix = runId + ':',
+        runRawCount = tx
+          .objectStore(RECEIPTS)
+          .count(IDBKeyRange.bound(runPrefix, runPrefix + '\uffff')),
+        runMetaCount = tx
+          .objectStore(RETENTION_STORE)
+          .index('run')
+          .count(['receipt', runId]),
         count = index.count(range);
       count.onsuccess = () => {
         try {
           const total = h?.total ?? 0;
-          if (count.result !== total - (h?.deleted ?? 0)) invalid();
+          if (
+            runRawCount.result !== runMetaCount.result ||
+            count.result !== total - (h?.deleted ?? 0)
+          )
+            throw new RuleError(
+              'RECEIPT_INVALID',
+              '活动明细与原件数量不符，请核对原记录',
+            );
           const retained = Math.min(HISTORY_LIMIT, count.result),
             folded = total - retained,
             pages = Math.max(1, Math.ceil(retained / pageSize)),
@@ -940,7 +954,7 @@ function collectReceipts(
       if (latest)
         for (const r of current)
           if (r.windowId === latest.windowId) protect.add(r);
-      if (cp)
+      if (cp !== undefined)
         for (const r of rows) if (protectsCheckpoint(r, cp)) protect.add(r);
       const ordinary = rows
           .filter((r) => !protect.has(r))

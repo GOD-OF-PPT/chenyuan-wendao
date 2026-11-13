@@ -1,3 +1,4 @@
+import {confirmedDelivery} from './support';
 import {test,expect} from '@playwright/test';
 import {setupPersistence} from './support';
 
@@ -55,7 +56,7 @@ for(const kind of ['direct','configuration','online'])test(`an old ${kind} reply
   const seed=await h.FullSaveRepository.open();try{await seed.importText(JSON.stringify(d.game),h.mutation());}finally{seed.close();}
   const {createActivityStoreHarness}=await import('/persistence-tests/activity-store-harness.ts');h.scheduledStore=createActivityStoreHarness();const s=h.scheduledStore.store;await s.init();
   const method=kind==='direct'?'executeDirect':kind==='configuration'?'configure':'startActivity',prototype=h.FullSaveRepository.prototype,original=prototype[method];
-  prototype[method]=async function(...args:any[]){prototype[method]=original;const result=await original.apply(this,args);const error:any=new Error('旧意图已提交但回复丢失');error.code='STORAGE_ABORTED';throw error;};
+  prototype[method]=async function(...args:any[]){prototype[method]=original;const result=await original.apply(this,args);h.originalLostIdentity=structuredClone(kind==='online'?args[1]:args[0].command);const error:any=new Error('旧意图已提交但回复丢失');error.code='STORAGE_ABORTED';throw error;};
   const plan=kind==='direct'?{kind:'buy',item:'healing_pill',maxCycles:2,until:'cycles',targetQuantity:null,stoneBudget:200,stoneReserve:0}:{kind:'cultivation',method:'natural',maxCycles:3,until:'cycles',stoneBudget:0,stoneReserve:0};
   try{
    if(kind==='direct')await s.executeDirect(s.prepareDirect({type:'SELL',item:'herb',quantity:1}));
@@ -70,9 +71,9 @@ for(const kind of ['direct','configuration','online'])test(`an old ${kind} reply
   }finally{repo.close();}
   const before=await h.FullSaveRepository.exportRaw();await s.retry();
   const retried={ui:h.scheduledStore.state(),schedule:s.activitySchedule,raw:await h.FullSaveRepository.exportRaw()};
-  await s.resumeCultivation();return{failed,newer,before,retried,continued:{ui:h.scheduledStore.state(),schedule:s.activitySchedule}};
+  await s.resumeCultivation();return{identity:h.originalLostIdentity,failed,newer,before,retried,continued:{ui:h.scheduledStore.state(),schedule:s.activitySchedule}};
  },kind);
- expect(r.failed.canRetry).toBe(true);expect(r.retried.ui.error).toBe('');expect(r.retried.ui.activity).toEqual(r.newer.activity);expect(r.retried.schedule).toEqual(r.newer.schedule);expect(r.retried.raw).toEqual(r.before);
+ expect(r.failed.canRetry).toBe(true);expect(r.retried.ui.error).toBe('');expect(r.retried.ui.activity).toEqual(r.newer.activity);expect(r.retried.schedule).toEqual(r.newer.schedule);expect(r.retried.raw).toEqual(confirmedDelivery(r.before,r.identity));
  expect(r.continued.ui.error).toBe('');expect(r.continued.schedule).not.toBeNull();expect(r.continued.ui.game).toEqual(r.newer.state);expect(r.continued.ui.activity.id).toBe(r.newer.activity.id);expect(r.continued.ui.activity.dueAt).toBe(r.newer.activity.dueAt);
  await page.evaluate(()=>(globalThis as any).h.scheduledStore.dispose());
 });
@@ -92,7 +93,7 @@ for(const lost of [false,true])test(`a sixty-five-cycle return keeps its final o
   const h=(globalThis as any).h,{createActivityStoreHarness}=await import('/persistence-tests/activity-store-harness.ts');
   if(lost){
    const prototype=h.FullSaveRepository.prototype,original=prototype.advanceScheduledActivity;let calls=0;
-   prototype.advanceScheduledActivity=async function(...args:any[]){const result=await original.apply(this,args);if(++calls===2){prototype.advanceScheduledActivity=original;const error:any=new Error('尾批实际已保存但回复丢失');error.code='STORAGE_ABORTED';throw error;}return result;};
+   prototype.advanceScheduledActivity=async function(...args:any[]){const result=await original.apply(this,args);if(++calls===2){h.tailLostIdentity=structuredClone(args[0]);prototype.advanceScheduledActivity=original;const error:any=new Error('尾批实际已保存但回复丢失');error.code='STORAGE_ABORTED';throw error;}return result;};
   }
   h.scheduledStore=createActivityStoreHarness();h.catchupTrace=h.scheduledStore.trace();await h.scheduledStore.store.init();
  },lost);
@@ -100,8 +101,8 @@ for(const lost of [false,true])test(`a sixty-five-cycle return keeps its final o
  await expect.poll(()=>page.evaluate(()=>(globalThis as any).h.scheduledStore.store.busy)).toBe(false);
  if(lost){
   expect(await page.evaluate(()=>(globalThis as any).h.scheduledStore.store.canRetry)).toBe(true);
-  const pair=await page.evaluate(async()=>{const h=(globalThis as any).h,before=await h.FullSaveRepository.exportRaw();await h.scheduledStore.store.retry();return{before,after:await h.FullSaveRepository.exportRaw()};});
-  expect(pair.after).toEqual(pair.before);
+  const pair=await page.evaluate(async()=>{const h=(globalThis as any).h,before=await h.FullSaveRepository.exportRaw();await h.scheduledStore.store.retry();return{identity:h.tailLostIdentity,before,after:await h.FullSaveRepository.exportRaw()};});
+  expect(pair.after).toEqual(confirmedDelivery(pair.before,pair.identity));
  }
  const r=await page.evaluate(()=>{const h=(globalThis as any).h;return{ui:h.scheduledStore.state(),summary:h.scheduledStore.store.awaySummary,states:h.catchupTrace.states,observations:h.catchupTrace.observations,now:Date.now()};});
  expect(r.ui.game.core.player.stones-original.state.core.player.stones).toBe(1300);expect(r.ui.activity.dueAt-r.now).toBe(15000);
@@ -130,7 +131,7 @@ test('a lost Store catch-up reply exposes an original-intent retry and never rep
  expect(failed.ui.lastResult).toBeNull();expect(failed.ui.runtime).toBeNull();
  await page.evaluate(async()=>{const h=(globalThis as any).h;await h.scheduledStore.store.retryFor(h.lostIntent.commandId);});
  const retried=await page.evaluate(async()=>{const h=(globalThis as any).h;return{ui:h.scheduledStore.state(),raw:await h.FullSaveRepository.exportRaw(),summary:h.scheduledStore.store.awaySummary};});
- expect(retried.raw).toEqual(failed.raw);expect(retried.ui.game).toEqual(failed.outcome.state);expect(retried.ui.error).toBe('');expect(retried.ui.canRetry).toBe(false);expect(retried.ui.lastResult).toBeNull();expect(retried.ui.lastReplayed).toBe(true);
+ expect(retried.raw).toEqual(confirmedDelivery(failed.raw,failed.intent));expect(retried.ui.game).toEqual(failed.outcome.state);expect(retried.ui.error).toBe('');expect(retried.ui.canRetry).toBe(false);expect(retried.ui.lastResult).toBeNull();expect(retried.ui.lastReplayed).toBe(true);
  expect(retried.ui.runtime.remainingMs).toBe(15000);expect(retried.summary.cycles).toBe(4);
  await page.evaluate(()=>(globalThis as any).h.scheduledStore.dispose());
 });

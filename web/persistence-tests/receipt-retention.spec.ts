@@ -605,6 +605,16 @@ test('one thousand legal purchase cycles bound original replay data and keep onl
   expect(result.stages[1].receipts).toBeLessThanOrEqual(563);
   expect(result.stages[1].metadata).toBeLessThanOrEqual(585);
   expect(result.stages[1].bytes).toBeLessThan(result.stages[0].bytes * 1.3);
+  await test
+    .info()
+    .attach('native-storage-growth', {
+      body: JSON.stringify({
+        cycles: 1000,
+        stages: result.stages,
+        backupGroups: result.groups.length,
+      }),
+      contentType: 'application/json',
+    });
   expect(result.hist).toMatchObject({
     total: 50,
     retained: 50,
@@ -913,4 +923,36 @@ test('the entire latest away window survives control-history retirement and is r
           r.value.input.mutation.commandId === id,
       ),
     ).toBe(true);
+});
+
+test('a lost cleanup acknowledgment can be retried by the same logical receiver without another write', async ({
+  page,
+}) => {
+  await setupPersistence(page);
+  const result = await page.evaluate(async () => {
+    const h = (globalThis as any).h,
+      name = 'q15-lost-ack',
+      receiver = h.createReceiptReceiver(),
+      repo = await h.FullSaveRepository.open(name, receiver),
+      d = h.routes.driver();
+    d.go('cave');
+    const m = { ...h.mutation(), commandId: repo.issueCommandId() };
+    await repo.importText(JSON.stringify(d.game), m);
+    const lost = await h.attempt(async () => {
+      await repo.confirmDelivery(m.runId, m.commandId);
+      throw new Error('cleanup reply lost after native completion');
+    });
+    repo.close();
+    const before = await h.inspect(name),
+      connected = await h.FullSaveRepository.open(name, receiver),
+      retry = await h.attempt(() =>
+        connected.confirmDelivery(m.runId, m.commandId),
+      ),
+      after = await h.inspect(name);
+    connected.close();
+    return { lost, retry, before, after };
+  });
+  expect(result.lost.ok).toBe(false);
+  expect(result.retry.ok).toBe(true);
+  expect(result.after).toEqual(result.before);
 });

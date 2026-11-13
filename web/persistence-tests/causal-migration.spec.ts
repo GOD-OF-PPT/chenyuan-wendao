@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => setupCurrentRecovery(page));
 test.afterEach(async({page})=>{await page.evaluate(()=>{const h=(window as any).h;if(h?.m04RealNow)Date.now=h.m04RealNow;});});
 async function seed(page: any, name: string, fixture: any, stage = 'resolved') {
   await page.evaluate(async ({ name, fixture, stage }: any) => {
-    const h = (globalThis as any).h, repo = await h.FullSaveRepository.open(name); repo.close();
+    const h = (globalThis as any).h; await h.emptyLegacyDatabase(name);
     await new Promise<void>((resolve, reject) => {
       const request = indexedDB.open(name); request.onerror = () => reject(request.error);
       request.onsuccess = () => {

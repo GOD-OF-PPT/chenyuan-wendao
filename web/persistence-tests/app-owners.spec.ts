@@ -1,3 +1,4 @@
+import {confirmedDelivery} from './support';
 import { test, expect } from '@playwright/test';
 import { setupPersistence } from './support';
 
@@ -98,6 +99,7 @@ test('a committed configuration reply arriving after disposal cannot mutate the 
     proto.configure = async function (...args: any[]) {
       proto.configure = original;
       const value = await Reflect.apply(original, this, args);
+      w.q15OwnerDelivery=structuredClone(args[0]?.command??args[1]);
       entered.resolve();
       await gate.promise;
       return value;
@@ -117,6 +119,7 @@ test('a committed configuration reply arriving after disposal cannot mutate the 
       intent,
       oldIntent: o.configuration.configurationIntent.value,
       committed,
+      delivery:w.q15OwnerDelivery,
       after: await h.inspect(h.FULL_DB_NAME),
       game: o.store.game,
       calls: o.calls,
@@ -124,7 +127,7 @@ test('a committed configuration reply arriving after disposal cannot mutate the 
   });
   expect(result.game.school).toBe('talisman');
   expect(result.oldIntent).toEqual(result.intent);
-  expect(result.after).toEqual(result.committed);
+  expect(result.after).toEqual(confirmedDelivery(result.committed,result.delivery));
   expect(result.calls).toEqual([]);
   const receipts = result.after['full-receipts'].filter(
     (r: any) => r.value.format === 'chenyuan-configuration-receipt',
@@ -147,6 +150,7 @@ test('a genuinely committed visit delivered after unmount preserves its one resu
     proto.executeDirect = async function (...args: any[]) {
       proto.executeDirect = original;
       const value = await Reflect.apply(original, this, args);
+      w.q15OwnerDelivery=structuredClone(args[0]?.command??args[1]);
       entered.resolve();
       await gate.promise;
       return value;
@@ -164,6 +168,7 @@ test('a genuinely committed visit delivered after unmount preserves its one resu
       before,
       kind,
       committed,
+      delivery:w.q15OwnerDelivery,
       after: await h.inspect(h.FULL_DB_NAME),
       game: o.store.game,
       calls: o.calls,
@@ -172,7 +177,7 @@ test('a genuinely committed visit delivered after unmount preserves its one resu
   expect(result.kind).toBe('light-action');
   expect(result.game.core.activeEvent.id).toBe('lu_intro');
   expect(result.game.core.revision).toBe(result.before.core.revision + 1);
-  expect(result.after).toEqual(result.committed);
+  expect(result.after).toEqual(confirmedDelivery(result.committed,result.delivery));
   expect(result.calls).toEqual([]);
 });
 
@@ -190,6 +195,7 @@ test('an accepted adventure reply cannot navigate after its plan owner unmounts'
     proto.startScheduledActivity = async function (...args: any[]) {
       proto.startScheduledActivity = original;
       const value = await Reflect.apply(original, this, args);
+      w.q15OwnerDelivery=structuredClone(args[0]?.command??args[1]);
       entered.resolve();
       await gate.promise;
       return value;
@@ -207,6 +213,7 @@ test('an accepted adventure reply cannot navigate after its plan owner unmounts'
     await job;
     return {
       committed,
+      delivery:w.q15OwnerDelivery,
       after: await h.inspect(h.FULL_DB_NAME),
       view: o.navigation.hubView.value,
       calls: o.calls,
@@ -214,7 +221,7 @@ test('an accepted adventure reply cannot navigate after its plan owner unmounts'
   });
   expect(result.view).toBe('explore');
   expect(result.calls).toEqual([]);
-  expect(result.after).toEqual(result.committed);
+  expect(result.after).toEqual(confirmedDelivery(result.committed,result.delivery));
 });
 
 test('a destination callback queued before unmount cannot touch a replacement screen', async ({
@@ -262,6 +269,7 @@ test('a committed closure start reply delivered after unmount cannot hand focus 
     proto.startScheduledActivity = async function (...args: any[]) {
       proto.startScheduledActivity = original;
       const value = await Reflect.apply(original, this, args);
+      w.q15OwnerDelivery=structuredClone(args[0]?.command??args[1]);
       entered.resolve();
       await gate.promise;
       return value;
@@ -288,11 +296,12 @@ test('a committed closure start reply delivered after unmount cannot hand focus 
     const w = window as any;
     return {
       after: await w.h.inspect(w.h.FULL_DB_NAME),
+      delivery:w.q15OwnerDelivery,
       calls: w.owners.calls,
       dialogs: document.querySelectorAll('dialog[open]').length,
     };
   });
-  expect(result.after).toEqual(committed);
+  expect(result.after).toEqual(confirmedDelivery(committed,result.delivery));
   expect(result.calls).toEqual([]);
   expect(result.dialogs).toBe(0);
 });

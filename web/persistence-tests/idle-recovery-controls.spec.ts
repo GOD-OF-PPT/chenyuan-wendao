@@ -1,3 +1,4 @@
+import {confirmedDelivery} from './support';
 import {test,expect} from '@playwright/test';
 import {setupMilestones} from './milestone-support';
 import {repositoryFsRoot as root} from './fs-root';
@@ -35,9 +36,9 @@ for(const kind of ['create','import','restore'])test(`M04-N10 Store ${kind} comm
  await page.evaluate(()=>{const h=(window as any).h;h.m04ControlJob=h.m04ControlHarness.store.retryFor(h.m04ControlDelivery.intent.commandId);});
  await page.clock.runFor(600);await page.evaluate(()=>(window as any).h.m04ControlJob);
  const replay=await page.evaluate(async()=>{const h=(window as any).h,f=h.m04ControlHarness;return{ui:f.state(),raw:await h.inspect(h.FULL_DB_NAME),persisted:await f.persisted()};});
- expect(replay.ui.error).toBe('');expect(replay.ui.saved).toBe(true);expect(replay.ui.canRetry).toBe(false);expect(replay.ui.runtime).toBeNull();expect(replay.raw).toEqual(failed.raw);expect(replay.persisted).toEqual(failed.persisted);
+ expect(replay.ui.error).toBe('');expect(replay.ui.saved).toBe(true);expect(replay.ui.canRetry).toBe(false);expect(replay.ui.runtime).toBeNull();expect(replay.raw).toEqual(confirmedDelivery(failed.raw,failed.delivery.intent));expect(replay.persisted).toEqual(failed.persisted);
  const controls=replay.raw['full-receipts'].filter((x:any)=>x.value.format==='chenyuan-control-receipt'&&x.value.mutation.commandId===failed.delivery.intent.commandId);expect(controls).toHaveLength(1);expect(controls[0].value.mutation).toEqual(failed.delivery.intent);
- await info.attach('original-control-retry-summary',{body:JSON.stringify({kind,originalIntent:failed.delivery.intent,actualNativeCommitted:true,fullGameAndAllStoresUnchangedOnRetry:true}),contentType:'application/json'});
+ await info.attach('original-control-retry-summary',{body:JSON.stringify({kind,originalIntent:failed.delivery.intent,actualNativeCommitted:true,fullGameRawProofsAndAllOtherMetadataUnchangedOnRetry:true,exactOriginalDeliveryConfirmed:true}),contentType:'application/json'});
 });
 
 for(const kind of ['create','import'])for(const mode of ['quota','abort'])test(`M04-N11 ${kind} replacement ${mode} preserves the real good checkpoint and one stable native retry replaces exactly once`,async({page})=>{

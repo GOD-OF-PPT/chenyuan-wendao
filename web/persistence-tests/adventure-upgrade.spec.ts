@@ -37,7 +37,7 @@ test('DB8 preserves real DB7 preparation, configuration proofs, checkpoint and o
       } finally { upgraded.close(); old.close(); }
     } finally { Date.now = realNow; source.close(); }
   }, root);
-  expect(r.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(r.loaded.activity).not.toHaveProperty('rulesVersion'); expect(r.closed).toBe(true); expect(r.after.version).toBe(10); expect(r.checkpoint).not.toBeNull(); expect(r.checkpointAfter).toEqual(r.checkpoint);
+  expect(r.loaded.state.core.contentVersion).toBe('full-demo.3'); expect(r.loaded.activity).not.toHaveProperty('rulesVersion'); expect(r.closed).toBe(true); expect(r.after.version).toBe(11); expect(r.checkpoint).not.toBeNull(); expect(r.checkpointAfter).toEqual(r.checkpoint);
   for (const store of r.original.stores) expect(r.after[store]).toEqual(r.original[store]);
   expect(r.loaded).toEqual({ state: r.configured.state, activity: r.configured.activity });
   for (const replay of [r.learnReplay, r.configReplay, r.travelReplay]) { expect(replay.replayed).toBe(true); expect(replay.state).toEqual(r.configured.state); }

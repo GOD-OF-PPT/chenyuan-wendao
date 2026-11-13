@@ -63,6 +63,7 @@ import { validateDirectIntent } from '../../src/full/direct-actions.ts';
 import { directReceipt, validateDirectReceipt } from './direct-persistence';
 import {
   RETENTION_STORE,
+  REPLAY_LIMIT,
   beginReceiptRetention,
   createReceiptRetention,
   storedReceiptEpoch,
@@ -931,10 +932,14 @@ export class FullSaveRepository {
     return issueReceiptId(this.receiptEpoch);
   }
   confirmDelivery(runId: string, commandId: string): Promise<void> {
+    this.assertOpen();
     if (!validText(runId) || !validText(commandId))
       throw new RuleError('INVALID_MUTATION', '本次记录身份无效');
     const key = runId + ':' + commandId;
     const receiver = receiptReceiverState(this.receiver, this.db.name);
+    // A committed cleanup whose response was lost is idempotent within the
+    // same logical receiver, including reconnect; no second storage write.
+    if (receiver.confirmed.has(key)) return Promise.resolve();
     if (!receiver.offers.has(key))
       throw new RuleError(
         'RECEIPT_NOT_DELIVERED',
@@ -950,6 +955,10 @@ export class FullSaveRepository {
       ),
     ).then(() => {
       receiver.offers.delete(key);
+      receiver.confirmed.delete(key);
+      receiver.confirmed.add(key);
+      if (receiver.confirmed.size > REPLAY_LIMIT)
+        receiver.confirmed.delete(receiver.confirmed.values().next().value!);
     });
   }
   private constructor(

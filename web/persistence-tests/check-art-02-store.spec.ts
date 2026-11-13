@@ -1,3 +1,4 @@
+import {confirmedDelivery} from './support';
 import {test,expect,type Page} from '@playwright/test';
 import {setupMilestones} from './milestone-support';
 import {repositoryFsRoot as root} from './fs-root';
@@ -52,7 +53,7 @@ test('a received native START remains exactly acknowledged after real versioncha
   return{aborted,native:h.ackNativeVersionChange,raw,after:await h.inspect(h.FULL_DB_NAME),ui:h.ackStore.state(),available:s.available,syncIssue:s.syncIssue,
    acknowledged:s.wasConfirmedFor(intent.mutation.commandId,intent.mutation.runId),wrongRun:s.wasConfirmedFor(intent.mutation.commandId,crypto.randomUUID()),unknown:s.wasConfirmedFor(crypto.randomUUID(),intent.mutation.runId)};
  });
- expect(closed.native).toBe(true);expect(closed.aborted).toBe('AbortError');expect(closed.raw.version).toBe(10);expect(closed.after).toEqual(closed.raw);
+ expect(closed.native).toBe(true);expect(closed.aborted).toBe('AbortError');expect(closed.raw.version).toBe(11);expect(closed.after).toEqual(closed.raw);
  expect(closed.ui.error).toContain('无法同步存档');expect(closed.ui.error).toContain('关闭');expect(closed.ui.saved).toBe(false);expect(closed.syncIssue).toBe(true);expect(closed.available).toBe(false);
  expect(closed.ui.canRetry).toBe(false);expect(closed.ui.runtime).toBeNull();expect(closed.ui.game).toEqual(prepared.before['full-state'].find((r:any)=>r.key==='current').value);
  expect(closed.ui.activity.plan).toEqual(prepared.intent.plan);expect(closed.ui.activity.completedCycles).toBe(0);
@@ -83,7 +84,7 @@ test('unsubmitted quota and lost native START replies remain unacknowledged unti
  }
  for(const r of rows){
   expect(r.failed.ack).toBe(false);expect(r.failed.ui.canRetry).toBe(true);expect(r.failed.ui.saved).toBe(false);expect(r.failed.ui.game).toEqual(r.retried.ui.game);
-  if(r.mode==='quota')expect(r.failed.raw).toEqual(r.before);else expect(r.retried.raw).toEqual(r.failed.raw);
+  if(r.mode==='quota')expect(r.failed.raw).toEqual(r.before);else expect(r.retried.raw).toEqual(confirmedDelivery(r.failed.raw,r.intent.mutation));
   expect(r.retried.ack).toBe(true);expect(r.retried.ui.error).toBe('');expect(r.retried.ui.activity.completedCycles).toBe(0);expect(r.retried.ui.activity.plan).toEqual(r.intent.plan);
   const key=r.intent.mutation.runId+':'+r.intent.mutation.commandId;expect(r.retried.raw['full-receipts'].filter((x:any)=>x.key===key)).toHaveLength(1);
  }

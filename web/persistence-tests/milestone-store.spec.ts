@@ -1,3 +1,4 @@
+import {confirmedDelivery} from './support';
 import { test, expect } from '@playwright/test';
 import { setupMilestones } from './milestone-support';
 
@@ -115,6 +116,6 @@ test('lost ending delivery replays the exact committed life once, preserves read
   await page.evaluate(() => (globalThis as any).h.milestoneStore.store.retry());
   const replay = await page.evaluate(async () => { const h = (globalThis as any).h, f = h.milestoneStore; return { ui: f.state(), raw: await h.inspect(h.FULL_DB_NAME), record: h.queries.getLifeRecord(f.store.game) }; });
   expect(replay.ui.lastReplayed).toBe(true); expect(replay.ui.lastFromActivity).toBe(true); expect(replay.ui.lastResult).toEqual(lost.delivered.outcome.result);
-  expect(replay.ui.game).toEqual(lost.persisted.state); expect(replay.raw).toEqual(lost.raw); expect(replay.ui.runtime).toBeNull(); expect(replay.record.overview.reason).toBe('retired');
+  expect(replay.ui.game).toEqual(lost.persisted.state); expect(replay.raw).toEqual(confirmedDelivery(lost.raw,lost.delivered.outcome.result)); expect(replay.ui.runtime).toBeNull(); expect(replay.record.overview.reason).toBe('retired');
   await page.clock.runFor(86_400_000); expect(await page.evaluate(() => (globalThis as any).h.milestoneStore.state())).toEqual(replay.ui);
 });

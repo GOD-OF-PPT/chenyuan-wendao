@@ -64,11 +64,11 @@ test('M04-N14 a complete restore racing a due real turn commits exactly one full
     await h.m04Action(repo,{type:'BREAKTHROUGH'});const cp=await repo.loadCheckpoint(),started=await repo.startActivity({kind:'travel',location:'sect',maxCycles:1},h.milestoneMutation(await repo.loadActivitySnapshot())),tick=h.milestoneTick(started),intent=h.mutation(started.state),formal=h.engine.resolve(started.state,started.activity.nextCommand);h.m04Now=started.activity.dueAt;
     const restore=()=>h.attempt(()=>repo.restoreCheckpoint(intent)),turn=()=>h.attempt(()=>other.settleActivity(tick)),outcomes=order==='restore-first'?await Promise.all([restore(),turn()]):await Promise.all([turn(),restore()]);
     const current=await repo.load(),after=await h.inspect(name),restored=current.core.runId!==started.state.core.runId,expected=structuredClone(restored?cp.snapshot:formal.nextState);if(restored){expected.core.runId=current.core.runId;expected.core.revision=0;if(expected.core.activeEvent)expected.core.activeEvent.instanceId=current.core.runId+':'+expected.core.activeEvent.id;}
-    h.m04Same(current,expected,'entire winning race state');h.m04Same(await repo.loadCheckpoint(),cp,'race kept complete good checkpoint');out.push({order,outcomes,current,restored,after,expected});
+    h.m04Same(current,expected,'entire winning race state');h.m04Same(await repo.loadCheckpoint(),cp,'race kept complete good checkpoint');out.push({order,outcomes,current,restored,after,expected,intent,sourceRunId:started.state.core.runId});
    }finally{repo.close();other.close();}
   }return out;
  });
- for(const r of rows){expect(r.outcomes.filter(x=>x.ok)).toHaveLength(1);expect(['RUN_MISMATCH','STALE_REVISION']).toContain(r.outcomes.find(x=>!x.ok)?.code);expect(r.current).toEqual(r.expected);if(r.restored)expect(r.after['full-receipts']).toHaveLength(1);else expect(r.current.core.world.location).toBe('sect');}
+ for(const r of rows){expect(r.outcomes.filter(x=>x.ok)).toHaveLength(1);expect(['RUN_MISMATCH','STALE_REVISION']).toContain(r.outcomes.find(x=>!x.ok)?.code);expect(r.current).toEqual(r.expected);if(r.restored){const controls=r.after['full-receipts'].filter((x:any)=>x.value?.kind==='RESTORE'&&x.value.mutation.commandId===r.intent.commandId);expect(controls).toHaveLength(1);expect(controls[0].value.mutation).toEqual(r.intent);expect(r.after['full-retention'].filter((x:any)=>x.value?.kind==='receipt'&&x.value.runId===r.sourceRunId).every((x:any)=>x.value.pending||x.value.baseline||x.value.checkpointRevision!==null)).toBe(true);}else expect(r.current.core.world.location).toBe('sect');}
 });
 
 test('M04-N15 caller mutation after submission cannot change a finite plan or tick and its committed replay returns the latest complete state',async({page})=>{

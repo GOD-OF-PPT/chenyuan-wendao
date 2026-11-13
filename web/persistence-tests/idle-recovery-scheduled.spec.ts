@@ -1,3 +1,4 @@
+import {expectBaselineUpgrade} from './retention-upgrade-proof';
 import {test,expect} from '@playwright/test';
 import {setupPersistence} from './support';
 import {repositoryFsRoot} from './fs-root';
@@ -17,7 +18,7 @@ test('a real scheduled source persists four due periods together with its fiftee
    return{original,started,completed,expected,expectedActivity:a,snapshot,raw,summary,afterSummary:await h.FullSaveRepository.exportRaw(name),now,scheduleStore:h.FULL_SCHEDULE_STORE};
   }finally{Date.now=realNow;reopened?.close();repo.close();}
  },repositoryFsRoot);
- expect(r.raw.database.version).toBe(10);expect(r.started.state).toEqual(r.original.state);expect(r.completed.state).toEqual(r.expected);expect(r.completed.activity).toEqual(r.expectedActivity);expect(r.completed.activity.completedCycles).toBe(4);
+ expect(r.raw.database.version).toBe(11);expect(r.started.state).toEqual(r.original.state);expect(r.completed.state).toEqual(r.expected);expect(r.completed.activity).toEqual(r.expectedActivity);expect(r.completed.activity.completedCycles).toBe(4);
  expect(r.completed.state.core.player.stones-r.original.state.core.player.stones).toBe(80);expect(r.completed.activity.dueAt-r.now).toBe(15000);expect(r.snapshot.state).toEqual(r.completed.state);expect(r.snapshot.activity).toEqual(r.completed.activity);
  const clock=r.raw.stores.find((s:any)=>s.name===r.scheduleStore);expect(clock.entries).toHaveLength(1);expect(clock.entries[0].value.activityId).toBe(r.completed.activity.id);expect(clock.entries[0].value.activityRevision).toBe(r.completed.activity.revision);
  expect(r.summary.cycles).toBe(4);expect(r.summary.costs.months).toBe(48);expect(r.summary.delta.stones).toBe(80);expect(r.summary.delta.months).toBe(48);expect(r.afterSummary).toEqual(r.raw);
@@ -151,7 +152,7 @@ for(const broken of [false,true])test(`DB9 ${broken?'failed migration rolls back
  expect(r.before.database.version).toBe(9);
  if(broken){expect(r.opened.ok).toBe(false);expect(r.after).toEqual(r.before);}
  else{
-  expect(r.opened.ok).toBe(true);expect(r.after.database.version).toBe(10);expect(r.after.stores.filter((x:any)=>x.name!=='full-schedules')).toEqual(r.before.stores);
+  expect(r.opened.ok).toBe(true);expect(r.after.database.version).toBe(11);expectBaselineUpgrade(r.before,r.after);
   expect(r.after.stores.find((x:any)=>x.name==='full-schedules').entries).toEqual([]);expect(r.opened.value.schedule).toBeUndefined();expect(r.oldAttempt.code).toBe('DB_VERSION');
  }
 });

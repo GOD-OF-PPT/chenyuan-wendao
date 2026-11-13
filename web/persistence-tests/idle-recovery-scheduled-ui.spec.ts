@@ -1,3 +1,4 @@
+import {confirmedDelivery} from './support';
 import {test,expect} from '@playwright/test';
 import {setupPersistence} from './support';
 import {snapshot,activitySnapshot} from '../e2e/support';
@@ -56,7 +57,7 @@ for(const action of [{type:'BREAKTHROUGH'},{type:'END',ending:'depart'}])test(`s
   const h=(globalThis as any).h,f=(globalThis as any).fault,repo=await h.FullSaveRepository.open();
   try{return{state:f.store.game,activity:f.store.activity,result:f.store.lastResult,replayed:f.store.lastReplayed,raw:await h.inspect(h.FULL_DB_NAME),history:await repo.loadActivityHistory(f.store.activity.id,0,20)};}finally{repo.close();}
  });
- expect(recovered.state).toEqual(before.formal.nextState);expect(recovered.raw).toEqual(failed.raw);expect(recovered.result).toBeNull();expect(recovered.replayed).toBe(true);expect(recovered.history.total).toBe(1);expect(recovered.history.rows[0].result).toEqual(before.formal.result);
+ expect(recovered.state).toEqual(before.formal.nextState);expect(recovered.raw).toEqual(confirmedDelivery(failed.raw,failed.lost.intent));expect(recovered.result).toBeNull();expect(recovered.replayed).toBe(true);expect(recovered.history.total).toBe(1);expect(recovered.history.rows[0].result).toEqual(before.formal.result);
  expect(recovered.activity.completedCycles).toBe(1);await expect(page.getByTestId('action-effect')).toHaveCount(0);
  if(action.type==='END'){expect(recovered.state.status).toBe('ascended');expect(recovered.state.ending).toBe('depart');}else expect(recovered.state.core.player.realm).toBe('foundation');
  await page.evaluate(()=>(globalThis as any).fault.dispose());
