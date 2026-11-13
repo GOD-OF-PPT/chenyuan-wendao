@@ -4,6 +4,11 @@ import ClosureDecisions from './ClosureDecisions.vue';
 import CultivationHome from './CultivationHome.vue';
 import type {ClosureNavigation} from './closure-navigation';
 import {useSaveControls} from './use-save-controls';
+import {useActionView} from './use-action-view';
+import CultivationTab from './CultivationTab.vue';
+import ExplorationTab from './ExplorationTab.vue';
+import InventoryTab from './InventoryTab.vue';
+import FateTab from './FateTab.vue';
 
 import { computed, nextTick, onMounted, onScopeDispose, provide, ref, shallowRef, watch } from 'vue';
 import { useGame } from './store';
@@ -12,13 +17,11 @@ import {primaryActivityControls} from './activity-controls';
 import {navigationGate} from './navigation-gates';
 import FeatureMenu from './FeatureMenu.vue';
 import * as C from '../../src/full/content.ts';
-import { availableEvents } from '../../src/full/engine.ts';
 import { gamePhase } from '../../src/full/contracts.ts';
 import { getBreakthroughGoal, previewAction, getStoryContext, getRelationships, getLifeOverview, getTrialJourney, getAscensionChoices } from '../../src/full/queries.ts';
-import type { ActionPreview } from '../../src/full/queries.ts';
 import type { Action, Move } from '../../src/full/types.ts';
 import { stories } from '../../src/full/events.ts';
-import { getTrackedGoal, planCollection, createConsumptionPreview, type CollectionTarget } from '../../src/full/goals.ts';
+import { getTrackedGoal, createConsumptionPreview, type CollectionTarget } from '../../src/full/goals.ts';
 import { useTracking } from './use-tracking';
 import { formatCosts, formatDelta } from './presentation';
 import type { NavigationRequest } from './navigation';
@@ -86,7 +89,6 @@ import {trialReturnView} from './trial-return';
 import TrialReturnChoices from './TrialReturnChoices.vue';
 import {NPC_PORTRAITS,SCENE_ASSETS,DESKTOP_UI_ASSETS,PANEL_MATERIAL_ASSETS,sceneAssetPath} from './assets';
 import {scenePresentation} from './scene-presentation';
-import BatchPreview from './BatchPreview.vue';
 import ActionFeedback from './ActionFeedback.vue';
 import EquipmentPanel from './EquipmentPanel.vue';
 import GrowthPanel from './GrowthPanel.vue';
@@ -349,27 +351,10 @@ const goal = computed(() => game.value ? getBreakthroughGoal(game.value) : null)
 const journey = computed(() => game.value ? getTrialJourney(game.value) : null);
 const overview = computed(() => game.value ? getLifeOverview(game.value) : null);
 const lifeOpen = ref(false), lifeSection = ref<HTMLDetailsElement>();
-const journalExpanded=ref(false),recentJournal=computed(()=>[...(game.value?.journal??[])].reverse()),visibleJournal=computed(()=>journalExpanded.value?recentJournal.value:recentJournal.value.slice(0,10));
-watch(()=>game.value?.core.runId,()=>journalExpanded.value=false);
-const context = computed(() => ({ state: game.value, cache: new Map<string, ActionPreview>() }));
-function quote(action: Action) {
-  const current = context.value;
-  if (!current.state) return null;
-  const key = JSON.stringify(action);
-  if (!current.cache.has(key)) current.cache.set(key, previewAction(current.state, action));
-  return current.cache.get(key)!;
-}
+const {quote,can,why,cost}=useActionView(store);
 function choiceDetails(action:Action,detail:string){const p=quote(action);return [{label:'即刻代价',value:formatCosts(p?.actualCosts??p?.costs??null)},{label:'已知结果',value:detail},{label:'预计变化',value:p?.delta?formatDelta(p.delta):'条件未满足，当前不会执行'},{label:'当前条件',value:why(action)||'可选择；由你确认后执行'}];}
 function viewReceipt(){if(store.activity?.version===7&&store.activity.stopReason?.code!=='STATE_CHANGED')return inspectMilestone(store.activity);return openHub('receipt');}
 const stoppedTraining = computed(()=>store.activity?.status==='stopped'&&store.activity.stopReason?.code!=='STATE_CHANGED');
-const can = (action: Action) => store.available && !store.busy && !store.activityRunning && !!quote(action)?.allowed;
-const why = (action: Action) => !store.available ? '存储尚未就绪，请重新读取或导出原件' : store.busy ? (store.execution?.phase==='acting'?'当前行动正在进行，请稍候':'正在保存，请稍候') : store.activityRunning?'当前活动进行中，请先暂停再行动':quote(action)?.failure?.message ?? '';
-function cost(action: Action) {
-  const preview = quote(action), c = preview?.costs;
-  if (!c) return '';
-  const text = formatCosts(c);
-  return preview && preview.requestedSteps > 1 ? '每次 ' + text : text;
-}
 function act(action: Action) { resumeVisible.value=false;if(action.type==='TRAVEL')return travel(action.location);if(action.type==='BATTLE')return battle(action.move);if(action.type==='ENCOUNTER')return inspectAdventure(action.enemy);if(action.type==='CULTIVATE'){const n=action.count??1;return startTraining({kind:'cultivation',method:action.method,maxCycles:n,until:'cycles',stoneBudget:action.method==='natural'?0:Math.min(core.value?.player.stones??0,(quote({...action,count:1})?.costs?.stones??0)*n),stoneReserve:0});}if(action.type==='SOURCE'){const n=action.count??1,source=ruleContent.value.sources[action.sourceId],target=action.target?{kind:'item' as const,id:action.target.item,quantity:action.target.quantity}:batch.value==='target'?collectionTarget.value:null;return startSource({kind:'source',sourceId:action.sourceId,maxCycles:n,until:target?'target':'cycles',target,monthBudget:n*source.months,remainingMonthsReserve:1});}if(action.type==='CRAFT'||action.type==='FORGE')return inspectProduction(action);if(['BUY','SELL','USE','REST','LEARN','STUDY'].includes(action.type))return inspectPreparation(action);if(action.type==='SCHOOL'||action.type==='EQUIP'||action.type==='EQUIP_RELIC')return inspectConfiguration(action);if(store.activityRunning){store.activityNotice='当前活动进行中，请先暂停再行动。';return;}if (action.type === 'START_TRIAL') return showTrialPreparation(); if (action.type === 'END') return reviewAscension(action.ending); if(isMilestoneAction(action))return selectMilestone(action); const owner=navigationRevision; return focus.afterAction(async()=>{await store.act(action);},()=>owner===navigationRevision); }
 let directViewEpoch=0;
 watch(()=>[hubView.value,tab.value,detailParent.value?.view,detailParent.value?.tab],()=>directViewEpoch++,{flush:'sync'});
@@ -429,9 +414,6 @@ async function startAdventure(plan:AdventurePlan){
  const owner=navigationRevision;await store.startPlannedActivity(plan);
  if(!store.error&&owner===navigationRevision&&plan.kind!=='travel'){selectTab('修行');}
 }
-const natural = computed<Action>(() => ({ type: 'CULTIVATE', method: 'natural', count: batch.value === 'target' ? C.maxBatch : batch.value }));
-const assisted = computed<Action>(() => ({ type: 'CULTIVATE', method: 'assisted', count: batch.value === 'target' ? C.maxBatch : batch.value }));
-const naturalPreview=computed(()=>quote(natural.value));
 const defaultTraining:CultivationPlan={kind:'cultivation',method:'natural',maxCycles:50,until:'xp-cap',stoneBudget:0,stoneReserve:0};
 const hubTrainingMethod=ref<'natural'|'assisted'>('natural');
 watch(()=>game.value?.core.runId,()=>hubTrainingMethod.value='natural');
@@ -506,19 +488,6 @@ const caveGate=computed(()=>cultivationHome.value&&(primaryBreakthrough.value||n
 const caveThreshold=computed(()=>immersive.value&&core.value?.world.location==='cave'&&(caveGate.value&&!trialReturn.value?.choice||store.activity?.version===7&&store.activity.status!=='stopped'&&store.activity.plan.action.type==='BREAKTHROUGH'));
 const activeStory = computed(() => game.value && core.value?.activeEvent && stories[core.value.activeEvent.id] ? getStoryContext(game.value, core.value.activeEvent.id) : null);
 const relationships = computed(() => game.value ? getRelationships(game.value) : []);
-const events = computed(() => game.value ? availableEvents(game.value) : []);
-const activeEnemies = computed(() => Object.entries(ruleContent.value.enemies).filter(([, e]) => !e.trial && e.location === core.value?.world.location));
-const localSources = computed(() => Object.entries(ruleContent.value.sources).filter(([, s]) => s.location === core.value?.world.location));
-const sourceActions = computed(() => Object.fromEntries(localSources.value.map(([id]) => [id, batch.value === 'target' ?
-  (game.value && collectionTarget.value ? planCollection(game.value, id, collectionTarget.value) : null) : { type: 'SOURCE', sourceId: id, count: batch.value } as Action])));
-function sourceReason(id: string) {
-  const action = sourceActions.value[id];
-  if (action) return why(action);
-  if (!collectionTarget.value) return '先从目标来源选取所需物资，或选择固定次数行动。';
-  return collectionTarget.value.kind === 'stones' && ruleContent.value.sources[id].stones > 0 ?
-    '灵石目标已经备齐，无需重复委托；可替换目标或选择固定次数。' :
-    '此处不产当前目标物资，可切换来源或选择固定次数。';
-}
 async function navigate(request:NavigationRequest,arrived?:()=>void):Promise<void>{
  if(!game.value||store.busy||!store.available)return;
  if(game.value.core.world.location!==request.location)return arrangeTravel(request.location,()=>navigate(request,arrived));
@@ -539,9 +508,6 @@ function consumption(action: Action) {
   const gaps = consumptionPreview.value?.(action) ?? [];
   return gaps.length ? '会消耗追踪物资：' + gaps.map(gap => `${ruleContent.value.items[gap.id!].name}将缺${gap.missing}`).join('、') + '；材料未被预留。' : '';
 }
-const collectionLabel = computed(() => collectionTarget.value ? `${collectionTarget.value.kind === 'item' ? ruleContent.value.items[collectionTarget.value.id].name : '灵石'}库存达到 ${collectionTarget.value.quantity}` : '从目标来源选取所需物资');
-const knownItems = computed(() => Object.entries(ruleContent.value.items).filter(([id, item]) => !core.value || C.rank(item.min) <= C.rank(core.value.player.realm) || core.value.inventory[id] > 0));
-const localRecipes = computed(() => Object.entries(ruleContent.value.recipes).filter(([, recipe]) => !core.value || C.rank(recipe.min) <= C.rank(core.value.player.realm)));
 function battle(move:Move){if(!game.value?.battle||store.activityRunning)return;return startAdventure(singleBattlePlan(game.value,move));}
 async function showLife(event?:Event) {
   const run=game.value?.core.runId,context=narrativeContext.value;let owner:number;
@@ -693,47 +659,10 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
           <template v-else-if="game.status !== 'active'">
             <LifePanel data-primary-region tabindex="-1" :game="game" :enabled="store.available" :busy="store.busy" :has-checkpoint="store.hasCheckpoint" @export="exportLife" @restore="restore" @restart="reset"/>
           </template>
-          <template v-else-if="tab === '修行'">
-            <template v-if="core.world.location === 'cave'">
-              <div v-if="needsSchool" class="school-prompt"><div><strong>已入道，可选择修法</strong><p>剑修积蓄剑意，符修留印引爆；选择不会推进年月。</p></div><button type="button" data-testid="choose-school" @click="showEquipment">查看两种修法 →</button></div>
-              <div class="cultivation-topline"><span class="section-label">听雨修行 · 道行由此积累</span><button type="button" class="text-button" data-testid="cultivation-jump" @click="focusCultivation">前往修行动作 ↓</button></div>
-              <div class="cultivation-actions" id="cultivation-actions" tabindex="-1" data-primary-region data-testid="cultivation-actions">
-                <section class="natural-action" data-testid="cultivation-card" :data-primary-action="primaryBreakthrough?'breakthrough':'cultivate'">
-                  <div class="natural-illustration" aria-hidden="true"><AssetImage :path="DESKTOP_UI_ASSETS.meditation" asset-id="meditation-ink" fit="contain"><GameIcon class="meditation-fallback" kind="nav" id="cultivate"/></AssetImage></div>
-                  <div class="cultivation-main"><h2>{{primaryBreakthrough?goal?.title:'自然吐纳'}}</h2>
-                    <div v-if="primaryBreakthrough" class="cultivation-facts" data-testid="cultivation-facts"><span>修为已圆满</span><span>{{core.player.realm==='spirit'?'查看条件':'单次突破'}}</span><span>{{core.player.realm==='spirit'?'正式入场成本：':''}}{{cost(breakthrough)}}</span></div>
-                    <div v-else class="cultivation-facts" data-testid="cultivation-facts"><span v-if="naturalPreview?.delta">预计修为 {{naturalPreview.delta.xp>0?'+':''}}{{naturalPreview.delta.xp}}</span><span v-if="naturalPreview?.allowed">实际可行 {{naturalPreview.executedSteps}} 次</span><span>{{naturalPreview?.actualCosts?formatCosts(naturalPreview.actualCosts):cost(natural)}}</span></div>
-                    <button v-if="primaryBreakthrough" class="primary cultivate-primary" data-testid="breakthrough" @click="act(breakthrough)" :disabled="core.player.realm==='spirit'? uiLocked:!can(breakthrough)">{{breakthroughLabel}}</button>
-                    <p v-if="primaryBreakthrough&&core.player.realm==='spirit'" class="small action-reason">查看准备不消耗物资，正式入场另行确认。</p>
-                    <button :class="primaryBreakthrough?'secondary-cultivate':'primary cultivate-primary'" data-testid="cultivate" @click="act(natural)" :disabled="!can(natural)">自然吐纳</button><p v-if="why(natural)&&!primaryBreakthrough" class="small action-reason">{{why(natural)}}</p>
-                    <label class="cultivation-batch">吐纳批次 <select v-model.number="batch" aria-label="吐纳行动次数"><option :value="1">1 次</option><option :value="5">5 次</option><option :value="20">20 次</option><option :value="50">50 次</option><option value="target">达到目标</option></select></label>
-                  </div>
-                </section>
-                <div class="cultivation-alternatives"><button data-testid="cultivate-assisted" @click="act(assisted)" :disabled="!can(assisted)"><GameIcon kind="item" id="core"/><span><strong>灵石辅助</strong><small>{{cost(assisted)}}</small><small>{{why(assisted)}}</small></span></button><button data-testid="rest" @click="act({type:'REST'})" :disabled="!can({type:'REST'})"><GameIcon kind="item" id="healing_pill"/><span><strong>洞府疗养</strong><small>{{cost({type:'REST'})}}</small><small>{{why({type:'REST'})}}</small></span></button></div>
-              </div>
-            </template>
-            <template v-else><div class="section-label">修行</div><h2>静守灵台，凝气归元。</h2><p class="story">{{location.description}}</p><div tabindex="-1" data-primary-region><button class="primary" data-testid="return-cave" @click="travel('cave')" :disabled="!can({type:'TRAVEL',location:'cave'})">返回洞府修行 →</button></div></template>
-            <div v-if="!primaryBreakthrough" class="breakthrough"><div><strong>{{goal?.title}}</strong><small>{{why(breakthrough) || '准备已经齐全'}}</small></div><button class="primary" data-testid="breakthrough" @click="act(breakthrough)" :disabled="core.player.realm==='spirit' ? !store.available || store.busy : !can(breakthrough)">{{breakthroughLabel}}</button><button v-if="cultivationHome&&core.player.xp>=realm.xpCap&&!can(breakthrough)&&core.player.realm!=='spirit'" type="button" class="text-button" data-testid="track-breakthrough-preparation" @click="showBreakthroughGoal">追踪突破筹备 →</button></div>
-            <details v-if="core.world.location==='cave'" class="cultivation-details"><summary>本批预算、预计结果与洞府见闻</summary><p class="story">{{location.description}}</p><p class="small">每批最多 {{C.maxBatch}} 次；成本与停止原因按真实行动结算。</p><div class="batch-previews"><BatchPreview label="自然吐纳" :preview="quote(natural)"/><BatchPreview label="灵石辅助" :preview="quote(assisted)"/></div></details>
-          </template>
-          <template v-else-if="tab === '历练'">
-            <div class="section-label">历练</div><p class="story">{{location.description}}</p>
-            <div class="locations" tabindex="-1" data-primary-region><button v-for="(place,id) in C.locations" :key="id" :data-testid="`travel-${id}`" :class="{selected:core.world.location===id}" :aria-current="core.world.location===id?'location':undefined" @click="travel(id)" :disabled="!can({type:'TRAVEL',location:id})">{{place.name}}<small v-if="core.world.location!==id">{{cost({type:'TRAVEL',location:id})}}</small><small>{{why({type:'TRAVEL',location:id})}}</small></button></div>
-            <div class="action-options"><label>连续采集/委托 <select v-model="batch" aria-label="取材次数"><option :value="1">1 次</option><option :value="5">5 次</option><option :value="20">20 次</option><option :value="50">50 次</option><option value="target">达到目标</option></select></label><small v-if="batch==='target'" data-testid="collection-target">{{collectionLabel}}</small></div>
-            <div class="source-grid"><div v-for="[id,source] in localSources" :key="id"><button :data-testid="`source-${id}`" :class="{highlight:highlight===`source-${id}`}" @click="sourceActions[id] && act(sourceActions[id]!)" :disabled="!sourceActions[id] || !can(sourceActions[id]!)"><strong>{{source.name}}</strong><small>{{sourceActions[id] ? cost(sourceActions[id]!) : '本批不会执行'}}</small><small v-if="source.stones">灵石 +{{source.stones}}</small><small v-for="(n,item) in source.items" :key="item">{{ruleContent.items[item].name}} +{{n}}</small><small>{{sourceReason(id)}}</small></button><BatchPreview :label="source.name" :preview="sourceActions[id] ? quote(sourceActions[id]!) : null" :reason="sourceReason(id)"/></div></div>
-            <div v-if="activeEnemies.length" class="encounters"><h3>此地挑战</h3><div class="choices two"><button v-for="[id,enemy] in activeEnemies" :key="id" :data-testid="`encounter-${id}`" :class="{highlight:highlight===`encounter-${id}`}" @click="act({type:'ENCOUNTER',enemy:id})" :disabled="!can({type:'ENCOUNTER',enemy:id})"><strong>{{enemy.name}}</strong><small>气血 {{enemy.hp}} · 胜利后取得奖励</small><small>{{why({type:'ENCOUNTER',enemy:id})}}</small></button></div></div>
-            <div v-if="core.world.location==='market'" class="market"><label>每次采购数量 <input type="number" min="1" :max="C.maxQuantity" v-model.number="quantity" aria-label="采购数量"></label><div class="market-row" v-for="[id,item] in knownItems" :key="id"><div><strong>{{item.name}}</strong><small>{{item.description}}</small></div><button :data-testid="`buy-${id}`" :class="{highlight:highlight===`buy-${id}`}" @click="act({type:'BUY',item:id,quantity})" :disabled="!can({type:'BUY',item:id,quantity})">购入 · {{cost({type:'BUY',item:id,quantity})}}<small>{{why({type:'BUY',item:id,quantity})}}</small></button></div></div>
-          </template>
-          <template v-else-if="tab === '行囊'">
-            <div v-if="!singleScreen||hubView!=='forge'" class="section-label">行囊 <span>一草一石，皆有其用</span></div><div v-if="!singleScreen||hubView!=='forge'" class="inventory" tabindex="-1" data-primary-region><article v-for="[id,item] in knownItems" :key="id"><div class="item-glyph" aria-hidden="true"><GameIcon kind="item" :id="id"/></div><div><strong>{{item.name}} <b :data-testid="`item-${id}`">×{{core.inventory[id]}}</b></strong><small>{{item.description}}</small><small v-if="item.hp || item.mp">{{why({type:'USE',item:id})}}</small><small v-if="item.hp || item.mp">{{consumption({type:'USE',item:id})}}</small><template v-if="item.sell!==null"><small v-if="core.world.location==='market'">{{why({type:'SELL',item:id,quantity:1})}}</small><small>{{consumption({type:'SELL',item:id,quantity:1})}}</small></template><button class="text-button" :data-testid="`track-${id}`" @click="selectTracking({kind:'item',id,quantity:1})">追踪此物资 →</button></div><button v-if="item.hp || item.mp" @click="act({type:'USE',item:id})" :disabled="!can({type:'USE',item:id})">服用</button><button v-if="item.sell!==null && core.world.location==='market'" @click="act({type:'SELL',item:id,quantity:1})" :disabled="!can({type:'SELL',item:id,quantity:1})">售出 · {{item.sell}}</button></article></div>
-            <h3 v-if="!singleScreen||hubView!=='inventory'" class="recipes-title">丹炉 · 固定配方</h3><p v-if="singleScreen&&hubView==='forge'&&!localRecipes.length" class="small" data-testid="forge-locked">引气入体后可在洞府炼丹；当前尚无可用配方。</p><p v-if="(!singleScreen||hubView!=='inventory')&&core.world.location!=='cave'" class="small">需在洞府炼丹。<button @click="travel('cave')" :disabled="!can({type:'TRAVEL',location:'cave'})">前往洞府</button></p>
-            <div v-show="!singleScreen||hubView!=='inventory'" class="recipe" v-for="[id,recipe] in localRecipes" :key="id"><div><strong>{{recipe.name}}</strong><small>{{cost({type:'CRAFT',recipeId:id})}}</small><small>{{why({type:'CRAFT',recipeId:id})}}</small><small>{{consumption({type:'CRAFT',recipeId:id})}}</small></div><button :data-testid="`craft-${id}`" :class="{highlight:highlight===`craft-${id}`}" @click="act({type:'CRAFT',recipeId:id})" :disabled="!can({type:'CRAFT',recipeId:id})">炼制</button></div>
-          </template>
-          <template v-else>
-            <div class="section-label">仙缘</div><button class="text-button" data-testid="show-life" @click="showLife">查看修仙生平 →</button><RelationshipPanel data-primary-region tabindex="-1" :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
-            <div class="choices"><button v-for="event in events" :key="event.id" :data-testid="`event-${event.id}`" :class="{highlight:highlight===`event-${event.id}`}" @click="act({type:'EVENT',event:event.id})" :disabled="!can({type:'EVENT',event:event.id})">{{event.name}} · {{event.npc}}</button></div>
-            <h3>近期手记</h3><p class="small">仅保留最近100条；当前显示{{visibleJournal.length}}条，共{{recentJournal.length}}条。完整已选事实请查看修仙生平。</p><ol id="recent-journal" class="journal"><li v-for="(line,index) in visibleJournal" :key="index">{{line}}</li></ol><button v-if="recentJournal.length>10" type="button" class="text-button" data-testid="journal-toggle" :aria-expanded="journalExpanded" aria-controls="recent-journal" @click="journalExpanded=!journalExpanded">{{journalExpanded?'收起较早条目':`展开全部 ${recentJournal.length} 条近期手记`}}</button>
-          </template>
+          <CultivationTab v-else-if="tab === '修行'" v-model:batch="batch" :cultivation-home="cultivationHome" @act="act" @travel="travel" @school="showEquipment" @focus="focusCultivation" @track-breakthrough="showBreakthroughGoal"/>
+          <ExplorationTab v-else-if="tab === '历练'" v-model:batch="batch" v-model:quantity="quantity" :collection="collectionTarget" :highlight="highlight" @act="act" @travel="travel"/>
+          <InventoryTab v-else-if="tab === '行囊'" :single-screen="singleScreen" :view="hubView" :highlight="highlight" :consumption="consumption" @act="act" @travel="travel" @track="selectTracking"/>
+          <FateTab v-else :highlight="highlight" @act="act" @life="showLife" @navigate="navigate"/>
           <GuidancePanel v-if="(cultivationHome||phase==='opening')&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" :guide="guidance" @skip="skipGuidance" @help="showGameplayHelp" :modal="singleScreen&&phase==='opening'" @expand="helpPage=guideCatalog.findIndex(g=>g.id===guidance.id);showGameplayHelp()"/>
         </section>
         <div v-if="!storyView&&tab==='仙缘'&&phase!=='idle'&&game.status==='active'" class="paper inline-actions"><button type="button" class="text-button" data-testid="show-life" @click="showLife">查看修仙生平 →</button><button type="button" data-testid="resume-encounter" @click="resumeEncounter">返回当前遭遇</button></div>
