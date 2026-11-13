@@ -11,9 +11,9 @@ const goal=computed(()=>sourceStockGoal(props.game,props.sourceId,props.activity
 </template>
 <style scoped>
 @layer game{
-.source-stock-goal{display:inline-flex;align-items:baseline;gap:5px;color:#c6e0ba;line-height:1.65}
+.source-stock-goal{display:inline-flex;align-items:baseline;gap:5px;color:var(--palette-jade);line-height:1.65}
 .source-stock-goal>strong{font-size:22px;font-weight:500;line-height:1.6}
-.source-stock-goal>small{font-size:14px;line-height:1.65;color:#bfd1bb;white-space:nowrap}
-.source-stock-goal[data-met=true]>small{color:#d9e7b7}
+.source-stock-goal>small{font-size:14px;line-height:1.65;color:var(--palette-muted);white-space:nowrap}
+.source-stock-goal[data-met=true]>small{color:var(--palette-ink)}
 :global(#app .ta08-field[data-state=failed] .ta08-held-rows:has(.source-stock-goal)){grid-template-columns:minmax(0,1fr)}}
 </style>

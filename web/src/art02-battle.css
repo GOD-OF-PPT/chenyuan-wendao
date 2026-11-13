@@ -1,40 +1,40 @@
 @layer game{
-.battle-presence{position:relative;isolation:isolate;overflow:hidden;min-height:300px;height:100%;background:#102f36;color:#edf0dc}
+.battle-presence{position:relative;isolation:isolate;overflow:hidden;min-height:300px;height:100%;background:var(--palette-night);color:var(--palette-ink)}
 .battle-presence>.battle-backdrop{position:absolute;inset:0;z-index:-3}
-.battle-presence::before{content:'';position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#0b2634d9,transparent 46%,#102a34a8),linear-gradient(#0d2734bd,transparent 58%,#102d35e8)}
-.battle-backdrop-fallback{display:block;height:100%;background:radial-gradient(ellipse at 65% 60%,#537e73,#14363c)}
-.battle-presence>.battle-ground{position:absolute;inset:70% 8% -21%;border:1px solid #a2c8aa55;border-radius:50%;background:radial-gradient(ellipse,#b3dcb819,transparent 65%);transform:rotate(-5deg);pointer-events:none}
-.battle-presence>.battle-player-art,.battle-presence>.enemy-art{position:absolute;bottom:0;top:auto;left:0;width:45%;height:70%;min-height:240px;max-height:none;grid-area:auto;filter:drop-shadow(0 7px 8px #041c29b0);pointer-events:none}
+.battle-presence::before{content:'';position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,color-mix(in srgb, var(--palette-night) 85.09803922%, transparent),transparent 46%,color-mix(in srgb, var(--palette-night) 65.88235294%, transparent)),linear-gradient(color-mix(in srgb, var(--palette-night) 74.11764706%, transparent),transparent 58%,color-mix(in srgb, var(--palette-night) 90.98039216%, transparent))}
+.battle-backdrop-fallback{display:block;height:100%;background:radial-gradient(ellipse at 65% 60%,var(--palette-line),var(--palette-panel))}
+.battle-presence>.battle-ground{position:absolute;inset:70% 8% -21%;border:1px solid color-mix(in srgb, var(--palette-jade) 33.33333333%, transparent);border-radius:50%;background:radial-gradient(ellipse,color-mix(in srgb, var(--palette-jade) 9.80392157%, transparent),transparent 65%);transform:rotate(-5deg);pointer-events:none}
+.battle-presence>.battle-player-art,.battle-presence>.enemy-art{position:absolute;bottom:0;top:auto;left:0;width:45%;height:70%;min-height:240px;max-height:none;grid-area:auto;filter:drop-shadow(0 7px 8px color-mix(in srgb, var(--palette-shadow) 69.01960784%, transparent));pointer-events:none}
 .battle-presence>.enemy-art{left:auto;right:10%;width:42%;bottom:2%}
 .battle-presence>.battle-player-art{left:22%;width:25%;mask-image:none;opacity:1}
-.battle-presence .battle-person-fallback,.battle-presence .enemy-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;font-size:30px;color:#d7e5c8;background:radial-gradient(ellipse,#315a51aa,transparent 70%)}
+.battle-presence .battle-person-fallback,.battle-presence .enemy-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;font-size:30px;color:var(--palette-ink);background:radial-gradient(ellipse,color-mix(in srgb, var(--palette-raised) 66.66666667%, transparent),transparent 70%)}
 .battle-person-fallback small,.enemy-fallback small{font-size:18px}
-.battle-presence .battle-own-status,.battle-presence .enemy-status{position:absolute;top:16px;left:18px;z-index:2;width:30%;min-width:0;background:linear-gradient(90deg,#0c2935e8,#102d36bd);border:0;border-radius:0;padding:10px;display:block;grid-area:auto}
-.battle-presence .enemy-status{left:auto;right:18px;background:linear-gradient(-90deg,#0c2935e8,#102d36bd)}
+.battle-presence .battle-own-status,.battle-presence .enemy-status{position:absolute;top:16px;left:18px;z-index:2;width:30%;min-width:0;background:linear-gradient(90deg,color-mix(in srgb, var(--palette-night) 90.98039216%, transparent),color-mix(in srgb, var(--palette-night) 74.11764706%, transparent));border:0;border-radius:0;padding:10px;display:block;grid-area:auto}
+.battle-presence .enemy-status{left:auto;right:18px;background:linear-gradient(-90deg,color-mix(in srgb, var(--palette-night) 90.98039216%, transparent),color-mix(in srgb, var(--palette-night) 74.11764706%, transparent))}
 .battle-presence .battle-player{display:grid;gap:4px;font-size:18px}
 .battle-presence .battle-player>strong{font-size:24px;line-height:1.3;display:flex;align-items:center;gap:12px}
-.battle-presence .battle-player>strong small{font-size:14px;color:#aaccaf}
+.battle-presence .battle-player>strong small{font-size:14px;color:var(--palette-jade)}
 .battle-presence .battle-player>span{display:flex;justify-content:space-between;font-size:18px}
 .battle-presence .progress-track{margin:1px 0 4px;height:12px}
 .battle-presence .battle-resource{display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:18px;margin-top:4px}
-.battle-resource-marks{display:flex;gap:4px}.battle-resource-marks i{font-style:normal;font-size:14px;display:grid;place-items:center;min-width:22px;height:26px;border:1px solid #758e7755;color:#819b89;background:#0d2e35}
-.battle-resource-marks i.filled{border-color:#d7d39a;color:#e1edb6;background:#46654a;}
-.battle-presence .enemy-row h2{font-size:26px;margin:0 0 5px;color:#f0e9d1;line-height:1.3}
+.battle-resource-marks{display:flex;gap:4px}.battle-resource-marks i{font-style:normal;font-size:14px;display:grid;place-items:center;min-width:22px;height:26px;border:1px solid color-mix(in srgb, var(--palette-line) 33.33333333%, transparent);color:var(--palette-line);background:var(--palette-night)}
+.battle-resource-marks i.filled{border-color:var(--palette-gold);color:var(--palette-ink);background:var(--palette-line);}
+.battle-presence .enemy-row h2{font-size:26px;margin:0 0 5px;color:var(--palette-ink);line-height:1.3}
 .battle-presence .enemy-row b{display:block;font-size:18px;margin-bottom:4px}
-.battle-presence .intent{display:grid;gap:2px;font-size:18px;line-height:1.4;margin:8px 0 0;padding:7px 10px;border-left:2px solid #a9c091;background:#143b3ee8}
-.battle-presence .intent>span{font-size:14px;color:#c8d3b2}.battle-presence .intent>b{font-size:14px;font-weight:400}
-.battle-presence .intent[data-intent=heavy]{border-color:#efbd8a;background:#532f32f2}.battle-presence .intent[data-intent=heavy]>strong{color:#ffdbb3}
+.battle-presence .intent{display:grid;gap:2px;font-size:18px;line-height:1.4;margin:8px 0 0;padding:7px 10px;border-left:2px solid var(--palette-jade);background:color-mix(in srgb, var(--palette-panel) 90.98039216%, transparent)}
+.battle-presence .intent>span{font-size:14px;color:var(--palette-muted)}.battle-presence .intent>b{font-size:14px;font-weight:400}
+.battle-presence .intent[data-intent=heavy]{border-color:var(--palette-gold);background:color-mix(in srgb, var(--palette-dangerSurface) 94.90196078%, transparent)}.battle-presence .intent[data-intent=heavy]>strong{color:var(--palette-gold)}
 .battle-exchange{position:absolute;z-index:2;left:36%;width:28%;top:36%;display:flex;align-items:center;flex-direction:column;gap:5px;text-align:center;pointer-events:none}
-.battle-exchange>strong{font-size:24px;color:#e4e9c9}.battle-exchange>small{font-size:14px}.battle-exchange>span{font-size:14px;line-height:1.5;padding:3px 8px;background:#0e2d35df}
-.battle-charge-ring{display:block;width:60px;height:60px;border:1px solid #b2c89077;border-radius:50%;background:conic-gradient(#cee3ad var(--battle-charge),#25474744 0);mask-image:radial-gradient(transparent 60%,#000 62%);opacity:.25}
-.battle-presence[data-state=charging] .battle-charge-ring{opacity:1}.battle-presence[data-state=saving] .battle-charge-ring{background:#b9c9a8;opacity:.7}
+.battle-exchange>strong{font-size:24px;color:var(--palette-ink)}.battle-exchange>small{font-size:14px}.battle-exchange>span{font-size:14px;line-height:1.5;padding:3px 8px;background:color-mix(in srgb, var(--palette-night) 87.45098039%, transparent)}
+.battle-charge-ring{display:block;width:60px;height:60px;border:1px solid color-mix(in srgb, var(--palette-gold) 46.66666667%, transparent);border-radius:50%;background:conic-gradient(var(--palette-gold) var(--battle-charge),color-mix(in srgb, var(--palette-raised) 26.66666667%, transparent) 0);mask-image:radial-gradient(transparent 60%,var(--palette-shadow) 62%);opacity:.25}
+.battle-presence[data-state=charging] .battle-charge-ring{opacity:1}.battle-presence[data-state=saving] .battle-charge-ring{background:var(--palette-muted);opacity:.7}
 .immersive-stage .hub-current .battle-automation:not([data-view=strategy]){display:grid;grid-template-columns:minmax(0,1fr) 330px;grid-template-rows:44px minmax(300px,1fr) auto auto auto;gap:10px 20px}
 .immersive-stage .hub-current .battle-automation>.battle-presence{grid-column:1;grid-row:2/5;display:block;padding:0;border:0;border-radius:2px;min-height:300px;height:100%}
 .immersive-stage .hub-current .battle-hero.battle-presence>.enemy-art{left:auto;right:10%;width:42%;height:70%;max-height:none;min-height:240px;grid-area:auto}
-.immersive-stage .hub-current .battle-presence .battle-own-status{grid-area:auto;padding:10px;border:0;background:linear-gradient(90deg,#0c2935e8,#102d36bd)}
+.immersive-stage .hub-current .battle-presence .battle-own-status{grid-area:auto;padding:10px;border:0;background:linear-gradient(90deg,color-mix(in srgb, var(--palette-night) 90.98039216%, transparent),color-mix(in srgb, var(--palette-night) 74.11764706%, transparent))}
 .immersive-stage .hub-current .battle-hero.battle-presence .enemy-row h2{font-size:26px}
 .immersive-stage .hub-current .battle-hero.battle-presence .intent{font-size:18px;gap:2px;padding:7px 10px}
-.immersive-stage .hub-current .battle-automation>.battle-next{grid-column:2;grid-row:2;align-self:center;padding:12px;border:0;background:linear-gradient(90deg,#133c3edb,transparent);gap:7px}
+.immersive-stage .hub-current .battle-automation>.battle-next{grid-column:2;grid-row:2;align-self:center;padding:12px;border:0;background:linear-gradient(90deg,color-mix(in srgb, var(--palette-panel) 85.88235294%, transparent),transparent);gap:7px}
 .immersive-stage .hub-current .battle-next>strong{font-size:22px}.immersive-stage .hub-current .battle-next>span{font-size:18px}
 .immersive-stage .hub-current .battle-automation>.battle-current-activity{grid-column:1/-1;grid-row:5}
 .immersive-stage .hub-current .battle-current-authorization{margin:0!important;padding:5px 10px;line-height:1.45}

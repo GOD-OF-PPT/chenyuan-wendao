@@ -1,42 +1,42 @@
 @layer game{
-#app .milestone-gate{display:grid;grid-template-columns:minmax(150px,.35fr) minmax(0,1fr);gap:16px;min-width:0;min-height:0;width:100%;color:var(--ink,#e6ead8)}
-#app .milestone-object{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;min-width:0;padding:8px 12px;border-right:1px solid #8d8d5d70;background:radial-gradient(ellipse at 50% 42%,#2d645143,transparent 68%)}
+#app .milestone-gate{display:grid;grid-template-columns:minmax(150px,.35fr) minmax(0,1fr);gap:16px;min-width:0;min-height:0;width:100%;color:var(--ink,var(--palette-ink))}
+#app .milestone-object{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;min-width:0;padding:8px 12px;border-right:1px solid color-mix(in srgb, var(--palette-line) 43.92156863%, transparent);background:radial-gradient(ellipse at 50% 42%,color-mix(in srgb, var(--palette-raised) 26.2745098%, transparent),transparent 68%)}
 #app .milestone-object-content{display:flex;flex-direction:column;justify-content:center;gap:10px;min-width:0;min-height:0}
 #app .milestone-object-content p{font-size:18px;line-height:1.4;margin:0;overflow-wrap:anywhere}
 #app .milestone-gate small{font-size:14px;line-height:1.4}
 #app .milestone-gate button{min-height:44px}
 #app .gate-object-caption{display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center}
-#app .gate-object-caption strong{font-size:18px;color:#eee4bf;font-weight:500}
-#app .gate-object-caption small{color:#bfd2c2}
+#app .gate-object-caption strong{font-size:18px;color:var(--palette-ink);font-weight:500}
+#app .gate-object-caption small{color:var(--palette-muted)}
 #app .gate-medicine-case{position:relative;width:160px;height:100px;flex:0 0 100px;transform:perspective(450px) rotateX(9deg)}
-#app .gate-case-lid{position:absolute;left:6px;top:0;width:148px;height:48px;background:linear-gradient(120deg,#204944,#122e30);border:2px solid #a29660;border-radius:6px 6px 1px 1px;transform:skewX(-9deg);box-shadow:inset 0 0 0 5px #122d2d,inset 0 0 0 6px #78865f}
-#app .gate-case-tray{position:absolute;left:0;bottom:0;width:160px;height:52px;border:2px solid #a29660;border-radius:3px 3px 9px 9px;background:linear-gradient(#25554e,#102b2a);box-shadow:inset 0 8px 14px #050f12}
-#app .milestone-gate .gate-medicine-case>.game-icon{position:absolute;left:54px;top:28px;width:54px;height:54px;color:#b6cfac;filter:drop-shadow(0 4px 3px #091a1d)}
-#app .gate-threshold{position:relative;width:164px;height:150px;flex:0 0 150px;border-bottom:5px solid #75816b;isolation:isolate}
-#app .gate-lintel{position:absolute;left:0;top:4px;width:164px;height:22px;clip-path:polygon(0 0,50% 20%,100% 0,94% 100%,6% 100%);background:linear-gradient(#afb080,#4b6b5e);border-top:2px solid #c4b77e}
-#app .gate-pillar{position:absolute;top:26px;width:17px;height:119px;border:1px solid #8c9774;background:linear-gradient(90deg,#233c37,#567064,#1a3333)}
+#app .gate-case-lid{position:absolute;left:6px;top:0;width:148px;height:48px;background:linear-gradient(120deg,var(--palette-raised),var(--palette-night));border:2px solid var(--palette-gold);border-radius:6px 6px 1px 1px;transform:skewX(-9deg);box-shadow:inset 0 0 0 5px var(--palette-night),inset 0 0 0 6px var(--palette-line)}
+#app .gate-case-tray{position:absolute;left:0;bottom:0;width:160px;height:52px;border:2px solid var(--palette-gold);border-radius:3px 3px 9px 9px;background:linear-gradient(var(--palette-raised),var(--palette-night));box-shadow:inset 0 8px 14px var(--palette-shadow)}
+#app .milestone-gate .gate-medicine-case>.game-icon{position:absolute;left:54px;top:28px;width:54px;height:54px;color:var(--palette-muted);filter:drop-shadow(0 4px 3px var(--palette-shadow))}
+#app .gate-threshold{position:relative;width:164px;height:150px;flex:0 0 150px;border-bottom:5px solid var(--palette-line);isolation:isolate}
+#app .gate-lintel{position:absolute;left:0;top:4px;width:164px;height:22px;clip-path:polygon(0 0,50% 20%,100% 0,94% 100%,6% 100%);background:linear-gradient(var(--palette-gold),var(--palette-line));border-top:2px solid var(--palette-gold)}
+#app .gate-pillar{position:absolute;top:26px;width:17px;height:119px;border:1px solid var(--palette-line);background:linear-gradient(90deg,var(--palette-panel),var(--palette-line),var(--palette-panel))}
 #app .gate-pillar-left{left:15px}#app .gate-pillar-right{right:15px}
-#app .gate-veil{position:absolute;inset:27px 34px 0;background:linear-gradient(to top,#61bfa619,transparent);opacity:0;transform:scaleY(.5);transform-origin:bottom;transition:opacity .2s,transform .3s}
-#app .gate-threshold>span{position:absolute;inset:32px 0 auto;text-align:center;font-size:22px;letter-spacing:3px;color:#d2d7ba;writing-mode:vertical-rl;margin:auto;width:32px;line-height:1.1}
-#app .milestone-gate .gate-threshold>.game-icon{position:absolute;width:42px;height:42px;bottom:5px;left:61px;color:#b9cbb3}
-#app .gate-cycle{display:flex;flex-direction:column;gap:4px;align-items:center;min-height:48px;text-align:center;max-width:100%;font-size:14px;color:#b9d8c8}
+#app .gate-veil{position:absolute;inset:27px 34px 0;background:linear-gradient(to top,color-mix(in srgb, var(--palette-jade) 9.80392157%, transparent),transparent);opacity:0;transform:scaleY(.5);transform-origin:bottom;transition:opacity .2s,transform .3s}
+#app .gate-threshold>span{position:absolute;inset:32px 0 auto;text-align:center;font-size:22px;letter-spacing:3px;color:var(--palette-muted);writing-mode:vertical-rl;margin:auto;width:32px;line-height:1.1}
+#app .milestone-gate .gate-threshold>.game-icon{position:absolute;width:42px;height:42px;bottom:5px;left:61px;color:var(--palette-muted)}
+#app .gate-cycle{display:flex;flex-direction:column;gap:4px;align-items:center;min-height:48px;text-align:center;max-width:100%;font-size:14px;color:var(--palette-muted)}
 #app .gate-cycle strong{font-size:14px;font-weight:500}
 #app .gate-cycle span{font-size:18px;font-variant-numeric:tabular-nums}
-#app .gate-requirements{display:flex;flex-direction:column;gap:4px;padding-top:8px;border-top:1px solid #7d8f724d;color:#d3dcc9}
-#app .gate-saved-result{display:flex;flex-direction:column;gap:4px;border-left:3px solid #8acbb6;padding:5px 10px;background:#153b35}
-#app .gate-saved-result strong{font-size:18px;font-weight:500;color:#d6ebd1}
-#app .milestone-handoff{box-sizing:border-box;position:relative;display:flex;flex-direction:column;justify-content:center;gap:4px;flex:none;min-width:0;min-height:70px;margin:0;padding:8px 12px;border-left:3px solid #8acbb6;background:#153b35;color:#d6ebd1;overflow-wrap:anywhere}
+#app .gate-requirements{display:flex;flex-direction:column;gap:4px;padding-top:8px;border-top:1px solid color-mix(in srgb, var(--palette-line) 30.19607843%, transparent);color:var(--palette-muted)}
+#app .gate-saved-result{display:flex;flex-direction:column;gap:4px;border-left:3px solid var(--palette-jade);padding:5px 10px;background:var(--palette-panel)}
+#app .gate-saved-result strong{font-size:18px;font-weight:500;color:var(--palette-ink)}
+#app .milestone-handoff{box-sizing:border-box;position:relative;display:flex;flex-direction:column;justify-content:center;gap:4px;flex:none;min-width:0;min-height:70px;margin:0;padding:8px 12px;border-left:3px solid var(--palette-jade);background:var(--palette-panel);color:var(--palette-ink);overflow-wrap:anywhere}
 #app .milestone-handoff strong{font-size:18px;line-height:1.4;font-weight:500}
-#app .milestone-handoff small{font-size:14px;line-height:1.4;color:#d3dcc9}
-#app .milestone-gate[data-working=true] .gate-veil{opacity:.75;transform:scaleY(1);background:linear-gradient(to top,#65c7ae38 var(--gate-progress),transparent)}
-#app .milestone-gate[data-working=true] .gate-threshold:after{content:'';position:absolute;left:25px;right:25px;bottom:2px;height:3px;background:linear-gradient(90deg,#a6d3b6 var(--gate-progress),transparent 0)}
+#app .milestone-handoff small{font-size:14px;line-height:1.4;color:var(--palette-muted)}
+#app .milestone-gate[data-working=true] .gate-veil{opacity:.75;transform:scaleY(1);background:linear-gradient(to top,color-mix(in srgb, var(--palette-jade) 21.96078431%, transparent) var(--gate-progress),transparent)}
+#app .milestone-gate[data-working=true] .gate-threshold:after{content:'';position:absolute;left:25px;right:25px;bottom:2px;height:3px;background:linear-gradient(90deg,var(--palette-jade) var(--gate-progress),transparent 0)}
 #app .milestone-gate[data-working=true] .gate-case-lid{animation:gate-case-breathe 3.2s ease-in-out infinite}
-#app .milestone-object-arrived .gate-veil{opacity:.85;transform:scaleY(1);background:linear-gradient(to top,#78ceb547,transparent)}
+#app .milestone-object-arrived .gate-veil{opacity:.85;transform:scaleY(1);background:linear-gradient(to top,color-mix(in srgb, var(--palette-jade) 27.84313725%, transparent),transparent)}
 #app .milestone-object-arrived .gate-object-caption{animation:gate-arrival .55s ease-out}
-@keyframes gate-case-breathe{50%{border-color:#c4d2a4;box-shadow:inset 0 0 0 5px #122d2d,inset 0 0 0 6px #a1b087}}
+@keyframes gate-case-breathe{50%{border-color:var(--palette-gold);box-shadow:inset 0 0 0 5px var(--palette-night),inset 0 0 0 6px var(--palette-gold)}}
 @keyframes gate-arrival{from{filter:brightness(1.6)}to{filter:brightness(1)}}
 @media(prefers-reduced-motion:reduce){#app .milestone-gate *{animation:none!important;transition:none!important}}
 .hub-reduced .milestone-gate *{animation:none!important;transition:none!important}
 
 #app [data-testid=trial-entry-confirmation] .reading-text p,#app [data-testid=trial-review-cost]{font-size:calc(18px * var(--font-scale,1));line-height:1.5}
-#app .hub-current .milestone-gate{background:#102d32f2;padding:16px;max-width:1100px;margin:auto;text-align:left}}
+#app .hub-current .milestone-gate{background:color-mix(in srgb, var(--palette-night) 94.90196078%, transparent);padding:16px;max-width:1100px;margin:auto;text-align:left}}

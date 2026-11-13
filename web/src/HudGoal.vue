@@ -24,8 +24,8 @@ const item=computed(()=>hudGoalObject(props.game,props.context));
 :global(#app .hud-goal .hud-goal-heading){line-height:1.2}
 :global(#app .hud-goal>.hud-goal-object){display:grid;grid-template-columns:44px minmax(0,1fr);gap:7px;align-items:center;font-size:18px;line-height:1.3}
 .hud-goal-art{width:44px;height:44px;pointer-events:none;filter:saturate(.45)}
-.hud-goal-art :deep(.game-icon){width:40px;height:40px;color:#bfd6ac}
-.hud-goal-copy{display:grid;gap:0;min-width:0;color:#e2ebcb}
-:global(#app .hud-goal .hud-goal-copy small){font-size:14px;line-height:1.2;color:#c7d8bd}
+.hud-goal-art :deep(.game-icon){width:40px;height:40px;color:var(--palette-jade)}
+.hud-goal-copy{display:grid;gap:0;min-width:0;color:var(--palette-ink)}
+:global(#app .hud-goal .hud-goal-copy small){font-size:14px;line-height:1.2;color:var(--palette-muted)}
 :global(#app .hud-goal>.hud-goal-view){line-height:1.2}}
 </style>

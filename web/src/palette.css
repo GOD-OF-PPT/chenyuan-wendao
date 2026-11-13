@@ -1,0 +1,17 @@
+/* Twelve semantic interface colors; artwork retains its own palette. */
+@layer game {
+ :root {
+  --palette-night: #10282f;
+  --palette-panel: #17383d;
+  --palette-raised: #23494a;
+  --palette-line: #668d81;
+  --palette-ink: #f0ebdc;
+  --palette-muted: #c3cfc2;
+  --palette-jade: #9ed8c2;
+  --palette-gold: #d6bf86;
+  --palette-danger: #db9c90;
+  --palette-dangerSurface: #4c3032;
+  --palette-shadow: #04191c;
+  --palette-white: #ffffff;
+ }
+}

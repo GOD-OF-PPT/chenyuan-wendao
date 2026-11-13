@@ -43,17 +43,17 @@ const surfaces=[
 </template>
 <style>
 @layer game{
-#app .source-field.ta08-field .ta08-resource-tool{stroke-width:1.3;color:#9fae8a}
-#app .source-field.ta08-field .ta08-task-drawing{stroke-width:1.15;stroke:#91a48b;filter:drop-shadow(0 4px 3px #061d2580)}
-#app .source-field.ta08-field .ta08-tool-wood{stroke:#8c906c}
-#app .source-field.ta08-field .ta08-tool-metal{stroke:#a4b79a}
-#app .source-field.ta08-field .ta08-tool-fiber{stroke:#a6ae7d}
-#app .source-field.ta08-field .ta08-task-wood{stroke:#8b9b76}
-#app .source-field.ta08-field .ta08-task-bronze{stroke:#b9ab7c}
-#app .source-field.ta08-field .ta08-task-paper{stroke:#b0c2a0}
-#app .source-field.ta08-field .ta08-task-stone{stroke:#7d9a88}
-#app .source-field.ta08-field .ta08-task-jade{stroke:#9cc5a4}
-#app .source-field.ta08-field .ta08-task-grain{stroke:#435e4899;stroke-width:1}
-#app .source-field.ta08-field .ta08-task-ink{stroke:#314e3bd9;stroke-width:1.5}
-#app .source-field.ta08-field .ta08-task-inlay{stroke:#a8ac78;stroke-width:1.2}}
+#app .source-field.ta08-field .ta08-resource-tool{stroke-width:1.3;color:var(--palette-muted)}
+#app .source-field.ta08-field .ta08-task-drawing{stroke-width:1.15;stroke:var(--palette-line);filter:drop-shadow(0 4px 3px color-mix(in srgb, var(--palette-shadow) 50.19607843%, transparent))}
+#app .source-field.ta08-field .ta08-tool-wood{stroke:var(--palette-line)}
+#app .source-field.ta08-field .ta08-tool-metal{stroke:var(--palette-muted)}
+#app .source-field.ta08-field .ta08-tool-fiber{stroke:var(--palette-gold)}
+#app .source-field.ta08-field .ta08-task-wood{stroke:var(--palette-line)}
+#app .source-field.ta08-field .ta08-task-bronze{stroke:var(--palette-gold)}
+#app .source-field.ta08-field .ta08-task-paper{stroke:var(--palette-muted)}
+#app .source-field.ta08-field .ta08-task-stone{stroke:var(--palette-line)}
+#app .source-field.ta08-field .ta08-task-jade{stroke:var(--palette-jade)}
+#app .source-field.ta08-field .ta08-task-grain{stroke:color-mix(in srgb, var(--palette-raised) 60%, transparent);stroke-width:1}
+#app .source-field.ta08-field .ta08-task-ink{stroke:color-mix(in srgb, var(--palette-raised) 85.09803922%, transparent);stroke-width:1.5}
+#app .source-field.ta08-field .ta08-task-inlay{stroke:var(--palette-gold);stroke-width:1.2}}
 </style>

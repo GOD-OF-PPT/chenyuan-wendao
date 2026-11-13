@@ -171,7 +171,7 @@ const boardReady=computed(()=>focus.value?.kind==='item'?!!itemView.value?.compl
 #app #goal-panel .goal-board-tools{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;min-height:44px}
 #app #goal-panel :deep(.goal-board){flex:none}
 #app #goal-panel :deep(.goal-board-pill:has(.item-artifact)):before{display:none}
-#app #goal-panel .goal-management{flex:1;margin:0!important;border:0;border-bottom:1px solid #a7b57f55;background:none;padding:0}
+#app #goal-panel .goal-management{flex:1;margin:0!important;border:0;border-bottom:1px solid color-mix(in srgb, var(--palette-gold) 33.33333333%, transparent);background:none;padding:0}
 #app #goal-panel .goal-management>summary{min-height:44px;display:flex;align-items:center;font-size:18px}
-:global(.immersive-stage.stage-details .hub-feature:has(>.right-column:not([style*="display: none"]))){background:linear-gradient(90deg,#0e2e3477,#0c2832dd 62%,#0b2630c7)!important;border-color:transparent;box-shadow:none}}
+:global(.immersive-stage.stage-details .hub-feature:has(>.right-column:not([style*="display: none"]))){background:linear-gradient(90deg,color-mix(in srgb, var(--palette-night) 46.66666667%, transparent),color-mix(in srgb, var(--palette-night) 86.66666667%, transparent) 62%,color-mix(in srgb, var(--palette-night) 78.03921569%, transparent))!important;border-color:transparent;box-shadow:none}}
 </style>

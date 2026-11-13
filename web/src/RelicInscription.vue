@@ -36,18 +36,18 @@ const tools={sword:'translate(123 126) rotate(35)',seal:'translate(83 156) rotat
 <style scoped>
 @layer game{
 .relic-inscription-object{position:relative;display:flex;flex:1;flex-direction:column;min-height:0;width:100%;height:100%;isolation:isolate}
-.relic-object-inspect{position:relative;display:flex!important;flex:1;flex-direction:column;justify-content:center;align-items:center;min-width:44px;min-height:44px;width:100%;padding:8px 12px 50px!important;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important;transform:none!important;color:#d3dec9}
-.relic-object-inspect:focus-visible{outline:2px solid #9fd8c4;outline-offset:-3px}.relic-object-inspect:hover .relic-object-verb{color:#e5f1d4;border-color:#b9d9b1}
+.relic-object-inspect{position:relative;display:flex!important;flex:1;flex-direction:column;justify-content:center;align-items:center;min-width:44px;min-height:44px;width:100%;padding:8px 12px 50px!important;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important;transform:none!important;color:var(--palette-muted)}
+.relic-object-inspect:focus-visible{outline:2px solid var(--palette-jade);outline-offset:-3px}.relic-object-inspect:hover .relic-object-verb{color:var(--palette-ink);border-color:var(--palette-jade)}
 .relic-form-surface{position:absolute;left:0;top:0;width:100%;height:100%;min-height:0;max-height:300px;aspect-ratio:1}
 .relic-cold-blank,.relic-finished-art{width:100%;height:100%;min-height:0;display:grid;place-items:center}.relic-cold-blank :deep(.asset-fallback){display:grid;place-items:center;align-content:center;gap:8px}.relic-cold-blank :deep(.game-icon){width:128px;height:144px;margin:0}.relic-cold-blank small{font-size:14px}
 .relic-finished-art :deep([data-art-path]){width:100%!important;height:100%!important;min-height:0}
-.relic-workpiece{position:absolute;inset:0;display:block;width:100%;height:100%;overflow:visible;stroke-linejoin:round;filter:drop-shadow(2px 3px 2px #00171999)}
-.relic-engraved-path{fill:none;stroke:#dfd0a0;stroke-width:2;stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--relic-draw));opacity:.85}
+.relic-workpiece{position:absolute;inset:0;display:block;width:100%;height:100%;overflow:visible;stroke-linejoin:round;filter:drop-shadow(2px 3px 2px color-mix(in srgb, var(--palette-shadow) 60%, transparent))}
+.relic-engraved-path{fill:none;stroke:var(--palette-gold);stroke-width:2;stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--relic-draw));opacity:.85}
 .relic-tool{transform-box:fill-box;transform-origin:center bottom;transition:transform .15s linear;transform:translateY(calc(0px - var(--relic-approach)))}
-.relic-sealing{opacity:var(--relic-fold);fill:#506e62;stroke:#a0b992;stroke-width:1;transform:translateY(calc((1 - var(--relic-fold))*10px))}.relic-sealing>path:last-child{fill:#173e36}
+.relic-sealing{opacity:var(--relic-fold);fill:var(--palette-line);stroke:var(--palette-jade);stroke-width:1;transform:translateY(calc((1 - var(--relic-fold))*10px))}.relic-sealing>path:last-child{fill:var(--palette-raised)}
 [data-phase=sealing] .relic-tool{opacity:0}[data-phase=sealing] .relic-engraved-path{stroke-dashoffset:0;opacity:.45}.relic-sealing[data-sealing=true]{opacity:1;transform:none}
-.relic-art-reveal{animation:relic-unseal .65s ease-out}.relic-object-verb{position:absolute;left:8px;right:8px;bottom:8px;min-height:32px;display:flex;gap:8px;align-items:center;justify-content:center;border-bottom:1px solid #8ca58b70;font-size:14px;line-height:1.6}
-.relic-bound-clasp{position:absolute;top:5px;right:5px;display:flex;align-items:center;gap:4px;color:#c5ddba;font-size:14px;pointer-events:none}.relic-bound-clasp i{display:block;width:10px;height:14px;border:2px solid #b8c18c;border-radius:2px}
+.relic-art-reveal{animation:relic-unseal .65s ease-out}.relic-object-verb{position:absolute;left:8px;right:8px;bottom:8px;min-height:32px;display:flex;gap:8px;align-items:center;justify-content:center;border-bottom:1px solid color-mix(in srgb, var(--palette-line) 43.92156863%, transparent);font-size:14px;line-height:1.6}
+.relic-bound-clasp{position:absolute;top:5px;right:5px;display:flex;align-items:center;gap:4px;color:var(--palette-muted);font-size:14px;pointer-events:none}.relic-bound-clasp i{display:block;width:10px;height:14px;border:2px solid var(--palette-gold);border-radius:2px}
 .relic-form-surface[data-form=sword] .relic-sealing{translate:0 -28px}
 @keyframes relic-unseal{from{filter:brightness(.8);transform:translateY(4px)}to{filter:none;transform:none}}
 :global(.hub-reduced .relic-inscription-object *){animation:none!important;transition:none!important}:global(.hub-reduced .relic-tool),:global(.hub-reduced .relic-sealing){transform:none!important}
