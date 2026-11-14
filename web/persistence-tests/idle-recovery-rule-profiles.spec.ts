@@ -109,8 +109,11 @@ test('rule profiles let the actual old repository reject a new v5 database witho
       old = await import(
         `/@fs${root}src/legacy/rules-v3/web/src/full-persistence.ts`
       ),
+      published = await import(
+        `/@fs${root}src/legacy/rules-v5/web/src/full-persistence.ts`
+      ),
       name = 'rule-profile-new',
-      repo = await h.FullSaveRepository.open(name);
+      repo = await published.FullSaveRepository.open(name);
     let reader: any;
     try {
       const created = await repo.create('新约真存储', h.mutation()),
