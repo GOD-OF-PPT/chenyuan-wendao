@@ -14,7 +14,7 @@
 
 ## 当前状态
 
-质量评审全部20项持续实施，最新接受源/PR/剩余项以[交付状态](docs/quality-20261112/delivery-status.md)为准。Q01–Q16已递交；Q17候选dbea933/PR61完整验收中，Q18按[0166](docs/decisions/0166-contributor-docs-and-history.md)整理文档，Q19/Q20待续。功能分支叠放递交，未自动合并main。
+质量评审全部20项持续实施；接受源、逐项PR、当前任务与剩余责任只在[交付状态](docs/quality-20261112/delivery-status.md)维护。文档按[0166](docs/decisions/0166-contributor-docs-and-history.md)整理，具体逐轮验收放独立记录，后续任务不在这里追加日报。功能分支叠放递交，未自动合并main。
 
 当前仅固定1440×900桌面、单Chromium。跨浏览器、移动/响应式、分辨率、字号缩放及环境性能开发/测试继续暂停；旧最终矩阵义务保留，不能提前恢复或冒通过。当前CI为核心与固定桌面完整UI/Native/正常32；入口见[贡献说明](CONTRIBUTING.md)。
 
