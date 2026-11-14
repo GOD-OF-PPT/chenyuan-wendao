@@ -77,6 +77,7 @@ const emit = defineEmits<{
   export: [];
   restart: [InheritanceChoice];
   demos: [event?: Event];
+  practice: [];
 }>();
 const store = inject<ReturnType<typeof useGame>>('game-scene')!;
 const game = computed(() => store.game!),
@@ -456,6 +457,7 @@ defineExpose({ element: contentPanel });
           @inspect-plan="viewActivityPlan"
           @receipt="viewReceipt"
           @compare="openTradeoffs('cultivation', $event)"
+          @practice="emit('practice')"
         />
         <template v-else-if="phase === 'idle' && game.status === 'active'"
           ><TrainingActivity

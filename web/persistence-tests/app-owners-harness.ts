@@ -173,6 +173,7 @@ export async function createOwners(game: Game) {
     confirmation,
     navigation,
     stageFocus,
+    focus,
     plans,
     destinations,
     closure,

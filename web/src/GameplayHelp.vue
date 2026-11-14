@@ -3,8 +3,12 @@ import { inject, onScopeDispose, ref } from 'vue';
 import { gameFocusKey } from './focus';
 import { guideCatalog } from './guidance';
 import CataloguePager from './CataloguePager.vue';
+withDefaults(defineProps<{ practiceAvailable?: boolean }>(), {
+  practiceAvailable: false,
+});
 const emit = defineEmits<{
     reset: [];
+    practice: [];
   }>(),
   guidanceEnabled = defineModel<boolean>('enabled', { required: true });
 const gameplayHelp = ref<HTMLDialogElement>(),
@@ -51,6 +55,11 @@ defineExpose({ element: gameplayHelp, selectTopic });
         resetSkipped();
       "
       >本页引导：{{ guidanceEnabled ? '开启' : '关闭' }}</button
+    ><button
+      v-if="practiceAvailable"
+      data-testid="help-first-practice"
+      @click="emit('practice')"
+      >重开入门练手：杂务、辅助与首战</button
     ><section class="help-chapter" :key="guideCatalog[helpPage].id"
       ><span class="help-folio" aria-hidden="true"
         >行道录 · {{ String(helpPage + 1).padStart(2, '0') }}</span

@@ -17,6 +17,8 @@ import { useActivityPlans, activityPlansKey } from './use-activity-plans';
 import GameSettings from './GameSettings.vue';
 import DemoMenu from './DemoMenu.vue';
 import GameplayHelp from './GameplayHelp.vue';
+import FirstPracticeBook from './FirstPracticeBook.vue';
+import { useFirstPractice } from './use-first-practice';
 import GameWorkspace from './GameWorkspace.vue';
 import {
   stageNavigationKey,
@@ -718,6 +720,20 @@ async function showGameplayHelp() {
   await nextTick();
   focus.open(gameplayHelp.value, opener);
 }
+const practiceBook = ref<InstanceType<typeof FirstPracticeBook>>();
+const firstPractice = useFirstPractice(store, focus, activityPlans, {
+  owner: () => navigationOwner.value,
+  context: () =>
+    JSON.stringify([hubView.value, tab.value, narrativeContext.value]),
+  dialog: () => practiceBook.value?.element,
+  closeHelp: () => {
+    gameplayHelp.value?.close();
+    settings.value?.close();
+  },
+  fallback: () => currentContent() ?? settingsButton.value ?? null,
+  inspect: (request) => destinations.inspectCaveDestination(request),
+  battle: () => selectTab('修行'),
+});
 const journey = computed(() =>
   game.value ? getTrialJourney(game.value) : null,
 );
@@ -1104,6 +1120,7 @@ onMounted(async () => {
         @next="inspectNext"
         @export="exportSave"
         @demos="showDemoMenu"
+        @practice="firstPractice.open"
       />
       <aside
         v-if="
@@ -1290,8 +1307,21 @@ onMounted(async () => {
       <DemoMenu ref="demoMenuView" />
       <GameplayHelp
         ref="helpBook"
+        :practice-available="!!game && game.status === 'active'"
         v-model:enabled="guidanceEnabled"
         @reset="skippedGuides = []"
+        @practice="firstPractice.open"
+      />
+      <FirstPracticeBook
+        v-if="game"
+        ref="practiceBook"
+        :game="game"
+        :activity="store.activity"
+        :blocked="firstPractice.blocked.value"
+        :source-issue="firstPractice.sourceIssue.value"
+        @inspect="firstPractice.inspect"
+        @start="firstPractice.start"
+        @battle="firstPractice.battle"
       />
       <ClosureDecisions
         ref="closureDecisions"

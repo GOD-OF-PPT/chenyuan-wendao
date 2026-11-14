@@ -23,6 +23,7 @@ import * as C from '../../src/full/content.ts';
 import GameIcon from './GameIcon.vue';
 import BattleDeck from './BattleDeck.vue';
 import { medicineSummary } from './battle-medicine-summary';
+import { firstBattleHint } from './first-practice';
 import './idle-adventure.css';
 const ruleContent = useRuleContent(() => props.game);
 const props = withDefaults(
@@ -53,6 +54,7 @@ const props = withDefaults(
   },
 );
 const scene = inject<ReturnType<typeof useGame>>('game-scene');
+const practiceHint = computed(() => firstBattleHint(props.game));
 const emit = defineEmits<{
   'update:modelValue': [Strategy];
   start: [BattlePlan];
@@ -607,6 +609,9 @@ const signed = (n: number) => (n > 0 ? '+' + n : String(n));
                 : '待核对'
           }}</strong
         ><span>{{ explanation }}</span
+        ><small v-if="practiceHint" data-testid="first-battle-hint"
+          >{{ practiceHint.guidance }} 回春丹实有
+          {{ practiceHint.healingCount }} 枚，服丹占一回合。</small
         ><small v-if="nextPreview?.allowed"
           >拟本回合：气血 {{ signed(nextPreview.delta?.hp ?? 0) }} · 灵力
           {{ signed(nextPreview.delta?.mp ?? 0) }}；实际结果以保存为准。</small
