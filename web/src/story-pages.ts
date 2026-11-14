@@ -3,6 +3,7 @@ import * as C from '../../src/full/content.ts';
 import { gamePhase } from '../../src/full/contracts.ts';
 import {
   getLifeRecord,
+  getLifeLedger,
   getStoryContext,
   getTrialJourney,
   getAscensionChoices,
@@ -277,5 +278,76 @@ export function lifeReadings(game: Game): Reading[] {
         (r.realms.at(-1)?.text ?? ''),
     });
   }
+  const ledger = getLifeLedger(game);
+  rows.push(
+    {
+      group: 'ledger',
+      key: 'ledger-summary',
+      title: '此生账本',
+      testId: 'life-ledger-summary',
+      text: `${r.overview.name} · ${r.overview.ageLabel} · ${r.overview.realmName}。行道${ledger.duration.gameMonths}游戏月。${r.overview.conclusion}`,
+    },
+    {
+      group: 'ledger',
+      key: 'ledger-route',
+      title: '这一卷的道途',
+      text: `${ledger.route.openingText}修法：${ledger.route.schoolLabel}。已掌握：${ledger.route.learned.map((s) => s.name).join('、') || '尚无记录'}。`,
+    },
+    {
+      group: 'ledger',
+      key: 'ledger-equipment',
+      title: '所携与攻守',
+      text: `已拥有：${ledger.route.relics.map((s) => s.name).join('、') || '尚无记录'}；本命：${ledger.route.equippedRelic}。${ledger.battle.text}${ledger.battle.trial}`,
+    },
+    {
+      group: 'ledger',
+      key: 'ledger-choices',
+      title: '实际选择的路',
+      text:
+        ledger.route.decisions
+          .map((d) => d.title + '：' + d.label)
+          .join('；') || '本卷尚无其它已记的选择。',
+    },
+    {
+      group: 'ledger',
+      key: 'ledger-stock',
+      title: active ? '当前行囊' : '封卷行囊',
+      text: `灵石${ledger.stock.stones}。${ledger.stock.inventory.map((i) => i.name + ' ×' + i.quantity).join('；') || '无其它存物'}。`,
+    },
+    {
+      group: 'ledger',
+      key: 'ledger-duration',
+      title: '年月与记录',
+      text: ledger.duration.note,
+    },
+    ...ledger.epilogue.map((text, i) => ({
+      group: 'epilogue',
+      key: 'ending-echo-' + i,
+      title: r.overview.title + ' · 回响' + (i + 1),
+      text,
+      testId: 'ending-echo-' + i,
+    })),
+    ...(ledger.alternateEnding
+      ? [
+          {
+            group: 'epilogue',
+            key: 'ending-alternative',
+            title: '未走的另一条路',
+            text: ledger.alternateEnding.text,
+            testId: 'ending-alternative',
+          },
+        ]
+      : []),
+    ...(ledger.origin
+      ? [
+          {
+            group: 'ledger',
+            key: 'ledger-origin',
+            title: '这一卷的前缘',
+            text: `来自${ledger.origin.sourceName}的${ledger.origin.sourceEnding === 'transmit' ? '留道传承' : '独赴上界'}。${ledger.origin.sourceEnding === 'transmit' ? '开卷另获回春丹1枚' : '开卷另获20灵石'}，这份前缘只随本卷开卷给付一次。`,
+          },
+        ]
+      : []),
+  );
   return rows;
 }

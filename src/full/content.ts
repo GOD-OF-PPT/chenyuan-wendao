@@ -6,8 +6,8 @@ import type {
   RelicEffect,
 } from './mechanisms.ts';
 export type { School, SkillSlot } from './mechanisms.ts';
-export const VERSION: string = 'full-demo.5';
-export const BALANCE: string = 'full-unbalanced.5';
+export const VERSION: string = 'full-demo.6';
+export const BALANCE: string = 'full-unbalanced.6';
 export const realmIds = [
   'mortal',
   'qi',

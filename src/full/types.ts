@@ -1,5 +1,6 @@
 import type { RealmId, LocationId, School } from './content.ts';
 import type { SAVE_FORMAT, SAVE_VERSION, SCHEMA_VERSION } from './versions.ts';
+import type { Incarnation } from './incarnation.ts';
 export type Choice = 'help' | 'trade' | 'leave';
 export type Move =
   | 'attack'
@@ -18,6 +19,8 @@ export interface Battle {
   log: string[];
 }
 export interface Game {
+  /** Absent only on preserved published rule profiles. */
+  incarnation?: Incarnation;
   format: typeof SAVE_FORMAT;
   version: typeof SAVE_VERSION;
   core: {

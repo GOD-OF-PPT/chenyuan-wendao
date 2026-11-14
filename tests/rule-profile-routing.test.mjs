@@ -50,12 +50,12 @@ const start = {
   now: 10000,
 };
 
-test('new lives identify v5 rules and new activities explicitly identify their rules', () => {
+test('new lives identify v6 rules and new activities explicitly identify their rules', () => {
   const g = prepared(current);
-  assert.equal(g.core.contentVersion, 'full-demo.5');
-  assert.equal(g.core.balanceVersion, 'full-unbalanced.5');
+  assert.equal(g.core.contentVersion, 'full-demo.6');
+  assert.equal(g.core.balanceVersion, 'full-unbalanced.6');
   const a = activities.createActivity(g, sourcePlan, start);
-  assert.equal(a.rulesVersion, 'full-demo.5/full-unbalanced.5');
+  assert.equal(a.rulesVersion, 'full-demo.6/full-unbalanced.6');
   activities.validateActivity(a, g);
 });
 
@@ -138,7 +138,7 @@ test('mixed content pairs and same-run old activities or receipts cannot masquer
   assert.throws(() =>
     current.validateGame({
       ...old,
-      core: { ...old.core, balanceVersion: 'full-unbalanced.5' },
+      core: { ...old.core, balanceVersion: 'full-unbalanced.6' },
     }),
   );
   assert.throws(() => activities.validateActivity(a, g));

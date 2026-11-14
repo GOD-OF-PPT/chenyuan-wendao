@@ -1,6 +1,7 @@
 import { ASCENSION_ENDINGS, type AscensionEnding } from './ascension.ts';
 import * as C from './content.ts';
 import { stories } from './events.ts';
+import { storyInIncarnation } from './incarnation.ts';
 import {
   buildLifeRecord,
   lifeOverview,
@@ -354,7 +355,7 @@ export function getItemSources(
     );
   }
   for (const [id, story] of Object.entries(stories)) {
-    if (!selected.has('event')) continue;
+    if (!selected.has('event') || !storyInIncarnation(game, id)) continue;
     for (const option of story.options) {
       if (!conditionMatches(game, option.condition)) continue;
       const rewardCount = option.gain?.[item];

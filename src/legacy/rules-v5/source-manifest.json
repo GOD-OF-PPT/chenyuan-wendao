@@ -1,0 +1,629 @@
+{
+  "format": "chenyuan-frozen-rule-profile",
+  "version": 1,
+  "contentVersion": "full-demo.5",
+  "balanceVersion": "full-unbalanced.5",
+  "sourceCommit": "7c67f7b6b9b87252e2fe5dd91c17604d74ef34e5",
+  "roots": [
+    "src/full/engine.ts",
+    "src/full/queries.ts",
+    "src/full/activity.ts",
+    "src/full/costs.ts",
+    "src/full/configuration.ts",
+    "src/full/receipts.ts",
+    "src/full/progression.ts",
+    "src/full/economy-ledger.ts",
+    "web/src/activity-persistence.ts",
+    "web/src/configuration-persistence.ts",
+    "web/src/direct-persistence.ts",
+    "web/src/full-persistence.ts",
+    "src/full/scheduled-activity.ts",
+    "web/src/scheduled-persistence.ts",
+    "web/src/away-summary.ts"
+  ],
+  "productionEntry": "index.ts",
+  "testOnlyRepository": "web/src/full-persistence.ts",
+  "files": {
+    "src/full/activity-current.ts": {
+      "sha256": "707c5e0847c32506975109e2794ac4d8ea639d7e3279612c1b4589931f8caa7a",
+      "bytes": 60445
+    },
+    "src/full/activity.ts": {
+      "sha256": "45b4d93bc01bb0e0bc2a05dbc4fc8c20b91d6ed30e92c38ada73f7a277d1c6a9",
+      "bytes": 3370
+    },
+    "src/full/adventure-current.ts": {
+      "sha256": "89f59249e7702ca5df9611784b575a4d9df0703670a9d21a271b5b64f4c6b3c4",
+      "bytes": 32918
+    },
+    "src/full/adventure.ts": {
+      "sha256": "08b57a0ba002a176f30a95a906a00c97b1f54f9412a21af8dbdf7d8393d2d6f3",
+      "bytes": 4818
+    },
+    "src/full/ascension.ts": {
+      "sha256": "ad559d85082fb1ded6a65a3be4f3089c8d838dd986c7ffa30c354c7fc854818e",
+      "bytes": 1031
+    },
+    "src/full/configuration-current.ts": {
+      "sha256": "1def0d2da289b8cec912f4ef0e570fead66ae85ce7fa667dd168ac249f182933",
+      "bytes": 3886
+    },
+    "src/full/configuration.ts": {
+      "sha256": "707632971b529f688d98f5e07b36e9e887102295a507965ec76d463861801e0e",
+      "bytes": 1044
+    },
+    "src/full/content.ts": {
+      "sha256": "afb1e9469921419211fae85302053f1ffc4298225394c87317997ab62009b25b",
+      "bytes": 20929
+    },
+    "src/full/contracts.ts": {
+      "sha256": "3c540e24817acc98c0b2fbb1e944edf135f6c73f83d48367d322eb5dde0b1599",
+      "bytes": 2436
+    },
+    "src/full/costs-current.ts": {
+      "sha256": "78ba142b21c9b9b258e9e22cb9f20f10654d9acab16b7835e3de88420b2e3253",
+      "bytes": 6046
+    },
+    "src/full/costs.ts": {
+      "sha256": "51e3c3dde5a5e350648e87645fda81afdb8f6f13e55b782148c2ad3d3bdf76d3",
+      "bytes": 1302
+    },
+    "src/full/direct-actions.ts": {
+      "sha256": "0d856972291e1b70fe444a2a3f269593aafc5542fa161265572a1006d417c4e8",
+      "bytes": 1756
+    },
+    "src/full/economy-ledger.ts": {
+      "sha256": "327b9d84f8004cc9516f212e2766b312fadf78eb394c737b73b3659fb37d30a5",
+      "bytes": 10298
+    },
+    "src/full/engine-current.ts": {
+      "sha256": "b2f731fa8f34f394e3238f9a5f56607bfbe40ff71be3597a531df1192760aa9b",
+      "bytes": 51717
+    },
+    "src/full/engine.ts": {
+      "sha256": "c805fb7a751cdc892868396725879dd257469a7188064c77f1599ceff093eb83",
+      "bytes": 4131
+    },
+    "src/full/errors.ts": {
+      "sha256": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4",
+      "bytes": 289
+    },
+    "src/full/events.ts": {
+      "sha256": "73c1a8c62f4e57455564aed9b6a29649eb928f70cb1c66b0b2cd021ea34cf5ab",
+      "bytes": 33455
+    },
+    "src/full/goals.ts": {
+      "sha256": "c3a99303ed63666398de5afb9221b25802e108168c2f15c2e38bfd0070f4a86c",
+      "bytes": 8924
+    },
+    "src/full/life-record.ts": {
+      "sha256": "7e9c6584dbddb7681433e51ef317fcd0b64787c5b8797c924d5d52faf85951ff",
+      "bytes": 8646
+    },
+    "src/full/mechanisms.ts": {
+      "sha256": "f388e9447dba850801584853464e69d5f0f6c6ed3500e3628a156582d415722f",
+      "bytes": 1450
+    },
+    "src/full/milestones-current.ts": {
+      "sha256": "7d188be62824cc4d04757c5554aa6eabd27fa3fd14a315e77fb20bae879619e8",
+      "bytes": 9520
+    },
+    "src/full/milestones.ts": {
+      "sha256": "84f396d499dfef8ecab7567f7277a82ec49b7afeaf999d68217291e8c1e98320",
+      "bytes": 2674
+    },
+    "src/full/online-periods.ts": {
+      "sha256": "5dc327ed09c17ce2e8c67446d3bc37139244eb68fda1dc213065970faf477c26",
+      "bytes": 1396
+    },
+    "src/full/preparation-current.ts": {
+      "sha256": "8b7353b022107bec8726c26778ee88a48aab6e51a583b4522cd7eccb7dd4db6b",
+      "bytes": 20168
+    },
+    "src/full/preparation.ts": {
+      "sha256": "d46d5a2d82df90fa5b2d68a17bad6931ba284f5dd48f52c7ec19275850e8cfb0",
+      "bytes": 2385
+    },
+    "src/full/progression-current.ts": {
+      "sha256": "413a627ffcb01dd16fc832b69c250595697792b5a5416e62391110e678381ad2",
+      "bytes": 17984
+    },
+    "src/full/progression.ts": {
+      "sha256": "00ffbc13445002c8332767633b7415849beb2373de71fea911b47079b2c07910",
+      "bytes": 1398
+    },
+    "src/full/queries-current.ts": {
+      "sha256": "2cba8bfbfcd960e49cfca59818ba87b7375f947f573c745d945279a0dfa89f7c",
+      "bytes": 22510
+    },
+    "src/full/queries.ts": {
+      "sha256": "ce93e16e7df3a7000f552df7d50f7774d2c18f2905dedc3078ff4d8717c89501",
+      "bytes": 5628
+    },
+    "src/full/receipts-current.ts": {
+      "sha256": "aef461d0c43c9f224134a99830e41a9054ac616d33889f901923210d3df748c3",
+      "bytes": 6246
+    },
+    "src/full/receipts.ts": {
+      "sha256": "3da6cdc11e168662f87ac0d31dafd18f67e2de2cf1244174b951fd6afe8a9d43",
+      "bytes": 811
+    },
+    "src/full/repetition.ts": {
+      "sha256": "13182c41f8d5b15202b56f202070a3a9150a8859c296a80f9c14422d8de4527f",
+      "bytes": 352
+    },
+    "src/full/rule-content.ts": {
+      "sha256": "dc42e81f7ec28898d6d6d1dc5f879fabb3a84f362fd85b3a940a6f36aa04e447",
+      "bytes": 580
+    },
+    "src/full/rule-profile.ts": {
+      "sha256": "eda713c139d2e3e1e5b1abe66489fd23a773bb08ff3834ecb3020c3060a95d86",
+      "bytes": 4478
+    },
+    "src/full/scheduled-activity.ts": {
+      "sha256": "a59ac34ce8ca1eeb0d68b2ecc94cba4509364f292437c899cd3a6163221e761d",
+      "bytes": 11463
+    },
+    "src/full/story-context.ts": {
+      "sha256": "d02f62ea9f8b865e4bd3a14d3e0cb3d342dce799bd0f632227a8014656d08278",
+      "bytes": 4441
+    },
+    "src/full/trial-rules.ts": {
+      "sha256": "0c8c35d1642b4a0cf36bed42952478a2e60efe0ad689aabdbf3a66b8dc231406",
+      "bytes": 1200
+    },
+    "src/full/types.ts": {
+      "sha256": "d8bd43b9986fd16fe2fea548fc3625ef39762825431bce74ab19e80468ae2dcd",
+      "bytes": 2778
+    },
+    "src/full/versions.ts": {
+      "sha256": "8427646d4ae6d5c67b1f263cf0fba18af09b6b8ac1c5d22f88e2e608b520f609",
+      "bytes": 1851
+    },
+    "src/legacy/rules-v3/src/full/activity.ts": {
+      "sha256": "f3d595d7424bf6ff793400b5efb91b499a036e216b89cec32370c49edf0833d6",
+      "bytes": 52875
+    },
+    "src/legacy/rules-v3/src/full/adventure.ts": {
+      "sha256": "eb0d55eb582a974cec745bb43eba15d2c0a5f218b71740989dc89fb0d9b15e5b",
+      "bytes": 28824
+    },
+    "src/legacy/rules-v3/src/full/ascension.ts": {
+      "sha256": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a",
+      "bytes": 991
+    },
+    "src/legacy/rules-v3/src/full/configuration.ts": {
+      "sha256": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520",
+      "bytes": 3517
+    },
+    "src/legacy/rules-v3/src/full/content.ts": {
+      "sha256": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c",
+      "bytes": 13928
+    },
+    "src/legacy/rules-v3/src/full/contracts.ts": {
+      "sha256": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa",
+      "bytes": 2298
+    },
+    "src/legacy/rules-v3/src/full/costs.ts": {
+      "sha256": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb",
+      "bytes": 4846
+    },
+    "src/legacy/rules-v3/src/full/direct-actions.ts": {
+      "sha256": "d78f88ddd1757aa4b78b8112664a6d9f0d5d370ec3f8ebfcd2bac79d734747d7",
+      "bytes": 1448
+    },
+    "src/legacy/rules-v3/src/full/economy-ledger.ts": {
+      "sha256": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0",
+      "bytes": 9296
+    },
+    "src/legacy/rules-v3/src/full/engine.ts": {
+      "sha256": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+      "bytes": 37821
+    },
+    "src/legacy/rules-v3/src/full/errors.ts": {
+      "sha256": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4",
+      "bytes": 289
+    },
+    "src/legacy/rules-v3/src/full/events.ts": {
+      "sha256": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d",
+      "bytes": 33634
+    },
+    "src/legacy/rules-v3/src/full/goals.ts": {
+      "sha256": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883",
+      "bytes": 7776
+    },
+    "src/legacy/rules-v3/src/full/life-record.ts": {
+      "sha256": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7",
+      "bytes": 7668
+    },
+    "src/legacy/rules-v3/src/full/mechanisms.ts": {
+      "sha256": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221",
+      "bytes": 1150
+    },
+    "src/legacy/rules-v3/src/full/milestones.ts": {
+      "sha256": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+      "bytes": 8817
+    },
+    "src/legacy/rules-v3/src/full/preparation.ts": {
+      "sha256": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a",
+      "bytes": 18249
+    },
+    "src/legacy/rules-v3/src/full/progression.ts": {
+      "sha256": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406",
+      "bytes": 15796
+    },
+    "src/legacy/rules-v3/src/full/queries.ts": {
+      "sha256": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48",
+      "bytes": 19574
+    },
+    "src/legacy/rules-v3/src/full/receipts.ts": {
+      "sha256": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae",
+      "bytes": 5680
+    },
+    "src/legacy/rules-v3/src/full/repetition.ts": {
+      "sha256": "dcb741e3a338434dcb20d230169721c1d31b74c00f8a634a2170985e4270d49a",
+      "bytes": 340
+    },
+    "src/legacy/rules-v3/src/full/story-context.ts": {
+      "sha256": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950",
+      "bytes": 3862
+    },
+    "src/legacy/rules-v3/src/full/trial-rules.ts": {
+      "sha256": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53",
+      "bytes": 549
+    },
+    "src/legacy/rules-v3/src/full/types.ts": {
+      "sha256": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064",
+      "bytes": 2193
+    },
+    "src/legacy/rules-v3/src/full/versions.ts": {
+      "sha256": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64",
+      "bytes": 1693
+    },
+    "src/legacy/rules-v3/web/src/activity-persistence.ts": {
+      "sha256": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+      "bytes": 9680
+    },
+    "src/legacy/rules-v3/web/src/configuration-persistence.ts": {
+      "sha256": "a78887adcb6a622a9904a8db070aa9b9fea873ccab1282769660885079696c00",
+      "bytes": 2663
+    },
+    "src/legacy/rules-v3/web/src/direct-persistence.ts": {
+      "sha256": "862bb7332e764894185e7895e61147e9669f460b22701c574ece20cd26ebb377",
+      "bytes": 2145
+    },
+    "src/legacy/rules-v4/src/full/activity-current.ts": {
+      "sha256": "106de4949772c4be2e126c317818150aa9480440fb212160480170282c4a633f",
+      "bytes": 60124
+    },
+    "src/legacy/rules-v4/src/full/activity.ts": {
+      "sha256": "56d502fde02273407e46c9f0110b4323ef107aa3cd35313eb9f7c78fc68e0608",
+      "bytes": 2445
+    },
+    "src/legacy/rules-v4/src/full/adventure-current.ts": {
+      "sha256": "97dfe973321ad7c7daa7b1e55ac5be799a6e58005fc2e7e49a8f3ee0f1b0e04d",
+      "bytes": 31638
+    },
+    "src/legacy/rules-v4/src/full/adventure.ts": {
+      "sha256": "53f69aafdc953f4474822098c70c68f35e6eb8932ce6d6a35e1e0456b2696ebd",
+      "bytes": 3342
+    },
+    "src/legacy/rules-v4/src/full/ascension.ts": {
+      "sha256": "ad559d85082fb1ded6a65a3be4f3089c8d838dd986c7ffa30c354c7fc854818e",
+      "bytes": 1031
+    },
+    "src/legacy/rules-v4/src/full/configuration-current.ts": {
+      "sha256": "1def0d2da289b8cec912f4ef0e570fead66ae85ce7fa667dd168ac249f182933",
+      "bytes": 3886
+    },
+    "src/legacy/rules-v4/src/full/configuration.ts": {
+      "sha256": "2ccfb85569eac9fc8fed358c3145a95d187caf13fb4caf448463d65502de839c",
+      "bytes": 693
+    },
+    "src/legacy/rules-v4/src/full/content.ts": {
+      "sha256": "3cc852467c0a6b8e851efd18b92d53fe6b548c1e0540c1fb5c812f9e9d92ae09",
+      "bytes": 18833
+    },
+    "src/legacy/rules-v4/src/full/contracts.ts": {
+      "sha256": "3c540e24817acc98c0b2fbb1e944edf135f6c73f83d48367d322eb5dde0b1599",
+      "bytes": 2436
+    },
+    "src/legacy/rules-v4/src/full/costs-current.ts": {
+      "sha256": "4aca14d01e9ee90c5d3346075e588ddd909213044dc8d78c6d4f9ab010ea49c5",
+      "bytes": 5501
+    },
+    "src/legacy/rules-v4/src/full/costs.ts": {
+      "sha256": "88af61410ac324cdf5f3233ab457f8130719941c03f43296772d274a3e19cb8e",
+      "bytes": 866
+    },
+    "src/legacy/rules-v4/src/full/direct-actions.ts": {
+      "sha256": "0d856972291e1b70fe444a2a3f269593aafc5542fa161265572a1006d417c4e8",
+      "bytes": 1756
+    },
+    "src/legacy/rules-v4/src/full/economy-ledger.ts": {
+      "sha256": "327b9d84f8004cc9516f212e2766b312fadf78eb394c737b73b3659fb37d30a5",
+      "bytes": 10298
+    },
+    "src/legacy/rules-v4/src/full/engine-current.ts": {
+      "sha256": "5eded8566091115f8e4c6985a13a1442be360b346aac50940cf3fd82c16df279",
+      "bytes": 47588
+    },
+    "src/legacy/rules-v4/src/full/engine.ts": {
+      "sha256": "d6f4f41f6b77f242b2d091cb236920295bc95c8704123ead9c72383f7b04a8c4",
+      "bytes": 2634
+    },
+    "src/legacy/rules-v4/src/full/errors.ts": {
+      "sha256": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4",
+      "bytes": 289
+    },
+    "src/legacy/rules-v4/src/full/events.ts": {
+      "sha256": "73c1a8c62f4e57455564aed9b6a29649eb928f70cb1c66b0b2cd021ea34cf5ab",
+      "bytes": 33455
+    },
+    "src/legacy/rules-v4/src/full/goals.ts": {
+      "sha256": "c3a99303ed63666398de5afb9221b25802e108168c2f15c2e38bfd0070f4a86c",
+      "bytes": 8924
+    },
+    "src/legacy/rules-v4/src/full/life-record.ts": {
+      "sha256": "7e9c6584dbddb7681433e51ef317fcd0b64787c5b8797c924d5d52faf85951ff",
+      "bytes": 8646
+    },
+    "src/legacy/rules-v4/src/full/mechanisms.ts": {
+      "sha256": "9de503bfd910ed75dbe68f5af6613184205245fac72d1fc5025b94f8382da97c",
+      "bytes": 1158
+    },
+    "src/legacy/rules-v4/src/full/milestones-current.ts": {
+      "sha256": "7d188be62824cc4d04757c5554aa6eabd27fa3fd14a315e77fb20bae879619e8",
+      "bytes": 9520
+    },
+    "src/legacy/rules-v4/src/full/milestones.ts": {
+      "sha256": "cbff081ac8884ec995993a4c6743ddcd709e892d36d4cb83a322f6229dcbb1e0",
+      "bytes": 1873
+    },
+    "src/legacy/rules-v4/src/full/online-periods.ts": {
+      "sha256": "5dc327ed09c17ce2e8c67446d3bc37139244eb68fda1dc213065970faf477c26",
+      "bytes": 1396
+    },
+    "src/legacy/rules-v4/src/full/preparation-current.ts": {
+      "sha256": "8b7353b022107bec8726c26778ee88a48aab6e51a583b4522cd7eccb7dd4db6b",
+      "bytes": 20168
+    },
+    "src/legacy/rules-v4/src/full/preparation.ts": {
+      "sha256": "1b92360167dd17325aa6590b31c6314f246a64fd3155f21556de70f9da3bcbd9",
+      "bytes": 1644
+    },
+    "src/legacy/rules-v4/src/full/progression-current.ts": {
+      "sha256": "413a627ffcb01dd16fc832b69c250595697792b5a5416e62391110e678381ad2",
+      "bytes": 17984
+    },
+    "src/legacy/rules-v4/src/full/progression.ts": {
+      "sha256": "3b150b33506f1cdad0c66345b98f833b903574ce4f508a991f81b0321ff2e00e",
+      "bytes": 940
+    },
+    "src/legacy/rules-v4/src/full/queries-current.ts": {
+      "sha256": "2cba8bfbfcd960e49cfca59818ba87b7375f947f573c745d945279a0dfa89f7c",
+      "bytes": 22510
+    },
+    "src/legacy/rules-v4/src/full/queries.ts": {
+      "sha256": "57654637dcbeaf7c64edf086366aaaa64a1562489eb4fca98d1f032075a0f91f",
+      "bytes": 3977
+    },
+    "src/legacy/rules-v4/src/full/receipts-current.ts": {
+      "sha256": "aef461d0c43c9f224134a99830e41a9054ac616d33889f901923210d3df748c3",
+      "bytes": 6246
+    },
+    "src/legacy/rules-v4/src/full/receipts.ts": {
+      "sha256": "23d25643fe5b33eba9c79f2716a9a9e8ccee383179f7c9cfe0c9a99f7f436149",
+      "bytes": 563
+    },
+    "src/legacy/rules-v4/src/full/repetition.ts": {
+      "sha256": "13182c41f8d5b15202b56f202070a3a9150a8859c296a80f9c14422d8de4527f",
+      "bytes": 352
+    },
+    "src/legacy/rules-v4/src/full/rule-content.ts": {
+      "sha256": "7e3fb6e0a92c32aa3a465085a6b3249f8b3a0e54f5830eb6d0ce934bc7a12970",
+      "bytes": 453
+    },
+    "src/legacy/rules-v4/src/full/rule-profile.ts": {
+      "sha256": "638dc6f9294dfdc9b568a0eac240f5ae0c63c3e87bee4c4afd080b5876ffd853",
+      "bytes": 3904
+    },
+    "src/legacy/rules-v4/src/full/story-context.ts": {
+      "sha256": "d02f62ea9f8b865e4bd3a14d3e0cb3d342dce799bd0f632227a8014656d08278",
+      "bytes": 4441
+    },
+    "src/legacy/rules-v4/src/full/trial-rules.ts": {
+      "sha256": "1f97e7cb28da5dbd5367e5d701ff1d918db6633e93e0ccb613b4d6ee536e0dc6",
+      "bytes": 588
+    },
+    "src/legacy/rules-v4/src/full/types.ts": {
+      "sha256": "d8bd43b9986fd16fe2fea548fc3625ef39762825431bce74ab19e80468ae2dcd",
+      "bytes": 2778
+    },
+    "src/legacy/rules-v4/src/full/versions.ts": {
+      "sha256": "8427646d4ae6d5c67b1f263cf0fba18af09b6b8ac1c5d22f88e2e608b520f609",
+      "bytes": 1851
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/activity.ts": {
+      "sha256": "f3d595d7424bf6ff793400b5efb91b499a036e216b89cec32370c49edf0833d6",
+      "bytes": 52875
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/adventure.ts": {
+      "sha256": "eb0d55eb582a974cec745bb43eba15d2c0a5f218b71740989dc89fb0d9b15e5b",
+      "bytes": 28824
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/ascension.ts": {
+      "sha256": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a",
+      "bytes": 991
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/configuration.ts": {
+      "sha256": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520",
+      "bytes": 3517
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/content.ts": {
+      "sha256": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c",
+      "bytes": 13928
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/contracts.ts": {
+      "sha256": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa",
+      "bytes": 2298
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/costs.ts": {
+      "sha256": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb",
+      "bytes": 4846
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/direct-actions.ts": {
+      "sha256": "d78f88ddd1757aa4b78b8112664a6d9f0d5d370ec3f8ebfcd2bac79d734747d7",
+      "bytes": 1448
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/economy-ledger.ts": {
+      "sha256": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0",
+      "bytes": 9296
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/engine.ts": {
+      "sha256": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+      "bytes": 37821
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/errors.ts": {
+      "sha256": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4",
+      "bytes": 289
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/events.ts": {
+      "sha256": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d",
+      "bytes": 33634
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/goals.ts": {
+      "sha256": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883",
+      "bytes": 7776
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/life-record.ts": {
+      "sha256": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7",
+      "bytes": 7668
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/mechanisms.ts": {
+      "sha256": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221",
+      "bytes": 1150
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/milestones.ts": {
+      "sha256": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+      "bytes": 8817
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/preparation.ts": {
+      "sha256": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a",
+      "bytes": 18249
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/progression.ts": {
+      "sha256": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406",
+      "bytes": 15796
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/queries.ts": {
+      "sha256": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48",
+      "bytes": 19574
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/receipts.ts": {
+      "sha256": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae",
+      "bytes": 5680
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/repetition.ts": {
+      "sha256": "dcb741e3a338434dcb20d230169721c1d31b74c00f8a634a2170985e4270d49a",
+      "bytes": 340
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/story-context.ts": {
+      "sha256": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950",
+      "bytes": 3862
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/trial-rules.ts": {
+      "sha256": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53",
+      "bytes": 549
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/types.ts": {
+      "sha256": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064",
+      "bytes": 2193
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/src/full/versions.ts": {
+      "sha256": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64",
+      "bytes": 1693
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/web/src/activity-persistence.ts": {
+      "sha256": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+      "bytes": 9680
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/web/src/configuration-persistence.ts": {
+      "sha256": "a78887adcb6a622a9904a8db070aa9b9fea873ccab1282769660885079696c00",
+      "bytes": 2663
+    },
+    "src/legacy/rules-v4/src/legacy/rules-v3/web/src/direct-persistence.ts": {
+      "sha256": "862bb7332e764894185e7895e61147e9669f460b22701c574ece20cd26ebb377",
+      "bytes": 2145
+    },
+    "src/legacy/rules-v4/web/src/activity-persistence-current.ts": {
+      "sha256": "683e4fc2254c61eb77d396a2981a79f3088dab5cc18eccf00617997271156286",
+      "bytes": 15275
+    },
+    "src/legacy/rules-v4/web/src/activity-persistence.ts": {
+      "sha256": "8619cbadec1aee5b57cfb1ee8a94dd3b8015b4b05e99e75c64389c71431765c8",
+      "bytes": 751
+    },
+    "src/legacy/rules-v4/web/src/configuration-persistence-current.ts": {
+      "sha256": "25db493f6aebc6e6aceeb04ea871a26a4a88f32940e78cc463379fdc716e9b09",
+      "bytes": 3281
+    },
+    "src/legacy/rules-v4/web/src/configuration-persistence.ts": {
+      "sha256": "2f3b811c8c1358dd706fa052a3d6a43140360962b1747619ea918c720283aece",
+      "bytes": 624
+    },
+    "src/legacy/rules-v4/web/src/direct-persistence-current.ts": {
+      "sha256": "89c64b32902c98f9ecf0c1cfc0dab121c070a6267cf863e401d3ba5a267768eb",
+      "bytes": 2909
+    },
+    "src/legacy/rules-v4/web/src/direct-persistence.ts": {
+      "sha256": "875d9cb1994bac0f4449d0b1dae84d5cd6916158260ac63b17c8ea32278f7584",
+      "bytes": 575
+    },
+    "web/src/activity-persistence-current.ts": {
+      "sha256": "683e4fc2254c61eb77d396a2981a79f3088dab5cc18eccf00617997271156286",
+      "bytes": 15275
+    },
+    "web/src/activity-persistence.ts": {
+      "sha256": "046de1c8b7850b49ce8115e519f2718b5980a11e3cee15903f750696e73fe2eb",
+      "bytes": 1143
+    },
+    "web/src/away-summary.ts": {
+      "sha256": "4f71a99df7a9842f66d8f9e184ef66e92d0f60bebd22598f301c52e070c7d5de",
+      "bytes": 3822
+    },
+    "web/src/configuration-persistence-current.ts": {
+      "sha256": "25db493f6aebc6e6aceeb04ea871a26a4a88f32940e78cc463379fdc716e9b09",
+      "bytes": 3281
+    },
+    "web/src/configuration-persistence.ts": {
+      "sha256": "70755240fe8e508f746885004be05f1c15a05a8826f3c325a6785e21e6184838",
+      "bytes": 919
+    },
+    "web/src/direct-persistence-current.ts": {
+      "sha256": "89c64b32902c98f9ecf0c1cfc0dab121c070a6267cf863e401d3ba5a267768eb",
+      "bytes": 2909
+    },
+    "web/src/direct-persistence.ts": {
+      "sha256": "9648ee9a0cb1da2b0cc7e4be832e2756eec4ced833e8922a7d2ac00cd3f557fe",
+      "bytes": 856
+    },
+    "web/src/full-persistence.ts": {
+      "sha256": "c2aabc5ef118b9032f6534705b87b8f9d8083b5aa73fde630b3c537858e997d8",
+      "bytes": 108332
+    },
+    "web/src/receipt-command-id.ts": {
+      "sha256": "2ccc3e9aca526e32e0039051d8532332a758d07dbd7653ca8b239acb5b282cd7",
+      "bytes": 799
+    },
+    "web/src/receipt-retention.ts": {
+      "sha256": "51d2a1cf7bd4a220321001ee3588f62c3df6abf6054c1056167f476d4ec4366a",
+      "bytes": 42659
+    },
+    "web/src/scheduled-persistence.ts": {
+      "sha256": "bae821474635427b219d4af5914bc708a26e012b52b36fa4e2c26711a21fcfb5",
+      "bytes": 7931
+    }
+  },
+  "entrySha256": "97159a6b940068a862207e8a1c8398279332425e948792acd81a6bf8ba7d34fb"
+}

@@ -40,6 +40,14 @@ const state = computed(() =>
             ? '此念已保存 · 继续见上方'
             : '药匣在侧 · 先看三种选择',
 );
+const inheritance = computed(() => props.game.incarnation?.inheritance);
+const birthNote = computed(() =>
+  inheritance.value?.sourceEnding === 'transmit'
+    ? '前缘传灯药囊 · 本卷开卷另获回春丹1枚'
+    : inheritance.value
+      ? '前缘远游路资 · 本卷开卷另获20灵石'
+      : '',
+);
 const localControls = useLocalActivityControls();
 </script>
 <template>
@@ -113,6 +121,9 @@ const localControls = useLocalActivityControls();
     </button>
     <div class="art33-state" role="status"
       ><strong>{{ state }}</strong
+      ><small v-if="inheritance" data-testid="birth-inheritance">{{
+        birthNote
+      }}</small
       ><span
         v-if="reading && engaged && phase === 'running' && localControls"
         data-testid="milestone-cycle-clock"

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { InheritanceChoice } from '../../src/full/incarnation';
 import { computed, inject, ref } from 'vue';
 import type { useGame } from './store';
 import type { Action, Move } from '../../src/full/types.ts';
@@ -74,6 +75,7 @@ const emit = defineEmits<{
   tab: [name: string];
   next: [];
   export: [];
+  restart: [InheritanceChoice];
   demos: [event?: Event];
 }>();
 const store = inject<ReturnType<typeof useGame>>('game-scene')!;
@@ -260,6 +262,16 @@ defineExpose({ element: contentPanel });
         <SealedLifeStage
           v-if="game.status !== 'active'"
           :game="game"
+          :demo="demoNode"
+          :blocked="
+            store.unresolved
+              ? '请先处理存档提示，再开启新卷'
+              : !store.available
+                ? '存档尚未就绪'
+                : store.busy
+                  ? '正在保存，请稍候'
+                  : ''
+          "
           :busy="store.busy"
           :receipt="
             store.activity?.version === 7 &&
@@ -270,6 +282,7 @@ defineExpose({ element: contentPanel });
           @export="exportSave"
           @settings="showSettings"
           @receipt="viewReceipt"
+          @restart="emit('restart', $event)"
         /><template
           v-else-if="
             store.activity?.version === 7 && store.activity.status !== 'stopped'
