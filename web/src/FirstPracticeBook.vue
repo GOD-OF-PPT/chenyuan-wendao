@@ -137,6 +137,19 @@ defineExpose({ element });
         <p v-else
           >迎战后先停在战局，出招与用药另行选择。注意气血和敌方重击，必要时暂停、补给或撤退。</p
         >
+        <p v-if="lesson.encounter && !game.battle" data-testid="practice-prebattle-facts"
+          >己方气血 {{ lesson.encounter.playerHp }} /
+          {{ lesson.encounter.playerMaxHp }}，妖狼气血
+          {{ lesson.encounter.enemy.hp }}。<br />
+          每招 {{ lesson.encounter.battleMs / 1000 }} 秒；回春丹
+          {{ lesson.encounter.healingCount }} 枚，回灵丹
+          {{ lesson.encounter.spiritCount }} 枚。<br />
+          首回合试探，随后蓄势、重击；普通伤害
+          {{ lesson.encounter.enemy.attack }} / 重击
+          {{
+            lesson.encounter.enemy.heavy
+          }}，净损随护体与配装变化。只迎战，不自动用药。</p
+        >
       </div>
     </section>
     <p v-if="feedback" class="practice-result" data-testid="practice-result">{{

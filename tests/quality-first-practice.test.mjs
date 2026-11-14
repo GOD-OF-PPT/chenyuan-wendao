@@ -49,6 +49,15 @@ test('first practice exposes finite real commission assisted and encounter plans
   assert.equal(encounter.plan.maxEncounters, 1);
   assert.equal(encounter.plan.strategy.healingBudget, 0);
   assert.equal(encounter.plan.strategy.spiritBudget, 0);
+  assert.equal(encounter.encounter.enemy.hp, C.enemies.wolf.hp);
+  assert.equal(encounter.encounter.playerHp, game.core.player.hp);
+  assert.equal(
+    encounter.encounter.healingCount,
+    game.core.inventory.healing_pill,
+  );
+  assert.equal(encounter.encounter.battleMs, 3000);
+  encounter.encounter.enemy.loot.core = 999;
+  assert.equal(C.enemies.wolf.loot.core, 1);
 });
 
 test('all six legitimate early lives can earn work spend one assisted cycle and inspect a real first battle before full qi cultivation', () => {

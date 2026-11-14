@@ -140,6 +140,17 @@ async function reachPractice(
     await page.getByTestId('practice-tab-' + kind).click();
   }
   await bookFits(page);
+  if (kind === 'encounter') {
+    await expect(page.getByTestId('practice-prebattle-facts')).toContainText(
+      '妖狼气血 76',
+    );
+    await expect(page.getByTestId('practice-prebattle-facts')).toContainText(
+      '每招 3 秒',
+    );
+    await expect(page.getByTestId('practice-prebattle-facts')).toContainText(
+      '回春丹 ' + (await snapshot(page)).core.inventory.healing_pill + ' 枚',
+    );
+  }
   return practiceLesson(await snapshot(page), kind);
 }
 

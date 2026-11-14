@@ -9,7 +9,7 @@ import {
   defaultEncounterPlan,
   ADVENTURE_CYCLE_MS,
 } from '../../src/full/adventure.ts';
-import { battleIntent } from '../../src/full/engine.ts';
+import { battleIntent, stats } from '../../src/full/engine.ts';
 import { previewAction } from '../../src/full/queries.ts';
 import { contentForGame } from '../../src/full/rule-content.ts';
 import type { LocationId } from '../../src/full/content.ts';
@@ -100,6 +100,21 @@ export function practiceLesson(game: Game, kind: PracticeKind) {
     travel: previewAction(game, { type: 'TRAVEL', location }),
     travelMs: ADVENTURE_CYCLE_MS.travel,
     gainedStones: kind === 'commission' ? content.sources.work.stones : 0,
+    encounter:
+      kind === 'encounter'
+        ? {
+            enemy: {
+              ...content.enemies.wolf,
+              loot: { ...content.enemies.wolf.loot },
+            },
+            playerHp: game.core.player.hp,
+            playerMaxHp: stats(game).maxHp,
+            minimumHp: previewAction(game, action).requirements.hp,
+            healingCount: game.core.inventory.healing_pill,
+            spiritCount: game.core.inventory.spirit_pill,
+            battleMs: ADVENTURE_CYCLE_MS.battle,
+          }
+        : null,
   };
 }
 export type PracticeLesson = ReturnType<typeof practiceLesson>;
