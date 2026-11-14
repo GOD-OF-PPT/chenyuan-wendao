@@ -46,6 +46,8 @@ const integer = (v: unknown, min = 0, max = C.maxQuantity) =>
   typeof v === 'number' && Number.isSafeInteger(v) && v >= min && v <= max;
 const text = (v: unknown, n = 100) =>
   typeof v === 'string' && v.trim().length > 0 && v.length <= n;
+const oneOf = (v: unknown, allowed: readonly string[]): v is string =>
+  typeof v === 'string' && allowed.includes(v);
 function shape(
   v: unknown,
   keys: string[],
@@ -159,7 +161,7 @@ function validateSnapshot(
   if (
     !text(c.runId) ||
     !integer(c.revision, 0, Number.MAX_SAFE_INTEGER) ||
-    !['event', 'idle'].includes(String(c.mode))
+    !oneOf(c.mode, ['event', 'idle'])
   )
     fail('SAVE_ID', '存档身份无效');
   shape(c.player, [
@@ -203,7 +205,7 @@ function validateSnapshot(
   shape(c.inventory, Object.keys(C.items));
   if (Object.values(c.inventory).some((n) => !integer(n)))
     fail('SAVE_ITEMS', '物品数量无效');
-  if (c.openingChoice !== null && !choiceIds.includes(String(c.openingChoice)))
+  if (c.openingChoice !== null && !oneOf(c.openingChoice, choiceIds))
     fail('SAVE_CHOICE', '开场选择无效');
   if (
     !Array.isArray(c.learnedSkills) ||
@@ -217,10 +219,7 @@ function validateSnapshot(
         C.rank(p.realm as C.RealmId) < C.rank(C.swordManual.min)))
   )
     fail('SAVE_LEGACY_SKILL', '剑简研读记录与来源版本或境界不一致');
-  if (
-    value.school !== null &&
-    !['sword', 'talisman'].includes(String(value.school))
-  )
+  if (value.school !== null && !oneOf(value.school, ['sword', 'talisman']))
     fail('SAVE_SCHOOL', '修法无效');
   if (p.realm === 'mortal' && value.school !== null)
     fail('SAVE_SCHOOL', '凡人尚不能装备修法');
@@ -329,7 +328,7 @@ function validateSnapshot(
   )
     fail('SAVE_MILESTONE', '渡劫与飞升记录年月矛盾');
   if (
-    !['active', 'ascended', 'ended'].includes(String(value.status)) ||
+    !oneOf(value.status, ['active', 'ascended', 'ended']) ||
     !(
       legacy
         ? [null, 'transmit', 'depart', 'lifespan']
@@ -345,15 +344,13 @@ function validateSnapshot(
   if (
     value.status === 'ascended' &&
     (p.realm !== 'ascended' ||
-      !['transmit', 'depart'].includes(String(value.ending)) ||
+      !oneOf(value.ending, ['transmit', 'depart']) ||
       !own(value.milestones, 'trial_completed'))
   )
     fail('SAVE_ENDING', '飞升缺少实际渡劫记录');
   if (
     value.status === 'ended' &&
-    (!(legacy ? ['lifespan'] : ['retired', 'lifespan']).includes(
-      String(value.ending),
-    ) ||
+    (!oneOf(value.ending, legacy ? ['lifespan'] : ['retired', 'lifespan']) ||
       p.realm === 'ascended')
   )
     fail('SAVE_ENDING', '生平结束状态不一致');
@@ -704,16 +701,13 @@ export function validateCommand(c: unknown): asserts c is Command {
   for (const [k, t] of checks)
     if (c[k] !== undefined && !own(t, c[k]))
       fail('INVALID_COMMAND', '未知的内容引用');
-  if (c.choice !== undefined && !choiceIds.includes(String(c.choice)))
+  if (c.choice !== undefined && !oneOf(c.choice, choiceIds))
     fail('INVALID_COMMAND', '开场选项无效');
-  if (
-    c.school !== undefined &&
-    !['sword', 'talisman'].includes(String(c.school))
-  )
+  if (c.school !== undefined && !oneOf(c.school, ['sword', 'talisman']))
     fail('INVALID_COMMAND', '修法无效');
   if (
     c.move !== undefined &&
-    ![
+    !oneOf(c.move, [
       'attack',
       'guard',
       'technique',
@@ -721,22 +715,16 @@ export function validateCommand(c: unknown): asserts c is Command {
       'heal',
       'restore',
       'flee',
-    ].includes(String(c.move))
+    ])
   )
     fail('INVALID_COMMAND', '行动无效');
   if (c.type === 'STUDY' && c.manual !== 'jinghong')
     fail('INVALID_COMMAND', '未知剑简');
   if (c.option !== undefined && !text(c.option, 40))
     fail('INVALID_COMMAND', '事件选项无效');
-  if (
-    c.answer !== undefined &&
-    !['accept', 'release'].includes(String(c.answer))
-  )
+  if (c.answer !== undefined && !oneOf(c.answer, ['accept', 'release']))
     fail('INVALID_COMMAND', '问心选项无效');
-  if (
-    c.ending !== undefined &&
-    !['transmit', 'depart'].includes(String(c.ending))
-  )
+  if (c.ending !== undefined && !oneOf(c.ending, ['transmit', 'depart']))
     fail('INVALID_COMMAND', '结局选项无效');
 }
 function freshBattle(enemy: string): Battle {
