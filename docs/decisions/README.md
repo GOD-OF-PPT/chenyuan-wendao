@@ -173,3 +173,4 @@
 - [0165：Q17 此生账本、结局回响与下一世](0165-life-echoes-and-seeded-encounters.md)
 - [0166：Q18 当前入口与历史文档](0166-contributor-docs-and-history.md)
 - [《尘缘问道》游戏交互与美术开发准则](game-interaction-art-guidelines.md)
+- [0167：Q19 入门练手与第一笔灵石](0167-first-practice-and-economy-loop.md)
