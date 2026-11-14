@@ -20,7 +20,9 @@ git show :art/large-originals/my-original.png
 
 `exportRecipe`是声明式JSON，格式`chenyuan-image-export`、version1，包含原稿`source/sourceSha256`、实际`pillowVersion`和`outputs`。每个输出指定`path/width/height/lossless/quality/method`；目前只支持Pillow LANCZOS等比由制作者明确指定的尺寸、RGB或RGBA转WebP（不得放大）。宽高由制作者保持所需比例，工具不猜裁切或生成新细节。固定Pillow按[锁文件](../../art/requirements.txt)安装。检查会实际重做每个导出、逐字比较运行文件，不能拿一份刚写的新hash冒确定导出。
 
-`exports`每项为`path/sha256/bytes/consumer`，运行路径须在`web/public/art/`，consumer须是实际`web/src/`引用该路径的文件。生产只消费小型派生，LFS指针永远不能成为运行资源。当前资产/alpha/来源及原预算检查继续，不因存储策略放宽。
+`exports`每项为`path/sha256/bytes/consumer`，运行路径须在`web/public/art/`。本门禁支持可直接核验的Vue模板接线：consumer为`web/src/*.vue`，实际模板用`img src="art/..."`，或导入原AssetImage组件后用其静态`path="art/..."`属性。Vue/TypeScript解析器检查真实语法，注释、正文、未使用字符串和静态false分支不算接线。其它动态资产注册方式仍可沿既有资产系统，但须另外补明确的实际消费验证，不把字符串记录塞进此清单冒通过。
+
+此门禁证明来源、确定导出和上述模板接线；运行时是否可达/可见、真实场景截图及交互仍须功能PR的浏览器证据，不能用静态检查替代。生产只消费小型派生，LFS指针永远不能成为运行资源。当前资产/alpha/来源及原预算检查继续，不因存储策略放宽。
 
 ```sh
 git add docs/assets/large-originals.json docs/assets/my-prompt.md docs/assets/my-receipt.json docs/assets/my-export.json

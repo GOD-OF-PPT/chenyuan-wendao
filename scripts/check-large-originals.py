@@ -69,7 +69,7 @@ def validate(root=ROOT, baseline=BASELINE):
     rows = indexed(root)
     require(re.fullmatch(r'[0-9a-f]{40}', baseline), 'Baseline must be a fixed full Git commit')
     old = {}
-    for line in subprocess.check_output(['git', 'ls-tree', '-rz', baseline, '--', 'art'], cwd=root).split(b'\0'):
+    for line in subprocess.check_output(['git', 'ls-tree', '-rz', baseline, '--', 'art', 'web/public'], cwd=root).split(b'\0'):
         if line:
             meta, raw = line.split(b'\t', 1)
             old[raw.decode('utf-8')] = meta.decode().split()[2]
@@ -117,7 +117,7 @@ def validate(root=ROOT, baseline=BASELINE):
         require(row['mode'] in {'100644', '100755'}, 'Asset cannot be a symlink/submodule: ' + name)
         if name.startswith('art/'):
             art_bytes += row['size']
-        prefix = blob(name, 1024) if row['size'] <= 1024 and row['mode'] == '100644' else b''
+        prefix = blob(name, 1024) if row['size'] <= 1024 else b''
         pointer_like = prefix.startswith(b'version https://git-lfs.github.com/')
         designated = name.startswith(ORIGINALS) and PurePosixPath(name).suffix.lower() in RASTER
         if designated or pointer_like:
@@ -191,13 +191,18 @@ def validate(root=ROOT, baseline=BASELINE):
                 consumer = path_name(export['consumer'])
                 require(consumer.startswith('web/src/'), 'Export consumer must be current UI source')
                 path = runtime.removeprefix('web/public/').encode()
-                require(path in blob(consumer), 'Missing actual runtime consumer reference: ' + runtime)
+                blob(consumer)
+                checked = subprocess.run(['node', str(Path(__file__).with_name('check-asset-consumer.mjs')),
+                    '--root', str(root), '--consumer', consumer, '--asset', path.decode()], capture_output=True)
+                require(checked.returncode == 0, 'Missing actual runtime template consumer reference: ' + runtime)
                 require(outputs.get(runtime) == data, 'Deterministic source export does not reproduce runtime bytes: ' + runtime)
             require(set(outputs) == seen, 'Recipe/manifest export sets differ: ' + name)
             originals.append({'path': name, 'sha256': oid, 'bytes': size})
         elif name.startswith('art/') and row['size'] > THRESHOLD:
             require(old.get(name) == row['oid'], 'New/changed large original cannot be an ordinary Git blob; use art/large-originals and Git LFS: ' + name)
             grandfathered.append({'path': name, 'oid': row['oid'], 'bytes': row['size']})
+        elif name.startswith('web/public/') and row['size'] > THRESHOLD:
+            require(old.get(name) == row['oid'], 'New/changed large production blob is not a small runtime derivative; keep originals in LFS: ' + name)
     require(set(records) == {r['path'] for r in originals}, 'Manifest contains an absent/non-LFS original')
     return {'format': 'chenyuan-large-original-storage', 'version': 1, 'baseline': baseline,
             'newOrdinaryThresholdBytes': THRESHOLD, 'indexedArtFiles': sum(n.startswith('art/') for n in rows),

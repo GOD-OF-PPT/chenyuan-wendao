@@ -64,7 +64,8 @@ class LargeOriginals(unittest.TestCase):
             image.resize((16,16),Image.Resampling.LANCZOS).save(output, format='WEBP', lossless=True,quality=100,method=6)
         exported = output.getvalue()
         self.write('web/public/art/test.webp', exported)
-        self.write('web/src/test.ts', "export const art = 'art/test.webp';\n")
+        self.write('web/src/Test.vue', '<script setup>import AssetImage from "./AssetImage.vue";</script><template><AssetImage path="art/test.webp" asset-id="new-original" /></template>')
+        self.write('web/src/AssetImage.vue', '<template><img :src="path" /></template><script setup>defineProps({path:String})</script>')
         self.write('docs/assets/export.json', json.dumps({'format':'chenyuan-image-export','version':1,'source':name,
             'sourceSha256':policy.sha(self.raw),'pillowVersion':PILLOW_VERSION,'outputs':[{'path':'web/public/art/test.webp',
                 'width':16,'height':16,'lossless':True,'quality':100,'method':6}]}))
@@ -72,7 +73,7 @@ class LargeOriginals(unittest.TestCase):
             'width': 640, 'height': 640, 'hasAlpha': False, 'alphaBBox': None,
             'prompt': 'docs/assets/prompt.md', 'receipt': 'docs/assets/receipt.json',
             'exportRecipe': 'docs/assets/export.json', 'exports': [{'path': 'web/public/art/test.webp',
-                'sha256': policy.sha(exported), 'bytes': len(exported), 'consumer': 'web/src/test.ts'}]}
+                'sha256': policy.sha(exported), 'bytes': len(exported), 'consumer': 'web/src/Test.vue'}]}
         self.manifest([record])
         self.git('add', '.')
         return record
@@ -123,8 +124,8 @@ class LargeOriginals(unittest.TestCase):
             with self.assertRaisesRegex(policy.StoragePolicyError, message):
                 self.check()
         self.manifest([record])
-        self.write('web/src/test.ts', "export const unrelated = 'art/other.webp';\n")
-        self.git('add', 'web/src/test.ts')
+        self.write('web/src/Test.vue', '<template><img src="art/other.webp" /></template>')
+        self.git('add', 'web/src/Test.vue')
         with self.assertRaisesRegex(policy.StoragePolicyError, 'Missing actual runtime'):
             self.check()
 
@@ -178,6 +179,33 @@ class LargeOriginals(unittest.TestCase):
         self.manifest([record])
         with self.assertRaisesRegex(policy.StoragePolicyError,'alpha bound types'):
             self.check()
+
+
+    def test_production_raw_original_is_refused(self):
+        self.write('web/public/art/raw.png',self.raw)
+        self.git('add','web/public/art/raw.png')
+        with self.assertRaisesRegex(policy.StoragePolicyError,'New/changed large production'):
+            self.check()
+
+    def test_executable_production_pointer_is_refused_too(self):
+        record=self.lfs_original()
+        pointer=self.git('show',':'+record['path'])
+        self.write('web/public/false.png',pointer)
+        self.git('add','web/public/false.png')
+        self.git('update-index','--chmod=+x','web/public/false.png')
+        with self.assertRaisesRegex(policy.StoragePolicyError,'never production assets'):
+            self.check()
+
+    def test_comment_or_prose_path_is_not_a_template_consumer(self):
+        self.lfs_original()
+        for content in ['<script setup>// Former art/test.webp\nconst unrelated=true</script><template><p>Other</p></template>',
+                '<template><!-- <img src="art/test.webp" /> --><p>art/test.webp</p></template>',
+                '<template><img v-if="false" src="art/test.webp" /></template>',
+                '<script setup>const unused="art/test.webp";</script><template><p>Other</p></template>']:
+            self.write('web/src/Test.vue',content)
+            self.git('add','web/src/Test.vue')
+            with self.assertRaisesRegex(policy.StoragePolicyError,'Missing actual runtime'):
+                self.check()
 
 
 if __name__ == '__main__':
