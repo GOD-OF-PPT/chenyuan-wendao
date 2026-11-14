@@ -8,4 +8,4 @@
 
 **ART28-OBS-01保持open**：原自然1440×756试玩实拍中成品自动入匣提示与药匣说明挤压/相交。未改原窗口、未加分辨率专项或兼容修复；用户已暂停当前兼容开发/测试，本项1440×900固定桌面通过不代矮窗口或整体艺术验收。此实际缺口不能被本地提交或机器绿清掉。
 
-详[检查](../../goal-4/evidence/art28/checks.json)、[审查](../../goal-4/evidence/art28/review.md)、[原试玩与缺口](../../goal-4/evidence/art28/user-preview.json)。三项第2完成，下一ART29行囊物资场景/当前用途，然后综合；整体艺术/长期/真人、原ART17四性能红、全部后段矩阵/兼容最后/干净包/最大review未完。
+详[检查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art28/checks.json)、[审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art28/review.md)、[原试玩与缺口](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art28/user-preview.json)。三项第2完成，下一ART29行囊物资场景/当前用途，然后综合；整体艺术/长期/真人、原ART17四性能红、全部后段矩阵/兼容最后/干净包/最大review未完。

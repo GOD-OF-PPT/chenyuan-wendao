@@ -8,6 +8,6 @@
 
 错误态保真实对象与可读正文／44px入口，重复预估按需查看；经架窄书脊、冷胚尺寸、焦点外缘及工具阴影有实际红绿与逐图复核。
 
-当前76唯一UI＝新9＋整轮63＋四叶子4，非单轮76；815规则／34当前native及精确原298／387资源／类型构建和真实30/60/60分别有证。263源、73载荷8512720B与提交／重建／冻结／HTTP相同。原Chrome可见全文进度保持，未执行用户Game或测试用户档，原13保留；dirty工程包非干净最终候选。完整失败与边界见[verification](../../goal-4/evidence/art10/verification.json)、[review](../../goal-4/evidence/art10/review.md)。
+当前76唯一UI＝新9＋整轮63＋四叶子4，非单轮76；815规则／34当前native及精确原298／387资源／类型构建和真实30/60/60分别有证。263源、73载荷8512720B与提交／重建／冻结／HTTP相同。原Chrome可见全文进度保持，未执行用户Game或测试用户档，原13保留；dirty工程包非干净最终候选。完整失败与边界见[verification](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art10/verification.json)、[review](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art10/review.md)。
 
 下一ART11行囊，其后ART12、CHECK-ART-03；修行文字对比／整体艺术、长期平衡、完整矩阵、最终干净包和真人仍开放。不开展当前暂停的兼容／环境性能，不推送／合并／公开部署。

@@ -2,6 +2,6 @@
 
 主位在正式条件成立时给自然吐纳的实际预计单位收益/耗时与有限范围，玩家明确选择后，仍由原开始按钮安排。原活动、暂停/恢复/原意图重试/费用和原子保存保持。24原模板条件等价归一，原完整App/旧预算精确逆回。
 
-依据[0118合同](../decisions/0118-assisted-cultivation-fallback.md)，受测/包c9bdff6。87相关UI（含新4）和解包子集4、116规则/711资源/类型构建、9实看图有据；[完整审查与限制](../../goal-4/evidence/uir35-02/review.md)。原用户档和13在途未动。
+依据[0118合同](../decisions/0118-assisted-cultivation-fallback.md)，受测/包c9bdff6。87相关UI（含新4）和解包子集4、116规则/711资源/类型构建、9实看图有据；[完整审查与限制](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/uir35-02/review.md)。原用户档和13在途未动。
 
 下一CEND05全界面适合性复核；当前工程项不代整体艺术/长期平衡/真人或全1401义务。兼容/环境性能继续暂停，最终候选与最大评审仍待。

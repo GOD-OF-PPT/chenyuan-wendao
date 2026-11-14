@@ -15,6 +15,6 @@
 
 本报告数字只对应Vite生产预览的实际gzip条件；原56884 Python试玩返回identity JS，资源hash相同不等服务性能相同。最终候选需核其实际运行服务，当前不作该服务或公网保证。原试玩不重启/不重载，用户10修为/40石/60HP/20MP/吐纳结束2/50只读保持；无用户Game或档测试。
 
-当前14预算测试、根TS/资产positive及Vue类型构建实际过；未变823规则/415 native/171相关UI/438资产按原M04依赖继承，不称当前全轮。284运行源、295 Gitblob及89载荷与受测/提交后重建/冻结/HTTP同，dirty工程版非最终干净候选。完整[验证](../../goal-4/evidence/matrix-m05/verification.json)、[原始测量](../../goal-4/evidence/matrix-m05/measurements.json)、[审查](../../goal-4/evidence/matrix-m05/review.md)。
+当前14预算测试、根TS/资产positive及Vue类型构建实际过；未变823规则/415 native/171相关UI/438资产按原M04依赖继承，不称当前全轮。284运行源、295 Gitblob及89载荷与受测/提交后重建/冻结/HTTP同，dirty工程版非最终干净候选。完整[验证](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/matrix-m05/verification.json)、[原始测量](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/matrix-m05/measurements.json)、[审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/matrix-m05/review.md)。
 
 复现时使用仓库支持的Node版本，在web目录先`npm run build`，再`node node_modules/@playwright/test/cli.js test --config playwright.idle-performance.config.ts --project=chromium`；4177须空闲。实际JSON在web/idle-performance-report，不提交生成存档。下一唯一CHECK-ART16-M45，再M06兼容最后/原综合/干净包/最大评审/整体美术长期与真人；Goal未完成，不push、合并、公开部署或改权限。

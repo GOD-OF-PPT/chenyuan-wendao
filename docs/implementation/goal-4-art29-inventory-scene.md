@@ -6,4 +6,4 @@
 
 1128最终v2输入终端同；305 Git运行blob/受测/重建/冻结及96载荷10105564B和56884 HTTP全解码同。原Chrome保存停止后只读更新，0件图谱/新scene/用途价格/返回实际可见；头像真实ready后公开HUD逐字同，首次装饰“道”过渡记录保，无推进时钟或sleep。没有代理直接用户DB/完整Game读取、用户档测试/导入恢复重开/暂停/Game动作。原13保留未提交，dirty工程版非干净候选；无push/合并/公开部署/权限变动。
 
-详[检查](../../goal-4/evidence/art29/checks.json)、[审查](../../goal-4/evidence/art29/review.md)、[原试玩](../../goal-4/evidence/art29/user-preview.json)。三项第3，下一CHECK-ART27-29当前授权全面检查-debug；兼容/环境性能当前暂停，ART28-OBS-01及ART17四性能红仍open，整体艺术/长期/真人及全部最终矩阵/干净包/最大review未完。
+详[检查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art29/checks.json)、[审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art29/review.md)、[原试玩](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art29/user-preview.json)。三项第3，下一CHECK-ART27-29当前授权全面检查-debug；兼容/环境性能当前暂停，ART28-OBS-01及ART17四性能红仍open，整体艺术/长期/真人及全部最终矩阵/干净包/最大review未完。

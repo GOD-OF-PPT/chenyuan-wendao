@@ -6,7 +6,7 @@
 
 运行8046148d，89文件9155893B在受测/提交后重建/冻结/56884普通与gzip解码都一致，服务helper同源。原Chrome停止且已保存时只读刷新，原可见进度保持；没有用户Game/导入/恢复/重置或用户档测试。原13不动未提交，当前不是干净最终候选；不push/合并/公开部署/改权限。
 
-整体艺术仍有大平面说明、筹备对象与来源不突出、行囊默认空图谱及叙事面板债。下一ART17先聚焦修行筹备主舞台，兼容最后；长期平衡、干净包/最终矩阵/最大C端代码安全和用户复验继续开放。详见[完整工程评审](../../goal-4/evidence/check-art16-m45/review.md)与[任务账本](../../goal-4/tasks.md)。
+整体艺术仍有大平面说明、筹备对象与来源不突出、行囊默认空图谱及叙事面板债。下一ART17先聚焦修行筹备主舞台，兼容最后；长期平衡、干净包/最终矩阵/最大C端代码安全和用户复验继续开放。详见[完整工程评审](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/check-art16-m45/review.md)与[任务账本](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/tasks.md)。
 
 工程可运行目录保留在`artifacts/goal-4/check-art16-m45/preview-committed/`，包括冻结web、同字节serve.py和build.json。当前原56884已运行；从仓库根目录重启时使用：
 

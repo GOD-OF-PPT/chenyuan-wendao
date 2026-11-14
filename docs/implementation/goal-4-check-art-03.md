@@ -2,6 +2,6 @@
 
 2026-10-27，5bef46efef3a228235b96233e43ad9a7a7d5eadf，本地codex/goal-4-online-recovery。玩家继续暂停原段时不重置完整预算/次数，界面显示实际已完成量；交易回看按用途与物品保留草案。人物备用印字跟随当前真实NPC，阶段关键文字在实际深色背板上可读，地图驻章避开文字，错误态主按钮收短而完整原因保留，卷串不再被挤出。
 
-当前完整492/53UI一轮、332/26原生、815/61规则、425资产与类型构建分别通过；原17完整失败、目标/叶子和负例预算前置拒都保存。源码280与提交/受测相同，87载荷9074563B与重建/冻结/实际HTTP一致；原Chrome凡人10/10修为/40灵石和已停止吐纳进度只读保持，原13未动未提交。见[验证](../../goal-4/evidence/check-art-03/verification.json)、[审查](../../goal-4/evidence/check-art-03/review.md)。当前dirty工程包不是最终干净候选，虚拟正常整链不证明实际成长节奏。
+当前完整492/53UI一轮、332/26原生、815/61规则、425资产与类型构建分别通过；原17完整失败、目标/叶子和负例预算前置拒都保存。源码280与提交/受测相同，87载荷9074563B与重建/冻结/实际HTTP一致；原Chrome凡人10/10修为/40灵石和已停止吐纳进度只读保持，原13未动未提交。见[验证](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/check-art-03/verification.json)、[审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/check-art-03/review.md)。当前dirty工程包不是最终干净候选，虚拟正常整链不证明实际成长节奏。
 
 整体游戏感/美术/长期与真人仍未完成；下一独立ART13丹炉单对象交互，再其它实际美术缺口与M04/5/6（兼容最后）、干净包和最大评审。当前没有运行兼容/环境性能，未推送、合并、公开部署或改权限。

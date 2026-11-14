@@ -7,10 +7,10 @@
 - 双产出目标经过配装比较取消、暂停/继续及下一次草案后保持原预算；quota原意图唯一重试；明确择法经CAS后原来源停止。每例完整Game、全IDB、回执和费用由正式规则核对。
 - 346运行文件、81测试闭包、1981依赖、112载荷和三服务336HTTP有当前身份证明。34份图像文件实看，另外8份当前PNG按字节相同承接原实看；不把未看图或重复场景算整体艺术验收。
 
-首次预检查的0过3红及构建/声明设置错误完整保留；仅补正新增测试的真实文字叶子与STATE_CHANGED后正式入口，未放宽原门槛。详见[审查](../../goal-4/evidence/check-cend08-09/review.md)、[检查](../../goal-4/evidence/check-cend08-09/checks.json)与[原始索引](../../goal-4/evidence/check-cend08-09/raw-index.json)。
+首次预检查的0过3红及构建/声明设置错误完整保留；仅补正新增测试的真实文字叶子与STATE_CHANGED后正式入口，未放宽原门槛。详见[审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/check-cend08-09/review.md)、[检查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/check-cend08-09/checks.json)与[原始索引](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/check-cend08-09/raw-index.json)。
 
 当前仍为[原同源工程试玩](http://127.0.0.1:56937/)，生产源码414fd4f、运行摘要0a02c30a；复用本地包`artifacts/goal-4/cend09-source/verified/cend09-source-preview-414fd4f.zip`（SHA256 `2207a0d898ea03c1b0a9c2971183ac142e73a250ef659402c3114800848acdda`）。本轮没有新产品版本或玩家档更新；原56884/玩家DB未读写。
 
-下一独立项[CEND10-SOURCE-GOAL](../../goal-4/evidence/check-cend08-09/ui-followup-finding.json)：把当前已保存目标与实际库存对应在物件旁，进一步区分未确认的下次草案。先落实身份/交互/验收/回滚，再实施；不改费用、周期、授权或收益，不新增等权面板/长说明。
+下一独立项[CEND10-SOURCE-GOAL](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/check-cend08-09/ui-followup-finding.json)：把当前已保存目标与实际库存对应在物件旁，进一步区分未确认的下次草案。先落实身份/交互/验收/回滚，再实施；不改费用、周期、授权或收益，不新增等权面板/长说明。
 
 当前v48完整义务为1483（1036 UI/415存储/32正常），仅声明核对，不是全跑。兼容和环境性能仍暂停；整体艺术、长期平衡、正常全线、最终矩阵、正式候选/最大评审与真人验收仍待。原13在途/原件/旧图包与失败保；仅本地codex分支，未推送或部署。回滚只revert本项提交，保DB9和原档可读，不降库或重置。

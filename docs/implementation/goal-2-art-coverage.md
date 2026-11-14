@@ -58,7 +58,7 @@
 
 正常新档24/24：六开局炼制/采购至筑基18项，剑修炼制留道与符修采购独赴完整飞升跨三引擎6项；逐次Game与正式引擎对照、无因果援助三关与刷新检查，长路线虚拟时钟不代表真人通关时间。新增筑基后按钮几何/命中验证已进入全部18条引导路线。394核心、当前79资产正负例、7候选完整性机制用例、根/Vue类型、生产构建、内容/资料与当前全部修改Markdown的128个本地文件链接核对通过。资产清单87文件/77生产项；原预算、锁、版本、引擎、Store、原子存档与v0.3/旧input保持。
 
-19张当前实拍已完整解码和逐张查看；其中两张与已审帧字节一致，其余重新查看。场景、角色、功能主题绘画、来源、筑基、双结尾、实际倒计时、保存失败与结算均有实拍。核验见[verification](../../goal-2/evidence/t07r/verification.json)，中间失败/取消/原始报告hash见[iterations](../../goal-2/evidence/t07r/iterations.json)。本地原始报告保留在artifacts/goal-2/t07r；可从web运行原Playwright配置选择art-flow-review、art-polish、gameplay-stage、immersive-ui、playable-flow、story-journey、story-resume七文件复现专项，正常路线用原journeys配置选择两条normal和全部guided。实际Node24.19.0/npm8.11.0，无依赖升级。
+19张当前实拍已完整解码和逐张查看；其中两张与已审帧字节一致，其余重新查看。场景、角色、功能主题绘画、来源、筑基、双结尾、实际倒计时、保存失败与结算均有实拍。核验见[verification](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-2/evidence/t07r/verification.json)，中间失败/取消/原始报告hash见[iterations](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-2/evidence/t07r/iterations.json)。本地原始报告保留在artifacts/goal-2/t07r；可从web运行原Playwright配置选择art-flow-review、art-polish、gameplay-stage、immersive-ui、playable-flow、story-journey、story-resume七文件复现专项，正常路线用原journeys配置选择两条normal和全部guided。实际Node24.19.0/npm8.11.0，无依赖升级。
 
 [杠精审查] 当前工程范围通过：实际画作与操作/状态均已接入，审图发现的按钮遮挡和切换占位已复现修好，未用动画结算、导入代替正常主线、删功能/文字或放宽原预算。现有选择框、重复页题和大屏留白等美术细节在T02继续修缮；全UI1419/IDB300/正常72+筑基18/恢复60/冷启动30及最终候选、真人美术/玩法验收均未宣称通过。原生goal只读blocked，未伪报active或complete。
 

@@ -8,4 +8,4 @@
 
 运行284源、89载荷/9155833B与Git、受测冻结、提交后重建、HTTP一致；原13在途未改未提交。当前是工程版，整体艺术/游戏感、长期平衡、完整后段矩阵、干净同源包/最终评审与真人仍开放。下一M05，随后三任务CHECK-ART16-M45，再兼容最后M06；本项没有执行页面兼容或环境性能专项。
 
-完整[验证](../../goal-4/evidence/matrix-m04/verification.json)、[覆盖](../../goal-4/evidence/matrix-m04/coverage.json)、[审查及限制](../../goal-4/evidence/matrix-m04/review.md)。回滚仅revert本项并保DB9/DB1读取、原档、旧冻结和全部失败，不push、合并、公开部署或改权限。
+完整[验证](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/matrix-m04/verification.json)、[覆盖](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/matrix-m04/coverage.json)、[审查及限制](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/matrix-m04/review.md)。回滚仅revert本项并保DB9/DB1读取、原档、旧冻结和全部失败，不push、合并、公开部署或改权限。

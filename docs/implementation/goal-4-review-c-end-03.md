@@ -10,4 +10,4 @@
 
 本轮复用game-playtest与既有采集/存储helper，未造新工作流/代理/自动化；同组三任务已满，下一独立CHECK-UX27-ART35-CEND03，再分别修T02/I04。Goal保持active，全部最终矩阵/干净包/最大review/长期与真人责任保。
 
-具体报告、逐格来源、原失败、像素与回滚见[审查](../../goal-4/evidence/review-c-end-03/review.md)、[检查](../../goal-4/evidence/review-c-end-03/checks.json)、[合同](../decisions/0080-current-mainline-cend03-review-contract.md)、[任务](../../goal-4/tasks.md)。回滚只revert本项审查代码/记录，不降DB9或删原件。
+具体报告、逐格来源、原失败、像素与回滚见[审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/review-c-end-03/review.md)、[检查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/review-c-end-03/checks.json)、[合同](../decisions/0080-current-mainline-cend03-review-contract.md)、[任务](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/tasks.md)。回滚只revert本项审查代码/记录，不降DB9或删原件。

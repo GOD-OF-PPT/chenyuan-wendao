@@ -1,6 +1,6 @@
 # T05：主流程筹备、单屏历练目录与实际读秒
 
-2026-10-19—20（Asia/Shanghai）。基线6ae7dd74dad3354e454f7264a18eae934d5b6510，分支codex/goal-2-playable-flow。用户原话见[追加输入](../../goal-2/amendments/2026-10-19-playable-flow-countdown.md)，执行方案/风险/验证/回滚见[当前计划](../../goal-2/plan.md)。原始input/v0.3及旧冻结目录保留。原生目标只读blocked，整体美术及用户复验未完成。
+2026-10-19—20（Asia/Shanghai）。基线6ae7dd74dad3354e454f7264a18eae934d5b6510，分支codex/goal-2-playable-flow。用户原话见[追加输入](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-2/amendments/2026-10-19-playable-flow-countdown.md)，执行方案/风险/验证/回滚见[当前计划](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-2/plan.md)。原始input/v0.3及旧冻结目录保留。原生目标只读blocked，整体美术及用户复验未完成。
 
 ## 诊断与反馈环
 
@@ -45,7 +45,7 @@
 
 ## 画面与预算
 
-本轮[实拍与逐文件核对](../../goal-2/evidence/t05/verification.json)包括缺丹主操作、筹备清单/来源、真实倒计时、560战斗、筑基后继续修炼、目录和两结尾；原样复制，无图片编辑。逐张完整解码、核对尺寸/hash并实际查看；它们是代理审阅证据，不是用户认可。
+本轮[实拍与逐文件核对](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-2/evidence/t05/verification.json)包括缺丹主操作、筹备清单/来源、真实倒计时、560战斗、筑基后继续修炼、目录和两结尾；原样复制，无图片编辑。逐张完整解码、核对尺寸/hash并实际查看；它们是代理审阅证据，不是用户认可。
 
 新增9份主流程/目录/时钟原生文件共57397/60000B，最多4卡片/页，最大耗时2400ms。原UI79466/80000、舞台9848/12000、纸材5920/6500、主题19039/26000、逐动作32187/34000和四大演出预算不变；没有把旧预算代码搬出。Game/引擎/数值/存档schema/content/balance/依赖锁与原始输入/v0.3均不改。新增清单和消费接线/字节/hash由资产工具核验，候选工具支持附带本轮清单/记录。
 

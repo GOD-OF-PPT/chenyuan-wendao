@@ -2,7 +2,7 @@
 
 以 docs/v0.3 为完整设计基线。约 30 分钟仅观察基本玩法理解，不限定通关时长。历史M1玩法来自G1分支；当前Goal 1在独立叠加PR中接续full规则并逐步接通网页，尚未合并main。实际状态以Goal 1逐项记录为准。
 
-2026-10-16开始 [Goal 1](../../goal-1/plan.md)，分支 `codex/goal-1-reproducible-baseline`。T01归拢G1与研究文档，整合实现`4907e1d`已重新通过本地与同SHA远端83规则/17 Chromium、经济回放、类型与构建，交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，未合并。下一项T02接续full规则；任务和证据见 [tasks.md](../../goal-1/tasks.md) 与 [基线实施记录](../implementation/goal-1-baseline.md)。后续全境界网页、存档切换与正式美术保持未完成。
+2026-10-16开始 [Goal 1](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-1/plan.md)，分支 `codex/goal-1-reproducible-baseline`。T01归拢G1与研究文档，整合实现`4907e1d`已重新通过本地与同SHA远端83规则/17 Chromium、经济回放、类型与构建，交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，未合并。下一项T02接续full规则；任务和证据见 [tasks.md](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-1/tasks.md) 与 [基线实施记录](../implementation/goal-1-baseline.md)。后续全境界网页、存档切换与正式美术保持未完成。
 
 T02在`codex/goal-1-full-rules`接续`a49c0b4`全境界规则，增加配置审计、24组正常纯引擎路线、功法法宝效果及逐境恢复验证；正式网页与数据库仍用Adventure。当前进度与待修责任见 [T02记录](../implementation/goal-1-full-rules.md)。后续T03先明确契约与共享查询，再进行正式存档/网页切换。
 

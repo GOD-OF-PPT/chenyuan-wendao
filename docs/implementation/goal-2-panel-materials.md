@@ -1,10 +1,10 @@
 # Goal2 T04S：主舞台纸材与水墨修缮
 
-2026-10-19。基线4bcebb081efd5323290db44e079f2aeaecb3254d（PR38），分支codex/goal-2-panel-materials。先保存[用户原文](../../goal-2/amendments/2026-10-19-panel-materials.md)与plan/tasks，再修改程序。仅本项纸材修缮与CHECK-02M，不关闭整体美术目标。
+2026-10-19。基线4bcebb081efd5323290db44e079f2aeaecb3254d（PR38），分支codex/goal-2-panel-materials。先保存[用户原文](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-2/amendments/2026-10-19-panel-materials.md)与plan/tasks，再修改程序。仅本项纸材修缮与CHECK-02M，不关闭整体美术目标。
 
 ## 问题与实际改动
 
-用户指出[T04R原实拍](../../goal-2/evidence/t04r/hub-cave-1440.png)的黄色背景与主界面不协调。已实际查看[认可设计稿](../../goal-2/design/desktop-direction-v1.png)：原稿是有宣纸细纹、山水衬景与人物插画的纸面，平黄色渐变丢失了材质与层次。
+用户指出[T04R原实拍](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-2/evidence/t04r/hub-cave-1440.png)的黄色背景与主界面不协调。已实际查看[认可设计稿](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-2/design/desktop-direction-v1.png)：原稿是有宣纸细纹、山水衬景与人物插画的纸面，平黄色渐变丢失了材质与层次。
 
 主行动、当前目标、行道回响三块面板换为低黄调象牙宣纸，配青灰水墨山景、原生层次细框；现有静修人物插画真实接入主行动安全区。目标、批次/费用和结算仍由原DOM/查询显示，青黛角色栏、场景、真实命令/存档与功能入口保留。新样式只针对指定三块面板，战斗画作中的浅色敌名另保留原样。
 
@@ -16,7 +16,7 @@
 
 首次11项7过/4失败，实拍证实选择器误伤角色纸面，以及右侧图片增加高度使结算/演示入口超出底栏；已限制选择器，短桌面将山景作淡墨背景、大桌面保留独立画幅，所有文字/入口保持。修后受影响4项过。第一版纸材均值R-B 20.272，新增<20检查未过，没有放宽阈值；用imagegen编辑为v2后均值约234.59/233.25/229.15（R-B约5.44），透明山景未重绘。首次完整42项通过后人工审图发现敌名被深墨标题覆盖；已限定标题范围并补专项。初次材料守卫因assets.ts来源摘要未更新正确拒绝，补原生FX来源登记，旧UI预算仍保持。新敌名专项误对演示环境读取普通档DB，三引擎失败（正常档与演示库本就隔离）；改由正常新档真实选择/修炼/突破/选剑修/旅行/进入狼战核对全Game，不增加重试、删断言或改预算。默认Python无Pillow的证据脚本失败后，改用已知bundled Python，只读解码，不修改像素。
 
-最终本地结果及逐文件绑定见[verification.json](../../goal-2/evidence/t04s/verification.json)。浏览器完整套件/IDB、72正常路线、60恢复组合、30冷性能与最终新候选本轮未重跑，后续T09保留；没有把局部定向通过称作完整CI或用户认可。此前CI失败历史也不因本项美术修缮关闭。全部兼容性修复仍最低T08，T05—T07继续完整目录/剧情和整体美术。
+最终本地结果及逐文件绑定见[verification.json](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-2/evidence/t04s/verification.json)。浏览器完整套件/IDB、72正常路线、60恢复组合、30冷性能与最终新候选本轮未重跑，后续T09保留；没有把局部定向通过称作完整CI或用户认可。此前CI失败历史也不因本项美术修缮关闭。全部兼容性修复仍最低T08，T05—T07继续完整目录/剧情和整体美术。
 
 ## 交付与回滚
 

@@ -4,7 +4,7 @@
 
 TA消费原真实周期、完整成果proof和生命周期。运行、保存、失败、暂停/接管、原意图重试与历史分别处理；修复跨卷保存借光、物体/正文重叠及取消失败确认后不能新比较的实际问题。四件冷态器物由内置ImageGen绘制，原图/全部提示词/回执、真实alpha/bbox/hash和确定导出保留，详见[账本](../../art/redesign/art03.json)、[提示词](../../art/redesign/art03-objects/prompts.json)。旧画保留为实际无所选经卷fallback。
 
-最终当前14/14与精确继承243形成257唯一声明覆盖，**非单轮257全绿**；source12整轮254/3及所有原失败/中断保留。当前203资源/类型构建通过，775规则/37相关native的原执行与未变依赖、当前9配置及真实30/60/60秒分别列于[verification](../../goal-4/evidence/art03/verification.json)与[审查](../../goal-4/evidence/art03/review.md)。9代表像素7fresh/2严格原PNG继承，未审生成图不冒称全部美术完成。
+最终当前14/14与精确继承243形成257唯一声明覆盖，**非单轮257全绿**；source12整轮254/3及所有原失败/中断保留。当前203资源/类型构建通过，775规则/37相关native的原执行与未变依赖、当前9配置及真实30/60/60秒分别列于[verification](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art03/verification.json)与[审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art03/review.md)。9代表像素7fresh/2严格原PNG继承，未审生成图不冒称全部美术完成。
 
 216源码与实现归档一致，61文件7627394B与受测/提交后重建/冻结/实际HTTP一致。[原试玩](http://127.0.0.1:56884/)已更新，用户进度只读保持，原13未改未提交，dirty工程身份保留。凡人可在法宝页“查看完整目录”只读预览四器，无需推进境界或消费。
 

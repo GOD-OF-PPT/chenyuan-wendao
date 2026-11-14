@@ -1,6 +1,6 @@
 # Goal3 U4：逐炉炼丹与单件炼器
 
-2026-10-20，Asia/Shanghai。承接[本轮原始输入](../../goal-3/amendments/2026-10-20-heartbeat-u4.md)及[实施前合同](../../goal-3/plan.md)。本轮只U4；随后CHECK-IDLE-01独立检查U2-I/U3/U4。当前4/25类行动接入在线活动，其他21类、整体游戏与美术、长期平衡及真人验收保持未完成，页面兼容开发/测试继续暂停。
+2026-10-20，Asia/Shanghai。承接[本轮原始输入](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/amendments/2026-10-20-heartbeat-u4.md)及[实施前合同](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/plan.md)。本轮只U4；随后CHECK-IDLE-01独立检查U2-I/U3/U4。当前4/25类行动接入在线活动，其他21类、整体游戏与美术、长期平衡及真人验收保持未完成，页面兼容开发/测试继续暂停。
 
 ## 游戏行为
 
@@ -20,7 +20,7 @@ craft v3/forge v4活动严格区分真实耗材、成丹和ownedRelics；Forge�
 
 ## 验证、问题与边界
 
-结果及源身份见[证据](../../goal-3/evidence/u4/verification.json)，修正与局限见[审查](../../goal-3/evidence/u4/review.md)。固定1440×900单Chromium检查，原动作/断言/导航/测试时限与0retry保留。最终同次26/26串行页面回归，含全部7配方/4法宝分页与材料/控件检查、39/39真实IDB/Store、449/449相关核心与91资产正负例通过；最后只调整炉画自然排布后，26项页面与39项存档已按最终构建重新执行。修炼、取材和炼丹各有真实30秒周期；虚拟时钟只验规则，不证明长期平衡。
+结果及源身份见[证据](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/evidence/u4/verification.json)，修正与局限见[审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/evidence/u4/review.md)。固定1440×900单Chromium检查，原动作/断言/导航/测试时限与0retry保留。最终同次26/26串行页面回归，含全部7配方/4法宝分页与材料/控件检查、39/39真实IDB/Store、449/449相关核心与91资产正负例通过；最后只调整炉画自然排布后，26项页面与39项存档已按最终构建重新执行。修炼、取材和炼丹各有真实30秒周期；虚拟时钟只验规则，不证明长期平衡。
 
 候选完整性整文件4项因双bundle及隔离clone估计需约1.146GB临时空间，当前约1GB余量，留最终候选任务；不宣称完整453核心全跑、干净候选重建或最终门禁通过。原在途矩阵工具不纳入本项。此前磁盘满造成UI截图/trace及核心证据写入失败；原报告保留，空间回升后串行完成当前定向检查，没有删用户历史、放宽断言/超时或恢复兼容来造绿。91资产检查与当前源/清单hash一致，重核正向清单守卫，不重复大规模复制。
 

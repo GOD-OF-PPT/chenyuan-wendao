@@ -10,4 +10,4 @@
 
 226源码与实现Git archive逐hash一致，61文件7680104B与受测/提交后重建/冻结/实际HTTP一致；原56884试玩已更新（owned79563），实际浏览器脚本/样式一致。原顾长青凡人5/10修为、40灵石/月1/60HP/20MP/洞府待安排/已保存，完整只读AX归一后相同；无用户Game、导入/恢复/重置或存档测试。原13在途未改未提交、dirty工程身份保留，非最终干净候选。
 
-证据见[verification.json](../../goal-4/evidence/art05/verification.json)、[审查](../../goal-4/evidence/art05/review.md)与[任务](../../goal-4/tasks.md)。仅本项工程范围交付；下一CHECK-ART-02综合ART03/04/05，再ART06修行/目标。整体游戏感/美术、长期平衡、原完整矩阵/兼容最后/干净同源包/最大C端代码安全及真人复验仍开放。原生Goal active，无push/PR/合并/公开部署/权限变化；回滚revert本项、保DB9/DB1读取/原档/旧冻结/失败原件。
+证据见[verification.json](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art05/verification.json)、[审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art05/review.md)与[任务](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/tasks.md)。仅本项工程范围交付；下一CHECK-ART-02综合ART03/04/05，再ART06修行/目标。整体游戏感/美术、长期平衡、原完整矩阵/兼容最后/干净同源包/最大C端代码安全及真人复验仍开放。原生Goal active，无push/PR/合并/公开部署/权限变化；回滚revert本项、保DB9/DB1读取/原档/旧冻结/失败原件。

@@ -2,4 +2,4 @@
 
 生产1e023379f5ae0edffea3cfade5a56026224c671d。赠丹/换简/留丹有明确意图、玉印及原6秒读秒；回看为次级。正文18与普通详情读秒、暂停/错误的问道留白已修。Game/原子存档与原确认不变，0新画。
 
-[合同与来源](../decisions/0125-opening-response-cend06-f02a.md) · [真实检查与原失败](../../goal-4/evidence/cend06-f02a/review.md) · [状态/同源证据](../../goal-4/evidence/cend06-f02a/status.json) · [试玩](http://127.0.0.1:56918/)。最新95UI/137规则工具/726资源与类型构建通过，包5为95子集，10图实看；不是全1419或整体艺术/长期/真人验收。下一行旅，兼容环境性能仍暂停。
+[合同与来源](../decisions/0125-opening-response-cend06-f02a.md) · [真实检查与原失败](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/cend06-f02a/review.md) · [状态/同源证据](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/cend06-f02a/status.json) · [试玩](http://127.0.0.1:56918/)。最新95UI/137规则工具/726资源与类型构建通过，包5为95子集，10图实看；不是全1419或整体艺术/长期/真人验收。下一行旅，兼容环境性能仍暂停。

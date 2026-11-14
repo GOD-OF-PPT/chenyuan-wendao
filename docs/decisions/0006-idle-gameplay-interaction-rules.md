@@ -1,10 +1,10 @@
 # 全玩法放置与游戏交互开发准则
 
-日期：2026-10-20，Asia/Shanghai。依据[用户逐玩法交互补充](../../goal-3/amendments/2026-10-20-every-gameplay-interaction.md)和[最新完整要求](../../goal-3/amendments/2026-10-20-every-gameplay-idle-research.md)。这是研究后形成的项目开发合同，覆盖旧方案中只做短批次、只优化修炼或以软件操作流程组织玩法的要求。研究时下列放置改造均未实施；随后U2-I接入共享活动与在线修炼，见[实际实施与验证](../implementation/goal-3-idle-cultivation.md)，U3随后接入16个来源的[周期采集/委托](../implementation/goal-3-idle-sources.md)，U4接入7配方/4法宝的[周期炼丹/一次炼器](../implementation/goal-3-idle-production.md)，U5随后接入六类研习/补给周期与三种即时配装确认，见[研习与补给实施记录](../implementation/goal-3-idle-preparation.md)及[具体合同](0007-preparation-idle-contract.md)；其余12类动作适配仍待实施。U1完成洞府主舞台局部减负，用户仍认为整体凌乱、像软件，这一负面验收继续有效。
+日期：2026-10-20，Asia/Shanghai。依据[用户逐玩法交互补充](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/amendments/2026-10-20-every-gameplay-interaction.md)和[最新完整要求](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/amendments/2026-10-20-every-gameplay-idle-research.md)。这是研究后形成的项目开发合同，覆盖旧方案中只做短批次、只优化修炼或以软件操作流程组织玩法的要求。研究时下列放置改造均未实施；随后U2-I接入共享活动与在线修炼，见[实际实施与验证](../implementation/goal-3-idle-cultivation.md)，U3随后接入16个来源的[周期采集/委托](../implementation/goal-3-idle-sources.md)，U4接入7配方/4法宝的[周期炼丹/一次炼器](../implementation/goal-3-idle-production.md)，U5随后接入六类研习/补给周期与三种即时配装确认，见[研习与补给实施记录](../implementation/goal-3-idle-preparation.md)及[具体合同](0007-preparation-idle-contract.md)；其余12类动作适配仍待实施。U1完成洞府主舞台局部减负，用户仍认为整体凌乱、像软件，这一负面验收继续有效。
 
 ## 一手资料与采用边界
 
-本轮是官方说明、原版手册、开发者文章和正式源码的分析；没有付费购买、登录竞品、完整竞品试玩或进行页面兼容测试。访问日期均为2026-10-20。[来源清单](../../goal-3/research/idle-interaction-sources.json)记录类型、年代及采用范围。
+本轮是官方说明、原版手册、开发者文章和正式源码的分析；没有付费购买、登录竞品、完整竞品试玩或进行页面兼容测试。访问日期均为2026-10-20。[来源清单](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/research/idle-interaction-sources.json)记录类型、年代及采用范围。
 
 | 来源 | 实际查阅到的机制或设计观点 | 对本项目的推导与边界 |
 | --- | --- | --- |

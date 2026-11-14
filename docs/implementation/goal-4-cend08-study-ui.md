@@ -4,4 +4,4 @@
 
 实现51413948a4c0a2d9c14697526c8fb435bff4c40e，运行3b3f39de288f41606ccf873efa23d51d269903950e2e4c63da57e717ac0d05ca；本地158固定桌面全过、同名解包5子集通过，13精确守卫与冻结正向/类型构建通过。只改两个显示源净−26B，0新画/样式/依赖，旧帽保留。整体美术和真人仍待。
 
-[本地新版试玩](http://127.0.0.1:56927/)；不同端口存储独立，不自动迁移。包/逐项结果/失败与未完成责任见[审查记录](../../goal-4/evidence/cend08/review.md)、[发现](../../goal-4/evidence/cend08/findings.json)、[合同](../decisions/0135-cend08-ui-mainline-review.md)。下一唯一三任务综合CHECK-CEND07-F02B-F02C-CEND08，随后F02配装确认主体、F03来源器具画风。当前兼容/环境性能暂停，完整最终矩阵/最大评审/长期与真人不由本轮关闭。
+[本地新版试玩](http://127.0.0.1:56927/)；不同端口存储独立，不自动迁移。包/逐项结果/失败与未完成责任见[审查记录](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/cend08/review.md)、[发现](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/cend08/findings.json)、[合同](../decisions/0135-cend08-ui-mainline-review.md)。下一唯一三任务综合CHECK-CEND07-F02B-F02C-CEND08，随后F02配装确认主体、F03来源器具画风。当前兼容/环境性能暂停，完整最终矩阵/最大评审/长期与真人不由本轮关闭。

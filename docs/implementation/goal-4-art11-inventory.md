@@ -8,6 +8,6 @@
 
 错误与保存状态下的标题Range、来源父越界、交易库存与周期重叠先真实红后修，原Game／费用／预算／18-14-44及原时限保持。50唯一UI＝新8＋旧42两组实跑，815规则／34当前原生＋精确原298／413资产与类型构建分层。真实15/6/30首次写不早于due。
 
-279受测源码与Gitblob一致，87载荷9068677B与重建／冻结／HTTP相同；Chrome原凡人10/10修为、40石与已结束2轮吐纳可见全文前后相同。没有用户Game动作或存档测试，原13保留；非最终干净候选。完整边界见[证据](../../goal-4/evidence/art11/verification.json)和[审查](../../goal-4/evidence/art11/review.md)。
+279受测源码与Gitblob一致，87载荷9068677B与重建／冻结／HTTP相同；Chrome原凡人10/10修为、40石与已结束2轮吐纳可见全文前后相同。没有用户Game动作或存档测试，原13保留；非最终干净候选。完整边界见[证据](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art11/verification.json)和[审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art11/review.md)。
 
 下一ART12仙缘／命卷，然后CHECK-ART-03；其余艺术、长期平衡、全矩阵、最终干净包／最大评审和真人仍开放。本项未兼容／环境性能，也未推送／合并／公开部署。
