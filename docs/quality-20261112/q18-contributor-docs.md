@@ -1,3 +1,5 @@
+最终接受源9e44eb2已完整验证，见[终态](q18-acceptance.md)；下文阶段记录保原身份。
+
 # Q18 当前入口、历史与可核链接
 
 合同[0166](../decisions/0166-contributor-docs-and-history.md)先入main/d74a84d。实施继承Q17候选99b3e9f，待并入其后续原生夹具修复；Q17尚在完整远端验收，本项不冒前项已接受。

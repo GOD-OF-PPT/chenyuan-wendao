@@ -45,6 +45,7 @@ const emit = defineEmits<{
   inspectPlan: [];
   receipt: [];
   compare: [method: 'natural' | 'assisted'];
+  practice: [];
 }>();
 const store = inject<ReturnType<typeof useGame>>('game-scene')!;
 const game = computed(() => store.game!),
@@ -74,6 +75,9 @@ const needsSchool = computed(
 );
 const goal = computed(() => getBreakthroughGoal(game.value)),
   lifeState = computed(() => lifespanGuidance(game.value));
+const earlyPractice = computed(
+  () => core.value.player.realm === 'qi' && !!game.value.school,
+);
 const pendingStoryError = computed(() => store.unresolved),
   uiLocked = computed(() => store.busy || !store.available);
 const recoveryNeeded = computed(() => !!quote({ type: 'REST' })?.allowed),
@@ -429,9 +433,16 @@ const openTradeoffs = (_kind: 'cultivation', method: 'natural' | 'assisted') =>
     <CultivationNotes
       v-if="!caveGate || needsPreparation"
       data-notes-stage="practice"
+      :label="earlyPractice ? '入门练手与修行' : '修行手记'"
+      :purpose="earlyPractice ? '杂务 · 辅助 · 首战' : '安排 · 取舍 · 回看'"
       :identity="core.runId + core.player.realm + (step?.kind ?? 'idle')"
       :context="goal?.title ?? '听雨潜修'"
       ><div class="art06-secondary-actions"
+        ><button
+          v-if="earlyPractice"
+          data-testid="first-practice-open"
+          @click="emit('practice')"
+          >入门练手：先挣一笔，再试攻守</button
         ><p v-if="step?.kind === 'cultivate'">{{ step.detail }}</p
         ><button
           class="text-button"
