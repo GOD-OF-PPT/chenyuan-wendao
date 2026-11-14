@@ -31,7 +31,7 @@ Q07–Q09为一次独立联合数值交付，覆盖三个报告项；其它逐�
 
 最终同源：1018核心、225UI、535Native、精确正常32、160正式Activity路线及构建通过；远端八作业success，七ZIP核SHA256/CRC/来源，UI大包留远端并核控制器/本地完整执行，详见完整验收。
 
-三任务检查已按组完成：[前组1](check-three-01.md)、[前组2](check-three-02.md)、[Q06/Q07/Q10](q10-three-task-check.md)、[Q11/Q12/Q13](q13-three-task-check.md)、[Q14/Q15/Q16](q16-three-task-check.md)、[Q17/Q18/Q19](q19-three-task-check.md)。各阶段原失败保其原源身份。
+三任务检查已按组完成：[前组1](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/70f4adea2e8dc175b4372731b8d02fbd62723320/docs/quality-20261112/check-three-01.md)、[前组2](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/70f4adea2e8dc175b4372731b8d02fbd62723320/docs/quality-20261112/check-three-02.md)、[Q06/Q07/Q10](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/70f4adea2e8dc175b4372731b8d02fbd62723320/docs/quality-20261112/q10-three-task-check.md)、[Q11/Q12/Q13](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/70f4adea2e8dc175b4372731b8d02fbd62723320/docs/quality-20261112/q13-three-task-check.md)、[Q14/Q15/Q16](q16-three-task-check.md)、[Q17/Q18/Q19](q19-three-task-check.md)。各阶段原失败保其原源身份。
 
 Q14–Q20冻结终态：[Q14](q14-ci-acceptance.md)、[Q15](q15-ci-acceptance.md)、[Q16](q16-ci-acceptance.md)、[Q17](q17-ci-acceptance.md)、[Q18](q18-acceptance.md)、[Q19](q19-ci-acceptance.md)、[Q20](q20-ci-acceptance.md)。
 
