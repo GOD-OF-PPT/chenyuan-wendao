@@ -4,7 +4,7 @@
 
 修复预算旧关闭事件叠开设置、遮挡新预算，以及书册14px小字的真实CJK行框/旧场景样式覆盖。原完整目录、三类草案/有限授权、读秒/费用、原命令重试/原子保存保持。仅两个生产文件，0新画/模块，全部旧cap不涨。
 
-当前完整514桌面UI/57文件、332原生/26文件、815规则/61文件、429资源与类型构建实际通过；旧508及58份spec/helper原字节保留。前轮512/2、第一次样式覆盖未生效、真实2窗/字形越界和准备错误原件不抹去，最终一轮不拼绿。12代表像素的fresh/严格继承、真实与虚拟周期、后续责任见[审查](../../goal-4/evidence/check-art-04/review.md)、[验证](../../goal-4/evidence/check-art-04/verification.json)与[覆盖](../../goal-4/evidence/check-art-04/coverage.json)。
+当前完整514桌面UI/57文件、332原生/26文件、815规则/61文件、429资源与类型构建实际通过；旧508及58份spec/helper原字节保留。前轮512/2、第一次样式覆盖未生效、真实2窗/字形越界和准备错误原件不抹去，最终一轮不拼绿。12代表像素的fresh/严格继承、真实与虚拟周期、后续责任见[审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/check-art-04/review.md)、[验证](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/check-art-04/verification.json)与[覆盖](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/check-art-04/coverage.json)。
 
 运行cdcc10c4，281运行源/87载荷9082812B与受测/Git/重建/冻结/HTTP一致；Chrome原凡人10/10修为、40石与停止2/50进度只读保持，无用户Game操作或用户档测试。原13及dirty身份保留，非最终干净候选。
 

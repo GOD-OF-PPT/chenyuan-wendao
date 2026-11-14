@@ -1,6 +1,6 @@
 # 放置定位、界面清晰度与当前执行边界
 
-日期：2026-10-20，Asia/Shanghai。依据[用户完整原话](../../goal-3/amendments/2026-10-20-idle-clarity-no-compatibility.md)与随后[进一步明确放置玩法设计的原话](../../goal-3/amendments/2026-10-20-idle-gameplay-design.md)。本决定覆盖历史方案的冲突部分；v0.3正文和原始输入保持历史原貌，不表示本决定已全部实现。
+日期：2026-10-20，Asia/Shanghai。依据[用户完整原话](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/amendments/2026-10-20-idle-clarity-no-compatibility.md)与随后[进一步明确放置玩法设计的原话](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/amendments/2026-10-20-idle-gameplay-design.md)。本决定覆盖历史方案的冲突部分；v0.3正文和原始输入保持历史原貌，不表示本决定已全部实现。
 
 后继决定：[全玩法放置与游戏交互准则](0006-idle-gameplay-interaction-rules.md)落实用户“每个小玩法/小行动可放置、逐玩法优化交互”的最新要求，覆盖本文较窄的阶段范围与顺序。下文“不自动购买/炼制/旅行/进入战斗”指不执行**未经玩家安排**的动作；玩家明确选择内容、代价与停止边界后，这些玩法同样须支持放置执行。兼容开发/测试暂停继续生效。
 

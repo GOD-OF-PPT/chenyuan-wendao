@@ -48,16 +48,16 @@ A4曾把“手动接管”误当只读返回：原trace证明查看战策前后�
 
 ## 当前检查与明确未验项
 
-- source5新增14项UI已在同一轮实际通过，740项输入pre/post逐hash相同，0skip/retry。覆盖七招2999+1ms、完整Game/Activity/全部库与唯一原回执、真实正MP三秒、持有原生保存/配额失败及原retry、暂停/隐藏/战策、接管/刷新/旧回执、终态换敌/败退、两种减效与图片失败。原始报告与声明见 `artifacts/goal-4/ta07/ui-current-source5-report.json` 和[14项声明](../../goal-4/evidence/ta07/new14-current-source5-declarations.json)。
-- [时序与正式成果记录](../../goal-4/evidence/ta07/timing-current-source5.json)区分A3真实三秒和虚拟钟。19次保存执行不是19类新覆盖，更不证明长期节奏、平衡或性能。
-- 当前815项规则、61文件及34项相关native已实际通过。34项当前原生与其它未变依赖的继承分别见[原生证明](../../goal-4/evidence/ta07/native-verification-source5.json)，不写成当前同轮332项全跑。
+- source5新增14项UI已在同一轮实际通过，740项输入pre/post逐hash相同，0skip/retry。覆盖七招2999+1ms、完整Game/Activity/全部库与唯一原回执、真实正MP三秒、持有原生保存/配额失败及原retry、暂停/隐藏/战策、接管/刷新/旧回执、终态换敌/败退、两种减效与图片失败。原始报告与声明见 `artifacts/goal-4/ta07/ui-current-source5-report.json` 和[14项声明](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/ta07/new14-current-source5-declarations.json)。
+- [时序与正式成果记录](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/ta07/timing-current-source5.json)区分A3真实三秒和虚拟钟。19次保存执行不是19类新覆盖，更不证明长期节奏、平衡或性能。
+- 当前815项规则、61文件及34项相关native已实际通过。34项当前原生与其它未变依赖的继承分别见[原生证明](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/ta07/native-verification-source5.json)，不写成当前同轮332项全跑。
 - 资源守卫首轮309过/1个新负例前提失败：generic字符串出现两处，仅删首处没有真正删除binding。根已加强为唯一常量匹配与声明/负例并定向通过；完整310项第二轮实际全部通过，186.253秒，744项输入前后相同；当前正向也另行通过。
-- [已声明的33项旧受影响UI](../../goal-4/evidence/ta07/old-related-source5-selection.json)原轮30过/3红；仅修被替换盾面和双方实际受击的旧视觉前提后，原3叶子实际通过，758项输入前后相同。相关47＝新14＋原未变30＋叶子3，非单轮47；旧415中382本轮未执行，不冒429整体通过。根/Vue类型构建、资产终态及提交/归档/HTTP身份均已核对，详见[最终验证](../../goal-4/evidence/ta07/verification.json)。
-- 新五文件31,083/36,000B，其中操作组10,745/12,000B、演员组三文件20,338/24,000B；旧全局反馈33,973/34,000B、ART02 41,602/45,000B、idle-adventure 43,962/45,000B，cap未上调。当前[独立代码审查](../../goal-4/evidence/ta07/source5-code-review.json)没有发现合同范围内剩余代码/安全阻断，不等于最终整体验收。
+- [已声明的33项旧受影响UI](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/ta07/old-related-source5-selection.json)原轮30过/3红；仅修被替换盾面和双方实际受击的旧视觉前提后，原3叶子实际通过，758项输入前后相同。相关47＝新14＋原未变30＋叶子3，非单轮47；旧415中382本轮未执行，不冒429整体通过。根/Vue类型构建、资产终态及提交/归档/HTTP身份均已核对，详见[最终验证](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/ta07/verification.json)。
+- 新五文件31,083/36,000B，其中操作组10,745/12,000B、演员组三文件20,338/24,000B；旧全局反馈33,973/34,000B、ART02 41,602/45,000B、idle-adventure 43,962/45,000B，cap未上调。当前[独立代码审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/ta07/source5-code-review.json)没有发现合同范围内剩余代码/安全阻断，不等于最终整体验收。
 
 ## 实际像素审阅边界
 
-[source5逐图记录](../../goal-4/evidence/ta07/visual-review-source5.json)登记了root实际逐张审阅的8张原PNG：手动操作、护体、真实起手、存档错误、符修缺图/减效、原意图重试、终结和回春。各图保留原PNG/hash与原尺寸JPEG68轻量副本及hash；本实施记录引用该审阅归属，没有重新打开图或新增像素验收。
+[source5逐图记录](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/ta07/visual-review-source5.json)登记了root实际逐张审阅的8张原PNG：手动操作、护体、真实起手、存档错误、符修缺图/减效、原意图重试、终结和回春。各图保留原PNG/hash与原尺寸JPEG68轻量副本及hash；本实施记录引用该审阅归属，没有重新打开图或新增像素验收。
 
 这些代表图确认当前操作层级、完整错误授权、身侧/自身下部反馈、实际成本和导航留白；共20张生成PNG中的另12张没有被该审阅覆盖。八张图、局部几何与代码审查均不能代替所有动画帧、八页整体游戏感或真实用户认可。
 
@@ -65,4 +65,4 @@ A4曾把“手动接管”误当只读返回：原trace证明查看战策前后�
 
 TA07当前工程单元已提交并完成同源试玩闭环。后续TA08采集/委托实体、TA09玉简/器纹、CHECK-TA-03八页复核，以及M04正常路线/恢复、M05性能、M06兼容最后、干净同版本包、最大C端/代码/安全评审与真人复验继续开放。整体美术、长期平衡和用户负面复验不由本项机器绿灯关闭。
 
-回滚只独立revert本项UI/资产/守卫，保DB9/DB1可读、原档、原件、旧冻结/红例、原始输入和13份在途；不降数据库、不删历史。本记录不授权push、合并、公开部署或权限变更。完整check、提交、归档/HTTP及用户只读证明见[最终验证](../../goal-4/evidence/ta07/verification.json)与[杠精审查](../../goal-4/evidence/ta07/review.md)，整体目标继续active。
+回滚只独立revert本项UI/资产/守卫，保DB9/DB1可读、原档、原件、旧冻结/红例、原始输入和13份在途；不降数据库、不删历史。本记录不授权push、合并、公开部署或权限变更。完整check、提交、归档/HTTP及用户只读证明见[最终验证](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/ta07/verification.json)与[杠精审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/ta07/review.md)，整体目标继续active。

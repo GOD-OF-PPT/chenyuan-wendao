@@ -4,6 +4,6 @@
 
 两个原显示文件8495≤8500B，0新位图/字体/依赖，341其它运行输入和39原控制/规则源保持，旧ledger/hash/cap及整源逆回保。当前900运行25d70bc6：278相关规则/749完整资源和类型构建通过；76UI由596同代码生产，343运行/57闭包/1981依赖/112载荷逐字证明后沿用，未冒900重跑。首轮COW副本正向缺规则源失败保，补正后每个新负例先验证本副本正向，完整749重验。
 
-[新版试玩](http://127.0.0.1:56923/)／[审查和原失败](../../goal-4/evidence/cend07-f03/review.md)。当前16图实看/1包图同字节像素继承；包3为76子集。ZIP `artifacts/goal-4/cend07-f03/cend07-f03-preview-900f16c.zip`，10109835B/SHA256 `84eb5e1c1044428b8f6d05114e5b5cba6af31de2a3a96ee109e1fbb9cef0d920`，112载荷11253601B/HTTP核同，原试玩和玩家档未动，formalCandidate=false。
+[新版试玩](http://127.0.0.1:56923/)／[审查和原失败](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/cend07-f03/review.md)。当前16图实看/1包图同字节像素继承；包3为76子集。ZIP `artifacts/goal-4/cend07-f03/cend07-f03-preview-900f16c.zip`，10109835B/SHA256 `84eb5e1c1044428b8f6d05114e5b5cba6af31de2a3a96ee109e1fbb9cef0d920`，112载荷11253601B/HTTP核同，原试玩和玩家档未动，formalCandidate=false。
 
 当前第三项完成，下一必须功法/筹备/行旅三任务全面debug。完整1448、正式候选/最终评审和整体艺术/长期/真人仍待，兼容环境性能暂停。

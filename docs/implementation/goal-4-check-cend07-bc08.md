@@ -4,4 +4,4 @@
 
 正式v44清单1468＝1021UI＋415存储＋32正常已登记、未整跑，旧v1—42签名/原门禁保。整体美术/长期/最终矩阵和最大评审/真人仍待；当前兼容与环境性能暂停。
 
-[原同版本工程试玩](http://127.0.0.1:56927/)继续可用，原56884/玩家档不动。[详细审查与原件](../../goal-4/evidence/check-cend07-bc08/review.md)及[合同](../decisions/0136-three-task-check-cend07-bc08.md)。下一CEND08-F02配装确认真实物件，再F03来源/委托器具画风。只本地独立提交，不合并/推送/公开部署或改变权限。
+[原同版本工程试玩](http://127.0.0.1:56927/)继续可用，原56884/玩家档不动。[详细审查与原件](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/check-cend07-bc08/review.md)及[合同](../decisions/0136-three-task-check-cend07-bc08.md)。下一CEND08-F02配装确认真实物件，再F03来源/委托器具画风。只本地独立提交，不合并/推送/公开部署或改变权限。

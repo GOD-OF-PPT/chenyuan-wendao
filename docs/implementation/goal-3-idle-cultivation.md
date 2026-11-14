@@ -1,6 +1,6 @@
 # Goal3 U2-I：在线周期修炼
 
-2026-10-20，Asia/Shanghai。本轮承接[全玩法准则](../decisions/0006-idle-gameplay-interaction-rules.md)，只交付共享持久活动与修炼首条闭环。原话、实施前参数、验证及回滚见[Goal3计划](../../goal-3/plan.md)与[任务](../../goal-3/tasks.md)。其他24类行动尚未放置化，整体美术、完整玩法、长期平衡与用户验收继续；页面兼容开发及测试保持暂停。
+2026-10-20，Asia/Shanghai。本轮承接[全玩法准则](../decisions/0006-idle-gameplay-interaction-rules.md)，只交付共享持久活动与修炼首条闭环。原话、实施前参数、验证及回滚见[Goal3计划](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/plan.md)与[任务](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/tasks.md)。其他24类行动尚未放置化，整体美术、完整玩法、长期平衡与用户验收继续；页面兼容开发及测试保持暂停。
 
 ## 玩家现在可以做什么
 
@@ -22,7 +22,7 @@ Game、previous、周期回执、活动下一状态同一IndexedDB事务提交�
 
 ## 验证、发现与修正
 
-本轮只在固定1440×900、单一Chromium检查实际改动。最终结果、源与运行文件绑定见[证据](../../goal-3/evidence/u2-i/verification.json)。422项核心规则/时钟检查、16项真实IndexedDB与Store检查、8项实际页面检查通过；包含一条真实30秒墙钟周期。资产正负例、库存守卫、根/Vue类型与生产构建另行核验。虚拟时钟用于长流程规则，不能证明实际成长节奏或趣味。
+本轮只在固定1440×900、单一Chromium检查实际改动。最终结果、源与运行文件绑定见[证据](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/evidence/u2-i/verification.json)。422项核心规则/时钟检查、16项真实IndexedDB与Store检查、8项实际页面检查通过；包含一条真实30秒墙钟周期。资产正负例、库存守卫、根/Vue类型与生产构建另行核验。虚拟时钟用于长流程规则，不能证明实际成长节奏或趣味。
 
 覆盖截止前零收益、连续逐轮积累、费用/预算/保留线、次数与上限停止、暂停与提交竞态、配额/中止回滚、丢回复同命令重试、刷新无离线补发、跨页归属、换人生与v3记录保留。相关指引也更新为“查看时在线活动继续，改做行动先暂停”，避免旧文案误导。
 

@@ -20,7 +20,7 @@
 
 ## 验证状态
 
-当前构建摘要 1a6b51306e58a9c69eb6cfd3f97fc2c0014060deee1cbf4c7261b67eb87c6dfd，170运行源码、56文件7121286B。当前同源48主UI/6补充活动显示/76真实IDB与Store、480相关核心/96资产、根类型与Vue构建全部通过，0skip/retry。48+6是两组独立运行，54唯一用例与当前声明逐项一致；不是一次54全量。见[完整证据](../../goal-3/evidence/u5/verification.json)及[审查](../../goal-3/evidence/u5/review.md)。
+当前构建摘要 1a6b51306e58a9c69eb6cfd3f97fc2c0014060deee1cbf4c7261b67eb87c6dfd，170运行源码、56文件7121286B。当前同源48主UI/6补充活动显示/76真实IDB与Store、480相关核心/96资产、根类型与Vue构建全部通过，0skip/retry。48+6是两组独立运行，54唯一用例与当前声明逐项一致；不是一次54全量。见[完整证据](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/evidence/u5/verification.json)及[审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/evidence/u5/review.md)。
 
 原13项6通过/7失败、原47项45通过/2配置时钟旧helper失败及全部trace保留；原业务断言/时限未删改。曾因226MiB及211—327MiB波动暂停重I/O，后续115MiB恢复6712/6703MiB后完成本次复测，未删除用户数据/历史/旧证据/冻结或其他工作。低盘在途JSON是历史快照，当前结论以本次verification为准。
 

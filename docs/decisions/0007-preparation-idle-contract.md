@@ -1,6 +1,6 @@
 # U5：研习、配装与补给安排合同
 
-2026-10-21，Asia/Shanghai。依据[本次原始输入](../../goal-3/amendments/2026-10-21-heartbeat-u5.md)、[全25类准则](0006-idle-gameplay-interaction-rules.md)与[本轮一手来源](../../goal-3/research/u5-preparation-sources.json)。本文是实施前合同，不是九类已交付或整体游戏已验收。兼容开发/测试继续暂停。
+2026-10-21，Asia/Shanghai。依据[本次原始输入](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/amendments/2026-10-21-heartbeat-u5.md)、[全25类准则](0006-idle-gameplay-interaction-rules.md)与[本轮一手来源](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/research/u5-preparation-sources.json)。本文是实施前合同，不是九类已交付或整体游戏已验收。兼容开发/测试继续暂停。
 
 ## 研究与本项目取舍
 

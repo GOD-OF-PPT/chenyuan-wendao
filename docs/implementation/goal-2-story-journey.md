@@ -1,6 +1,6 @@
 # T06：单屏剧情、仙缘、生平与渡劫终局
 
-2026-10-20，base ad0e0f51801533035951ef88c39775d32fcc5467，分支codex/goal-2-story-journey。承接[用户继续请求](../../goal-2/amendments/2026-10-20-continue-story-journey.md)及[既定目标](../../goal-2/plan.md)。先保存本方案/plan/tasks，再改代码。
+2026-10-20，base ad0e0f51801533035951ef88c39775d32fcc5467，分支codex/goal-2-story-journey。承接[用户继续请求](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-2/amendments/2026-10-20-continue-story-journey.md)及[既定目标](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-2/plan.md)。先保存本方案/plan/tasks，再改代码。
 
 本轮只执行T06及CHECK-02，整体美术与用户复验未完成；全部兼容整体仍最低T08。原生目标只读blocked，不伪报active/complete。
 
@@ -60,7 +60,7 @@
 
 最终225项及24条路线均使用22fb固定构建。补充的30项沿用原三引擎配置、8/15/8秒和0retry，在独立4177端口执行，未改主配置；第一次临时配置缺web cwd的启动失败保留，修为同一web工作目录后30全过，不将启动失败算业务执行。原人物/手记遍历使用93条的入场前缀，另用真实引擎结尾前缀确认恰100条，逐条完整重组且Game不变；不以用例名冒称样本已满100。
 
-17张[当前实拍与核对](../../goal-2/evidence/t06/verification.json)已逐张查看、完整解码及hash核对，原图复制无像素编辑，包含实际人物、当前选择/问心/结尾、三种收卷确认、准备/恢复/战报及满100条手记。部分补充帧带阅读过渡与旧大演出，不能作为静态对比样本；旧窄窗演出C02仍留T08，整体构图/标题和留白继续T07。测试、代理审图和本项完成均不是用户认可。
+17张[当前实拍与核对](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-2/evidence/t06/verification.json)已逐张查看、完整解码及hash核对，原图复制无像素编辑，包含实际人物、当前选择/问心/结尾、三种收卷确认、准备/恢复/战报及满100条手记。部分补充帧带阅读过渡与旧大演出，不能作为静态对比样本；旧窄窗演出C02仍留T08，整体构图/标题和留白继续T07。测试、代理审图和本项完成均不是用户认可。
 
 CHECK-02在本轮综合复核T04/T05/T06默认字号主舞台、全部入口、完整成长/剧情/终局路径、只读导航与原子保存；数据库/规则/版本未改。全部旧预算、原动作/导航/断言/单用例预算保持。最终完整UI/IDB/72正常/60恢复/30冷性能不在本轮225专项范围内，保留T09；真实玩家、真机、趣味、平衡与整体美术认可均未冒称完成。
 

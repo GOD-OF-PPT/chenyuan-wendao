@@ -8,4 +8,4 @@
 
 303 Git运行blob/受测/重建/冻结同，94载荷9730526B及原56884 HTTP全解码同。原Chrome已保存停止后只读更新，新背景ready，公开进度逐字保持；没有用户DB/完整Game读取、测试、导入恢复重开、暂停或新Game动作。原13在途未改未提交，dirty工程版不是干净候选，无push/合并/公开部署/权限变动。
 
-详[检查与范围](../../goal-4/evidence/art27/checks.json)、[原失败与审查](../../goal-4/evidence/art27/review.md)、[原试玩](../../goal-4/evidence/art27/user-preview.json)。三项第1完成，下一ART28丹炉场景与材料/当前决定艺术；整体艺术/游戏感/长期与真人、原ART17四性能红、最终所有矩阵/兼容最后/干净包/最大评审未完成。当前不恢复兼容或环境性能。
+详[检查与范围](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art27/checks.json)、[原失败与审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art27/review.md)、[原试玩](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art27/user-preview.json)。三项第1完成，下一ART28丹炉场景与材料/当前决定艺术；整体艺术/游戏感/长期与真人、原ART17四性能红、最终所有矩阵/兼容最后/干净包/最大评审未完成。当前不恢复兼容或环境性能。

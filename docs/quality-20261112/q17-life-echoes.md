@@ -1,3 +1,5 @@
+最终接受源dbea933已完整验收，见[终态](q17-ci-acceptance.md)；下文阶段记录保原身份。
+
 # Q17 此生账本、结局回响与下一世
 
 2026-11-14。合同[0165](../decisions/0165-life-echoes-and-seeded-encounters.md)已先入main/b4908bc；实施继承Q16接受源`7c67f7b6b9b87252e2fe5dd91c17604d74ef34e5`。本记录为候选阶段，独立审查与完整冻结验收尚未闭合。

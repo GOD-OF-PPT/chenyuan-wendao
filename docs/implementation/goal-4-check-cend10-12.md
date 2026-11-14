@@ -4,7 +4,7 @@
 
 完整27文件194相关UI单轮1607.646455秒通过，原196中2个混合暂停整例事前延期并保原断言。当前完整核心1074规则工具/800唯一资源、十门禁和构建通过；预检查2与解包同名2均为194子集。矩阵预检查原156过1红已保存，认可v51后移下一未知为52并补真实outer对未执行全库存拒绝，完整157重验及当前1074通过。v51声明1493，未整轮全跑。
 
-原正常全32结果保8f实际生产身份，33完整依赖闭包/350运行、两受测1981依赖全集/112载荷及完整有效配置/当前32声明核同后承接，未冒当前重跑；JSON报告遗漏的use/expect另从同版本真实loader取得，actualWorkers执行元数据明确复原。[综合审查](../../goal-4/evidence/check-cend10-12/review.md)／[实际检查](../../goal-4/evidence/check-cend10-12/checks.json)／[原始证据](../../goal-4/evidence/check-cend10-12/raw-index.json)。26张图文件直接实看、11同PNG承接，原PNG/JPEG68和完整hash链保，非整体艺术验收。
+原正常全32结果保8f实际生产身份，33完整依赖闭包/350运行、两受测1981依赖全集/112载荷及完整有效配置/当前32声明核同后承接，未冒当前重跑；JSON报告遗漏的use/expect另从同版本真实loader取得，actualWorkers执行元数据明确复原。[综合审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/check-cend10-12/review.md)／[实际检查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/check-cend10-12/checks.json)／[原始证据](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/check-cend10-12/raw-index.json)。26张图文件直接实看、11同PNG承接，原PNG/JPEG68和完整hash链保，非整体艺术验收。
 
 [原同版本地工程试玩](http://127.0.0.1:56945/)。复用 `/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/verified/cend11-mainline-preview-411b51f.zip`，10123543字节，SHA256 `858a9788bf4bdbd100c325f63ca7778ce88ddb24d14c8b87d70e9a08d18c1a2d`；解压后 `python3 serve.py`。本轮核心/UI消费者c446fe7，生产411b51f/运行6354e659，71UI闭包/350运行/1981依赖/112载荷/336HTTP及旧ZIP/解包一致；未重启/重打包或触玩家档。
 

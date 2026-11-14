@@ -39,4 +39,4 @@
 
 [杠精审查] 实施前范围通过：本轮有真实跨版本组合与已定位恢复/标记问题，不是重述三项绿灯；兼容明确暂停，原数值/时长/预算和未验责任保留。实现和验收尚未完成。
 
-交付补记（2026-10-21）：当前独立范围实现b174f23已本地交付；90UI/115真实IDB/515规则/104资源及类型构建通过，107图逐图复核，受测/提交归档/冻结/HTTP逐hash一致。原试玩可见进度只读保持。实际修正、原失败与未完成责任见[实施记录](../implementation/goal-3-idle-check-02.md)及[证据](../../goal-3/evidence/check-idle-02/verification.json)；本补记不将实施前状态改写为当时已完成，也不关闭U8/整体Goal/真人。
+交付补记（2026-10-21）：当前独立范围实现b174f23已本地交付；90UI/115真实IDB/515规则/104资源及类型构建通过，107图逐图复核，受测/提交归档/冻结/HTTP逐hash一致。原试玩可见进度只读保持。实际修正、原失败与未完成责任见[实施记录](../implementation/goal-3-idle-check-02.md)及[证据](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/evidence/check-idle-02/verification.json)；本补记不将实施前状态改写为当时已完成，也不关闭U8/整体Goal/真人。

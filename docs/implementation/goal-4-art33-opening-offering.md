@@ -2,8 +2,8 @@
 
 代码 `ea1fb500837d53cc9a5ac8094a6f4e8441b88096`，合同[0071](../decisions/0071-opening-offering-art33-contract.md)。沈清禾与真实药匣成为当前对象，三种同权药签保留原完整代价/说明/确认；查看不执行，确认后原6秒仅一次，原子保存才落定。已安排/暂停/他页未接管/失败各自可辨，完整说明、剑简与12篇帮助仍可回看，八入口保留。两幅内置imagegen原PNG、[逐字提示词与参考](../../art/redesign/art33/prompts.json)、本地审计和双确定导出全保，runtime合137896B，未知model/requestId保持null。
 
-[当前检查](../../goal-4/evidence/art33/checks.json)：142相关UI（含9新增）/69原生存储/99规则/532资源及类型构建通过；22最终帧13新审+9相同PNG继承，暂停alpha6300真红→0修复全链保。306旧运行输入同、原App/Gate script保，旧帽不放宽；新view11987/12000。全部失败/作者前提、代码/源和像素分层见[审查](../../goal-4/evidence/art33/review.md)。
+[当前检查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art33/checks.json)：142相关UI（含9新增）/69原生存储/99规则/532资源及类型构建通过；22最终帧13新审+9相同PNG继承，暂停alpha6300真红→0修复全链保。306旧运行输入同、原App/Gate script保，旧帽不放宽；新view11987/12000。全部失败/作者前提、代码/源和像素分层见[审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art33/review.md)。
 
-[身份](../../goal-4/evidence/art33/identity-proof.json)绑定313 Git/受测/重建/冻结与102 HTTP载荷，[原试玩](http://127.0.0.1:56884/)公开进度更新前后逐字同。原自然1440×756只读观察，未覆盖窗口或用用户档测试；新开场实拍来自隔离档。13原在途未改未提交，dirty工程版非最终干净候选，无push/合并/公开部署/权限/自动化变化。
+[身份](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art33/identity-proof.json)绑定313 Git/受测/重建/冻结与102 HTTP载荷，[原试玩](http://127.0.0.1:56884/)公开进度更新前后逐字同。原自然1440×756只读观察，未覆盖窗口或用用户档测试；新开场实拍来自隔离档。13原在途未改未提交，dirty工程版非最终干净候选，无push/合并/公开部署/权限/自动化变化。
 
 本轮三项第2，下一仅ART34采集/委托对象与主次信息，第3后综合。整体艺术/游戏感/长期/真人、其余复审问题、J01/ART17/ART28-OBS-01及全部最终矩阵/同版干净包/最大review仍未完成；当前兼容和环境性能暂停，Goal仍active。

@@ -1,6 +1,6 @@
 # ART01 正式丹炉对象交互与技术美术
 
-2026-10-23，本地实现b1e325b，合同[0022](../decisions/0022-alchemy-object-art-contract.md)，[验证与限制](../../goal-4/evidence/art01/verification.json)。仅本项工程交付，整体美术/游戏感仍待逐页实施与用户复验。
+2026-10-23，本地实现b1e325b，合同[0022](../decisions/0022-alchemy-object-art-contract.md)，[验证与限制](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art01/verification.json)。仅本项工程交付，整体美术/游戏感仍待逐页实施与用户复验。
 
 默认界面围绕丹方册、真实药匣、炉体开炉和成品匣。完整炉次/目标/预算/保留/预估按需打开，有限授权始终可见；查看来源不执行旅行/采购，外地前往洞府不自动开炉。原7丹方与forge能力、正式规则/Store/DB9/数值/时长不变。
 

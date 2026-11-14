@@ -1,6 +1,6 @@
 # CHECK-IDLE-01：修炼、取材与生产的综合检查
 
-2026-10-21，Asia/Shanghai。承接[本次完整输入](../../goal-3/amendments/2026-10-21-heartbeat-check-idle-01.md)与[实施前计划](../../goal-3/plan.md)，综合U2-I/U3/U4，只完成本检查项。下一项U5尚未实施；已放置化仍为4/25类，当前检查不能代替其他21类、整体美术/可玩性、长期平衡或真人验收。全部页面兼容及环境性能开发/测试继续暂停。
+2026-10-21，Asia/Shanghai。承接[本次完整输入](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/amendments/2026-10-21-heartbeat-check-idle-01.md)与[实施前计划](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/plan.md)，综合U2-I/U3/U4，只完成本检查项。下一项U5尚未实施；已放置化仍为4/25类，当前检查不能代替其他21类、整体美术/可玩性、长期平衡或真人验收。全部页面兼容及环境性能开发/测试继续暂停。
 
 ## 修复的接续缺陷
 
@@ -9,7 +9,7 @@
 3. 已拥有法宝的独立装备按钮恢复正式EQUIP_RELIC规则预览；战斗、待决事件、忙碌、活动运行或存储未就绪时禁用并说明原因，不等点击读秒后才拒绝。炼成不自动装备，规则/费用不变。
 4. 综合真实30秒炼丹发现单调读秒结束后，Repository仍可能认为绝对截止未到；Store将ACTIVITY_NOT_DUE当不可重试失败，活动停在running却不再推进。现在先完整等待在线周期，再可取消地等待存档dueAt；检查到事务之间再次回拨，也只补等实际余量，使用原tick继续核对，不改DB门槛、不提前给收益、不重等完整周期。暂停、重连、接管、卸载能取消等待；真实配额/中止错误仍可按原周期重试，丢回复仍以稳定回执重放。
 
-第四处原trace记录单炉maxCycles=1、零消耗/成品；首次错误画面已超过dueAt约859ms却未恢复。原始两个时间源的具体差量没有捕获，不能冒称原失败恰好差1ms。现有Store/IDB seam通过只改Date.now偏移稳定复现了1ms落后、检查至事务再次回拨和取消边界，先红后绿证据见[审查](../../goal-3/evidence/check-idle-01/review.md)。没有调整正式周期、超时、重试次数或成丹数来造绿。
+第四处原trace记录单炉maxCycles=1、零消耗/成品；首次错误画面已超过dueAt约859ms却未恢复。原始两个时间源的具体差量没有捕获，不能冒称原失败恰好差1ms。现有Store/IDB seam通过只改Date.now偏移稳定复现了1ms落后、检查至事务再次回拨和取消边界，先红后绿证据见[审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/evidence/check-idle-01/review.md)。没有调整正式周期、超时、重试次数或成丹数来造绿。
 
 ## 当前验证
 
@@ -23,6 +23,6 @@
 
 ## 提交、试玩与剩余
 
-本地实现2c84b365214e982d8f84d741b8ebfd41c3406d0e已提交，161运行源码与受测/提交逐hash一致；56文件7056804B与冻结/HTTP一致，摘要706e6948315f58ac87389921c6da99ad527f75c0363e3cf668c58d9e6e9abe37。原试玩56884已更新，原进度顾长青/凡人/修为5/10/灵石40/月1/气血60/灵力20前后保持，未执行用户Game动作。启动的here-document临时文件失败后用直接argv立即启动已核验冻结程序，HTTP全部文件重新核对；未扩大权限或删用户数据。报告仍保留真实提交前dirty身份，精确运行源码另绑定实现提交。报告与实际交付绑定见[verification.json](../../goal-3/evidence/check-idle-01/verification.json)。独立本地分支codex/goal-3-idle-review，检查后提交，再按精确源码/运行文件核对冻结与HTTP；用户原试玩进度只读前后核对，不执行、导入、恢复或重置用户Game。旧冻结与DB6读取保留，Game/数值/内容/DB格式不变；回滚以新提交退界面/调度，不降DB或直接使用不兼容旧程序。
+本地实现2c84b365214e982d8f84d741b8ebfd41c3406d0e已提交，161运行源码与受测/提交逐hash一致；56文件7056804B与冻结/HTTP一致，摘要706e6948315f58ac87389921c6da99ad527f75c0363e3cf668c58d9e6e9abe37。原试玩56884已更新，原进度顾长青/凡人/修为5/10/灵石40/月1/气血60/灵力20前后保持，未执行用户Game动作。启动的here-document临时文件失败后用直接argv立即启动已核验冻结程序，HTTP全部文件重新核对；未扩大权限或删用户数据。报告仍保留真实提交前dirty身份，精确运行源码另绑定实现提交。报告与实际交付绑定见[verification.json](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-3/evidence/check-idle-01/verification.json)。独立本地分支codex/goal-3-idle-review，检查后提交，再按精确源码/运行文件核对冻结与HTTP；用户原试玩进度只读前后核对，不执行、导入、恢复或重置用户Game。旧冻结与DB6读取保留，Game/数值/内容/DB格式不变；回滚以新提交退界面/调度，不降DB或直接使用不兼容旧程序。
 
 没有推送、合并、新PR、公开部署或改权限，避免触发暂停的旧兼容CI。原8份在途文件及5份未跟踪矩阵工具保留；候选隔离4项因约1.146GB临时需求仍留T04/最终候选。原IAB1280×720的显示缺口维持未验，不因此恢复兼容。后续复用automation-3按U5→U6→U7→CHECK-IDLE-02→U8及最终候选/用户复验接续；原生Goal仍blocked，不伪报恢复或整体完成。

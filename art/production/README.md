@@ -1,6 +1,6 @@
 # T18 生产资产来源与导出
 
-本目录保留本轮4场景与5肖像的9份被选中原稿，另保留1份登仙台编辑输入，不是回取的两组历史高清原件，也没有放大/切片320预览。用户[原始目标](../../goal-1/input.md)与[实施计划](../../goal-1/plan.md)授权本项目制作和使用这些资产。使用内置image_gen；实际工具未返回模型名，不猜测模型/版本。未使用外部照片、字体文件、音乐或参考仓库资产。
+本目录保留本轮4场景与5肖像的9份被选中原稿，另保留1份登仙台编辑输入，不是回取的两组历史高清原件，也没有放大/切片320预览。用户[原始目标](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-1/input.md)与[实施计划](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-1/plan.md)授权本项目制作和使用这些资产。使用内置image_gen；实际工具未返回模型名，不猜测模型/版本。未使用外部照片、字体文件、音乐或参考仓库资产。
 
 完整逐资产提示词见[receipts/prompts.json](receipts/prompts.json)，每张对应receipt保留实际工具output_hint、默认原路径、复制事实与hash。原PNG从工具保存位置逐字节复制，默认原稿留存；不把生成成功视为T25风格/真人认可。主角/NPC服饰与外貌属于视觉提案，不新增境界、师徒年数、交情或身世事实。
 

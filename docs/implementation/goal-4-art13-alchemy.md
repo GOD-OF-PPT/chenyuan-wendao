@@ -6,6 +6,6 @@
 
 当前98唯一UI=完整新6＋完整旧92两轮；815规则、34当前存储恢复/精确298继承、425资产/类型构建分别有证。实际字体继承、四材料错误重叠、暂停文字越界、错误续接提示与小画件备用内容溢出均先红后修；全部旧原子/费用/时限断言保留。真实30秒样本30495.1ms，put/complete未采明确null。11代表像素fresh，不冒全部生成帧或整体美术认可。
 
-280运行源/21实施输入与Gitblob、87载荷9077146B与提交后重建/冻结/HTTP一致。原用户可见进度只读保持，未执行用户Game或存档测试，原13未变未提交。详细合同见[0041](../decisions/0041-alchemy-single-furnace-art13-contract.md)，证据见[verification](../../goal-4/evidence/art13/verification.json)和[复核](../../goal-4/evidence/art13/review.md)。
+280运行源/21实施输入与Gitblob、87载荷9077146B与提交后重建/冻结/HTTP一致。原用户可见进度只读保持，未执行用户Game或存档测试，原13未变未提交。详细合同见[0041](../decisions/0041-alchemy-single-furnace-art13-contract.md)，证据见[verification](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art13/verification.json)和[复核](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art13/review.md)。
 
 当前仅此项工程完成，整体美术/长期平衡/真人与全部后段保持；下一ART14器谱锁面，再ART15修行层级及三项检查。兼容/环境性能当前未执行，最终兼容仍最后；无推送/合并/公开部署/权限变更。回滚仅本项revert，保全部原件和DB9可读性。

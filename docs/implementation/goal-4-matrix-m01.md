@@ -2,7 +2,7 @@
 
 连接/读取归属、销毁、真实closed、旧控制快照及普通/排队同步失败已定向红绿修复。已确认写入保留真实Game/result，之后读取问题显示同步待核对；失败读取不再冒称该配装未提交。DB9、规则、费用、周期、命令/CAS与原意图重试不变。
 
-06945b46实际完整212UI/208IDB/731规则/136资源通过，0skip/retry、声明精确相等；最终3fd9e755只有同步原因文字差异，193相同源码/Store精确反向差异证明，最终2UI+4native及类型/正向另实跑。没有重标旧报告。详见[证据](../../goal-4/evidence/matrix-m01/verification.json)。
+06945b46实际完整212UI/208IDB/731规则/136资源通过，0skip/retry、声明精确相等；最终3fd9e755只有同步原因文字差异，193相同源码/Store精确反向差异证明，最终2UI+4native及类型/正向另实跑。没有重标旧报告。详见[证据](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/matrix-m01/verification.json)。
 
 32native/2UI是已有总数子集。所有原红、测试前提错误、2optional positives和像素文案红保留；2当前恢复图实际看原尺寸JPEG68，整体游戏美术负面未关闭。原13保护、提交/冻结HTTP/原用户可见进度闭环后登记任务。
 

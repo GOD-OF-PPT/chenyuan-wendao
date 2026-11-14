@@ -4,7 +4,7 @@
 
 修行/境门把完整安排、取舍、恢复与成果归为可翻阅手记。常态保主要行动、真实代价和有限授权；阅读即时，返回原上下文，普通周期保存不重建时钟。新边界纯UI4486/6000B，0新位图，旧cap不涨，规则/存储/费用/原确认保持。
 
-当前118唯一UI来自新6和完整相关旧112两轮同源执行，815规则、34当前原生恢复和429完整资源守卫/类型构建通过；298仅有据继承，非全508或当前一轮332。8固定桌面代表图实际逐张看，生成清单不等全像素。实际缺口、原错误、测试前提与原始报告保留，详见[审查](../../goal-4/evidence/art15/review.md)、[验证](../../goal-4/evidence/art15/verification.json)和[覆盖](../../goal-4/evidence/art15/coverage.json)。
+当前118唯一UI来自新6和完整相关旧112两轮同源执行，815规则、34当前原生恢复和429完整资源守卫/类型构建通过；298仅有据继承，非全508或当前一轮332。8固定桌面代表图实际逐张看，生成清单不等全像素。实际缺口、原错误、测试前提与原始报告保留，详见[审查](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art15/review.md)、[验证](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art15/verification.json)和[覆盖](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-4/evidence/art15/coverage.json)。
 
 运行72dc0653，281运行源/87载荷9082774B与受测/Git/提交后重建/冻结/原56884实际HTTP同。Chrome顾长青凡人10/10修为、40石、停止2/50和已保存的HUD/活动只读保持；无用户Game执行或存档测试。原13在途及dirty身份保留，非最终干净候选。
 
