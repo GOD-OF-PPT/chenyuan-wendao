@@ -1,6 +1,6 @@
 # 质量评审交付状态
 
-2026-11-14。完整20项目标持续active；19项已通过独立功能PR递交，功能仍在叠放分支，没有自动合并main。完整性、CI、真人与长期体验分别按实际证据认定。
+2026-11-14。完整20项目标持续active；20项已通过独立功能PR递交，功能仍在叠放分支，没有自动合并main。完整性、CI、真人与长期体验分别按实际证据认定。
 
 | 报告项 | 递交 |
 | --- | --- |
@@ -21,7 +21,7 @@
 | Q17 终局与重玩 | [PR61](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/61)，[冻结终态](q17-ci-acceptance.md) |
 | Q18 文档整理 | [PR62](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/62)，[冻结终态](q18-acceptance.md) |
 | Q19 新手经济环 | [PR63](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/63)，[冻结终态](q19-ci-acceptance.md)和[综合](q19-three-task-check.md) |
-| Q20 新增资产体积策略 | 0168已登记，候选43e1b3f独立审查修复中，不改写已发布历史 |
+| Q20 新增资产体积策略 | [PR64](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/64)，[冻结终态](q20-ci-acceptance.md)，仅未来大原稿策略 |
 
 Q07–Q09覆盖三个报告项但为一次独立联合交付。当前组三项为Q14/Q15/Q16，Q16后强制综合检查。旧失败与所有未执行的兼容/环境性能、长期/真人、整体美术及最终整体审查责任保持。
 
@@ -32,3 +32,5 @@ Q17已在dbea933完整闭合：1013核心、212UI、520Native、正常32及160�
 Q18已在9e44eb2完整本地核心/构建/文档与独立审查闭合，运行源和载荷逐字同Q17；当前18/20。继续Q19入门练手，随后三任务综合、Q20及最终审查。
 
 Q19已在d738091完整闭合，Q17/Q18/Q19综合完成；当前19/20。Q20未来原稿门禁和最终全20项审查继续。
+
+20项主体均已递交且有接受结果。原生目标继续active：最后代码/安全枚举P2按0169/[PR65](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/65)已修复且独立关闭，70f4ade正在完整回归，最终终态/收尾记录仍待。
