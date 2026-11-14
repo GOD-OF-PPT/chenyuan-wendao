@@ -128,8 +128,11 @@ test('the actual v4 client refuses a v5 life without changing any store', async 
     const h = (window as any).h,
       old = await import(
         `/@fs${root}src/legacy/rules-v4/web/src/full-persistence.ts`
+      ),
+      published = await import(
+        `/@fs${root}src/legacy/rules-v5/web/src/full-persistence.ts`
       );
-    const repo = await h.FullSaveRepository.open('q16-old-client');
+    const repo = await published.FullSaveRepository.open('q16-old-client');
     let reader: any;
     try {
       const created = await repo.create('新约', h.mutation()),
