@@ -1,3 +1,5 @@
+最终接受源d738091已完整验收，见[终态](q19-ci-acceptance.md)与[综合](q19-three-task-check.md)；下文阶段记录保原身份。
+
 # Q19 第一笔灵石与首战读敌意
 
 合同[0167](../decisions/0167-first-practice-and-economy-loop.md)先入main/ba4d1eb。实施继承Q18接受源9e44eb2，承接其终态和Q17/dbea933，不改已接受功能头。本记录为候选阶段，完整冻结验收、独立审查和PR尚待。
