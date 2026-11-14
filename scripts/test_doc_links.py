@@ -64,6 +64,18 @@ class DocumentLinks(unittest.TestCase):
         self.assertEqual(result['errors'][0]['target'], 'absent.md')
         self.assertEqual(result['externalLinksNotFetched'], 1)
 
+    def test_inline_syntax_examples_are_literal_while_balanced_destinations_remain_live(self):
+        self.write('folder/name(with).md', '# Real\n')
+        self.write('README.md', 'Use `[example](missing.md)` and ``[example][absent]`` as literal examples.\n'
+                   '[`actual`](folder/name(with).md#real)\n[escaped](folder/name\\(with\\).md)\n')
+        self.track()
+        result = doc_links.check(self.root)
+        self.assertTrue(result['passed'], result)
+        self.assertEqual(result['localLinks'], 2)
+        self.write('README.md', '[actual](folder/missing(with).md)\n')
+        result = doc_links.check(self.root)
+        self.assertEqual(result['errors'][0]['target'], 'folder/missing(with).md')
+
 
 if __name__ == '__main__':
     unittest.main()

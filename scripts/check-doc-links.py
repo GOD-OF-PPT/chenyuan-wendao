@@ -31,10 +31,70 @@ def prose(text):
     return re.sub(r'<!--.*?-->', lambda m: '\n' * m[0].count('\n'), ''.join(rows), flags=re.S)
 
 
+def inline_prose(text):
+    """Mask matching backtick runs; preserve offsets and line numbers."""
+    runs = list(re.finditer(r'`+', text))
+    masked = list(text)
+    index = 0
+    while index < len(runs):
+        opening = runs[index]
+        prefix = text[:opening.start()]
+        if len(prefix) - len(prefix.rstrip('\\')) & 1:
+            index += 1
+            continue
+        closing = next((i for i in range(index + 1, len(runs))
+                        if len(runs[i][0]) == len(opening[0])), None)
+        if closing is None:
+            index += 1
+            continue
+        for i in range(opening.start(), runs[closing].end()):
+            if masked[i] != '\n':
+                masked[i] = ' '
+        index = closing + 1
+    return ''.join(masked)
+
+
+def destination(text, start):
+    """Read a bare balanced or angle-wrapped Markdown destination."""
+    index = start
+    while index < len(text) and text[index].isspace():
+        index += 1
+    value = []
+    if index < len(text) and text[index] == '<':
+        end = text.find('>', index + 1)
+        if end < 0 or '\n' in text[index:end]:
+            return None
+        return text[index + 1:end], end + 1
+    depth = 0
+    while index < len(text):
+        char = text[index]
+        if char == '\\' and index + 1 < len(text):
+            value.append(text[index + 1])
+            index += 2
+            continue
+        if char.isspace() or (char == ')' and depth == 0):
+            break
+        if char == '(':
+            depth += 1
+        elif char == ')':
+            depth -= 1
+        value.append(char)
+        index += 1
+    return (''.join(value), index) if depth == 0 else None
+
+
 def links(text):
-    text = prose(text)
-    for match in re.finditer(r'!?\[[^\]\n]*\]\((<[^>]+>|[^\s)]+)(?:\s+[\"\'][^\n]*?[\"\'])?\)', text):
-        yield text.count('\n', 0, match.start()) + 1, html.unescape(match[1].strip('<>'))
+    rendered = prose(text)
+    text = inline_prose(rendered)
+    for match in re.finditer(r'!?\[[^\]\n]*\]\(', text):
+        parsed = destination(rendered, match.end())
+        if parsed is None:
+            continue
+        target, end = parsed
+        # A destination must belong to a complete link, with an optional title.
+        suffix = rendered[end:]
+        if re.match(r'\s*(?:[\"\'][^\n]*?[\"\']\s*)?\)', suffix):
+            yield text.count('\n', 0, match.start()) + 1, html.unescape(target)
     for match in re.finditer(r'^ {0,3}\[[^\]\n]+\]:\s*(<[^>]+>|\S+)', text, re.M):
         yield text.count('\n', 0, match.start()) + 1, html.unescape(match[1].strip('<>'))
     for match in re.finditer(r'<(?:a|img)\b[^>]*?\b(?:href|src)=[\"\']([^\"\']+)', text, re.I):
@@ -79,7 +139,7 @@ def check(root=ROOT):
             errors.append({'file': name, 'line': 1, 'target': name, 'reason': 'document missing'})
             continue
         text = document.read_text(encoding='utf-8')
-        visible = prose(text)
+        visible = inline_prose(prose(text))
         definitions = {m[1].strip().lower() for m in re.finditer(r'^ {0,3}\[([^\]\n]+)\]:', visible, re.M)}
         for match in re.finditer(r'!?\[([^\]\n]+)\]\[([^\]\n]*)\]', visible):
             identifier = (match[2] or match[1]).strip().lower()
