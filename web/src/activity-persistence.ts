@@ -1,4 +1,9 @@
 import {
+  isV5Rules,
+  PUBLISHED_V5_RULES_VERSION,
+} from '../../src/full/rule-profile.ts';
+import * as published from '../../src/legacy/rules-v5/web/src/activity-persistence.ts';
+import {
   isPreviousRules,
   PREVIOUS_RULES_VERSION,
 } from '../../src/full/rule-profile.ts';
@@ -20,10 +25,14 @@ export function validateActivityReceipt(
   )
     if (isPreviousRules(game))
       legacyCall(() => previous.validateActivityReceipt(value, game));
+    else if (isV5Rules(game))
+      legacyCall(() => published.validateActivityReceipt(value, game));
     else current.validateActivityReceipt(value, game);
   else if (isLegacyRules(game))
     legacyCall(() => old.validateActivityReceipt(value, game));
   else if (isPreviousRules(game))
     legacyCall(() => previous.validateActivityReceipt(value, game));
+  else if (isV5Rules(game))
+    legacyCall(() => published.validateActivityReceipt(value, game));
   else current.validateActivityReceipt(value, game);
 }

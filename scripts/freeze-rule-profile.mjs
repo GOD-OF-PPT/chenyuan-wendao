@@ -14,8 +14,8 @@ const base = git('rev-parse', process.argv[2] ?? 'f0323f9')
 if (!/^[a-f0-9]{40}$/.test(base))
   throw Error('Expected an immutable source commit');
 const profile = process.argv[3] ?? '3';
-if (!['3', '4'].includes(profile))
-  throw Error('Expected published rule profile 3 or 4');
+if (!['3', '4', '5'].includes(profile))
+  throw Error('Expected published rule profile 3, 4 or 5');
 const destination = path.resolve(root, 'src/legacy/rules-v' + profile);
 if (path.relative(root, destination).startsWith('..'))
   throw Error('Frozen rule destination escaped the workspace');
@@ -39,7 +39,7 @@ const roots = [
   'web/src/direct-persistence.ts',
   'web/src/full-persistence.ts',
 ];
-if (profile === '4')
+if (profile !== '3')
   roots.push(
     'src/full/scheduled-activity.ts',
     'web/src/scheduled-persistence.ts',
@@ -105,7 +105,7 @@ const exports = {
   configurationReceipt: 'web/src/configuration-persistence.ts',
   directReceipt: 'web/src/direct-persistence.ts',
 };
-if (profile === '4')
+if (profile !== '3')
   Object.assign(exports, {
     scheduled: 'src/full/scheduled-activity.ts',
     scheduledReceipt: 'web/src/scheduled-persistence.ts',
@@ -115,7 +115,7 @@ const entry =
   '// Generated immutable v' +
   profile +
   ' rule adapter. See source-manifest.json and decision ' +
-  (profile === '3' ? '0156' : '0164') +
+  (profile === '3' ? '0156' : profile === '4' ? '0164' : '0165') +
   '.\n' +
   Object.entries(exports)
     .map(([name, file]) => `export * as ${name} from './${file}';`)

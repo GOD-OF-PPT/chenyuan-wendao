@@ -15,7 +15,7 @@ const run = (cwd) =>
     { cwd, encoding: 'utf8', maxBuffer: 4_000_000 },
   );
 
-test('current instant120 audit binds v5 engine provenance while the historical v3 report remains immutable', () => {
+test('current instant120 audit binds v6 engine provenance while the historical v3 report remains immutable', () => {
   const historical = fs.readFileSync(
     path.join(root, 'docs/economy/current-report.json'),
   );
@@ -32,8 +32,8 @@ test('current instant120 audit binds v5 engine provenance while the historical v
     historicalReport,
     ...currentResults
   } = current;
-  assert.equal(currentResults.contentVersion, 'full-demo.5');
-  assert.equal(currentResults.balanceVersion, 'full-unbalanced.5');
+  assert.equal(currentResults.contentVersion, 'full-demo.6');
+  assert.equal(currentResults.balanceVersion, 'full-unbalanced.6');
   assert.equal(oldResults.contentVersion, 'full-demo.3');
   assert.equal(oldResults.balanceVersion, 'full-unbalanced.3');
   assert.notEqual(

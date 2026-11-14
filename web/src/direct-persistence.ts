@@ -1,4 +1,9 @@
 import {
+  isV5Rules,
+  PUBLISHED_V5_RULES_VERSION,
+} from '../../src/full/rule-profile.ts';
+import * as published from '../../src/legacy/rules-v5/web/src/direct-persistence.ts';
+import {
   isPreviousRules,
   PREVIOUS_RULES_VERSION,
 } from '../../src/full/rule-profile.ts';
@@ -16,5 +21,7 @@ export function validateDirectReceipt(
     legacyCall(() => old.validateDirectReceipt(value, game));
   else if (isPreviousRules(game))
     legacyCall(() => previous.validateDirectReceipt(value, game));
+  else if (isV5Rules(game))
+    legacyCall(() => published.validateDirectReceipt(value, game));
   else current.validateDirectReceipt(value, game);
 }

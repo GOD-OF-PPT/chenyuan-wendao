@@ -2,6 +2,11 @@ import { ASCENSION_ENDINGS } from './ascension.ts';
 import { TRIAL_STAGES, TRIAL_ANSWERS } from './trial-rules.ts';
 import * as C from './content.ts';
 import { stories } from './events.ts';
+import {
+  validateIncarnation,
+  storyInIncarnation,
+  localStoryIdsForSeed,
+} from './incarnation.ts';
 import { buildLifeRecord, lifeRecordLines } from './life-record.ts';
 import {
   conditionMatches,
@@ -57,6 +62,7 @@ const emptyItems = () =>
   Object.fromEntries(Object.keys(C.items).map((k) => [k, 0]));
 export function newGame(name: string, runId: string): Game {
   const g: Game = {
+    incarnation: { version: 1, seed: runId, inheritance: null },
     format: SAVE_FORMAT,
     version: SAVE_VERSION,
     core: {
@@ -119,6 +125,7 @@ function validateSnapshot(
     'trial',
     'status',
     'ending',
+    ...(content === C.VERSION ? ['incarnation'] : []),
   ]);
   if (value.format !== SAVE_FORMAT || value.version !== SAVE_VERSION)
     fail('SAVE_VERSION', '不支持的完整存档版本');
@@ -143,6 +150,12 @@ function validateSnapshot(
     c.balanceVersion !== balance
   )
     fail('SAVE_VERSION', '内容或数值版本不匹配，请保留原存档');
+  let incarnationStories: string[] | null = null;
+  if (content === C.VERSION) {
+    const incarnation = value.incarnation;
+    validateIncarnation(incarnation, String(c.runId));
+    incarnationStories = localStoryIdsForSeed(incarnation.seed);
+  }
   if (
     !text(c.runId) ||
     !integer(c.revision, 0, Number.MAX_SAFE_INTEGER) ||
@@ -266,6 +279,12 @@ function validateSnapshot(
   )
     fail('SAVE_STORIES', '因果记录无效');
   for (const [id, choice] of Object.entries(value.choices)) {
+    if (
+      incarnationStories &&
+      id.startsWith('local_') &&
+      !incarnationStories.includes(id)
+    )
+      fail('SAVE_STORIES', '此条见闻不属于本卷，原记录保留');
     const req = stories[id].requires;
     if (req && !own(value.choices, req))
       fail('SAVE_STORIES', '因果链缺少前置事件');
@@ -443,6 +462,9 @@ function validateSnapshot(
       own(value.choices, e.id) ||
       stories[e.id].location !== w.location ||
       C.rank(stories[e.id].min) > C.rank(p.realm as C.RealmId) ||
+      (incarnationStories &&
+        String(e.id).startsWith('local_') &&
+        !incarnationStories.includes(String(e.id))) ||
       (stories[e.id].requires &&
         !own(value.choices as object, stories[e.id].requires))
     )
@@ -606,6 +628,7 @@ export function availableEvents(g: Game) {
       g.core.world.location === e.location &&
       C.rank(g.core.player.realm) >= C.rank(e.min) &&
       !own(g.choices, e.id) &&
+      storyInIncarnation(g, e.id) &&
       (!e.requires || own(g.choices, e.requires)),
   );
 }
@@ -1231,6 +1254,8 @@ function one(g: Game, a: Action) {
       break;
     }
     case 'EVENT': {
+      if (!storyInIncarnation(g, a.event))
+        fail('EVENT_UNAVAILABLE', '此条见闻未入本卷；新人生的见闻会有所不同');
       if (!availableEvents(g).some((s) => s.id === a.event))
         fail('EVENT_UNAVAILABLE', '此地或当前进度没有这段机缘');
       g.core.mode = 'event';

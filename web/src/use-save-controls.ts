@@ -5,6 +5,10 @@ import type { useGameConfirmation } from './use-game-confirmation';
 import { MAX_SAVE_BYTES } from '../../src/full/versions.ts';
 import { demoSave, parseDemoSave } from '../../src/demo.ts';
 import { exportLifeText } from '../../src/full/queries.ts';
+import {
+  inheritanceOffer,
+  type InheritanceChoice,
+} from '../../src/full/incarnation.ts';
 
 export interface SaveControlNavigation {
   source(): { current(): boolean; mayReturn(): boolean };
@@ -151,30 +155,56 @@ export function useSaveControls(
           '文件无法读取，未导入。已有进度保留，请重新选择可读取的存档。';
     }
   }
-  async function reset() {
+  async function reset(choice: InheritanceChoice = 'none') {
     const source = navigation.source(),
       originalName = game.value?.core.player.name ?? name.value;
+    const prepared =
+      session.kind === 'demo'
+        ? null
+        : store.prepareRestart(originalName, choice);
+    if (session.kind !== 'demo' && !prepared) return;
+    const offer =
+      choice === 'ending-gift' && game.value
+        ? inheritanceOffer(game.value)
+        : null;
+    const current = () =>
+      source.current() &&
+      (!prepared ||
+        (game.value?.core.runId === prepared.mutation.expectedRunId &&
+          game.value?.core.revision === prepared.mutation.expectedRevision));
     if (
       (await confirmation.ask({
         kind: 'restart',
-        title: session.kind === 'demo' ? '重载演示节点' : '重开人生',
+        title:
+          session.kind === 'demo'
+            ? '重载演示节点'
+            : offer
+              ? '携前缘开新卷'
+              : '重开人生',
         message:
           session.kind === 'demo'
             ? '重新载入会替换本节点的演示进度，正常存档保留。'
-            : '重新开始会替换当前进度。请先导出需要保留的存档；确认后才重开人生。',
-        action: session.kind === 'demo' ? '重载此节点' : '确认重开',
+            : offer
+              ? `前缘来自${originalName}已收卷的人生。${offer.summary}旧卷与其年月、库存仍保存在原前档；新卷不带入境界、修为和装备。确认后开启这一卷。`
+              : '重新开始会替换当前进度。请先导出需要保留的存档；确认后才重开人生。',
+        action:
+          session.kind === 'demo'
+            ? '重载此节点'
+            : offer
+              ? '携' + offer.label + '开卷'
+              : '确认重开',
         cancel: session.kind === 'demo' ? '保留演示进度' : '继续此生',
-        current: source.current,
+        current,
         blocked: navigation.blocked,
         mayReturn: source.mayReturn,
       })) &&
       alive &&
-      source.current() &&
+      current() &&
       !navigation.blocked()
     ) {
       if (session.kind === 'demo')
         await store.importText(JSON.stringify(session.node!.game));
-      else await store.restart(originalName);
+      else if (prepared) await store.restartPrepared(prepared);
       if (alive && !store.error) navigation.completed();
     }
   }

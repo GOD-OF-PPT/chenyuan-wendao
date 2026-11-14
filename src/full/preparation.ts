@@ -1,3 +1,5 @@
+import { isV5Rules, PUBLISHED_V5_RULES_VERSION } from './rule-profile.ts';
+import * as published from '../legacy/rules-v5/src/full/preparation.ts';
 import { isPreviousRules, PREVIOUS_RULES_VERSION } from './rule-profile.ts';
 import { legacyResult } from './rule-profile.ts';
 import * as current from './preparation-current.ts';
@@ -18,14 +20,20 @@ export const preparationSnapshot: typeof current.preparationSnapshot = (
     ? legacyCall(() => old.preparationSnapshot(game, ...args))
     : isPreviousRules(game)
       ? legacyCall(() => previous.preparationSnapshot(game, ...args))
-      : current.preparationSnapshot(game, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.preparationSnapshot(game, ...args))
+        : current.preparationSnapshot(game, ...args);
 export const validatePreparationSnapshot: typeof current.validatePreparationSnapshot =
   (game, ...args) =>
     isLegacyRules(game)
       ? legacyCall(() => old.validatePreparationSnapshot(game, ...args))
       : isPreviousRules(game)
         ? legacyCall(() => previous.validatePreparationSnapshot(game, ...args))
-        : current.validatePreparationSnapshot(game, ...args);
+        : isV5Rules(game)
+          ? legacyCall(() =>
+              published.validatePreparationSnapshot(game, ...args),
+            )
+          : current.validatePreparationSnapshot(game, ...args);
 export const preparationStop: typeof current.preparationStop = (
   game,
   ...args
@@ -34,7 +42,9 @@ export const preparationStop: typeof current.preparationStop = (
     ? legacyCall(() => old.preparationStop(game, ...args))
     : isPreviousRules(game)
       ? legacyCall(() => previous.preparationStop(game, ...args))
-      : current.preparationStop(game, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.preparationStop(game, ...args))
+        : current.preparationStop(game, ...args);
 export const validatePreparationResult: typeof current.validatePreparationResult =
   (game, ...args) =>
     isLegacyRules(game)
@@ -43,7 +53,9 @@ export const validatePreparationResult: typeof current.validatePreparationResult
         )
       : isPreviousRules(game)
         ? legacyCall(() => previous.validatePreparationResult(game, ...args))
-        : current.validatePreparationResult(game, ...args);
+        : isV5Rules(game)
+          ? legacyCall(() => published.validatePreparationResult(game, ...args))
+          : current.validatePreparationResult(game, ...args);
 export const validatePreparationTotals: typeof current.validatePreparationTotals =
   (activity, ...args) =>
     activityRulesVersion(activity) === LEGACY_RULES_VERSION
@@ -52,4 +64,8 @@ export const validatePreparationTotals: typeof current.validatePreparationTotals
         ? legacyCall(() =>
             previous.validatePreparationTotals(activity, ...args),
           )
-        : current.validatePreparationTotals(activity, ...args);
+        : activityRulesVersion(activity) === PUBLISHED_V5_RULES_VERSION
+          ? legacyCall(() =>
+              published.validatePreparationTotals(activity, ...args),
+            )
+          : current.validatePreparationTotals(activity, ...args);

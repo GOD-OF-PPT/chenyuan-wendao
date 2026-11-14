@@ -264,6 +264,8 @@ test('unknown full content and inconsistent checkpoint metadata never overwrite 
       const repo = await h.FullSaveRepository.open(bad); repo.close();
       const fixture = h.routes.fullRoute().checkpoints.qi;
       const raw = structuredClone(fixture); raw.core.contentVersion = bad === 'future-content' ? 'full-demo.999' : 'full-demo.1'; raw.core.balanceVersion = 'full-unbalanced.1';
+      // An explicit .1 migration fixture cannot carry the later .6-only field.
+      delete raw.incarnation;
       const cp = { format: 'chenyuan-checkpoint', version: 1, kind: 'breakthrough', sourceRunId: fixture.core.runId,
         sourceRevision: fixture.core.revision, versions: { format: fixture.format, version: fixture.version,
           schemaVersion: fixture.core.schemaVersion, contentVersion: 'full-demo.999', balanceVersion: fixture.core.balanceVersion }, snapshot: fixture };

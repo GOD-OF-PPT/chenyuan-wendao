@@ -1094,6 +1094,7 @@ onMounted(async () => {
         @school="showEquipment"
         @life="showLife"
         @manage-life="inspectLifespan"
+        @restart="reset"
         @settings="showSettings"
         @plan="viewActivityPlan"
         @receipt="viewReceipt"

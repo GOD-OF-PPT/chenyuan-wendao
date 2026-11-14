@@ -1,3 +1,5 @@
+import { isV5Rules, PUBLISHED_V5_RULES_VERSION } from './rule-profile.ts';
+import * as published from '../legacy/rules-v5/src/full/activity.ts';
 import { isPreviousRules, PREVIOUS_RULES_VERSION } from './rule-profile.ts';
 import { legacyResult } from './rule-profile.ts';
 import * as current from './activity-current.ts';
@@ -23,6 +25,8 @@ export function validateActivity(
     legacyCall(() => old.validateActivity(value, game));
   else if (activityRulesVersion(value) === PREVIOUS_RULES_VERSION)
     legacyCall(() => previous.validateActivity(value, game));
+  else if (activityRulesVersion(value) === PUBLISHED_V5_RULES_VERSION)
+    legacyCall(() => published.validateActivity(value, game));
   else current.validateActivity(value, game);
 }
 export const createActivity: typeof current.createActivity = (game, ...args) =>
@@ -30,13 +34,17 @@ export const createActivity: typeof current.createActivity = (game, ...args) =>
     ? legacyCall(() => old.createActivity(game, ...args))
     : isPreviousRules(game)
       ? legacyCall(() => previous.createActivity(game, ...args))
-      : current.createActivity(game, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.createActivity(game, ...args))
+        : current.createActivity(game, ...args);
 export const pauseActivity: typeof current.pauseActivity = (activity) =>
   activityRulesVersion(activity) === LEGACY_RULES_VERSION
     ? legacyCall(() => old.pauseActivity(activity))
     : activityRulesVersion(activity) === PREVIOUS_RULES_VERSION
       ? legacyCall(() => previous.pauseActivity(activity))
-      : current.pauseActivity(activity);
+      : activityRulesVersion(activity) === PUBLISHED_V5_RULES_VERSION
+        ? legacyCall(() => published.pauseActivity(activity))
+        : current.pauseActivity(activity);
 export const activityStop: typeof current.activityStop = (game, activity) => {
   if (activityRulesVersion(activity) !== rulesVersion(game))
     return {
@@ -47,7 +55,9 @@ export const activityStop: typeof current.activityStop = (game, activity) => {
     ? legacyCall(() => old.activityStop(game, activity))
     : isPreviousRules(game)
       ? legacyCall(() => previous.activityStop(game, activity))
-      : current.activityStop(game, activity);
+      : isV5Rules(game)
+        ? legacyCall(() => published.activityStop(game, activity))
+        : current.activityStop(game, activity);
 };
 export const resumeActivity: typeof current.resumeActivity = (
   game,
@@ -59,7 +69,9 @@ export const resumeActivity: typeof current.resumeActivity = (
     ? legacyCall(() => old.resumeActivity(game, activity, ...args))
     : isPreviousRules(game)
       ? legacyCall(() => previous.resumeActivity(game, activity, ...args))
-      : current.resumeActivity(game, activity, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.resumeActivity(game, activity, ...args))
+        : current.resumeActivity(game, activity, ...args);
 };
 export const completeActivity: typeof current.completeActivity = (
   game,
@@ -76,7 +88,11 @@ export const completeActivity: typeof current.completeActivity = (
       ? legacyCall(() =>
           previous.completeActivity(game, activity, result, options),
         )
-      : current.completeActivity(game, activity, result, options);
+      : isV5Rules(game)
+        ? legacyCall(() =>
+            published.completeActivity(game, activity, result, options),
+          )
+        : current.completeActivity(game, activity, result, options);
 };
 export const previewActivity: typeof current.previewActivity = (
   game,
@@ -86,4 +102,6 @@ export const previewActivity: typeof current.previewActivity = (
     ? legacyCall(() => old.previewActivity(game, ...args))
     : isPreviousRules(game)
       ? legacyCall(() => previous.previewActivity(game, ...args))
-      : current.previewActivity(game, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.previewActivity(game, ...args))
+        : current.previewActivity(game, ...args);

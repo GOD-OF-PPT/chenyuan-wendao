@@ -1,3 +1,5 @@
+import { isV5Rules, PUBLISHED_V5_RULES_VERSION } from './rule-profile.ts';
+import * as published from '../legacy/rules-v5/src/full/milestones.ts';
 import { isPreviousRules, PREVIOUS_RULES_VERSION } from './rule-profile.ts';
 import { legacyResult } from './rule-profile.ts';
 import * as current from './milestones-current.ts';
@@ -18,7 +20,9 @@ export const milestoneMetadata: typeof current.milestoneMetadata = (
     ? legacyCall(() => old.milestoneMetadata(game, ...args))
     : isPreviousRules(game)
       ? legacyCall(() => previous.milestoneMetadata(game, ...args))
-      : current.milestoneMetadata(game, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.milestoneMetadata(game, ...args))
+        : current.milestoneMetadata(game, ...args);
 export const validateMilestoneStart: typeof current.validateMilestoneStart = (
   game,
   ...args
@@ -27,13 +31,17 @@ export const validateMilestoneStart: typeof current.validateMilestoneStart = (
     ? legacyCall(() => old.validateMilestoneStart(game, ...args))
     : isPreviousRules(game)
       ? legacyCall(() => previous.validateMilestoneStart(game, ...args))
-      : current.validateMilestoneStart(game, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.validateMilestoneStart(game, ...args))
+        : current.validateMilestoneStart(game, ...args);
 export const milestoneStop: typeof current.milestoneStop = (game, ...args) =>
   isLegacyRules(game)
     ? legacyCall(() => old.milestoneStop(game, ...args))
     : isPreviousRules(game)
       ? legacyCall(() => previous.milestoneStop(game, ...args))
-      : current.milestoneStop(game, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.milestoneStop(game, ...args))
+        : current.milestoneStop(game, ...args);
 export const validateMilestoneResult: typeof current.validateMilestoneResult = (
   game,
   ...args
@@ -44,7 +52,9 @@ export const validateMilestoneResult: typeof current.validateMilestoneResult = (
       )
     : isPreviousRules(game)
       ? legacyCall(() => previous.validateMilestoneResult(game, ...args))
-      : current.validateMilestoneResult(game, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.validateMilestoneResult(game, ...args))
+        : current.validateMilestoneResult(game, ...args);
 export const completeMilestoneMetadata: typeof current.completeMilestoneMetadata =
   (game, ...args) =>
     isLegacyRules(game)
@@ -53,7 +63,9 @@ export const completeMilestoneMetadata: typeof current.completeMilestoneMetadata
         )
       : isPreviousRules(game)
         ? legacyCall(() => previous.completeMilestoneMetadata(game, ...args))
-        : current.completeMilestoneMetadata(game, ...args);
+        : isV5Rules(game)
+          ? legacyCall(() => published.completeMilestoneMetadata(game, ...args))
+          : current.completeMilestoneMetadata(game, ...args);
 export const validateMilestoneTotals: typeof current.validateMilestoneTotals = (
   activity,
   ...args
@@ -62,4 +74,6 @@ export const validateMilestoneTotals: typeof current.validateMilestoneTotals = (
     ? legacyCall(() => old.validateMilestoneTotals(activity, ...args))
     : activityRulesVersion(activity) === PREVIOUS_RULES_VERSION
       ? legacyCall(() => previous.validateMilestoneTotals(activity, ...args))
-      : current.validateMilestoneTotals(activity, ...args);
+      : activityRulesVersion(activity) === PUBLISHED_V5_RULES_VERSION
+        ? legacyCall(() => published.validateMilestoneTotals(activity, ...args))
+        : current.validateMilestoneTotals(activity, ...args);

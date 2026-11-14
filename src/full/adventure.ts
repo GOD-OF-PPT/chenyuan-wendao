@@ -1,3 +1,5 @@
+import { isV5Rules, PUBLISHED_V5_RULES_VERSION } from './rule-profile.ts';
+import * as published from '../legacy/rules-v5/src/full/adventure.ts';
 import { isPreviousRules, PREVIOUS_RULES_VERSION } from './rule-profile.ts';
 import { legacyResult } from './rule-profile.ts';
 import * as current from './adventure-current.ts';
@@ -18,7 +20,9 @@ export const defaultBattleStrategy: typeof current.defaultBattleStrategy = (
     ? legacyCall(() => old.defaultBattleStrategy(game, ...args))
     : isPreviousRules(game)
       ? legacyCall(() => previous.defaultBattleStrategy(game, ...args))
-      : current.defaultBattleStrategy(game, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.defaultBattleStrategy(game, ...args))
+        : current.defaultBattleStrategy(game, ...args);
 export const defaultEncounterPlan: typeof current.defaultEncounterPlan = (
   game,
   ...args
@@ -27,7 +31,9 @@ export const defaultEncounterPlan: typeof current.defaultEncounterPlan = (
     ? legacyCall(() => old.defaultEncounterPlan(game, ...args))
     : isPreviousRules(game)
       ? legacyCall(() => previous.defaultEncounterPlan(game, ...args))
-      : current.defaultEncounterPlan(game, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.defaultEncounterPlan(game, ...args))
+        : current.defaultEncounterPlan(game, ...args);
 export const defaultBattlePlan: typeof current.defaultBattlePlan = (
   game,
   ...args
@@ -36,7 +42,9 @@ export const defaultBattlePlan: typeof current.defaultBattlePlan = (
     ? legacyCall(() => old.defaultBattlePlan(game, ...args))
     : isPreviousRules(game)
       ? legacyCall(() => previous.defaultBattlePlan(game, ...args))
-      : current.defaultBattlePlan(game, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.defaultBattlePlan(game, ...args))
+        : current.defaultBattlePlan(game, ...args);
 export const singleBattlePlan: typeof current.singleBattlePlan = (
   game,
   ...args
@@ -45,7 +53,9 @@ export const singleBattlePlan: typeof current.singleBattlePlan = (
     ? legacyCall(() => old.singleBattlePlan(game, ...args))
     : isPreviousRules(game)
       ? legacyCall(() => previous.singleBattlePlan(game, ...args))
-      : current.singleBattlePlan(game, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.singleBattlePlan(game, ...args))
+        : current.singleBattlePlan(game, ...args);
 export const adventureCycleMs: typeof current.adventureCycleMs = (
   game,
   ...args
@@ -54,7 +64,9 @@ export const adventureCycleMs: typeof current.adventureCycleMs = (
     ? legacyCall(() => old.adventureCycleMs(game, ...args))
     : isPreviousRules(game)
       ? legacyCall(() => previous.adventureCycleMs(game, ...args))
-      : current.adventureCycleMs(game, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.adventureCycleMs(game, ...args))
+        : current.adventureCycleMs(game, ...args);
 export const validateAdventureStart: typeof current.validateAdventureStart = (
   game,
   ...args
@@ -63,7 +75,9 @@ export const validateAdventureStart: typeof current.validateAdventureStart = (
     ? legacyCall(() => old.validateAdventureStart(game, ...args))
     : isPreviousRules(game)
       ? legacyCall(() => previous.validateAdventureStart(game, ...args))
-      : current.validateAdventureStart(game, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.validateAdventureStart(game, ...args))
+        : current.validateAdventureStart(game, ...args);
 export const adventureMetadata: typeof current.adventureMetadata = (
   game,
   ...args
@@ -72,7 +86,9 @@ export const adventureMetadata: typeof current.adventureMetadata = (
     ? legacyCall(() => old.adventureMetadata(game, ...args))
     : isPreviousRules(game)
       ? legacyCall(() => previous.adventureMetadata(game, ...args))
-      : current.adventureMetadata(game, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.adventureMetadata(game, ...args))
+        : current.adventureMetadata(game, ...args);
 export const validateAdventureResult: typeof current.validateAdventureResult = (
   game,
   ...args
@@ -83,7 +99,9 @@ export const validateAdventureResult: typeof current.validateAdventureResult = (
       )
     : isPreviousRules(game)
       ? legacyCall(() => previous.validateAdventureResult(game, ...args))
-      : current.validateAdventureResult(game, ...args);
+      : isV5Rules(game)
+        ? legacyCall(() => published.validateAdventureResult(game, ...args))
+        : current.validateAdventureResult(game, ...args);
 export const completeAdventureMetadata: typeof current.completeAdventureMetadata =
   (game, ...args) =>
     isLegacyRules(game)
@@ -92,7 +110,9 @@ export const completeAdventureMetadata: typeof current.completeAdventureMetadata
         )
       : isPreviousRules(game)
         ? legacyCall(() => previous.completeAdventureMetadata(game, ...args))
-        : current.completeAdventureMetadata(game, ...args);
+        : isV5Rules(game)
+          ? legacyCall(() => published.completeAdventureMetadata(game, ...args))
+          : current.completeAdventureMetadata(game, ...args);
 export const adventureDecision: typeof current.adventureDecision = (
   activity,
   ...args
@@ -101,7 +121,9 @@ export const adventureDecision: typeof current.adventureDecision = (
     ? legacyCall(() => old.adventureDecision(activity, ...args))
     : activityRulesVersion(activity) === PREVIOUS_RULES_VERSION
       ? legacyCall(() => previous.adventureDecision(activity, ...args))
-      : current.adventureDecision(activity, ...args);
+      : activityRulesVersion(activity) === PUBLISHED_V5_RULES_VERSION
+        ? legacyCall(() => published.adventureDecision(activity, ...args))
+        : current.adventureDecision(activity, ...args);
 export const validateAdventureTotals: typeof current.validateAdventureTotals = (
   activity,
   ...args
@@ -110,7 +132,9 @@ export const validateAdventureTotals: typeof current.validateAdventureTotals = (
     ? legacyCall(() => old.validateAdventureTotals(activity, ...args))
     : activityRulesVersion(activity) === PREVIOUS_RULES_VERSION
       ? legacyCall(() => previous.validateAdventureTotals(activity, ...args))
-      : current.validateAdventureTotals(activity, ...args);
+      : activityRulesVersion(activity) === PUBLISHED_V5_RULES_VERSION
+        ? legacyCall(() => published.validateAdventureTotals(activity, ...args))
+        : current.validateAdventureTotals(activity, ...args);
 export const adventurePreview: typeof current.adventurePreview = (
   activity,
   ...args
@@ -119,4 +143,6 @@ export const adventurePreview: typeof current.adventurePreview = (
     ? legacyCall(() => old.adventurePreview(activity, ...args))
     : activityRulesVersion(activity) === PREVIOUS_RULES_VERSION
       ? legacyCall(() => previous.adventurePreview(activity, ...args))
-      : current.adventurePreview(activity, ...args);
+      : activityRulesVersion(activity) === PUBLISHED_V5_RULES_VERSION
+        ? legacyCall(() => published.adventurePreview(activity, ...args))
+        : current.adventurePreview(activity, ...args);

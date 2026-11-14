@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, inject, ref } from 'vue';
+import { computed, inject, ref, watch } from 'vue';
 import type { Game } from '../../src/full/types.ts';
 import { getLifeRecord, previewAction } from '../../src/full/queries.ts';
 import { lifeReadings, readingPages } from './story-pages';
@@ -25,7 +25,7 @@ const props = defineProps<{
   }>();
 const book = ref<{ manage(): void }>();
 defineExpose({ manage: () => book.value?.manage() });
-const mode = ref('life'),
+const mode = ref(props.game.status === 'active' ? 'life' : 'ledger'),
   record = computed(() => getLifeRecord(props.game));
 const store = inject<ReturnType<typeof useGame>>('game-scene'),
   pendingError = computed(() =>
@@ -37,6 +37,26 @@ const store = inject<ReturnType<typeof useGame>>('game-scene'),
           : ''
       : '',
   );
+watch(
+  () => props.game.status,
+  (now, before) => {
+    if (before === 'active' && now !== 'active') mode.value = 'ledger';
+  },
+);
+watch(
+  () => props.game.core.runId,
+  () => {
+    mode.value = props.game.status === 'active' ? 'life' : 'ledger';
+  },
+);
+const chapters = computed(() => [
+  ['ledger', '账本'],
+  ['life', '来路'],
+  ['training', '修行'],
+  ['decisions', '因果'],
+  ['seal', '收卷'],
+  ...(props.game.status === 'ascended' ? [['epilogue', '回响']] : []),
+]);
 const rows = computed(() =>
   readingPages(
     lifeReadings(props.game).filter(
@@ -129,7 +149,7 @@ const { page, relocated } = useReadingMemory(
         class="catalogue-tabs r4-chapters"
         aria-label="生平篇章"
       ><button
-          v-for="[id,label] in [['life','来路'],['training','修行'],['decisions','因果'],['seal','收卷']]"
+          v-for="[id,label] in chapters"
           :key="id"
           :data-testid="'life-mode-'+id"
           :aria-pressed="mode===id"

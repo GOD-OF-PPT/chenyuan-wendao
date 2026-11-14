@@ -1,6 +1,11 @@
+import {
+  validateInheritanceChoice,
+  type InheritanceChoice,
+} from '../../src/full/incarnation.ts';
 import { versionsForGame, rulesVersion } from '../../src/full/rule-profile.ts';
 import {
   newGame,
+  reincarnate,
   parseGame,
   resolve,
   validateCommand,
@@ -2405,12 +2410,30 @@ export class FullSaveRepository {
   private migrateContent(): Promise<void> {
     return this.transaction('readwrite', migrateTransaction);
   }
-  async create(name: string, mutation: SaveMutation): Promise<ControlOutcome> {
+  async create(
+    name: string,
+    mutation: SaveMutation,
+    inheritance: InheritanceChoice = 'none',
+  ): Promise<ControlOutcome> {
+    validateInheritanceChoice(inheritance);
     mutation = structuredClone(mutation);
     validateMutation(mutation);
-    return this.replace('CREATE', mutation, newGame(name, mutation.runId), {
-      name,
-    });
+    return this.replace(
+      'CREATE',
+      mutation,
+      newGame(name, mutation.runId),
+      inheritance === 'none' ? { name } : { name, inheritance },
+      inheritance === 'none'
+        ? undefined
+        : (source) => {
+            if (!source)
+              throw new RuleError(
+                'INHERITANCE_UNAVAILABLE',
+                '当前没有可承接的已收卷人生',
+              );
+            return reincarnate(source, name, mutation.runId, inheritance);
+          },
+    );
   }
   async importText(
     raw: string,
@@ -2433,6 +2456,7 @@ export class FullSaveRepository {
     mutation: SaveMutation,
     candidate: Game,
     payload: unknown,
+    derive?: (source: Game | undefined) => Game,
   ): Promise<ControlOutcome> {
     const print = fingerprint({ kind, mutation, payload });
     return this.transaction('readwrite', (tx, complete, abort) => {
@@ -2547,6 +2571,18 @@ export class FullSaveRepository {
                         'NEW_RUN_REQUIRED',
                         '替换存档必须使用新的人生编号',
                       );
+                    const replacement = derive ? derive(existing) : candidate;
+                    if (derive) {
+                      validateGame(replacement);
+                      if (
+                        replacement.core.runId !== mutation.runId ||
+                        replacement.core.revision !== 0
+                      )
+                        throw new RuleError(
+                          'INVALID_MUTATION',
+                          '新人生与原确认归属不符',
+                        );
+                    }
                     archiveActivity(
                       tx,
                       activity,
@@ -2555,7 +2591,7 @@ export class FullSaveRepository {
                       abort,
                     );
                     if (existing) state.put(existing, 'previous');
-                    state.put(candidate, 'current');
+                    state.put(replacement, 'current');
                     state.delete('checkpoint');
                     state.delete('checkpoint-owner');
                     clearRetainedReceipts(tx);
@@ -2571,7 +2607,7 @@ export class FullSaveRepository {
                       receipt,
                       mutation.runId + ':' + mutation.commandId,
                     );
-                    complete({ state: candidate, replayed: false });
+                    complete({ state: replacement, replayed: false });
                   } catch (error) {
                     abort(error);
                   }

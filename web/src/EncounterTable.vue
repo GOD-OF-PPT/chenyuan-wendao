@@ -40,7 +40,7 @@ const { store, phase, working, progress, effect, engaged, runtime, action } =
           ? 'event:' + props.eventId
           : ''
         : portrait.value,
-    () => props.mode !== 'journal',
+    () => props.mode !== 'journal' && props.mode !== 'atlas',
   );
 const state = computed(() => (store?.error ? 'failed' : phase.value));
 const verb = computed(() =>
@@ -110,7 +110,7 @@ const localControls = useLocalActivityControls();
       class="encounter-presence"
       :class="{
         'encounter-letter': mode === 'events',
-        'encounter-journal': mode === 'journal',
+        'encounter-journal': mode === 'journal' || mode === 'atlas',
       }"
     >
       <figure v-if="portrait && mode !== 'journal'" class="encounter-figure"
@@ -123,7 +123,9 @@ const localControls = useLocalActivityControls();
         ></figure
       >
       <div v-else class="encounter-letter-object" aria-hidden="true"
-        ><i /><i /><i /><b>{{ mode === 'journal' ? '记' : '访' }}</b></div
+        ><i /><i /><i /><b>{{
+          mode === 'atlas' ? '图' : mode === 'journal' ? '记' : '访'
+        }}</b></div
       >
       <small v-if="mode !== 'people' || pending">{{
         mode === 'people'
@@ -132,7 +134,9 @@ const localControls = useLocalActivityControls();
             ? pending
               ? '会面已保存 · 回应由你决定'
               : '拜帖未递 · 核对后才拜访'
-            : '此生行道手记 · 回看不推进年月'
+            : mode === 'atlas'
+              ? '见闻图鉴 · 翻阅不拜访'
+              : '此生行道手记 · 回看不推进年月'
       }}</small>
       <div v-if="engaged" class="narrative-object-cycle" role="status"
         ><strong

@@ -275,6 +275,8 @@ test('content migration archives and clears the old activity atomically without 
     const h = (globalThis as any).h, name = 'activity-content-migration', { repo, snapshot } = await h.activityFixture(name);
     const started = await repo.startActivity(h.plan(), h.activityMutation(snapshot)); repo.close();
     const historical = structuredClone(started.state);
+    // This deliberately downgraded historical shape predates incarnation data.
+    delete historical.incarnation;
     historical.core.contentVersion = 'full-demo.1'; historical.core.balanceVersion = 'full-unbalanced.1';
     await h.put(name, h.FULL_STATE_STORE, 'current', historical);
     const before = await h.inspect(name), put = IDBObjectStore.prototype.put;

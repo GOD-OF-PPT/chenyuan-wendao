@@ -6,6 +6,7 @@ import type { Action, Game } from '../../src/full/types.ts';
 import {
   getRelationships,
   getStoryContext,
+  getLocalStoryAtlas,
   previewAction,
 } from '../../src/full/queries.ts';
 import { availableEvents } from '../../src/full/engine.ts';
@@ -104,15 +105,25 @@ const peopleRows = computed<Reading[]>(() => {
         ]),
   ];
 });
+const atlasRows = computed<Reading[]>(() =>
+  getLocalStoryAtlas(props.game).map((row) => ({
+    key: 'atlas-' + row.id,
+    title: row.story.name + ' · ' + row.label,
+    text: `${row.locationName} · ${row.realmName}。${row.story.body}\n${row.story.options.map((o) => o.label + '：' + o.detail).join('\n')}`,
+    testId: 'local-atlas-' + row.id,
+  })),
+);
 const rows = computed(() =>
   readingPages(
     mode.value === 'people'
       ? peopleRows.value
-      : [...props.game.journal].reverse().map((text, i) => ({
-          key: 'journal-' + i,
-          title: '近期手记 · ' + (i + 1),
-          text,
-        })),
+      : mode.value === 'atlas'
+        ? atlasRows.value
+        : [...props.game.journal].reverse().map((text, i) => ({
+            key: 'journal-' + i,
+            title: '近期手记 · ' + (i + 1),
+            text,
+          })),
   ),
 );
 const { page, relocated } = useReadingMemory(
@@ -192,6 +203,7 @@ watch(() => props.game.core.world.location, locate);
         v-for="[id, label] in [
           ['people', '人物'],
           ['events', '此地机缘'],
+          ['atlas', '见闻图鉴'],
           ['journal', '近期手记'],
         ]"
         :key="id"
@@ -210,11 +222,17 @@ watch(() => props.game.core.world.location, locate);
       @browse="emit('browse')"
       :game="game"
       :mode="mode"
-      :person-id="mode === 'journal' ? '' : readingPerson?.id"
+      :person-id="
+        mode === 'journal' || mode === 'atlas' ? '' : readingPerson?.id
+      "
       :name="readingPerson?.name"
       :seal="readingPerson?.seal"
-      :event-id="pending?.id ?? eventPage.rows[0]?.id"
-      :pending="mode === 'people' ? !!meeting : !!pending"
+      :event-id="
+        mode === 'atlas' ? undefined : (pending?.id ?? eventPage.rows[0]?.id)
+      "
+      :pending="
+        mode === 'people' ? !!meeting : mode === 'atlas' ? false : !!pending
+      "
       ><template #people="{ close }"
         ><nav class="fate-people" aria-label="人物"
           ><button
@@ -365,7 +383,11 @@ watch(() => props.game.core.world.location, locate);
           class="reading-text"
           :class="{ 'book-copy': mode === 'people' }"
           :data-testid="
-            mode === 'people' ? 'relationship-' + person?.id : 'journal-entry'
+            mode === 'people'
+              ? 'relationship-' + person?.id
+              : mode === 'atlas'
+                ? 'local-atlas-entry'
+                : 'journal-entry'
           "
           :data-page-key="row.key"
           ><small
@@ -404,7 +426,9 @@ watch(() => props.game.core.world.location, locate);
       ><small>{{
         mode === 'journal'
           ? '近100条手记；完整因果见生平。'
-          : '阅读不耗时；无援助也可修行。'
+          : mode === 'atlas'
+            ? '全18条见闻；未入本卷的篇章留待其它人生。'
+            : '阅读不耗时；无援助也可修行。'
       }}</small
       ><button
         v-if="gamePhase(game) !== 'idle' && game.status === 'active'"

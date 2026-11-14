@@ -1,3 +1,7 @@
+import {
+  validateInheritanceChoice,
+  type InheritanceChoice,
+} from '../../src/full/incarnation.ts';
 import type {
   ConfigurationAction,
   ConfigurationIntent,
@@ -26,6 +30,11 @@ import type {
   SaveMutation,
   ScheduledOutcome,
 } from './full-persistence';
+export interface PreparedRestart {
+  name: string;
+  inheritance: InheritanceChoice;
+  mutation: SaveMutation;
+}
 import type { AwaySchedule } from '../../src/full/scheduled-activity.ts';
 import type { AwaySummary } from './away-summary.ts';
 import {
@@ -1074,12 +1083,32 @@ export const useGame = defineStore('game', () => {
     const intent = prepareImport();
     if (intent) await importPrepared(raw, intent);
   }
-  async function restart(name: string) {
-    if (!repository || !game.value) return;
+  function prepareRestart(
+    name: string,
+    inheritance: InheritanceChoice = 'none',
+  ): PreparedRestart | null {
+    if (
+      disposed ||
+      !repository ||
+      !game.value ||
+      !available.value ||
+      busy.value
+    )
+      return null;
+    validateInheritanceChoice(inheritance);
+    return structuredClone({
+      name: name.trim(),
+      inheritance,
+      mutation: mutation(),
+    });
+  }
+  async function restartPrepared(input: PreparedRestart) {
+    if (disposed || !repository || !game.value || !available.value) return;
     stopActivityRuntime();
-    const intent = mutation();
+    const request = structuredClone(input),
+      intent = request.mutation;
     await write(
-      () => repository!.create(name.trim(), intent),
+      () => repository!.create(request.name, intent, request.inheritance),
       intent.commandId,
       {
         kind: 'restart',
@@ -1089,6 +1118,13 @@ export const useGame = defineStore('game', () => {
         expectedRevision: intent.expectedRevision,
       },
     );
+  }
+  async function restart(
+    name: string,
+    inheritance: InheritanceChoice = 'none',
+  ) {
+    const intent = prepareRestart(name, inheritance);
+    if (intent) await restartPrepared(intent);
   }
   function prepareCheckpoint(): SaveMutation | null {
     if (
@@ -1407,6 +1443,8 @@ export const useGame = defineStore('game', () => {
     prepareImport,
     importPrepared,
     restart,
+    prepareRestart,
+    restartPrepared,
     checkpoint,
     prepareCheckpoint,
     restorePrepared,

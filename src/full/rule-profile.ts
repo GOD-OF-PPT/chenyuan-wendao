@@ -3,6 +3,7 @@ import type { Game } from './types.ts';
 import { RuleError } from './errors.ts';
 import { RuleError as LegacyRuleError } from '../legacy/rules-v3/src/full/errors.ts';
 import { RuleError as PreviousRuleError } from '../legacy/rules-v4/src/full/errors.ts';
+import { RuleError as PublishedRuleError } from '../legacy/rules-v5/src/full/errors.ts';
 import type { ActionResult, SaveCheckpoint } from './contracts.ts';
 import type {
   ActionResult as OldResult,
@@ -11,6 +12,7 @@ import type {
 
 export const LEGACY_RULES_VERSION = 'full-demo.3/full-unbalanced.3';
 export const PREVIOUS_RULES_VERSION = 'full-demo.4/full-unbalanced.4';
+export const PUBLISHED_V5_RULES_VERSION = 'full-demo.5/full-unbalanced.5';
 export const CURRENT_RULES_VERSION = VERSION + '/' + BALANCE;
 const object = (v: unknown): v is Record<string, unknown> =>
   !!v && typeof v === 'object' && !Array.isArray(v);
@@ -35,6 +37,7 @@ export function rulesVersion(game: Game): string {
     throw new RuleError('SAVE_VERSION', '内容或数值版本不匹配，请保留原存档');
   if (isLegacyRules(game)) return LEGACY_RULES_VERSION;
   if (isPreviousRules(game)) return PREVIOUS_RULES_VERSION;
+  if (isV5Rules(game)) return PUBLISHED_V5_RULES_VERSION;
   if (
     game.core.contentVersion === VERSION &&
     game.core.balanceVersion === BALANCE
@@ -56,6 +59,8 @@ export function activityRulesVersion(value: unknown): string {
   if (!object(value))
     throw new RuleError('ACTIVITY_INVALID', '活动规则标记无效，原记录保留');
   if (!Object.hasOwn(value, 'rulesVersion')) return LEGACY_RULES_VERSION;
+  if (value.rulesVersion === PUBLISHED_V5_RULES_VERSION)
+    return PUBLISHED_V5_RULES_VERSION;
   if (value.rulesVersion === PREVIOUS_RULES_VERSION)
     return PREVIOUS_RULES_VERSION;
   if (value.rulesVersion === CURRENT_RULES_VERSION)
@@ -94,10 +99,22 @@ export function legacyCall<T>(read: () => T): T {
   try {
     return read();
   } catch (error) {
-    if (error instanceof LegacyRuleError || error instanceof PreviousRuleError)
+    if (
+      error instanceof LegacyRuleError ||
+      error instanceof PreviousRuleError ||
+      error instanceof PublishedRuleError
+    )
       throw new RuleError(error.code, error.message);
     throw error;
   }
+}
+export function isV5Rules(value: unknown): boolean {
+  return (
+    object(value) &&
+    object(value.core) &&
+    value.core.contentVersion === 'full-demo.5' &&
+    value.core.balanceVersion === 'full-unbalanced.5'
+  );
 }
 export function legacyResult(value: ActionResult): OldResult {
   if (

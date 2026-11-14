@@ -1,4 +1,6 @@
 import type { Game } from './types.ts';
+import * as published from '../legacy/rules-v5/src/full/trial-rules.ts';
+import { isV5Rules } from './rule-profile.ts';
 import { isLegacyRules, isPreviousRules } from './rule-profile.ts';
 import * as previous from '../legacy/rules-v4/src/full/trial-rules.ts';
 /** Shared by resolution and presentation; these are unbalanced effects. */
@@ -33,5 +35,7 @@ export const TRIAL_ANSWERS: Readonly<
 export function trialAnswersForGame(game: Game) {
   return isLegacyRules(game) || isPreviousRules(game)
     ? previous.TRIAL_ANSWERS
-    : TRIAL_ANSWERS;
+    : isV5Rules(game)
+      ? published.TRIAL_ANSWERS
+      : TRIAL_ANSWERS;
 }

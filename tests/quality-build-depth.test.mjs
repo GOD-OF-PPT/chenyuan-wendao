@@ -32,8 +32,8 @@ const forecast = (g) =>
 
 test('a new life exposes six pairs of mutually exclusive advanced paths while all base methods remain available', () => {
   const g = engine.newGame('分支检查', 'q16-catalogue');
-  assert.equal(g.core.contentVersion, 'full-demo.5');
-  assert.equal(g.core.balanceVersion, 'full-unbalanced.5');
+  assert.equal(g.core.contentVersion, 'full-demo.6');
+  assert.equal(g.core.balanceVersion, 'full-unbalanced.6');
   assert.equal(Object.keys(C.skills).length, 18);
   const groups = new Map();
   for (const [id, skill] of Object.entries(C.skills))

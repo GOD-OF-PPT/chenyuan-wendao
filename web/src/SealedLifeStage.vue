@@ -1,16 +1,25 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import type { Game } from '../../src/full/types';
-import { getLifeRecord } from '../../src/full/queries';
+import type { InheritanceChoice } from '../../src/full/incarnation';
+import { getLifeRecord, getLifeLedger } from '../../src/full/queries';
 import './sealed-life.css';
-const props = defineProps<{ game: Game; busy: boolean; receipt: boolean }>();
+const props = defineProps<{
+  game: Game;
+  busy: boolean;
+  receipt: boolean;
+  demo?: boolean;
+  blocked?: string;
+}>();
 const emit = defineEmits<{
   life: [MouseEvent];
   export: [];
   settings: [MouseEvent];
   receipt: [];
+  restart: [InheritanceChoice];
 }>();
 const record = computed(() => getLifeRecord(props.game)),
+  ledger = computed(() => getLifeLedger(props.game)),
   mark = computed(() =>
     props.game.status === 'ascended'
       ? props.game.ending === 'transmit'
@@ -44,7 +53,7 @@ const record = computed(() => getLifeRecord(props.game)),
         aria-hidden="true"
         >{{ mark }}</strong
       ><span class="sealed-book-open"
-        >查看生平与收卷 <b aria-hidden="true">›</b></span
+        >翻阅此生账本 <b aria-hidden="true">›</b></span
       ></button
     >
     <div class="sealed-life-copy"
@@ -55,9 +64,29 @@ const record = computed(() => getLifeRecord(props.game)),
         {{ record.overview.realmName }} · 行道
         {{ record.overview.elapsedMonths }} 游戏月</p
       ><p data-testid="sealed-conclusion">{{ record.overview.conclusion }}</p
+      ><p v-if="ledger.epilogue.length" data-testid="ending-echo-excerpt">{{
+        ledger.epilogue[0]
+      }}</p
       ><p class="sealed-life-note"
         >翻卷只阅读，不推进年月。恢复准备或开始新人生，均需另外核对与确认。</p
       >
+      <div v-if="!demo" class="sealed-life-tools sealed-successors">
+        <button
+          data-testid="life-fresh-start"
+          :disabled="busy || !!blocked"
+          @click="emit('restart', 'none')"
+          >从头开新卷</button
+        >
+        <button
+          v-if="ledger.inheritance"
+          data-testid="life-legacy-gift"
+          class="primary"
+          :disabled="busy || !!blocked"
+          @click="emit('restart', 'ending-gift')"
+          >携{{ ledger.inheritance.label }}开新卷</button
+        >
+      </div>
+      <small v-if="blocked" role="status">{{ blocked }}</small>
       <div class="sealed-life-tools"
         ><button
           data-testid="sealed-export"
