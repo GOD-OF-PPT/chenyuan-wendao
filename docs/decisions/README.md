@@ -174,3 +174,4 @@
 - [0166：Q18 当前入口与历史文档](0166-contributor-docs-and-history.md)
 - [《尘缘问道》游戏交互与美术开发准则](game-interaction-art-guidelines.md)
 - [0167：Q19 入门练手与第一笔灵石](0167-first-practice-and-economy-loop.md)
+- [0168：Q20 未来大原稿的存储](0168-future-large-original-storage.md)
