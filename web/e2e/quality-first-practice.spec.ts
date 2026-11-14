@@ -11,9 +11,10 @@ import {
   settleVisibleActivity,
   runVisibleIdleRoute,
   readJourneyDatabase,
+  configure,
 } from './idle-route-support';
 import { captureFixedPng } from './png-capture';
-import { driver } from '../../tests/full-route.mjs';
+import { driver, fullRoute } from '../../tests/full-route.mjs';
 import { importRecoveryFixture } from './idle-recovery-ui-support';
 import { openEquipment } from './support';
 import { answerGameConfirmation } from './game-confirmation-support';
@@ -483,3 +484,88 @@ test('a paused original arrangement remains distinct from the newly confirmed si
   );
   expect(done.game.core.player.xp).toBeGreaterThan(game.core.player.xp);
 });
+
+for (const ending of ['transmit', 'depart'] as const)
+  test(`Q17/Q18/Q19 ${ending} gift continues through the actual practice economy without stacking or losing its source`, async ({
+    page,
+  }, info) => {
+    test.setTimeout(240000);
+    const source = await importRecoveryFixture(
+      page,
+      fullRoute('leave', 'sword', 'craft', false, ending).game,
+    );
+    await page.getByTestId('life-legacy-gift').click();
+    await answerGameConfirmation(page, 'restart');
+    await page.clock.runFor(600);
+    await expect(page.getByTestId('save-status')).toHaveText('已保存');
+    const born = await snapshot(page),
+      db = await readJourneyDatabase(page);
+    expect(born.core.player.stones).toBe(ending === 'depart' ? 60 : 40);
+    expect(born.core.inventory.healing_pill).toBe(
+      ending === 'transmit' ? 2 : 1,
+    );
+    expect(
+      db.rows['full-state'].find((r: any) => r.key === 'previous').value,
+    ).toEqual(source);
+    const seed = born.incarnation.seed,
+      origin = structuredClone(born.incarnation.inheritance),
+      options = {
+        choice: 'leave',
+        school: 'talisman',
+        preparation: 'gather',
+        cultivation: 'natural',
+        answer: 'accept',
+        ending: 'transmit',
+        advanced: false,
+      };
+    const route = createIdleRoute(
+      options,
+      { runId: born.core.runId, name: born.core.player.name },
+      born,
+    );
+    route.begin();
+    for (const [index, step] of route.activity.steps.entries()) {
+      if (step.kind === 'configuration') {
+        await configure(page, step.action, index);
+        continue;
+      }
+      const selected = await selectPlan(page, step.plan);
+      await decision(page, selected.control);
+      const done = await settleVisibleActivity(page);
+      expect(done.cycles).toBe(step.cycles);
+    }
+    expect(await snapshot(page)).toEqual(route.game);
+    for (const kind of ['commission', 'assisted'] as const) {
+      const lesson = await reachPractice(page, kind),
+        before = await snapshot(page);
+      await page.getByTestId('practice-confirm').click();
+      const done = await settleVisibleActivity(page);
+      expect(done.cycles).toBe(1);
+      expect(done.game.core.player.stones).toBe(
+        before.core.player.stones +
+          (kind === 'commission' ? 20 : -lesson.plan.stoneBudget),
+      );
+      expect(done.game.incarnation.seed).toBe(seed);
+      expect(done.game.incarnation.inheritance).toEqual(origin);
+    }
+    const current = await snapshot(page);
+    expect(current.core.inventory.healing_pill).toBe(
+      born.core.inventory.healing_pill,
+    );
+    expect(current.core.player.realm).toBe('qi');
+    const saved = await readJourneyDatabase(page);
+    await page.reload();
+    await expect(page.getByTestId('save-status')).toHaveText('已保存');
+    expect(await readJourneyDatabase(page)).toEqual(saved);
+    await info.attach('three-task-gift-practice-proof', {
+      body: JSON.stringify({
+        source,
+        origin,
+        born,
+        current,
+        sourceGiftCountUnchanged: true,
+        seedStable: true,
+      }),
+      contentType: 'application/json',
+    });
+  });
