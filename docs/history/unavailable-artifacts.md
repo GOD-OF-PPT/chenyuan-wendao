@@ -50,4 +50,3 @@
 原路径：`artifacts/goal-4/check-cend07-three/check-cend07-three-preview-7abe75f.zip`。当前原件不可用；未恢复或伪造。
 
 - 原引用：[docs/implementation/goal-4-check-cend07-three.md](../implementation/goal-4-check-cend07-three.md)，原行5；路径原文 `../../artifacts/goal-4/check-cend07-three/check-cend07-three-preview-7abe75f.zip`。
-
