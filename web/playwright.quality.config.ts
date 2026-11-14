@@ -8,6 +8,7 @@ export default {
     'quality-build-depth.spec.ts',
     'quality-life-echoes.spec.ts',
     'quality-first-practice.spec.ts',
+    'quality-enum-validation.spec.ts',
     'quality-ui-bugs.spec.ts',
     'quality-behavior.spec.ts',
     'check-cend13-abc.spec.ts',

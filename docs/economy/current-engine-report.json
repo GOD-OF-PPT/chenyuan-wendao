@@ -38,7 +38,7 @@
     "src/full/costs.ts": "5ba9052f6e54e5f09db9d12b0d753cb78b6116656519f66e8b26ca05b091dbe9",
     "src/full/direct-actions.ts": "0d856972291e1b70fe444a2a3f269593aafc5542fa161265572a1006d417c4e8",
     "src/full/economy-ledger.ts": "327b9d84f8004cc9516f212e2766b312fadf78eb394c737b73b3659fb37d30a5",
-    "src/full/engine-current.ts": "836f18ea3a4f1efa622edaa8f94d42f99a6e0564719b8108cb232604aa048168",
+    "src/full/engine-current.ts": "4f1c18d625c7cb2c9740663bcbff34a72e4e0fcc33f3d6154c2bac3fc2eda975",
     "src/full/engine.ts": "6fbe221c86dd37080a2bcddecda197151edcfafab4fd5b63b2ac9d2e5b20d3d9",
     "src/full/errors.ts": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4",
     "src/full/events.ts": "73c1a8c62f4e57455564aed9b6a29649eb928f70cb1c66b0b2cd021ea34cf5ab",
