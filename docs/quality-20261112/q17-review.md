@@ -6,7 +6,7 @@
 
 首轮1项P2：incarnation.ts用String(sourceEnding)检查枚举，使数组["transmit"]通过严格持久结构校验；玩家界面的严格比较却会把它解释为另一种前缘。违反0165严格闭合结构。真实fullRoute→reincarnate→parseGame红保于artifacts/q17-life/review-ending-type-red.log。
 
-修为直接比较两个允许的字符串；原畸形结构用例增加两数组、对象和null。完整新增根文件10/10通过，原子写入与旧档未改变。等待独立复核关闭。
+修为直接比较两个允许的字符串；原畸形结构用例增加两数组、对象和null。完整新增根文件10/10通过，原子写入与旧档未改变。独立审查在干净df7f69d实际重测，原P2关闭，无新增明确问题。
 
 ## Spec
 
