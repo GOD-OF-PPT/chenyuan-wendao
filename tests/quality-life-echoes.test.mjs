@@ -56,6 +56,10 @@ test('malformed incarnation fields and mixed source-rule pairs reject without ch
     (g) => (g.incarnation.inheritance.sourceRevision = -1),
     (g) => (g.incarnation.inheritance.balanceVersion = 'full-unbalanced.5'),
     (g) => (g.incarnation.inheritance.sourceEnding = 'retired'),
+    (g) => (g.incarnation.inheritance.sourceEnding = ['transmit']),
+    (g) => (g.incarnation.inheritance.sourceEnding = ['depart']),
+    (g) => (g.incarnation.inheritance.sourceEnding = {}),
+    (g) => (g.incarnation.inheritance.sourceEnding = null),
   ]) {
     const g = structuredClone(child);
     mutate(g);

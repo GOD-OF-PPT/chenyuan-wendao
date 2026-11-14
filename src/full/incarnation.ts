@@ -108,7 +108,7 @@ export function validateIncarnation(
     !text(origin.sourceName) ||
     !Number.isSafeInteger(origin.sourceRevision) ||
     Number(origin.sourceRevision) < 0 ||
-    !['transmit', 'depart'].includes(String(origin.sourceEnding)) ||
+    (origin.sourceEnding !== 'transmit' && origin.sourceEnding !== 'depart') ||
     !['3', '4', '5', '6'].some(
       (v) =>
         origin.contentVersion === 'full-demo.' + v &&
