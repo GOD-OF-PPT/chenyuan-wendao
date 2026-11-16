@@ -1,0 +1,51 @@
+{
+  "format": "chenyuan-immersive-ui",
+  "version": 1,
+  "task": "Goal2 T04T",
+  "maxBytes": 26000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/immersive-theme.css",
+      "bytes": 13429,
+      "sha256": "6f55f39540dd49a1708dd585cee61e91ae114441e20fb1d1731f024501288197"
+    },
+    {
+      "path": "web/src/ProgressTrack.vue",
+      "bytes": 2903,
+      "sha256": "142f6f187ee7f2f326e4b63a1a080016139d5b18c9c90a05556c169b6dd2444e"
+    },
+    {
+      "path": "web/src/ChoiceCard.vue",
+      "bytes": 2071,
+      "sha256": "322961bb71234da9e284555aad7a568b14b2b4a88cff9736e43cc208d3103e64"
+    },
+    {
+      "path": "web/src/GuidancePanel.vue",
+      "bytes": 1520,
+      "sha256": "d45ac08ffa4d5596db6ba8e441e17e2c6cc55781ff154dda00e9f100d7e71e81"
+    }
+  ],
+  "consumer": "web/src/main.ts",
+  "sourceReferences": [
+    "goal-2/amendments/2026-10-19-global-theme-feedback.md",
+    "docs/implementation/goal-2-global-theme-feedback.md"
+  ],
+  "bindings": {
+    "web/src/App.vue": [
+      "ChoiceCard",
+      "ProgressTrack",
+      "provide(gameFocusKey,focus)"
+    ],
+    "web/src/CharacterPanel.vue": [
+      "ProgressTrack"
+    ],
+    "web/src/GoalPanel.vue": [
+      "ProgressTrack"
+    ],
+    "web/src/BattlePanel.vue": [
+      "<BattlePresence "
+    ]
+  },
+  "scope": "Palette, read-only choice/progress inspection and committed-value presentation. Original code budgets remain, no old code moved out."
+}

@@ -1,0 +1,25 @@
+{
+  "id": "spirit_seed",
+  "kind": "local imagegen audit not provider-signed receipt",
+  "requestId": null,
+  "model": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-67764f28-0313-4867-9dc5-f990a4b137ef.png",
+  "workspaceRaw": "art/redesign/art11-items/spirit_seed-v1.png",
+  "rawSha256": "03b24d0f174382e0665ace6a7332452d764e9c46f5be780ec7bb131251b26b79",
+  "originalKept": true,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alpha16Bbox": [
+    222,
+    109,
+    1110,
+    1126
+  ]
+}

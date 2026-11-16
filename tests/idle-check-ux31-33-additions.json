@@ -1,0 +1,30 @@
+{
+  "format": "chenyuan-ux31-33-comprehensive-additions",
+  "version": 8,
+  "parentVersion": 7,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 854,
+    "signature": "44397874ea9be97deb1c4d9c2e832f4b7f12d5eb3be8d3a3b398595457aa128a"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "check-ux31-33.spec.ts",
+      "title": "CHECK-UX3133-C1 missing alchemy ingredients lead with their real gate while complete settings and material-source returns stay readonly",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-ux31-33.spec.ts",
+      "title": "CHECK-UX3133-C2 a budget gate cannot masquerade as a zero forecast and a newly affordable furnace preserves the full original thirty-second transaction",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-ux31-33.spec.ts",
+      "title": "CHECK-UX3133-C3 a failed original furnace remains the only retry while an unaffordable next draft and readonly sources cannot change its saved authorization",
+      "projectName": "chromium"
+    }
+  ]
+}

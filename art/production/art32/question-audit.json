@@ -1,0 +1,37 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "mode": "built-in imagegen",
+  "model": null,
+  "requestId": null,
+  "originalsKept": true,
+  "userAcceptance": false,
+  "referenceRole": "Current UI evidence actually reviewed locally; not passed as imagegen input",
+  "reference": {
+    "path": "goal-4/evidence/art32/ANSWER_TRIAL-before.jpg",
+    "bytes": 116950,
+    "sha256": "3f1d8c92d7c2bab98394b906e926716a0dca223285fdab33c10be072a969dbfd"
+  },
+  "selectedCopy": {
+    "path": "art/production/art32/question-v1.png",
+    "bytes": 2256926,
+    "sha256": "3367dcaab9ed0bd74e072e6d66e5c1049969295ddd49d67386c39aa58b2e226c"
+  },
+  "calls": [
+    {
+      "tool": "image_gen.imagegen",
+      "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-b33441fc-4937-4fc4-971d-838449a2d00a.png",
+      "generatedSHA256": "3367dcaab9ed0bd74e072e6d66e5c1049969295ddd49d67386c39aa58b2e226c",
+      "prompt": {
+        "path": "art/production/art32/question-prompt.json",
+        "bytes": 1792,
+        "sha256": "73ca3ad4f13078439d5dc58f5d7843ca00ece2cca0b398e2ce0f78db8806b965"
+      },
+      "candidate": {
+        "path": "art/production/art32/candidates/question-v1.png",
+        "bytes": 2256926,
+        "sha256": "3367dcaab9ed0bd74e072e6d66e5c1049969295ddd49d67386c39aa58b2e226c"
+      },
+      "requestedTransparent": false
+    }
+  ]
+}

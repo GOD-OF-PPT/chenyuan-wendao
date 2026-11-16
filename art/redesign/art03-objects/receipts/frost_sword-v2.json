@@ -1,0 +1,100 @@
+{
+  "id": "frost_sword",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/gordon/.codex/generated_images/01a16741-289f-70f2-a0e0-ce3736a452f9/exec-08194834-3333-4e9a-a7d1-5d42c26d0da9.png",
+  "savedPath": "art/redesign/art03-objects/frost_sword-v2.png",
+  "copiedUnchanged": true,
+  "transparentBackgroundRequested": true,
+  "toolOutputHint": "Generated images are saved to /Users/gordon/.codex/generated_images/01a16741-289f-70f2-a0e0-ce3736a452f9 as /Users/gordon/.codex/generated_images/01a16741-289f-70f2-a0e0-ce3736a452f9/exec-08194834-3333-4e9a-a7d1-5d42c26d0da9.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "promptReference": "art/redesign/art03-objects/frost_sword-v2-prompt.json",
+  "runtimePending": false,
+  "userAcceptance": false,
+  "sourceSHA256": "cf7036014cf3bb96583ebfb83afd94ee8d0269dd82c72699336f203da8e31d85",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "sourceBytes": 265325,
+  "promptSHA256": "e311bafa36f3a7d5ea6d62bb1ea3c644c7c73ac34830122390d3f0787ad350b6",
+  "alphaProof": {
+    "min": 0,
+    "max": 255,
+    "transparentPixels": 1507897,
+    "solidPixels": 49179,
+    "intermediatePixels": 15440
+  },
+  "runtimeAlphaProof": {
+    "min": 0,
+    "max": 254,
+    "transparentPixels": 251043,
+    "solidPixels": 7971,
+    "intermediatePixels": 3130
+  },
+  "sourceBoundsAlpha16": {
+    "left": 314,
+    "top": 298,
+    "right": 982,
+    "bottom": 997
+  },
+  "runtime": {
+    "path": "web/public/art/v2/equipment/frost_sword-v1.webp",
+    "bytes": 10960,
+    "sha256": "0054af06284f62b516d5be2802dbd69fecb4cb31ee8d56f0a7d895568df79943",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "512",
+    "-metadata",
+    "none"
+  ],
+  "exportVerification": {
+    "verified": true,
+    "sourceUnchanged": true,
+    "secondPath": "art/redesign/art03-objects/exports/frost_sword-repeat.webp",
+    "secondSHA256": "0054af06284f62b516d5be2802dbd69fecb4cb31ee8d56f0a7d895568df79943",
+    "encoder": "cwebp 1.6.0\nlibsharpyuv: 0.4.2"
+  },
+  "decodeProof": {
+    "decoder": "Pillow",
+    "sourceRGBASHA256": "38b146dfd95ecf2939ae676384b142b18054a91fac29e48dff61bc357d87f8b9",
+    "runtimeRGBASHA256": "da1a8ae3ee540102f66323e6116fcb51bb1e80a13e3822ec3694e7a7a7a4c1fc",
+    "alphaDefinitions": {
+      "transparentPixels": "alpha=0",
+      "solidPixels": "alpha>=250",
+      "intermediatePixels": "1<=alpha<250"
+    }
+  },
+  "review": {
+    "actuallyViewed": true,
+    "reviewer": "art02_battle agent",
+    "reviewedRuntimeSHA256": "0054af06284f62b516d5be2802dbd69fecb4cb31ee8d56f0a7d895568df79943",
+    "textBaked": false,
+    "fireBaked": false,
+    "smokeBaked": false,
+    "activeHaloBaked": false,
+    "userAcceptance": false
+  },
+  "marginScope": "Real alpha>=16 bounds recorded; requested approximate 15 percent margin was not numerically exact. Use actual bounds when composing the game stage.",
+  "referenceImages": [
+    {
+      "role": "edit target",
+      "path": "art/redesign/art03-objects/frost_sword-v1.png",
+      "sha256": "eaadb4bf71232035da768cbb36df252176007ca74dfe634cf18e58d43167af3e"
+    }
+  ],
+  "revisionReason": "The first independent sword generation was too close to the canvas edges; built-in edit changed only framing. Original v1 retained."
+}

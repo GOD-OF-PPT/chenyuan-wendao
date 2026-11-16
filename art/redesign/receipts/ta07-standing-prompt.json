@@ -1,0 +1,8 @@
+{
+  "tool": "built-in image_gen",
+  "intent": "identity-preserve",
+  "transparent_background": true,
+  "referenceImage": "art/redesign/characters/player-v1.png",
+  "prompt": "Use case: identity-preserve. Asset type: one cold-state full-body character cutout for the existing Chinese xianxia idle game 尘缘问道. The input image is the identity/style reference for 顾长青, not a layout. Extend this same young adult Chinese male from portrait into a FULL BODY standing combat-ready pose, three-quarter facing screen-right toward an enemy. Preserve his recognizable face, long dark half-up hair, pale ivory layered robes with restrained teal-green lapels and antique-gold embroidery; painterly polished game illustration, same delicate material style. Both feet, complete boots, entire hair silhouette, sleeves and hands fully inside the square image with generous transparent margin; head at about 10% from top and soles about 90% from top. Slight bent knees, balanced low stance, one hand raised in a composed two-finger spell gesture at chest height, other hand resting by waist. Keep the silhouette readable at about 300px tall in gameplay. Neutral cold state: NO weapon in hand, NO sword, NO talisman, NO medicine, NO glow, NO particles, NO wind streaks, NO shield, NO floor, NO shadow plane, NO scenery, NO interface, NO text, NO watermark. Effects and weapons will be independent real-time code layers. Genuinely transparent alpha background; single isolated character, no sprite sheet or alternate views. Keep anatomy coherent and the entire full-length figure visible, never crop at torso or feet.",
+  "userAcceptance": false
+}

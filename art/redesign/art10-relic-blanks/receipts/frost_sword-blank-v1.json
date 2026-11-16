@@ -1,0 +1,23 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "recordedAt": "2026-10-25T01:43:46.946996+00:00",
+  "prompt": "art/redesign/art10-relic-blanks/frost_sword-blank-v1-prompt.json",
+  "promptSHA256": "5c5fe8aebf48ab4f9b28cfc723c849c78f104fd23ca3d1000f37aa5e80943f58",
+  "reference": "art/redesign/art03-objects/frost_sword-v2.png",
+  "referenceSHA256": "cf7036014cf3bb96583ebfb83afd94ee8d0269dd82c72699336f203da8e31d85",
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-ed7ecdde-04cc-4c35-8be3-83e911d9bdfc.png",
+  "generatedSHA256": "f4dc96341831c965bf7fe4d98cf7ca28ed931fcd9a06bbb96dc2085ba6ec2b56",
+  "selectedCopy": "art/redesign/art10-relic-blanks/frost_sword-blank-v1.png",
+  "copySHA256": "f4dc96341831c965bf7fe4d98cf7ca28ed931fcd9a06bbb96dc2085ba6ec2b56",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "actualOutputHint": "Generated images are saved to /Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254 as /Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-ed7ecdde-04cc-4c35-8be3-83e911d9bdfc.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+}

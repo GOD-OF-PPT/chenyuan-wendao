@@ -1,0 +1,72 @@
+{
+  "format": "chenyuan-cend07-f04-preparation-additions",
+  "version": 38,
+  "parentVersion": 37,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 994,
+    "signature": "87820f77cf4650f7cb59027193f4dbfea82cbc00b590c1adbdb41ab2b5caebcd"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P1 qi preparation uses its actual target painting and complete readonly material tray with every reachable source",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P2 foundation preparation uses its actual target painting and complete readonly material tray with every reachable source",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P3 golden preparation uses its actual target painting and complete readonly material tray with every reachable source",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P4 nascent preparation uses its actual target painting and complete readonly material tray with every reachable source",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P5 spirit preparation uses its actual target painting and complete readonly material tray with every reachable source",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P6 mortal preparation keeps its original default object and no-pill decision readonly",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P7 partially gathered material is owned while its real remaining gap and source return stay readonly",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P8 complete ingredients lead to the original thirty-second alchemy and only saved output becomes an owned target",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P9 an already held breakthrough pill is not represented as missing or offered repeated procurement",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P10 a material source keeps the original six-second travel and native failed tick retries the same intent once",
+      "projectName": "chromium"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "format": "chenyuan-cend09-source-stage-additions",
+  "version": 47,
+  "parentVersion": 46,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1033,
+    "signature": "7f809f46d2317a80188de8c1c3e23f75e22e12b67c20c1193319dd1e34c36560"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend09-source-stage.spec.ts",
+      "title": "CEND09-SOURCE-S1 six natural sources use readable scenic facts and content sized stock with all finite readonly plans",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend09-source-stage.spec.ts",
+      "title": "CEND09-SOURCE-S2 ten commissions keep complete compensation and readonly access with subordinate book and stock surfaces",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend09-source-stage.spec.ts",
+      "title": "CEND09-SOURCE-S3 all sixteen scenic work stages preserve the real deadline and sole complete atomic source result",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend09-source-stage.spec.ts",
+      "title": "CEND09-SOURCE-S4 all six scenic fallbacks and both paused failed layouts keep full finite authority and original quota retry",
+      "projectName": "chromium"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "format": "chenyuan-cend08-f02-config-art-additions",
+  "version": 45,
+  "parentVersion": 44,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1025,
+    "signature": "466e4bdd83f4ff934d13c85d852d8e92a44694275d97ed7979f001d624c90648"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend08-f02-config-art.spec.ts",
+      "title": "CEND08-F02-D1 all twelve actual skills and four held relics retain their real painted identity effects and complete readonly comparison before cancellation",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend08-f02-config-art.spec.ts",
+      "title": "CEND08-F02-D2 both school choices show their three actual starter scrolls and all original effects without claiming or applying the preview",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend08-f02-config-art.spec.ts",
+      "title": "CEND08-F02-D3 missing real relic and jade artwork keeps named static fallbacks full effects safe controls and cancellation without a write",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend08-f02-config-art.spec.ts",
+      "title": "CEND08-F02-D4 a painted preview during a paused source and native configuration failure stays uncommitted until the unique original atomic retry",
+      "projectName": "chromium"
+    }
+  ]
+}

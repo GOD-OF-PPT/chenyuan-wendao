@@ -1,0 +1,202 @@
+name: Playable web checks
+on:
+  push:
+    branches: ['feat/m1-playable-web', 'feat/full-demo-g1-g5', 'feat/g1-locked-playable', 'codex/**']
+  pull_request:
+    paths: ['web/**', 'src/**', 'tests/**', 'scripts/**', '.github/workflows/playable.yml', 'docs/v0.4/**']
+env:
+  CANDIDATE_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+permissions:
+  contents: read
+concurrency:
+  group: playable-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  browser:
+    name: browser (${{ matrix.browser }})
+    runs-on: ubuntu-latest
+    timeout-minutes: ${{ matrix.browser == 'webkit' && 45 || 30 }}
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.16.0'
+      - name: Verify reviewed dependency lock
+        run: node scripts/check_lock.mjs
+      - name: Install locked resource-check dependencies
+        run: |
+          python3 -m venv "$RUNNER_TEMP/chenyuan-art-venv"
+          "$RUNNER_TEMP/chenyuan-art-venv/bin/python3" -m pip install --disable-pip-version-check -r art/requirements.txt
+          "$RUNNER_TEMP/chenyuan-art-venv/bin/python3" -c "import sys, PIL; print(sys.version); print('Pillow', PIL.__version__)"
+          echo "$RUNNER_TEMP/chenyuan-art-venv/bin" >> "$GITHUB_PATH"
+      - name: Core checks with actual validation records
+        run: npm run validate:core
+      - name: Install locked web dependencies
+        run: npm --prefix web ci --ignore-scripts --no-audit --no-fund
+      - name: Build production website
+        run: npm --prefix web run build
+      - name: Install test browser and fonts
+        timeout-minutes: 5
+        working-directory: web
+        run: |
+          npx playwright install --with-deps ${{ matrix.browser }}
+          sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=60 -o Acquire::https::Timeout=60 install -y fonts-noto-cjk
+      - name: Browser integration tests
+        env:
+          DEBUG: ${{ matrix.browser == 'firefox' && 'pw:browser' || '' }}
+        run: npm --prefix web run test:e2e -- --project=${{ matrix.browser }}
+      - name: Full persistence module tests
+        run: npm --prefix web run test:persistence -- --project=${{ matrix.browser }}
+      - name: Bind actual recovery outcomes to every requirement
+        run: node scripts/check-recovery-coverage.mjs web/recovery-report --browser=${{ matrix.browser }}
+      - name: Production performance budgets
+        if: matrix.browser == 'chromium'
+        run: npm --prefix web run test:performance
+      - name: Upload test evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: playable-test-evidence-${{ matrix.browser }}-attempt-${{ github.run_attempt }}
+          path: |
+            web/playwright-report
+            web/test-results
+            web/persistence-report
+            web/persistence-results
+            web/recovery-report
+            web/core-report
+            web/build-report
+            web/performance-report
+            web/performance-results
+          retention-days: 90
+  journey:
+    name: journey (${{ matrix.browser }}, shard ${{ matrix.shard }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        browser: [chromium, firefox, webkit]
+        shard: [1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.16.0'
+      - name: Verify lock and prepare production build
+        run: |
+          node scripts/check_lock.mjs
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm --prefix web ci --ignore-scripts --no-audit --no-fund
+          npm --prefix web run build
+      - name: Install journey browser and fonts
+        timeout-minutes: 5
+        working-directory: web
+        run: |
+          npx playwright install --with-deps ${{ matrix.browser }}
+          sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=60 -o Acquire::https::Timeout=60 install -y fonts-noto-cjk
+      - name: Normal new-game journey tests
+        run: npm --prefix web run test:journeys -- --project=${{ matrix.browser }} --shard=${{ matrix.shard }}/4
+      - name: Upload journey evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: journey-test-evidence-${{ matrix.browser }}-shard-${{ matrix.shard }}-attempt-${{ github.run_attempt }}
+          path: |
+            web/journey-report
+            web/journey-results
+          retention-days: 90
+  playable:
+    needs: [browser, journey]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Require every browser matrix to succeed
+        env:
+          BROWSER_RESULT: ${{ needs.browser.result }}
+          JOURNEY_RESULT: ${{ needs.journey.result }}
+        run: |
+          test "$BROWSER_RESULT" = success
+          test "$JOURNEY_RESULT" = success
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.16.0'
+      - name: Download current journey shard reports
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: journey-test-evidence-*-attempt-${{ github.run_attempt }}
+          path: journey-evidence
+          merge-multiple: false
+      - name: Verify actual normal route coverage
+        run: node scripts/check-journey-coverage.mjs journey-evidence
+      - name: Download current recovery reports
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: playable-test-evidence-*-attempt-${{ github.run_attempt }}
+          path: recovery-evidence
+          merge-multiple: false
+      - name: Verify actual recovery coverage in all three browsers
+        run: node scripts/check-recovery-coverage.mjs recovery-evidence
+      - name: Install locked resource-check dependencies
+        run: |
+          python3 -m venv "$RUNNER_TEMP/chenyuan-art-venv"
+          "$RUNNER_TEMP/chenyuan-art-venv/bin/python3" -m pip install --disable-pip-version-check -r art/requirements.txt
+          "$RUNNER_TEMP/chenyuan-art-venv/bin/python3" -c "import sys, PIL; print(sys.version); print('Pillow', PIL.__version__)"
+          echo "$RUNNER_TEMP/chenyuan-art-venv/bin" >> "$GITHUB_PATH"
+      - name: Verify lock and reproduce final build
+        run: |
+          node scripts/check_lock.mjs
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm --prefix web ci --ignore-scripts --no-audit --no-fund
+          npm --prefix web run build
+      - name: Upload runnable build after all browsers pass
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: chenyuan-playable-dist
+          path: web/dist
+          include-hidden-files: true
+          retention-days: 90
+          if-no-files-found: error
+      - name: Assemble exact-source engineering candidate
+        run: python3 scripts/package-candidate.py --browsers recovery-evidence --journeys journey-evidence
+      - name: Restore source bundle, reinstall locks and reproduce payload
+        run: python3 scripts/reproduce-candidate.py
+      - name: Install candidate smoke browsers
+        timeout-minutes: 5
+        working-directory: web
+        run: npx playwright install --with-deps chromium firefox webkit
+      - name: Run the extracted candidate through every browser
+        run: npm --prefix web run test:candidate
+      - name: Bind clean-source and packaged runtime proofs to the archive
+        run: npm run candidate:receipt
+      - name: Upload immutable candidate and delivery receipt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: chenyuan-engineering-candidate
+          path: |
+            artifacts/candidates/*/candidate.zip
+            artifacts/candidates/*/candidate.json
+            artifacts/candidates/*/delivery.json
+            artifacts/candidates/*/reproduction.json
+            artifacts/candidates/*/packaged-smoke.json
+            artifacts/candidates/*/reproduction-logs
+            web/candidate-report
+            web/candidate-results
+          retention-days: 90
+          if-no-files-found: error

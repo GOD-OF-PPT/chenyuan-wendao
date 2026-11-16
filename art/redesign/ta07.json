@@ -1,0 +1,152 @@
+{
+  "format": "chenyuan-battle-choreography",
+  "version": 1,
+  "task": "Goal4 TA07",
+  "budgets": {
+    "nativeBytes": 36000,
+    "commandBytes": 12000,
+    "castBytes": 24000,
+    "newAssets": 1,
+    "runtimeWidth": 512,
+    "runtimeHeight": 512,
+    "maxRuntimeBytes": 160000
+  },
+  "files": [
+    {
+      "path": "web/src/BattleCommandConsole.vue",
+      "bytes": 4564,
+      "sha256": "1bfab29a4db45765d502c1cbec2d637a0486621f690a1625e34bbc343761f41f"
+    },
+    {
+      "path": "web/src/BattleCast.vue",
+      "bytes": 2424,
+      "sha256": "e777a72538088e29a5b648dcb3a98a02bee51185c143c4b9f0ae724c603bc69d"
+    },
+    {
+      "path": "web/src/battle-choreography.ts",
+      "bytes": 9830,
+      "sha256": "b043e02ddcfeb6f2796cfa8a5fe1123ee70af40ef8998067785636192687c179"
+    },
+    {
+      "path": "web/src/ta07-commands.css",
+      "bytes": 6181,
+      "sha256": "54fb77b417ceb0aa333b9ec5d56245059f959b5afc1169d2728ed01daf0e0788"
+    },
+    {
+      "path": "web/src/ta07-cast.css",
+      "bytes": 8084,
+      "sha256": "05336c9c061713cfd8be1473bdc4b3c6e4a368036cc14ae9e81f420cefdd1ecd"
+    }
+  ],
+  "assets": [
+    {
+      "id": "player-standing-cold-v1",
+      "source": {
+        "path": "art/redesign/characters/player-standing-cold-v1.png",
+        "bytes": 2062489,
+        "sha256": "6b1201d21c081fd6e15c60ae7093899d23e0375193cf046e9338bbd952620509",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/actors/player-standing-cold-v1.webp",
+        "bytes": 63634,
+        "sha256": "ead57061820734bd53f89f600795310cb2040b478f5e2bf61da2b946571ca2ef",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/player-standing-cold-v1.json",
+        "sha256": "3c04603c3242571b73888d309104e0cb0f5f650180efc72f1b523d9936370672"
+      }
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0033-battle-actors-ta07-contract.md",
+    "goal-4/amendments/2026-10-24-ta07.md",
+    "goal-4/research/ta07-design-sources.json",
+    "art/redesign/receipts/ta07-standing-prompt.json"
+  ],
+  "bindings": {
+    "web/src/BattleDeck.vue": [
+      "import BattleCommandConsole",
+      "<BattleCommandConsole"
+    ],
+    "web/src/BattlePresence.vue": [
+      "BATTLE_PLAYER_ASSET",
+      "useBattlePreparation",
+      ":data-run=\"game.core.runId\"",
+      ":data-enemy=\"battle.enemy\"",
+      ":data-stage=\"game.trial?.stage??'ordinary'\"",
+      ":data-revision=\"game.core.revision\"",
+      "data-testid=\"battle-preparation\""
+    ],
+    "web/src/ActionFeedbackStage.vue": [
+      "import BattleCast",
+      "<BattleCast",
+      "useBattleWitness",
+      "witness.capture(value);observation.value=value;",
+      "witness.forNotice(next)",
+      "battleSpot(cast)",
+      "castActors(next,cast,mark)",
+      "clearBattlePose(element)"
+    ],
+    "web/src/assets.ts": [
+      "BATTLE_PLAYER_ASSET='art/v2/actors/player-standing-cold-v1.webp'"
+    ],
+    "web/src/BattleCommandConsole.vue": [
+      "import './ta07-commands.css'",
+      "data-testid=\"battle-command-console\"",
+      "data-testid=\"battle-strike-slots\"",
+      "data-testid=\"battle-medicine-kit\"",
+      "data-testid=\"battle-retreat-lane\"",
+      "['attack','guard','technique','release']",
+      "heal:'healing_pill',restore:'spirit_pill'",
+      "emit('move',move)",
+      "emit('move','flee')",
+      "{{cost(move)}} · 3 秒 / 回合",
+      "{{retreatEffect}}"
+    ],
+    "web/src/BattleCast.vue": [
+      "import './ta07-cast.css'",
+      "from './battle-choreography'",
+      "castForNotice(props.notice)",
+      "data-testid=\"battle-cast\"",
+      ":data-receipt=\"notice.key\"",
+      ":data-move=\"cast.move\""
+    ],
+    "web/src/battle-choreography.ts": [
+      "useBattlePreparation",
+      "createBattleWitness",
+      "useBattleWitness",
+      "castForNotice",
+      "createActivityEffectTracker(matching)",
+      "useActivityPresentation",
+      "const matching=(a:Activity)=>a.version===6&&a.plan.kind!=='travel';",
+      "a.nextCommand?.type!=='BATTLE'",
+      "r.id!==a.id",
+      "r.generation!==a.generation",
+      "tracker.consume(o,g,a,result,replayed,eligible)",
+      "notice.key!==JSON.stringify([prior.runId,prior.commandId])",
+      "s.activity?.ownerId",
+      "document.hidden",
+      "clearBattlePose"
+    ],
+    "web/src/activity-effects.ts": [
+      "a.version&&[2,3,6,extra].includes(a.version)",
+      "resolve(before,command)",
+      "completeActivity(g,prior,r,",
+      "proof(resolved.nextState)!==proof(g)",
+      "proof(expected)!==proof(a)"
+    ]
+  },
+  "userAcceptance": false
+}

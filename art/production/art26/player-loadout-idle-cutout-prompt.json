@@ -1,0 +1,12 @@
+{
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "intent": "background-extraction",
+  "transparent_background": true,
+  "referenced_image_paths": [
+    "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-9fc373d6-dcb5-4116-87fa-8035c6680050.png"
+  ],
+  "prompt": "Use case: background-extraction\nEdit target: the supplied calm standing character image. Remove ONLY the entire dark/gray/green gradient backdrop, diffuse haze and glow around the figure. Keep the exact face, hair, costume, calm pose, hands, embroidery, colors and lighting of the character unchanged.\nOutput a clean game-character cutout with actual transparent alpha: outside the character must be alpha 0, not dark pixels, gray pixels, haze, a gradient or a checkerboard. The body and cloth should be opaque (only fine hair/contour antialiasing can be translucent). Do not add a drop shadow, floor or any environment.\nKeep the complete hair, robe hems and both shoes uncut. Leave a small fully transparent border on all four sides, including below the shoes; extend the canvas slightly if needed without changing the figure's proportions. No text, UI, effects, particles, props, weapons, halo or watermark. Background cleanup only.",
+  "promptSHA256": "549605a7110a118d422754d69fe89ce324246f144fa1963653ac17cf85765727",
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-356b9e9b-bc43-4dd5-be8a-d25c760516b6.png"
+}

@@ -1,0 +1,127 @@
+{
+  "format": "chenyuan-panel-materials",
+  "version": 1,
+  "task": "Goal2 T04S",
+  "assets": [
+    {
+      "id": "xuan-paper",
+      "source": {
+        "path": "art/redesign/desktop/xuan-paper-v2.png",
+        "bytes": 2466811,
+        "sha256": "931c3842c1e7489fe0aad49a7fcca6020e00078aeaa45991a7f627cd0d419340",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": false,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/ui/xuan-paper-v2.webp",
+        "bytes": 8344,
+        "sha256": "20ec5b471788120a3eda6bfd7486d9f85dc8e8eacdcf67b40a3c2c263f02d6a0",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": false,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/xuan-paper-v2.json",
+        "sha256": "c8cf7d29e04b8b01438bd66aec92d7fea4ec95ff008294d2acaf3646bc6585cf"
+      },
+      "reviewSourceHash": "931c3842c1e7489fe0aad49a7fcca6020e00078aeaa45991a7f627cd0d419340"
+    },
+    {
+      "id": "mountain-wash",
+      "source": {
+        "path": "art/redesign/desktop/mountain-wash-v1.png",
+        "bytes": 1826155,
+        "sha256": "a3ddcfabdee381e39281138407d87d49fcad565bb7a28a086353fe485bcd839e",
+        "dimensions": {
+          "width": 2172,
+          "height": 724
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/ui/mountain-wash-v1.webp",
+        "bytes": 56046,
+        "sha256": "2f30503f639d97ca657520cc8b762121a86bc5dc3971a9ce7b8afb65c0a82aa2",
+        "dimensions": {
+          "width": 768,
+          "height": 256
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/mountain-wash-v1.json",
+        "sha256": "9c8f94f489190d9ac623e24c60116dfc7329f58a560d4abdbfa70d60d5f7ffba"
+      },
+      "reviewSourceHash": "a3ddcfabdee381e39281138407d87d49fcad565bb7a28a086353fe485bcd839e"
+    }
+  ],
+  "budgets": {
+    "assets": 2,
+    "maxRuntimeBytes": 160000,
+    "maxStyleBytes": 6500
+  },
+  "style": {
+    "path": "web/src/panel-materials.css",
+    "bytes": 5920,
+    "sha256": "2e1505bb60b4e193f685577b00647b7537898edfecf967986437dd4adbf91183"
+  },
+  "consumer": "web/src/main.ts",
+  "sourceReferences": [
+    "goal-2/amendments/2026-10-19-panel-materials.md",
+    "goal-2/design/desktop-direction-v1.png",
+    "art/redesign/PANEL_MATERIALS_REVIEW.md",
+    "docs/implementation/goal-2-panel-materials.md",
+    "art/redesign/receipts/panel-tool-output-hints.json"
+  ],
+  "rights": {
+    "productionUseApproved": true,
+    "distributionLicense": null,
+    "userAcceptance": false
+  },
+  "bindingFiles": [
+    "web/src/panel-materials.css",
+    "web/src/assets.ts",
+    "web/src/App.vue"
+  ],
+  "retainedInputs": [
+    {
+      "id": "xuan-paper",
+      "source": {
+        "path": "art/redesign/desktop/xuan-paper-v1.png",
+        "bytes": 2825331,
+        "sha256": "c6e3d6e64d309165e1dafc96be58cd07f5217b360f73c3fa680c4b29e8d1b3bb",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": false,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/ui/xuan-paper-v1.webp",
+        "bytes": 9894,
+        "sha256": "c86afbc2f9a330aa61b1f110a9afab0db9bc4f213383ec78d19b4f7d95055f05",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": false,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/xuan-paper-v1.json",
+        "sha256": "3ff1d5c087ec67780f706ea5d1c61c21ff5d51799b5de7cefdd9ec4458abb968"
+      },
+      "reviewSourceHash": "c6e3d6e64d309165e1dafc96be58cd07f5217b360f73c3fa680c4b29e8d1b3bb"
+    }
+  ]
+}

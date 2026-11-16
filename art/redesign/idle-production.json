@@ -1,0 +1,48 @@
+{
+  "format": "chenyuan-idle-production",
+  "version": 1,
+  "task": "Goal3 U4",
+  "maxNativeBytes": 26000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/ProductionPlanner.vue",
+      "bytes": 14435,
+      "sha256": "6ebbc6551f6c68605b4e634196579787bf50e91d71d8fa84938bcc8cb9f1306b"
+    },
+    {
+      "path": "web/src/idle-production.css",
+      "bytes": 6309,
+      "sha256": "50a2df6a433f250ba47dbbfb2692fe6416edfa39414828d1e0d85a267b31d47e"
+    },
+    {
+      "path": "web/src/activity-view.ts",
+      "bytes": 3891,
+      "sha256": "8d08ccebf604e2e1d0285045a30bce54b86eaf71e80d1a31529fa8a46e52ace9"
+    }
+  ],
+  "sourceReferences": [
+    "goal-3/amendments/2026-10-20-heartbeat-u4.md",
+    "docs/decisions/0006-idle-gameplay-interaction-rules.md"
+  ],
+  "bindings": {
+    "web/src/GoodsPanel.vue": [
+      "<ProductionPlanner ",
+      "@start=\"emit('start',$event)\""
+    ],
+    "web/src/EquipmentPanel.vue": [
+      "<ProductionPlanner "
+    ],
+    "web/src/App.vue": [
+      "@start=\"startProduction\"",
+      "@move=\"moveProduction\""
+    ],
+    "web/src/TrainingActivity.vue": [
+      "activityView(a.value,props.store.game)"
+    ],
+    "web/src/main.ts": [
+      "import './idle-production.css'"
+    ]
+  },
+  "scope": "Distinct recipe/material/furnace and one-relic interactions; four typed activity displays. Existing alchemy painting reused, old caps unchanged, no player acceptance."
+}

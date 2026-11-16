@@ -1,0 +1,30 @@
+{
+  "format": "chenyuan-check-uir34-02-04-additions",
+  "version": 23,
+  "parentVersion": 22,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 928,
+    "signature": "9de57d7bb5cc6f4936800fa183c0846205092f4b4776a1f27cd715cefa277777"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "check-uir34-02-04.spec.ts",
+      "title": "CHECK-UIR34-C1 a normal opening resumes only its chosen gift then original idle cycles and breakthrough lead to an explicit complete school comparison",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-uir34-02-04.spec.ts",
+      "title": "CHECK-UIR34-C2 a paused finite activity keeps its allowance through full comparison and native configuration retry then retires without an automatic new cycle",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-uir34-02-04.spec.ts",
+      "title": "CHECK-UIR34-C3 held breakthrough saving keeps configuration readonly and the original preparation and outcome commit once after an explicit pause",
+      "projectName": "chromium"
+    }
+  ]
+}

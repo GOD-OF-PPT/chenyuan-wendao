@@ -1,0 +1,40 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "asset": "talisman-station-v1",
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-64929fa7-cf6d-414b-a58d-52dbbe560588.png",
+  "selectedCopy": "art/redesign/art16-schools/talisman-station-v1.png",
+  "generatedSHA256": "d6b0b62acf8e28ad91efca56fe179b31ae2733ef5db7507e1ce0ec2de99f1615",
+  "copySHA256": "d6b0b62acf8e28ad91efca56fe179b31ae2733ef5db7507e1ce0ec2de99f1615",
+  "prompt": "art/redesign/art16-schools/talisman-station-v1-prompt.json",
+  "promptSHA256": "3da3a4d8e7b92462824d85b8e22230e980326a0df97d7dd8dae0bb43cb82dc26",
+  "reference": "web/public/art/v2/workshop/furnace-v1.webp",
+  "referenceSHA256": "bd201f06af3c18342eb6dda9d5bb2abb96347b623fb32f1d213c4c2b86c25642",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "modeRGBA": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alpha1Bbox": [
+    33,
+    17,
+    1224,
+    1254
+  ],
+  "alpha16Bbox": [
+    81,
+    62,
+    1221,
+    1133
+  ],
+  "originalKept": true,
+  "requestId": null,
+  "model": null,
+  "selectedForRuntime": true,
+  "pixelReview": "actual generated original viewed; whole object visible; sword source framing tight7px top/2px bottom, keep original and normalize complete alpha body with32px runtime margin; no semantic edit or outpainting performed"
+}

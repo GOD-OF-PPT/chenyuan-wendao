@@ -1,0 +1,35 @@
+{
+  "name": "chenyuan-wendao-web",
+  "private": true,
+  "version": "0.1.0-playable.1",
+  "type": "module",
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "scripts": {
+    "dev": "node --experimental-strip-types ../scripts/dev-web.mjs",
+    "build": "node --experimental-strip-types ../scripts/build-web.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "test:e2e": "playwright test",
+    "test:persistence": "playwright test --config playwright.persistence.config.ts",
+    "test:journeys": "playwright test --config playwright.journeys.config.ts",
+    "test:performance": "playwright test --config playwright.performance.config.ts",
+    "test:candidate": "playwright test --config playwright.candidate.config.ts"
+  },
+  "dependencies": {
+    "pinia": "3.0.3",
+    "vue": "3.5.44"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "@vitejs/plugin-vue": "6.0.1",
+    "@vue/compiler-sfc": "3.5.44",
+    "color-name": "2.0.0",
+    "postcss": "8.5.30",
+    "postcss-selector-parser": "7.2.1",
+    "postcss-value-parser": "4.2.0",
+    "typescript": "5.8.3",
+    "vite": "7.3.7",
+    "vue-tsc": "3.1.1"
+  }
+}

@@ -1,0 +1,24 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {createAdventure,advance,parseAdventure,validateAdventure,intent} from '../src/game/adventure.ts';
+const cmd=(g,a)=>({...a,commandId:`test:${g.core.revision}`,runId:g.core.runId,expectedRevision:g.core.revision});
+const act=(g,a)=>advance(g,cmd(g,a));
+function ready(choice='leave',school='sword') {let g=createAdventure('顾长青','test');for(const a of [{type:'CHOOSE',choice},{type:'TRAVEL',location:'cave'},{type:'CULTIVATE',method:'natural',count:2},{type:'BREAKTHROUGH'},{type:'SCHOOL',school},{type:'TRAVEL',location:'wilderness'}]) g=act(g,a);return g;}
+function fight(g,enemy='wolf'){g=act(g,{type:'ENCOUNTER',enemy});let rounds=0;while(g.battle&&rounds++<40){const b=g.battle;let move='attack';if(g.school==='sword')move=b.sword>=2?'release':'technique';else move=b.marks.length?'release':'technique';if(intent(b).kind==='heavy')move=g.school==='sword'&&b.sword===3?'release':'guard';if(g.core.player.mp<12)move='attack';g=act(g,{type:'BATTLE',move});}return g;}
+for(const choice of ['help','trade','leave'])for(const school of ['sword','talisman'])test(`${choice}/${school}: real play to foundation including combat`,()=>{
+ let g=ready(choice,school);g=fight(g);assert.equal(g.wins,1);assert.equal(g.core.inventory.core,1);
+ for(const a of [{type:'SOURCE',sourceId:'herbs',count:4},{type:'SOURCE',sourceId:'dew',count:2},{type:'TRAVEL',location:'cave'},{type:'CRAFT',recipeId:'foundation'},{type:'CULTIVATE',method:'natural',count:50},{type:'BREAKTHROUGH'}])g=act(g,a);
+ assert.equal(g.core.player.realm,'foundation');assert.equal(g.core.inventory.foundation_pill,0);assert.equal(g.core.inventory.core,0);
+});
+test('battle blocks economic commands and switching',()=>{let g=act(ready(),{type:'ENCOUNTER',enemy:'wolf'});for(const a of [{type:'TRAVEL',location:'cave'},{type:'SCHOOL',school:'talisman'},{type:'USE',item:'healing_pill'}])assert.throws(()=>act(g,a));});
+test('full sword intent interrupts heavy strike',()=>{let g=act(ready(),{type:'ENCOUNTER',enemy:'warden'});g=act(g,{type:'BATTLE',move:'technique'});g=act(g,{type:'BATTLE',move:'attack'});assert.equal(g.battle.sword,3);const hp=g.core.player.hp;g=act(g,{type:'BATTLE',move:'release'});assert.equal(g.core.player.hp,hp);});
+test('talisman persists and detonates, not sword intent',()=>{let g=act(ready('leave','talisman'),{type:'ENCOUNTER',enemy:'warden'});g=act(g,{type:'BATTLE',move:'technique'});assert.deepEqual(g.battle.marks,[1]);assert.equal(g.battle.sword,0);g=act(g,{type:'BATTLE',move:'release'});assert.deepEqual(g.battle.marks,[]);});
+test('refresh snapshot preserves exact next result',()=>{let g=act(ready(),{type:'ENCOUNTER',enemy:'wolf'});g=act(g,{type:'BATTLE',move:'attack'});const imported=parseAdventure(JSON.stringify(g));assert.deepEqual(act(g,{type:'BATTLE',move:'guard'}),act(imported,{type:'BATTLE',move:'guard'}));});
+test('defeat returns to cave, retains items, rest recovers',()=>{let g=act(ready(),{type:'ENCOUNTER',enemy:'warden'});g.core.player.hp=1;g=act(g,{type:'BATTLE',move:'attack'});assert.equal(g.battle,null);assert.equal(g.core.player.hp,1);assert.equal(g.core.world.location,'cave');g=act(g,{type:'REST'});assert.equal(g.core.player.hp,100);});
+test('flee has no loot',()=>{let g=act(ready(),{type:'ENCOUNTER',enemy:'wolf'});g=act(g,{type:'BATTLE',move:'flee'});assert.equal(g.wins,0);assert.equal(g.core.inventory.core,0);});
+test('insufficient mana does not mutate original',()=>{const g=act(ready(),{type:'ENCOUNTER',enemy:'wolf'});g.core.player.mp=0;const saved=JSON.stringify(g);assert.throws(()=>act(g,{type:'BATTLE',move:'technique'}));assert.equal(JSON.stringify(g),saved);});
+test('new players cannot skip the opening',()=>{const g=createAdventure('修士','run');assert.throws(()=>act(g,{type:'SCHOOL',school:'sword'}));});
+test('strict save validation',()=>{for(const change of [g=>g.wins=-1,g=>g.school='mage',g=>g.core.inventory.herb=-1,g=>g.version=9,g=>g.journal=['x'.repeat(601)],g=>g.battle={enemy:'__proto__'}]){const g=ready();change(g);assert.throws(()=>validateAdventure(g));}assert.throws(()=>parseAdventure('{broken'));assert.throws(()=>parseAdventure('x'.repeat(1000001)));});
+test('old M1 snapshots migrate without awarding resources',()=>{const g=ready();const old=parseAdventure(JSON.stringify(g.core));assert.deepEqual(old.core,g.core);assert.equal(old.school,null);});
+test('unknown move and enemy rejected',()=>{const g=ready();assert.throws(()=>act(g,{type:'ENCOUNTER',enemy:'constructor'}));const b=act(g,{type:'ENCOUNTER',enemy:'wolf'});assert.throws(()=>act(b,{type:'BATTLE',move:'skip'}));});
+test('no breakthrough without resources, original state intact',()=>{let g=ready();g=act(g,{type:'TRAVEL',location:'cave'});g=act(g,{type:'CULTIVATE',method:'natural',count:50});const before=JSON.stringify(g);assert.throws(()=>act(g,{type:'BREAKTHROUGH'}));assert.equal(JSON.stringify(g),before);});

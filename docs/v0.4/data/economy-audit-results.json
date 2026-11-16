@@ -1,0 +1,398 @@
+{
+  "scope": "static selected-config audit; NOT gameplay tests",
+  "sourceCommit": "a49c0b4d0671a75f25c7781e4613de109c232899",
+  "limitations": [
+    "Each realm starts with zero XP, zero stones and empty material inventory.",
+    "No combat, events, mind/relic bonuses, cross-realm carryover or real-world wait time.",
+    "Three fixed preparation strategies; not a global path optimizer.",
+    "The document script calculates arithmetic; it does not execute the game engine."
+  ],
+  "rows": [
+    {
+      "realm": "炼气",
+      "naturalSteps": 20,
+      "stonesPerGameMonth": 20.0,
+      "assistedCostInWorkMonths": 1.0,
+      "buyInputsPlusFee": 130,
+      "buyProduct": 160
+    },
+    {
+      "realm": "筑基",
+      "naturalSteps": 25,
+      "stonesPerGameMonth": 30.0,
+      "assistedCostInWorkMonths": 0.666667,
+      "buyInputsPlusFee": 400,
+      "buyProduct": 380
+    },
+    {
+      "realm": "金丹",
+      "naturalSteps": 30,
+      "stonesPerGameMonth": 43.333333,
+      "assistedCostInWorkMonths": 0.461538,
+      "buyInputsPlusFee": 605,
+      "buyProduct": 700
+    },
+    {
+      "realm": "元婴",
+      "naturalSteps": 36,
+      "stonesPerGameMonth": 57.5,
+      "assistedCostInWorkMonths": 0.347826,
+      "buyInputsPlusFee": 975,
+      "buyProduct": 1100
+    },
+    {
+      "realm": "化神",
+      "naturalSteps": 40,
+      "stonesPerGameMonth": 72.0,
+      "assistedCostInWorkMonths": 0.277778,
+      "buyInputsPlusFee": 1470,
+      "buyProduct": 1500
+    }
+  ],
+  "fixedStrategyPlans": [
+    {
+      "realm": "炼气",
+      "strategy": "gather-craft",
+      "cultivation": "natural",
+      "gameMonths": 31,
+      "workSteps": 1,
+      "cultivationSteps": 19,
+      "remainingStones": 0,
+      "remainingMaterials": {
+        "herb": 0,
+        "dew": 0,
+        "core": 0
+      }
+    },
+    {
+      "realm": "炼气",
+      "strategy": "gather-craft",
+      "cultivation": "assisted",
+      "gameMonths": 32,
+      "workSteps": 11,
+      "cultivationSteps": 10,
+      "remainingStones": 0,
+      "remainingMaterials": {
+        "herb": 0,
+        "dew": 0,
+        "core": 0
+      }
+    },
+    {
+      "realm": "炼气",
+      "strategy": "buy-inputs-craft",
+      "cultivation": "natural",
+      "gameMonths": 28,
+      "workSteps": 7,
+      "cultivationSteps": 20,
+      "remainingStones": 10,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "炼气",
+      "strategy": "buy-inputs-craft",
+      "cultivation": "assisted",
+      "gameMonths": 28,
+      "workSteps": 17,
+      "cultivationSteps": 10,
+      "remainingStones": 10,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "炼气",
+      "strategy": "buy-product",
+      "cultivation": "natural",
+      "gameMonths": 28,
+      "workSteps": 8,
+      "cultivationSteps": 20,
+      "remainingStones": 0,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "炼气",
+      "strategy": "buy-product",
+      "cultivation": "assisted",
+      "gameMonths": 28,
+      "workSteps": 18,
+      "cultivationSteps": 10,
+      "remainingStones": 0,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "筑基",
+      "strategy": "gather-craft",
+      "cultivation": "natural",
+      "gameMonths": 46,
+      "workSteps": 1,
+      "cultivationSteps": 24,
+      "remainingStones": 0,
+      "remainingMaterials": {
+        "herb": 0,
+        "dew": 0,
+        "core": 0,
+        "jade": 0
+      }
+    },
+    {
+      "realm": "筑基",
+      "strategy": "gather-craft",
+      "cultivation": "assisted",
+      "gameMonths": 42,
+      "workSteps": 5,
+      "cultivationSteps": 12,
+      "remainingStones": 0,
+      "remainingMaterials": {
+        "herb": 0,
+        "dew": 0,
+        "core": 0,
+        "jade": 0
+      }
+    },
+    {
+      "realm": "筑基",
+      "strategy": "buy-inputs-craft",
+      "cultivation": "natural",
+      "gameMonths": 40,
+      "workSteps": 7,
+      "cultivationSteps": 24,
+      "remainingStones": 20,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "筑基",
+      "strategy": "buy-inputs-craft",
+      "cultivation": "assisted",
+      "gameMonths": 36,
+      "workSteps": 11,
+      "cultivationSteps": 12,
+      "remainingStones": 20,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "筑基",
+      "strategy": "buy-product",
+      "cultivation": "natural",
+      "gameMonths": 38,
+      "workSteps": 7,
+      "cultivationSteps": 24,
+      "remainingStones": 40,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "筑基",
+      "strategy": "buy-product",
+      "cultivation": "assisted",
+      "gameMonths": 34,
+      "workSteps": 11,
+      "cultivationSteps": 12,
+      "remainingStones": 40,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "金丹",
+      "strategy": "gather-craft",
+      "cultivation": "natural",
+      "gameMonths": 54,
+      "workSteps": 1,
+      "cultivationSteps": 29,
+      "remainingStones": 20,
+      "remainingMaterials": {
+        "herb": 0,
+        "dew": 0,
+        "jade": 0,
+        "lotus": 1
+      }
+    },
+    {
+      "realm": "金丹",
+      "strategy": "gather-craft",
+      "cultivation": "assisted",
+      "gameMonths": 49,
+      "workSteps": 4,
+      "cultivationSteps": 15,
+      "remainingStones": 110,
+      "remainingMaterials": {
+        "herb": 0,
+        "dew": 0,
+        "jade": 0,
+        "lotus": 1
+      }
+    },
+    {
+      "realm": "金丹",
+      "strategy": "buy-inputs-craft",
+      "cultivation": "natural",
+      "gameMonths": 48,
+      "workSteps": 5,
+      "cultivationSteps": 30,
+      "remainingStones": 45,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "金丹",
+      "strategy": "buy-inputs-craft",
+      "cultivation": "assisted",
+      "gameMonths": 39,
+      "workSteps": 7,
+      "cultivationSteps": 15,
+      "remainingStones": 5,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "金丹",
+      "strategy": "buy-product",
+      "cultivation": "natural",
+      "gameMonths": 47,
+      "workSteps": 6,
+      "cultivationSteps": 29,
+      "remainingStones": 80,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "金丹",
+      "strategy": "buy-product",
+      "cultivation": "assisted",
+      "gameMonths": 39,
+      "workSteps": 8,
+      "cultivationSteps": 15,
+      "remainingStones": 40,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "元婴",
+      "strategy": "gather-craft",
+      "cultivation": "natural",
+      "gameMonths": 67,
+      "workSteps": 1,
+      "cultivationSteps": 35,
+      "remainingStones": 50,
+      "remainingMaterials": {
+        "dew": 0,
+        "lotus": 1,
+        "soul": 0
+      }
+    },
+    {
+      "realm": "元婴",
+      "strategy": "gather-craft",
+      "cultivation": "assisted",
+      "gameMonths": 58,
+      "workSteps": 3,
+      "cultivationSteps": 18,
+      "remainingStones": 150,
+      "remainingMaterials": {
+        "dew": 0,
+        "lotus": 1,
+        "soul": 0
+      }
+    },
+    {
+      "realm": "元婴",
+      "strategy": "buy-inputs-craft",
+      "cultivation": "natural",
+      "gameMonths": 59,
+      "workSteps": 5,
+      "cultivationSteps": 35,
+      "remainingStones": 175,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "元婴",
+      "strategy": "buy-inputs-craft",
+      "cultivation": "assisted",
+      "gameMonths": 46,
+      "workSteps": 6,
+      "cultivationSteps": 18,
+      "remainingStones": 45,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "元婴",
+      "strategy": "buy-product",
+      "cultivation": "natural",
+      "gameMonths": 55,
+      "workSteps": 5,
+      "cultivationSteps": 35,
+      "remainingStones": 50,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "元婴",
+      "strategy": "buy-product",
+      "cultivation": "assisted",
+      "gameMonths": 46,
+      "workSteps": 7,
+      "cultivationSteps": 18,
+      "remainingStones": 150,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "化神",
+      "strategy": "gather-craft",
+      "cultivation": "natural",
+      "gameMonths": 84,
+      "workSteps": 1,
+      "cultivationSteps": 39,
+      "remainingStones": 120,
+      "remainingMaterials": {
+        "core": 0,
+        "soul": 0,
+        "dao": 0
+      }
+    },
+    {
+      "realm": "化神",
+      "strategy": "gather-craft",
+      "cultivation": "assisted",
+      "gameMonths": 70,
+      "workSteps": 2,
+      "cultivationSteps": 20,
+      "remainingStones": 80,
+      "remainingMaterials": {
+        "core": 0,
+        "soul": 0,
+        "dao": 0
+      }
+    },
+    {
+      "realm": "化神",
+      "strategy": "buy-inputs-craft",
+      "cultivation": "natural",
+      "gameMonths": 70,
+      "workSteps": 5,
+      "cultivationSteps": 40,
+      "remainingStones": 330,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "化神",
+      "strategy": "buy-inputs-craft",
+      "cultivation": "assisted",
+      "gameMonths": 55,
+      "workSteps": 6,
+      "cultivationSteps": 20,
+      "remainingStones": 290,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "化神",
+      "strategy": "buy-product",
+      "cultivation": "natural",
+      "gameMonths": 65,
+      "workSteps": 5,
+      "cultivationSteps": 40,
+      "remainingStones": 300,
+      "remainingMaterials": {}
+    },
+    {
+      "realm": "化神",
+      "strategy": "buy-product",
+      "cultivation": "assisted",
+      "gameMonths": 50,
+      "workSteps": 6,
+      "cultivationSteps": 20,
+      "remainingStones": 260,
+      "remainingMaterials": {}
+    }
+  ]
+}

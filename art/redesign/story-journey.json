@@ -1,0 +1,69 @@
+{
+  "format": "chenyuan-story-journey",
+  "version": 1,
+  "task": "Goal2 T06",
+  "maxNewBytes": 48000,
+  "maxRowsPerPage": 4,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/story-pages.ts",
+      "bytes": 5939,
+      "sha256": "f75cc6730dc6b949ce7344aa79e54e6b84ac6f31d30661659e6d300be4df0fb7"
+    },
+    {
+      "path": "web/src/NarrativePanel.vue",
+      "bytes": 6603,
+      "sha256": "e4166552f75d46d58cb6dd8f3968a030f0b0be80882390bf19b6b7e5001314a5"
+    },
+    {
+      "path": "web/src/FateCatalogue.vue",
+      "bytes": 9627,
+      "sha256": "da3efbc6ebfd68d042a07ce3e89343299b94094ad3d2590f77005e61780763a2"
+    },
+    {
+      "path": "web/src/LifeCatalogue.vue",
+      "bytes": 3988,
+      "sha256": "3e0577cf7e071e2aa5282371f30dca2a1d414c80b36b9e84fa3f5167d4398cec"
+    },
+    {
+      "path": "web/src/TrialCatalogue.vue",
+      "bytes": 11479,
+      "sha256": "a721e499869fb198dd382db3ce7a03257ce80786cba49ba17fc666e8c08b1ab0"
+    },
+    {
+      "path": "web/src/ReviewPages.vue",
+      "bytes": 870,
+      "sha256": "174210329c8aa9af93839f2a54cac0d8d76c50362c862bbc79096ecfeb92e7e2"
+    },
+    {
+      "path": "web/src/story-book.css",
+      "bytes": 8095,
+      "sha256": "f8895a2b4ff2ae96a9ad9865f077d9d655a743b86000c12b3914a28dc3ebbe95"
+    },
+    {
+      "path": "web/src/reading-memory.ts",
+      "bytes": 972,
+      "sha256": "8e7a0718edb07113e30f817df5ea98180455e1ea4a7f481a10c72b3657357808"
+    }
+  ],
+  "bindings": {
+    "web/src/App.vue": [
+      "<NarrativePanel ",
+      "<FateCatalogue ",
+      "<LifeCatalogue ",
+      "<TrialCatalogue ",
+      "<ReviewPages "
+    ],
+    "web/src/main.ts": [
+      "import './story-book.css'"
+    ]
+  },
+  "sourceReferences": [
+    "goal-2/amendments/2026-10-20-continue-story-journey.md",
+    "docs/implementation/goal-2-story-journey.md",
+    "goal-2/amendments/2026-10-20-continue-art-polish.md",
+    "docs/implementation/goal-2-art-polish.md",
+    "docs/decisions/0017-narrative-life-r4-contract.md"
+  ]
+}

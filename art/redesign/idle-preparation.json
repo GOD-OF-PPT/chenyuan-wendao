@@ -1,0 +1,77 @@
+{
+  "format": "chenyuan-idle-preparation",
+  "version": 1,
+  "task": "Goal3 U5",
+  "maxNativeBytes": 60000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/LearningPlanner.vue",
+      "bytes": 18613,
+      "sha256": "916581594274b568bf22fea242edacf375c7cf53a96ec4ca3766adad58db3d1b"
+    },
+    {
+      "path": "web/src/MarketPlanner.vue",
+      "bytes": 12464,
+      "sha256": "133ca11bcb8b8c283b3138cc88add796fdc22f507781869e27fb2025b379c760"
+    },
+    {
+      "path": "web/src/RecoveryPlanner.vue",
+      "bytes": 8572,
+      "sha256": "13a08bcb6fc24f98a1ff07dad3ad1a803dbbd21ab2d2689611d87f4994f266ab"
+    },
+    {
+      "path": "web/src/ConfigurationDialog.vue",
+      "bytes": 5614,
+      "sha256": "cc50327d03b19836dc9e41df9ff0e36185e2f64b846d510b795b6aad671f8b52"
+    },
+    {
+      "path": "web/src/preparation-view.ts",
+      "bytes": 2441,
+      "sha256": "d46825242a9912510bbec9d726e2bef22f5621e5d84717c0cbd3be70916aa38f"
+    },
+    {
+      "path": "web/src/idle-preparation.css",
+      "bytes": 12295,
+      "sha256": "9832321f25817d059c4a95e6bc16ac31e7476eac800afaa788575cd00278396a"
+    }
+  ],
+  "sourceReferences": [
+    "goal-3/amendments/2026-10-21-heartbeat-u5.md",
+    "docs/decisions/0007-preparation-idle-contract.md"
+  ],
+  "bindings": {
+    "web/src/App.vue": [
+      "<ConfigurationDialog ",
+      "<MarketPlanner ",
+      "<RecoveryPlanner ",
+      "@travel-plan=\"movePreparation\""
+    ],
+    "web/src/EquipmentPanel.vue": [
+      "<LearningPlanner "
+    ],
+    "web/src/ExplorePanel.vue": [
+      "<MarketPlanner "
+    ],
+    "web/src/GoodsPanel.vue": [
+      "<InventoryStage"
+    ],
+    "web/src/activity-view.ts": [
+      "preparationView(a)"
+    ],
+    "web/src/main.ts": [
+      "import './idle-preparation.css'"
+    ],
+    "web/src/InventoryStage.vue": [
+      "view('use')",
+      "view('sell')",
+      "'inspect-use-'+itemId",
+      "'inspect-sell-'+itemId",
+      "查看服丹安排",
+      "inventory-main-source",
+      "inventory-uses-dialog",
+      "突破物不可出售"
+    ]
+  },
+  "scope": "Six finite online activities and three immediate compared configurations; approved art reused; no balance or player acceptance."
+}

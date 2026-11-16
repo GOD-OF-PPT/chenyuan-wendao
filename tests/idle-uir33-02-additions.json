@@ -1,0 +1,42 @@
+{
+  "format": "chenyuan-uir33-02-comprehensive-additions",
+  "version": 10,
+  "parentVersion": 9,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 864,
+    "signature": "fea3c07b6f418e533b8d9ae2b3b173458e25383d85d7c2fb117b332bf679c361"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir33-02-local-exploration.spec.ts",
+      "title": "UIR33-02-A1 a new mortal cave map offers its real cultivation goal without a same-place route or fake travel duration",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-02-local-exploration.spec.ts",
+      "title": "UIR33-02-A2 all six actual locations lead only to their complete existing local catalogue or preparation view",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-02-local-exploration.spec.ts",
+      "title": "UIR33-02-A3 only an explicitly selected foreign destination runs the original six-second atomic trip and arrival exposes local viewing without another action",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-02-local-exploration.spec.ts",
+      "title": "UIR33-02-A4 locked destinations and local category returns retain the selected route and all edited source and market limits",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-02-local-exploration.spec.ts",
+      "title": "UIR33-02-A5 a failed travel keeps its original retry while local viewing cannot replace its command or start another activity",
+      "projectName": "chromium"
+    }
+  ]
+}

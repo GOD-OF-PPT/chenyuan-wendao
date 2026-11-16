@@ -1,0 +1,119 @@
+{
+  "format": "chenyuan-art30-export",
+  "version": 1,
+  "producer": {
+    "path": "art/tools/export_art30_scene.py",
+    "bytes": 3180,
+    "sha256": "7daa650977e6d74f6c269b64db48ce9c56444f446bf20a43fac476382960089b"
+  },
+  "helper": {
+    "path": "art/tools/export_art10_blanks.py",
+    "bytes": 8264,
+    "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+  },
+  "source": {
+    "path": "art/production/art30/npc-parlour-v1.png",
+    "bytes": 2551001,
+    "sha256": "740edf42832e8320e8f39efb30a11065afe40857c2dfd288bf33a535eb6b975a",
+    "dimensions": {
+      "width": 1774,
+      "height": 887
+    },
+    "format": "png",
+    "mode": "RGB",
+    "alpha": false,
+    "alphaProof": {
+      "transparentPixels": 0,
+      "solidPixels": 1573538,
+      "intermediatePixels": 0,
+      "min": 255,
+      "max": 255
+    },
+    "alphaBBox1": [
+      0,
+      0,
+      1774,
+      887
+    ],
+    "alphaBBox16": [
+      0,
+      0,
+      1774,
+      887
+    ],
+    "rgbaSHA256": "c11e57f5c2a4eaebbb28893f9a4ec8467463a01c1cc59a59febaf1f691f60e06"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/workshops/npc-parlour-v1.webp",
+    "bytes": 143876,
+    "sha256": "5682ea34bb0370a7f206f62070398ec24079837777368e7bb7bd64c3e3327620",
+    "dimensions": {
+      "width": 1536,
+      "height": 768
+    },
+    "format": "webp",
+    "mode": "RGB",
+    "alpha": false,
+    "alphaProof": {
+      "transparentPixels": 0,
+      "solidPixels": 1179648,
+      "intermediatePixels": 0,
+      "min": 255,
+      "max": 255
+    },
+    "alphaBBox1": [
+      0,
+      0,
+      1536,
+      768
+    ],
+    "alphaBBox16": [
+      0,
+      0,
+      1536,
+      768
+    ],
+    "rgbaSHA256": "4220b5e4a02b6742d2ae9950dd81e1cc3257b8961398716ba9a7d6041e0ca178"
+  },
+  "prompts": [
+    {
+      "path": "art/production/art30/npc-parlour-prompt.json",
+      "bytes": 2664,
+      "sha256": "b0b8a20b0f47c3ea431f324968926d797a5ea5be9f876a4825987af8cefb391d"
+    }
+  ],
+  "audit": {
+    "path": "art/production/art30/npc-parlour-audit.json",
+    "bytes": 1404,
+    "sha256": "b1372a3fa604786995af356bad3710fc143a164e9582986160123a60dc1be7a9"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-resize",
+    "1536",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "decoder": "Pillow",
+  "decoderVersion": "12.3.0",
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "transform": {
+    "uniformScale": 0.8658399098083427,
+    "crop": false,
+    "semanticEdit": false,
+    "outputWidth": 1536,
+    "outputHeight": 768
+  },
+  "doubleExport": {
+    "bytesEqual": true,
+    "firstSHA256": "5682ea34bb0370a7f206f62070398ec24079837777368e7bb7bd64c3e3327620",
+    "secondSHA256": "5682ea34bb0370a7f206f62070398ec24079837777368e7bb7bd64c3e3327620",
+    "sourceUnchanged": true
+  },
+  "userAcceptance": false
+}

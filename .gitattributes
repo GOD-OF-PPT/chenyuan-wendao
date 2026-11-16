@@ -1,0 +1,16 @@
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.zip binary
+*.gz binary
+*.bundle binary
+# Future originals only. Existing published art paths keep their original blobs.
+art/large-originals/**/*.png filter=lfs diff=lfs merge=lfs -text
+art/large-originals/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+art/large-originals/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+art/large-originals/**/*.webp filter=lfs diff=lfs merge=lfs -text
+art/large-originals/**/*.tif filter=lfs diff=lfs merge=lfs -text
+art/large-originals/**/*.tiff filter=lfs diff=lfs merge=lfs -text
+art/large-originals/**/*.bmp filter=lfs diff=lfs merge=lfs -text

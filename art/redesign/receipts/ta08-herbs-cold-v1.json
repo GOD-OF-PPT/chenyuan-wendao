@@ -1,0 +1,100 @@
+{
+  "id": "herbs-cold-v1",
+  "sourceId": "herbs",
+  "promptKey": "herbs",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-b28b4223-9247-46e1-8249-ca26e9c67a7d.png",
+  "savedPath": "art/redesign/ta08-resources/herbs-cold-v1.png",
+  "sourceSHA256": "22e547c0b65458b66aebd78d49b7569e16f0aec73f230a92ea1fe33583aac311",
+  "copiedUnchanged": true,
+  "source": {
+    "path": "art/redesign/ta08-resources/herbs-cold-v1.png",
+    "bytes": 1706858,
+    "sha256": "22e547c0b65458b66aebd78d49b7569e16f0aec73f230a92ea1fe33583aac311",
+    "dimensions": {
+      "width": 1254,
+      "height": 1254
+    },
+    "alpha": true,
+    "format": "png"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/sources/herbs-cold-v1.webp",
+    "bytes": 73050,
+    "sha256": "0d111845c05e076102a788c98ace1917a2c4e87a13a6f7021eea4851918aaa73",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "alphaProof": {
+    "transparentPixels": 988143,
+    "solidPixels": 404694,
+    "intermediatePixels": 179679,
+    "min": 0,
+    "max": 255
+  },
+  "runtimeAlphaProof": {
+    "transparentPixels": 163961,
+    "solidPixels": 66159,
+    "intermediatePixels": 32024,
+    "min": 0,
+    "max": 254
+  },
+  "sourceAlphaBBox": [
+    0,
+    15,
+    1254,
+    1233
+  ],
+  "runtimeAlphaBBox": [
+    7,
+    10,
+    512,
+    502
+  ],
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "promptReference": "art/redesign/receipts/ta08-resource-prompts.json",
+  "promptSHA256": "3e8616b9e701ec222fbe38bd763f72fdb6c9ee2715ed5d6b5830eb26c585aad3",
+  "promptDocumentSHA256": "b8a939c8663aba88c1f24ddc8decdad4626d1427f379dfe87813363f17cdc671",
+  "referenceImages": [],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "root source pixel inspection, not user art acceptance",
+    "observation": "Whole serrated medicinal herb clump and mossy root/stone base; distinct layered stems/leaves. Root actually inspected generated source pixels in a batch of at most two. No text/UI/person/tool/motion reward or rectangular backdrop seen. Requested central72-percent margin was not fully achieved; original retained and actual bbox recorded, drawing containment must be checked in the real stage. Source art only, not human acceptance."
+  },
+  "exportProof": {
+    "sourceUnchanged": true,
+    "runtimeUnchanged": true,
+    "reencodedBytes": 73050,
+    "reencodedSHA256": "0d111845c05e076102a788c98ace1917a2c4e87a13a6f7021eea4851918aaa73",
+    "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+  },
+  "decodeProof": {
+    "decoder": "Pillow",
+    "sourceRGBASHA256": "7646ae5ef9a2ce64eadc987558ddfd5d796846c1c0e23c126f7f1145ef5d9ea3",
+    "runtimeRGBASHA256": "a9d69ee8520ec8c30b821f942f419e5fb0100003916036921424ea7b28bf04b8",
+    "alphaDefinitions": {
+      "transparentPixels": "alpha=0",
+      "solidPixels": "alpha>=250",
+      "intermediatePixels": "1<=alpha<250"
+    }
+  },
+  "userAcceptance": false
+}

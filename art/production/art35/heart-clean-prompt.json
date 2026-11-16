@@ -1,0 +1,11 @@
+{
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "intent": "targeted clean-alpha edit; original candidate preserved",
+  "prompt": "Use case: background-extraction / precise-object-edit. Edit target: the provided jade codex cutout. Preserve the entire object, its detailed jade and bronze, silk cords, color, orientation and exact silhouette. Remove ALL isolated colored pixels and ALL neon green, cyan, yellow, red and magenta chroma fringing around its exterior and within holes. Replace those fringe pixels with natural anti-aliased edges that match the adjacent jade/metal/silk, surrounded by true transparent alpha. Remove isolated stray specks. Do not add glow, background, checkerboard, shadows outside the object, new decoration, writing or another object. Add generous clean transparent margin so the entire unchanged silhouette is at least 8 percent from every canvas edge. This is a calm inactive prop, no magical light. Output a complete square transparent cutout, no cropping of subject.",
+  "promptSHA256": "69e92915ab16c95937c9a7474063c80b27ed746dbcf927bae515450850b1ddb8",
+  "transparent_background": true,
+  "referenced_image_paths": [
+    "/Users/gordon/githome/chenyuan-wendao/art/production/art35/heart-source.png"
+  ]
+}

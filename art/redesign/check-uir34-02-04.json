@@ -1,0 +1,47 @@
+{
+  "format": "chenyuan-check-uir34-02-04-readonly-close",
+  "version": 1,
+  "userAcceptance": false,
+  "path": "web/src/MilestoneReview.vue",
+  "bytes": 5051,
+  "sha256": "4b6481898c6401fa58ea9dd4c9d6bdd5a16e23ca6e75b7898c0a0265b63af46d",
+  "before": "goal-4/evidence/check-uir34-02-04/before/MilestoneReview.vue",
+  "beforeSHA256": "20de4cb9497fab63f9a4b9e4265e116d5fd05c6f7fc22c7e114e3fca2d634354",
+  "operations": [
+    [
+      2118,
+      "",
+      "("
+    ],
+    [
+      2124,
+      "",
+      "||review.activity)"
+    ],
+    [
+      2448,
+      "",
+      "y&&!review.activit"
+    ]
+  ],
+  "originalMilestoneCap": 30000,
+  "newRasterAssets": 0,
+  "unchanged": {
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "web/src/activity-persistence.ts": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+    "web/src/activity-clock.ts": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901",
+    "web/src/milestone-view.ts": "af1a2045781e806806140092349b2ecde690524436b254a0c1f326a94e108efd",
+    "web/src/App.vue": "ecffa3d113dd0980f272b56e809c379d8fe87842f80aef7298db234dd3e97ec0",
+    "web/src/ConfigurationDialog.vue": "74067880f132af079130acea336dfd559901cc088d09124f4a26b97d2504ee86",
+    "web/src/TrainingActivity.vue": "4c753b882ce0d1fde7457c61453c64b00df90b8941356dc8a72abbbc06e32e70",
+    "web/src/idle-milestones.css": "496d9959423622607290aab8f8d8ce35f04c1361310a7a2f9545e17fcbf03054",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "src/full/milestones.ts": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73"
+  },
+  "sourceReferences": [
+    "docs/decisions/0111-confirm-configuration-resume-check.md",
+    "goal-4/amendments/2026-11-06-check-uir34-02-04-input.md"
+  ]
+}

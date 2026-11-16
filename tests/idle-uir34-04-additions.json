@@ -1,0 +1,36 @@
+{
+  "format": "chenyuan-uir34-04-comprehensive-additions",
+  "version": 22,
+  "parentVersion": 21,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 925,
+    "signature": "a09214a6d131b066801d23d1ae32be13d23d3617de7b3f1e132872bfb0dcdadf"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir34-04-resume-wording.spec.ts",
+      "title": "UIR34-04-A1 spent assisted cultivation resumes its real purpose and original remaining allowance after reload without offline income",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-04-resume-wording.spec.ts",
+      "title": "UIR34-04-A2 continuing the saved furnace on another page retires its old clock and only the newly authorized full cycle yields a pill",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-04-resume-wording.spec.ts",
+      "title": "UIR34-04-A3 a saved opening choice reloads as continue instead of page authority and still needs its complete original six-second outcome",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-04-resume-wording.spec.ts",
+      "title": "UIR34-04-A4 a native source resume failure leaves original progress and exact retry intact while purpose and full-cycle boundaries remain readable",
+      "projectName": "chromium"
+    }
+  ]
+}

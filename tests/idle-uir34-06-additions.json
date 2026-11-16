@@ -1,0 +1,48 @@
+{
+  "format": "chenyuan-uir34-06-comprehensive-additions",
+  "version": 25,
+  "parentVersion": 24,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 939,
+    "signature": "05a52a814743a889648ecf646cff4031e5d2f1cf0bd993cb58618dce1f00bb8f"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir34-06-character-folio.spec.ts",
+      "title": "UIR34-06 C1 mortal identity lifespan and all empty slots share one readonly character folio with its original return",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-06-character-folio.spec.ts",
+      "title": "UIR34-06 C2 sword factual equipped four slots and age remain exact without changing the original equipment context",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-06-character-folio.spec.ts",
+      "title": "UIR34-06 C2 talisman factual equipped four slots and age remain exact without changing the original equipment context",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-06-character-folio.spec.ts",
+      "title": "UIR34-06 C3 ascended folio preserves the sealed actual age realm and four slots without an invented future or new life",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-06-character-folio.spec.ts",
+      "title": "UIR34-06 C4 longest legal Chinese name and failed portrait remain readable with complete factual slots and stable return",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-06-character-folio.spec.ts",
+      "title": "UIR34-06 C5 the original full cultivation cycle stays authoritative under its character folio through native quota and one saved retry",
+      "projectName": "chromium"
+    }
+  ]
+}

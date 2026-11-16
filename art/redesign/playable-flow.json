@@ -1,0 +1,78 @@
+{
+  "format": "chenyuan-playable-flow",
+  "version": 1,
+  "task": "Goal2 T05",
+  "maxNewBytes": 60000,
+  "maxActionMs": 2400,
+  "maxPageCards": 4,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/action-timing.ts",
+      "bytes": 3643,
+      "sha256": "13868c2e6f7a0047cf8665179ffb34af654395c93e094c3eabbb2892c264d897"
+    },
+    {
+      "path": "web/src/ActionExecution.vue",
+      "bytes": 1519,
+      "sha256": "f01edb8a65e07fd91c0b90519f3e542e9261644564f63bc72f27bc4acafbe5f9"
+    },
+    {
+      "path": "web/src/play-flow.ts",
+      "bytes": 3851,
+      "sha256": "ec31aeb151728b37a6de4f65f17df9020fed7407194cd02df1330a0e69ad0e76"
+    },
+    {
+      "path": "web/src/CataloguePager.vue",
+      "bytes": 558,
+      "sha256": "b5069cf0f229edb66c1e2779cd3542d98bc8a05e292a485c71c2627a652694c0"
+    },
+    {
+      "path": "web/src/PreparationPanel.vue",
+      "bytes": 8416,
+      "sha256": "cc8e14c4d44401a5c1173273b1d287511866a3ff5595c6c76bc118f866689d5c"
+    },
+    {
+      "path": "web/src/ExplorePanel.vue",
+      "bytes": 11676,
+      "sha256": "1c2be3163e7238ba0376dc9b91415c4f911e0a3d3508061d97ed7255ded1a871"
+    },
+    {
+      "path": "web/src/GoodsPanel.vue",
+      "bytes": 4006,
+      "sha256": "b7e1b89fd8b02333e2ee924c1572d5497aa1f1a7e8e4f77511ee4bf08503c00f"
+    },
+    {
+      "path": "web/src/CultivationPanel.vue",
+      "bytes": 3903,
+      "sha256": "d88ad0d4562f5b2025b97131cbfa8d4e89e68f49e1a4e5d47ca78fd0bd2bc22d"
+    },
+    {
+      "path": "web/src/play-flow.css",
+      "bytes": 22421,
+      "sha256": "a77fc4532707b04a1f38409bee85f54bc1c68e51dc7698cae439903da98413ba"
+    }
+  ],
+  "bindings": {
+    "web/src/App.vue": [
+      "<ActionExecution ",
+      "<ExplorePanel ",
+      "<GoodsPanel ",
+      "<TrainingPlanner ",
+      "<PreparationPanel "
+    ],
+    "web/src/store.ts": [
+      "actionClock.wait(totalMs",
+      "const operationRead=readEpoch,outcome = await operation();",
+      "execution.value=null;"
+    ],
+    "web/src/main.ts": [
+      "import './play-flow.css'"
+    ]
+  },
+  "sourceReferences": [
+    "goal-2/amendments/2026-10-19-playable-flow-countdown.md",
+    "docs/implementation/goal-2-playable-flow.md"
+  ],
+  "scope": "Short real action deadlines precede original atomic persistence; finite growth/explore/inventory/equipment pages. Does not change rule rewards, schema, offline rewards or old budgets."
+}

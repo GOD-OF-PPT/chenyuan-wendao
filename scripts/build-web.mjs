@@ -1,0 +1,10 @@
+import path from 'node:path';
+import fs from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import {root} from './source-identity.mjs';
+import {writeNodes} from './demo-nodes.mjs';
+import {recordBuild} from './record-web-build.mjs';
+fs.rmSync(path.join(root,'web/build-report/build.json'),{force:true});
+writeNodes();
+for(const [script,args]of [['vue-tsc/bin/vue-tsc.js',['--noEmit']],['vite/bin/vite.js',['build',...process.argv.slice(2)]]])execFileSync(process.execPath,[path.join(root,'web/node_modules',script),...args],{cwd:path.join(root,'web'),stdio:'inherit'});
+recordBuild();

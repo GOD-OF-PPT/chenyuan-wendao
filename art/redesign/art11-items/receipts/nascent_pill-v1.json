@@ -1,0 +1,25 @@
+{
+  "id": "nascent_pill",
+  "kind": "local imagegen audit not provider-signed receipt",
+  "requestId": null,
+  "model": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-dceee159-2ce3-4a8a-8098-0b82108da739.png",
+  "workspaceRaw": "art/redesign/art11-items/nascent_pill-v1.png",
+  "rawSha256": "44b79a1668ec83babe4770d2b6b3d713b6ac8e8ea6fd0bbcf0081232089973e3",
+  "originalKept": true,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alpha16Bbox": [
+    272,
+    49,
+    1143,
+    1212
+  ]
+}

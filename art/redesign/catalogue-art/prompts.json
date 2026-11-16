@@ -1,0 +1,22 @@
+{
+  "mode": "built-in image_gen",
+  "task": "Goal2 T07R",
+  "purpose": "Production decorative illustrations for actual single-screen game catalogues; all inventory, labels and actions stay in DOM.",
+  "assets": [
+    {
+      "id": "supplies",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Asset type: production transparent illustration for a Chinese xianxia game's inventory page. Primary request: a carefully painted still life of an ancient dark-teal silk travel pouch, a small cluster of pale cyan spiritual crystals, two stems of dew-covered medicinal herbs, and a restrained cloudlike ink wash at the base. This is a decorative category illustration, not a grid of icons or a UI mockup. Style: polished new Chinese fantasy semi-realistic painting, fine brush texture, natural materials, atmospheric edges, consistent with a misty mountain cultivation game. Palette: qingdai deep blue-green and ink green, muted jade highlights, sparse aged-gold fittings, no yellow background. Composition: one coherent centered object group in a square canvas, all items fully visible with generous clear margins, readable silhouette at 250px. Lighting: soft cool mountain light with subtle warm gold reflections. Background: genuinely transparent alpha, no white/colored rectangle or checkerboard. No characters, no text, no writing, no labels, no numbers, no border, no UI, no watermark. Preserve clean translucent edges and fine leaf details."
+    },
+    {
+      "id": "alchemy",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Asset type: production transparent illustration for a Chinese xianxia game's alchemy and breakthrough preparation pages. Primary request: a dignified small ancient bronze three-legged alchemy censer with dark patina and aged-gold ornament, a little jade pill dish with three luminous pale green pills beside it, and delicate curling teal-white vapor rising from the censer. A coherent decorative still life, not icons, not a UI mockup. Style: polished new Chinese fantasy semi-realistic painting, detailed metal and jade surfaces, soft ink-wash edge treatment, consistent with a misty mountain cultivation game. Palette: qingdai deep blue-green and ink green, muted jade light, restrained amber glow inside the censer, no yellow background. Composition: centered balanced full object group on a square canvas, complete handles and legs, generous transparent margins, readable at 250px. Lighting: cool ambient light with a restrained warm glow. Background: truly transparent alpha, no ground rectangle, no checkerboard. No characters, no calligraphy, no writing, no text, no numbers, no UI controls, no border, no watermark."
+    },
+    {
+      "id": "study",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Asset type: production transparent illustration for a Chinese xianxia game's skill study and relic catalogue. Primary request: an elegant ancient Chinese straight sword with a jade-green hilt resting diagonally alongside a partially open bamboo cultivation scroll, a blank pale jade talisman and a small bronze ritual ornament, tied together by a subtle curling stream of jade spiritual light. This is one coherent decorative category still life, not four inventory icons, not a UI mockup, not a claim of player ownership. Style: polished new Chinese fantasy semi-realistic painting with fine brush texture and natural metal, jade and bamboo materials, matching misty mountain cultivation art. Palette: qingdai deep blue-green, ink green, muted jade, sparse aged gold; no yellow background. Composition: full sword and object group entirely visible in square canvas, strong elegant silhouette, clear margins, legible at 250px. Background: truly transparent alpha with clean edges; no white rectangle, no checkerboard. No characters, no text or legible writing on scroll or talisman, no letters, no numbers, no UI controls, no border, no watermark."
+    }
+  ]
+}

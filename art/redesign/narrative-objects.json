@@ -1,0 +1,95 @@
+{
+  "format": "chenyuan-narrative-objects",
+  "version": 1,
+  "task": "Goal4 ART05",
+  "maxNativeBytes": 45000,
+  "newBitmapAssets": 0,
+  "assets": [],
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/EncounterTable.vue",
+      "bytes": 5468,
+      "sha256": "0c73263444112e4d6bc010201750dd836aaef36d03ee612868124afe8033ccf7"
+    },
+    {
+      "path": "web/src/ResponseTable.vue",
+      "bytes": 5253,
+      "sha256": "8ef738214baf612dd4841080cd138aaf9043893f7679a1cf0f90dddddfacaa2a"
+    },
+    {
+      "path": "web/src/LifeScroll.vue",
+      "bytes": 4215,
+      "sha256": "1130d9cadbe7d57c4afea5ba3a18bbe84db7a519f6ed0540000a71b3e6890788"
+    },
+    {
+      "path": "web/src/NarrativeStageHost.vue",
+      "bytes": 353,
+      "sha256": "e195b09b7485b48e88883a830ca2c0b352da396e62f6457e5ff30c0168d9630d"
+    },
+    {
+      "path": "web/src/narrative-effects.ts",
+      "bytes": 5282,
+      "sha256": "ca77c93e636c43fc5c57b1f7b7a3f85bef58aa00f135affe217919b64470b615"
+    },
+    {
+      "path": "web/src/narrative-objects.css",
+      "bytes": 17121,
+      "sha256": "44353d749c6ea41dc7bcae77f05f93ec554804b4c8dce79820b8db9511b72adb"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0027-narrative-object-art-contract.md",
+    "goal-4/amendments/2026-10-24-art05.md",
+    "goal-4/research/art05-sources.json"
+  ],
+  "bindings": {
+    "web/src/FateCatalogue.vue": [
+      "import EncounterTable",
+      "<EncounterTable",
+      "#people"
+    ],
+    "web/src/NarrativePanel.vue": [
+      "import ResponseTable",
+      "<ResponseTable",
+      "#choices"
+    ],
+    "web/src/LifeCatalogue.vue": [
+      "import LifeScroll",
+      "<LifeScroll",
+      "#chapters"
+    ],
+    "web/src/App.vue": [
+      "import NarrativeStageHost",
+      "<NarrativeStageHost",
+      "</NarrativeStageHost>"
+    ],
+    "web/src/NarrativeStageHost.vue": [
+      "narrative-effects",
+      "provide(narrativeStageKey,useNarrativeStage",
+      "<slot/>"
+    ],
+    "web/src/EncounterTable.vue": [
+      "useNarrativeObject",
+      "import './narrative-objects.css'",
+      "data-testid=\"encounter-table\""
+    ],
+    "web/src/ResponseTable.vue": [
+      "useNarrativeObject",
+      "import './narrative-objects.css'",
+      "data-testid=\"response-table\""
+    ],
+    "web/src/LifeScroll.vue": [
+      "useNarrativeObject",
+      "import './narrative-objects.css'",
+      "data-testid=\"life-scroll\""
+    ],
+    "web/src/narrative-effects.ts": [
+      "useActivityPresentation",
+      "narrativeActivityMatches",
+      "narrativeObjectMatches",
+      "useNarrativeObject",
+      "active,7"
+    ]
+  }
+}

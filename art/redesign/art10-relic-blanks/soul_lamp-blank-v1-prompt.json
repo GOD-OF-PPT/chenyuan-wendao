@@ -1,0 +1,13 @@
+{
+  "asset": "soul_lamp-blank-v1",
+  "mode": "built-in",
+  "tool": "image_gen.imagegen",
+  "intent": "precise-object-edit",
+  "transparent_background": true,
+  "prompt": "Use case: precise-object-edit. Edit target: the supplied transparent painted 照魂灯 game artifact. Make a cold unfinished engraving-stage blank of the very SAME closed lantern. Preserve exact body silhouette, round top hanging loop, domed roof, side curled roof tips, curved structural ribs, closed blue-green panels, hanging metal rings, four curved feet, three-quarter perspective, proportions, canvas placement/footprint and upper-left soft neutral lighting. Remove only finished ornamental work: fine gold cloud filigree and floral inlays, polished edges, carved faces and decorative surface patterns become plain rough old-bronze blanks and broad flat unengraved surfaces. Keep every structural bracket and hanging ring volume, so it will align with the finished reference; do not simplify into a cage, oil lamp, open flame or another lantern design. Match the established hand-painted Chinese fantasy material density, teal and aged bronze palette. All panels closed and unlit. Genuinely transparent background, one whole uncut isolated artifact, no scene/table/baseplate/tool, no flame/glow/smoke/runes/text/logo/UI.",
+  "reference": "art/redesign/art03-objects/soul_lamp-v1.png",
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-ca7e75c4-c986-4ae0-8373-cd006d280096.png",
+  "actualOutputHint": "Generated images are saved to /Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254 as /Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-ca7e75c4-c986-4ae0-8373-cd006d280096.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "providerModel": "not exposed by the built-in tool",
+  "providerRequestId": "not exposed by the built-in tool"
+}

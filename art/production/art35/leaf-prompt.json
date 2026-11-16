@@ -1,0 +1,11 @@
+{
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "intent": "new isolated prop; existing image is style reference only",
+  "transparent_background": true,
+  "prompt": "Use case: stylized-concept. Asset type: one transparent cutout for the shipped Chinese xianxia idle game 尘缘问道. The reference is STYLE ONLY: match its detailed restrained painterly realistic fabric and natural material rendering; do not copy its composition, sword, cauldron or magic. A single real carved object, calm inactive state, front three-quarter portrait view, centered and fully contained with at least 10 percent transparent margin. Cool deep celadon jade with mineral clouding, natural stone translucency at thin edges, worn aged-bronze end fittings, restrained dark teal cloth binding where appropriate. Strong coherent silhouette, tangible depth and soft cool upper-left light with tiny warm reflected highlights. High-quality painterly fantasy game prop, detailed material, not a flat geometric/vector icon, not a UI panel. No character, table, background, ground plane, halo, glow, smoke, sparks, rewards, labels, letters, writing, runes, watermark or interface. Actual transparent alpha, no checkerboard. Clean natural alpha edges with NO colored fringing or isolated particles. No tassels or hanging charms; simple binding stays close to the object. Square canvas. Subject: ONE separate tall narrow rectangular jade page strip for a five-leaf folding codex. Width to height approximately 1 to 4. Slightly curved stone leaf, realistic thin beveled long edges, two tiny bronze cord holes near upper and lower sides, mostly blank subtly clouded green jade face. One strip only, no book, no bundle, no extra leaf, no cord stretching outside. The whole long strip is fully visible and vertical.",
+  "promptSHA256": "300812cbaad2fd8c2e397dd510c1e8b035ca51e264de37737a801326978e4b0b",
+  "referenced_image_paths": [
+    "/Users/gordon/githome/chenyuan-wendao/web/public/art/v2/characters/player-seated-cold.webp"
+  ]
+}

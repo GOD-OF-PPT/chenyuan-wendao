@@ -1,0 +1,50 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "model": null,
+  "requestId": null,
+  "reference": {
+    "path": "art/production/art28/alchemy-scene-v1.png",
+    "bytes": 2833591,
+    "sha256": "c1f22fa7d3327c19842e3774676762f056e4ace696ce401d89e5c566e2cdc069"
+  },
+  "calls": [
+    {
+      "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-c9ad1bb4-482a-404b-a8d9-9e8fb428a807.png",
+      "generatedSHA256": "614b03a478ee99cca08e5d55cf1449ed2f52088cef5706989513a2adfbf73a7d",
+      "candidate": {
+        "path": "art/production/art29/candidates/nook-v1.png",
+        "bytes": 2785070,
+        "sha256": "614b03a478ee99cca08e5d55cf1449ed2f52088cef5706989513a2adfbf73a7d"
+      },
+      "prompt": {
+        "path": "art/production/art29/inventory-scene-prompt.json",
+        "bytes": 2490,
+        "sha256": "3c261e6811d3223daee092765beced5f7a15511f18dc47d8b67206e6c475c723"
+      },
+      "requestedTransparent": false
+    },
+    {
+      "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-4e353e3f-80bf-4900-ba56-a42f2f297090.png",
+      "generatedSHA256": "c3e1186f96c0a8aa8dab7c8013eca1171ec8ef6ef40facfe5439480fe0472000",
+      "candidate": {
+        "path": "art/production/art29/candidates/nook-v2.png",
+        "bytes": 2663046,
+        "sha256": "c3e1186f96c0a8aa8dab7c8013eca1171ec8ef6ef40facfe5439480fe0472000"
+      },
+      "prompt": {
+        "path": "art/production/art29/inventory-scene-position-prompt.json",
+        "bytes": 1648,
+        "sha256": "83b12280526c31bc83bdc06f3b21b495eea2eb00c8ffe152f8c281eaf4ac3ac5"
+      },
+      "requestedTransparent": false
+    }
+  ],
+  "selectedCopy": {
+    "path": "art/production/art29/inventory-scene-v1.png",
+    "bytes": 2663046,
+    "sha256": "c3e1186f96c0a8aa8dab7c8013eca1171ec8ef6ef40facfe5439480fe0472000"
+  },
+  "originalsKept": true,
+  "userAcceptance": false,
+  "actualPixelReview": "Empty left sorting table and open empty satchel, calm right wall, no game inventory contents or baked text. Second result lowers the table group. Requested percentages are design intent, not exact measured output coordinates or certification."
+}

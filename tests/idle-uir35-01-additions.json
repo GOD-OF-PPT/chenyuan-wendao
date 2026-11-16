@@ -1,0 +1,30 @@
+{
+  "format": "chenyuan-uir35-01-goal-authorization-additions",
+  "version": 28,
+  "parentVersion": 27,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 950,
+    "signature": "fe603eb219def203df79f6b1d0694078b2176e7e42560bacb50fafb4270b1774"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir35-01-goal-authority.spec.ts",
+      "title": "UIR35-01-A1 natural cultivation shows actual growth instead of a fifty-cycle completion target and stops on the second original thirty-second period",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir35-01-goal-authority.spec.ts",
+      "title": "UIR35-01-A2 an explicit finite natural plan keeps its true target maximum and all original zero budget fields without a hidden write",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir35-01-goal-authority.spec.ts",
+      "title": "UIR35-01-A3 assisted actual spending stays prominent and a failed second save cannot advance the displayed count or replace the original authority",
+      "projectName": "chromium"
+    }
+  ]
+}

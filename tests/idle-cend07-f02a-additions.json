@@ -1,0 +1,36 @@
+{
+  "format": "chenyuan-cend07-f02a-power-additions",
+  "version": 37,
+  "parentVersion": 36,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 984,
+    "signature": "bb3b4918481097669d8406fa40d0b8f0c9da5f17eb26eadc3718eead029e32a9"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend07-f02a-power-focus.spec.ts",
+      "title": "CEND07-F02A-A1 the current equipped scroll has one factual status and complete readonly origin that survives an unrelated full source period",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f02a-power-focus.spec.ts",
+      "title": "CEND07-F02A-A2 unlearned real costs and full original thirty seconds remain through pause reload held quota retry and one durable learned fact without auto equip",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f02a-power-focus.spec.ts",
+      "title": "CEND07-F02A-A3 a learned unequipped power compares for free in place and native failure retries its original immediate configuration before the sole current-slot fact",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f02a-power-focus.spec.ts",
+      "title": "CEND07-F02A-A4 the full twelve-scroll catalogue honest gates and unchanged manual visible status remain readonly with their complete original conditions",
+      "projectName": "chromium"
+    }
+  ]
+}

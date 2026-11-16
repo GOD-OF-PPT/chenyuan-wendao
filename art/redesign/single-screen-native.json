@@ -1,0 +1,21 @@
+{
+  "format": "chenyuan-single-screen-native",
+  "version": 1,
+  "task": "Goal2 T04R",
+  "sourceReferences": [
+    "goal-2/amendments/2026-10-19-single-screen-game.md",
+    "goal-2/design/single-screen-game.md",
+    "docs/implementation/goal-2-single-screen.md"
+  ],
+  "files": [
+    {
+      "path": "web/src/game-hub.css",
+      "bytes": 10876,
+      "sha256": "c6f739121622e43a2141f8df651ed0df5352765d3591d6147868b3f328696198"
+    }
+  ],
+  "maxBytes": 12000,
+  "consumer": "web/src/main.ts",
+  "userAcceptance": false,
+  "scope": "New game-stage stylesheet only; original native-ui-kit stays under its unchanged80000-byte guard. No old component moved out."
+}

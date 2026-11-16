@@ -1,0 +1,42 @@
+{
+  "format": "chenyuan-cend06-f02a-response-additions",
+  "version": 34,
+  "parentVersion": 33,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 972,
+    "signature": "c41dfe5de89d1861841510097dff256267c0d089195af26a0264a941d5a259fc"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend06-f02a-opening-response.spec.ts",
+      "title": "F02A help chosen response owns a clear six-second stage until its sole complete atomic outcome",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend06-f02a-opening-response.spec.ts",
+      "title": "F02A trade chosen response owns a clear six-second stage until its sole complete atomic outcome",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend06-f02a-opening-response.spec.ts",
+      "title": "F02A leave chosen response owns a clear six-second stage until its sole complete atomic outcome",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend06-f02a-opening-response.spec.ts",
+      "title": "F02A original START and held TICK quota retain medicine and a distinct saving or failed stage until the same intent retries exactly once",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend06-f02a-opening-response.spec.ts",
+      "title": "F02A pause reload and a foreign page keep the original response without a fictional clock or offline outcome before full resumed choice",
+      "projectName": "chromium"
+    }
+  ]
+}

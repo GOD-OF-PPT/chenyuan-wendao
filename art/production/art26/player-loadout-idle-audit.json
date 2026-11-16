@@ -1,0 +1,51 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "mode": "built-in",
+  "model": null,
+  "requestId": null,
+  "calls": [
+    {
+      "prompt": {
+        "path": "art/production/art26/player-loadout-idle-v1-prompt.json",
+        "bytes": 2147,
+        "sha256": "b055edfaf06c4272fb3ec3e1e07e72f6409ad6ced97a9594498aa1a8a871ccb2"
+      },
+      "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-9fc373d6-dcb5-4116-87fa-8035c6680050.png",
+      "candidate": {
+        "path": "art/production/art26/candidates/idle-v1.png",
+        "bytes": 2509390,
+        "sha256": "39e5a7822fa15fc48e30afc4e36872f6e9f18dc958382c336959e881f18c4426"
+      },
+      "generatedSHA256": "39e5a7822fa15fc48e30afc4e36872f6e9f18dc958382c336959e881f18c4426",
+      "requestedTransparent": true
+    },
+    {
+      "prompt": {
+        "path": "art/production/art26/player-loadout-idle-cutout-prompt.json",
+        "bytes": 1476,
+        "sha256": "ac95c0f827781846614b49da18891ba0d5a66ffc1e3486e7e1253f8146f46d23"
+      },
+      "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-356b9e9b-bc43-4dd5-be8a-d25c760516b6.png",
+      "candidate": {
+        "path": "art/production/art26/candidates/idle-v2-cutout.png",
+        "bytes": 2440466,
+        "sha256": "662372d16decd1e4286d4a0df9ab920f42074f3afc73f7723ea439df70ab3e2e"
+      },
+      "generatedSHA256": "662372d16decd1e4286d4a0df9ab920f42074f3afc73f7723ea439df70ab3e2e",
+      "requestedTransparent": true
+    }
+  ],
+  "selectedCopy": {
+    "path": "art/production/art26/player-loadout-idle-v1.png",
+    "bytes": 2440466,
+    "sha256": "662372d16decd1e4286d4a0df9ab920f42074f3afc73f7723ea439df70ab3e2e"
+  },
+  "originalsKept": true,
+  "reference": {
+    "path": "art/redesign/characters/player-standing-cold-v1.png",
+    "bytes": 2062489,
+    "sha256": "6b1201d21c081fd6e15c60ae7093899d23e0375193cf046e9338bbd952620509"
+  },
+  "review": "Calm unarmed complete figure, costume/face/style retained by visual review; not pixel-identical pose. Candidate1 alpha16 touches top, retained source-only. Candidate2 alpha16 within canvas; outside zero-alpha samples and actual compositing separately checked. Alpha max254 is recorded, never claimed255.",
+  "userAcceptance": false
+}

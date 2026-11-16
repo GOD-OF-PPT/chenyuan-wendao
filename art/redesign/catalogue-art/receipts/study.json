@@ -1,0 +1,60 @@
+{
+  "id": "study",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-62501f70-4435-4a3c-b116-dedb0db7a818.png",
+  "savedPath": "art/redesign/catalogue-art/study-v1.png",
+  "copiedUnchanged": true,
+  "sourceSHA256": "20f2fcbdbc395c58e45ee306daefd31defb4f427cd3012ce524c8bf0f475ff32",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "sourceBytes": 2130171,
+  "promptReference": "art/redesign/catalogue-art/prompts.json#study",
+  "transparentBackgroundRequested": true,
+  "alphaProof": {
+    "min": 0,
+    "max": 255,
+    "transparentPixels": 766343,
+    "solidPixels": 482182,
+    "intermediatePixels": 323991
+  },
+  "runtimeAlphaProof": {
+    "min": 0,
+    "max": 253,
+    "transparentPixels": 127163,
+    "solidPixels": 79752,
+    "intermediatePixels": 55229
+  },
+  "runtime": {
+    "path": "web/public/art/v2/catalogue/study-v1.webp",
+    "bytes": 97256,
+    "sha256": "07c30a57cd627bb391f1bc76ea286bc3b88f584928eff7c5f6c603d91de75a4d",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "textBaked": false,
+    "userAcceptance": false
+  },
+  "promptSHA256": "f4d632a30d1a91357ec2b16adac62155ea12103ccfb957a7c20c8911eb0322dd"
+}

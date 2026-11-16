@@ -3,6 +3,8 @@ dist/
 coverage/
 playwright-report/
 test-results/
+persistence-report/
+persistence-results/
 .vite/
 .DS_Store
 .env
@@ -14,3 +16,39 @@ __pycache__/
 *.pyc
 saves/
 *.bundle
+
+# Normal new-game journey evidence
+web/journey-report/
+web/journey-results/
+
+# Production performance measurements (no generated save fixtures in Git)
+web/performance-report/
+web/performance-results/
+web/idle-performance-report/
+web/idle-performance-results/
+web/recovery-report/
+web/.generated/
+web/.generated-demo-*/
+web/public/demo-nodes/
+web/core-report/
+web/build-report/
+web/candidate-report/
+web/candidate-results/
+artifacts/
+# Transitional, generated historical test inputs; canonical data lives in tests/fixtures.
+/goal-1/
+/goal-2/
+/goal-3/
+/goal-4/
+web/idle-report/
+web/quality-report/
+web/quality-results/
+web/q11-report/
+web/idle-results/
+web/idle-persistence-results/
+journey-evidence/
+recovery-evidence/
+
+# Asset inventory tooling cache
+__pycache__/
+*.py[cod]

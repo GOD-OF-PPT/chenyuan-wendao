@@ -1,0 +1,54 @@
+{
+  "format": "chenyuan-response-context-additions",
+  "version": 53,
+  "parentVersion": 52,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1058,
+    "signature": "62b3bebeaeb1e3bea160ac0d645c4e88423f25ca59f55565a76b4c0ba50cbd67"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend13b-response-state.spec.ts",
+      "title": "CEND13-B1 four actual pending NPC meetings keep all original choice details and readonly cancellation before any response is accepted",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13b-response-state.spec.ts",
+      "title": "CEND13-B2 a genuinely accepted native six-second paid response replaces the contradictory preview caption before exactly one atomic outcome",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13b-response-state.spec.ts",
+      "title": "CEND13-B3 another response is only a readonly signature while pause and explicit continuation preserve the original six-second authority",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13b-response-state.spec.ts",
+      "title": "CEND13-B4 a native tick quota and held retry keep the accepted response distinct from a preview and commit only the original full outcome",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13b-response-state.spec.ts",
+      "title": "CEND13-B5 a genuinely committed but delayed start reply and another pages generation never create a local borrowed response clock or duplicate reward",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13b-response-state.spec.ts",
+      "title": "CEND13-B6 both real question answers and both endings identify their own accepted action without choosing the next battle or a new life",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13b-response-state.spec.ts",
+      "title": "CEND13-B7 failed art and actual keyboard signature viewing retain full readable text the original choices and one visible authorized response",
+      "projectName": "chromium"
+    }
+  ]
+}

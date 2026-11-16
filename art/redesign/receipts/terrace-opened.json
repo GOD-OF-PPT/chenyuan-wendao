@@ -1,0 +1,51 @@
+{
+  "id": "terrace-opened",
+  "gate": "opened",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-08e6a361-ae21-48f5-83c5-95760e0d742b.png",
+  "savedPath": "art/redesign/scenes/terrace-opened-v1.png",
+  "sourceSHA256": "5fbb358c880bc200f565dea809723a46621c6afbe636c659aac2a635b6a9ca8f",
+  "sourceDimensions": {
+    "width": 1671,
+    "height": 941
+  },
+  "sourceBytes": 2971730,
+  "copiedUnchanged": true,
+  "promptReference": "art/redesign/receipts/scene-prompts.json#terrace-opened",
+  "referenceImages": [
+    {
+      "path": "art/redesign/scenes/terrace-v2.png",
+      "role": "edit target; preserve architecture/composition, change only door state or weather",
+      "sha256": "b6c458d7940b530fc1eb605227ae415ebf6851738f12f7e27237ec11aa8e226a"
+    }
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "status": "selected for phase integration",
+    "observations": "Full painted phase, no UI/text/person observed; composition and gateway matched to closed scene."
+  },
+  "runtime": {
+    "path": "web/public/art/v2/scenes/terrace-opened.webp",
+    "bytes": 310812,
+    "sha256": "ee41103a04c05b09047588fd4b6ba362c7049e7ce0f08e98dd5892f8c02a1431",
+    "dimensions": {
+      "width": 1536,
+      "height": 865
+    },
+    "alpha": false,
+    "format": "webp"
+  },
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "encoding": [
+    "cwebp",
+    "-q",
+    "84",
+    "-m",
+    "6",
+    "-resize",
+    "1536",
+    "0",
+    "-metadata",
+    "none"
+  ]
+}

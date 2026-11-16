@@ -1,0 +1,52 @@
+{
+  "web/src/AdventurePlanner.vue": [
+    [
+      "import JourneyMap from './JourneyMap.vue';",
+      "import JourneyMap from './JourneyMap.vue';\nimport JourneyLocalAction from './JourneyLocalAction.vue';"
+    ],
+    [
+      "track:[TrackingTarget];locations:[]",
+      "track:[TrackingTarget];locations:['travel'|'source'|'purchase']"
+    ],
+    [
+      "const conflict=computed",
+      "const here=computed(()=>props.mode==='travel'&&trip.value.location===props.game.core.world.location);\nconst conflict=computed"
+    ],
+    [
+      "mode==='travel'?'行旅 · '+C.locations[trip.location].name",
+      "mode==='travel'?(here?'此地 · ':'行旅 · ')+C.locations[trip.location].name"
+    ],
+    [
+      "{{sameSaved&&planSaved?'已保存安排；修改后须另行确认':'待确认的新安排；选择不会旅行或开战'}}",
+      "{{sameSaved&&planSaved?'已保存安排；修改后须另行确认':here?'当前所在 · 可查看本地活动或点选异地':'待确认的新安排；选择不会旅行或开战'}}"
+    ],
+    [
+      "@click=\"emit('locations')\"",
+      "@click=\"emit('locations','travel')\""
+    ],
+    [
+      "<div class=\"adventure-preview\"",
+      "<div v-if=\"!here\" class=\"adventure-preview\""
+    ],
+    [
+      "<footer class=\"adventure-confirm\">",
+      "<JourneyLocalAction v-if=\"here\" :location=\"location\" @locations=\"emit('locations',$event)\" @track=\"emit('track',$event)\"/>\n   <footer v-else class=\"adventure-confirm\">"
+    ]
+  ],
+  "web/src/ExplorePanel.vue": [
+    [
+      "@start=\"emit('start',$event)\" @track=\"emit('track',$event)\" @locations=\"selectMode('travel')\"",
+      "@start=\"emit('start',$event)\" @track=\"emit('track',$event)\" @locations=\"selectMode\""
+    ]
+  ],
+  "web/src/JourneyMap.vue": [
+    [
+      "<strong>当前：{{C.locations[game.core.world.location].name}} → {{C.locations[selected].name}}</strong>",
+      "<strong>{{selected===game.core.world.location?'当前所在：'+C.locations[selected].name:'当前：'+C.locations[game.core.world.location].name+' → '+C.locations[selected].name}}</strong>"
+    ],
+    [
+      "<small>一次6秒 · 不消耗游戏月",
+      "<small v-if=\"selected!==game.core.world.location\">一次6秒 · 不消耗游戏月"
+    ]
+  ]
+}
