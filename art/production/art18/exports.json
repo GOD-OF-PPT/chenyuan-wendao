@@ -1,0 +1,44 @@
+{
+  "format": "chenyuan-art18-ui-exports",
+  "version": 1,
+  "rows": [
+    {
+      "source": "art/production/art18/dialog-jade-frame-source.png",
+      "sourceSHA256": "12a7fcd3ba80a2171d77834ca11aee237cf05f71ae486e74a99d015ee1fb5df5",
+      "path": "web/public/art/v2/ui/dialog-jade-frame-v1.webp",
+      "sha256": "75d212a45b6d2aebc69756219a28404d3ebf326800572ec9f344d4374eff8336",
+      "bytes": 46240,
+      "maxBytes": 96000,
+      "size": [
+        768,
+        768
+      ],
+      "alphaPreservedExactlyAfterNormalization": true,
+      "settings": {
+        "quality": 82,
+        "method": 6,
+        "exact": true,
+        "resize": "LANCZOS, square, no crop or alpha fabrication"
+      }
+    },
+    {
+      "source": "art/production/art18/action-jade-frame-source.png",
+      "sourceSHA256": "545f5cbc8d27e1472e312fa2e7102dc2896c335e3fc84153efbf98a48c6ca8dc",
+      "path": "web/public/art/v2/ui/action-jade-frame-v1.webp",
+      "sha256": "82fc5ee9ef6bda7c75aa728dc820e337213a2c8d91b88f7eec23a39633d9b20d",
+      "bytes": 24120,
+      "maxBytes": 48000,
+      "size": [
+        512,
+        512
+      ],
+      "alphaPreservedExactlyAfterNormalization": true,
+      "settings": {
+        "quality": 82,
+        "method": 6,
+        "exact": true,
+        "resize": "LANCZOS, square, no crop or alpha fabrication"
+      }
+    }
+  ]
+}

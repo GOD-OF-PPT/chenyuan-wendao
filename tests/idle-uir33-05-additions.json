@@ -1,0 +1,72 @@
+{
+  "format": "chenyuan-uir33-05-comprehensive-additions",
+  "version": 13,
+  "parentVersion": 12,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 882,
+    "signature": "5205c54447242a8c1dd3be8a0f92019e547213b1c98104bbfd4af031733ba023"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir33-05-activity-detail.spec.ts",
+      "title": "UIR33-05-A1 compact live and paused details retain one clock original limits and complete saved receipts",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-05-activity-detail.spec.ts",
+      "title": "UIR33-05-A2 native quota keeps visible original retry and a singular complete cycle in the compact detail",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-05-activity-detail.spec.ts",
+      "title": "UIR33-05-source full original costs outcomes and finite stopping remain readable in the content-sized detail",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-05-activity-detail.spec.ts",
+      "title": "UIR33-05-craft full original costs outcomes and finite stopping remain readable in the content-sized detail",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-05-activity-detail.spec.ts",
+      "title": "UIR33-05-forge full original costs outcomes and finite stopping remain readable in the content-sized detail",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-05-activity-detail.spec.ts",
+      "title": "UIR33-05-learn full original costs outcomes and finite stopping remain readable in the content-sized detail",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-05-activity-detail.spec.ts",
+      "title": "UIR33-05-milestone full original costs outcomes and finite stopping remain readable in the content-sized detail",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-05-activity-detail.spec.ts",
+      "title": "UIR33-05-battle complete original battle strategy is paged with stable controls after the saved victory",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-05-activity-detail.spec.ts",
+      "title": "UIR33-05-saving native commit and pending pause keep the record readable before any saved outcome",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-05-activity-detail.spec.ts",
+      "title": "UIR33-05-takeover both detail pages keep original authority and only the newly owned full cycle saves",
+      "projectName": "chromium"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "herb",
+  "kind": "local imagegen audit not provider-signed receipt",
+  "requestId": null,
+  "model": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-943507b7-e008-4fd1-b226-af394d781616.png",
+  "workspaceRaw": "art/redesign/art11-items/herb-v1.png",
+  "rawSha256": "3f73147d9e592dcb185ca76dc21a00f714c87d478d54303fbe3ec399119ba519",
+  "originalKept": true,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alpha16Bbox": [
+    109,
+    33,
+    1190,
+    1219
+  ]
+}

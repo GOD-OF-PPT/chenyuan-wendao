@@ -1,0 +1,100 @@
+{
+  "id": "lotus-cold-v1",
+  "sourceId": "lotus",
+  "promptKey": "lotus",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-496b6fce-7867-4797-9f52-26b94abcedee.png",
+  "savedPath": "art/redesign/ta08-resources/lotus-cold-v1.png",
+  "sourceSHA256": "238635054220ca90db51390bdc5ffd06051f84db9e33e68feede05384f8f7e9c",
+  "copiedUnchanged": true,
+  "source": {
+    "path": "art/redesign/ta08-resources/lotus-cold-v1.png",
+    "bytes": 1961481,
+    "sha256": "238635054220ca90db51390bdc5ffd06051f84db9e33e68feede05384f8f7e9c",
+    "dimensions": {
+      "width": 1254,
+      "height": 1254
+    },
+    "alpha": true,
+    "format": "png"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/sources/lotus-cold-v1.webp",
+    "bytes": 63704,
+    "sha256": "45a77e2ad96c2af61ad6c474d3d0bad47dbf91a6a451e932e8ee867d8040e14b",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "alphaProof": {
+    "transparentPixels": 806793,
+    "solidPixels": 668416,
+    "intermediatePixels": 97307,
+    "min": 0,
+    "max": 255
+  },
+  "runtimeAlphaProof": {
+    "transparentPixels": 134115,
+    "solidPixels": 110877,
+    "intermediatePixels": 17152,
+    "min": 0,
+    "max": 254
+  },
+  "sourceAlphaBBox": [
+    0,
+    25,
+    1248,
+    1254
+  ],
+  "runtimeAlphaBBox": [
+    35,
+    35,
+    504,
+    481
+  ],
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "promptReference": "art/redesign/receipts/ta08-resource-prompts.json",
+  "promptSHA256": "6a5bfc2c1c906c9bc1abf46b1f9045d148aab241a723d5fc22a4cb4de94e3aff",
+  "promptDocumentSHA256": "b8a939c8663aba88c1f24ddc8decdad4626d1427f379dfe87813363f17cdc671",
+  "referenceImages": [],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "root source pixel inspection, not user art acceptance",
+    "observation": "Complete pale lotus, closed bud, broad leaves and a compact still pool; no harvest state. Root actually inspected generated source pixels in a batch of at most two. No text/UI/person/tool/motion reward or rectangular backdrop seen. Requested central72-percent margin was not fully achieved; original retained and actual bbox recorded, drawing containment must be checked in the real stage. Source art only, not human acceptance."
+  },
+  "exportProof": {
+    "sourceUnchanged": true,
+    "runtimeUnchanged": true,
+    "reencodedBytes": 63704,
+    "reencodedSHA256": "45a77e2ad96c2af61ad6c474d3d0bad47dbf91a6a451e932e8ee867d8040e14b",
+    "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+  },
+  "decodeProof": {
+    "decoder": "Pillow",
+    "sourceRGBASHA256": "762a2508669c585ba14c367fd4dbac192f70277e6f30b7e0a94e3866da7fd83d",
+    "runtimeRGBASHA256": "1ee106623f908065f6743c99a01aec7e0ec1a2c925b617c2f9cffeab84c61887",
+    "alphaDefinitions": {
+      "transparentPixels": "alpha=0",
+      "solidPixels": "alpha>=250",
+      "intermediatePixels": "1<=alpha<250"
+    }
+  },
+  "userAcceptance": false
+}

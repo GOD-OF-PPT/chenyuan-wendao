@@ -1,0 +1,51 @@
+{
+  "id": "terrace-storm",
+  "gate": "storm",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-74bb286d-305f-4de6-8faf-33d145de9bed.png",
+  "savedPath": "art/redesign/scenes/terrace-storm-v1.png",
+  "sourceSHA256": "b036ee9a2d9ac4aa865daf0b74365a8e1f1bd8f5cd77e10a90411c44058d97b3",
+  "sourceDimensions": {
+    "width": 1671,
+    "height": 941
+  },
+  "sourceBytes": 3052592,
+  "copiedUnchanged": true,
+  "promptReference": "art/redesign/receipts/scene-prompts.json#terrace-storm",
+  "referenceImages": [
+    {
+      "path": "art/redesign/scenes/terrace-v2.png",
+      "role": "edit target; preserve architecture/composition, change only door state or weather",
+      "sha256": "b6c458d7940b530fc1eb605227ae415ebf6851738f12f7e27237ec11aa8e226a"
+    }
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "status": "selected for phase integration",
+    "observations": "Full painted phase, no UI/text/person observed; composition and gateway matched to closed scene."
+  },
+  "runtime": {
+    "path": "web/public/art/v2/scenes/terrace-storm.webp",
+    "bytes": 302660,
+    "sha256": "fb0ebfe38440167fd96c3462c05af10247ddedc59f051916fbaa10ae4fdcb8d1",
+    "dimensions": {
+      "width": 1536,
+      "height": 865
+    },
+    "alpha": false,
+    "format": "webp"
+  },
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "encoding": [
+    "cwebp",
+    "-q",
+    "84",
+    "-m",
+    "6",
+    "-resize",
+    "1536",
+    "0",
+    "-metadata",
+    "none"
+  ]
+}

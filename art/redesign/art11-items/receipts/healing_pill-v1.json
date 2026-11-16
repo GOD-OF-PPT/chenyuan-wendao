@@ -1,0 +1,25 @@
+{
+  "id": "healing_pill",
+  "kind": "local imagegen audit not provider-signed receipt",
+  "requestId": null,
+  "model": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-3311aded-f11a-4c47-8eb5-88a39b51a162.png",
+  "workspaceRaw": "art/redesign/art11-items/healing_pill-v1.png",
+  "rawSha256": "9b78f221371efe5305281fe8b91133676d69e975c49501b8f1d156f043de178e",
+  "originalKept": true,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alpha16Bbox": [
+    223,
+    125,
+    1064,
+    1130
+  ]
+}

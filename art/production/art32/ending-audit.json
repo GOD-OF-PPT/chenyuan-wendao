@@ -1,0 +1,37 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "mode": "built-in imagegen",
+  "model": null,
+  "requestId": null,
+  "originalsKept": true,
+  "userAcceptance": false,
+  "referenceRole": "Current UI evidence actually reviewed locally; not passed as imagegen input",
+  "reference": {
+    "path": "goal-4/evidence/art32/END-before.jpg",
+    "bytes": 121434,
+    "sha256": "e81abeeb1e342fbf73eb857eceea8bc29f5ca7813053141a7bd9de5a0b2b306e"
+  },
+  "selectedCopy": {
+    "path": "art/production/art32/ending-v1.png",
+    "bytes": 2695336,
+    "sha256": "37c4e5d5d92a1444f84facad37135ce69c325ee59604a7a01403fd496ea6dafc"
+  },
+  "calls": [
+    {
+      "tool": "image_gen.imagegen",
+      "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-0451f9d0-f020-4ccb-952f-96a59d801c01.png",
+      "generatedSHA256": "37c4e5d5d92a1444f84facad37135ce69c325ee59604a7a01403fd496ea6dafc",
+      "prompt": {
+        "path": "art/production/art32/ending-prompt.json",
+        "bytes": 1806,
+        "sha256": "c5c3584f75d3b33321fde6d49d6ad603e1bd3e184e066eaf0f53922cedfa417c"
+      },
+      "candidate": {
+        "path": "art/production/art32/candidates/ending-v1.png",
+        "bytes": 2695336,
+        "sha256": "37c4e5d5d92a1444f84facad37135ce69c325ee59604a7a01403fd496ea6dafc"
+      },
+      "requestedTransparent": false
+    }
+  ]
+}

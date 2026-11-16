@@ -1,0 +1,11 @@
+{
+  "id": "frost_sword",
+  "task": "Goal4 ART03",
+  "mode": "built-in image_gen",
+  "transparent_background": true,
+  "referenceImages": [
+    "art/redesign/art03-objects/frost_sword-v1.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Input image 1 is the exact edit target. Keep this exact cold steel-and-jade Chinese jian sword with every bronze engraving, jade grip, metal blade, small dark teal tassel, diagonal direction, lighting and painterly material. Change ONLY its scale and placement on the transparent square canvas: make the WHOLE sword significantly smaller, its complete outermost bounding box must fit in the CENTRAL 70 percent square, leaving a generous minimum 15 percent transparent empty margin on EVERY edge, including pommel, tassel and blade tip. Do not crop anything. Keep the same square canvas and true transparent alpha background. No additional objects, no scene, floor, pedestal, text or watermark. Do not add glowing edges, aura, fire, smoke, sparks, particles or motion; this remains a completely cold dormant game equipment prop.",
+  "purpose": "Cold transparent equipment object. Runtime activity and saved ownership remain separate DOM/CSS and formal Game state."
+}

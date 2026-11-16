@@ -1,6 +1,6 @@
 # 质量评审交付状态
 
-2026-11-14。全部20项工程改进与最终审查修复已完成、独立验证并递交评审。功能叠放在独立PR，未自动合并main或部署。当前工程终态见[完整验收](final-acceptance.md)，审查见[最终C端/Spec/代码/安全结论](final-review.md)。
+2026-11-14。全部20项工程改进与最终审查修复已完成、独立验证并递交评审。此前通过独立PR叠放递交；2026-11-16用户明确要求统一合并到main，进度见[主线集成记录](main-integration-20261116.md)。未部署。当前工程终态见[完整验收](final-acceptance.md)，审查见[最终C端/Spec/代码/安全结论](final-review.md)。
 
 最终分支 `codex/quality-final-enum-validation`，接受源 `70f4adea2e8dc175b4372731b8d02fbd62723320`；[PR65](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/65)为最终安全收尾，包含此前质量分支历史。
 

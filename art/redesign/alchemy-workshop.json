@@ -1,0 +1,100 @@
+{
+  "format": "chenyuan-alchemy-workshop",
+  "version": 1,
+  "task": "Goal4 ART01",
+  "budgets": {
+    "assets": 1,
+    "maxRuntimeBytes": 160000,
+    "runtimeWidth": 512,
+    "runtimeHeight": 512,
+    "maxNativeBytes": 22000
+  },
+  "userAcceptance": false,
+  "rights": {
+    "productionUseApproved": true,
+    "userAcceptance": false,
+    "distributionLicense": null,
+    "evidenceReferences": [
+      "goal-4/amendments/2026-10-23-art01.md",
+      "docs/decisions/0022-alchemy-object-art-contract.md"
+    ]
+  },
+  "sourceReferences": [
+    "goal-4/amendments/2026-10-23-art01.md",
+    "docs/decisions/0022-alchemy-object-art-contract.md",
+    "art/redesign/alchemy-workshop/prompts.json",
+    "art/redesign/alchemy-workshop/receipt.json"
+  ],
+  "assets": [
+    {
+      "id": "dormant-furnace",
+      "source": {
+        "path": "art/redesign/alchemy-workshop/furnace-v1.png",
+        "bytes": 1944971,
+        "sha256": "7297913c0228ed94a6310b8e29126990f6833892327068a9152ae5c3f0b276f9",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/workshop/furnace-v1.webp",
+        "bytes": 63588,
+        "sha256": "bd201f06af3c18342eb6dda9d5bb2abb96347b623fb32f1d213c4c2b86c25642",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/alchemy-workshop/receipt.json",
+        "sha256": "1c23df409a0c740605eb276d7103b7a620d09c539b4d8a4e1009d5997d19a124"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "web/src/AlchemyWorkshop.vue",
+      "bytes": 12200,
+      "sha256": "16875308ab453d462307500412532a3da500f54760cc87159ef96c1d63b9eaf1"
+    },
+    {
+      "path": "web/src/alchemy-workshop.css",
+      "bytes": 9120,
+      "sha256": "26362acf00d49c9fa8a29168cc36be231d4ba6db8aba6c6c0d815926d56e6db3"
+    },
+    {
+      "path": "web/src/alchemy-feedback.ts",
+      "bytes": 674,
+      "sha256": "dfe2886f81b73788fc406e89f8631618ee5dadbdc24bab80db4dc5a8e4759899"
+    }
+  ],
+  "consumer": "web/src/ProductionPlanner.vue",
+  "styleConsumer": "web/src/main.ts",
+  "bindings": {
+    "web/src/ProductionPlanner.vue": [
+      "<AlchemyWorkshop "
+    ],
+    "web/src/AlchemyWorkshop.vue": [
+      "<AssetImage",
+      "art/v2/workshop/furnace-v1.webp",
+      "from './use-activity-effect'",
+      "useActivityPresentation(a=>a.version===3"
+    ],
+    "web/src/main.ts": [
+      "import './alchemy-workshop.css'"
+    ],
+    "web/src/use-activity-effect.ts": [
+      "createActivityEffectTracker(matches,extra)"
+    ],
+    "web/src/activity-effects.ts": [
+      "resolve(before,command)",
+      "completeActivity(g,prior,r"
+    ]
+  },
+  "scope": "One generated cold-furnace bitmap and additive code provenance. Hash/header/receipt facts do not prove visual quality, game balance or user acceptance; all original assets and prior budgets remain."
+}

@@ -1,0 +1,20 @@
+{
+  "format": "chenyuan-check-uir33-label",
+  "version": 1,
+  "userAcceptance": false,
+  "path": "web/src/LearningPlanner.vue",
+  "bytes": 18541,
+  "sha256": "e7667d343e251cccb822ccaf742a61ff605ffa7efdb841b4c518f65984424bd4",
+  "before": "goal-4/evidence/check-uir33-01/LearningPlanner.before.vue",
+  "beforeSHA256": "428d260152e9c292a55775ba8cbdbd49a2c290c9310ef1ed3ec8edb58ee0cad9",
+  "operation": [
+    "待研卷串 {{queue.length}} 卷",
+    "研习清单 {{queue.length}} 卷"
+  ],
+  "maxNativeBytes": 60000,
+  "oldLedgerSHA256": "bad1cbd7a8e23cdf505f6e055c6cf75ab4886a009a500f8f041e6ef94c58cf51",
+  "sourceReferences": [
+    "docs/decisions/0099-uir33-combination-check.md",
+    "goal-4/amendments/2026-11-04-check-uir33-01-input.md"
+  ]
+}

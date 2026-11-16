@@ -1,0 +1,30 @@
+{
+  "format": "chenyuan-check-cend07-forecast-additions",
+  "version": 36,
+  "parentVersion": 35,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 980,
+    "signature": "1707a10989fd7b6cba9dcaeeeb8583f90b3538366c822a5ac268a203f73c2cd5"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "check-cend07-forecast-context.spec.ts",
+      "title": "CHECK-CEND07-F1 all seven real Activity forecast surfaces describe future stops without changing any Game or store",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend07-forecast-context.spec.ts",
+      "title": "CHECK-CEND07-F2 source future target survives native failure original retry pause refresh and a real final saved stop",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend07-forecast-context.spec.ts",
+      "title": "CHECK-CEND07-F3 a future travel forecast becomes a true saved arrival only after the original six-second cycle and readonly history keeps its old tense",
+      "projectName": "chromium"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "dew",
+  "kind": "local imagegen audit not provider-signed receipt",
+  "requestId": null,
+  "model": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-c6530b56-5f4e-496e-b71f-992d6c854236.png",
+  "workspaceRaw": "art/redesign/art11-items/dew-v1.png",
+  "rawSha256": "65c89498b40cf4e54af8c343f3437fc4c77edebcca698bf63f2f8c1308d84864",
+  "originalKept": true,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alpha16Bbox": [
+    332,
+    87,
+    947,
+    1154
+  ]
+}

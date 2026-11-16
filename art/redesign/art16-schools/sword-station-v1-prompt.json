@@ -1,0 +1,12 @@
+{
+  "asset": "sword-station-v1",
+  "mode": "built-in",
+  "tool": "image_gen.imagegen",
+  "transparent_background": true,
+  "reference": "web/public/art/v2/workshop/furnace-v1.webp",
+  "referenceSHA256": "bd201f06af3c18342eb6dda9d5bb2abb96347b623fb32f1d213c4c2b86c25642",
+  "prompt": "Use case: stylized-concept. Asset type: production transparent 2D object for an ancient Chinese xianxia idle game, used only to preview the sword cultivation path. Reference image: style, painterly material detail, restrained jade patina and soft lighting ONLY; do not reproduce the furnace or its silhouette. Primary request: one complete cold training-sword station: a plain, elegant straight Chinese steel practice sword resting upright in a compact low carved dark-wood sword rack. Clear long sword silhouette and substantial visible rack, jade-green bindings as small accents. Front three-quarter view, coherent grounded object, entire blade, hilt and rack visible, centered square composition, generous transparent padding on all sides. Hand-painted fantasy game asset with detailed worn steel and polished dark wood, cool indigo/ink-green palette, ivory steel highlights, tiny old-brass details. Soft upper-left studio-like game lighting, crisp readable edge, no bright glow. Genuine transparent alpha background, no room, no ground plane, no UI card, no rectangle, no labels, no readable text, no watermark, no characters, no flame, smoke, magical particles or painted status effects. This is a practice object, not an already-owned legendary frost relic. Keep the whole object uncropped and visually substantial.",
+  "status": "generated-selected-for-deterministic-contain",
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-4f665ce0-1585-48f7-b43a-3da741dbe1fe.png",
+  "selectedCopy": "art/redesign/art16-schools/sword-station-v1.png"
+}

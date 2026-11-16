@@ -1,9 +1,20 @@
 # 协作约定
 
+当前完整实施清单见 [质量评审目标](docs/quality-20261112/plan.md)，冲突合同按 [0149](docs/decisions/0149-quality-review-implementation.md) 衔接。
+
+本地验证使用 Node ≥22.16、npm、Python 与 art/requirements.txt 锁定的 Pillow。
+根测试同时包含 Vue 集成模型；干净检出先运行 `npm run test:setup` 安装根与 web 两份锁，随后 `npm test`。完整核心检查用 `npm run validate:core`，会先安装两份依赖，不与同一检出的构建/浏览器测试并发运行。当前资源检查不钉UI源码字节；`npm run test:behavior -- q13`/`-- native`执行当前固定桌面行为与完整native套件，并对照本次实际声明。
+
+历史字节/逆变换/版本台账用 `npm run test:historical` 在691648a独立冻结树验证；加`-- --full`另跑原Python负例。它只证明历史输入和旧检查仍有效，不表示当前游戏通过。当前Playwright几何输入在tests/fixtures/ui-bounds，不自动生成goal-*过程目录。
+
+Windows 可使用独立的 Node/Python 环境，无需全局升级。UTF-8 仓库在旧版 Python 的本地编码模式下运行资源守卫时，使用 `python -X utf8 scripts/check_docs.py`；Windows 过长 PATH 可在当前 shell 去重，勿覆盖系统配置。Git 按 .gitattributes 检出 LF，原稿图片与fixture包保二进制字节。
+
 以 docs/v0.3 和已确认 ADR 为基线。每项工作分为计划、本地实现、测试通过、远端提交，不混淆状态。新增内容保持有限 Demo 范围。
 
-开发分支采用 feat/* 或 fix/*，资料采用 docs/*。提交说明使用 docs / feat / fix / test / chore 前缀。功能通过 PR 说明规则、测试和未完成边界；不自动合并未验证实现。
+开发分支采用 feat/*、fix/* 或 Codex 的 codex/*，资料采用 docs/*。提交说明使用 docs / feat / fix / test / chore 前缀。功能通过 PR 说明规则、测试和未完成边界；不自动合并未验证实现。
 
-资源规则须有测试：不得负数、重复领奖、绕过突破成本；现实时间不参与成长。数据变更注明 balanceVersion，已发布存档不能静默损坏。
+资源规则须有测试：不得负数、重复领奖、绕过突破成本；时钟只决定已授权周期的到期与有界离开累计，奖励由正式规则和持久事务提交；动画、阅读与现实停留时长不直接授予境界。数据变更注明 balanceVersion，已发布存档不能静默损坏。
 
 不提交 node_modules、个人存档、缓存、凭据、字体或未核许可素材。尊重仓库现有提交，不强推，不擅自更改可见性、权限或上线服务。
+
+未来超过1MiB的新/改动原稿按[大原稿策略](docs/assets/storage.md)进入专用LFS目录并绑定来源、确定导出和实际消费。先装Git LFS、取回对象，再跑核心；检查实际暂存索引，新大普通blob会拒绝，未下载指针不当图片。既有历史和原路径不迁移，不以政策交付声称仓库已缩小。

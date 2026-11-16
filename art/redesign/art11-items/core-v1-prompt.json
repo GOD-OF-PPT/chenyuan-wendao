@@ -1,0 +1,8 @@
+{
+  "id": "core",
+  "prompt": "Use case: stylized-concept. Asset type: a single transparent inventory material object for a detailed Chinese xianxia idle game. Painterly realistic game prop, tactile aged material, upper-left soft natural studio lighting, three-quarter front view. Entire object centered, generous real transparent margin, full silhouette contained. Square canvas. No backdrop, floor, pedestal, hand, UI, runes, labels, text, numbers, glow, energy, particles, luminous aura, extra objects. Restrained ink-green/teal/old bronze palette, cold actual material. Subject: one palm-sized irregular polished beast-core gemstone, dense translucent smoky amber with a dark red-brown center and a few natural geological inclusions. Compact rounded asymmetric roughly spherical stone, subtle chiseled facets and worn edges; no animal, blood, mount or jewelry.",
+  "builtin": true,
+  "transparentRequested": true,
+  "generatedPath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-c45be574-9673-4a44-96ce-6c97cfeefcf6.png",
+  "outputHint": "Generated images are saved to /Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254 as /Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-c45be574-9673-4a44-96ce-6c97cfeefcf6.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+}

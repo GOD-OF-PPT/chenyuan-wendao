@@ -1,49 +1,61 @@
-当前质量改进的独立PR、固定源验收和最后审查状态见[交付状态](docs/quality-20261112/delivery-status.md)。功能仍在评审分支，未自动合并main；以下旧实施日志保历史身份。
+# 尘缘问道
 
-古风文字修仙网页 Demo · 从凡人修士到飞升。
+古风文字修仙网页游戏。安排修行、筹集突破物、取舍功法与法宝，再决定何时破境、问心与收卷。定位是长期积累、低频决定和阶段筹备；约30分钟用于了解基本玩法，不限定突破或通关时间。数值仍未平衡。
 
-**约 30 分钟了解基本玩法，不限定通关时长。成长由物品、数值、功法搭配与选择决定，不按现实分钟赠送境界。**
+质量评审20项工程改进与最终审查修复已验收；本轮按用户要求统一集成到main，合并进度见[主线集成记录](docs/quality-20261112/main-integration-20261116.md)。当前接受源、验证与待办见[交付状态](docs/quality-20261112/delivery-status.md)；[完整计划](docs/quality-20261112/plan.md)和[原评审](docs/quality-20261112/review/00-synthesis.md)保留问题依据。工程验证与真人、长期体验、整体美术分别认定。
 
-## 当前状态
+## 开始开发
 
-质量评审完整实施的[最新交付状态](docs/quality-20261112/delivery-status.md)：16/20已通过独立功能PR递交，Q16已完成固定桌面完整验收；实现沿功能分支叠放，尚未自动合并main。继续Q17—Q20。
+使用Node 24.22.1（项目最低22.16）、npm、Python 3、Git及tar。资源校验的Pillow按[锁定要求](art/requirements.txt)装入独立虚拟环境；网页运行不需要Python、账号、模型API或数据库服务。不要把临时依赖装到系统Python。
 
-本提交是 GitHub 设计基线，尚无可玩游戏。工程从独立规则、首境界经济闭环开始，开发工作通过功能分支和 PR 管理。下列设计表中的任务是计划，不是完成声明。
+```sh
+git clone https://github.com/GOD-OF-PPT/chenyuan-wendao.git
+cd chenyuan-wendao
+# 按交付状态选择需要评审/运行的功能分支；main不是已合并全部功能的声明
+npm run test:setup
+npm --prefix web run dev
+```
 
-仓库：`GOD-OF-PPT/chenyuan-wendao`。仓库由项目负责人创建；接入时为 public，未修改可见性。未复制参考项目代码，未附带字体、凭据或聊天全文，也未擅自添加开源许可证。
+打开[本机开发入口](http://127.0.0.1:5173/)。依赖由根/web两份锁安装；不要只装根依赖后运行含Vue集成的根测试。构建运行：
 
-## 开发入口
+```sh
+npm --prefix web run build
+npm --prefix web run preview -- --port 4200 --strictPort
+```
 
-| 文档 | 用途 |
-| --- | --- |
-| [成长与数值修订](docs/v0.3/05_成长与数值系统修订.md) | 最高优先级成长约束与六张控制表 |
-| [设计规格](docs/v0.3/01_设计规格.md) | 玩法、内容预算、界面与规则 |
-| [实施计划](docs/v0.3/02_实施计划.md) | 阶段、依赖与任务 |
-| [数据契约](docs/v0.3/03_数据与状态契约.md) | Command、状态、原子结算和存档 |
-| [验收清单](docs/v0.3/04_验收清单.md) | 尚待执行的完整 Demo 验收 |
-| [当前任务](docs/project/BACKLOG.md) | 工程阶段与实施边界 |
-| [美术基准](art/README.md) | 选定风格与已认可主界面预览 |
-| [接入记录](docs/decisions/0002-github-onboarding.md) | 本次入库范围与未入库项目 |
+用[HTTP预览](http://127.0.0.1:4200/)打开，不双击file://。构建包装脚本先生成演示输入、检查类型并记录源码/载荷身份；干净检出直接vue-tsc缺生成文件。Vite preview仅用于本机验证。
 
-## 已认可美术
+Windows可用独立工具环境。Python旧本地编码用`python -X utf8`；过长PATH仅在当前shell去重，不覆盖系统配置。源码按.gitattributes保持LF，图片/包保二进制字节。Python环境的跨平台步骤见[前端运行说明](web/README.md)。
 
-第三方案：新国风半写实、青黛与旧金、暖纸阅读面板。以下是低分辨率预览，不是运行界面，也不能替代生产资产。
+## 当前玩法与存档
 
-![第三方案预览](art/approved/style-preview.webp)
+正式规则与UI覆盖凡人至飞升、剑/符两派、确定材料与购买路线、NPC/机缘、问心与两结局。重复活动默认到目标或手动停止，同时保累计支出、库存/余寿与危险边界。轻量服丹/回应和配置即时原子提交；突破、渡劫等重大安排保正式周期与确认。
 
-![主界面预览](docs/v0.3/reference/approved_main_ui.webp)
+离开累计只执行已保存的明确计划，最多8小时，预算/库存/寿元/危险及未知分支先到先停；不自动旅行、采购、接新活动或代选。返场展示真实已提交变化。新.6人生可读此生账本和两独占尾声，明确另选才携一份有限前缘；十条种子见闻同一世稳定，全18条图鉴仍可查。这些功能的接受状态按交付页，不以本段代验。
 
-## 开发约束
+存档只在当前浏览器站点本地IndexedDB；端口变化意味着不同站点。导出后再换入口或清站点数据，勿提交存档到Git。正常档与9个合法回放演示节点隔离，演示物资不进入正常档。当前Game外层2/schema2，规则.6；已发布.3/.4/.5保独立规则，数据库11。未知版本拒绝且保原件；回滚不强开或降级新库。
 
-- 正常存档支持持续游玩；阅读和离线不消耗游戏时间。
-- 普通突破检查修为并真实消耗物品；关键物资必须有确定来源及可达替代路线。
-- 不依赖随机稀有掉落才能通关。批量行动必须能被资源不足、修为满等边界中断。
-- 规则计算、内容、持久化与 UI 分层。动态文字、按钮和数值是网页元素，不能整图铺热区。
-- 先完成入道至筑基资源闭环，再扩展后续境界；M1 不等于完整 Demo。
-- 不强推、不覆盖他人提交、不自动合并未验证代码、不部署公开试玩站点。
+## 验证与贡献
 
-## 资料范围
+```sh
+npm run validate:core
+python3 scripts/check-doc-links.py
+npm --prefix web run build
+# 构建完成且检出干净后，逐项串行运行当前固定桌面范围
+node scripts/check-current-browser.mjs q13 artifacts/current-ui
+node scripts/check-current-browser.mjs native artifacts/current-native
+node scripts/check-current-browser.mjs normal artifacts/current-normal
+```
 
-v0.3 五份核心文档和两个数据样例在仓库中可读。v0.2 已废止要求仅作历史说明。本次未上传原始 12.6 MB Git bundle、高清 PNG 和全部历史原件；原件仍在本会话资料包中，完整文件哈希见 [素材来源](art/PROVENANCE.md)。部分原文仍引用高清 PNG 路径，当前请使用上面的 WebP 预览；不得把预览宣称为原件归档完成。
+首次浏览器验证先在web执行`npx playwright install chromium`；Linux缺系统库时加`--with-deps`。完整核心会安装两份依赖，同一检出不得与构建/浏览器并发。每个输出目录须全新；浏览器门禁核实际完整声明、执行与来源。正常32也可按CI的四片各8运行并用原合并器核完整并集；具体命令见[CONTRIBUTING](CONTRIBUTING.md)。
 
-资料校验：`python3 scripts/check_docs.py`。该检查不是游戏功能、平衡或真人试玩验收。
+当前仅1440×900单Chromium。跨浏览器、移动/响应式、分辨率/字号缩放和环境性能矩阵继续暂停；不要运行旧默认全部浏览器/性能配置。当前CI与历史矩阵分开，历史门槛保留为未执行义务。
+
+规则在[src/full](src/full)，存储与Vue界面在[web/src](web/src)，当前行为门禁在[scripts](scripts)及[tests](tests)。新功能从独立codex/分支递交PR，规格先main；不自动合并或上线。完整约定见[AGENTS](AGENTS.md)及[CONTRIBUTING](CONTRIBUTING.md)。
+
+## 资料
+
+- [决策索引](docs/decisions/README.md)：现行决定与带日期的历史合同。
+- [设计基线v0.3](docs/v0.3/01_设计规格.md)与[v0.4研究](docs/v0.4/README.md)：保原文，假设不等于实现。
+- [美术来源与生产](art/README.md)：原稿、回执、确定导出和实际消费；不分享字体。
+- [历史日报和旧代理约定](docs/history/README.md)：旧源身份、失败与当时范围保留，失效原件明确标注。

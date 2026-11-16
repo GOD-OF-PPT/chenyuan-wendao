@@ -1,0 +1,36 @@
+{
+  "format": "chenyuan-uir34-03-comprehensive-additions",
+  "version": 21,
+  "parentVersion": 20,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 921,
+    "signature": "dca93691662cd1a082daf5242280bd892d51526943f042b624de1c9bdbccadcc"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir34-03-configuration-focus.spec.ts",
+      "title": "UIR34-03-A1 EQUIP_RELIC leads with its actual dedicated effect and only changed metrics while complete comparison outlook and immediate atomic confirmation remain",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-03-configuration-focus.spec.ts",
+      "title": "UIR34-03-A2 EQUIP leads with its actual dedicated effect and only changed metrics while complete comparison outlook and immediate atomic confirmation remain",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-03-configuration-focus.spec.ts",
+      "title": "UIR34-03-A3 SCHOOL leads with its actual dedicated effect and only changed metrics while complete comparison outlook and immediate atomic confirmation remain",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-03-configuration-focus.spec.ts",
+      "title": "UIR34-03-A4 native configuration quota retains the selected effects original intent and full readonly comparison until one unique retry",
+      "projectName": "chromium"
+    }
+  ]
+}

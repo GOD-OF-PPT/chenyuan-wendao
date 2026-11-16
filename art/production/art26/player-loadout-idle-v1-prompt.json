@@ -1,0 +1,18 @@
+{
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "intent": "edit",
+  "transparent_background": true,
+  "inputRole": "edit target; project character identity/costume/lighting reference",
+  "referenced_image_paths": [
+    "/Users/gordon/githome/chenyuan-wendao/art/redesign/characters/player-standing-cold-v1.png"
+  ],
+  "prompt": "Use case: identity-preserve\nAsset type: transparent full-body Chinese xianxia game character cutout for a calm equipment overview, not a battle sprite.\nEdit target: the supplied project character image. Preserve the exact character identity, face, age, long dark hair and hairpin, ivory and muted jade-teal robes, existing embroidery and waist details, semi-realistic painted finish, and soft upper-left lighting.\nPrimary request: create a new calm idle standing pose. Stand naturally upright with feet comfortably close, weight balanced, both hands resting together quietly at the waist inside the long sleeves. Lower the raised spell-casting hand. No casting hand sign, attack or combat stance. Keep the full figure, hair, hems and both shoes completely inside the frame with a small clean transparent margin. Portrait 2:3 framing is preferred.\nKeep the same restrained ivory/jade/old-gold palette and costume; hair and cloth drape naturally with little wind. Do not add armor or accessories.\nBackground: actual transparent alpha, no floor or backdrop. Clean the cutout edge without colored fringes, glow or checkerboard pixels.\nAvoid: any weapon, sword, staff, book, relic, held prop, magical effect, rune, halo, smoke, aura, floor shadow, scenery, UI, border, text, logo or watermark. This illustration must not imply any equipped item or an action currently executing.",
+  "promptSHA256": "e4b5995adc34e67630341c891114c5dec4966a4f6f3662e5a385d08647b1bab2",
+  "reference": {
+    "path": "art/redesign/characters/player-standing-cold-v1.png",
+    "bytes": 2062489,
+    "sha256": "6b1201d21c081fd6e15c60ae7093899d23e0375193cf046e9338bbd952620509"
+  },
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-9fc373d6-dcb5-4116-87fa-8035c6680050.png"
+}

@@ -1,0 +1,87 @@
+# Q13：App 职责拆分（已递交PR57）
+
+依据先发布main的[0160合同](../decisions/0160-app-responsibility-modules.md)，承接Q12/PR56。工作区chenyuan-quality-q13，分支codex/quality-q13-app-responsibilities。以下各Seam保原阶段生产身份；最终结果以本节为准。
+
+最终清洁生产者`4b0eba2a0f2352e5b2090a982987df7e94073f2a`，tree `34330b5b225a87fc4bd0eacd96684bb233299dff`，运行源摘要`e3d93c68899d17701290834ff898e9d2eaa4f08237ace2e8d17cb745764108bf`。App由约166KB变为36,656字节可读脚本与组合模板；这是职责划分结果，不是新字节帽。确认、传输、配置、直接行动、活动安排、只读返回、导航、焦点各有明确owner；MainStage、四旧tab与各目录/状态表面各自消费真实只读投影，GameWorkspace按`game-owners.ts`注入逐个类型Module，没有通用App context或第二Store/时钟/写者。
+
+同源最终十核心门禁全部通过：984/984根测试与13/13资源接口；完整Native471/471（46文件，244.476559秒）、Q11/Q12/Q13完整UI196/196（28文件，297.995076秒）、完整正常32/32（3文件，880.301761秒）。三组即时声明与实际成员逐例一致，0跳过/失败/重试/漂移，实际worker0/1；同版loader另核完整use/expect/正则和原时限，原完整Game/CP/最后1ms/预算/周期均保。Node为已安装24.22.1，根和web依赖是独立目录。构建112文件/11,626,309字节，与运行源核同。
+
+13既有表面的文字/几何/计算样式同Q12，仅同源端口归一化；9PNG字节相同，另4图有2、4、7、47像素轻微差异、最大通道差5，不冒全像素一致。13表面与检查点图以及正常路线筑基/飞升图共16张当前原尺寸PNG直接实看。原160规则与联合数值报告的83份完整输入分别逐hash相同，承接原`64689f5`/`eab42b8`生产身份，没有声称本次重跑160。
+
+独立[双轴审查](q13-review.md)发现的两项生命周期/原重试问题与检查点参数问题均同点红绿关闭；[Q11/Q12/Q13三任务综合](q13-three-task-check.md)已闭合。原focus-first 9过13红在抽取前后完全同判定，legacy错误cwd 34过2错与更正cwd后36过分开；equipment首次仅日志34项、无终态JSON不称完成，后完整196覆盖。Node22.12低于项目下限导致模块导入错误的原980过1错保留。原日志/JSON/PNG在`artifacts/q13-app/`，文档收尾不重签生产源。全部20目标active，Q14剩余与Q15–Q20继续；兼容/环境性能暂停，真人、长期平衡和整体美术不由本轮工程通过代替。
+
+已递交[PR57](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/57)，目标Q12分支，未自动合并。最终验证后只有本目录和README文档变化，生产源/配置与原报告身份不变。
+
+## 阶段记录
+
+## 第一Seam：四组重大确认
+
+`ClosureDecisions.vue`接收原singleScreen、可行动谓词和明确ClosureNavigation，内部持有归隐/寿尽、入劫、完整准备恢复与飞升收卷四组intent/dialog、stale、确认/原意图重试/关闭和完整阅读。沿原Store与Focus注入，保原模板/DOM位置/属性/文字/费用。App仍拥有舞台导航与原焦点handoff，确认Module只调用明确owner/leaveSettings/accepted/showTrialPreparation。
+
+新增组件卸载alive守卫和dialog焦点监听释放；确认回复不能在卸载后导航或重开dialog。没有新时钟、规则/奖励或写仓库，未改变旧活动原意图。原模板大段经精确提取后仅script格式化，不把类型过当完整行为等值。
+
+原18项完整三文件先在ee35f35 baseline实际18/18通过；5672d13拆后同三文件18/18通过，57.768秒，含原收卷quota回滚/重试、CP恢复、新旧人生及Q11六类反馈/两结尾。清洁同提交构建112文件/11,594,206字节与类型检查通过；这是第一Seam子集，不是Q13整体或三任务综合。
+
+## 第二Seam：存档传输与控制
+
+`use-save-controls.ts`收拢文件读取generation/大小、正常与演示解析、显式import/reset/restore原意图、导出及本地消息。外部沿同Store、Session、Confirmation与明确导航source/blocked/settings/opener/completed，App仍拥有页面上下文。延迟文件/确认回复卸载后惰性，原同步/丢回复重试权不搬。
+
+74fff18当前类型/构建通过；完整matrix-ui-controls与store-sync-status共15/15通过，39.854秒，保晚到文件、同run新revision、演示scope隔离、显式确认/原写锁/已保存后同步待核等原断言。App由约166KB降到142.8KB只是目前结构结果，目标约30KB不是字节帽；四玩法内容、导航与其它职责仍待继续。
+
+## 第三Seam：洞府修行决策
+
+`CultivationHome.vue`从原Vue AST精确移出洞府分支，保原DOM顺序且不加容器。由同一注入Store只读计算nextStep/目标、寿元/恢复、原报价、渡劫返回和默认/所选修炼计划；方式仍为父级v-model，原查看已保存安排回填方式继续成立。明确事件只交还原导航、开始、准备/比较、人物/设置，不接存储或自建时钟。
+
+4d95cdf类型及清洁构建通过，完整原ABC、原法宝焦点、默认持续、导航和Q11结果五文件38/38通过（52.2秒），0skip/retry/flaky。模板原需openHub的checkpoint第三参已用真实required/checkpoint联合类型保；提取时两次类型红属于接线准备，未改玩法或放宽类型。App现约131.7KB仍远非Q13完成，剩余四玩法/导航等责任与最终综合保留。
+
+## 第四Seam：四类原页签内容
+
+实际Vue AST提取四段原fallback分支到CultivationTab/ExplorationTab/InventoryTab/FateTab；各Module拥有相应报价/来源/库存/近期手记投影，显式事件仍回原动作/导航。batch与quantity保父级v-model，追踪物消耗仍沿原消费预览函数。共享只读useActionView保持原报价cache/available/busy/running和完整原因词，不另造写者；父级不再了解四段内部投影。
+
+0180aa0清洁类型/构建与当前固定桌面五文件38/38通过（58.8秒）。这些原fallback分支在当前主桌面多由既有catalogue替代，不能因此冒该非默认展示已经实际全测，也不恢复字号/移动兼容专项来执行。接线由类型与原fragment保，最终Module级新Seam覆盖/当前整体矩阵仍待。App约117.2KB，只是进度，不以四个薄壳或字节压缩声称完成目标。
+
+## 第五Seam：设置与阅读dialog
+
+GameSettings/DemoMenu/GameplayHelp各自持有真实dialog、相应只读目录/主题状态与焦点释放。设置继续使用原Experience，文件/导出/重开/恢复只发明确事件给原控制Module；父级只读代理实际DOMref保文件读取来源dialog和稳定import opener。帮助主题从公开selectTopic进入，guideEnabled仍父级v-model，不另建本地偏好或Game。
+
+2012d9a类型与清洁构建通过；完整原matrix-ui-controls/store-sync-status15/15通过（34.6秒），含设置焦点、演示九节点、文件延迟/相同修订/演示scope与已保存后核对。提取时目标prop漏接的类型红修正为真实target，未用any上下文绕过。App约111.9KB，当前仍是中途结构候选，导航/详情/活动职责和最终综合未关闭。
+
+## 第六Seam：嵌套只读返回
+
+use-stage-returns集中维护详细页父层、最初页码/阅读来源与opener、取舍和生平返回，输入仅当前位置与真实焦点捕获，无Store/奖励/时钟。进入与单次consume保原嵌套优先级及run/阶段约束；App仍拥有真正导航revision、页面动作和实际focus，不以context对象转发整App。
+
+5391767清洁类型/构建和原ABC、法宝焦点、导航、文案、装备上下文完整五文件29/29通过（51.0秒），保运行钟/原计划/全库只读、完整文字与父层返回。新Seam自身嵌套/旧人生返回行为与卸载覆盖仍须补；不把原29绿替代最终完整矩阵或独立审查。
+
+## 第七Seam：即时配置原意图
+
+use-configuration-review聚拢原snapshot/intent、Game与activity CAS的stale、原重试/错误、关闭与显式refresh。动作仍经同Store的prepare/applyConfiguration，只有已确认或原允许同步待核的本意图才关；卸载后回复不改本页状态。没有把当前revision刷新成新授权，也不将确认放到各玩法子页面。
+
+6e97c33清洁类型/构建通过；idle-preparation、原同步错误/导航/装备上下文完整四文件25/25通过（47.3秒）。旧全Game/活动/全库、确认/取消、同意图quota和已保存后sync核对均保。App仍约108KB级，本项未交付，最终完整矩阵、独立review与新Seam生命周期测试仍待。
+
+## 第八Seam：轻量行动与会面承接
+
+use-direct-actions维护原prepareDirect/确认内容、暂停安排后果、原意图提交、会面viewEpoch及保存后转入当前会面的handoff、行囊即时使用后的焦点。明确导航适配仅owner/viewIdentity/source/blocked/openCurrent/regular；共享Store/Focus/Confirmation，不创建另一写者。新卸载alive检查防异步回复抢页，原同步/失败守卫仍在。
+
+57e5b39清洁类型/构建通过；原direct-actions、NPC、ABC、八UI bug完整四文件39/39通过（43.1秒），包括付费回应取消/真实quota、迟到文件/原授权与只读缺口责任。App尚约104KB，仍有当前主舞台/详情、活动调度接线和导航焦点组合待拆，本项未递交。
+
+## 第九Seam：活动记录与原战策阅读
+
+ActivityRecords拥有原战策readings投影和活动/交锋/逐轮记录表面，维持原四个顶层节点，不增加DOM容器。原allReceipts与originalPlan为父级v-model，用于导航进入/活动变化重置；组件仅只读同Store并发明确settings/details事件，分页/保存中原控制仍由原Module负责。
+
+5092942清洁类型/构建和idle-adventure、导航、文案、装备上下文完整四文件29/29通过（62.587秒），含真实30秒/逐招周期、收获全记录、原页码承接与刷新后不重复成果。新增公共stageReturns四项接口测试亦通过，Node无事件捕获路径的DOM全局依赖先红后以捕获适配器短路修正；不改浏览器真实event分支。仅提取脚本用锁定Prettier格式化，可审查源码，不压字节。
+
+当前App约101.3KB，依赖已核后仅移除Q12 junction并独立安装，后续可在无浏览器作业时跑core。主舞台/更多当前详情与活动职责、其它新Seam卸载异步覆盖、独立review及最终综合仍未完成，Q13未递交。
+
+## 后续与执行边界
+
+本节为当时的阶段状态。后续已核对并仅移除Q12依赖junction，再独立安装root/web依赖；最终检查均使用独立目录。当前每段代码和原报告保，临时工具/日志在artifacts/q13-app。
+
+继续按Seam拆四玩法内容与剩余导航/只读/活动启动等，不能只转发一个巨型context。补新Seam卸载/旧异步回调的意义行为覆盖，独立双轴复核。Q13末次必须实际完整当前Native、正常32及Q11/Q12/Q13完整UI综合和核心构建，原最后1ms/时限/几何/完整Game/CP保，不按当前18或15子集关闭本项。
+
+兼容/环境性能暂停，真人/长期/整体美术义务未由重构通过替代。Q14部分仍待，Q13后强制三任务debug；全部20目标持续。
+
+## 第十与第十一Seam：活动安排与当前主舞台
+
+2feb903把已保存计划的查看/草案、接续归属核与已受理行旅handoff聚拢到use-activity-plans，沿同Store/Focus，卸载后不导航。9504b57将真实主舞台及其Game只读投影移入MainStage，保原main/section节点与元素ref交回、里程碑sequence、原开启/暂停/查看事件；外层CultivationStageHost身份保持。未创建另一时钟或写者。
+
+活动安排完整四文件32/32通过（68.298秒），首份清单写错ABC文件名故实际仅四文件，不能称五文件；主舞台之后用真实check-cend13-abc、art31-life-scroll、quality-result-moments、quality-navigation完整四文件35/35通过，类型/清洁构建通过。原ABC8完整包含在后者。App现约82.7KB，仍有当前详情/导航/焦点与新Seam生命周期覆盖待完成，不能标Q13递交。

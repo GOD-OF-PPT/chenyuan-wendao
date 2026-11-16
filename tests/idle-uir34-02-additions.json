@@ -1,0 +1,48 @@
+{
+  "format": "chenyuan-uir34-02-comprehensive-additions",
+  "version": 20,
+  "parentVersion": 19,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 917,
+    "signature": "d073f94cd2c95f98872bcce92d530afa3e36fff8fac1dbe1ccc2ef566070b343"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir34-02-finite-focus.spec.ts",
+      "title": "UIR34-02-A1 CHOOSE leads with the real choice while complete notes cancel and one original atomic period remain intact",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-02-finite-focus.spec.ts",
+      "title": "UIR34-02-A2 BREAKTHROUGH leads with the real choice while complete notes cancel and one original atomic period remain intact",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-02-finite-focus.spec.ts",
+      "title": "UIR34-02-A3 EVENT leads with the real choice while complete notes cancel and one original atomic period remain intact",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-02-finite-focus.spec.ts",
+      "title": "UIR34-02-A4 DECIDE leads with the real choice while complete notes cancel and one original atomic period remain intact",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-02-finite-focus.spec.ts",
+      "title": "UIR34-02-A5 ANSWER_TRIAL leads with the real choice while complete notes cancel and one original atomic period remain intact",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-02-finite-focus.spec.ts",
+      "title": "UIR34-02-A6 another public choice makes the open notes stale without rewriting the first choice or authorizing it",
+      "projectName": "chromium"
+    }
+  ]
+}

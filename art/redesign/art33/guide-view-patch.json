@@ -1,0 +1,21 @@
+{
+  "steps": [
+    {
+      "old": "defineProps<{guide:Guide}>()",
+      "new": "defineProps<{guide:Guide;modal?:boolean}>()"
+    },
+    {
+      "old": "defineEmits<{skip:[];help:[]}>()",
+      "new": "defineEmits<{skip:[];help:[];expand:[Event]}>()"
+    },
+    {
+      "old": ":aria-expanded=\"expanded\" @click=\"expanded=!expanded\"",
+      "new": ":aria-expanded=\"modal?undefined:expanded\" :aria-haspopup=\"modal?'dialog':undefined\" @click=\"modal?$emit('expand',$event):expanded=!expanded\""
+    },
+    {
+      "old": "{{expanded?'收起说明':'细看指引'}}",
+      "new": "{{modal?'查看完整指引':expanded?'收起说明':'细看指引'}}"
+    }
+  ],
+  "defaultInlineUnchanged": true
+}

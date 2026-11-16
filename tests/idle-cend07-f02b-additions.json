@@ -1,0 +1,36 @@
+{
+  "format": "chenyuan-cend07-f02b-relic-additions",
+  "version": 41,
+  "parentVersion": 40,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1008,
+    "signature": "1618447a7225abd29492fbe36d23e68a19224cfe489c22deee56b2bec902a004"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend07-f02b-relic-focus.spec.ts",
+      "title": "CEND07-F02B-B1 every unowned artifact has one current blueprint fact honest visible cost and the full readonly catalogue",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f02b-relic-focus.spec.ts",
+      "title": "CEND07-F02B-B2 owned and bound facts lead to compare or browse while complete forge origin is readonly and immediate equip remains atomic",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f02b-relic-focus.spec.ts",
+      "title": "CEND07-F02B-B3 an owned forge origin stays open across a readonly goal and an unrelated original thirty-second source period",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f02b-relic-focus.spec.ts",
+      "title": "CEND07-F02B-B4 a positive-cost forge keeps original start and held tick failures readable before its full sixty-second atomic ownership handoff",
+      "projectName": "chromium"
+    }
+  ]
+}

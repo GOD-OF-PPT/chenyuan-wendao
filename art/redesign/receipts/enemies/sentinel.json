@@ -1,0 +1,69 @@
+{
+  "id": "sentinel",
+  "category": "enemies",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-959815c5-cb61-4f4f-a694-21548291eb63.png",
+  "savedPath": "art/redesign/enemies/sentinel-v1.png",
+  "copiedUnchanged": true,
+  "sourceSHA256": "b875773f3a7a3a06a7dd7ed31b359f57c32dfdd5e29fea69320caa39955d2544",
+  "promptReference": "art/redesign/receipts/enemy-prompts.json#sentinel",
+  "referenceImages": [
+    {
+      "path": "art/redesign/scenes/cave-v1.png",
+      "sha256": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9",
+      "role": "style reference only; materials, palette and lighting, no scenery or objects"
+    }
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "agent source inspection, not user art acceptance",
+    "observation": "Single existing character identity or configured enemy subject; no UI, readable text or watermark observed."
+  },
+  "requestedResolution": "native available square PNG",
+  "resolutionNote": "Actual tool output recorded, no upscaling or4K claim",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "sourceBytes": 2085256,
+  "alphaProof": {
+    "transparentPixels": 728741,
+    "solidPixels": 559999,
+    "intermediatePixels": 283776,
+    "min": 0,
+    "max": 255
+  },
+  "runtimeAlphaProof": {
+    "transparentPixels": 121260,
+    "solidPixels": 92664,
+    "intermediatePixels": 48220,
+    "min": 0,
+    "max": 254
+  },
+  "runtime": {
+    "path": "web/public/art/v2/enemies/sentinel.webp",
+    "bytes": 91306,
+    "sha256": "a832fcb94f72651d3ccf0c19e89240932850e04fb89200d427be859c2f938602",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+}

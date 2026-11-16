@@ -1,0 +1,245 @@
+{
+  "format": "chenyuan-art32-stages",
+  "version": 1,
+  "assets": {
+    "question": {
+      "format": "chenyuan-art32-export",
+      "version": 1,
+      "producer": {
+        "path": "art/tools/export_art32_stages.py",
+        "bytes": 3726,
+        "sha256": "56965e5cedfb4dd207350ae8f34b00fef9bdb20e02e033ae0364b4235db6c191"
+      },
+      "helper": {
+        "path": "art/tools/export_art10_blanks.py",
+        "bytes": 8264,
+        "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+      },
+      "source": {
+        "path": "art/production/art32/question-v1.png",
+        "bytes": 2256926,
+        "sha256": "3367dcaab9ed0bd74e072e6d66e5c1049969295ddd49d67386c39aa58b2e226c",
+        "dimensions": {
+          "width": 1774,
+          "height": 887
+        },
+        "format": "png",
+        "mode": "RGB",
+        "alpha": false,
+        "alphaProof": {
+          "transparentPixels": 0,
+          "solidPixels": 1573538,
+          "intermediatePixels": 0,
+          "min": 255,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          0,
+          1774,
+          887
+        ],
+        "alphaBBox16": [
+          0,
+          0,
+          1774,
+          887
+        ],
+        "rgbaSHA256": "9429dc89f88f13e91ba6407a2cac83220b2d17418d3a53fafa2e048cfc97abeb"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/milestones/heart-court-v1.webp",
+        "bytes": 99604,
+        "sha256": "97048fae773e77a915c251a80c2526482e4a5a94a8d5b6ff52a8377875d87582",
+        "dimensions": {
+          "width": 1536,
+          "height": 768
+        },
+        "format": "webp",
+        "mode": "RGB",
+        "alpha": false,
+        "alphaProof": {
+          "transparentPixels": 0,
+          "solidPixels": 1179648,
+          "intermediatePixels": 0,
+          "min": 255,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          0,
+          1536,
+          768
+        ],
+        "alphaBBox16": [
+          0,
+          0,
+          1536,
+          768
+        ],
+        "rgbaSHA256": "e120fdc757f7d4a1deaf711554d6cd2c8a02e9be46a6e84ec14e0602f1ba8ba0"
+      },
+      "prompts": [
+        {
+          "path": "art/production/art32/question-prompt.json",
+          "bytes": 1792,
+          "sha256": "73ca3ad4f13078439d5dc58f5d7843ca00ece2cca0b398e2ce0f78db8806b965"
+        }
+      ],
+      "audit": {
+        "path": "art/production/art32/question-audit.json",
+        "bytes": 1424,
+        "sha256": "46407ecb7e027ebc8432fc0975697a7d135d23bca01c4df9d447b0c12faf5c6f"
+      },
+      "encoding": [
+        "cwebp",
+        "-q",
+        "82",
+        "-m",
+        "6",
+        "-resize",
+        "1536",
+        "0",
+        "-metadata",
+        "none"
+      ],
+      "decoder": "Pillow",
+      "decoderVersion": "12.3.0",
+      "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+      "transform": {
+        "uniformScale": 0.8658399098083427,
+        "crop": false,
+        "semanticEdit": false,
+        "outputWidth": 1536,
+        "outputHeight": 768
+      },
+      "doubleExport": {
+        "bytesEqual": true,
+        "firstSHA256": "97048fae773e77a915c251a80c2526482e4a5a94a8d5b6ff52a8377875d87582",
+        "secondSHA256": "97048fae773e77a915c251a80c2526482e4a5a94a8d5b6ff52a8377875d87582",
+        "sourceUnchanged": true
+      },
+      "userAcceptance": false
+    },
+    "ending": {
+      "format": "chenyuan-art32-export",
+      "version": 1,
+      "producer": {
+        "path": "art/tools/export_art32_stages.py",
+        "bytes": 3726,
+        "sha256": "56965e5cedfb4dd207350ae8f34b00fef9bdb20e02e033ae0364b4235db6c191"
+      },
+      "helper": {
+        "path": "art/tools/export_art10_blanks.py",
+        "bytes": 8264,
+        "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+      },
+      "source": {
+        "path": "art/production/art32/ending-v1.png",
+        "bytes": 2695336,
+        "sha256": "37c4e5d5d92a1444f84facad37135ce69c325ee59604a7a01403fd496ea6dafc",
+        "dimensions": {
+          "width": 1774,
+          "height": 887
+        },
+        "format": "png",
+        "mode": "RGB",
+        "alpha": false,
+        "alphaProof": {
+          "transparentPixels": 0,
+          "solidPixels": 1573538,
+          "intermediatePixels": 0,
+          "min": 255,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          0,
+          1774,
+          887
+        ],
+        "alphaBBox16": [
+          0,
+          0,
+          1774,
+          887
+        ],
+        "rgbaSHA256": "32006af5101082abcf0674438e462fb4e82b4a07b0dde96d6cd52870567a85f2"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/milestones/heaven-gate-v1.webp",
+        "bytes": 153512,
+        "sha256": "bd2034f2641aed54747d749308c08cbaa537ace1b62c015eeccf6e6d2c62e665",
+        "dimensions": {
+          "width": 1536,
+          "height": 768
+        },
+        "format": "webp",
+        "mode": "RGB",
+        "alpha": false,
+        "alphaProof": {
+          "transparentPixels": 0,
+          "solidPixels": 1179648,
+          "intermediatePixels": 0,
+          "min": 255,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          0,
+          1536,
+          768
+        ],
+        "alphaBBox16": [
+          0,
+          0,
+          1536,
+          768
+        ],
+        "rgbaSHA256": "fa5166902e2b72508fe7f9b9cb818039be25ad0e27349c2af1f33e0b14d87af0"
+      },
+      "prompts": [
+        {
+          "path": "art/production/art32/ending-prompt.json",
+          "bytes": 1806,
+          "sha256": "c5c3584f75d3b33321fde6d49d6ad603e1bd3e184e066eaf0f53922cedfa417c"
+        }
+      ],
+      "audit": {
+        "path": "art/production/art32/ending-audit.json",
+        "bytes": 1409,
+        "sha256": "aac421bc16dc1580bd41ef27d0579891cd2c3ea5205edf5c7d7c7a126b1c04ad"
+      },
+      "encoding": [
+        "cwebp",
+        "-q",
+        "82",
+        "-m",
+        "6",
+        "-resize",
+        "1536",
+        "0",
+        "-metadata",
+        "none"
+      ],
+      "decoder": "Pillow",
+      "decoderVersion": "12.3.0",
+      "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+      "transform": {
+        "uniformScale": 0.8658399098083427,
+        "crop": false,
+        "semanticEdit": false,
+        "outputWidth": 1536,
+        "outputHeight": 768
+      },
+      "doubleExport": {
+        "bytesEqual": true,
+        "firstSHA256": "bd2034f2641aed54747d749308c08cbaa537ace1b62c015eeccf6e6d2c62e665",
+        "secondSHA256": "bd2034f2641aed54747d749308c08cbaa537ace1b62c015eeccf6e6d2c62e665",
+        "sourceUnchanged": true
+      },
+      "userAcceptance": false
+    }
+  },
+  "userAcceptance": false
+}

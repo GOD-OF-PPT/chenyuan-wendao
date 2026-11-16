@@ -1,0 +1,24 @@
+{
+  "format": "chenyuan-source-mainline-comprehensive-additions",
+  "version": 51,
+  "parentVersion": 50,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1046,
+    "signature": "eb9928e5b84ff34149fccb80b8b7c526c7412397cd823d7d3082bbf4ecf783af"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "check-cend10-12.spec.ts",
+      "title": "CHECK-CEND10-12-C1 a resumed finite source goal completes locally while the real mainline pill remains missing through readonly return and a separate draft",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend10-12.spec.ts",
+      "title": "CHECK-CEND10-12-C2 an original dual yield retry atomically updates source stock without retiring the mainline pill or replaying either reward after refresh",
+      "projectName": "chromium"
+    }
+  ]
+}

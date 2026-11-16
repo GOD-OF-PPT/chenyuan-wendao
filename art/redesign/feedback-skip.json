@@ -1,0 +1,53 @@
+{
+  "format": "chenyuan-feedback-skip",
+  "version": 1,
+  "task": "Goal4 CHECK-MATRIX-01",
+  "maxNativeBytes": 4000,
+  "newBitmapAssets": 0,
+  "assets": [],
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/FeedbackSkip.vue",
+      "bytes": 2263,
+      "sha256": "4a6ff806b165a34558574ee71139769e1c2ab0abe9d762fe48b5e3010e88ba20"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0032-matrix-check-01-contract.md",
+    "goal-4/amendments/2026-10-24-check-matrix-01.md",
+    "goal-4/research/check-matrix-01-sources.json"
+  ],
+  "bindings": {
+    "web/src/App.vue": [
+      "import FeedbackSkip from './FeedbackSkip.vue'",
+      "<ActionFeedbackStage ",
+      "<FeedbackSkip ",
+      "@hold=\"hold\"",
+      "@dismiss=\"dismiss\""
+    ],
+    "web/src/ActionFeedbackStage.vue": [
+      "<slot v-if=\"notice&&showMotion\" :key=\"notice.key\" :dismiss=\"clear\" :hold=\"holdMotion\" :operation=\"notice.operation\"/>",
+      "function holdMotion(){clearTimeout(timer);}"
+    ],
+    "web/src/FeedbackSkip.vue": [
+      "from './focus'",
+      "inject(gameFocusKey)",
+      "data-testid=\"fx-skip\"",
+      "@focusin=\"hold\"",
+      "@focusout=\"leave\"",
+      "@click=\"dismiss\"",
+      "<Teleport v-if=\"target\" :to=\"target\">",
+      ".game-hud .activity-rail>footer",
+      "feedback-held",
+      "min-height:44px"
+    ]
+  },
+  "provenance": {
+    "kind": "authored-native-candidate",
+    "path": "art/redesign/feedback-skip/source-candidate.vue",
+    "bytes": 2322,
+    "sha256": "dd62f6e1761b8c979b422135d14938ce7df41a4dcb212181a4c138cbd48bfdcd",
+    "scope": "Authored source candidate only; not runtime, pixel or user acceptance."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "format": "chenyuan-idle-tradeoffs",
+  "version": 1,
+  "task": "Goal4 U8-B",
+  "maxNativeBytes": 30000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "src/full/progression.ts",
+      "bytes": 15796,
+      "sha256": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406"
+    },
+    {
+      "path": "web/src/ProgressionChoices.vue",
+      "bytes": 6744,
+      "sha256": "ba5f5d95deea270f961d0460e196f2a2ef654dbf8d9f13b190de0a34ad4c3dee"
+    },
+    {
+      "path": "web/src/ConfigurationOutlook.vue",
+      "bytes": 4431,
+      "sha256": "72768df4cb3d226c5efc029dfa73e68324cfb0fd5962ca6d9348964224619e20"
+    },
+    {
+      "path": "web/src/idle-tradeoffs.css",
+      "bytes": 2785,
+      "sha256": "002864b2d61185ffde38f39d4081926777588afc1395db502e6eace33176d8fc"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0018-idle-progression-tradeoffs-contract.md",
+    "goal-4/research/u8-b-economy-sources.json"
+  ],
+  "bindings": {
+    "web/src/App.vue": [
+      "<ProgressionChoices ",
+      "@compare=\"openTradeoffs('cultivation',$event)\"",
+      "@compare=\"openTradeoffs('preparation',$event)\""
+    ],
+    "web/src/ConfigurationDialog.vue": [
+      "<ConfigurationOutlook "
+    ],
+    "web/src/main.ts": [
+      "import './idle-tradeoffs.css'"
+    ]
+  },
+  "scope": "Read-only formal single-cycle projections and on-demand tradeoff surfaces; unchanged balance/DB/atomic execution, not player acceptance."
+}

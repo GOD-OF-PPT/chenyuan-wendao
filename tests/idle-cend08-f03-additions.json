@@ -1,0 +1,36 @@
+{
+  "format": "chenyuan-cend08-f03-source-material-additions",
+  "version": 46,
+  "parentVersion": 45,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1029,
+    "signature": "544bb32e6df3af20b3cf9574f9471f090e7c0ea75825d317834dd415ccb7c659"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend08-f03-source-materials.spec.ts",
+      "title": "CEND08-F03-M1 six natural tools retain real paintings readable finite plans and readonly local material ownership",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend08-f03-source-materials.spec.ts",
+      "title": "CEND08-F03-M2 ten commission silhouettes retain all compensation and readonly plans with distinct locally owned materials",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend08-f03-source-materials.spec.ts",
+      "title": "CEND08-F03-M3 all sixteen material work stages keep the real period deadline and sole complete atomic source result",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend08-f03-source-materials.spec.ts",
+      "title": "CEND08-F03-M4 all six failed paintings keep readable tools and both work kinds preserve paused and quota retry authority",
+      "projectName": "chromium"
+    }
+  ]
+}

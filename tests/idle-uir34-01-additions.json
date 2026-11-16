@@ -1,0 +1,60 @@
+{
+  "format": "chenyuan-uir34-01-comprehensive-additions",
+  "version": 18,
+  "parentVersion": 17,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 908,
+    "signature": "8bea429863d62c9285b7864cae3c7f88f961dab45503e4449262a5d3ee295d4b"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A1 foreign last-month travel leads to an actionable readonly life guide without a zero-yield main action or a fictional checkpoint",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A2 a genuinely prepared last-month breakthrough keeps its original full thirty-second atomic checkpoint and restores ordinary guidance",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A3 a real native checkpoint remains inspectable after finite public work periods reach the lifespan boundary without restoring or ending",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A4 viewing last-month options during a failed original trip cannot replace its command or spend the last month",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A5 an original paused assisted budget resumes once and stops at the real lifespan limit before the new readonly guide appears",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A6 a last-month battle keeps its actual action and context until an explicitly saved retreat returns to the cave guide",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A7 a superseding navigation cancels a late life-management opening without a hidden dialog or Game write",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A8 a chosen material target persists through lifespan guidance life reading and refresh without accepting another activity",
+      "projectName": "chromium"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "format": "chenyuan-idle-milestones",
+  "version": 1,
+  "task": "Goal3 U7",
+  "maxNativeBytes": 30000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/MilestoneReview.vue",
+      "bytes": 3724,
+      "sha256": "8c3dd9bb9d382f102f3204195ced86b19321399b427440533e01ab6a575e3698"
+    },
+    {
+      "path": "web/src/milestone-view.ts",
+      "bytes": 9798,
+      "sha256": "af1a2045781e806806140092349b2ecde690524436b254a0c1f326a94e108efd"
+    },
+    {
+      "path": "web/src/idle-milestones.css",
+      "bytes": 2505,
+      "sha256": "4c902f46f3d7889f52409e22a9b3c22929a377b2e04e23d34521a6ba7e1db686"
+    }
+  ],
+  "sourceReferences": [
+    "goal-3/amendments/2026-10-21-heartbeat-u7.md",
+    "docs/decisions/0009-milestone-idle-contract.md",
+    "goal-3/research/milestone-interaction-sources.json"
+  ],
+  "bindings": {
+    "web/src/App.vue": [
+      "<MilestoneReview ",
+      "selectMilestone(action)"
+    ],
+    "web/src/activity-view.ts": [
+      "milestoneView(a)"
+    ],
+    "web/src/MilestoneReview.vue": [
+      "./idle-milestones.css"
+    ]
+  },
+  "scope": "Nine finite preselected actions, no implicit branch/realm/life continuation; prior budgets retained."
+}

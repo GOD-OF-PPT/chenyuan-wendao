@@ -1,0 +1,96 @@
+{
+  "format": "chenyuan-preparation-gap-additions",
+  "version": 54,
+  "parentVersion": 53,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1072,
+    "signature": "52b97d88ae87f9f90a62376c80b89bfa44ffcb1fce8aed278fc958246de6508f"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend13c-preparation-gap.spec.ts",
+      "title": "CEND13-C1 qi purchase keeps the complete single currency object and all sources without repeating its gap",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13c-preparation-gap.spec.ts",
+      "title": "CEND13-C1 foundation purchase keeps the complete single currency object and all sources without repeating its gap",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13c-preparation-gap.spec.ts",
+      "title": "CEND13-C1 golden purchase keeps the complete single currency object and all sources without repeating its gap",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13c-preparation-gap.spec.ts",
+      "title": "CEND13-C1 nascent purchase keeps the complete single currency object and all sources without repeating its gap",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13c-preparation-gap.spec.ts",
+      "title": "CEND13-C1 spirit purchase keeps the complete single currency object and all sources without repeating its gap",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13c-preparation-gap.spec.ts",
+      "title": "CEND13-C2 multiple deficits and an off-page unique deficit retain the full summary until that exact material becomes visible",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13c-preparation-gap.spec.ts",
+      "title": "CEND13-C3 a multi-material shortage retains every real amount and the complete cross-page aggregate",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13c-preparation-gap.spec.ts",
+      "title": "CEND13-C4 location keeps the original non-shortage decision and explicit next action",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13c-preparation-gap.spec.ts",
+      "title": "CEND13-C4 ready keeps the original non-shortage decision and explicit next action",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13c-preparation-gap.spec.ts",
+      "title": "CEND13-C4 owned keeps the original non-shortage decision and explicit next action",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13c-preparation-gap.spec.ts",
+      "title": "CEND13-C4 mortal keeps the original non-shortage decision and explicit next action",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13c-preparation-gap.spec.ts",
+      "title": "CEND13-C5 an online commission keeps its original finite clock while readonly preparation returns to the same activity",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13c-preparation-gap.spec.ts",
+      "title": "CEND13-C6 original fifteen-second purchase quota and held atomic retry update the actual target once without repeated acquisition",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13c-preparation-gap.spec.ts",
+      "title": "CEND13-C7 failed paintings and keyboard source return retain the complete sole gap and exact stored progress",
+      "projectName": "chromium"
+    }
+  ]
+}

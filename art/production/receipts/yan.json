@@ -1,0 +1,24 @@
+{
+  "key": "yan",
+  "path": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-4c75a2ed-49e8-4695-9373-f446649d31cd.png",
+  "outputHint": "Generated images are saved to /Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9 as /Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-4c75a2ed-49e8-4695-9373-f446649d31cd.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "promptReference": "art/production/receipts/prompts.json#yan",
+  "asset": "portrait-yan",
+  "tool": "built-in image_gen",
+  "date": "2026-10-17",
+  "model": "not reported by tool",
+  "copiedUnchanged": true,
+  "sourceSHA256": "1a62092be290d65e9b5faa1c674d90d7e50e92f1829a3a848e41f98689813dca",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "runtimePath": "web/public/art/portraits/yan.webp",
+  "runtimeSHA256": "0f68e57915cfa22ef10a88699171ab5aca3889d9e66f1d6d0c8d087f7a04bc52",
+  "runtimeDimensions": {
+    "width": 512,
+    "height": 512
+  },
+  "encoding": "cwebp -q 84 -m 6 -resize 512 512 -metadata none",
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+}

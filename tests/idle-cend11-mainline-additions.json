@@ -1,0 +1,36 @@
+{
+  "format": "chenyuan-mainline-hud-object-additions",
+  "version": 50,
+  "parentVersion": 49,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1044,
+    "signature": "1e0873c3cb9057afe0637dbeee2be0f9cdf91ae21502e57a0fbb55dfb81331e8"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend11-mainline.spec.ts",
+      "title": "CEND11-H1 all five lawful mainline objects expose the actual deficit and complete readonly recipe and purchase return without hiding cultivation status",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend11-mainline.spec.ts",
+      "title": "CEND11-H2 only the original atomically saved purchase retires the mainline item after its full cycle native saving and quota retry",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend11-mainline.spec.ts",
+      "title": "CEND11-H3 tracked goals life danger real battle question and sealed life retain their original context across replacement lives",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend11-mainline.spec.ts",
+      "title": "CEND11-H4 all five failed object paintings retain real words keyboard access and original readonly return without inventing ownership",
+      "projectName": "chromium"
+    }
+  ]
+}

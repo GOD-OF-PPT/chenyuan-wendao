@@ -1,0 +1,30 @@
+{
+  "format": "chenyuan-check-cend08-09-additions",
+  "version": 48,
+  "parentVersion": 47,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1036,
+    "signature": "05137b83ae48b36701cc51500adcffacd45e9e60cf6eca652165072e6dc6c363"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "check-cend08-09.spec.ts",
+      "title": "CHECK-CEND08-09-K1 a dual yield target keeps its exact resumed authorization through painted comparison cancellation catalogue return and a separate next draft",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend08-09.spec.ts",
+      "title": "CHECK-CEND08-09-K2 an unresolved dual yield tick stays authoritative across real relic reading and source browsing before its unique original retry and later readonly comparison",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend08-09.spec.ts",
+      "title": "CHECK-CEND08-09-K3 an explicitly chosen three scroll school commits once with the paused source CAS and leaves its original target stopped without a hidden resumed reward",
+      "projectName": "chromium"
+    }
+  ]
+}

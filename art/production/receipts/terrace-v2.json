@@ -1,0 +1,33 @@
+{
+  "key": "terrace_v2",
+  "asset": "scene-terrace",
+  "path": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-536f6bc8-cf09-42ab-986b-07c0f8ec7f12.png",
+  "outputHint": "Generated images are saved to /Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9 as /Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-536f6bc8-cf09-42ab-986b-07c0f8ec7f12.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "promptReference": "art/production/receipts/prompts.json#terrace_v2",
+  "tool": "built-in image_gen",
+  "date": "2026-10-17",
+  "model": "not reported by tool",
+  "copiedUnchanged": true,
+  "intent": "edit",
+  "inputAssets": [
+    {
+      "id": "scene-terrace-base-input",
+      "path": "art/production/scenes/terrace-closed.png",
+      "sha256": "115e3997cc4d6d69cb5e56f66c48a44ad7ec7d649bd7d0397c30670a200f521e",
+      "role": "edit-target"
+    }
+  ],
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "sourceSHA256": "7404105d35ece7a45ee080a1b37385d712c4066cd78729d907ae513e591d184d",
+  "sourceDimensions": {
+    "width": 1672,
+    "height": 941
+  },
+  "runtimePath": "web/public/art/scenes/terrace-v2.webp",
+  "runtimeSHA256": "76bbc4ecff4469cfa5e01f7ba182074e6fc70836d9fc9c0b4545afc7208ef45d",
+  "runtimeDimensions": {
+    "width": 1536,
+    "height": 865
+  },
+  "encoding": "cwebp -q 84 -m 6 -resize 1536 0 -metadata none"
+}

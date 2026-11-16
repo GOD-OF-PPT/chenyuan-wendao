@@ -1,0 +1,69 @@
+{
+  "id": "puppet",
+  "category": "enemies",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-af23ff93-68f0-4d2b-8ac6-acd356af1d56.png",
+  "savedPath": "art/redesign/enemies/puppet-v1.png",
+  "copiedUnchanged": true,
+  "sourceSHA256": "d950df6f54bc192e42c137850088f7d4f2f3795196a77f310c7313ddd8865d37",
+  "promptReference": "art/redesign/receipts/enemy-prompts.json#puppet",
+  "referenceImages": [
+    {
+      "path": "art/redesign/scenes/cave-v1.png",
+      "sha256": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9",
+      "role": "style reference only; materials, palette and lighting, no scenery or objects"
+    }
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "agent source inspection, not user art acceptance",
+    "observation": "Single existing character identity or configured enemy subject; no UI, readable text or watermark observed."
+  },
+  "requestedResolution": "native available square PNG",
+  "resolutionNote": "Actual tool output recorded, no upscaling or4K claim",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "sourceBytes": 1824474,
+  "alphaProof": {
+    "transparentPixels": 894138,
+    "solidPixels": 447352,
+    "intermediatePixels": 231026,
+    "min": 0,
+    "max": 255
+  },
+  "runtimeAlphaProof": {
+    "transparentPixels": 148953,
+    "solidPixels": 73955,
+    "intermediatePixels": 39236,
+    "min": 0,
+    "max": 254
+  },
+  "runtime": {
+    "path": "web/public/art/v2/enemies/puppet.webp",
+    "bytes": 81374,
+    "sha256": "8fabb419720ae44a19e9dedbda32861a0af42ba50dc11803b3bffc1135e6852b",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+}

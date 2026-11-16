@@ -1,0 +1,100 @@
+{
+  "id": "soul-cold-v1",
+  "sourceId": "soul",
+  "promptKey": "soul",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-9c8fedaa-4729-4265-8d3a-f51d1effe5ac.png",
+  "savedPath": "art/redesign/ta08-resources/soul-cold-v1.png",
+  "sourceSHA256": "1d5eaf8d1db197c96141cd9fe3d448d515ea7c0686cfb7ecbb14929d67591f4f",
+  "copiedUnchanged": true,
+  "source": {
+    "path": "art/redesign/ta08-resources/soul-cold-v1.png",
+    "bytes": 1726706,
+    "sha256": "1d5eaf8d1db197c96141cd9fe3d448d515ea7c0686cfb7ecbb14929d67591f4f",
+    "dimensions": {
+      "width": 1254,
+      "height": 1254
+    },
+    "alpha": true,
+    "format": "png"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/sources/soul-cold-v1.webp",
+    "bytes": 52926,
+    "sha256": "714a6bbbd0cbff9beae1a223f2e550d970f58482bdc05ffc91cc716734f18814",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "alphaProof": {
+    "transparentPixels": 941072,
+    "solidPixels": 589923,
+    "intermediatePixels": 41521,
+    "min": 0,
+    "max": 255
+  },
+  "runtimeAlphaProof": {
+    "transparentPixels": 156591,
+    "solidPixels": 97950,
+    "intermediatePixels": 7603,
+    "min": 0,
+    "max": 254
+  },
+  "sourceAlphaBBox": [
+    0,
+    17,
+    1240,
+    1254
+  ],
+  "runtimeAlphaBBox": [
+    21,
+    8,
+    494,
+    502
+  ],
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "promptReference": "art/redesign/receipts/ta08-resource-prompts.json",
+  "promptSHA256": "46393b9a65e508de27ab866d7b6f76741f1b00674ee246f171acd21dd4714e9b",
+  "promptDocumentSHA256": "b8a939c8663aba88c1f24ddc8decdad4626d1427f379dfe87813363f17cdc671",
+  "referenceImages": [],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "root source pixel inspection, not user art acceptance",
+    "observation": "Asymmetrical blue-green crystal cluster in dark wet stone, no aura or fog/cloud. Root actually inspected generated source pixels in a batch of at most two. No text/UI/person/tool/motion reward or rectangular backdrop seen. Requested central72-percent margin was not fully achieved; original retained and actual bbox recorded, drawing containment must be checked in the real stage. Source art only, not human acceptance."
+  },
+  "exportProof": {
+    "sourceUnchanged": true,
+    "runtimeUnchanged": true,
+    "reencodedBytes": 52926,
+    "reencodedSHA256": "714a6bbbd0cbff9beae1a223f2e550d970f58482bdc05ffc91cc716734f18814",
+    "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+  },
+  "decodeProof": {
+    "decoder": "Pillow",
+    "sourceRGBASHA256": "050029d9ec7025d17a58269d5e9c93b0b712d98950c576928ee3f368f98216e2",
+    "runtimeRGBASHA256": "969218add9721db422fd214c9f5a0978c033aadf6c66a6cd753a4514b0c79c3f",
+    "alphaDefinitions": {
+      "transparentPixels": "alpha=0",
+      "solidPixels": "alpha>=250",
+      "intermediatePixels": "1<=alpha<250"
+    }
+  },
+  "userAcceptance": false
+}

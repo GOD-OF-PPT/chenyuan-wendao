@@ -1,0 +1,30 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "model": null,
+  "requestId": null,
+  "tool": "image_gen.imagegen",
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-e2439ee4-33f8-4773-8c76-2207465a5bca.png",
+  "selectedCopy": {
+    "path": "art/production/art35/blade-source-v2.png",
+    "bytes": 1320665,
+    "sha256": "d178c4cf3f352a99740158cc60058bfc91f19473842b3f874b75ea82222abfa1"
+  },
+  "prompt": {
+    "path": "art/production/art35/blade-clean-prompt.json",
+    "bytes": 1249,
+    "sha256": "5b011b461e8aa702a35480e4e3ba11a59a81c0f7c87ae264e5cba6f936b6eecd"
+  },
+  "reference": {
+    "path": "art/production/art35/blade-source.png",
+    "bytes": 1353856,
+    "sha256": "6b9f7842ba801546797ea5527d24f389dcab840310162bf33994e7a125d80566"
+  },
+  "previousAudit": {
+    "path": "art/production/art35/blade-audit.json",
+    "bytes": 886,
+    "sha256": "ecd93a8ba97dcf46030be179006de4d2d8a55ddb2f5670478b0b34f16bd14e8c"
+  },
+  "requestedTransparent": true,
+  "originalsKept": true,
+  "userAcceptance": false
+}

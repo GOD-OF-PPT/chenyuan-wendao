@@ -1,0 +1,8 @@
+{
+  "id": "nascent_pill",
+  "prompt": "Use case: stylized-concept. Asset type: one transparent breakthrough-material inventory cutout for a Chinese xianxia idle game. Painterly realistic physical collectible, upper-left soft light, three-quarter front view; jade, silk and restrained aged bronze details. Square canvas, entire silhouette centered, generous transparent margin. Actual alpha transparency. No floor, scene, pedestal, hands, character, UI, text, runes, labels, numbers, energy, glow, halo or particles. Exactly one matte spherical medicinal pellet inside an open small casket, no extra loose pills. Subject: one small hexagonal dark green jade medicine casket with a hinged lid raised behind, pale plum silk nest holding exactly one soft pearly-lavender medicinal pellet. Refined aged bronze corner joints, clearly hexagonal angular silhouette and softly worn jade material, no ornate writing.",
+  "builtin": true,
+  "transparentRequested": true,
+  "generatedPath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-dceee159-2ce3-4a8a-8098-0b82108da739.png",
+  "outputHint": "Generated images are saved to /Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254 as /Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-dceee159-2ce3-4a8a-8098-0b82108da739.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+}

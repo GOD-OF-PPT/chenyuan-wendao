@@ -1,0 +1,70 @@
+{
+  "format": "chenyuan-art18-ui",
+  "version": 1,
+  "status": "implemented_pending_human_review",
+  "userAcceptance": false,
+  "maxNativeBytes": 18000,
+  "maxRuntimeBytes": 144000,
+  "files": [
+    {
+      "path": "web/src/art18-ui.css",
+      "bytes": 4811,
+      "sha256": "2a536ea2393e233d0d610bb9feb1af1fd74d906592b3abd4e2b24340a639b947"
+    },
+    {
+      "path": "web/src/GameConfirmDialog.vue",
+      "bytes": 3548,
+      "sha256": "e607ab9f4eb60ee6725fb57f4d38a5c7f983ef82c6028539f7fe5e70b70a52cd"
+    },
+    {
+      "path": "web/src/use-game-confirmation.ts",
+      "bytes": 2669,
+      "sha256": "6835e6c1ae8dc8435aa57d18ea6529bef0808c3f326cae0adb10d235124df2e4"
+    }
+  ],
+  "runtimeAssets": [
+    {
+      "path": "web/public/art/v2/ui/dialog-jade-frame-v1.webp",
+      "bytes": 46240,
+      "sha256": "75d212a45b6d2aebc69756219a28404d3ebf326800572ec9f344d4374eff8336",
+      "size": [
+        768,
+        768
+      ],
+      "maxBytes": 96000
+    },
+    {
+      "path": "web/public/art/v2/ui/action-jade-frame-v1.webp",
+      "bytes": 24120,
+      "sha256": "82fc5ee9ef6bda7c75aa728dc820e337213a2c8d91b88f7eec23a39633d9b20d",
+      "size": [
+        512,
+        512
+      ],
+      "maxBytes": 48000
+    }
+  ],
+  "originals": [
+    {
+      "path": "art/production/art18/dialog-jade-frame-source.png",
+      "bytes": 2119692,
+      "sha256": "12a7fcd3ba80a2171d77834ca11aee237cf05f71ae486e74a99d015ee1fb5df5"
+    },
+    {
+      "path": "art/production/art18/action-jade-frame-source.png",
+      "bytes": 2071030,
+      "sha256": "545f5cbc8d27e1472e312fa2e7102dc2896c335e3fc84153efbf98a48c6ca8dc"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0050-game-dialog-buttons-art18-contract.md",
+    "goal-4/amendments/2026-10-28-art18-dialog-buttons.md",
+    "goal-4/research/art18-dialog-sources.json",
+    "art/production/art18/prompts.json",
+    "art/production/art18/exports.json",
+    "art/tools/export_art18_ui.py"
+  ],
+  "originalDOMDialogs": 31,
+  "originalBrowserConfirmCases": 5,
+  "runtimeUses": "DOM dialog frame and primary command frame; all text/state/actions remain real DOM and original runtime"
+}

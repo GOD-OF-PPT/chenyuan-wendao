@@ -1,19 +1,49 @@
 # 工程任务
 
-目标仓库已由项目负责人创建并接入。此提交完成当前核心设计资料入库；游戏工程尚未完成。主分支为资料基线，开发通过功能分支和 PR 进行。
+以 docs/v0.3 为完整设计基线。约 30 分钟仅观察基本玩法理解，不限定通关时长。历史M1玩法来自G1分支；当前Goal 1在独立叠加PR中接续full规则并逐步接通网页，尚未合并main。实际状态以Goal 1逐项记录为准。
 
-| ID | 任务 | 验收 | 状态 |
-| --- | --- | --- | --- |
-| SETUP-01 | 连接正确仓库 | 读取 owner/repo、权限、历史、可见性 | 完成 |
-| SETUP-02 | 核心资料入库 | 五份 v0.3 文档、样例、约定与美术预览 | 本提交 |
-| ART-01 | 高清原图和历史原件入库 | SHA-256 与原件一致，不替换为低清图 | 待完成 |
-| M1-01 | 独立 TypeScript 规则入口 | 有类型指令、拒绝非法输入、可运行测试 | 待实施 |
-| M1-02 | 首境界六张经济控制表 | 物品来源、配方、售价与行动成本关联 | 待实施 |
-| M1-03 | 采集、委托、交易、炼丹 | 原子成本、不负数、零资源恢复 | 待实施 |
-| M1-04 | 修炼与突破 | 修为及物品双校验、真实消耗、批量停止 | 待实施 |
-| M1-05 | 剑符意图战斗 | 不同决策、失败可恢复 | 待实施 |
-| M1-06 | IndexedDB 原子存档 | commandId/revision、失败不假保存 | 待实施 |
-| M1-07 | Vue 主界面 | 认可视觉、真实文字与按钮、响应式 | 待实施 |
-| M1-08 | 开场与首境界整合 | 三分支均可积累至筑基，不绑定分钟 | 待实施 |
+2026-10-16开始 [Goal 1](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-1/plan.md)，分支 `codex/goal-1-reproducible-baseline`。T01归拢G1与研究文档，整合实现`4907e1d`已重新通过本地与同SHA远端83规则/17 Chromium、经济回放、类型与构建，交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，未合并。下一项T02接续full规则；任务和证据见 [tasks.md](https://github.com/GOD-OF-PPT/chenyuan-wendao/blob/c7190e67a265fe7c8bff63a1db222a434d7dcffd/goal-1/tasks.md) 与 [基线实施记录](../implementation/goal-1-baseline.md)。后续全境界网页、存档切换与正式美术保持未完成。
 
-M1 不等于完整 Demo。后续全境界、因果、渡劫、真人试玩仍需单独实现和验证。
+T02在`codex/goal-1-full-rules`接续`a49c0b4`全境界规则，增加配置审计、24组正常纯引擎路线、功法法宝效果及逐境恢复验证；正式网页与数据库仍用Adventure。当前进度与待修责任见 [T02记录](../implementation/goal-1-full-rules.md)。后续T03先明确契约与共享查询，再进行正式存档/网页切换。
+
+T03在`codex/goal-1-contracts-queries`落实 [运行契约](../contracts/full-runtime.md)，纯结算/预览使用共享成本门槛，明确full v1转换与结束语义，支持机制复用扩展；[CHECK-01本地记录](../implementation/goal-1-contracts-queries.md)为202规则/24 full回放/17现有浏览器及构建通过。正式数据库迁移、Store和网页切换仍未实施，由T04—T06承接。
+
+T04在`codex/goal-1-full-persistence`实现独立full事务库与已知旧档迁移，真实IDB验证及边界见 [T04记录](../implementation/goal-1-full-persistence.md)。正式Store、恢复API和三浏览器完整矩阵仍由T05/T06承接，不因模块通过提前关闭网页验收。
+
+T05在`codex/goal-1-recovery-idempotency`补齐恢复API、回执/幂等/并发/失败语义与原件只读备份，数据库升级v3并保护full权威进度。[T05记录](../implementation/goal-1-recovery-idempotency.md)为206规则、42原生IDB与17原网页回归通过。正式Store/页面切换与CHECK-02三浏览器关键路径留在T06，不把模块验证写成网页飞升。
+
+T06在`codex/goal-1-full-ui-cutover`把正式Store和最小页面切换至full，接入失败显示/原意图重试、旧档迁移与重复恢复。三浏览器首境界/原生IDB及CHECK-02结果见 [T06记录](../implementation/goal-1-full-ui-cutover.md)；高级构筑、完整飞升网页、正式视觉和真人验证仍由后续任务承担。下表M1项保留历史范围，当前结果不能只读旧行。
+
+T07在`codex/goal-1-goal-guidance`接入可替换目标、缺口/来源逐层导航、偏好与取材批次、预算和真实回执；[T07记录](../implementation/goal-1-goal-guidance.md)单独绑定本阶段证据。正常网页范围仍以六条至筑基为当前完整验证，高级功法/法宝/逐境操作由T08以后完成，CHECK-03仍待T09后执行。
+
+T08在`codex/goal-1-build-equipment`接通12功法/4法宝的真实研习、逐槽装备、炼制与替换，并以正常新档覆盖双修法×双筹备至金丹、刷新恢复及失败重试。[T08记录](../implementation/goal-1-build-equipment.md)单独绑定本阶段实际证据，元婴以后和CHECK-03继续由T09承担。
+
+T09在`codex/goal-1-growth-to-spirit`补上本境突破物/关键材料的真实筹备信息，复用确定/替代/采购来源，并用正常新档跨金丹、元婴至化神，配装与刷新/恢复保留；[T09/CHECK-03记录](../implementation/goal-1-growth-to-spirit.md)绑定实际检查。经济优化、因果、渡劫结尾、生产视觉/性能与真人仍在后续。
+
+T10在`codex/goal-1-economy-ledger`记录真实毛收支、120组策略和同起点修炼/转换/战斗/失败恢复；修正固定20费用造成的中高境双优风险，数值升级full-unbalanced.2，旧档原件与资源保留。范围及实际验证见[T10记录](../implementation/goal-1-economy-ledger.md)，全局平衡、完整网页飞升和真人未完成。
+
+T11在`codex/goal-1-choice-causality`落实沈/裴条件选项与修复、四人物事实记录、行旅不同模板及后学剑简；content/balance为.3，兼容证据与范围见[T11记录](../implementation/goal-1-choice-causality.md)。完整生平/寿尽、渡劫专用网页、生产视觉/性能与真人继续后续任务。
+
+T12在`codex/goal-1-life-record`补上派生生平、精确余寿、固定预览身份的归隐/寿尽与完整准备恢复；[T12/CHECK-04记录](../implementation/goal-1-life-record.md)绑定实际验证。渡劫专用网页/两结尾、生产视觉/性能/真人仍由后续任务承担。
+
+| ID | 任务 | 状态与剩余边界 |
+| --- | --- | --- |
+| SETUP-01 | 仓库接入 | 已完成，保持原 public 可见性 |
+| SETUP-02 | 核心设计入库 | main 已有 v0.3 文档、样例、约定和美术预览 |
+| ART-01 | 高清原图与生产素材 | 待完成，当前仅压缩预览和头像印记占位 |
+| M1-01 | 独立 TypeScript 规则 | 原经济规则 + Adventure 战斗封装，已有规则测试 |
+| M1-02 | 经济数值 | 首境界初值可运行；全境界与真人平衡未完成 |
+| M1-03 | 采集、委托、交易、炼丹 | 已接入真实网页控件与原子保存 |
+| M1-04 | 修炼与突破 | 双条件校验、真实扣物、批量停止；截至筑基 |
+| M1-05 | 剑符意图战斗 | 两个固定修法组合、两种敌人、回合与奖励可玩；完整功法搭配未完成 |
+| M1-06 | IndexedDB | 原子状态/回执、导入导出、检查点、过期写入与回滚测试通过 |
+| M1-07 | Vue 主界面 | 四个主页面可运行，桌面与移动宽度自动测试通过；最终美术未完成 |
+| M1-08 | 开场与首境界整合 | 3 开场 × 2 修法 UI 路线含战斗/炼丹/筑基通过；另有不战斗采购路线 |
+| QA-01 | 自动化 | 历史83规则/17 Chromium；当前282规则/168 IDB，T12首次201网页过/3定位失败、修后78定向全过；最终同HEAD204网页全套CI见T12/CHECK-04，完整飞升矩阵、真机/真人待执行 |
+| BUILD-01 | 构建与交付 | 已生成静态运行包和测试附件，无公开部署 |
+| BUILD-02 / #4 | 前端传递依赖锁定 | 已入 Git 且采用前端 npm ci；同 SHA CI 已通过，PR 评审待完成 |
+| M2 / #5—#6 | 后续境界、法宝、人物回响、渡劫飞升 | 规则已接入正式Store；T08接通至金丹与功法法宝操作，后续逐境、因果和终局网页验收未完成 |
+
+运行入口：[web/README.md](../../web/README.md)。测试证据与明确边界：[可玩版记录](../implementation/M1-playable-web.md)。
+
+G1 锁定提交 `d6b1f75aefee3ea1ecb75138385bb318538ef75d` 的 [core CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38367640840) 与 [web CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38367640849) 已成功。后续新提交的 CI 应单独核对。不要把通过自动测试写成完整数值、艺术或用户体验验收通过。

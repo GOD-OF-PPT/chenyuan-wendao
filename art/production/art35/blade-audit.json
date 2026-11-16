@@ -1,0 +1,23 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "tool": "image_gen.imagegen",
+  "model": null,
+  "requestId": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-464e2d1b-e44c-4b63-bbca-e3e424ebccd6.png",
+  "selectedCopy": {
+    "path": "art/production/art35/blade-source.png",
+    "bytes": 1353856,
+    "sha256": "6b9f7842ba801546797ea5527d24f389dcab840310162bf33994e7a125d80566"
+  },
+  "prompt": {
+    "path": "art/production/art35/blade-prompt.json",
+    "sha256": "6c05b53d0862f07f66945cd7cbb7fa0528666ad8c135f94c37cccdec25f08e99"
+  },
+  "reference": {
+    "path": "web/public/art/v2/catalogue/study-v1.webp",
+    "sha256": "07c30a57cd627bb391f1bc76ea286bc3b88f584928eff7c5f6c603d91de75a4d"
+  },
+  "requestedTransparent": true,
+  "originalsKept": true,
+  "userAcceptance": false
+}

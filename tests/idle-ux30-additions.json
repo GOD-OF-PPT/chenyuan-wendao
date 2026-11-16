@@ -1,0 +1,36 @@
+{
+  "format": "chenyuan-ux30-comprehensive-additions",
+  "version": 4,
+  "parentVersion": 3,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 834,
+    "signature": "86c5c11ddb3279170156b1c19e8d4bb697a92511200b3df2f41d2e2c48b22f89"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "ux30-primary-copy.spec.ts",
+      "title": "UX30-C1 cultivation keeps actionable unit facts and finite caps while complete forecasts and offline rules remain readonly with a preserved draft",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux30-primary-copy.spec.ts",
+      "title": "UX30-C2 alchemy keeps true material costs period and finite authorisation while full recipe lore and safe-stop rules remain available without an action",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux30-primary-copy.spec.ts",
+      "title": "UX30-C3 recovery shows each actual single effect once and complete medicine rest and stop details remain readable with all saved draft fields",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux30-primary-copy.spec.ts",
+      "title": "UX30-C4 a real new mortal reaches the clear primary action and reading folded rules cannot restart or shortcut its original thirty-second saved cycle",
+      "projectName": "chromium"
+    }
+  ]
+}

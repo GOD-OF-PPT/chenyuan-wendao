@@ -1,0 +1,104 @@
+{
+  "id": "player-standing-cold-v1",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-247c6862-c050-49dc-b92b-6e9d62bd05d7.png",
+  "savedPath": "art/redesign/characters/player-standing-cold-v1.png",
+  "sourceSHA256": "6b1201d21c081fd6e15c60ae7093899d23e0375193cf046e9338bbd952620509",
+  "copiedUnchanged": true,
+  "source": {
+    "path": "art/redesign/characters/player-standing-cold-v1.png",
+    "bytes": 2062489,
+    "sha256": "6b1201d21c081fd6e15c60ae7093899d23e0375193cf046e9338bbd952620509",
+    "dimensions": {
+      "width": 1254,
+      "height": 1254
+    },
+    "alpha": true,
+    "format": "png"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/actors/player-standing-cold-v1.webp",
+    "bytes": 63634,
+    "sha256": "ead57061820734bd53f89f600795310cb2040b478f5e2bf61da2b946571ca2ef",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "alphaProof": {
+    "transparentPixels": 785953,
+    "solidPixels": 680783,
+    "intermediatePixels": 105780,
+    "min": 0,
+    "max": 255
+  },
+  "runtimeAlphaProof": {
+    "transparentPixels": 130119,
+    "solidPixels": 112773,
+    "intermediatePixels": 19252,
+    "min": 0,
+    "max": 254
+  },
+  "sourceAlphaBBox": [
+    0,
+    0,
+    1223,
+    1242
+  ],
+  "runtimeAlphaBBox": [
+    0,
+    0,
+    499,
+    507
+  ],
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "promptReference": "art/redesign/receipts/ta07-standing-prompt.json",
+  "promptSHA256": "6ef29c475ae6da046571cbf43366ec522d1c9624b51b5665b9254497e24fc861",
+  "referenceImages": [
+    {
+      "path": "art/redesign/characters/player-v1.png",
+      "sha256": "0abde0fe4d767fa6832df7b35e7ac6b87f4c318b3e0312cf0e3d984e2e9e23e2",
+      "role": "identity and costume reference"
+    }
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "root generated source inspection only, not user acceptance",
+    "observation": "Full standing adult male, same face/ivory-teal robes, visible two hands and both feet; no weapon, spell aura, floor or UI. Some hair reaches top canvas edge; requested generous margin not fully met. Keep original and reserve scene padding instead of claiming source margin achieved. Single cold image plus code poses, not seven skeletal/frame animations."
+  },
+  "exportProof": {
+    "sourceUnchanged": true,
+    "runtimeUnchanged": true,
+    "reencodedBytes": 63634,
+    "reencodedSHA256": "ead57061820734bd53f89f600795310cb2040b478f5e2bf61da2b946571ca2ef",
+    "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+  },
+  "decodeProof": {
+    "decoder": "Pillow",
+    "sourceRGBASHA256": "07f055ff2760333fe1bd34bdd0cdf441e3779e9440f3cf8595425a99a96a3e61",
+    "runtimeRGBASHA256": "c6a560de8723cad432bfe622b4fe2160f00e2f085ff6344bbc096ddd66291726",
+    "alphaDefinitions": {
+      "transparentPixels": "alpha=0",
+      "solidPixels": "alpha>=250",
+      "intermediatePixels": "1<=alpha<250"
+    }
+  },
+  "userAcceptance": false,
+  "promptDocumentSHA256": "a2bc539b36e2d4e3b834cb0bc05fca08e6ccc9c1be686d6705e39ff4f4517927"
+}

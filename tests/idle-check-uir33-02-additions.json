@@ -1,0 +1,36 @@
+{
+  "format": "chenyuan-check-uir33-02-comprehensive-additions",
+  "version": 16,
+  "parentVersion": 15,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 897,
+    "signature": "afe3e7f26ddc739f73a25ef6d5b4f154a480558e2a4f607412c00e3d8d9e031f"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "check-uir33-02.spec.ts",
+      "title": "CHECK-UIR33-02 EQUIP saved seal follows its visible object and clears across life and exact receipt reading",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-uir33-02.spec.ts",
+      "title": "CHECK-UIR33-02 EQUIP_RELIC saved seal follows its visible object and clears across life and exact receipt reading",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-uir33-02.spec.ts",
+      "title": "CHECK-UIR33-02 failed original cultivation keeps the real error and retry across life details without a screen-wide decorative frame",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-uir33-02.spec.ts",
+      "title": "CHECK-UIR33-02 a saved breakthrough has one unchanged stop reason and full life and original milestone result",
+      "projectName": "chromium"
+    }
+  ]
+}

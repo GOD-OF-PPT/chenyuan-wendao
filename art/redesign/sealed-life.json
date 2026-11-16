@@ -1,0 +1,33 @@
+{
+  "format": "chenyuan-sealed-life",
+  "version": 1,
+  "maxNativeBytes": 14000,
+  "newBitmapAssets": 0,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/SealedLifeHud.vue",
+      "bytes": 2537,
+      "sha256": "da1d8e420798ea7ccdebda6c0f91a39567c5ab9843036098f6eb2b0904319135"
+    },
+    {
+      "path": "web/src/SealedLifeStage.vue",
+      "bytes": 2073,
+      "sha256": "6780e7a3f7689aedda0cf7b9be7bec76a617177bca120bdfd9d4383a68f4af4e"
+    },
+    {
+      "path": "web/src/SealedLifeNav.vue",
+      "bytes": 1615,
+      "sha256": "4879ebe19d0784264a4ca137b0a5a52721b2b618488f6ccc7b2c2cc4cd771c67"
+    },
+    {
+      "path": "web/src/sealed-life.css",
+      "bytes": 3336,
+      "sha256": "5ac7de685756b28b8af3bf4b468b4914a5a5cb30399c6a183358d793671be27c"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0056-sealed-life-ux23-contract.md",
+    "goal-4/amendments/2026-10-28-goal-continue-ux23.md"
+  ]
+}

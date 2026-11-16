@@ -1,0 +1,30 @@
+{
+  "tool": "built-in image_gen",
+  "generatedSource": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-9a218c9c-f822-4d9e-bb96-e1376b84d150.png",
+  "archivedSource": "art/production/art18/dialog-jade-frame-source.png",
+  "sha256": "12a7fcd3ba80a2171d77834ca11aee237cf05f71ae486e74a99d015ee1fb5df5",
+  "size": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alphaBBox": [
+    0,
+    0,
+    1232,
+    1254
+  ],
+  "alpha128BBox": [
+    32,
+    39,
+    1224,
+    1212
+  ],
+  "prompt": "Use case: stylized-concept. Asset type: production 2D nine-slice dialog frame for a Chinese xianxia idle cultivation game, not a mockup. Create exactly one front-facing square frame filling a 1024 by 1024 canvas. Thin aged bronze and muted old-gold double edging, elegant carved flowing cloud motifs confined to the corners, subtle dark jade inlays. Inner 75 percent is a quiet opaque deep blue-green ink lacquer / silk surface, low contrast so real DOM text remains readable. Palette: ink teal #0b252b, pine green #153d3c, restrained jade #80b9a3, old gold #a18b58. Hand-painted premium game interface material, restrained relief, soft diffuse light, no perspective. Consistent narrow border on all four sides suitable for nine-slice stretching; corner decoration stays within the corner squares. True transparent exterior margin about 16px, clean alpha edge, opaque quiet center. No letters, no Chinese writing, no numbers, no glyphs, no logos, no watermark, no characters, no scenery, no objects, no button, no UI screenshot, no white or yellow parchment, no neon, no oversized glow.",
+  "at": "2026-10-28T03:49:01.303328+00:00",
+  "state": "source_received_not_runtime_accepted"
+}

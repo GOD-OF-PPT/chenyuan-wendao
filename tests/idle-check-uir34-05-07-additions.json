@@ -1,0 +1,30 @@
+{
+  "format": "chenyuan-check-uir34-05-07-additions",
+  "version": 27,
+  "parentVersion": 26,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 947,
+    "signature": "68fdb062b4d88030ca01c5eb5d65ccc97362302bb6d75e3ac5a4a6718c07576b"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "check-uir34-05-07.spec.ts",
+      "title": "CHECK-UIR34-050607 C1 finite cultivation preserves its original allowance through fate reading profile quota retry pause reload and one full resumed cycle",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-uir34-05-07.spec.ts",
+      "title": "CHECK-UIR34-050607 C2 held trial saving keeps old profile and factual fate readonly until one full preparation checkpoint enters the original unanswered question",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-uir34-05-07.spec.ts",
+      "title": "CHECK-UIR34-050607 C3 put-success native closing abort retains active facts and the original retry seals only the selected ending before readonly sealed profile and refresh",
+      "projectName": "chromium"
+    }
+  ]
+}

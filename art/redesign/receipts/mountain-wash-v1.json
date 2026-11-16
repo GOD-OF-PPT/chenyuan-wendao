@@ -1,0 +1,76 @@
+{
+  "id": "mountain-wash",
+  "tool": "built-in image_gen",
+  "sourceDefaultPath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-464c37c3-9f05-4dd9-a45e-66f45dc9da8f.png",
+  "savedPath": "art/redesign/desktop/mountain-wash-v1.png",
+  "copiedUnchanged": true,
+  "source": {
+    "path": "art/redesign/desktop/mountain-wash-v1.png",
+    "bytes": 1826155,
+    "sha256": "a3ddcfabdee381e39281138407d87d49fcad565bb7a28a086353fe485bcd839e",
+    "dimensions": {
+      "width": 2172,
+      "height": 724
+    },
+    "alpha": true,
+    "format": "png"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/ui/mountain-wash-v1.webp",
+    "bytes": 56046,
+    "sha256": "2f30503f639d97ca657520cc8b762121a86bc5dc3971a9ce7b8afb65c0a82aa2",
+    "dimensions": {
+      "width": 768,
+      "height": 256
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "alphaProof": {
+    "min": 0,
+    "max": 255,
+    "transparentPixels": 842916,
+    "solidPixels": 478343,
+    "intermediatePixels": 251269
+  },
+  "runtimeAlphaProof": {
+    "min": 0,
+    "max": 253,
+    "transparentPixels": 105365,
+    "solidPixels": 59775,
+    "intermediatePixels": 31468
+  },
+  "promptReference": "art/redesign/receipts/panel-material-prompts.json#mountain-wash",
+  "referenceImages": [
+    {
+      "path": "goal-2/design/desktop-direction-v1.png",
+      "role": "style reference only; not an edit target",
+      "sha256": "ab34c2faff1a786c210e96310cf2cfc52cae71aa4880f37e37aa7821f4040b12"
+    }
+  ],
+  "request": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/gordon/githome/chenyuan-wendao/goal-2/design/desktop-direction-v1.png"
+    ]
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "768",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "generated original visually inspected; runtime decode verified; actual UI review follows",
+    "findings": "Isolated misty slate mountains; genuine alpha; no text or UI."
+  }
+}

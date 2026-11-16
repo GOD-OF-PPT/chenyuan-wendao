@@ -1,0 +1,36 @@
+{
+  "format": "chenyuan-uir35-04-medicine-additions",
+  "version": 32,
+  "parentVersion": 31,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 964,
+    "signature": "e80c63b86867d8d04e3a385e4d4bfdd6ad47b360a2cc082f21a82a38d0724d63"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir35-04-battle-medicine.spec.ts",
+      "title": "UIR35-04-S1 zero-medicine encounter keeps all finite limits readable and its broad footer before one original thirty-second entry and a separate three-second turn",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir35-04-battle-medicine.spec.ts",
+      "title": "UIR35-04-S2 a zero-medicine battle never calls an enabled zero-budget threshold disabled and preserves the exact formal no-action gate",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir35-04-battle-medicine.spec.ts",
+      "title": "UIR35-04-S3 actual nonzero medicine budgets thresholds and reserves remain complete before one saved three-second dose and its paused original arrangement",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir35-04-battle-medicine.spec.ts",
+      "title": "UIR35-04-S4 failed START and TICK retry the same zero-medicine authority and pause reload resumes only an original complete three-second period",
+      "projectName": "chromium"
+    }
+  ]
+}

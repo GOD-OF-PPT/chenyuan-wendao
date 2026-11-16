@@ -1,0 +1,74 @@
+{
+  "id": "pei",
+  "category": "characters",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-a47f6dfc-00ee-4744-a874-24b7f7556404.png",
+  "savedPath": "art/redesign/characters/pei-v1.png",
+  "copiedUnchanged": true,
+  "sourceSHA256": "3f0ed2c068100aad9e68623163de26d743b945b5f8f9252d58168d394c36c383",
+  "promptReference": "art/redesign/receipts/character-prompts.json#pei",
+  "referenceImages": [
+    {
+      "path": "art/production/portraits/pei.png",
+      "sha256": "22583181d159d49dded331cf3af296b956172bdc9c89c28d96516c0892f2d98f",
+      "role": "edit target; preserve existing character identity, face, age, hair and clothing"
+    },
+    {
+      "path": "art/redesign/scenes/cave-v1.png",
+      "sha256": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9",
+      "role": "style reference only; materials, palette and lighting, no scenery or objects"
+    }
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "agent source inspection, not user art acceptance",
+    "observation": "Single existing character identity or configured enemy subject; no UI, readable text or watermark observed."
+  },
+  "requestedResolution": "native available square PNG",
+  "resolutionNote": "Actual tool output recorded, no upscaling or4K claim",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "sourceBytes": 2422705,
+  "alphaProof": {
+    "transparentPixels": 569503,
+    "solidPixels": 899271,
+    "intermediatePixels": 103742,
+    "min": 0,
+    "max": 255
+  },
+  "runtimeAlphaProof": {
+    "transparentPixels": 94456,
+    "solidPixels": 149659,
+    "intermediatePixels": 18029,
+    "min": 0,
+    "max": 254
+  },
+  "runtime": {
+    "path": "web/public/art/v2/characters/pei.webp",
+    "bytes": 66310,
+    "sha256": "925d7f303997aac05dd7a27ea2bd7a74cbb1796546ceb8f0e06a565d8d34166d",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+}

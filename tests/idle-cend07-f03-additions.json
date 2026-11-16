@@ -1,0 +1,54 @@
+{
+  "format": "chenyuan-cend07-f03-travel-additions",
+  "version": 39,
+  "parentVersion": 38,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1001,
+    "signature": "dd7c8f0d92eba4ec4a0a45c5404e92e5c870df5d5981b4450902cb1a1b39c743"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "CEND07-F03 wilderness uses the painted unarmed traveller and the original six-second atomic destination",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "CEND07-F03 cave uses the painted unarmed traveller and the original six-second atomic destination",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "CEND07-F03 sect uses the painted unarmed traveller and the original six-second atomic destination",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "CEND07-F03 market uses the painted unarmed traveller and the original six-second atomic destination",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "CEND07-F03 secret uses the painted unarmed traveller and the original six-second atomic destination",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "CEND07-F03 terrace uses the painted unarmed traveller and the original six-second atomic destination",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "CEND07-F03 a failed travel painting keeps the static fallback complete route costs clock and original readonly review",
+      "projectName": "chromium"
+    }
+  ]
+}

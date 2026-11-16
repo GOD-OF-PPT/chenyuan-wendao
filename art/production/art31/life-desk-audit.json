@@ -1,0 +1,35 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "model": null,
+  "requestId": null,
+  "originalsKept": true,
+  "userAcceptance": false,
+  "reference": {
+    "path": "goal-4/evidence/art30/next-life-art-debt.jpg",
+    "bytes": 114197,
+    "sha256": "9ac5718d14efcb1a0c46d093d8df47499d7deb2e2eb5a398240747c3e25d601f"
+  },
+  "selectedCopy": {
+    "path": "art/production/art31/life-desk-v1.png",
+    "bytes": 2828876,
+    "sha256": "7eb3c74516376147bb8de74b827bff85975c5e549d2fd007519d398bafe353ae"
+  },
+  "calls": [
+    {
+      "prompt": {
+        "path": "art/production/art31/life-desk-prompt.json",
+        "bytes": 3145,
+        "sha256": "04888a160bf05519fe32c42a32eb1e7091db7facad3b87e22ea5514b06bdc41c"
+      },
+      "candidate": {
+        "path": "art/production/art31/candidates/desk-v1.png",
+        "bytes": 2828876,
+        "sha256": "7eb3c74516376147bb8de74b827bff85975c5e549d2fd007519d398bafe353ae"
+      },
+      "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-03b3c912-5d39-4de5-bd1d-a64dd615612e.png",
+      "generatedSHA256": "7eb3c74516376147bb8de74b827bff85975c5e549d2fd007519d398bafe353ae",
+      "requestedTransparent": false,
+      "selection": "First blank dark jade handscroll selected after actual image inspection; no writing, figures, outcomes, stamps or UI painted."
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "App.vue": [
+    [
+      "              <p class=\"journey-hint\" data-testid=\"journey-hint\">{{step?.detail}}</p>",
+      "              <p class=\"journey-hint\" data-testid=\"journey-hint\" data-copy30=\"home\">{{step?.kind==='cultivate'?'修为圆满后再筹备突破':step?.detail}}</p>"
+    ],
+    [
+      "修为圆满即停 · 预计 {{hubTrainingQuote?.cycles??0}} 轮 · 灵石预算{{hubTrainingPlan.stoneBudget}} · 最多50轮",
+      "圆满即停 · 最多50轮 · 灵石上限{{hubTrainingPlan.stoneBudget}}"
+    ],
+    [
+      "<div class=\"art06-secondary-actions\"><button class=\"text-button\" data-testid=\"hub-cultivation-details\"",
+      "<div class=\"art06-secondary-actions\"><p v-if=\"step?.kind==='cultivate'\">{{step.detail}}</p><button class=\"text-button\" data-testid=\"hub-cultivation-details\""
+    ]
+  ],
+  "TrainingPlanner.vue": [
+    [
+      "data-testid=\"cultivation-catalogue\" tabindex=\"-1\"",
+      "data-testid=\"cultivation-catalogue\" data-copy30=\"training\" tabindex=\"-1\""
+    ],
+    [
+      "{{matchesSaved?'下方为已保存安排；修改后须重新确认。':savedPlan?'待确认的新安排；原活动尚未改变。':'待确认的新安排；点击开始后才保存。'}}",
+      "{{matchesSaved?'原已保存安排':savedPlan?'下次草案 · 原活动不变':'确认后开始'}}"
+    ],
+    [
+      "比较修行取舍",
+      "比较方式"
+    ],
+    [
+      "<div class=\"training-estimate\" data-testid=\"training-estimate\"><strong>预计可完成 {{quote.cycles}} 轮</strong><p>修为 +{{quote.xp}} · 灵石消耗 {{quote.stones}} · {{quote.months}} 游戏月</p><small>{{blocked?'请先处理上方原安排或重新读取':quote.failure?'暂不可安排：'+quote.failure.message:quote.stopReason?'预计停止：'+quote.stopReason.message:''}}</small><small>累计灵石上限 {{plan.stoneBudget}} · 保留 {{plan.stoneReserve}} · 最多 {{plan.maxCycles}} 轮</small></div>",
+      "<div class=\"training-estimate\" data-testid=\"training-estimate\"><details name=\"ux30-training\"><summary style=\"min-height:44px\">本段预估 · {{quote.cycles}} 轮</summary><p>修为 +{{quote.xp}} · 灵石消耗 {{quote.stones}} · {{quote.months}} 游戏月</p><small>{{quote.stopReason?'预计停止：'+quote.stopReason.message:''}}</small></details><small v-if=\"blocked||quote.failure\">{{blocked?'请先处理上方原安排或重新读取':'暂不可安排：'+quote.failure?.message}}</small><small>累计灵石上限 {{plan.stoneBudget}} · 保留 {{plan.stoneReserve}} · 最多 {{plan.maxCycles}} 轮</small></div>"
+    ],
+    [
+      "<details class=\"training-limits\" data-testid=\"training-limits\">",
+      "<details class=\"training-limits\" data-testid=\"training-limits\" name=\"ux30-training\">"
+    ],
+    [
+      "</div></details></template><template #note><p class=\"training-offline-note\">本次为在线修炼。关闭或刷新保留成果与安排，继续后本轮重新计时，不补发离线收益。</p></template>",
+      "</div><p class=\"training-offline-note\">本次为在线修炼。关闭或刷新保留成果与安排，继续后本轮重新计时，不补发离线收益。</p></details></template>"
+    ]
+  ],
+  "CultivationSite.vue": [
+    [
+      "data-testid=\"cultivation-site\" :data-method",
+      "data-testid=\"cultivation-site\" data-copy30=\"cultivation\" :data-method"
+    ],
+    [
+      "   <header v-if=\"!compact\"><small>听雨洞府 · 潜修</small><h2>{{game.core.player.name}} · {{realm.name}}</h2></header>",
+      ""
+    ],
+    [
+      "<small>{{stageLabel}}</small>",
+      "<small>{{p.phase.value==='idle'&&!actual&&!p.store?.error?'静候入定':stageLabel}}</small>"
+    ]
+  ],
+  "AlchemyWorkshop.vue": [
+    [
+      "data-testid=\"alchemy-workshop\" :data-state",
+      "data-testid=\"alchemy-workshop\" data-copy30=\"alchemy\" :data-state"
+    ],
+    [
+      "<p>{{item.description}}</p>",
+      ""
+    ],
+    [
+      "本段已保存 {{total}} 枚",
+      "本段成丹 {{total}} 枚"
+    ],
+    [
+      "<small v-else>成品自动入匣，无需领取</small>",
+      ""
+    ],
+    [
+      "药匣 · 依丹方逐炉取用；点药材查看来源",
+      "单炉药材 · 点选找来源"
+    ],
+    [
+      "<span>查看开炉安排 ›</span>",
+      "<span>查看安排 ›</span>"
+    ],
+    [
+      "{{restart.same?'继续沿用原累计预算':current?.status==='running'?'下次草案 · 当前活动未改变':'待确认 · 开炉才执行'}}",
+      "{{restart.same?'沿用原预算':current?.status==='running'?'下次草案 · 原活动不变':'开炉才执行'}}"
+    ],
+    [
+      "<template v-if=\"!restart.same\"> · 新安排预计可炼 {{quote.cycles}} 炉</template>",
+      ""
+    ],
+    [
+      "'材料不足、达到目标或触及保留量时自动停炉'",
+      "'达标或触线即停'"
+    ],
+    [
+      "炉次与完整预估",
+      "安排"
+    ],
+    [
+      ">预算与保留量</button>",
+      ">限额</button>"
+    ],
+    [
+      "<aside class=\"alchemy-recipe-book\">",
+      "<p>{{item.name}} · {{item.description}}</p><aside class=\"alchemy-recipe-book\">"
+    ],
+    [
+      "不自动采购、取材或突破。</p>",
+      "不自动采购、取材或突破。成品自动入匣，无需领取。材料不足、达到目标或触及保留量时自动停炉。</p>"
+    ]
+  ],
+  "RecoveryPlanner.vue": [
+    [
+      "data-testid=\"recovery-planner\" aria-label",
+      "data-testid=\"recovery-planner\" data-copy30=\"recovery-plan\" aria-label"
+    ],
+    [
+      "{{running&&!(sameSaved&&planSaved)?'下次安排草案 · 当前执行见活动条':sameSaved&&planSaved?'已保存安排；修改后须重新确认':'待确认的新安排，确认后才开始'}}",
+      "{{running&&!(sameSaved&&planSaved)?'下次草案 · 原活动不变':sameSaved&&planSaved?'原已保存安排':'确认后开始'}}"
+    ],
+    [
+      "<p v-if=\"quote.allowed\">气血 +{{quote.hp}} · 灵力 +{{quote.mp}}</p><small>{{quote.stopReason?'预计停止：'+quote.stopReason.message:''}}</small><small v-if=\"mode==='use'\">战中服丹占回合，另在斗法安排。</small>",
+      "<p v-if=\"quote.allowed&&mode==='use'&&quote.cycles>1\">预计合计气血 +{{quote.hp}} · 灵力 +{{quote.mp}}</p>"
+    ],
+    [
+      "restart.label+(mode==='rest'?'安排疗养一次':'按目标使用'+item.name)",
+      "restart.label+(mode==='rest'?'疗养一次':'服用'+item.name)"
+    ],
+    [
+      "<small class=\"preparation-reason\">{{conflict||'达标或触及保留线即停，逐次保存。'}}</small>",
+      "<small v-if=\"conflict\" class=\"preparation-reason\">{{conflict}}</small>"
+    ],
+    [
+      "只改本段恢复草案，关闭保留；返回后确认才用药或疗养。</p>",
+      "关闭保留草案；确认才执行。达标或触及保留线即停，逐次保存。</p><small v-if=\"mode==='use'\">战中服丹占回合，另在斗法安排。</small><small v-else>不在洞府时先回洞府；抵达后再预估并确认疗养。</small><p v-if=\"quote.stopReason\">预计停止：{{quote.stopReason.message}}</p>"
+    ],
+    [
+      "返回当前恢复对象",
+      "返回调息"
+    ],
+    [
+      "完成调整 · 返回药匣",
+      "返回调息"
+    ],
+    [
+      "疗养余寿保留量（游戏月）<input",
+      "余寿保留（月）<input"
+    ],
+    [
+      "服丹库存保留量<input",
+      "库存保留<input"
+    ],
+    [
+      "最多服丹数<input",
+      "最多用药<input"
+    ],
+    [
+      "{{item.hp?'气血':'灵力'}}恢复目标 <input",
+      "{{item.hp?'气血':'灵力'}}目标 <input"
+    ]
+  ],
+  "RecoveryRitual.vue": [
+    [
+      "data-testid=\"recovery-ritual\" :data-kind",
+      "data-testid=\"recovery-ritual\" data-copy30=\"recovery-object\" :data-kind"
+    ],
+    [
+      "<p class=\"recovery-description\">{{kind==='rest'?'以一个游戏月换取气血灵力恢复圆满；不消耗丹药。':item.description}}</p>",
+      "<details><summary style=\"min-height:44px\">调息须知</summary><p class=\"recovery-description\">{{kind==='rest'?'以一个游戏月换取气血灵力恢复圆满；不消耗丹药。':item.description}}</p></details>"
+    ],
+    [
+      "<strong class=\"recovery-unit\" data-testid=\"recovery-per-cycle\">",
+      "<strong v-if=\"one.allowed\" class=\"recovery-unit\" data-testid=\"recovery-per-cycle\">"
+    ],
+    [
+      "<div class=\"recovery-cycle\" role=\"status\">",
+      "<div v-if=\"state!=='idle'||activity\" class=\"recovery-cycle\" role=\"status\">"
+    ],
+    [
+      "{{status}}</strong>",
+      "{{state==='failed'?'已停手':status}}</strong>"
+    ],
+    [
+      "查看丹药来源与补给 →",
+      "查看补给来源 ›"
+    ],
+    [
+      "<small v-else class=\"recovery-location-note\">不在洞府时先回洞府；抵达后再预估并确认疗养。</small>",
+      ""
+    ]
+  ]
+}

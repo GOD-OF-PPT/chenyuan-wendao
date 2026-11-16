@@ -1,0 +1,42 @@
+{
+  "format": "chenyuan-cend06-f02b-passage-additions",
+  "version": 35,
+  "parentVersion": 34,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 977,
+    "signature": "9e7bd86c3856f19a9b162ac259913bc2692ebe8dae8c26552d26f66cbfc2d1cd"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "F02B a normal new life returns to the cave through one real six-second visible passage and only its atomic arrival changes the world",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "F02B cave departure and original map review keep one accepted destination and a continuous half-period without executing another route",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "F02B native START and held TICK quotas keep the old world until the exact original travel retry saves one arrival",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "F02B paused refreshed travel keeps the original single route and no offline progress before a full explicit resumed six seconds",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "F02B foreign takeover keeps the exact destination and an explicit new life clears a later pending route and all its old clocks",
+      "projectName": "chromium"
+    }
+  ]
+}

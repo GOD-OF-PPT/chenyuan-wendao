@@ -1,0 +1,212 @@
+{
+  "herb": {
+    "path": "web/public/art/v2/items/herb-v1.webp",
+    "bytes": 59714,
+    "sha256": "4289eafba0f0d726051d47594dc6268a0bc493f9403799d59f70e76ad173a4b0",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alphaBBox16": [
+      67,
+      44,
+      456,
+      471
+    ]
+  },
+  "dew": {
+    "path": "web/public/art/v2/items/dew-v1.webp",
+    "bytes": 31894,
+    "sha256": "9fd9a56e6a407fd39587676313dec3562524dc767d14a026f5aadfa727938c25",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alphaBBox16": [
+      140,
+      66,
+      370,
+      465
+    ]
+  },
+  "core": {
+    "path": "web/public/art/v2/items/core-v1.webp",
+    "bytes": 48484,
+    "sha256": "cac701143dda662cda3e218c53d5daf2ff043228e1afc0aea6dc83a503b9eedf",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alphaBBox16": [
+      87,
+      87,
+      433,
+      427
+    ]
+  },
+  "jade": {
+    "path": "web/public/art/v2/items/jade-v1.webp",
+    "bytes": 62058,
+    "sha256": "fa6b37a3b23c402adc7d5a714e929bba55336baaaf056978831fb5c65694119b",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alphaBBox16": [
+      56,
+      51,
+      469,
+      461
+    ]
+  },
+  "lotus": {
+    "path": "web/public/art/v2/items/lotus-v1.webp",
+    "bytes": 38208,
+    "sha256": "e10f4caef6b351b6995523ec2a30e5bd615e3ffdb9859be773848a7282d796b6",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alphaBBox16": [
+      70,
+      41,
+      464,
+      473
+    ]
+  },
+  "soul": {
+    "path": "web/public/art/v2/items/soul-v1.webp",
+    "bytes": 50648,
+    "sha256": "ebdff7f234e55907683b058450c20f897b3091df710e1b6f9a3c3e9cf3677337",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alphaBBox16": [
+      123,
+      44,
+      409,
+      454
+    ]
+  },
+  "dao": {
+    "path": "web/public/art/v2/items/dao-v1.webp",
+    "bytes": 42156,
+    "sha256": "a7bf3830b88190ee674685ee092106731f20e172a5b5b4eab8dfda94ef673e3a",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alphaBBox16": [
+      106,
+      122,
+      416,
+      406
+    ]
+  },
+  "healing_pill": {
+    "path": "web/public/art/v2/items/healing_pill-v1.webp",
+    "bytes": 25168,
+    "sha256": "f6114f224f6a136f020f179eb7995058f1cdee72dcac8a9ce9bdf57bb69059d9",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alphaBBox16": [
+      117,
+      64,
+      432,
+      440
+    ]
+  },
+  "spirit_pill": {
+    "path": "web/public/art/v2/items/spirit_pill-v1.webp",
+    "bytes": 24492,
+    "sha256": "1ab2931f9c4202b283dbe95afa8b7fe61b5c33156faeb3d8ca9add2927b487b4",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alphaBBox16": [
+      181,
+      68,
+      344,
+      444
+    ]
+  },
+  "foundation_pill": {
+    "path": "web/public/art/v2/items/foundation_pill-v1.webp",
+    "bytes": 33140,
+    "sha256": "db5c298534d4bd55fdc42b64bb16a330d07cd52ea08167b1a32f09bb5950de2e",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alphaBBox16": [
+      85,
+      95,
+      428,
+      409
+    ]
+  },
+  "golden_pill": {
+    "path": "web/public/art/v2/items/golden_pill-v1.webp",
+    "bytes": 34612,
+    "sha256": "eeedde783c0b5851146972c5cf13f87a33026f100e4a4c60128ce4d25bd13e62",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alphaBBox16": [
+      103,
+      128,
+      450,
+      404
+    ]
+  },
+  "nascent_pill": {
+    "path": "web/public/art/v2/items/nascent_pill-v1.webp",
+    "bytes": 36040,
+    "sha256": "37a62d61299c641d9849a819494a4d54b9a0bc09bff249716fb4c9a115483e03",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alphaBBox16": [
+      130,
+      59,
+      439,
+      472
+    ]
+  },
+  "spirit_seed": {
+    "path": "web/public/art/v2/items/spirit_seed-v1.webp",
+    "bytes": 33160,
+    "sha256": "d1934ce9d1f018d866b03671666541f3406d64a10aa8c2ea6950481e3afc5e4f",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alphaBBox16": [
+      114,
+      69,
+      433,
+      435
+    ]
+  },
+  "ascension_seal": {
+    "path": "web/public/art/v2/items/ascension_seal-v1.webp",
+    "bytes": 26514,
+    "sha256": "e3d81134f7a6bf663fda8d653beb1553429a5f514a882cc2137a760fc60d1885",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alphaBBox16": [
+      186,
+      41,
+      421,
+      454
+    ]
+  }
+}

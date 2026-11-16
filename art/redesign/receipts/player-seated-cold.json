@@ -1,0 +1,91 @@
+{
+  "id": "player-seated-cold",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-dbe74148-8114-483c-943b-ff9decbd9462.png",
+  "savedPath": "art/redesign/characters/player-seated-cold-v1.png",
+  "sourceSHA256": "7e24b71c4a9854a00e2b53ec2b97f81e5cf7f0e1c7509be527506139e9c1f356",
+  "copiedUnchanged": true,
+  "source": {
+    "path": "art/redesign/characters/player-seated-cold-v1.png",
+    "bytes": 2251602,
+    "sha256": "7e24b71c4a9854a00e2b53ec2b97f81e5cf7f0e1c7509be527506139e9c1f356",
+    "dimensions": {
+      "width": 1254,
+      "height": 1254
+    },
+    "alpha": true,
+    "format": "png"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/characters/player-seated-cold.webp",
+    "bytes": 65978,
+    "sha256": "66ff79c01b418faa5c0abb0b3490e54b9d30a8568abb796d410a9559d0a36ace",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "alphaProof": {
+    "transparentPixels": 711961,
+    "solidPixels": 769424,
+    "intermediatePixels": 91131,
+    "min": 0,
+    "max": 255
+  },
+  "runtimeAlphaProof": {
+    "transparentPixels": 118288,
+    "solidPixels": 127958,
+    "intermediatePixels": 15898,
+    "min": 0,
+    "max": 254
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "promptReference": "art/redesign/receipts/cultivation-prompts.json",
+  "referenceImages": [
+    {
+      "path": "art/redesign/characters/player-v1.png",
+      "sha256": "0abde0fe4d767fa6832df7b35e7ac6b87f4c318b3e0312cf0e3d984e2e9e23e2",
+      "role": "identity/costume reference only"
+    }
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "Generated source single image root inspection, not user art acceptance",
+    "observation": "Same adult male identity, eyes closed, complete crossed-leg seated ivory/teal robe, no running aura/flame/particles/mat/scene/UI observed. Soft warm ambient rim retained. Requested eight percent raw margin not fully met; preserve original and reserve visual padding in actual scene, not claim source margin met."
+  },
+  "userAcceptance": false,
+  "promptSHA256": "6e18ba4d26a5aead9ea95a7c01fc2cccbe5d225a3bfc6c5092c9145562bb1dc1",
+  "exportProof": {
+    "sourceUnchanged": true,
+    "runtimeUnchanged": true,
+    "reencodedBytes": 65978,
+    "reencodedSHA256": "66ff79c01b418faa5c0abb0b3490e54b9d30a8568abb796d410a9559d0a36ace",
+    "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+  },
+  "decodeProof": {
+    "decoder": "Pillow",
+    "sourceRGBASHA256": "9807f8a4bdf0fd1739ff082164d0b4bcf8361759f746cda777597aa044be0c42",
+    "runtimeRGBASHA256": "aea1eecc8c3723baf833412a563c215a6f6b3a9114d8bd189de3c364070966be",
+    "alphaDefinitions": {
+      "transparentPixels": "alpha=0",
+      "solidPixels": "alpha>=250",
+      "intermediatePixels": "1<=alpha<250"
+    }
+  }
+}

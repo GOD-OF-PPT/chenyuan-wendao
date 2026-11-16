@@ -1,0 +1,27 @@
+{
+  "format": "chenyuan-activity-history",
+  "version": 1,
+  "task": "Goal4 CHECK-U8",
+  "maxNativeBytes": 9000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/ActivityHistory.vue",
+      "bytes": 7816,
+      "sha256": "9ed8e4f3410289a33184b38182c23d2f55f71ca629a1ff0d7f5edec8a0b6e178"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0020-u8-check-contract.md",
+    "goal-4/amendments/2026-10-22-goal-check-u8.md"
+  ],
+  "bindings": {
+    "web/src/App.vue": [
+      "<ActivityHistory "
+    ],
+    "web/src/store.ts": [
+      "loadActivityHistory"
+    ]
+  },
+  "scope": "Readonly ordinary activity receipt UI. No Game, DB schema, timing, reward, painting or player acceptance changes."
+}
