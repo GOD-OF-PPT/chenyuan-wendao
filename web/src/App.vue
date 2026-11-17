@@ -1015,9 +1015,7 @@ onMounted(async () => {
             autocomplete="off"
             :disabled="uiLocked"
           />
-          <p
-            >安排修炼，积累材料，筹备下一步。数值未平衡；游戏月在已安排的周期完成时消耗，暂停后阅读不消耗寿元。</p
-          >
+          <p>安排修行，攒下材料，再定下一步。</p>
           <button class="primary" type="submit" :disabled="uiLocked"
             >踏入仙途 <span>→</span></button
           >
@@ -1047,6 +1045,8 @@ onMounted(async () => {
             ><summary>本机存档与试玩记录</summary
             ><p class="small"
               >必要试玩记录只保存在本机，不上传、不记录道号；可在设置关闭、清空或知情导出。进度仅保存在当前浏览器，导出备份可用于迁移。</p
+            ><p class="small"
+              >试玩版本 · 数值未平衡；游戏月在已安排的周期完成时消耗，暂停后阅读不消耗寿元；约30分钟只用于理解玩法，不限定通关时间。</p
             ></details
           >
         </form>
