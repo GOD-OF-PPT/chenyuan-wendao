@@ -1,4 +1,13 @@
 <script setup lang="ts">
+/**
+ * T03 · 五类状态信息的唯一权威常驻呈现点（见 ADR 0170：常驻指持续可见，不指多处并存）。
+ * 读秒 / 活动进度        → TrainingActivity.vue（经 StatusSurfaces 挂到本组件 hud-center slot）
+ * 成本 / 条件            → ChoiceCard.vue（就近随主动作）
+ * 暂停 / 失败 / 保存中·待核对·失败·重试 → StatusSurfaces.vue 横幅与 save-summary（顶栏只收角标）
+ * 当前活动一句话          → 顶栏 hud-center（本组件 slot 缺省或 TrainingActivity compact）
+ * 目标与缺口              → 顶栏 hub-goal（HudGoal，关键目标 ≥44px）
+ * 本组件只放引用与入口，不复制同一数值、读秒或成本文本；其余位置只删副本、不删常驻点。
+ */
 import {
   isLegacyRules,
   isPreviousRules,
