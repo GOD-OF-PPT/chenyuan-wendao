@@ -50,6 +50,6 @@ const entries = [
       ><GameIcon class="nav-icon" kind="action" id="save" /><span
         >存档</span
       ></button
-    ><small class="prototype-label">数值未平衡</small></nav
+    ><small class="prototype-label">随缘而行，不必赶</small></nav
   >
 </template>
