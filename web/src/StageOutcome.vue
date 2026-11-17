@@ -84,6 +84,7 @@ const changes = computed(() => {
     <div
       :key="state === 'settled' ? receipt?.commandId : state"
       class="stage-result-body"
+      data-outcome
     >
       <template v-if="execution"
         ><strong>{{ execution.label }}</strong
@@ -128,7 +129,7 @@ const changes = computed(() => {
         ><strong>下一步</strong><p>{{ next }}</p></template
       ><template v-else><p>此处保留已保存的行动结果。</p></template>
     </div>
-    <footer v-if="!busy && (followup || result)" class="stage-outcome-actions"
+    <footer v-if="!busy && (followup || result)" class="stage-outcome-actions" data-next
       ><button
         v-if="followup"
         class="stage-next"
