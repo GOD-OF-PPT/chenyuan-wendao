@@ -23,5 +23,5 @@
    - 秘境探索升级为可视化 SVG 星盘连线拓扑图（`入阵口 → 仙草谷/古剑冢/护宝妖/云游商/问心泉 → 终层法则台`），支持自由择路推进与灵识采集奇遇暴击。
 
 ## 3. 产物说明
-- `web/public/playable-v2.html`（同根目录交付之 `chenyuan-wendao-v2.html`）：100% 离线自包含赛事单文件可玩版（内嵌全套 56 张国风原画、Canvas 粒子特效与五声音阶古琴合成器）。
+- `web/public/playable-v2.html`：离线静态可玩页，内嵌全套56张画面资源、Canvas粒子表现与五声音阶合成器。安全修复后须与`vendor/dompurify-3.4.18/`一起交付，不再宣称HTML单文件自包含；清洗库使用本地相对路径，不依赖CDN。见[安全修复记录](security/static-v2-20261117.md)。
 - `src/full/competition-systems.ts`：模块化 TypeScript 赛事系统定义（大道法则、灵兽、镇妖塔、成就、天时星象与武学连携）。
