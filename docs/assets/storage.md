@@ -1,6 +1,22 @@
-# 新大原稿的存储与取回
+# 原稿的存储与取回
 
-本项目只对未来新增/内容改动实行策略。现有原稿仍在已发布Git历史和原路径，本轮不迁移、不删旧包、不改远端设置。策略不会立即减少普通clone或远端物理占用；实测占用须另行记录。合同见[0168](../decisions/0168-future-large-original-storage.md)。
+2026-11-17按用户要求，先将main的741355d完整推送至`codex/backup-main-before-size-reduction-20261117`，再将112份PNG制作原稿从当前跟踪树归档。原路径、Git blob、SHA-256与字节数完整保存在[归档索引](archived-sources.json)，运行WebP、许可/提示词/回执和既有图片校验保持原件。完整Git历史和备份分支不改写、不删除；这会减少当前检出跟踪内容，不代表远端物理空间或完整clone历史已经回收。实施与验证见[本轮记录](size-reduction-20261117.md)。
+
+## 取回既有原稿
+
+普通运行与构建不需要制作PNG。需要制作、图片解码或来源校验时执行：
+
+```sh
+npm run prepare:art
+```
+
+工具只从固定完整commit取出原字节，不访问网络，不接受分支浮动版本；逐项核对完整112项源树、blob、长度和SHA-256。缺少历史时先执行`git fetch origin codex/backup-main-before-size-reduction-20261117`。已存在的本地文件必须完全相同，否则明确失败且不覆盖；不接受软链接或越界路径。恢复出的原路径按精确清单忽略，不会自动跟踪或忽略其它新画作。
+
+`npm test`、`npm run validate:core`和`python3 scripts/check_docs.py`会先取回再沿原断言校验，不跳过来源或重签hash。CI已有完整历史，因此无需新权限、额外外部存储或LFS上传。取回后本地美术目录会增大约242MB，但当前Git跟踪文件总量仍须严格小于100,000,000字节；门禁`python3 scripts/check-tracked-size.py`按索引逐路径计算，包含根文件和全部目录，不按重复blob去重。
+
+## 未来原稿策略
+
+[0168](../decisions/0168-future-large-original-storage.md)对未来新增/内容改动的LFS策略继续有效；上述归档是本轮对既有制作PNG的明确调整，不迁移或改写已发布Git历史。
 
 ## 存入新原稿
 

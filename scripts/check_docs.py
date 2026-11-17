@@ -6,11 +6,14 @@ import subprocess
 import sys
 import unittest
 from pathlib import Path
+from art_sources import prepare
 
 root = Path(__file__).resolve().parents[1]
+print(json.dumps(prepare(root)))
 subprocess.run([sys.executable, str(root / 'scripts/check-doc-links.py')], check=True)
 subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', str(root / 'scripts'), '-p', 'test_doc_links.py'], check=True)
 subprocess.run([sys.executable, str(root / 'scripts/check-large-originals.py')], check=True)
+subprocess.run([sys.executable, str(root / 'scripts/check-tracked-size.py')], check=True)
 subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', str(root / 'scripts'), '-p', 'test_large_originals.py'], check=True)
 required = ["01_设计规格.md", "02_实施计划.md", "03_数据与状态契约.md", "04_验收清单.md", "05_成长与数值系统修订.md"]
 for name in required:

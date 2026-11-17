@@ -1,0 +1,680 @@
+{
+  "format": "chenyuan-archived-art-sources",
+  "version": 1,
+  "commit": "741355d1a414e20ed85ed14e89c0f04051e9b4d0",
+  "backupBranch": "codex/backup-main-before-size-reduction-20261117",
+  "files": [
+    {
+      "path": "art/production/art18/action-jade-frame-source.png",
+      "blob": "cff60dde71beb57ddc6d3ea5fd5bad2a810a7f2c",
+      "sha256": "545f5cbc8d27e1472e312fa2e7102dc2896c335e3fc84153efbf98a48c6ca8dc",
+      "bytes": 2071030
+    },
+    {
+      "path": "art/production/art18/dialog-jade-frame-source.png",
+      "blob": "57ac4ddd171cf7d6326da66a27cac3c399bc9f26",
+      "sha256": "12a7fcd3ba80a2171d77834ca11aee237cf05f71ae486e74a99d015ee1fb5df5",
+      "bytes": 2119692
+    },
+    {
+      "path": "art/production/art24/sanctum-v1.png",
+      "blob": "3515b9b9ce57b339fbc274441f2f665fba9c7b90",
+      "sha256": "30e1744336c83ed684e9a51e5188c61518d1247576bbdcae233e6af3f75a9efd",
+      "bytes": 2784840
+    },
+    {
+      "path": "art/production/art26/candidates/idle-v1.png",
+      "blob": "a640a4e4eb78dfbc28d826379a9f4991b2e1a55b",
+      "sha256": "39e5a7822fa15fc48e30afc4e36872f6e9f18dc958382c336959e881f18c4426",
+      "bytes": 2509390
+    },
+    {
+      "path": "art/production/art26/candidates/idle-v2-cutout.png",
+      "blob": "b9d5fadcf72d04ee142dbaf6b6993e4120634d78",
+      "sha256": "662372d16decd1e4286d4a0df9ab920f42074f3afc73f7723ea439df70ab3e2e",
+      "bytes": 2440466
+    },
+    {
+      "path": "art/production/art26/player-loadout-idle-v1.png",
+      "blob": "b9d5fadcf72d04ee142dbaf6b6993e4120634d78",
+      "sha256": "662372d16decd1e4286d4a0df9ab920f42074f3afc73f7723ea439df70ab3e2e",
+      "bytes": 2440466
+    },
+    {
+      "path": "art/production/art27/candidates/workshop-v1.png",
+      "blob": "96137616c9d03e17101ebe1b686ab8095d8d5e86",
+      "sha256": "3ef9b2c4c42f9929a521c13d5a566cc90b9bad36c8b340783504b4ee99eaea29",
+      "bytes": 2938703
+    },
+    {
+      "path": "art/production/art27/candidates/workshop-v2.png",
+      "blob": "3a06a7c4ac67288fc7ffc00818815aaaf49c2293",
+      "sha256": "7de63c37eb5b8907482e8307db4fe14c3798c50e027b44aa22488ddbe558cc7a",
+      "bytes": 2789492
+    },
+    {
+      "path": "art/production/art27/relic-workshop-v1.png",
+      "blob": "3a06a7c4ac67288fc7ffc00818815aaaf49c2293",
+      "sha256": "7de63c37eb5b8907482e8307db4fe14c3798c50e027b44aa22488ddbe558cc7a",
+      "bytes": 2789492
+    },
+    {
+      "path": "art/production/art28/alchemy-scene-v1.png",
+      "blob": "7e0d5369e11e7bdf18d23590ce72bbb27f744385",
+      "sha256": "c1f22fa7d3327c19842e3774676762f056e4ace696ce401d89e5c566e2cdc069",
+      "bytes": 2833591
+    },
+    {
+      "path": "art/production/art28/candidates/chamber-v1.png",
+      "blob": "7e0d5369e11e7bdf18d23590ce72bbb27f744385",
+      "sha256": "c1f22fa7d3327c19842e3774676762f056e4ace696ce401d89e5c566e2cdc069",
+      "bytes": 2833591
+    },
+    {
+      "path": "art/production/art29/candidates/nook-v1.png",
+      "blob": "346ac7934c32270e9ba94ec8deaf330ff05c506b",
+      "sha256": "614b03a478ee99cca08e5d55cf1449ed2f52088cef5706989513a2adfbf73a7d",
+      "bytes": 2785070
+    },
+    {
+      "path": "art/production/art29/candidates/nook-v2.png",
+      "blob": "4d1ee4c596e092d0c08cebab622956fa5756f734",
+      "sha256": "c3e1186f96c0a8aa8dab7c8013eca1171ec8ef6ef40facfe5439480fe0472000",
+      "bytes": 2663046
+    },
+    {
+      "path": "art/production/art29/inventory-scene-v1.png",
+      "blob": "4d1ee4c596e092d0c08cebab622956fa5756f734",
+      "sha256": "c3e1186f96c0a8aa8dab7c8013eca1171ec8ef6ef40facfe5439480fe0472000",
+      "bytes": 2663046
+    },
+    {
+      "path": "art/production/art30/candidates/parlour-v1.png",
+      "blob": "e456a223f43f868a120b22213b445c3c6ecb1136",
+      "sha256": "740edf42832e8320e8f39efb30a11065afe40857c2dfd288bf33a535eb6b975a",
+      "bytes": 2551001
+    },
+    {
+      "path": "art/production/art30/npc-parlour-v1.png",
+      "blob": "e456a223f43f868a120b22213b445c3c6ecb1136",
+      "sha256": "740edf42832e8320e8f39efb30a11065afe40857c2dfd288bf33a535eb6b975a",
+      "bytes": 2551001
+    },
+    {
+      "path": "art/production/art31/candidates/desk-v1.png",
+      "blob": "09fddd5e2ae569409d35802080538f62a83b708e",
+      "sha256": "7eb3c74516376147bb8de74b827bff85975c5e549d2fd007519d398bafe353ae",
+      "bytes": 2828876
+    },
+    {
+      "path": "art/production/art31/life-desk-v1.png",
+      "blob": "09fddd5e2ae569409d35802080538f62a83b708e",
+      "sha256": "7eb3c74516376147bb8de74b827bff85975c5e549d2fd007519d398bafe353ae",
+      "bytes": 2828876
+    },
+    {
+      "path": "art/production/art32/candidates/ending-v1.png",
+      "blob": "be951c09bef0c3a808e73ef187e0657d7fa15f1e",
+      "sha256": "37c4e5d5d92a1444f84facad37135ce69c325ee59604a7a01403fd496ea6dafc",
+      "bytes": 2695336
+    },
+    {
+      "path": "art/production/art32/candidates/question-v1.png",
+      "blob": "d2829db6be644568d786c3a769c2e51e6200d77e",
+      "sha256": "3367dcaab9ed0bd74e072e6d66e5c1049969295ddd49d67386c39aa58b2e226c",
+      "bytes": 2256926
+    },
+    {
+      "path": "art/production/art32/ending-v1.png",
+      "blob": "be951c09bef0c3a808e73ef187e0657d7fa15f1e",
+      "sha256": "37c4e5d5d92a1444f84facad37135ce69c325ee59604a7a01403fd496ea6dafc",
+      "bytes": 2695336
+    },
+    {
+      "path": "art/production/art32/question-v1.png",
+      "blob": "d2829db6be644568d786c3a769c2e51e6200d77e",
+      "sha256": "3367dcaab9ed0bd74e072e6d66e5c1049969295ddd49d67386c39aa58b2e226c",
+      "bytes": 2256926
+    },
+    {
+      "path": "art/production/art35/blade-source-v2.png",
+      "blob": "176fd7f07e86aa5f9a62f7a9577c1432205f920a",
+      "sha256": "d178c4cf3f352a99740158cc60058bfc91f19473842b3f874b75ea82222abfa1",
+      "bytes": 1320665
+    },
+    {
+      "path": "art/production/art35/blade-source.png",
+      "blob": "f0c7826dd12c9be026a974f6faf5a23781f076d1",
+      "sha256": "6b9f7842ba801546797ea5527d24f389dcab840310162bf33994e7a125d80566",
+      "bytes": 1353856
+    },
+    {
+      "path": "art/production/art35/fan-source.png",
+      "blob": "8274f97489037012da642803f62e968da798584e",
+      "sha256": "4f78ec19a23db1a230f4140f3d0eb5e0b91b878a9d0538ecb1f160431670cb62",
+      "bytes": 1820304
+    },
+    {
+      "path": "art/production/art35/heart-source-v2.png",
+      "blob": "b4ce889049698360293bd10273d5c092aba63f15",
+      "sha256": "e8806142c853da983f27ebbdfde4ccba28a94812faac3d889097a88b804a1e81",
+      "bytes": 2530892
+    },
+    {
+      "path": "art/production/art35/heart-source.png",
+      "blob": "ba6730c065c7acdbd65fdcc8198e0ded4fcdad4f",
+      "sha256": "bc1c7f279bc4dbcb01976e671b2edbdbb49d87f203bc30bac863ff49022e7dcb",
+      "bytes": 2589662
+    },
+    {
+      "path": "art/production/art35/knot-source.png",
+      "blob": "c9018bee3250d253c952c5e02de08a77211b4f2b",
+      "sha256": "a143a3a8ebfb11238897ce3dbd97a0ea91cece9de122260bb5b3571a7bb09e51",
+      "bytes": 2795515
+    },
+    {
+      "path": "art/production/art35/leaf-source.png",
+      "blob": "470cb7aaf1273969794d845b92891801ea2b9c8d",
+      "sha256": "ac9cdb030f0c48537691353c84012bfe47f4d17d9b6d12504f00fdd92ed3f8e8",
+      "bytes": 830043
+    },
+    {
+      "path": "art/production/art35/manual-source.png",
+      "blob": "d433cfbeec2835627a2814dbe11b1823f4f051ee",
+      "sha256": "3bab008f65388bf1fa35f3bfd49dd0a64bb1d8e1e9974b3d5b44b43a96478fdd",
+      "bytes": 2058904
+    },
+    {
+      "path": "art/production/art35/scroll-source.png",
+      "blob": "761f2924db55bddd6bbff227142e8cf9192e0be2",
+      "sha256": "4a86f1e132362f43e549a0c3550f9a8feeec4d7513fb5e6281c33f0210e29cdd",
+      "bytes": 1366231
+    },
+    {
+      "path": "art/production/art35/seal-source.png",
+      "blob": "99025d1d683d20f8b7a2d5ad9db6ff2e70ab9443",
+      "sha256": "3e76960d9b602166238f24a94e2540476a9fdd4fa1b8e36699f1969f459c53b1",
+      "bytes": 849275
+    },
+    {
+      "path": "art/production/art37/action-jade-plaque-source.png",
+      "blob": "7f45164e7f0eb0483353fe40b3a27779b1aa7c06",
+      "sha256": "04eaf83cfb10c7bc52d20ebfa39df2a3d623158bde1e31063f1022353b7b39bf",
+      "bytes": 1884971
+    },
+    {
+      "path": "art/production/art37/dialog-ink-rim-source.png",
+      "blob": "6370af4f80e0954c71d4bfab6ad2bed833b19a3c",
+      "sha256": "49c4a0bb99faa867f9e63e43a2b1bd104f984cbf3842e2f47752491aae1d3025",
+      "bytes": 346757
+    },
+    {
+      "path": "art/production/portraits/lu.png",
+      "blob": "92821c6765be38bb577194222f232e3b2c8df9b6",
+      "sha256": "5e570cd3748273864263e52b01ee11144972cff7874c9ff845d7b81d94ae5a6a",
+      "bytes": 2175758
+    },
+    {
+      "path": "art/production/portraits/pei.png",
+      "blob": "be01e1bbf1a94624872acecdaa1ef794c7c0fd49",
+      "sha256": "22583181d159d49dded331cf3af296b956172bdc9c89c28d96516c0892f2d98f",
+      "bytes": 2255206
+    },
+    {
+      "path": "art/production/portraits/player.png",
+      "blob": "9d46e5588488ea0540225050aee132e06358e54e",
+      "sha256": "daec5e6347a757ca9a52077bb1fb96b32c03eb4abebc6bb549176b78f3f83cf2",
+      "bytes": 2366521
+    },
+    {
+      "path": "art/production/portraits/shen.png",
+      "blob": "a687cdfce799c9331c75eeeb8784be33756e152e",
+      "sha256": "d6a236262a00a2f2656a425a1b9aed7f36cf8cf9f11478ba7574f3c65795a641",
+      "bytes": 2048820
+    },
+    {
+      "path": "art/production/portraits/yan.png",
+      "blob": "04e033e847d79e6fc6dffadcd2b6b75d11526191",
+      "sha256": "1a62092be290d65e9b5faa1c674d90d7e50e92f1829a3a848e41f98689813dca",
+      "bytes": 2488063
+    },
+    {
+      "path": "art/production/scenes/secret.png",
+      "blob": "babd9405d7cdb854c61367bdff76d59e36941d7c",
+      "sha256": "c3921f48e2d87a9b3a6c1db7c1ccbee5aeb337f11a8ce030985786378be0c934",
+      "bytes": 3210139
+    },
+    {
+      "path": "art/production/scenes/settlement.png",
+      "blob": "d0ac63755967a14cd5943b6ab5f4f5aa0596eaf5",
+      "sha256": "5c3e4d9f1e713f7c22e7fddb66ba788737d7e75b53c521f182354caf0a866bc7",
+      "bytes": 3048163
+    },
+    {
+      "path": "art/production/scenes/terrace-closed.png",
+      "blob": "82e8e78196a150124fb4392561791da31f951ec3",
+      "sha256": "115e3997cc4d6d69cb5e56f66c48a44ad7ec7d649bd7d0397c30670a200f521e",
+      "bytes": 2717108
+    },
+    {
+      "path": "art/production/scenes/terrace-v2.png",
+      "blob": "adbae9a318a3c11f428fa72772202bd593bb097a",
+      "sha256": "7404105d35ece7a45ee080a1b37385d712c4066cd78729d907ae513e591d184d",
+      "bytes": 2548246
+    },
+    {
+      "path": "art/production/scenes/wilderness.png",
+      "blob": "4ac8f9c231f7abda9783c30130a882e967a79b28",
+      "sha256": "b0334ce39ae5aa0b922908d182ce85e2c3b09097b4407d90de1542d7546de5f9",
+      "bytes": 3095096
+    },
+    {
+      "path": "art/redesign/alchemy-workshop/furnace-v1.png",
+      "blob": "654af3fa018340ad705f2ba11e5580522bddb477",
+      "sha256": "7297913c0228ed94a6310b8e29126990f6833892327068a9152ae5c3f0b276f9",
+      "bytes": 1944971
+    },
+    {
+      "path": "art/redesign/art03-objects/cloud_mirror-v1.png",
+      "blob": "39e540ab43ab9a73410b03f81fbf31462f59c478",
+      "sha256": "a7249e6ebd5e69f910b3191dd3cc8085a383f180a4d7fcf8027d401d9704eb50",
+      "bytes": 1055777
+    },
+    {
+      "path": "art/redesign/art03-objects/frost_sword-v1.png",
+      "blob": "249b19fe1d5b5104db82c419fe5ac0fc76ae0370",
+      "sha256": "eaadb4bf71232035da768cbb36df252176007ca74dfe634cf18e58d43167af3e",
+      "bytes": 578691
+    },
+    {
+      "path": "art/redesign/art03-objects/frost_sword-v2.png",
+      "blob": "6e05713ab475719223622bfb334df696c99f19a6",
+      "sha256": "cf7036014cf3bb96583ebfb83afd94ee8d0269dd82c72699336f203da8e31d85",
+      "bytes": 265325
+    },
+    {
+      "path": "art/redesign/art03-objects/jade_seal-v1.png",
+      "blob": "6b3cf084f2ca9502a14ddd938ee657ae00bd94b0",
+      "sha256": "7253c56040d0e2c4fd8888896e85c0c1999735479f4672fdf0ccfb4e2fd04b5c",
+      "bytes": 1985699
+    },
+    {
+      "path": "art/redesign/art03-objects/soul_lamp-v1.png",
+      "blob": "d9551cee825dd4783b735994ba500fb7d3aa292d",
+      "sha256": "57029fb4cda9e57050640e6d338056d92768506d7d6299d9e95d8ca4dfaf17fd",
+      "bytes": 1359219
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/cloud_mirror-blank-v1.png",
+      "blob": "12dd8d6ad41ae07a64dd526c661f55b84b2cb9e4",
+      "sha256": "cb13d9b5e37ce9c4bfe206b4b9ae20ae8212b2b5465b3a62db0d5dde9d7b3980",
+      "bytes": 1303911
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/frost_sword-blank-v1.png",
+      "blob": "7c54f972fd8db7ab9b9f45ad3e83f0e9ee645c28",
+      "sha256": "f4dc96341831c965bf7fe4d98cf7ca28ed931fcd9a06bbb96dc2085ba6ec2b56",
+      "bytes": 256960
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/jade_seal-blank-v1.png",
+      "blob": "9191417acfac726f6b2a782cd77db775231b2d18",
+      "sha256": "6b766842fcaf622e01451e0662920ff3b40cbee16b9f0ace891e35c244589fa3",
+      "bytes": 2120414
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/soul_lamp-blank-v1.png",
+      "blob": "fde9246adfbc85113ea702a8c56482a2520a0b9f",
+      "sha256": "fd534f0d5dffb08914564976b158b1ab343dcdfaa70afae023f7606b32208af2",
+      "bytes": 1282657
+    },
+    {
+      "path": "art/redesign/art11-items/ascension_seal-v1.png",
+      "blob": "4577d67e7ebf6103f9691bc2832ccd47489ce21f",
+      "sha256": "d4bda35f534675cf592e777bdc17aa08149b9b9eff89842577774c2e762e7f84",
+      "bytes": 942626
+    },
+    {
+      "path": "art/redesign/art11-items/core-v1.png",
+      "blob": "91f23e97bc9baef8567322ed29a33aeb4fb343c9",
+      "sha256": "5406086cd1f61654eb4f83e9bf7a1329934b133640492676bbc96a824a7d08d9",
+      "bytes": 1635675
+    },
+    {
+      "path": "art/redesign/art11-items/dao-v1.png",
+      "blob": "b84673fc352d3f02c9bb472ded0b1e4e3d0819e5",
+      "sha256": "59d2e3ef4bc583bf6a298f41d4d697d8e48a9a09ba30152866a2c4ad76a3f0bd",
+      "bytes": 1516910
+    },
+    {
+      "path": "art/redesign/art11-items/dew-v1.png",
+      "blob": "8a855546e4f03b46ee438cdd349b9d59f6774c47",
+      "sha256": "65c89498b40cf4e54af8c343f3437fc4c77edebcca698bf63f2f8c1308d84864",
+      "bytes": 922870
+    },
+    {
+      "path": "art/redesign/art11-items/foundation_pill-v1.png",
+      "blob": "9f666ef40cbad385af6a672ba1a66784a2298782",
+      "sha256": "5379d522005f7e8b8a88f8c6ebf5bdd5d16726ca2843fd63b866966ce6117266",
+      "bytes": 1222842
+    },
+    {
+      "path": "art/redesign/art11-items/golden_pill-v1.png",
+      "blob": "caddec5766ed766572d1c7aad82d27bf7f6beed4",
+      "sha256": "562f079f0258df75cb5acd4848bd0ad9f49f546483f8ba3d1abc183e2536371d",
+      "bytes": 1367520
+    },
+    {
+      "path": "art/redesign/art11-items/healing_pill-v1.png",
+      "blob": "806fdef5be575c7de9bb36c302e33ed27c4c3c56",
+      "sha256": "9b78f221371efe5305281fe8b91133676d69e975c49501b8f1d156f043de178e",
+      "bytes": 1065220
+    },
+    {
+      "path": "art/redesign/art11-items/herb-v1.png",
+      "blob": "9c7851718e6288a36ccdf2d7cdd61f2b722d5757",
+      "sha256": "3f73147d9e592dcb185ca76dc21a00f714c87d478d54303fbe3ec399119ba519",
+      "bytes": 1413771
+    },
+    {
+      "path": "art/redesign/art11-items/jade-v1.png",
+      "blob": "c40389e2308f7205697e1bdf64552533645a6425",
+      "sha256": "54ce32e28be625a6e16dd99e055b7404a98b957fcd45ab7f7a8a10f74fd8bb25",
+      "bytes": 2318877
+    },
+    {
+      "path": "art/redesign/art11-items/lotus-v1.png",
+      "blob": "a260cc593bdaf5618f0a8bce5364b5ab16af2c01",
+      "sha256": "4f117aaf584530881f31e2e94b3de8a41f045494f0a788706a7608e0782f1cde",
+      "bytes": 1329991
+    },
+    {
+      "path": "art/redesign/art11-items/nascent_pill-v1.png",
+      "blob": "7429523da0bdc97a06c23b45ec7014fd077f2373",
+      "sha256": "44b79a1668ec83babe4770d2b6b3d713b6ac8e8ea6fd0bbcf0081232089973e3",
+      "bytes": 1457716
+    },
+    {
+      "path": "art/redesign/art11-items/soul-v1.png",
+      "blob": "312bfc2a55c5406679a74510308ac9fb5fac8c86",
+      "sha256": "d141ad80f6c806529eb406d469f7c157ba7d62d876ffbeeb889cb92a05420281",
+      "bytes": 1772340
+    },
+    {
+      "path": "art/redesign/art11-items/spirit_pill-v1.png",
+      "blob": "c22be9e911c50311c49a5b97e41614111922db6f",
+      "sha256": "b59618e1c4d438126ed9cb341b1e09cd7a9a9bd38700896ed943450f805a7c6d",
+      "bytes": 779390
+    },
+    {
+      "path": "art/redesign/art11-items/spirit_seed-v1.png",
+      "blob": "2c396faf849b5b3bbbfd95dd5480cab2e055075c",
+      "sha256": "03b24d0f174382e0665ace6a7332452d764e9c46f5be780ec7bb131251b26b79",
+      "bytes": 1354569
+    },
+    {
+      "path": "art/redesign/art16-schools/sword-station-v1.png",
+      "blob": "43887c54e2ae745f434937c69e1eb0decb9aa87c",
+      "sha256": "a5d8ccab08223c77e56bde86eebc5067125488431111a3216e1dcef08f1de4f8",
+      "bytes": 789026
+    },
+    {
+      "path": "art/redesign/art16-schools/talisman-station-v1.png",
+      "blob": "96e120517ae46f6244e84949979cab4ad0bbe705",
+      "sha256": "d6b0b62acf8e28ad91efca56fe179b31ae2733ef5db7507e1ce0ec2de99f1615",
+      "bytes": 1344427
+    },
+    {
+      "path": "art/redesign/art33/medicine-case-v1.png",
+      "blob": "5837ad0ab81a99f6e251e57eaa4aba86ab29bfd4",
+      "sha256": "60c0683acf72c52e2c91b6c0ff417514a1b9347ef0b85d076a00418625728cde",
+      "bytes": 2194262
+    },
+    {
+      "path": "art/redesign/art33/shen-offering-v1.png",
+      "blob": "195c5f5e9a0fc7acef8a3e768aa6dca9c4ac37af",
+      "sha256": "e0b8e7097947178f25249f34c410a5df46bff33f2ee98590d337a6b97376018e",
+      "bytes": 2882566
+    },
+    {
+      "path": "art/redesign/catalogue-art/alchemy-v1.png",
+      "blob": "9f9d291592a3a28403089982a099a6bb3ee02ecb",
+      "sha256": "05d35197c80d770dcb4f5745ec683c4c7eca950b341ab54a50740bbdd23b1bfa",
+      "bytes": 2193538
+    },
+    {
+      "path": "art/redesign/catalogue-art/study-v1.png",
+      "blob": "6a64aaf955a5676b7cc73dc5b363cf83623aa34a",
+      "sha256": "20f2fcbdbc395c58e45ee306daefd31defb4f427cd3012ce524c8bf0f475ff32",
+      "bytes": 2130171
+    },
+    {
+      "path": "art/redesign/catalogue-art/supplies-v1.png",
+      "blob": "b29cbaaed136f23f4125b47acabc8de1304339ad",
+      "sha256": "75fc201312ef92b30bce08242da1f04bbd278fba12ed268856fc99259bb3bac6",
+      "bytes": 2317548
+    },
+    {
+      "path": "art/redesign/characters/lu-v1.png",
+      "blob": "73c22e72b053ae6bc069ae366bcd5618be93a48e",
+      "sha256": "67b7448c829ce827ce039ca73575740123abe7cd65353d5c0231074543910ed6",
+      "bytes": 2283866
+    },
+    {
+      "path": "art/redesign/characters/pei-v1.png",
+      "blob": "7729948f07c750083258d2bcace6048c0aae4acc",
+      "sha256": "3f0ed2c068100aad9e68623163de26d743b945b5f8f9252d58168d394c36c383",
+      "bytes": 2422705
+    },
+    {
+      "path": "art/redesign/characters/player-seated-cold-v1.png",
+      "blob": "25407f1b256f5199dd859c8c8cae9a340728047b",
+      "sha256": "7e24b71c4a9854a00e2b53ec2b97f81e5cf7f0e1c7509be527506139e9c1f356",
+      "bytes": 2251602
+    },
+    {
+      "path": "art/redesign/characters/player-standing-cold-v1.png",
+      "blob": "ae29e475439b26ed6d7a72d17c9cc7830ab0e5ce",
+      "sha256": "6b1201d21c081fd6e15c60ae7093899d23e0375193cf046e9338bbd952620509",
+      "bytes": 2062489
+    },
+    {
+      "path": "art/redesign/characters/player-v1.png",
+      "blob": "f4fff790db466aad8d2a7203e6dc46dcb28e76d4",
+      "sha256": "0abde0fe4d767fa6832df7b35e7ac6b87f4c318b3e0312cf0e3d984e2e9e23e2",
+      "bytes": 2585055
+    },
+    {
+      "path": "art/redesign/characters/shen-v1.png",
+      "blob": "1e0153beddbf915c2f9d758bc6e1181fb04d65ff",
+      "sha256": "483d128d9e72dfa44cf3c902df0bab6721beafdb1032184502263f1d7e0cdf42",
+      "bytes": 2443651
+    },
+    {
+      "path": "art/redesign/characters/yan-v1.png",
+      "blob": "4bfe37c919340d08d88a1c4fcd1aa0b619a93631",
+      "sha256": "b488ffa8cbc9104e0e9652bf38fb922f9328c513e5e68152b5e78b3ab3841154",
+      "bytes": 2641271
+    },
+    {
+      "path": "art/redesign/desktop/meditation-ink-v1.png",
+      "blob": "d5acaa5e5d7d1755b9c5857992f3c0460f06d18b",
+      "sha256": "f1cb70f5e69fe493da5fbe9ea705506e937a09b467d21c49ec4c14fd49c6b347",
+      "bytes": 2627988
+    },
+    {
+      "path": "art/redesign/desktop/mountain-wash-v1.png",
+      "blob": "589d23864b4e109a3bb2b7bdafe15a1a64ba324c",
+      "sha256": "a3ddcfabdee381e39281138407d87d49fcad565bb7a28a086353fe485bcd839e",
+      "bytes": 1826155
+    },
+    {
+      "path": "art/redesign/desktop/xuan-paper-v1.png",
+      "blob": "bf67524b011b7690350b772fd39c695271b2b4a3",
+      "sha256": "c6e3d6e64d309165e1dafc96be58cd07f5217b360f73c3fa680c4b29e8d1b3bb",
+      "bytes": 2825331
+    },
+    {
+      "path": "art/redesign/desktop/xuan-paper-v2.png",
+      "blob": "cb2b1d6a5b431c5f78b399a04cb71e04df5a3316",
+      "sha256": "931c3842c1e7489fe0aad49a7fcca6020e00078aeaa45991a7f627cd0d419340",
+      "bytes": 2466811
+    },
+    {
+      "path": "art/redesign/enemies/puppet-v1.png",
+      "blob": "741e04696ac54c6952e62a7fede5bd626ccfdbf0",
+      "sha256": "d950df6f54bc192e42c137850088f7d4f2f3795196a77f310c7313ddd8865d37",
+      "bytes": 1824474
+    },
+    {
+      "path": "art/redesign/enemies/sentinel-v1.png",
+      "blob": "cd3c0b42899630d154394a59f86e66fdc6206d20",
+      "sha256": "b875773f3a7a3a06a7dd7ed31b359f57c32dfdd5e29fea69320caa39955d2544",
+      "bytes": 2085256
+    },
+    {
+      "path": "art/redesign/enemies/serpent-v1.png",
+      "blob": "261543ffb17d3863c125dbc3ddc5f3a5862daedf",
+      "sha256": "f626438ca50a420a40e9b313613372b65905f09ea5e794a20a581bd85ec59ad5",
+      "bytes": 2690008
+    },
+    {
+      "path": "art/redesign/enemies/shadow-v1.png",
+      "blob": "eed283d4b1a262fa68596cdf05e225c587ea1834",
+      "sha256": "f686a691010084d8a55348787c780bb2984162eab3905cb9c7cd75f4e0505cb6",
+      "bytes": 2243479
+    },
+    {
+      "path": "art/redesign/enemies/trial_gate-v1.png",
+      "blob": "7e42f3af882970d3db26228f4889998e0f98acb4",
+      "sha256": "a49a8a217376ed8c5d1776e959e2a229907f434f8bde3deb919fb4c71962a250",
+      "bytes": 2479355
+    },
+    {
+      "path": "art/redesign/enemies/trial_heart-v1.png",
+      "blob": "16a564a3a7af1025c7e4c163407c50f0a7aa3fda",
+      "sha256": "87fbc213dab33af4f8381828ceb7e1a12a9a772bd995d995e74c4bfb2805ed81",
+      "bytes": 2186850
+    },
+    {
+      "path": "art/redesign/enemies/trial_thunder-v1.png",
+      "blob": "8a065339238af53c8158dfbcf729bad4d32d9195",
+      "sha256": "523ac17532520a8feb1954c1ed12bff68dc039568dca6d9c44b10c4969e9f36e",
+      "bytes": 2371237
+    },
+    {
+      "path": "art/redesign/enemies/warden-v1.png",
+      "blob": "c063ce2b488fb7f1b416b7d1b4fc70858c7c6ad1",
+      "sha256": "3c22963143eb7af7f1ace123923e89fddb47aec3c020a519e2848133660c0c58",
+      "bytes": 2729803
+    },
+    {
+      "path": "art/redesign/enemies/wolf-v1.png",
+      "blob": "ca5ecf74fa72af73d46ebfcb9859d6c58cbb09de",
+      "sha256": "2e8360e708a212206428b794f811c1ea3a844a5f7b8cbc250c5e8ea2e819914a",
+      "bytes": 2200642
+    },
+    {
+      "path": "art/redesign/scenes/cave-meditation-v1.png",
+      "blob": "93fe3d4e9a2b6c6129235c01a3cb8cd0a0fca759",
+      "sha256": "03de7ff446ac4462c575f4cef46051e143ca389d1394f54f606e39ddc2172ed7",
+      "bytes": 2950065
+    },
+    {
+      "path": "art/redesign/scenes/cave-v1.png",
+      "blob": "aa787d956b02b05208c7619d18b81a788105cc57",
+      "sha256": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9",
+      "bytes": 3354083
+    },
+    {
+      "path": "art/redesign/scenes/market-v1.png",
+      "blob": "8a8fe47aeba9e3dfc752e59fd3266a209c9011c1",
+      "sha256": "1403656635d725808d9c0a3c40e4b7c7850bc6cb396341f49fdfa7521ac868de",
+      "bytes": 3277861
+    },
+    {
+      "path": "art/redesign/scenes/opening-v1.png",
+      "blob": "cd8a3770e427f6fc9cadadf785d1f497e9c63729",
+      "sha256": "401ec7bb4503b0ce30c9910df3e5ff44ab8860a2ec2d160bdd0a24e4b92215d7",
+      "bytes": 2952822
+    },
+    {
+      "path": "art/redesign/scenes/secret-v1.png",
+      "blob": "3aa133396906970fa66becc1cd89667ca3fad4a4",
+      "sha256": "0fcc270cc69aa0a5ccad34b5932ac502dee8bd49917624f378f53f92bafb1b78",
+      "bytes": 3441311
+    },
+    {
+      "path": "art/redesign/scenes/sect-v1.png",
+      "blob": "8ab4ea70aba84e551ef10c53938d6c8526d937fb",
+      "sha256": "2748a54477772b2a3dea57c7a6f31b9b6a055bddf78c9a7696ce5b1fa83e3478",
+      "bytes": 3369558
+    },
+    {
+      "path": "art/redesign/scenes/terrace-opened-v1.png",
+      "blob": "ccb05476809573ed486d43146cd654db845c0490",
+      "sha256": "5fbb358c880bc200f565dea809723a46621c6afbe636c659aac2a635b6a9ca8f",
+      "bytes": 2971730
+    },
+    {
+      "path": "art/redesign/scenes/terrace-storm-v1.png",
+      "blob": "ff03dcfc83c20a603dc774a781398bbefc3f5258",
+      "sha256": "b036ee9a2d9ac4aa865daf0b74365a8e1f1bd8f5cd77e10a90411c44058d97b3",
+      "bytes": 3052592
+    },
+    {
+      "path": "art/redesign/scenes/terrace-v1.png",
+      "blob": "e5735d2079b5e52b0f51fbc07e09fa124b46e2ec",
+      "sha256": "830d361b7e77ec5b43b29b6574dabf8b293da59a39455a5d6aaf3c2557f2f08a",
+      "bytes": 3248712
+    },
+    {
+      "path": "art/redesign/scenes/terrace-v2.png",
+      "blob": "6c60af6e3b73879a6b84ff6a2164edf3bf63738e",
+      "sha256": "b6c458d7940b530fc1eb605227ae415ebf6851738f12f7e27237ec11aa8e226a",
+      "bytes": 3051158
+    },
+    {
+      "path": "art/redesign/scenes/wilderness-v1.png",
+      "blob": "46bdabfe53b6b990fa49ee532a98d1e0603ca491",
+      "sha256": "f0d5e60602fe6ed0afe8dd7909b821d5ffef7749320dbb85d6eca087ed4451c0",
+      "bytes": 3455849
+    },
+    {
+      "path": "art/redesign/ta08-resources/dao-cold-v1.png",
+      "blob": "8bc9599d3c3dc98d54f667d4b613c7de57188ee5",
+      "sha256": "f2e9a9b0662b3a97476df3c16b99e5f99f7498de96783171e5f161641871cc72",
+      "bytes": 2169595
+    },
+    {
+      "path": "art/redesign/ta08-resources/dew-cold-v1.png",
+      "blob": "ad6fc253865f9d144ada1121a1af74f5d78c8667",
+      "sha256": "cfd573494d13846c9394d1fbfad16644025aad8d419b69c797c84d981bbe81df",
+      "bytes": 1575410
+    },
+    {
+      "path": "art/redesign/ta08-resources/herbs-cold-v1.png",
+      "blob": "80c52f0745f929b5789160be9041a7077af94810",
+      "sha256": "22e547c0b65458b66aebd78d49b7569e16f0aec73f230a92ea1fe33583aac311",
+      "bytes": 1706858
+    },
+    {
+      "path": "art/redesign/ta08-resources/jade-cold-v1.png",
+      "blob": "038e40ab2c100ed32a5b989621d67761a20fd133",
+      "sha256": "d8439189a2bc7fad4598252b8ce22f404d59744b7f042741d164284c037112ab",
+      "bytes": 2400721
+    },
+    {
+      "path": "art/redesign/ta08-resources/lotus-cold-v1.png",
+      "blob": "f637609dae8a3100895d4067f13f32f8b5774f77",
+      "sha256": "238635054220ca90db51390bdc5ffd06051f84db9e33e68feede05384f8f7e9c",
+      "bytes": 1961481
+    },
+    {
+      "path": "art/redesign/ta08-resources/soul-cold-v1.png",
+      "blob": "97466d530ffb2af2ecd93592e19c9774716181c5",
+      "sha256": "1d5eaf8d1db197c96141cd9fe3d448d515ea7c0686cfb7ecbb14929d67591f4f",
+      "bytes": 1726706
+    }
+  ]
+}

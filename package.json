@@ -8,6 +8,8 @@
     "node": ">=22.16.0"
   },
   "scripts": {
+    "prepare:art": "node scripts/prepare-art-sources.mjs",
+    "pretest": "npm run prepare:art",
     "prepare:fixtures": "node scripts/prepare-legacy-fixtures.mjs",
     "test:setup": "node scripts/validate-core.mjs --install-dependencies",
     "test:historical": "node scripts/check-historical-guards.mjs",
