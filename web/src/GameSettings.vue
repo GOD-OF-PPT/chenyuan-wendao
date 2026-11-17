@@ -182,6 +182,15 @@ defineExpose({ element: settings, importButton });
           >当前没有已验证的完整准备检查点。</p
         >
       </section>
+      <section class="settings-about" aria-labelledby="settings-about-title"
+        ><h3 id="settings-about-title">关于这一程</h3>
+        <details
+          ><summary>试玩说明与节奏</summary
+          ><p class="small"
+            >试玩版本 · 数值未平衡；约30分钟用于理解玩法，不限定通关时间。进度只保存在当前浏览器，导出备份可用于迁移。</p
+          ></details
+        ></section
+      >
     </div>
     <LocalExperiencePanel
       :experience="experience"

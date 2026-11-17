@@ -523,8 +523,7 @@ defineExpose({
       >
       <section v-if="!singleScreen" class="note"
         ><span>此地机缘</span><p>{{ location.description }}</p
-        ><small
-          >试玩版本 · 数值未平衡<br />约30分钟理解玩法，不限定通关时间</small
+        ><small>机缘随缘，慢慢走就好</small
         ></section
       ></aside
     >

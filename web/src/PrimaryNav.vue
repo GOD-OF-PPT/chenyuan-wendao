@@ -178,7 +178,7 @@ const current = computed(() =>
           >{{ navigationGate(game, entry.view).reason }}</small
         ><small v-else-if="'caption' in entry">{{ entry.caption }}</small></span
       ></button
-    ><small class="prototype-label">数值未平衡</small></nav
+    ><small class="prototype-label">随缘而行，不必赶</small></nav
   >
 </template>
 
