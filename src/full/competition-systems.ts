@@ -35,3 +35,17 @@ export const MARTIAL_COMBOS: readonly MartialComboSpec[] = Object.freeze([
   { id: 'nine_fire', name: '九宫焚天', sequence: ['builder', 'guard', 'finisher'], desc: '起势 → 御守 → 终结：终结爆发后保留1层剑意/符印并凝结 35 点护体金盾！' },
   { id: 'dharma_awe', name: '法天象地', sequence: ['builder', 'finisher', 'relic'], desc: '起势 → 终结 → 法宝/合击：神通威力额外 +40%，令敌方破绽延长 1 回合！' },
 ]);
+
+
+export const BAGUA_RESONANCE_TIERS = [
+  { minLaws: 2, name: "二仪生辉", dmgBonus: 0.10, critBonus: 0.05 },
+  { minLaws: 4, name: "四象剑阵", dmgBonus: 0.18, critBonus: 0.10 },
+  { minLaws: 6, name: "八卦通神", dmgBonus: 0.28, critBonus: 0.15 },
+] as const;
+
+export const MIST_BOARD_SPEC = {
+  rows: 3,
+  cols: 4,
+  minRevealForExit: 5,
+  boardsPerDaoLawDraft: 2,
+} as const;

@@ -13,9 +13,12 @@ const require = createRequire(path.join(root, 'web/package.json'));
 const {chromium} = require('@playwright/test');
 const current = fs.readFileSync(path.join(root, 'web/public/playable-v2.html'));
 const vendorRoot = path.join(root, 'web/public/vendor/dompurify-3.4.18');
-const key = 'chenyuan_wendao_v4_save';
+const storageKey = source => source.toString('utf8').match(/\bconst STORAGE_KEY\s*=\s*["']([^"']+)["']/)?.[1];
+const key = storageKey(current);
+assert.ok(key, 'Standalone page must declare its save namespace');
+const baselineKey = original ? storageKey(original) : key;
 const payload = '<img src="x" onerror="window.__storedXss=1">';
-const report = {viewport: {width: 1440, height: 900}, checks: [], baselineReproduced: false, externalRequests: [], pageErrors: []};
+const report = {viewport: {width: 1440, height: 900}, storageKey: key, checks: [], baselineReproduced: false, externalRequests: [], pageErrors: []};
 const server = http.createServer((req, res) => {
   if (req.url === '/baseline/index.html' && original) { res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'}); res.end(original); return; }
   if (['/fixed/subdir/index.html', '/missing/index.html'].includes(req.url)) { res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'}); res.end(current); return; }
@@ -48,11 +51,11 @@ try {
     const {context, page} = await freshPage();
     await page.goto(origin + (original ? '/baseline/index.html' : '/fixed/subdir/index.html'), {waitUntil: 'load'});
     await start(page);
-    bundle = await page.evaluate(storageKey => JSON.parse(localStorage.getItem(storageKey)), key);
+    bundle = await page.evaluate(storageKey => JSON.parse(localStorage.getItem(storageKey)), baselineKey);
     bundle.game.name = payload;
     bundle.game.journal = [payload];
     if (original) {
-      await page.evaluate(({key, bundle}) => localStorage.setItem(key, JSON.stringify(bundle)), {key, bundle});
+      await page.evaluate(({key, bundle}) => localStorage.setItem(key, JSON.stringify(bundle)), {key: baselineKey, bundle});
       await page.reload({waitUntil: 'load'});
       await page.locator('#btn-continue-save').click();
       await page.locator('#btn-open-profile').click();
@@ -121,20 +124,43 @@ try {
     await page.locator('#btn-continue-save').click();
     assert.ok((await page.locator('#stage-title').innerText()).includes('听雨洞府'));
     report.checks.push('nested HTTP path: new life, all five tabs, SVG icons, all visible images, native cultivation and refresh continuation');
-    await page.waitForFunction(() => { const button = document.querySelector('[data-action="breakthrough"]'); return button && !button.disabled; }, null, {timeout: 45000});
-    await page.locator('[data-action="breakthrough"]').click();
+    await page.waitForFunction(() => {
+      const button = document.querySelector('[data-action="breakthrough"]');
+      const values = document.getElementById('hud-xp-txt').textContent.split('/').map(Number);
+      return button && !button.disabled && values.length === 2 && values[1] > 0 && values[0] >= values[1];
+    }, null, {timeout: 45000});
+    const breakthrough = page.locator('[data-action="breakthrough"]');
+    if ((await breakthrough.getAttribute('class'))?.includes('astrolabe-core')) {
+      // The imported core continuously scales; check its real hit target and send
+      // native pointer input rather than force-clicking or pausing its animation.
+      const target = await breakthrough.evaluate(button => {
+        const rect = button.getBoundingClientRect(), x = rect.x + rect.width / 2, y = rect.y + rect.height / 2;
+        const hit = document.elementFromPoint(x, y);
+        return {x, y, hit: button.contains(hit), visible: rect.width > 0 && rect.height > 0};
+      });
+      assert.ok(target.visible && target.hit, 'Animated breakthrough core must be physically hittable');
+      await page.mouse.click(target.x, target.y);
+    } else await breakthrough.click();
     assert.ok(await page.locator('#meridian-needle').count());
     await page.locator('[data-action="confirm-meridian-strike"]').click();
     await page.locator('[data-pick-law]').first().click();
+    if (!await page.locator('[data-school="sword"]').isVisible()) await page.locator('[data-cult-drawer="skill"]').first().click();
     await page.locator('[data-school="sword"]').click();
+    if (!await page.locator('[data-pet="fox"]').isVisible()) await page.locator('[data-cult-drawer="pet"]').first().click();
     await page.locator('[data-pet="fox"]').click();
     await page.locator('#nav-btn-explore').click();
     await page.locator('[data-travel="wilderness"]').click();
+    if (await page.locator('[data-mist-idx]').count()) {
+      const cell = page.locator('[data-mist-idx]').first();
+      await cell.click();
+      report.checks.push('imported mist-board interaction responds through its real game control');
+    }
     await page.locator('[data-action="start-expedition"]').click();
     assert.ok(await page.locator('[data-constellation-node]').count() > 0);
     await page.locator('[data-action="quit-expedition"]').click();
+    if (!await page.locator('[data-hunt="wolf"]').isVisible()) await page.locator('[data-exp-mode="tower"]').click();
     await page.locator('[data-hunt="wolf"]').click();
-    assert.ok((await page.locator('#panel-scroll-body').innerText()).includes('见招拆招'));
+    assert.ok(await page.locator('[data-move="builder"]').isVisible());
     await page.screenshot({path: path.join(output, 'normal-battle.png')});
     const combatState = () => page.evaluate(storageKey => {
       const game = JSON.parse(localStorage.getItem(storageKey)).game;
